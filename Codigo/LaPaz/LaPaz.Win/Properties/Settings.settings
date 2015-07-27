@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LaPaz.Win.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LaPaz_Win_PragmaService_webserv" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://www.sistemas-aa.com.ar/trabajos/Puntos/webservice/server.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8284586-6E2B-41C6-969A-0B0B9D410FA2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LaPaz.Negocio</RootNamespace>
+    <AssemblyName>LaPaz.Negocio</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClienteNegocio.cs" />
+    <Compile Include="CompraNegocio.cs" />
+    <Compile Include="CompraDetalleNegocio.cs" />
+    <Compile Include="ConsignacionNegocio.cs" />
+    <Compile Include="ComprobanteNegocio.cs" />
+    <Compile Include="Data\RendirConsignacionClienteData.cs" />
+    <Compile Include="Data\VentaDataBase.cs" />
+    <Compile Include="Data\ReservarFacturaData.cs" />
+    <Compile Include="Data\CrearVentaData.cs" />
+    <Compile Include="Data\VentaPago.cs" />
+    <Compile Include="Data\VentaTitulo.cs" />
+    <Compile Include="Helpers\FormaPagoHelper.cs" />
+    <Compile Include="Helpers\IvaHelper.cs" />
+    <Compile Include="Helpers\LcnHelper.cs" />
+    <Compile Include="Interfaces\IComprobanteNegocio.cs" />
+    <Compile Include="RemitosVentaDetalleNegocio.cs" />
+    <Compile Include="RemitosVentaNegocio.cs" />
+    <Compile Include="Interfaces\IRemitosVentaDetalleNegocio.cs" />
+    <Compile Include="Interfaces\IRemitosVentaNegocio.cs" />
+    <Compile Include="Interfaces\IPresupuestoNegocio.cs" />
+    <Compile Include="PresupuestoNegocio.cs" />
+    <Compile Include="EditorialNegocio.cs" />
+    <Compile Include="CuentaNegocio.cs" />
+    <Compile Include="Interfaces\IConsignacionNegocio.cs" />
+    <Compile Include="Interfaces\ICompraDetalleNegocio.cs" />
+    <Compile Include="Interfaces\IEditorialNegocio.cs" />
+    <Compile Include="Interfaces\ICuentaNegocio.cs" />
+    <Compile Include="Interfaces\IPaseLibroNegocio.cs" />
+    <Compile Include="PaseLibroNegocio.cs" />
+    <Compile Include="Response\ComprobanteVenta.cs" />
+    <Compile Include="Response\CrearVentaResponse.cs" />
+    <Compile Include="Response\FacturaInfo.cs" />
+    <Compile Include="VentaReservadaNegocio.cs" />
+    <Compile Include="Interfaces\IVentaReservadaNegocio.cs" />
+    <Compile Include="VentaDetalleNegocio.cs" />
+    <Compile Include="Interfaces\IVentaDetalleNegocio.cs" />
+    <Compile Include="AutorNegocio.cs" />
+    <Compile Include="BancoNegocio.cs" />
+    <Compile Include="OrdenPagoDetalleNegocio.cs" />
+    <Compile Include="Interfaces\IOrdenesPagoDetalleNegocio.cs" />
+    <Compile Include="Interfaces\IUsuarioNegocio.cs" />
+    <Compile Include="UsuarioNegocio.cs" />
+    <Compile Include="Interfaces\IBancoNegocio.cs" />
+    <Compile Include="SubTemaNegocio.cs" />
+    <Compile Include="Interfaces\ISubTemaNegocio.cs" />
+    <Compile Include="TemaNegocio.cs" />
+    <Compile Include="Interfaces\ITemaNegocio.cs" />
+    <Compile Include="Interfaces\IAutorNegocio.cs" />
+    <Compile Include="Interfaces\IReporteNegocio.cs" />
+    <Compile Include="ReporteNegocio.cs" />
+    <Compile Include="CajaNegocio.cs" />
+    <Compile Include="Interfaces\ICajaNegocio.cs" />
+    <Compile Include="Interfaces\ICompraNegocio.cs" />
+    <Compile Include="OrdenPagoNegocio.cs" />
+    <Compile Include="Interfaces\IOrdenesPagoNegocio.cs" />
+    <Compile Include="Interfaces\IVentaNegocio.cs" />
+    <Compile Include="VentaNegocio.cs" />
+    <Compile Include="Interfaces\IClienteNegocio.cs" />
+    <Compile Include="TituloNegocio.cs" />
+    <Compile Include="Interfaces\ITituloNegocio.cs" />
+    <Compile Include="Interfaces\IProveedorNegocio.cs" />
+    <Compile Include="NegocioBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorNegocio.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.Comun\Framework.Comun.csproj">
+      <Project>{492B8264-0C10-4AFE-A15F-8A82E60ADE68}</Project>
+      <Name>Framework.Comun</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Framework\Framework.Ioc\Framework.Ioc.csproj">
+      <Project>{9F222811-5858-42ED-958F-96C228D67808}</Project>
+      <Name>Framework.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaPaz.Datos\LaPaz.Datos.csproj">
+      <Project>{0b43cd10-a36b-4819-8a59-1bb8d255339c}</Project>
+      <Name>LaPaz.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaPaz.Entidades\LaPaz.Entidades.csproj">
+      <Project>{081cedc8-f304-46c2-b876-f783692b6755}</Project>
+      <Name>LaPaz.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC1D99D6-F2AD-4CDC-96CF-0A74EBA33873}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LaPaz.Seguridad</RootNamespace>
+    <AssemblyName>LaPaz.Seguridad</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncryptionService.cs" />
+    <Compile Include="Interfaces\IEncryptionService.cs" />
+    <Compile Include="LaPazContext.cs" />
+    <Compile Include="AuthenticationService.cs" />
+    <Compile Include="ILaPazContext.cs" />
+    <Compile Include="Interfaces\IAuthenticationService.cs" />
+    <Compile Include="LaPazIdentity.cs" />
+    <Compile Include="LaPazPrincipal.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolesNames.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.Ioc\Framework.Ioc.csproj">
+      <Project>{9F222811-5858-42ED-958F-96C228D67808}</Project>
+      <Name>Framework.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaPaz.Datos\LaPaz.Datos.csproj">
+      <Project>{0b43cd10-a36b-4819-8a59-1bb8d255339c}</Project>
+      <Name>LaPaz.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaPaz.Entidades\LaPaz.Entidades.csproj">
+      <Project>{081cedc8-f304-46c2-b876-f783692b6755}</Project>
+      <Name>LaPaz.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LaPaz.Negocio\LaPaz.Negocio.csproj">
+      <Project>{f8284586-6e2b-41c6-969a-0b0b9d410fa2}</Project>
+      <Name>LaPaz.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
