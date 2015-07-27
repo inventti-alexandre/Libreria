@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[ClientesMontosFavor] (
+    [Id]                     UNIQUEIDENTIFIER NOT NULL,
+    [VentaId]                UNIQUEIDENTIFIER NULL,
+    [ClienteId]              UNIQUEIDENTIFIER NOT NULL,
+    [FechaComprobante]       SMALLDATETIME    NOT NULL,
+    [TipoComprobanteId]      INT              NOT NULL,
+    [LCN]                    VARCHAR (13)     NOT NULL,
+    [Concepto]               NVARCHAR (50)    NULL,
+    [Importe]                MONEY            NULL,
+    [ImpOcupado]             MONEY            NULL,
+    [FechaAnulacion]         DATETIME         NULL,
+    [OperadorAutoriza]       UNIQUEIDENTIFIER NULL,
+    [Observaciones]          NVARCHAR (90)    NULL,
+    [FechaAlta]              DATETIME         NULL,
+    [SucursalAltaId]         INT              NULL,
+    [OperadorAltaId]         UNIQUEIDENTIFIER NULL,
+    [FechaModificacion]      DATETIME         NULL,
+    [SucursalModificacionId] INT              NULL,
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
+    CONSTRAINT [PK_ClientesMontosFavor] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_ClientesMontosFavor_TipoComprobante] FOREIGN KEY ([TipoComprobanteId]) REFERENCES [TiposComprobantes]([Id]), 
+    CONSTRAINT [FK_ClientesMontosFavor_SucursalAlta] FOREIGN KEY ([SucursalAltaId]) REFERENCES [Sucursales]([Id]),
+	CONSTRAINT [FK_ClientesMontosFavor_SucursalModificacion] FOREIGN KEY ([SucursalModificacionId]) REFERENCES [Sucursales]([Id]),
+	CONSTRAINT [FK_ClientesMontosFavor_OperadorAlta] FOREIGN KEY ([OperadorAltaId]) REFERENCES [Operadores]([Id]),
+	CONSTRAINT [FK_ClientesMontosFavor_OperadorModificacion] FOREIGN KEY ([OperadorModificacionId]) REFERENCES [Operadores]([Id])
+);
+

@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[Cajas] (
+    [Id]                     UNIQUEIDENTIFIER NOT NULL,
+    [SucursalId]             INT              NOT NULL,
+    [OperadorId]             UNIQUEIDENTIFIER NULL,
+    [Fecha]                  DATETIME         NOT NULL,
+    [FCierre]                DATETIME         NULL,
+    [Inicio]                 REAL             NULL,
+    [Ingresos]               REAL             NULL,
+    [Egresos]                REAL             NULL,
+    [Saldo]                  REAL             NULL,
+    [Cheques]                REAL             NULL,
+    [Bonos]                  REAL             NULL,
+    [PcAlta]                 NVARCHAR (20)    NULL,
+    [FechaAlta]              DATETIME         NULL,
+    [OperadorAltaId]         UNIQUEIDENTIFIER NULL,
+    [SucursalAltaId]         INT              NULL,
+    [FechaModificacion]      DATETIME         NULL,
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
+    [SucursalModificacionId] INT              NULL,
+    CONSTRAINT [PK_Cajas] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_Cajas_Sucursal] FOREIGN KEY (SucursalId) REFERENCES [Sucursales](Id), 
+    CONSTRAINT [FK_Cajas_Operador] FOREIGN KEY (OperadorId) REFERENCES [Operadores](Id), 
+    CONSTRAINT [FK_Cajas_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES [Operadores](Id), 
+    CONSTRAINT [FK_Cajas_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES [Sucursales](Id), 
+    CONSTRAINT [FK_Cajas_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES [Operadores](Id), 
+    CONSTRAINT [FK_Cajas_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES [Sucursales](Id)
+);
+

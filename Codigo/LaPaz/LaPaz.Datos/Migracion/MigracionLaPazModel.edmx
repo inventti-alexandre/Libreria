@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MigracionLapazModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Titulos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Cod" Type="varchar" MaxLength="17" />
+          <Property Name="ISBN" Type="varchar" MaxLength="15" />
+          <Property Name="NombreTitulo" Type="varchar" MaxLength="50" />
+          <Property Name="ProveedorId" Type="uniqueidentifier" />
+          <Property Name="AutorId" Type="int" />
+          <Property Name="EditorialId" Type="int" />
+          <Property Name="TemaId" Type="int" />
+          <Property Name="SubtemaId" Type="int" />
+          <Property Name="PrecioVentaTitulo" Type="money" />
+          <Property Name="PrecioCompraTitulo" Type="money" />
+          <Property Name="CodigoBarra" Type="varchar" MaxLength="50" />
+          <Property Name="ISBNg" Type="varchar" MaxLength="50" />
+          <Property Name="FechaAltaTitulo" Type="datetime" />
+          <Property Name="TipoArticuloId" Type="int" />
+          <Property Name="ModoStockId" Type="int" />
+          <Property Name="TipoTituloId" Type="int" />
+          <Property Name="UnidadesId" Type="int" />
+          <Property Name="TomosTitulosId" Type="int" />
+          <Property Name="EstadoTituloId" Type="int" />
+          <Property Name="AdicionalId" Type="int" />
+          <Property Name="PesoTitulo" Type="int" />
+          <Property Name="PaisId" Type="int" />
+          <Property Name="FechaEdicion" Type="datetime" />
+          <Property Name="IdiomaId" Type="int" />
+          <Property Name="PartesId" Type="int" />
+          <Property Name="Paginas" Type="int" />
+          <Property Name="Encuad" Type="int" />
+          <Property Name="Comentario" Type="varchar" MaxLength="100" />
+          <Property Name="StkMin" Type="int" />
+          <Property Name="FUltVta" Type="datetime" />
+          <Property Name="Fingreso" Type="datetime" />
+          <Property Name="nControl" Type="int" />
+          <Property Name="UbicacionId" Type="int" />
+          <Property Name="TituloUnicoId" Type="uniqueidentifier" />
+          <Property Name="PresentacionId" Type="int" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="SucursalAltaId" Type="int" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="TitulosStock">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TituloId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SucursalId" Type="int" Nullable="false" />
+          <Property Name="StkPr" Type="int" />
+          <Property Name="StkCn" Type="int" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="SucursalAltaId" Type="int" />
+          <Property Name="OperadorAltaId" Type="uniqueidentifier" />
+          <Property Name="FechaModificacion" Type="datetime" />
+          <Property Name="SucursalModificacionId" Type="int" />
+          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityContainer Name="MigracionLapazModelStoreContainer">
+          <EntitySet Name="Titulos" EntityType="Self.Titulos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TitulosStock" EntityType="Self.TitulosStock" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MigracionLapazModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TituloStockMigracion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TituloId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalId" Type="Int32" Nullable="false" />
+          <Property Name="StkPr" Type="Int32" />
+          <Property Name="StkCn" Type="Int32" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="SucursalAltaId" Type="Int32" />
+          <Property Name="OperadorAltaId" Type="Guid" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+        </EntityType>
+        <EntityContainer Name="MigracionLaPazEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TitulosStock" EntityType="MigracionLapazModel.TituloStockMigracion" />
+          <EntitySet Name="Titulos" EntityType="MigracionLapazModel.TituloMigracion" />
+        </EntityContainer>
+        <EntityType Name="TituloMigracion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Cod" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="ISBN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NombreTitulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProveedorId" Type="Guid" />
+          <Property Name="AutorId" Type="Int32" />
+          <Property Name="EditorialId" Type="Int32" />
+          <Property Name="TemaId" Type="Int32" />
+          <Property Name="SubtemaId" Type="Int32" />
+          <Property Name="PrecioVentaTitulo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PrecioCompraTitulo" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="CodigoBarra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ISBNg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAltaTitulo" Type="DateTime" Precision="3" />
+          <Property Name="TipoArticuloId" Type="Int32" />
+          <Property Name="ModoStockId" Type="Int32" />
+          <Property Name="TipoTituloId" Type="Int32" />
+          <Property Name="UnidadesId" Type="Int32" />
+          <Property Name="TomosTitulosId" Type="Int32" />
+          <Property Name="EstadoTituloId" Type="Int32" />
+          <Property Name="AdicionalId" Type="Int32" />
+          <Property Name="PesoTitulo" Type="Int32" />
+          <Property Name="PaisId" Type="Int32" />
+          <Property Name="FechaEdicion" Type="DateTime" Precision="3" />
+          <Property Name="IdiomaId" Type="Int32" />
+          <Property Name="PartesId" Type="Int32" />
+          <Property Name="Paginas" Type="Int32" />
+          <Property Name="Encuad" Type="Int32" />
+          <Property Name="Comentario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StkMin" Type="Int32" />
+          <Property Name="FUltVta" Type="DateTime" Precision="3" />
+          <Property Name="Fingreso" Type="DateTime" Precision="3" />
+          <Property Name="nControl" Type="Int32" />
+          <Property Name="UbicacionId" Type="Int32" />
+          <Property Name="TituloUnicoId" Type="Guid" />
+          <Property Name="PresentacionId" Type="Int32" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="SucursalAltaId" Type="Int32" />
+          <Property Name="OperadorAltaId" Type="Guid" />
+          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="SucursalModificacionId" Type="Int32" />
+          <Property Name="OperadorModificacionId" Type="Guid" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MigracionLapazModelStoreContainer" CdmEntityContainer="MigracionLaPazEntities">
+          <EntitySetMapping Name="TitulosStock">
+            <EntityTypeMapping TypeName="MigracionLapazModel.TituloStockMigracion">
+              <MappingFragment StoreEntitySet="TitulosStock">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TituloId" ColumnName="TituloId" />
+                <ScalarProperty Name="SucursalId" ColumnName="SucursalId" />
+                <ScalarProperty Name="StkPr" ColumnName="StkPr" />
+                <ScalarProperty Name="StkCn" ColumnName="StkCn" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Titulos">
+            <EntityTypeMapping TypeName="MigracionLapazModel.TituloMigracion">
+              <MappingFragment StoreEntitySet="Titulos">
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="PresentacionId" ColumnName="PresentacionId" />
+                <ScalarProperty Name="TituloUnicoId" ColumnName="TituloUnicoId" />
+                <ScalarProperty Name="UbicacionId" ColumnName="UbicacionId" />
+                <ScalarProperty Name="nControl" ColumnName="nControl" />
+                <ScalarProperty Name="Fingreso" ColumnName="Fingreso" />
+                <ScalarProperty Name="FUltVta" ColumnName="FUltVta" />
+                <ScalarProperty Name="StkMin" ColumnName="StkMin" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Encuad" ColumnName="Encuad" />
+                <ScalarProperty Name="Paginas" ColumnName="Paginas" />
+                <ScalarProperty Name="PartesId" ColumnName="PartesId" />
+                <ScalarProperty Name="IdiomaId" ColumnName="IdiomaId" />
+                <ScalarProperty Name="FechaEdicion" ColumnName="FechaEdicion" />
+                <ScalarProperty Name="PaisId" ColumnName="PaisId" />
+                <ScalarProperty Name="PesoTitulo" ColumnName="PesoTitulo" />
+                <ScalarProperty Name="AdicionalId" ColumnName="AdicionalId" />
+                <ScalarProperty Name="EstadoTituloId" ColumnName="EstadoTituloId" />
+                <ScalarProperty Name="TomosTitulosId" ColumnName="TomosTitulosId" />
+                <ScalarProperty Name="UnidadesId" ColumnName="UnidadesId" />
+                <ScalarProperty Name="TipoTituloId" ColumnName="TipoTituloId" />
+                <ScalarProperty Name="ModoStockId" ColumnName="ModoStockId" />
+                <ScalarProperty Name="TipoArticuloId" ColumnName="TipoArticuloId" />
+                <ScalarProperty Name="FechaAltaTitulo" ColumnName="FechaAltaTitulo" />
+                <ScalarProperty Name="ISBNg" ColumnName="ISBNg" />
+                <ScalarProperty Name="CodigoBarra" ColumnName="CodigoBarra" />
+                <ScalarProperty Name="PrecioCompraTitulo" ColumnName="PrecioCompraTitulo" />
+                <ScalarProperty Name="PrecioVentaTitulo" ColumnName="PrecioVentaTitulo" />
+                <ScalarProperty Name="SubtemaId" ColumnName="SubtemaId" />
+                <ScalarProperty Name="TemaId" ColumnName="TemaId" />
+                <ScalarProperty Name="EditorialId" ColumnName="EditorialId" />
+                <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+                <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+                <ScalarProperty Name="NombreTitulo" ColumnName="NombreTitulo" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

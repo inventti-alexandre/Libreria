@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[ProveedoresPagos]
+(
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+    [ProveedorId] UNIQUEIDENTIFIER NOT NULL, 
+    [TipoComprobanteId] INT NOT NULL, 
+    [Senia] MONEY NULL, 
+    [Recargo] MONEY NULL, 
+    [Importe] MONEY NULL, 
+    [ImpFac] MONEY NULL, 
+    [Efectivo] MONEY NULL, 
+    [Tarjeta] MONEY NULL, 
+    [Cheque] MONEY NULL, 
+    [Transferencia] MONEY NULL, 
+    [PcAlta] NVARCHAR(20) NULL, 
+    [FechaAlta] DATETIME NOT NULL, 
+    [OperadorAltaId] UNIQUEIDENTIFIER NOT NULL, 
+    [SucursalAltaId] INT NOT NULL, 
+    [FechaModificacion] DATETIME NULL, 
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL, 
+    [SucursalModificacionId] INT NULL, 
+    CONSTRAINT [FK_ProveedoresPagos_Proveedores] FOREIGN KEY (ProveedorId) REFERENCES Proveedores(Id), 
+    CONSTRAINT [FK_ProveedoresPagos_TipoComprobanteId] FOREIGN KEY (TipoComprobanteId) REFERENCES TiposComprobantes(Id), 
+    CONSTRAINT [FK_ProveedoresPagos_OperadorAltaId] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_ProveedoresPagos_SucursalAltaId] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_ProveedoresPagos_OperadorModificacionId] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_ProveedoresPagos_SucursalModificacionId] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id) 
+)

@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[TitulosConsignacionesVendidas] (
+    [Id]                     UNIQUEIDENTIFIER NOT NULL,
+    [nTipo]                  INT              NULL,
+    [ClienteId]              UNIQUEIDENTIFIER NULL,
+    [ProveedorId]            UNIQUEIDENTIFIER NULL,
+    [TituloId]               UNIQUEIDENTIFIER NULL,
+    [ComprobanteId]          UNIQUEIDENTIFIER NULL,
+    [Fecha]                  DATETIME         NULL,
+    [CntCn]                  INT              NULL,
+    [CntPag]                 REAL             NULL,
+    [FechaAlta]              DATETIME         NULL,
+    [SucursalAltaId]         INT              NULL,
+    [OperadorAltaId]         UNIQUEIDENTIFIER NULL,
+    [FechaModificacion]      DATETIME         NULL,
+    [SucursalModificacionId] INT              NULL,
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
+    CONSTRAINT [PK_ClientesConsignacionesVendidas] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_TiposConsignaciones] FOREIGN KEY ([nTipo]) REFERENCES [dbo].[TiposConsignaciones] ([Id]), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_Cliente] FOREIGN KEY (ClienteId) REFERENCES Clientes(Id), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_Proveedor] FOREIGN KEY (ProveedorId) REFERENCES Proveedores(Id), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_Titulo] FOREIGN KEY (TituloId) REFERENCES Titulos(Id), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_TitulosConsignacionesVendidas_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id)
+);
+

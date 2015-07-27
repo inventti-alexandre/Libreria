@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{081CEDC8-F304-46C2-B876-F783692B6755}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LaPaz.Entidades</RootNamespace>
+    <AssemblyName>LaPaz.Entidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alumno.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Aplicacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AplicacionFuncione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Area.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Auditoria.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuditoriasDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Autor.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutorTitulosListado_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AutorTitulos_Listado_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banco.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BancoPropio.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Caja.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CajaMovimiento.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoriasOperadore.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CentrosCosto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ChequesTercero.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteCuentaCorriente.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteMontoFavor.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesArchivo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesMontosFavorDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesMovimiento.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientesSuscripcione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cobradore.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CobradoresFactura.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CobradoresRecibo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Compra.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComprasDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Concepto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CondicionCompra.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CondicionesIVA.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CondicionesVenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsignacionesParaDevolver.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsignacionSinRendir.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contacto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Convenio.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cuenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CuentasMovimiento.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__RefactorLog.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dto\ClienteDto.cs" />
+    <Compile Include="Dto\ComprasDto.cs" />
+    <Compile Include="Dto\CompraDetalleDto.cs" />
+    <Compile Include="Dto\ProveedorConsignacionDto.cs" />
+    <Compile Include="Dto\ReciboConsignacionDto.cs" />
+    <Compile Include="Dto\RemitosVentaDetalleDto.cs" />
+    <Compile Include="Dto\RemitosVentaDto.cs" />
+    <Compile Include="Dto\ProveedorCtaCteDto.cs" />
+    <Compile Include="Dto\PresupuestoDto.cs" />
+    <Compile Include="Dto\VentaDto.cs" />
+    <Compile Include="Dto\EditorialDto.cs" />
+    <Compile Include="Dto\CuentaDto.cs" />
+    <Compile Include="Dto\VentaReservadaDto.cs" />
+    <Compile Include="Dto\SucursalDto.cs" />
+    <Compile Include="Dto\VentaDetalleDto.cs" />
+    <Compile Include="Dto\BancoDto.cs" />
+    <Compile Include="Dto\AutorDto.cs" />
+    <Compile Include="Dto\OrdenesPagoDetalleDto.cs" />
+    <Compile Include="Dto\UsuarioDto.cs" />
+    <Compile Include="Dto\TemaDto.cs" />
+    <Compile Include="Dto\SubTemaDto.cs" />
+    <Compile Include="Dto\OrdenesPagoDto.cs" />
+    <Compile Include="Dto\ProveedorBancoDto.cs" />
+    <Compile Include="Dto\ProveedorGastoDto.cs" />
+    <Compile Include="Dto\ProveedorDto.cs" />
+    <Compile Include="DuplicadosTitulosStock.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DuplicadosTitulosStockAuditado.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Editorial.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\CondicionVentaEnum.cs" />
+    <Compile Include="Enums\EstadoLoteEnum.cs" />
+    <Compile Include="Enums\TipoMovimientoBancarioEnum.cs" />
+    <Compile Include="Enums\EstadoVentaEnum.cs" />
+    <Compile Include="Enums\TipoMovimientoCajaEnum.cs" />
+    <Compile Include="Enums\TipoComprobante.cs" />
+    <Compile Include="Enums\EstadoCliente.cs" />
+    <Compile Include="Enums\FormaPago.cs" />
+    <Compile Include="Enums\TipoProveedor.cs" />
+    <Compile Include="Especialidad.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadosCliente.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadosCompra.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadosLoteFactura.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadosMovimientoBancario.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadosRemito.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadosTitulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EstadoVenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Extensiones\ConsignacionSinRendir.cs" />
+    <Compile Include="Extensiones\ConsignacionParaDevolver.cs" />
+    <Compile Include="Extensiones\RemitosVentaDetalle.cs" />
+    <Compile Include="Extensiones\ExtProveedorCtaCte.cs" />
+    <Compile Include="FacturasCompra.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturasComprasDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funcion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruposProveedor.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GruposTitulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Idioma.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Liquidacione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LiquidacionPersonal.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Localidad.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoteFactura.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Metadata\AutorMetadata.cs" />
+    <Compile Include="Metadata\BancoMetadata.cs" />
+    <Compile Include="Metadata\CompraMetadata.cs" />
+    <Compile Include="Metadata\VentaMetadata.cs" />
+    <Compile Include="Metadata\EditorialMetadata.cs" />
+    <Compile Include="Metadata\OrdenPagoDetalleMetadata.cs" />
+    <Compile Include="Metadata\LoteFacturaMetadata.cs" />
+    <Compile Include="Metadata\PersonalMetadata.cs" />
+    <Compile Include="Metadata\OperadorMetadata.cs" />
+    <Compile Include="Metadata\SucursalMetadata.cs" />
+    <Compile Include="Metadata\SubTemaMetadata.cs" />
+    <Compile Include="Metadata\TemaMetadata.cs" />
+    <Compile Include="Metadata\TiposGastoMetadata.cs" />
+    <Compile Include="Metadata\OrdenPagoMetadata.cs" />
+    <Compile Include="Metadata\ProveedorBancoMetadata.cs" />
+    <Compile Include="Metadata\TicketConsultaMetadata.cs" />
+    <Compile Include="LaPazModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Metadata\ClienteMetadata.cs" />
+    <Compile Include="Metadata\TituloMetadata.cs" />
+    <Compile Include="Metadata\ProveedorMetadata.cs" />
+    <Compile Include="Migracion\TituloMigracion.cs">
+      <DependentUpon>MigracionLaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Migracion\TituloStockMigracion.cs">
+      <DependentUpon>MigracionLaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Moneda.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientosFondo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MovimientosFondoDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mutuale.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MutualesLiquidacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MutualesMovimiento.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotasDeVenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotasDeVentaDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NovedadesOperador.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Numeradore.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Operador.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperadoresFuncione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OperadorSucursal.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesPago.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesPagoComprobante.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenesPagoDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdenPagoCheque.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pais.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Parametro.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pedido.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Personal.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalConcepto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PersonalNovedade.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRECIOSACT.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRECIOSACT2.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Presupuestos.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PresupuestosDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PreVenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profesion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proveedor.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedorBanco.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresBulto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresCuentasCorriente.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresPago.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresPagosDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresTitulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedorSenia.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Provincia.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Recibo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReciboConsignacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RecibosDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosExportacione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrosImportacione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RemitosCompra.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RemitosCompraDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RemitosVenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RemitosVentaDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteAutorTitulosListado.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCajaResumidaComposicion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCajaResumidaIngresosEgreso.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCajaResumidaVentasRow.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteClientesPorTitulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteConsignacionesVendidasRow.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMultiRanking.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVentasRow.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="REP_VTAS_CTES.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Revista.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RptInformeCajaRow.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RptTarjetasChequesYDepositosRow.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="s00CajasSaldo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="s00Entidades.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="s00SucCnExp.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="s00SueLiqOpeRec.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="s00SueNove.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_ClienteMontoFavorByLCN_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_GenerarFacturaByVentaId_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_PresupuestoById1_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SP_PresupuestoById_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubEspecialidade.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubTema.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sucursal.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjeta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetasLiquidacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetasMovimiento.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tema.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempComparacionStock.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TempLibroIva.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TipoComprobante.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposConsignacione.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposCuenta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposDocumentosIdentidad.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposGasto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMoneda.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMovimientoBancario.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMovimientoFondo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposMovimientosCaja.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposRemito.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposTitulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Titulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TituloConsignacionRendida.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TituloConsignacionRendidasDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TituloDto.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TituloPresentacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosAdicional.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosConsignacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosConsignacionesDevuelta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosConsignacionesDevueltasDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosConsignacionesVendida.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosConvenio.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosModoStock.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosMovimiento.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosParte.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosStockAuditado.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TituloStock.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosUbicacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TitulosUnico.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TomosTitulo.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transferencia.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferenciasDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transporte.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ubicacion.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Unidad.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vale.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vendedore.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venta.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VentaConvenio.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VentaDetalle.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VentaPendientEntrega.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VentaReservada.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zona.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LaPazModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LaPazModel.cs</LastGenOutput>
+    </None>
+    <None Include="Migracion\MigracionLaPazModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MigracionLaPazModel1.cs</LastGenOutput>
+      <CustomToolNamespace>Entidades.Migracion</CustomToolNamespace>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Proveedor.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Framework\Framework.Comun\Framework.Comun.csproj">
+      <Project>{492b8264-0c10-4afe-a15f-8a82e60ade68}</Project>
+      <Name>Framework.Comun</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

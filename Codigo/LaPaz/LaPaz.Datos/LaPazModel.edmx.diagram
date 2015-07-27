@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2362fe5205d14cf9bc4fba6735c280bf" Name="Principal" ZoomLevel="68">
+        <EntityTypeShape EntityType="LaPaz.Datos.Cliente" Width="1.5" PointX="11" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadosCliente" Width="1.5" PointX="8.75" PointY="108.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Profesion" Width="1.5" PointX="8.75" PointY="91.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Provincia" Width="1.5" PointX="8.75" PointY="95.5" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Proveedor" Width="1.875" PointX="8.25" PointY="72.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Localidad" Width="1.5" PointX="0.75" PointY="76.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CondicionCompra" Width="2.25" PointX="5.25" PointY="82.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.GruposProveedor" Width="1.5" PointX="6" PointY="86.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedorBanco" Width="2.25" PointX="17" PointY="82.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Banco" Width="1.5" PointX="6" PointY="75.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_ProveedorBanco" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_EstadoClienteId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Localidad" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Profesion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Provincia" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_CondicionCompra" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_GrupoProveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_Localidad" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_Provincia" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Operador" Width="2.625" PointX="7.625" PointY="55.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OperadorSucursal" Width="1.5" PointX="27" PointY="66.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Sucursal" Width="2.25" PointX="14" PointY="69.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Sucursales" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OperadorSucursal_Operadores1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OperadorSucursal_Sucursales1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Titulo" Width="2" PointX="26" PointY="70.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Proveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Editorial" Width="1.5" PointX="23.75" PointY="51.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadosTitulo" Width="1.5" PointX="23.75" PointY="113.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Idioma" Width="1.5" PointX="23.75" PointY="96.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Pais" Width="1.5" PointX="6.5" PointY="95.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.SubTema" Width="1.5" PointX="29" PointY="82" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Tema" Width="2" PointX="29" PointY="88.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposTitulo" Width="1.5" PointX="23.75" PointY="56.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TituloPresentacion" Width="1.5" PointX="23.75" PointY="47.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosAdicional" Width="1.5" PointX="23.75" PointY="42.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosModoStock" Width="1.5" PointX="23.75" PointY="92.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosParte" Width="1.5" PointX="23.75" PointY="101" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosUnico" Width="1.5" PointX="23.75" PointY="105" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TomosTitulo" Width="1.5" PointX="23.75" PointY="121.5" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Ubicacion" Width="1.5" PointX="23.75" PointY="88.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Unidad" Width="1.5" PointX="23.75" PointY="117.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Editorial" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_EstadoTitulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Idioma" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Provincias_Paises" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Pais" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_SubTema" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Tema" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_TipoArticulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_TipoTitulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Presentacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Adicional" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_ModoStock" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Partes" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_TituloUnico" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_TomosTitulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Ubicacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Unidades" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CondicionesVenta" Width="2.5" PointX="7.75" PointY="112.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposDocumentosIdentidad" Width="1.5" PointX="8.75" PointY="104.5" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_CondicionVenta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_TipoDocumento" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Proveedores_TipoDocumentoIdentidad" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Especialidad" Width="1.5" PointX="8.75" PointY="100.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Especialidad" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Especialidades_Profesion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaConvenio" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Venta" Width="1.875" PointX="20" PointY="74.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaDetalle" Width="1.5" PointX="31.75" PointY="75.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaPendientEntrega" Width="1.875" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaReservada" Width="1.875" PointX="20" PointY="88.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Caja" Width="1.5" PointX="29" PointY="75.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CajaMovimiento" Width="1.5" PointX="24" PointY="62.5" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Tarjeta" Width="1.5" PointX="20.75" PointY="100" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ChequesTercero" Width="2.625" PointX="8.25" PointY="84.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ClientesMovimiento" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.LoteFactura" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Recibo" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RecibosDetalle" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TarjetasMovimiento" Width="1.5" PointX="23" PointY="82.5" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ChequesTerceros_Bancos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_Tarjetas" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_Cliente" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_CondicionVenta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_SubTemas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_SubTemas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_OperadorAutoriza" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_SubTemas_SusursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_SubTemas_SusursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_SubTemas_Tema" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TituloStock" Width="1.5" PointX="29.75" PointY="70.125" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosStock_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosStock_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosStock_Sucursal" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosStock_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosStock_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosStock_Titulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cajas_Operador" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cajas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cajas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cajas_Sucursal" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cajas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cajas_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposMovimientosCaja" Width="1.5" PointX="21.75" PointY="38.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_TipoMovimientoCaja" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_Banco" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_CajaMovimiento" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadoVenta" Width="1.5" PointX="17.75" PointY="54.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_EstadoVenta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresBanco_Bancos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresBanco_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresBanco_SucursalAlta" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Compra" Width="1.5" PointX="23" PointY="74.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ComprasDetalle" Width="1.5" PointX="31.75" PointY="81.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.FacturasCompra" Width="1.5" PointX="35.25" PointY="64.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.FacturasComprasDetalle" Width="1.5" PointX="34.75" PointY="80.875" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_Proveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ComprasDetalle_Compras1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_Comprad" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ComprasDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ComprasDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ComprasDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ComprasDetalle_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ComprasDetalle_Titulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_Proveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasComprasDetalle_Factura" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasComprasDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasComprasDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasComprasDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasComprasDetalle_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasComprasDetalle_Titulo" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OrdenesPagoComprobante" Width="2.25" PointX="38.125" PointY="71.875" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OrdenesPagoDetalle" Width="2.25" PointX="34.25" PointY="73" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OrdenPagoCheque" Width="2.25" PointX="41.125" PointY="77.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenPagoCheques_ChequesTerceros1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoComprobantes_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoComprobantes_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoDetalle_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoDetalle_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenPagoCheques_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenPagoCheques_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoComprobantes_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoComprobantes_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenPagoCheques_OrdenesPagoComprobantes" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoDetalle_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoDetalle_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenPagoCheques_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenPagoCheques_SucursalesModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OrdenesPago" Width="2.75" PointX="20" PointY="65.125" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_Sucursales" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_SucursalesGasto" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoComprobantes_OrdenesPago" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoDetalle_OrdenesPago" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TipoComprobante" Width="2.375" PointX="19.875" PointY="58.875" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_Comprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_TipoComprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_TipoComprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_TipoComprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_Comprobante" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CentrosCosto" Width="2.25" PointX="17" PointY="49.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_CentrosCostos" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresCuentasCorriente" Width="2.125" PointX="32.25" PointY="66.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposGasto" Width="1.875" PointX="26" PointY="87.125" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPago_TiposGastos1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoComprobantes_ProveedoresCuentasCorriente" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresCuentasCorriente_Compras" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresCuentasCorriente_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresCuentasCorriente_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresCuentasCorriente_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresCuentasCorriente_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresCuentasCorriente_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_Titulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_Venta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasReservadas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasReservadas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasReservadas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasReservadas_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacion" Width="1.5" PointX="17" PointY="75.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesVendida" Width="1.5" PointX="17" PointY="69.5" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_Cliente" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_Cliente" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_Comprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_Proveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_Proveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_Titulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_Titulo" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Temas_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Temas_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TiposGastos_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TiposGastos_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Temas_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Temas_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TiposGastos_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TiposGastos_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_Localidad" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_Provincia" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Bancos_OperadoresModificacion1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Temas_OperadoresModificacion1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Temas_SucursalesModificacion1" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Autor" Width="1.5" PointX="17" PointY="64.125" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Autores_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Autores_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Autores_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Autores_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_Autor" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ClientesMontosFavorDetalle" Width="1.5" PointX="28.75" PointY="93.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ClientesMontosFavorDetalle_Titulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Sucursales_Localidades" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Sucursales_Provincias" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedorSenia" Width="1.5" PointX="20" PointY="83.125" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_OperadorAlta1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_OperadorModificacion1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_Proveedor1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_SucursalAlta1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_SucursalModificacion1" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CuentasMovimiento" Width="2.5" PointX="19.875" PointY="93.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposCuenta" Width="1.5" PointX="14.75" PointY="88.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Transferencia" Width="1.5" PointX="6.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TransferenciasDetalle" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadosLoteFactura" Width="1.5" PointX="8.75" PointY="5.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Titulos_OperadorUltimoCambioPrecio" />
+        <EntityTypeShape EntityType="LaPaz.Datos.BancoPropio" Width="1.5" PointX="3" PointY="75.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_BancosPropios_Localidades" />
+        <AssociationConnector Association="LaPaz.Datos.FK_BancosPropios_Provincias" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoDetalle_Cajas" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Presupuestos" Width="1.875" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PresupuestosDetalle" Width="2.25" PointX="11.125" PointY="5.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_OperadoresAlta1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_OperadoresModificacion1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_SucursalAlta1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_SucursalModificacion1" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Cuenta" Width="1.5" PointX="27" PointY="59.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_BancosPropios" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_Operadores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Cuentas_TiposCuenta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CuentasMovimientos_Cuentas" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RemitosCompra" Width="1.5" PointX="35.5" PointY="86.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RemitosCompraDetalle" Width="1.5" PointX="37.75" PointY="77.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompraDetalle_RemitosCompra" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompraDetalle_Titulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_Compra" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompraDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompraDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_Proveedor" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompraDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompraDetalle_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TituloConsignacionRendida" Width="2.125" PointX="29.375" PointY="64.5" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Presupuestos_Cliente" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TituloConsignacionRendidasDetalle" Width="2.875" PointX="38.25" PointY="67.875" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidasDetalle_Titulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidasDetalle_TitulosConsignacionesRendidas" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RemitosVentaDetalle" Width="1.875" PointX="38.25" PointY="61.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_Titulos" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RemitosVenta" Width="2.125" PointX="30" PointY="56.875" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_Cliente" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_RemitosVenta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevuelta" Width="1.5" PointX="17" PointY="60" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Width="1.5" PointX="35.75" PointY="61.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresPago" Width="2" PointX="33" PointY="59.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresPagosDetalle" Width="1.5" PointX="41.25" PointY="72.5" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_OperadorAltaId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_OperadorModificacionId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_ProveedorCuentaCorrienteId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_SucursalAltaId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_SucursalModificacionId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_TipoComprobanteId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_ProveedorPago" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_SucursalModificacion" />
+        <EntityTypeShape EntityType="LaPaz.Datos.C__RefactorLog" Width="1.5" PointX="5.75" PointY="10.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Alumno" Width="1.5" PointX="5.75" PointY="12.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Aplicacion" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.AplicacionFuncione" Width="1.5" PointX="7.75" PointY="14.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Area" Width="1.5" PointX="9.125" PointY="117.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Auditoria" Width="1.5" PointX="9.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.AuditoriasDetalle" Width="1.5" PointX="11.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CategoriasOperadore" Width="1.5" PointX="13.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ClientesArchivo" Width="1.5" PointX="15.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ClientesSuscripcione" Width="1.5" PointX="13.625" PointY="64.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Cobradore" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CobradoresFactura" Width="1.5" PointX="16.75" PointY="9.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CobradoresRecibo" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Concepto" Width="1.5" PointX="0.75" PointY="13.5" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CondicionesIVA" Width="1.5" PointX="9.125" PointY="51" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Contacto" Width="1.5" PointX="5.75" PointY="17.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Convenio" Width="1.5" PointX="17.75" PointY="14.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Estado" Width="1.5" PointX="18.75" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadosCompra" Width="1.5" PointX="21.125" PointY="54.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadosMovimientoBancario" Width="1.5" PointX="18.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.EstadosRemito" Width="1.5" PointX="17.75" PointY="18.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.GruposTitulo" Width="1.5" PointX="19.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Liquidacione" Width="1.5" PointX="12.75" PointY="1.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.LiquidacionPersonal" Width="1.5" PointX="15" PointY="1" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Moneda" Width="1.5" PointX="7.75" PointY="19.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.MovimientosFondo" Width="1.5" PointX="9.75" PointY="19.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Mutuale" Width="1.5" PointX="36.625" PointY="94.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.MutualesLiquidacion" Width="1.5" PointX="31.625" PointY="99.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.MutualesMovimiento" Width="1.5" PointX="38.875" PointY="83.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.NotasDeVenta" Width="1.5" PointX="33" PointY="87.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.NotasDeVentaDetalle" Width="1.5" PointX="29.125" PointY="97.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.NovedadesOperador" Width="1.5" PointX="19.75" PointY="12.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Numeradore" Width="1.5" PointX="19.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Parametro" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Pedido" Width="1.5" PointX="11.75" PointY="10.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PedidosDetalle" Width="1.5" PointX="14" PointY="10.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PersonalConcepto" Width="1.5" PointX="3" PointY="16.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PersonalNovedade" Width="1.5" PointX="3" PointY="11.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PreVenta" Width="1.5" PointX="2.75" PointY="20.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresBulto" Width="1.5" PointX="21.125" PointY="44.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresTitulo" Width="1.5" PointX="20.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RegistrosExportacione" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.RegistrosImportacione" Width="1.5" PointX="11.75" PointY="20.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.REP_VTAS_CTES" Width="1.5" PointX="13.75" PointY="20.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Revista" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.s00CajasSaldo" Width="1.5" PointX="4.75" PointY="21.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.s00Entidades" Width="1.5" PointX="21.75" PointY="11.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.s00SucCnExp" Width="1.5" PointX="21.75" PointY="16.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.s00SueLiqOpeRec" Width="1.5" PointX="21.75" PointY="19.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.s00SueNove" Width="1.5" PointX="22.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.SubEspecialidade" Width="1.5" PointX="15.75" PointY="22.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.sysdiagram" Width="1.5" PointX="22.75" PointY="8.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TarjetasLiquidacion" Width="1.5" PointX="31.625" PointY="93.625" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TempComparacionStock" Width="1.5" PointX="17.75" PointY="22.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TempLibroIva" Width="1.5" PointX="6.75" PointY="23.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposConsignacione" Width="1.5" PointX="9.75" PointY="10" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposMoneda" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposMovimientoBancario" Width="1.5" PointX="23.75" PointY="11.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposMovimientoFondo" Width="1.5" PointX="23.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TiposRemito" Width="1.5" PointX="23.75" PointY="19.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConvenio" Width="1.5" PointX="19.75" PointY="23.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosMovimiento" Width="1.5" PointX="21.75" PointY="23.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosStockAuditado" Width="1.5" PointX="23.75" PointY="23.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosUbicacion" Width="1.5" PointX="11.375" PointY="100.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Transporte" Width="1.5" PointX="18.875" PointY="44.25" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Vale" Width="1.5" PointX="38.875" PointY="94.5" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Vendedore" Width="1.5" PointX="9.125" PointY="48.125" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Zona" Width="1.5" PointX="9.125" PointY="44" />
+        <EntityTypeShape EntityType="LaPaz.Datos.DuplicadosTitulosStock" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.DuplicadosTitulosStockAuditado" Width="1.5" PointX="24.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.MovimientosFondoDetalle" Width="1.5" PointX="11.75" PointY="24.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PRECIOSACT" Width="1.5" PointX="24.75" PointY="7.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.PRECIOSACT2" Width="1.5" PointX="25.75" PointY="0.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosUbicacion_Areas" />
+        <AssociationConnector Association="LaPaz.Datos.FK_MutualesLiquidacion_Cajas" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasLiquidacion_Cajas" />
+        <AssociationConnector Association="LaPaz.Datos.FK_MutualesMovimientos_CajasMovimientos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_CondicionIva" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Vendedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Zona" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ClientesSuscripciones_Clientes" />
+        <AssociationConnector Association="LaPaz.Datos.FK_NotasDeVenta_Clientes" />
+        <AssociationConnector Association="LaPaz.Datos.FK_NotasDeVentas_Clientes" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_Bulto" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Compras_EstadoCompra" />
+        <AssociationConnector Association="LaPaz.Datos.FK_PersonalConcepto_Conceptos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_PersonalNovedades_Conceptos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosUbicacion_Especialidades" />
+        <AssociationConnector Association="LaPaz.Datos.FK_RemitosCompra_Estado" />
+        <AssociationConnector Association="LaPaz.Datos.FK_FacturasCompra_Bulto" />
+        <AssociationConnector Association="LaPaz.Datos.FK_LiquidacionPersonal_Liquidaciones" />
+        <AssociationConnector Association="LaPaz.Datos.FK_MutualesMovimientos_Mutuales" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Vales_Mutuales" />
+        <AssociationConnector Association="LaPaz.Datos.FK_MutualesMovimientos_MutualesLiquidacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_NotasDeVenta_Ventas" />
+        <AssociationConnector Association="LaPaz.Datos.FK_NotasDeVentaDetalle_Titulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_PedidosDetalle_Pedidos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresBultos_Transportes" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_ProveedorConsignacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_ProveedorCuentaCorrienteId1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TarjetasMovimientos_TarjetaLiquidacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignaciones_TipoConsignacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_TipoConsignacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_TiposConsignaciones" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_ProveedorConsignacion1" />
+        </Diagram>
+      <Diagram DiagramId="740c15349039479da9e94b414197531b" Name="Ventas" ZoomLevel="60" >
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaDetalle" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Venta" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaReservada" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.LoteFactura" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Operador" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.CajaMovimiento" Width="1.5" PointX="9.5" PointY="3" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TipoComprobante" Width="1.5" PointX="0.75" PointY="6.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_OperadorAutoriza" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_Comprobante" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ClienteMontoFavor" Width="2.125" PointX="3.375" PointY="9.75" IsExpanded="true" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ClientesMontosFavor_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ClientesMontosFavor_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ClientesMontosFavor_TipoComprobante" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ClienteCuentaCorriente" Width="1.5" PointX="8.75" PointY="9.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_CajasMovimientos_TipoComprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_Venta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasReservadas_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasReservadas_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_VentasDetalle_ToTable" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Presupuestos" Width="1.5" PointX="17.875" PointY="5.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Cliente" Width="1.5" PointX="14.125" PointY="5.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Clientes_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Ventas_Cliente" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Presupuestos_Cliente" />
+      </Diagram>
+      <Diagram DiagramId="009d73652e504c1199184ea14fe72191" Name="Seguridad" ZoomLevel="67" >
+        <EntityTypeShape EntityType="LaPaz.Datos.Role" Width="1.5" PointX="8.125" PointY="36.375" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Operador" Width="2.125" PointX="5.25" PointY="29.5" />
+        <AssociationConnector Association="LaPaz.Datos.OperadoresRoles" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Personal" Width="1.5" PointX="3" PointY="16.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Operadores_Personal" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Funcion" Width="1.5" PointX="5.875" PointY="46.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OperadoresFuncione" Width="1.875" PointX="11.125" PointY="35.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OperadoresFunciones_Funciones" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OperadoresFunciones_Operadores1" />
+        <AssociationConnector Association="LaPaz.Datos.RolesFunciones" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Sucursal" Width="1.5" PointX="6" PointY="10.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OperadorSucursal" Width="1.5" PointX="8.25" PointY="26.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OperadorSucursal_Operadores1" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OperadorSucursal_Sucursales1" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Localidad" Width="1.5" PointX="0.75" PointY="12.375" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Personal_Localidad" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Sucursales_Localidades" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Provincia" Width="1.5" PointX="0.75" PointY="17.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Personal_Provincia" />
+        <AssociationConnector Association="LaPaz.Datos.FK_Sucursales_Provincias" />
+      </Diagram>
+      <Diagram DiagramId="2f093167a5444a51911f6f110598d749" Name="Compra" ></Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

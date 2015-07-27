@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[Bancos] (
+    [Id]                     INT              IDENTITY(1,1) NOT NULL,
+    [Nombre]                 VARCHAR (50)     NOT NULL,
+    [NombreCorto]            NCHAR (10)       NULL,
+    [ProvinciaId]            INT              NULL,
+    [LocalidadId]            INT              NULL,
+    [Domicilio]              VARCHAR (50)     NULL,
+    [Contacto]               VARCHAR (50)     NULL,
+    [TE1]                    VARCHAR (20)     NULL,
+    [TE2]                    VARCHAR (20)     NULL,
+    [FechaAlta]              DATETIME         NULL,
+    [OperadorAltaId]         UNIQUEIDENTIFIER NULL,
+    [SucursalAltaId]         INT              NULL,
+    [FechaModificacion]      DATETIME         NULL,
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
+    [SucursalModificacionId] INT              NULL,
+    CONSTRAINT [PK_Bancos] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_Bancos_Provincia] FOREIGN KEY ([ProvinciaId]) REFERENCES [Provincias]([Id]), 
+    CONSTRAINT [FK_Bancos_Localidad] FOREIGN KEY ([LocalidadId]) REFERENCES [Localidades]([Id]),
+	CONSTRAINT [FK_Bancos_SucursalesAlta] FOREIGN KEY ([SucursalAltaId]) REFERENCES [Sucursales]([Id]), 
+    CONSTRAINT [FK_Bancos_SucursalesModificacion] FOREIGN KEY ([SucursalModificacionId]) REFERENCES [Sucursales]([Id]), 
+    CONSTRAINT [FK_Bancos_OperadoresAlta] FOREIGN KEY ([OperadorAltaId]) REFERENCES [Operadores]([Id]), 
+    CONSTRAINT [FK_Bancos_OperadoresModificacion] FOREIGN KEY ([OperadorModificacionId]) REFERENCES [Operadores]([Id])
+);
+

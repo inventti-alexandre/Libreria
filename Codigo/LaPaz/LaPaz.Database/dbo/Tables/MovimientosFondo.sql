@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[MovimientosFondo] (
+    [Id]                     UNIQUEIDENTIFIER NOT NULL,
+    [SucursalId]             INT              NULL,
+    [FechaMovimiento]        DATETIME         NULL,
+    [TipoMovimientoFondoId]  INT              NULL,
+    [TipoComprobanteId]      INT              NULL,
+    [LetraComprobante]       CHAR (1)         NULL,
+    [NumeroComprobante]      CHAR (13)        NULL,
+    [FechaComprobante]       DATETIME         NULL,
+    [Concepto]               NVARCHAR (50)    NULL,
+    [UsCajaOrigenId]         UNIQUEIDENTIFIER NULL,
+    [CuentaOrigenId]         INT              NULL,
+    [UsCajaDestinoId]        UNIQUEIDENTIFIER NULL,
+    [CuentaDestinoId]        INT              NULL,
+    [DescripcionMovimiento]  NVARCHAR (100)   NULL,
+    [ImporteMovimiento]      MONEY            NULL,
+    [OperadorAltaId]         UNIQUEIDENTIFIER NULL,
+    [SucursalAltaId]         INT              NULL,
+    [FechaAlta]              DATETIME         NULL,
+    [FechaModificacion]      DATETIME         NULL,
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
+    [SucursalModificacionId] INT              NULL,
+    CONSTRAINT [PK_MovimientosFondo] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

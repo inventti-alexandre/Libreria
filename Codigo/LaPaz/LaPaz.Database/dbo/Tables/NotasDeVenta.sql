@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[NotasDeVenta] (
+    [Id]                     UNIQUEIDENTIFIER NOT NULL,
+    [ComprobanteId]          UNIQUEIDENTIFIER NOT NULL,
+    [LCN]                    NVARCHAR (13)    NULL,
+    [ClienteId]              UNIQUEIDENTIFIER NULL,
+    [NotaVentaTipo]          CHAR (1)         NOT NULL,
+    [LetraComprobante]       CHAR (1)         NOT NULL,
+    [PuntoVenta]             INT              NOT NULL,
+    [NumeroComprobante]      INT              NOT NULL,
+    [Concepto]               NVARCHAR (50)    NULL,
+    [FechaNotaVenta]         DATETIME         NULL,
+    [ImporteNeto]            MONEY            NULL,
+    [ImporteIva]             MONEY            NULL,
+    [EstadoVentaId]          INT              NULL,
+    [SucursalAltaId]         INT              NULL,
+    [FechaAlta]              DATETIME         NULL,
+    [OperadorAltaId]         UNIQUEIDENTIFIER NULL,
+    [SucursalModificacionId] INT              NULL,
+    [FechaModificacion]      DATETIME         NULL,
+    [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
+    [OperadorAutoriza]       UNIQUEIDENTIFIER NULL,
+    CONSTRAINT [PK_NotasDeVentas] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_NotasDeVenta_Clientes] FOREIGN KEY ([ClienteId]) REFERENCES [dbo].[Clientes] ([Id]),
+    CONSTRAINT [FK_NotasDeVenta_Ventas] FOREIGN KEY ([ComprobanteId]) REFERENCES [dbo].[Ventas] ([Id]),
+    CONSTRAINT [FK_NotasDeVentas_Clientes] FOREIGN KEY ([ClienteId]) REFERENCES [dbo].[Clientes] ([Id])
+);
+

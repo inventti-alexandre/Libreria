@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>LaPaz.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{105c3ecf-6916-42da-b195-11f72688d646}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>LaPaz.Database</RootNamespace>
+    <AssemblyName>LaPaz.Database</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="Storage\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deploy" />
+    <Folder Include="Scripts\Pre-Deploy" />
+    <Folder Include="dbo\Functions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\RecibosDetalle.sql" />
+    <Build Include="dbo\Tables\TiposGastos.sql" />
+    <Build Include="dbo\Tables\ProveedoresTitulos.sql" />
+    <Build Include="dbo\Tables\Ubicaciones.sql" />
+    <Build Include="dbo\Tables\OrdenesPagoComprobantes.sql" />
+    <Build Include="dbo\Tables\CobradoresRecibos.sql" />
+    <Build Include="dbo\Tables\RegistrosImportaciones.sql" />
+    <Build Include="dbo\Tables\ClientesArchivos.sql" />
+    <Build Include="dbo\Tables\Vales.sql" />
+    <Build Include="dbo\Tables\Moneda.sql" />
+    <Build Include="dbo\Tables\TiposRemitos.sql" />
+    <Build Include="dbo\Tables\CobradoresFacturas.sql" />
+    <Build Include="dbo\Tables\RegistrosExportaciones.sql" />
+    <Build Include="dbo\Tables\Cobradores.sql" />
+    <Build Include="dbo\Tables\Revistas.sql" />
+    <Build Include="dbo\Tables\TitulosConsignacionesVendidas.sql" />
+    <Build Include="dbo\Tables\Profesiones.sql" />
+    <Build Include="dbo\Tables\TomosTitulos.sql" />
+    <Build Include="dbo\Tables\NovedadesOperador.sql" />
+    <Build Include="dbo\Tables\Numeradores.sql" />
+    <Build Include="dbo\Tables\Titulos.sql" />
+    <Build Include="dbo\Tables\Especialidades.sql" />
+    <Build Include="dbo\Tables\TitulosConsignaciones.sql" />
+    <Build Include="dbo\Tables\TiposMovimientoFondo.sql" />
+    <Build Include="dbo\Tables\Unidades.sql" />
+    <Build Include="dbo\Tables\ComprasDetalle.sql" />
+    <Build Include="dbo\Tables\EstadosLoteFactura.sql" />
+    <Build Include="dbo\Tables\GruposProveedores.sql" />
+    <Build Include="dbo\Tables\CondicionesIVA.sql" />
+    <Build Include="dbo\Tables\TiposMovimientoBancario.sql" />
+    <Build Include="dbo\Tables\Zonas.sql" />
+    <Build Include="dbo\Tables\SubEspecialidades.sql" />
+    <Build Include="dbo\Tables\RemitosVentaDetalle.sql" />
+    <Build Include="dbo\Tables\TiposCuenta.sql" />
+    <Build Include="dbo\Tables\Vendedores.sql" />
+    <Build Include="dbo\Tables\TiposConsignaciones.sql" />
+    <Build Include="dbo\Tables\Clientes.sql" />
+    <Build Include="dbo\Tables\Convenios.sql" />
+    <Build Include="dbo\Tables\Sucursales.sql" />
+    <Build Include="dbo\Tables\TiposDocumentosIdentidad.sql" />
+    <Build Include="dbo\Tables\TitulosConvenio.sql" />
+    <Build Include="dbo\Tables\s00SueNove.sql" />
+    <Build Include="dbo\Tables\RemitosCompraDetalle.sql" />
+    <Build Include="dbo\Tables\TiposMoneda.sql" />
+    <Build Include="dbo\Tables\s00SueLiqOpeRec.sql" />
+    <Build Include="dbo\Tables\TempLibroIva.sql" />
+    <Build Include="dbo\Tables\Alumnos.sql" />
+    <Build Include="dbo\Tables\SubTemas.sql" />
+    <Build Include="dbo\Tables\GruposTitulos.sql" />
+    <Build Include="dbo\Tables\s00SucCnExp.sql" />
+    <Build Include="dbo\Tables\VentaConvenio.sql" />
+    <Build Include="dbo\Tables\s00Entidades.sql" />
+    <Build Include="dbo\Tables\BancosPropios.sql" />
+    <Build Include="dbo\Tables\PRECIOSACT2.sql" />
+    <Build Include="dbo\Tables\OrdenesPagoDetalle.sql" />
+    <Build Include="dbo\Tables\PRECIOSACT.sql" />
+    <Build Include="dbo\Tables\TITULOSFALTA3.sql" />
+    <Build Include="dbo\Tables\s00CajasSaldo.sql" />
+    <Build Include="dbo\Tables\FacturasComprasDetalle.sql" />
+    <Build Include="dbo\Tables\ProveedoresBanco.sql" />
+    <Build Include="dbo\Tables\OrdenesPago.sql" />
+    <Build Include="dbo\Tables\TITULOSFALTALPC3.sql" />
+    <Build Include="dbo\Tables\Tarjetas.sql" />
+    <Build Include="dbo\Tables\RemitosVenta.sql" />
+    <Build Include="dbo\Tables\PRECIOSACTlpc3.sql" />
+    <Build Include="dbo\Tables\DUPLICADOS.sql" />
+    <Build Include="dbo\Tables\ClientesMontosFavorDetalle.sql" />
+    <Build Include="dbo\Tables\Mutuales.sql" />
+    <Build Include="dbo\Tables\Editoriales.sql" />
+    <Build Include="dbo\Tables\TitulosUbicacion.sql" />
+    <Build Include="dbo\Tables\REP_VTAS_TEMA.sql" />
+    <Build Include="dbo\Tables\REP_VTAS_PROV.sql" />
+    <Build Include="dbo\Tables\TransferenciasDetalle.sql" />
+    <Build Include="dbo\Tables\REP_VTAS_EDIT.sql" />
+    <Build Include="dbo\Tables\REP_VTAS_CTES.sql" />
+    <Build Include="dbo\Tables\Transferencias.sql" />
+    <Build Include="dbo\Tables\VentasDetalle.sql" />
+    <Build Include="dbo\Tables\TitulosPartes.sql" />
+    <Build Include="dbo\Tables\OrdenPagoCheques.sql" />
+    <Build Include="dbo\Tables\TitulosAdicionales.sql" />
+    <Build Include="dbo\Tables\PreVentas.sql" />
+    <Build Include="dbo\Tables\TituloPresentaciones.sql" />
+    <Build Include="dbo\Tables\ProveedoresBultos.sql" />
+    <Build Include="dbo\Tables\TitulosModoStock.sql" />
+    <Build Include="dbo\Tables\Liquidaciones.sql" />
+    <Build Include="dbo\Tables\PedidosDetalle.sql" />
+    <Build Include="dbo\Tables\DuplicadosTitulosStockAuditado.sql" />
+    <Build Include="dbo\Tables\Paises.sql" />
+    <Build Include="dbo\Tables\DuplicadosTitulosStock.sql" />
+    <Build Include="dbo\Tables\EstadosVenta.sql" />
+    <Build Include="dbo\Tables\TitulosMovimiento.sql" />
+    <Build Include="dbo\Tables\TiposMovimientosCajas.sql" />
+    <Build Include="dbo\Tables\Idiomas.sql" />
+    <Build Include="dbo\Tables\EstadosTitulo.sql" />
+    <Build Include="dbo\Tables\LiquidacionPersonal.sql" />
+    <Build Include="dbo\Tables\Cajas.sql" />
+    <Build Include="dbo\Tables\Presupuestos.sql" />
+    <Build Include="dbo\Tables\TiposTitulos.sql" />
+    <Build Include="dbo\Tables\Temas.sql" />
+    <Build Include="dbo\Tables\EstadosRemito.sql" />
+    <Build Include="dbo\Tables\VentasReservadas.sql" />
+    <Build Include="dbo\Tables\EstadosMovimientoBancario.sql" />
+    <Build Include="dbo\Tables\MovimientosFondoDetalle.sql" />
+    <Build Include="dbo\Tables\Compras.sql" />
+    <Build Include="dbo\Tables\ChequesTerceros.sql" />
+    <Build Include="dbo\Tables\MovimientosFondo.sql" />
+    <Build Include="dbo\Tables\EstadosCompra.sql" />
+    <Build Include="dbo\Tables\Estado.sql" />
+    <Build Include="dbo\Tables\LoteFactura.sql" />
+    <Build Include="dbo\Tables\EstadosCliente.sql" />
+    <Build Include="dbo\Tables\Operadores.sql" />
+    <Build Include="dbo\Tables\ClientesCuentasCorriente.sql" />
+    <Build Include="dbo\Tables\RemitosCompra.sql" />
+    <Build Include="dbo\Tables\TarjetasLiquidacion.sql" />
+    <Build Include="dbo\Tables\PresupuestosDetalle.sql" />
+    <Build Include="dbo\Tables\FacturasCompra.sql" />
+    <Build Include="dbo\Tables\ProveedoresCuentasCorriente.sql" />
+    <Build Include="dbo\Tables\Contactos.sql" />
+    <Build Include="dbo\Tables\CajasMovimientos.sql" />
+    <Build Include="dbo\Tables\Recibos.sql" />
+    <Build Include="dbo\Tables\PersonalNovedades.sql" />
+    <Build Include="dbo\Tables\Autores.sql" />
+    <Build Include="dbo\Tables\CondicionesVenta.sql" />
+    <Build Include="dbo\Tables\NotasDeVenta.sql" />
+    <Build Include="dbo\Tables\CentrosCostos.sql" />
+    <Build Include="dbo\Tables\s00LibrosSubTemas.sql" />
+    <Build Include="dbo\Tables\ClientesMontosFavor.sql" />
+    <Build Include="dbo\Tables\PersonalConcepto.sql" />
+    <Build Include="dbo\Tables\TablasTABLAS.sql" />
+    <Build Include="dbo\Tables\Pedidos.sql" />
+    <Build Include="dbo\Tables\MutualesLiquidacion.sql" />
+    <Build Include="dbo\Tables\Bancos.sql" />
+    <Build Include="dbo\Tables\ClientesMovimiento.sql" />
+    <Build Include="dbo\Tables\VentasPendientesEntrega.sql" />
+    <Build Include="dbo\Tables\TiposComprobantes.sql" />
+    <Build Include="dbo\Tables\TitulosUnicos.sql" />
+    <Build Include="dbo\Tables\Cuentas.sql" />
+    <Build Include="dbo\Tables\Ventas.sql" />
+    <Build Include="dbo\Tables\Parametros.sql" />
+    <Build Include="dbo\Tables\CondicionesCompra.sql" />
+    <Build Include="dbo\Tables\Proveedores.sql" />
+    <Build Include="dbo\Tables\MutualesMovimientos.sql" />
+    <Build Include="dbo\Tables\TarjetasMovimientos.sql" />
+    <Build Include="dbo\Tables\Provincias.sql" />
+    <Build Include="dbo\Tables\OperadoresFunciones.sql" />
+    <Build Include="dbo\Tables\Personal.sql" />
+    <Build Include="dbo\Tables\AuditoriasDetalle.sql" />
+    <Build Include="dbo\Tables\Transportes.sql" />
+    <Build Include="dbo\Tables\NotasDeVentaDetalle.sql" />
+    <Build Include="dbo\Tables\Auditorias.sql" />
+    <Build Include="dbo\Tables\ClientesSuscripciones.sql" />
+    <Build Include="dbo\Tables\Funciones.sql" />
+    <Build Include="dbo\Tables\Areas.sql" />
+    <Build Include="dbo\Tables\AplicacionFunciones.sql" />
+    <Build Include="dbo\Tables\Aplicacion.sql" />
+    <Build Include="dbo\Tables\OperadorSucursal.sql" />
+    <Build Include="dbo\Tables\CategoriasOperadores.sql" />
+    <Build Include="dbo\Tables\Conceptos.sql" />
+    <Build Include="dbo\Tables\TempComparacionStock.sql" />
+    <Build Include="dbo\Tables\TitulosStockAuditado.sql" />
+    <Build Include="dbo\Tables\CuentasMovimientos.sql" />
+    <Build Include="dbo\Tables\TitulosStock.sql" />
+    <Build Include="dbo\Tables\Localidades.sql" />
+    <Build Include="Storage\Titulos.sql" />
+    <Build Include="FullTextIndexes.sql" />
+    <Build Include="Storage\ftfg_Titulos.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloFormularioConStock.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTitulosConsignados.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloConsignadoCB.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloFormulario5.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloFormularioCB5.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TraerRemRecibo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_TraerNCRecibo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_TraerFactRecibo.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_TraerFacCliCaja.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_TaerFacCliCaja.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_CtaCteClientes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTitulosCB.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarAutores.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarProveedores.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTitulos.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarClientes.sql" />
+    <Build Include="dbo\Stored Procedures\usp_CtaCteClientes2.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TraerFacturasRecibosCli.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TraerRecibos.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TraerNotaDeVenta.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TraerFacturasRecibos.sql" />
+    <Build Include="dbo\Stored Procedures\usp_TraerPresupuesto.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloSelArt4.sql" />
+    <Build Include="dbo\Stored Procedures\ClientesCuentaCorrienteVencida.sql" />
+    <Build Include="dbo\Stored Procedures\ClientesCuentaCorrienteVencidaMonto.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloFormulario.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTituloFormularioCB.sql" />
+    <Build Include="dbo\Stored Procedures\usp_SeleccionarTitulosStock.sql" />
+    <Build Include="dbo\Stored Procedures\usp_RepXVtasTema.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_RepXVtasProveedor.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_RepXVtasEditorial.sql">
+      <AnsiNulls>Off</AnsiNulls>
+    </Build>
+    <Build Include="dbo\Stored Procedures\usp_RepXVtasClientes.sql">
+      <AnsiNulls>Off</AnsiNulls>
+      <QuotedIdentifier>Off</QuotedIdentifier>
+    </Build>
+    <Build Include="dbo\Stored Procedures\SP_GenerarFacturaByVentaId.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\OperadoresRoles.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_InformeCaja.sql" />
+    <Build Include="dbo\Tables\RolesFunciones.sql" />
+    <Build Include="dbo\Tables\ProveedoresSenias.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_CajaResumida_ComposicionEgresos.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_CajaResumida_ComposicionIngresos.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_CajaResumida_Egresos.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_CajaResumida_Ingresos.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_CajaResumida_Ventas.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_TarjetasChequesYDepositos.sql" />
+    <Build Include="dbo\Stored Procedures\SP_GenerarReciboByNumero.sql" />
+    <Build Include="dbo\Stored Procedures\SP_SeniaByLCN.sql" />
+    <Build Include="dbo\Functions\TitulosListado.sql" />
+    <Build Include="dbo\Stored Procedures\Titulos_Listado.sql" />
+    <Build Include="dbo\Functions\AutorTitulosListado.sql" />
+    <Build Include="dbo\Stored Procedures\SP_ClienteMontoFavorByLCN_1.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_ConsignacionesVendidas.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_CajaResumida_ComposicionVentas.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_MovimientosCajaAnterior.sql" />
+    <Build Include="dbo\Stored Procedures\SP_PresupuestoById.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_Ventas.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_AutorTitulos_Listado.sql" />
+    <Build Include="dbo\Stored Procedures\Consignaciones_ParaDevolver.sql" />
+    <Build Include="dbo\Tables\TitulosConsignacionesRendidas.sql" />
+    <Build Include="dbo\Tables\TitulosConsignacionesRendidasDetalle.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_ClientesPorTitulos.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_MultiRanking.sql" />
+    <Build Include="dbo\Tables\TitulosConsignacionesDevueltas.sql" />
+    <Build Include="dbo\Stored Procedures\Consignaciones_VentasSinRendir.sql" />
+    <Build Include="dbo\Tables\TitulosConsignacionesDevueltasDetalle.sql" />
+    <Build Include="dbo\Tables\ProveedoresPagos.sql" />
+    <Build Include="dbo\Tables\ProveedoresPagosDetalle.sql" />
+    <Build Include="dbo\Stored Procedures\ReciboConsignacion.sql" />
+    <None Include="Scripts\Post-Deploy\ProveedoresCtaCteEmptyInsert.sql" />
+    <None Include="Scripts\Post-Deploy\TitulosConsignacionRendidaEmptyInsert.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="LaPaz.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LaPaz.Database.publish.xml" />
+    <None Include="Scripts\Post-Deploy\Roles.Data.sql" />
+    <None Include="LaPaz.DatabaseercerCtes.publish.xml" />
+    <None Include="LaPaz.DatabasePRAGMA.publish.xml" />
+    <None Include="DEVlCorrientes.DatabaseercerCtes.publish.xml" />
+    <None Include="ProduccionLaPaz.Database.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deploy\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="LapazMigracion">
+      <DefaultValue>LapazMigracion</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\..\..\Base de datos\DbReferences\LapazMigracion.dacpac">
+      <HintPath>..\..\..\Base de datos\DbReferences\LapazMigracion.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseVariableLiteralValue>LapazMigracion</DatabaseVariableLiteralValue>
+    </ArtifactReference>
+  </ItemGroup>
+</Project>
