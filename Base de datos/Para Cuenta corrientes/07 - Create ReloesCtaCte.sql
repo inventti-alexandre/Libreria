@@ -1,0 +1,21 @@
+USE [lapaz]
+GO
+
+/****** Object:  Table [dbo].[rolesCtaCte]    Script Date: 16/01/2015 04:00:59 p.m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[rolesCtaCte](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[rol] [nchar](10) NULL,
+ CONSTRAINT [PK_roles] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+

@@ -1,0 +1,1 @@
+update proveedores set Activo = 1

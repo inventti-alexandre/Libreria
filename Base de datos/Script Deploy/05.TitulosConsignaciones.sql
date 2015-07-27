@@ -1,0 +1,25 @@
+ALTER TABLE TitulosConsignaciones ADD CONSTRAINT DF_CntPr DEFAULT 0 FOR CntPr
+ALTER TABLE TitulosConsignaciones ADD CONSTRAINT DF_CntVn DEFAULT 0 FOR CntVn
+ALTER TABLE TitulosConsignaciones ADD CONSTRAINT DF_CntCn DEFAULT 0 FOR CntCn
+GO
+
+UPDATE TitulosConsignaciones
+SET CntDev = 0
+WHERE CntDev IS NULL
+GO
+
+ALTER TABLE TitulosConsignaciones
+ALTER COLUMN [CntCn] INT NOT NULL
+GO
+
+ALTER TABLE TitulosConsignaciones
+ALTER COLUMN [CntVn] INT NOT NULL
+GO
+
+ALTER TABLE TitulosConsignaciones
+ALTER COLUMN [CntDev] INT NOT NULL
+GO
+
+ALTER TABLE TitulosConsignaciones
+ALTER COLUMN [CntPr] INT NOT NULL
+GO
