@@ -446,6 +446,11 @@ namespace LaPaz.Win.Forms.Ventas
             }
 
             OnVentaRealizada();
+
+            if (_formMode == ActionFormMode.Edit)
+            {
+                this.Close();
+            }
         }
 
         private void BtnReservarFactura_Click(object sender, EventArgs e)

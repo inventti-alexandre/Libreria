@@ -79,7 +79,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                     this.Text = "Nueva rendición de cliente";
                     break;
                 case ActionFormMode.Edit:
-                    this.Text = "Reserva" + _id;
+                    this.Text = "Nueva rendición de cliente - Reserva: " + _id;
                     BtnRecargarNroFactura.Enabled = false;
                     BtnReservarFactura.Enabled = false;
                     break;
@@ -463,7 +463,8 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         {
             RendirConsignacionClienteData consignacionData = new RendirConsignacionClienteData();
 
-            consignacionData.EsVentaReservada = false;
+            //consignacionData.EsVentaReservada = false;
+            consignacionData.EsVentaReservada = _formMode == ActionFormMode.Edit;
             consignacionData.OperadorId = Context.OperadorActual.Id;
             consignacionData.SucursalId = Context.SucursalActual.Id;
             consignacionData.NumeroComprobante = _id;
@@ -482,7 +483,8 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
             consignacionData.CajaActualId = Context.CajaActual.Id;
             consignacionData.Anticipo = UcCuentaCorrienteInfo.Anticipo;
-            consignacionData.SubTotal = UcCuentaCorrienteInfo.SubTotal;
+            //consignacionData.SubTotal = UcCuentaCorrienteInfo.SubTotal;
+            consignacionData.SubTotal = UcTotalesVenta.SubTotal;
 
             consignacionData.Pagos = UcTotalesVenta.Pagos;
             consignacionData.Cuotas = UcCuentaCorrienteInfo.Cuotas;
@@ -549,6 +551,11 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             {
                 pageTab.Dispose();
             };
+
+            if (_formMode == ActionFormMode.Edit)
+            {
+                this.Close();
+            }
         }
        
         private void BtnReservarFactura_Click(object sender, EventArgs e)

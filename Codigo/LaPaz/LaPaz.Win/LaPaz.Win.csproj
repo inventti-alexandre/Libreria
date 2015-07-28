@@ -1914,6 +1914,8 @@
     <None Include="Resources\devolver.png" />
     <None Include="Resources\Data-Files.png" />
     <None Include="Resources\ConsignacionCliente.png" />
+    <None Include="Resources\Data-Edit-Con.png" />
+    <None Include="Resources\Data-Edit-Con1.png" />
     <Content Include="Resources\devoluviones.png" />
     <None Include="Resources\reservada.png" />
     <None Include="Resources\Login-01_16x16.png" />
