@@ -31,6 +31,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.GrillaSeleccionarCliente = new Telerik.WinControls.UI.RadGridView();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaSeleccionarCliente)).BeginInit();
@@ -65,20 +66,24 @@
             gridViewTextBoxColumn1.Name = "FechaComprobante ";
             gridViewTextBoxColumn1.ReadOnly = true;
             gridViewTextBoxColumn1.Width = 137;
-            gridViewTextBoxColumn2.FieldName = "Concepto";
-            gridViewTextBoxColumn2.HeaderText = "Concepto";
-            gridViewTextBoxColumn2.MaxWidth = 250;
-            gridViewTextBoxColumn2.MinWidth = 170;
-            gridViewTextBoxColumn2.Name = "Concepto";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 250;
-            gridViewTextBoxColumn3.FieldName = "ImporteNeto";
-            gridViewTextBoxColumn3.FormatString = "{0:N2}";
-            gridViewTextBoxColumn3.HeaderText = "Importe Neto";
-            gridViewTextBoxColumn3.MaxWidth = 96;
-            gridViewTextBoxColumn3.MinWidth = 96;
-            gridViewTextBoxColumn3.Name = "ImporteNeto";
-            gridViewTextBoxColumn3.Width = 96;
+            gridViewTextBoxColumn2.FieldName = "NumeroComprobante";
+            gridViewTextBoxColumn2.HeaderText = "Nro";
+            gridViewTextBoxColumn2.Name = "Nro";
+            gridViewTextBoxColumn2.Width = 44;
+            gridViewTextBoxColumn3.FieldName = "Concepto";
+            gridViewTextBoxColumn3.HeaderText = "Concepto";
+            gridViewTextBoxColumn3.MaxWidth = 250;
+            gridViewTextBoxColumn3.MinWidth = 170;
+            gridViewTextBoxColumn3.Name = "Concepto";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 221;
+            gridViewTextBoxColumn4.FieldName = "ImporteNeto";
+            gridViewTextBoxColumn4.FormatString = "{0:N2}";
+            gridViewTextBoxColumn4.HeaderText = "Importe Neto";
+            gridViewTextBoxColumn4.MaxWidth = 96;
+            gridViewTextBoxColumn4.MinWidth = 96;
+            gridViewTextBoxColumn4.Name = "ImporteNeto";
+            gridViewTextBoxColumn4.Width = 96;
             gridViewCommandColumn1.DefaultText = "Seleccionar";
             gridViewCommandColumn1.FieldName = "Seleccionar";
             gridViewCommandColumn1.FormatInfo = new System.Globalization.CultureInfo("");
@@ -88,11 +93,12 @@
             gridViewCommandColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewCommandColumn1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             gridViewCommandColumn1.UseDefaultText = true;
-            gridViewCommandColumn1.Width = 118;
+            gridViewCommandColumn1.Width = 104;
             this.GrillaSeleccionarCliente.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
             gridViewCommandColumn1});
             this.GrillaSeleccionarCliente.MasterTemplate.EnableGrouping = false;
             this.GrillaSeleccionarCliente.Name = "GrillaSeleccionarCliente";

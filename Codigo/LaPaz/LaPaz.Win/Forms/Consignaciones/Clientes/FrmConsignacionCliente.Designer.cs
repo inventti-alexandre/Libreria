@@ -269,7 +269,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             // 
             // FrmConsignacionCliente
             // 
-            this.ClientSize = new System.Drawing.Size(964, 811);
+            this.ClientSize = new System.Drawing.Size(972, 644);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.metroPanel2);

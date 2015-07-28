@@ -477,6 +477,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             consignacionData.Senas = UcTotalesVenta.Senas;
             consignacionData.CreditosDevolucion = UcTotalesVenta.CreditosDevolucion;
 
+            UcTitulosConsignacionVenta.ActualizarInfo();
             consignacionData.RemitosVentaDetalle = UcTitulosConsignacionVenta.Titulos;
 
             consignacionData.CajaActualId = Context.CajaActual.Id;
@@ -501,8 +502,8 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                 return;
             }
 
-            if (ventaResponse.Comprobantes.Count != 0)
-            {
+            //if (ventaResponse.Comprobantes.Count != 0)
+            //{
                 foreach (var comprobante in ventaResponse.Comprobantes)
                 {
                     using (var crearComprobante = FormFactory.Create<FrmComprobante>())
@@ -516,7 +517,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                     }
                 }
 
-                _messageBoxDisplayService.ShowSuccess(Resources.MessageSuccessVentaExitosa);
+              //  _messageBoxDisplayService.ShowSuccess(Resources.MessageSuccessVentaExitosa);
 
                 if (ChkImprimir.Checked)
                 {
@@ -537,11 +538,11 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                 }
 
                 OnVentaRealizada();
-            }
-            else
-            {
+            //}
+            //else
+            //{
                 _messageBoxDisplayService.ShowSuccess(Resources.MessageDevolucionExitosa);
-            }
+            //}
 
             var pageTab = this.Parent as RadPageViewPage;
             if (pageTab != null)

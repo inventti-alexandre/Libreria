@@ -91,7 +91,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                     //var precioactulizado = (consignacionTitulo.PrecioVenta - (consignacionTitulo.PrecioVenta * consignacionTitulo.Descuento / 100));
                     var precioactulizado = (consignacionTitulo.PrecioBase - (consignacionTitulo.PrecioBase * consignacionTitulo.Descuento / 100));
 
-                    consignacionTitulo.SubTotal = precioactulizado * consignacionTitulo.Cantidad;
+                    consignacionTitulo.SubTotal = precioactulizado * (consignacionTitulo.CntVendida);
                     CalcularSubTotal();
                     RefrescarTitulos();
                 }
@@ -106,17 +106,21 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
                 if (recargo == null)
                     recargo = 0;
-                // return;
+                
                 ventaTitulo.Recargo = recargo;
+                
                 if (ventaTitulo.Descuento > 0)
                     return;
 
-                ventaTitulo.PrecioVenta = ventaTitulo.PrecioBase;
-                var precioActualizado = (ventaTitulo.PrecioBase + (ventaTitulo.PrecioBase * ventaTitulo.Recargo / 100));
-                //*ventaTitulo.Cantidad;
-                ventaTitulo.SubTotal = precioActualizado * ventaTitulo.Cantidad;
-                CalcularSubTotal();
-                RefrescarTitulos();
+                if (ventaTitulo.SubTotal != null)
+                {
+                    ventaTitulo.PrecioVenta = ventaTitulo.PrecioBase;
+                    var precioActualizado = (ventaTitulo.PrecioBase + (ventaTitulo.PrecioBase*ventaTitulo.Recargo/100));
+                    //*ventaTitulo.Cantidad;
+                    ventaTitulo.SubTotal = precioActualizado*ventaTitulo.CntVendida;
+                    CalcularSubTotal();
+                    RefrescarTitulos();
+                }
             }
         }
 
@@ -162,10 +166,12 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                         var tituloModificado = Titulos.FirstOrDefault(x => x.Id == titulo.Id);
                         if (titulo != null)
                         {
+                            tituloModificado.CntARendir = titulo.CntVendida;
                             tituloModificado.CntVendida = titulo.CntVendida;
                             tituloModificado.CntDevuelta = titulo.CntDevuelta;
                             tituloModificado.PrecioVenta = titulo.PrecioVenta;
                             tituloModificado.SubTotal = titulo.SubTotal;
+                            tituloModificado.Descuento = titulo.Descuento;
                         }
 
                         OnVentaTitulosChanged(Titulos);
@@ -196,6 +202,14 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                 };
 
                 formAgregarTitulo.ShowDialog();
+            }
+        }
+
+        public void ActualizarInfo()
+        {
+            foreach (RemitosVentaDetalleDto remitosVentaDetalleDto in Titulos)
+            {
+                remitosVentaDetalleDto.CntVendida = remitosVentaDetalleDto.CntARendir ?? 0;
             }
         }
     }
