@@ -16,6 +16,9 @@
             if (disposing && (components != null))
             {
                 components.Dispose();
+
+                _clienteNegocio.Dispose();
+                _ventaNegocio.Dispose();
             }
             base.Dispose(disposing);
         }

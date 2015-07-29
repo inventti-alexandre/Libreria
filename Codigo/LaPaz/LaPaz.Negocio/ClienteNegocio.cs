@@ -22,10 +22,20 @@ namespace LaPaz.Negocio
     {
         private IClock _clock;
 
-        public ClienteNegocio(ILaPazUow uow, IClock clock)
+        public ClienteNegocio(ILaPazUow uow, IClock clock,IUowFactory uowFactory)
         {
             Uow = uow;
+            UowFactory = uowFactory;
+
             _clock = clock;
+        }
+
+        public Cliente ObtenerPorId(Guid clienteId)
+        {
+            using (var uow = UowFactory.Create<ILaPazUow>())
+            {
+                return uow.Clientes.Obtener(c => c.Id == clienteId, c => c.Localidad, c => c.Provincia, c => c.CondicionesVenta);    
+            }
         }
 
         public List<ClienteDto> Listado(string sortBy, string sortDirection, string denominacion, string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal)

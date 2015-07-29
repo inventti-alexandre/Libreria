@@ -136,7 +136,8 @@ namespace LaPaz.Win.Forms
             var form = sender as Form;
             if (form != null)
             {
-                CerrarTab(form);
+                var crearVenta = FormFactory.Create<FrmCrearVenta>(default(int), ActionFormMode.Create);
+                RefrescarTab(form, crearVenta);
             }
         }
 
@@ -190,6 +191,24 @@ namespace LaPaz.Win.Forms
             return page;
         }
 
+        private RadPageViewPage UpadatePage(RadPageViewPage page, Form form)
+        {
+            form.Owner = this;
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            page.AutoScroll = true;
+            form.Parent = page;
+            page.Text = form.Text;
+            page.Controls.Clear();
+            page.Controls.Add(form);
+            form.Show();
+
+            page.Refresh();
+
+            return page;
+        }
+
         public void AbrirMultipleTab(Form form)
         {
             form.Cursor = Cursors.WaitCursor;
@@ -215,6 +234,23 @@ namespace LaPaz.Win.Forms
             }
 
             form.Cursor = Cursors.Default;
+        }
+
+        private void RefrescarTab(Form currentForm, Form newForm)
+        {
+            this.Cursor = Cursors.WaitCursor;
+
+            var page = TabsPrincipal.Pages.FirstOrDefault(p => p.Text == currentForm.Text);
+
+            page = UpadatePage(page, newForm);
+
+            TabsPrincipal.SelectedPage = page;
+
+            _formRegistry.RemoveForm(currentForm);
+
+            _formRegistry.AddForm(newForm);
+
+            this.Cursor = Cursors.Default;
         }
 
         private void TabsPrincipal_SelectedPageChanging(object sender, RadPageViewCancelEventArgs e)
@@ -458,7 +494,7 @@ namespace LaPaz.Win.Forms
         {
             using (var pantalla = FormFactory.Create<FrmCrearEditarTicket>())
             {
-                pantalla.ShowDialog();    
+                pantalla.ShowDialog();
             }
         }
 

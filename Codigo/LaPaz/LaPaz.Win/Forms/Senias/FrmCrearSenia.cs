@@ -465,7 +465,7 @@ namespace LaPaz.Win.Forms.Senias
             base.RefrescarUow();
 
             _clienteNegocio.Dispose();
-            _clienteNegocio = new ClienteNegocio(Uow, _clock);
+            _clienteNegocio = new ClienteNegocio(Uow, _clock, UowFactory);
 
             _ventaNegocio.Dispose();
             _ventaNegocio = new VentaNegocio(Uow, _clock, UowFactory);

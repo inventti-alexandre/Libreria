@@ -17,5 +17,7 @@ namespace LaPaz.Negocio.Interfaces
         decimal DeudaVencida(Guid clienteId, int? sucursalId);
         List<ClienteMontoFavor> Senias(string sortBy, string sortDirection, Guid? clienteId, int pageIndex, int pageSize,
                                        out int pageTotal);
+
+        Cliente ObtenerPorId(Guid clienteId);
     }
 }

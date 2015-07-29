@@ -26,13 +26,13 @@ using LaPaz.Negocio.Response;
 
 namespace LaPaz.Win.Forms.Ventas
 {
-    [SharedContext]
     public partial class FrmCrearVenta : FormBase
     {
         private readonly IClock _clock;
         private readonly IMessageBoxDisplayService _messageBoxDisplayService;
         private readonly IVentaNegocio _ventaNegocio;
         private readonly IClienteNegocio _clienteNegocio;
+        private readonly DirectPrint _directPrint;
         private Cliente _cliente;
         private int _id;
         private readonly ActionFormMode _formMode;
@@ -43,7 +43,10 @@ namespace LaPaz.Win.Forms.Ventas
                              ILaPazUow uow,
                              IVentaNegocio ventaNegocio,
                              IClienteNegocio clienteNegocio,
-                             IFormRegistry formRegistry, int id, ActionFormMode mode)
+                             IFormRegistry formRegistry, 
+                             DirectPrint directPrint,
+                             int id, 
+                             ActionFormMode mode)
         {
             FormFactory = formFactory;
             Uow = uow;
@@ -53,6 +56,7 @@ namespace LaPaz.Win.Forms.Ventas
             _messageBoxDisplayService = messageBoxDisplayService;
             _ventaNegocio = ventaNegocio;
             _clienteNegocio = clienteNegocio;
+            _directPrint = directPrint;
             _id = id;
             _formMode = mode;
 
@@ -154,7 +158,7 @@ namespace LaPaz.Win.Forms.Ventas
             UcTotalesVenta.Pagos.Clear();
 
             UcTotalesVenta.RefrescarPagos();
-            
+
             if (UcBuscadorCliente.CondicionVentaSeleccionada == CondicionVentaEnum.CuentaCorriente)
             {
                 RPCtaccte.Visible = true;
@@ -240,7 +244,7 @@ namespace LaPaz.Win.Forms.Ventas
 
         private void UcClienteDetalleOnClienteEdited(object sender, Cliente cliente)
         {
-            var clienteEdited = Uow.Clientes.Obtener(c => c.Id == cliente.Id, c => c.Localidad, c => c.Provincia, c => c.CondicionesVenta);
+            var clienteEdited = _clienteNegocio.ObtenerPorId(cliente.Id);
             ActualizarCliente(clienteEdited);
         }
 
@@ -404,7 +408,7 @@ namespace LaPaz.Win.Forms.Ventas
 
             try
             {
-               ventaResponse = _ventaNegocio.CrearVenta(ventaData);
+                ventaResponse = _ventaNegocio.CrearVenta(ventaData);
             }
             catch (ApplicationException ex)
             {
@@ -429,11 +433,10 @@ namespace LaPaz.Win.Forms.Ventas
 
             if (ChkImprimir.Checked)
             {
-                DirectPrint print = new DirectPrint(Uow);
-                print.Descripcion = ventaResponse.FacturaInfo.Descripcion;
-                print.FormaPago = ventaResponse.FacturaInfo.FormaPago;
-                print.Recargo = UcTotalesVenta.Recargo.ToString();
-                print.GenerarFactura(ventaResponse.VentaId);
+                _directPrint.Descripcion = ventaResponse.FacturaInfo.Descripcion;
+                _directPrint.FormaPago = ventaResponse.FacturaInfo.FormaPago;
+                _directPrint.Recargo = UcTotalesVenta.Recargo.ToString();
+                _directPrint.GenerarFactura(ventaResponse.VentaId);
             }
 
             using (var crearVenta = FormFactory.Create<FrmFacturaVenta>(ventaResponse.VentaId))
@@ -446,7 +449,18 @@ namespace LaPaz.Win.Forms.Ventas
             }
 
             OnVentaRealizada();
+
+            //LimpiarFormularioVenta();
         }
+
+        //private void LimpiarFormularioVenta()
+        //{
+        //    UcBuscadorCliente.LimpiarControles();
+        //    UcClienteDetalle.LimpiarControles();
+        //    UcCuentaCorrienteInfo.LimpiarControles();
+        //    UcTitulosVenta.LimpiarControles();
+        //    UcTotalesVenta.LimpiarControles();
+        //}
 
         private void BtnReservarFactura_Click(object sender, EventArgs e)
         {
