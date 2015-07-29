@@ -19,15 +19,17 @@ namespace LaPaz.Entidades.Dto
         public int? Descuento { get; set; }
         public int? CntVendida { get; set; }
         public int? CntDevuelta { get; set; }
+        public int? CntARendir { get; set; }
         public int? Recargo { get; set; }
 
         public string TituloNombreTitulo { get; set; }
         public decimal? TituloPrecioVentaTitulo { get; set; }
         public string TituloCod { get; set; }
 
-        public int Cantidad
+        public int? Cantidad
         {
-            get { return (CntPr ?? 0 + CntCn ?? 0); }
+            //get { return (CntPr ?? 0 + CntCn ?? 0); }
+            get { return (CntPr + CntCn); }
         }
 
         //public decimal? SubTotal { 

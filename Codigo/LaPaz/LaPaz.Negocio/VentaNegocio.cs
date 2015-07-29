@@ -230,21 +230,25 @@ namespace LaPaz.Negocio
                 var cantidadVendidaConsignacion =
                     remitoVentaDetalle.CalcularNuevaCantidadVendidaConsignacion(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
 
-                AgregarVentaDetalle(venta, ventaData.SucursalId, ventaData.OperadorId,
-                    remitoVentaDetalleActualizado.TituloId, remitoVentaDetalleActualizado.Cantidad,
-                    remitoVentaDetalleActualizado.SubTotal,
-                    remitoVentaDetalleActualizado.PrecioBase, remitoVentaDetalleActualizado.Descuento,
-                    cantidadVendidaPropia, cantidadVendidaConsignacion);
-                
-                if (cantidadVendidaConsignacion > 0)
+                if (remitoVentaDetalleActualizado.CntVendida > 0)
                 {
-                    var titulo = Uow.Titulos.Obtener(t => t.Id == remitoVentaDetalleActualizado.TituloId);
-
-                    if (titulo != null)
+        
+                    AgregarVentaDetalle(venta, ventaData.SucursalId, ventaData.OperadorId,
+                        remitoVentaDetalleActualizado.TituloId, remitoVentaDetalleActualizado.Cantidad,
+                        remitoVentaDetalleActualizado.SubTotal,
+                        remitoVentaDetalleActualizado.PrecioBase, remitoVentaDetalleActualizado.Descuento,
+                        cantidadVendidaPropia, cantidadVendidaConsignacion);
+                
+                    if (cantidadVendidaConsignacion > 0)
                     {
-                        AgregarTitulosConsignacionVendida(ventaData, titulo.Id, titulo.ProveedorId, venta, cantidadVendidaConsignacion);
+                        var titulo = Uow.Titulos.Obtener(t => t.Id == remitoVentaDetalleActualizado.TituloId);
 
-                        ActualizarTitulosConsignaciones(ventaData, titulo.Id, titulo.ProveedorId, cantidadVendidaConsignacion);
+                        if (titulo != null)
+                        {
+                            AgregarTitulosConsignacionVendida(ventaData, titulo.Id, titulo.ProveedorId, venta, cantidadVendidaConsignacion);
+
+                            ActualizarTitulosConsignaciones(ventaData, titulo.Id, titulo.ProveedorId, cantidadVendidaConsignacion);
+                        }
                     }
                 }
             }
@@ -777,6 +781,7 @@ namespace LaPaz.Negocio
             cajaMovimiento.TipoComprobante = ventaData.TipoComprobanteSeleccionado;
             cajaMovimiento.ComprobanteId = venta.Id;
             cajaMovimiento.Senia = ventaData.Senas + ventaData.CreditosDevolucion;
+
             if (ventaData.CondicionVentaSeleccionada == CondicionVentaEnum.CuentaCorriente)
                 cajaMovimiento.Importe = ventaData.Anticipo;
             else

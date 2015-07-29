@@ -13,6 +13,7 @@ using LaPaz.Datos.Interfaces;
 using LaPaz.Entidades.Dto;
 using LaPaz.Negocio.Interfaces;
 using LaPaz.Win.Enums;
+using LaPaz.Win.Forms.Consignaciones.Clientes;
 using LaPaz.Win.Helpers;
 using Telerik.WinControls.UI;
 
@@ -112,7 +113,27 @@ namespace LaPaz.Win.Forms.Ventas.VentasReservadas
                case "ColumnaEditar":
                     Editar(ventaReservada.LCN);
                     break;
+               case "ColumnaEditarConsignacion":
+                    EditarConsigna(ventaReservada.LCN);
+                    break;
              }
+        }
+
+        private void EditarConsigna(string lcn)
+        {
+            //abrirFrmConsignacionCliente Pasando nro de factura
+            int nroComprobante;
+            int.TryParse(lcn.Substring(5), out nroComprobante);
+            using (var formEditar = FormFactory.Create<FrmRendirConsignacionCliente>(nroComprobante, ActionFormMode.Edit))
+            {
+                formEditar.FormBorderStyle = FormBorderStyle.FixedSingle;
+                var result = formEditar.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    formEditar.Close();
+                    RefrescarListado();
+                }
+            }
         }
 
         private void Editar(string lcn)

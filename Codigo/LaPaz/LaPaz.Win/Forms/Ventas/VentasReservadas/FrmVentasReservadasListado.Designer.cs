@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.GrillaFacturasReservadas = new Telerik.WinControls.UI.RadGridView();
             this.ucProgressSpinner1 = new LaPaz.Win.Forms.Util.UcProgressSpinner();
             this.FacturaPager = new Framework.WinForm.Controls.MetroPager();
@@ -63,23 +65,30 @@
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Nro Factura";
             gridViewTextBoxColumn2.Name = "LCN";
-            gridViewTextBoxColumn2.Width = 374;
+            gridViewTextBoxColumn2.Width = 349;
             gridViewTextBoxColumn3.FieldName = "FechaAlta";
             gridViewTextBoxColumn3.FormatString = "";
             gridViewTextBoxColumn3.HeaderText = "Fecha";
             gridViewTextBoxColumn3.Name = "FechaAlta";
-            gridViewTextBoxColumn3.Width = 320;
+            gridViewTextBoxColumn3.Width = 316;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Data_Edit;
             gridViewCommandColumn1.MaxWidth = 30;
             gridViewCommandColumn1.MinWidth = 30;
             gridViewCommandColumn1.Name = "ColumnaEditar";
             gridViewCommandColumn1.Width = 30;
+            gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Image = global::LaPaz.Win.Properties.Resources.Data_Edit_Con1;
+            gridViewCommandColumn2.MaxWidth = 30;
+            gridViewCommandColumn2.MinWidth = 30;
+            gridViewCommandColumn2.Name = "ColumnaEditarConsignacion";
+            gridViewCommandColumn2.Width = 30;
             this.GrillaFacturasReservadas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
-            gridViewCommandColumn1});
+            gridViewCommandColumn1,
+            gridViewCommandColumn2});
             this.GrillaFacturasReservadas.MasterTemplate.EnableGrouping = false;
             this.GrillaFacturasReservadas.Name = "GrillaFacturasReservadas";
             this.GrillaFacturasReservadas.ReadOnly = true;
@@ -112,7 +121,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 579);
+            this.ClientSize = new System.Drawing.Size(834, 723);
             this.Controls.Add(this.FacturaPager);
             this.Controls.Add(this.ucProgressSpinner1);
             this.Controls.Add(this.GrillaFacturasReservadas);
