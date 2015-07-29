@@ -781,7 +781,6 @@ namespace LaPaz.Negocio
             cajaMovimiento.TipoComprobante = ventaData.TipoComprobanteSeleccionado;
             cajaMovimiento.ComprobanteId = venta.Id;
             cajaMovimiento.Senia = ventaData.Senas + ventaData.CreditosDevolucion;
-
             if (ventaData.CondicionVentaSeleccionada == CondicionVentaEnum.CuentaCorriente)
                 cajaMovimiento.Importe = ventaData.Anticipo;
             else

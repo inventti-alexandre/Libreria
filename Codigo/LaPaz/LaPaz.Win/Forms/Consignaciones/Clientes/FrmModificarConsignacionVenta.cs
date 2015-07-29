@@ -46,6 +46,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             _messageBoxDisplayService = messageBoxDisplayService;
             _remitoDetalleNegocio = remitoDetalleNegocio;
             _remitoDetalleid = id;
+            TxtDescuento.Text = "0";
         }
 
         public event EventHandler<RemitosVentaDetalleDto> TituloModificado;
@@ -148,7 +149,43 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             detalleDto.TituloCod = remitoDetalle.TituloCod;
             detalleDto.TituloNombreTitulo = remitoDetalle.TituloNombreTitulo;
 
+            detalleDto.Descuento = Convert.ToInt32(TxtDescuento.Text == "" ? "0" : TxtDescuento.Text);
+
             return detalleDto;
+        }
+
+        private void TxtDescuento_TextChanged(object sender, EventArgs e)
+        {
+            if (remitoDetalle !=null)
+            {
+                int desc;
+                var descuento = int.TryParse(TxtDescuento.Text, out desc);
+                TxtPrecioVenta.Text = (remitoDetalle.PrecioBase - (remitoDetalle.PrecioBase * desc / 100)).ToString();
+            }
+            
+        }
+
+        private void TxtPrecioVenta_KeyUp(object sender, KeyEventArgs e)
+        {
+            //int precioVenta;
+            //var venta = int.TryParse(TxtPrecioVenta.Text, out precioVenta);
+
+            ////if (TxtDescuento.Text != "" || remitoDetalle.PrecioBase != precioVenta)
+            ////{
+            ////    if (precioVenta != 0)
+            //        TxtDescuento.Text = ((remitoDetalle.PrecioBase - precioVenta) * 100 / remitoDetalle.PrecioBase).ToString();
+            ////}
+        }
+
+        private void TxtPrecioVenta_TextChanged(object sender, EventArgs e)
+        {
+            //decimal? precioVenta = TxtPrecioVenta.Value;
+            //if (TxtDescuento.Text != "0" || remitoDetalle.PrecioBase != precioVenta)
+            //{
+            //    var descuento = ((remitoDetalle.PrecioBase - precioVenta)*100/remitoDetalle.PrecioBase);
+            //    int desc;
+            //    TxtDescuento.Text = Convert.ToInt32(descuento).ToString();
+            //}
         }
     }
 }

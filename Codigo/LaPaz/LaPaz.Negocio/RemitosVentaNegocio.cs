@@ -67,12 +67,12 @@ namespace LaPaz.Negocio
             Expression<Func<RemitosVenta, bool>> where = x => x.ClienteId == clienteId &&
                                                               x.TipoComprobante ==
                                                               (int) TipoComprobanteEnum.RemitosConsignacCliente
-                                                            //&& (x.RemitosVentaDetalles.Where(r => r.CntCn.HasValue).Sum(r => r.CntCn) + x.RemitosVentaDetalles.Where(r => r.CntPr.HasValue).Sum(r => r.CntPr)) > (x.RemitosVentaDetalles.Where(r => r.CntDevuelta.HasValue).Sum(r => r.CntDevuelta) + x.RemitosVentaDetalles.Where(r => r.CntVendida.HasValue).Sum(r => r.CntVendida));
-                                                                &&
+                                                          &&
                                                             ((x.RemitosVentaDetalles.Sum(r => r.CntPr) + x.RemitosVentaDetalles.Sum(r => r.CntCn))
                                                                 >
                                                                 (x.RemitosVentaDetalles.Where(r => r.CntCn.HasValue).Sum(r => r.CntDevuelta ?? 0) + x.RemitosVentaDetalles.Where(r => r.CntCn.HasValue).Sum(r => r.CntVendida ?? 0)));
                                                            
+
             var resultados = Uow.RemitosVentas.Listado(criteros,
                                                             where,
                                                             x => x.RemitosVentaDetalles,
