@@ -450,6 +450,11 @@ namespace LaPaz.Win.Forms.Ventas
 
             OnVentaRealizada();
 
+            if (_formMode == ActionFormMode.Edit)
+            {
+                this.Close();
+            }
+
             //LimpiarFormularioVenta();
         }
 
