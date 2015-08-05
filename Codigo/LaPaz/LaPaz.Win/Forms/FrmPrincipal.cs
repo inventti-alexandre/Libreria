@@ -137,6 +137,7 @@ namespace LaPaz.Win.Forms
             if (form != null)
             {
                 var crearVenta = FormFactory.Create<FrmCrearVenta>(default(int), ActionFormMode.Create);
+                crearVenta.VentaRealizada += CrearVentaOnVentaRealizada;
                 RefrescarTab(form, crearVenta);
             }
         }
