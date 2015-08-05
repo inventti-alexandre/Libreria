@@ -360,7 +360,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         private void BtnRendirConsignacion_Click(object sender, EventArgs e)
         {
           
-            if (UcTotalesVenta.TotalPagar <= 0)
+            if (UcTotalesVenta.SubTotal <= 0)
             {
                 _messageBoxDisplayService.ShowError("Debe seleccionar libros a facturar");
                 return;
@@ -463,7 +463,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         {
             RendirConsignacionClienteData consignacionData = new RendirConsignacionClienteData();
 
-            consignacionData.EsVentaReservada = false;
+            consignacionData.EsVentaReservada = _formMode == ActionFormMode.Edit;
             consignacionData.OperadorId = Context.OperadorActual.Id;
             consignacionData.SucursalId = Context.SucursalActual.Id;
             consignacionData.NumeroComprobante = _id;
@@ -482,7 +482,8 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
             consignacionData.CajaActualId = Context.CajaActual.Id;
             consignacionData.Anticipo = UcCuentaCorrienteInfo.Anticipo;
-            consignacionData.SubTotal = UcCuentaCorrienteInfo.SubTotal;
+            //consignacionData.SubTotal = UcCuentaCorrienteInfo.SubTotal;
+            consignacionData.SubTotal = UcTotalesVenta.SubTotal;
 
             consignacionData.Pagos = UcTotalesVenta.Pagos;
             consignacionData.Cuotas = UcCuentaCorrienteInfo.Cuotas;
@@ -541,7 +542,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             //}
             //else
             //{
-                _messageBoxDisplayService.ShowSuccess(Resources.MessageDevolucionExitosa);
+                _messageBoxDisplayService.ShowSuccess("Rendición guardada con éxito");
             //}
 
             var pageTab = this.Parent as RadPageViewPage;
@@ -549,6 +550,11 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             {
                 pageTab.Dispose();
             };
+
+            if (_formMode == ActionFormMode.Edit)
+            {
+                this.Close();
+            }
         }
        
         private void BtnReservarFactura_Click(object sender, EventArgs e)
