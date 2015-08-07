@@ -83,6 +83,7 @@
     <Compile Include="Interfaces\ICuentaNegocio.cs" />
     <Compile Include="Interfaces\IPaseLibroNegocio.cs" />
     <Compile Include="PaseLibroNegocio.cs" />
+    <Compile Include="Response\TituloConsignacionRendidaDto.cs" />
     <Compile Include="Response\ComprobanteVenta.cs" />
     <Compile Include="Response\CrearVentaResponse.cs" />
     <Compile Include="Response\FacturaInfo.cs" />

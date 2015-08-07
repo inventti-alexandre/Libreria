@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LaPaz.Entidades;
 using LaPaz.Entidades.Dto;
 using LaPaz.Negocio.Data;
+using LaPaz.Negocio.Response;
 
 namespace LaPaz.Negocio.Interfaces
 {
@@ -21,8 +22,16 @@ namespace LaPaz.Negocio.Interfaces
         List<ProveedorCtaCteDto> ProveedorCtaCte(string sortBy1, string sortDirection, int? cuenta, string denominacion,
             string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal);
 
-        List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy1, string sortDirection, int? cuenta,
-            string denominacion, string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal);
+        List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, Guid? proveedorId,
+            int? cuenta,
+            string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta,
+            int pageIndex, int pageSize, out int pageTotal);
+
+        List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection,
+            Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int pageIndex,
+            int pageSize, out int pageTotal);
+
+        TituloConsignacionRendidaDto ObtenerTituloConsignacionPorId(Guid tituloConsignacionRendidaId);
 
         decimal SenaAFavorProveedor(Guid proveedorId);
 
@@ -30,5 +39,7 @@ namespace LaPaz.Negocio.Interfaces
 
         void CrearSeniaProveedor(ProveedorSenia senia, IList<VentaPago> pagos, Caja caja, Guid operadorId,
             int sucursalId);
+
+        void EditarTitulosConsignacionDetalle(IList<TituloConsignacionRendidasDetalleDto> titulosDetalleDtos);
     }
 }

@@ -16,6 +16,7 @@ using AutoMapper;
 using Framework.Comun.Utility;
 using LaPaz.Entidades.Enums;
 using LaPaz.Negocio.Data;
+using LaPaz.Negocio.Response;
 
 namespace LaPaz.Negocio
 {
@@ -124,7 +125,9 @@ namespace LaPaz.Negocio
             return resultados.Entities.Project().To<ProveedorCtaCteDto>().ToList();
         }
 
-        public List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, int? cuenta, string denominacion, string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal)
+        public List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, Guid? proveedorId, int? cuenta,
+            string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta,
+            int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
 
@@ -139,14 +142,46 @@ namespace LaPaz.Negocio
                                                             x.Proveedor.Denominacion.Contains(denominacion)) &&
                                                            (string.IsNullOrEmpty(cuit) || x.Proveedor.Cuit.Contains(cuit)) &&
                                                            (!activo.HasValue || x.Proveedor.Activo == activo) &&
+                                                           (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
+                                                           (!fechaConsigDesde.HasValue || x.FechaConsignacion >= fechaConsigDesde) &&
+                                                           (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta) &&
                                                            ((x.Importe - x.Pagado) > 0 || x.Pagado == null));
 
-            var resultados = Uow.TitulosConsignacionesRendidas.Listado(criteros, where);
-
+            var resultados = Uow.TitulosConsignacionesRendidas.Listado(criteros, where, x => x.Proveedor);
 
             pageTotal = resultados.PagedMetadata.TotalItemCount;
 
             return resultados.Entities.Project().To<ProveedorConsignacionDto>().ToList();
+        }
+
+        public TituloConsignacionRendidaDto ObtenerTituloConsignacionPorId(Guid tituloConsignacionRendidaId)
+        {
+            using (var uow = UowFactory.Create<ILaPazUow>())
+            {
+                TituloConsignacionRendidaDto response = new TituloConsignacionRendidaDto();
+
+                var tituloConsignacionRendida =
+                uow.TitulosConsignacionesRendidas.Obtener(x => x.Id == tituloConsignacionRendidaId, x => x.Proveedor);
+
+                var tituloConsignacionDetalle =
+                    uow.TitulosConsignacionesRendidasDetalle.Listado(x => x.Titulo.Autor)
+                        .Where(x => x.TituloConsignacionRendidaId == tituloConsignacionRendidaId)
+                        .Project().To<TituloConsignacionRendidasDetalleDto>().ToList();
+
+
+                response.TituloConsignacionRendida = tituloConsignacionRendida;
+                response.TituloConsignacionRendidasDetalle = tituloConsignacionDetalle;
+
+                return response;
+            }
+        }
+
+        public List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection,
+            Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int pageIndex,
+            int pageSize, out int pageTotal)
+        {
+            return ProveedorConsignacion(sortBy, sortDirection, proveedorId, null, null, null, activo, fechaConsigDesde,
+                fechaConsigHasta, pageIndex, pageSize, out pageTotal);
         }
 
         public void AnularSeniaProveedor(ProveedorSenia senia, Caja caja, Guid operadorId, int sucursalId)
@@ -206,14 +241,14 @@ namespace LaPaz.Negocio
             }
         }
 
-        public void CrearSeniaProveedor(ProveedorSenia senia,IList<VentaPago> pagos, Caja caja, Guid operadorId, int sucursalId)
+        public void CrearSeniaProveedor(ProveedorSenia senia, IList<VentaPago> pagos, Caja caja, Guid operadorId, int sucursalId)
         {
             using (var uow = UowFactory.Create<ILaPazUow>())
             {
                 decimal? efectivo = 0;
                 decimal? efectivoCajaAnterior = 0;
                 decimal? tarjeta = 0;
-                decimal? cheque = 0;    
+                decimal? cheque = 0;
                 decimal? deposito = 0;
                 decimal? transferencia = 0;
 
@@ -424,7 +459,41 @@ namespace LaPaz.Negocio
 
                 uow.ProveedoresSenias.Agregar(senia);
 
-                uow.Commit(); 
+                uow.Commit();
+            }
+        }
+
+
+        public void EditarTitulosConsignacionDetalle(IList<TituloConsignacionRendidasDetalleDto> titulosConsignacionRendidaDetalle)
+        {
+            if (!titulosConsignacionRendidaDetalle.Any())
+            {
+                return;
+            }
+
+            using (var uow = UowFactory.Create<ILaPazUow>())
+            {
+                var tituloConsignacionRendidaId = titulosConsignacionRendidaDetalle.First().TituloConsignacionRendidaId;
+
+                decimal nuevoImporte = 0;
+
+                foreach (var tituloConsignacionRendidaDetalle in titulosConsignacionRendidaDetalle)
+                {
+                    var tituloConsignacionRendidaActual = uow.TitulosConsignacionesRendidasDetalle.Obtener(x => x.Id == tituloConsignacionRendidaDetalle.Id);
+                    tituloConsignacionRendidaActual.PrecioCompra = tituloConsignacionRendidaDetalle.PrecioCompra;
+                    uow.TitulosConsignacionesRendidasDetalle.Modificar(tituloConsignacionRendidaActual);
+
+                    nuevoImporte += tituloConsignacionRendidaDetalle.PrecioCompra * tituloConsignacionRendidaDetalle.Cantidad;
+                }
+
+                var tituloConsignacionRendida =
+                    uow.TitulosConsignacionesRendidas.Obtener(x => x.Id == tituloConsignacionRendidaId);
+
+                tituloConsignacionRendida.Importe = nuevoImporte;
+
+                uow.TitulosConsignacionesRendidas.Modificar(tituloConsignacionRendida);
+
+                uow.Commit();
             }
         }
     }

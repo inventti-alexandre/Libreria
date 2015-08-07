@@ -35,7 +35,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
         private readonly MessageBoxDisplayService _messageBoxDisplayService;
         private Guid _pagoIdCtaCte;
         private Guid _pagoIdConsignacion;
-        private int _celdasSeleccionadas =0;
+        private int _celdasSeleccionadas = 0;
 
 
         public event EventHandler ProveedoresCuentaCorriente;
@@ -190,15 +190,15 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 , true, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
                                                       out pageTotal));
 
-            var proveedoresConsignacion = await Task.Run(() => _proveedorNegocio.ProveedorConsignacion(SortColumn, SortDirection, null, ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-               , true, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
+            var proveedoresConsignacion = await Task.Run(() => _proveedorNegocio.ProveedorConsignacion(SortColumn, SortDirection, null, null, ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
+               , true, null, null, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
                                                      out pageTotal));
 
             GridCtaCte.DataSource = proveedoresCtaCte;
 
             GridConsignaciones.DataSource = proveedoresConsignacion;
 
-          
+
 
             ProveedoreCtaCtePager.UpdateState(pageTotal);
             CalcularDeuda(proveedoresCtaCte);
@@ -266,8 +266,8 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             ucTotalesCompraSeña1.Pagos.Clear();
             ucTotalesCompraSeña1.TotalPagar = 0;
             ucTotalesCompraSeña1.SubTotal = 0;
-            
-            
+
+
         }
 
         private void CalcularSenias()
@@ -333,7 +333,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
             ChequeoPagina(_celdasSeleccionadas, 0);
 
-            
+
 
 
             if (sender.ToString() == "Telerik.WinControls.UI.RadTextBoxEditor")
@@ -349,7 +349,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
 
         }
-        
+
         private void SelectAll()
         {
             ucTotalesCompraSeña1.SubTotal = 0;
@@ -360,7 +360,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 {
                     for (int i = 0; i < GridCtaCte.RowCount; i++)
                     {
-                       
+
 
                         //if (GridCtaCte.Rows[i].Cells[8].Value == null)
                         //    MessageBox.Show("Es null" + i.ToString());
@@ -369,7 +369,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                         //        MessageBox.Show("Es vacio" + i.ToString());
 
                         GridCtaCte.Rows[i].Cells[8].Value = "false";
-                       // GridCtaCte.Rows[i].Cells[8].Value = true;
+                        // GridCtaCte.Rows[i].Cells[8].Value = true;
                         AgregarPagoLinea(1, i);
                         _celdasSeleccionadas += 1;
                         ChequeoPagina(_celdasSeleccionadas, 1);
@@ -381,17 +381,17 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                     {
                         //if (GridCtaCte.Rows[i].Cells[8].Value.ToString()=="true")
                         //{
-                            GridCtaCte.Rows[i].Cells[8].Value = false;
-                            //AgregarPagoLinea(-1, i);
-                            //_celdasSeleccionadas -= 1;
-                            //ChequeoPagina(_celdasSeleccionadas, 1);
+                        GridCtaCte.Rows[i].Cells[8].Value = false;
+                        //AgregarPagoLinea(-1, i);
+                        //_celdasSeleccionadas -= 1;
+                        //ChequeoPagina(_celdasSeleccionadas, 1);
                         //}
-                        
+
                     }
                 }
             }
         }
-      
+
 
 
         private void ChequeoPagina(int _celdasSeleccionadas, int p)
@@ -451,8 +451,8 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             ActualizarMontos();
 
         }
-         
-        private void AgregarPagoLinea(int signo,int linea)
+
+        private void AgregarPagoLinea(int signo, int linea)
         {
             //signo: si pasas 1 sumas porque estas agregando, si no es con -1 y resta.
             var selectedRow = GridCtaCte.SelectedRows.FirstOrDefault();
@@ -461,7 +461,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
             var lineaSeleccionada = (ProveedorCtaCteDto)GridCtaCte.CurrentRow.DataBoundItem;
 
-            lineaSeleccionada = (ProveedorCtaCteDto) GridCtaCte.Rows[linea].DataBoundItem;
+            lineaSeleccionada = (ProveedorCtaCteDto)GridCtaCte.Rows[linea].DataBoundItem;
 
             var _compraSeleccionada = Uow.ProveedoresCuentasCorrientes.Obtener(p => p.Id == lineaSeleccionada.Id);
 
@@ -568,7 +568,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                         var _proveedorPagoDetalle = new ProveedoresPagosDetalle();
                         _proveedorPagoDetalle.Id = Guid.NewGuid();
                         _proveedorPagoDetalle.ProveedorPagoId = _pagoIdCtaCte;
-                        _proveedorPagoDetalle.ProveedorCuentaCorrienteId =Guid.Parse(row.Cells[9].Value.ToString());
+                        _proveedorPagoDetalle.ProveedorCuentaCorrienteId = Guid.Parse(row.Cells[9].Value.ToString());
                         _proveedorPagoDetalle.ProveedorConsignacionId = Guid.Empty;
                         _proveedorPagoDetalle.MontoPagado = Convert.ToDecimal(row.Cells[7].Value);
                         _proveedorPagoDetalle.FechaAlta = _clock.Now;
@@ -587,7 +587,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
             }
             GuardarPagos();
-           
+
 
         }
 
@@ -651,12 +651,12 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 }
             }
 
-            
+
 
             #region Guardamos caja en contado
 
             //Guardamos la caja
-            Caja caja= new Caja();
+            Caja caja = new Caja();
             if (DtpFechaPago.Value != _clock.Now)
             {
                 caja = Uow.Cajas.Obtener(c => DbFunctions.TruncateTime(c.FechaAlta) == DtpFechaPago.Value.Date);
@@ -682,9 +682,9 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
                 caja.FechaModificacion = _clock.Now;
                 caja.SucursalModificacionId = Context.SucursalActual.Id;
-                caja.OperadorModificacionId = (Context.OperadorActual.Id);    
+                caja.OperadorModificacionId = (Context.OperadorActual.Id);
             }
-            
+
 
             //aca descontamos las señas en el caso de que se utilicen. 
             var _seña = UsoDeSeña();
@@ -834,10 +834,10 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             Uow.Commit();
 
             _messageBoxDisplayService.ShowSuccess(Resources.MessageSuccessPagoExitoso);
-            
+
         }
 
-       
+
 
 
         private bool ValidarPagoCuentaCorriente()
@@ -906,7 +906,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 }
             }
 
-            
+
 
             #region Guardamos caja en contado
 
@@ -985,7 +985,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 cajaMovimientoAnterior.TipoMovimientoCajaId =
                     TipoMovimientoCajaEnum.PagoProveedorCajaAnterior;
 
-                
+
                 cajaMovimientoAnterior.ComprobanteId = _pagoIdConsignacion;
                 cajaMovimientoAnterior.Importe = tarjeta + deposito + cheque + efectivoCajaAnterior + transferencia;
                 cajaMovimientoAnterior.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
@@ -1089,7 +1089,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             Uow.Commit();
 
             _messageBoxDisplayService.ShowSuccess(Resources.MessageSuccessPagoExitoso);
-            
+
         }
 
         private void GuardarProveedoresPago(Guid pagoId)
@@ -1110,7 +1110,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
             #endregion
 
-            
+
         }
 
         private bool ValidarPagoConsignacion()
@@ -1189,7 +1189,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
             }
             GuardarPagosConsignacion();
-            
+
         }
 
         private decimal? UsoDeSeña()
@@ -1228,8 +1228,8 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             return _seña;
         }
 
-        
-      
+
+
 
         private void AgregarPagoConsignaciones(int signo)
         {
@@ -1282,6 +1282,6 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             //MessageBox.Show("adsf");
         }
 
-        
+
     }
 }

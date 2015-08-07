@@ -8,6 +8,7 @@ namespace LaPaz.Entidades.Dto
         public Guid Id { get; set; }
         public string LCN { get; set; }
         public Guid ProveedorId { get; set; }
+        public string ProveedorDenominacion { get; set; }
         public Nullable<System.DateTime> FechaAlta { get; set; }
         public Nullable<decimal> Importe { get; set; }
         public string Observaciones { get; set; }

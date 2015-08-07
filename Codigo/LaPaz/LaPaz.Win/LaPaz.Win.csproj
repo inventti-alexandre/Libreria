@@ -394,6 +394,18 @@
     <Compile Include="Forms\Consignaciones\Clientes\UcTitulosConsignacionVenta.Designer.cs">
       <DependentUpon>UcTitulosConsignacionVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Consignaciones\FrmEditarDetalleConsignacionProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\FrmEditarDetalleConsignacionProveedor.Designer.cs">
+      <DependentUpon>FrmEditarDetalleConsignacionProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\FrmHistorialConsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\FrmHistorialConsignaciones.Designer.cs">
+      <DependentUpon>FrmHistorialConsignaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Consignaciones\FrmReporteConsignacionesDevueltas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +441,12 @@
     </Compile>
     <Compile Include="Forms\Consignaciones\FrmRendicionConsignaciones.Designer.cs">
       <DependentUpon>FrmRendicionConsignaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\UcConsignacionesProveedorListado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\UcConsignacionesProveedorListado.Designer.cs">
+      <DependentUpon>UcConsignacionesProveedorListado.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Consignaciones\UcFiltrosConsignaciones.cs">
       <SubType>UserControl</SubType>
@@ -1331,6 +1349,12 @@
       <DependentUpon>UcTitulosConsignacionVenta.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consignaciones\FrmEditarDetalleConsignacionProveedor.resx">
+      <DependentUpon>FrmEditarDetalleConsignacionProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consignaciones\FrmHistorialConsignaciones.resx">
+      <DependentUpon>FrmHistorialConsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Consignaciones\FrmReporteConsignacionesDevueltas.resx">
       <DependentUpon>FrmReporteConsignacionesDevueltas.cs</DependentUpon>
     </EmbeddedResource>
@@ -1348,6 +1372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Consignaciones\FrmRendicionConsignaciones.resx">
       <DependentUpon>FrmRendicionConsignaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consignaciones\UcConsignacionesProveedorListado.resx">
+      <DependentUpon>UcConsignacionesProveedorListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Consignaciones\UcFiltrosConsignaciones.resx">
       <DependentUpon>UcFiltrosConsignaciones.cs</DependentUpon>
