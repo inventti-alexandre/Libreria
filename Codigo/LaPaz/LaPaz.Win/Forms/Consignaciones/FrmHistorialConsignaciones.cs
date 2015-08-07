@@ -31,25 +31,32 @@ namespace LaPaz.Win.Forms.Consignaciones
             _proveedorNegocio = proveedorNegocio;
 
             InitializeComponent();
+
+            HistorialConsignacionesPager.RefreshActionAsync = RefrescarListado;
         }
 
-        public async Task RefrescarListado()
+        public async Task<int> RefrescarListado()
         {
             var proveedorId = ucFiltrosConsignaciones.ProveedorId;
             var desde = ucFiltrosConsignaciones.Desde;
             var hasta = ucFiltrosConsignaciones.Hasta;
 
+            var pageSize = HistorialConsignacionesPager.PageSize;
+            var pageIndex = HistorialConsignacionesPager.CurrentPage;
+
             int pageTotal = 0;
 
             var proveedoresConsignacion = await Task.Run(() =>
                 _proveedorNegocio.ProveedorConsignacion(string.Empty, string.Empty, proveedorId, null,
-                                                        desde,
-                                                        hasta,
-                                                        1, 
-                                                        50,
-                                                        out pageTotal));
+                    desde,
+                    hasta,
+                    pageIndex,
+                    pageSize,
+                    out pageTotal));
 
             UcConsignacionesProveedorListado.Consignaciones = proveedoresConsignacion;
+
+            return pageTotal;
         }
 
         private void FrmRendicionConsignaciones_Load(object sender, EventArgs e)
