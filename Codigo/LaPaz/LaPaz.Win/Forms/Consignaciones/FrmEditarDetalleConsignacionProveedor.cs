@@ -91,6 +91,11 @@ namespace LaPaz.Win.Forms.Consignaciones
             var nuevoImporte =
                 _tituloConsignacionRendidaDto.TituloConsignacionRendidasDetalle.Sum(x => x.PrecioCompra * x.Cantidad);
 
+            foreach (var detalle in _tituloConsignacionRendidaDto.TituloConsignacionRendidasDetalle)
+            {
+                detalle.Importe = detalle.PrecioCompra*detalle.Cantidad;
+            }
+
             TxtNuevoImporte.Text = nuevoImporte.ToString("c2");
         }
     }

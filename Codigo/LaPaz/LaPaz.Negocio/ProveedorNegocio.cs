@@ -483,6 +483,7 @@ namespace LaPaz.Negocio
                 {
                     var tituloConsignacionRendidaActual = uow.TitulosConsignacionesRendidasDetalle.Obtener(x => x.Id == tituloConsignacionRendidaDetalle.Id);
                     tituloConsignacionRendidaActual.PrecioCompra = tituloConsignacionRendidaDetalle.PrecioCompra;
+                    tituloConsignacionRendidaActual.Importe = tituloConsignacionRendidaDetalle.Importe;
                     uow.TitulosConsignacionesRendidasDetalle.Modificar(tituloConsignacionRendidaActual);
 
                     nuevoImporte += tituloConsignacionRendidaDetalle.PrecioCompra * tituloConsignacionRendidaDetalle.Cantidad;
