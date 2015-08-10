@@ -235,6 +235,7 @@
             this.RpvPagos.TabIndex = 4;
             this.RpvPagos.Text = "radPageView1";
             this.RpvPagos.ThemeName = "TelerikMetroBlue";
+            ((Telerik.WinControls.UI.RadPageViewStripElement)(this.RpvPagos.GetChildAt(0))).StripButtons = Telerik.WinControls.UI.StripViewButtons.None;
             // 
             // CuentaCorriente
             // 
@@ -363,7 +364,7 @@
             this.GridConsignaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GridConsignaciones.Location = new System.Drawing.Point(0, 0);
             // 
-            // GridConsignaciones
+            // 
             // 
             this.GridConsignaciones.MasterTemplate.AllowAddNewRow = false;
             this.GridConsignaciones.MasterTemplate.AutoGenerateColumns = false;

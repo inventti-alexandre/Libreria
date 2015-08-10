@@ -18,7 +18,7 @@ using LaPaz.Entidades;
 
 namespace LaPaz.Win.Forms.Consignaciones
 {
-    public partial class FrmHistorialConsignaciones : FormBase
+    public partial class FrmHistorialConsignaciones : FormBaseListado
     {
         private readonly IProveedorNegocio _proveedorNegocio;
 
@@ -33,6 +33,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             InitializeComponent();
 
             HistorialConsignacionesPager.RefreshActionAsync = RefrescarListado;
+            Spinner = UcProgressSpinner;
         }
 
         public async Task<int> RefrescarListado()
@@ -46,6 +47,8 @@ namespace LaPaz.Win.Forms.Consignaciones
 
             int pageTotal = 0;
 
+            UcProgressSpinner.Show();
+
             var proveedoresConsignacion = await Task.Run(() =>
                 _proveedorNegocio.ProveedorConsignacion(string.Empty, string.Empty, proveedorId, null,
                     desde,
@@ -55,6 +58,8 @@ namespace LaPaz.Win.Forms.Consignaciones
                     out pageTotal));
 
             UcConsignacionesProveedorListado.Consignaciones = proveedoresConsignacion;
+
+            UcProgressSpinner.Hide();   
 
             return pageTotal;
         }

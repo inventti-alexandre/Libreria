@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MainMenu = new Telerik.WinControls.UI.RadMenu();
             this.LnkAbrirCerraCaja = new System.Windows.Forms.LinkLabel();
             this.LnkUsuarioActual = new System.Windows.Forms.LinkLabel();
-            this.MainMenu = new Telerik.WinControls.UI.RadMenu();
             this.MiOperaciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiVentas = new Telerik.WinControls.UI.RadMenuItem();
             this.MiVentasListado = new Telerik.WinControls.UI.RadMenuItem();
@@ -45,10 +45,11 @@
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.rMnPresupuesto = new Telerik.WinControls.UI.RadMenuItem();
             this.MiPresupuestoListado = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiConsignacionesSinRendir = new Telerik.WinControls.UI.RadMenuItem();
             this.MiDevolverConsignaciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiRendirConsignacionCliente = new Telerik.WinControls.UI.RadMenuItem();
             this.MiConsignacionesProveedor = new Telerik.WinControls.UI.RadMenuItem();
+            this.MiConsignacionesProveedorHistorial = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.MiGastos = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.MiProveedoresGastos = new Telerik.WinControls.UI.RadMenuItem();
@@ -100,9 +101,8 @@
             this.BtnProveedoresListado = new Telerik.WinControls.UI.RadButton();
             this.BtnLibrosListado = new Telerik.WinControls.UI.RadButton();
             this.BtnClienteListado = new Telerik.WinControls.UI.RadButton();
-            this.MiConsignacionesProveedorHistorial = new Telerik.WinControls.UI.RadMenuItem();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).BeginInit();
             this.TabsPrincipal.SuspendLayout();
             this.PageAccesos.SuspendLayout();
@@ -132,6 +132,30 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.MiOperaciones,
+            this.MiGastos,
+            this.MiTitulos,
+            this.MiEntidades,
+            this.MiReportes,
+            this.MiConfiguracion,
+            this.MiSeguridad,
+            this.MiAyuda});
+            this.MainMenu.Location = new System.Drawing.Point(3, 3);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            // 
+            // 
+            // 
+            this.MainMenu.RootElement.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.MainMenu.Size = new System.Drawing.Size(898, 29);
+            this.MainMenu.TabIndex = 19;
+            this.MainMenu.Text = "MainMenu";
+            this.MainMenu.ThemeName = "TelerikMetroBlue";
             this.tableLayoutPanel1.Controls.Add(this.LnkAbrirCerraCaja, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.LnkUsuarioActual, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.MainMenu, 0, 0);
@@ -176,30 +200,6 @@
             this.LnkUsuarioActual.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkUsuarioActual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkUsuarioActual_LinkClicked);
             // 
-            // MainMenu
-            // 
-            this.MainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainMenu.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MiOperaciones,
-            this.MiGastos,
-            this.MiTitulos,
-            this.MiEntidades,
-            this.MiReportes,
-            this.MiConfiguracion,
-            this.MiSeguridad,
-            this.MiAyuda});
-            this.MainMenu.Location = new System.Drawing.Point(3, 3);
-            this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            // 
-            // 
-            // 
-            this.MainMenu.RootElement.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.MainMenu.Size = new System.Drawing.Size(898, 29);
-            this.MainMenu.TabIndex = 19;
-            this.MainMenu.Text = "MainMenu";
-            this.MainMenu.ThemeName = "TelerikMetroBlue";
-            // 
             // MiOperaciones
             // 
             this.MiOperaciones.AccessibleDescription = "Operaciones";
@@ -212,9 +212,7 @@
             this.radMenuItem1,
             this.radMenuItem2,
             this.rMnPresupuesto,
-            this.MiConsignacionesSinRendir,
             this.MiDevolverConsignaciones,
-            this.MiConsignacionesSinRendir,
             this.MiRendirConsignacionCliente,
             this.MiConsignacionesProveedor});
             this.MiOperaciones.Name = "MiOperaciones";
@@ -327,15 +325,6 @@
             this.MiPresupuestoListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiPresupuestoListado.Click += new System.EventHandler(this.MiPresupuestoListado_Click);
             // 
-            // MiConsignacionesSinRendir
-            // 
-            this.MiConsignacionesSinRendir.AccessibleDescription = "Rendir Consignaciones";
-            this.MiConsignacionesSinRendir.AccessibleName = "Rendir Consignaciones";
-            this.MiConsignacionesSinRendir.Name = "MiConsignacionesSinRendir";
-            this.MiConsignacionesSinRendir.Text = "Rendir Consignaciones";
-            this.MiConsignacionesSinRendir.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiConsignacionesSinRendir.Click += new System.EventHandler(this.MiConsignacionesSinRendir_Click);
-            // 
             // MiDevolverConsignaciones
             // 
             this.MiDevolverConsignaciones.AccessibleDescription = "Devolver Consignaciones";
@@ -359,10 +348,29 @@
             this.MiConsignacionesProveedor.AccessibleDescription = "Consignaciones Proveedor";
             this.MiConsignacionesProveedor.AccessibleName = "Consignaciones Proveedor";
             this.MiConsignacionesProveedor.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MiConsignacionesProveedorHistorial});
+            this.MiConsignacionesProveedorHistorial,
+            this.radMenuItem4});
             this.MiConsignacionesProveedor.Name = "MiConsignacionesProveedor";
             this.MiConsignacionesProveedor.Text = "Consignaciones Proveedor";
             this.MiConsignacionesProveedor.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // MiConsignacionesProveedorHistorial
+            // 
+            this.MiConsignacionesProveedorHistorial.AccessibleDescription = "Historial";
+            this.MiConsignacionesProveedorHistorial.AccessibleName = "Historial";
+            this.MiConsignacionesProveedorHistorial.Name = "MiConsignacionesProveedorHistorial";
+            this.MiConsignacionesProveedorHistorial.Text = "Historial";
+            this.MiConsignacionesProveedorHistorial.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MiConsignacionesProveedorHistorial.Click += new System.EventHandler(this.MiConsignacionesProveedorHistorial_Click);
+            // 
+            // radMenuItem4
+            // 
+            this.radMenuItem4.AccessibleDescription = "Rendir Consignaciones";
+            this.radMenuItem4.AccessibleName = "Rendir Consignaciones";
+            this.radMenuItem4.Name = "radMenuItem4";
+            this.radMenuItem4.Text = "Rendir Consignaciones";
+            this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem4.Click += new System.EventHandler(this.MiConsignacionesSinRendir_Click);
             // 
             // MiGastos
             // 
@@ -1114,15 +1122,6 @@
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Margin = new System.Windows.Forms.Padding(0, -2, 0, 0);
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // MiConsignacionesProveedorHistorial
-            // 
-            this.MiConsignacionesProveedorHistorial.AccessibleDescription = "Historial";
-            this.MiConsignacionesProveedorHistorial.AccessibleName = "Historial";
-            this.MiConsignacionesProveedorHistorial.Name = "MiConsignacionesProveedorHistorial";
-            this.MiConsignacionesProveedorHistorial.Text = "Historial";
-            this.MiConsignacionesProveedorHistorial.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiConsignacionesProveedorHistorial.Click += new System.EventHandler(this.MiConsignacionesProveedorHistorial_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1138,9 +1137,9 @@
             this.Text = "Sistema de Gestión Librería Corrientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).EndInit();
             this.TabsPrincipal.ResumeLayout(false);
             this.PageAccesos.ResumeLayout(false);
@@ -1185,7 +1184,6 @@
         private System.Windows.Forms.LinkLabel LnkUsuarioActual;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Telerik.WinControls.UI.RadButton BtnSeñaProveedor;
-        private Telerik.WinControls.UI.RadMenu MainMenu;
         private Telerik.WinControls.UI.RadMenuItem MiSeguridad;
         private Telerik.WinControls.UI.RadMenuItem MiAsignarFuncionesARoles;
         private Telerik.WinControls.UI.RadButton BtnPagosProgramdos;
@@ -1231,7 +1229,6 @@
         private Telerik.WinControls.UI.RadMenuItem MiReporteLibros;
         private Telerik.WinControls.UI.RadMenuItem MiCuentas;
         private Telerik.WinControls.UI.RadMenuItem MiVentasListado;
-        private Telerik.WinControls.UI.RadMenuItem MiConsignacionesSinRendir;
         private Telerik.WinControls.UI.RadMenuItem MiPresupuestoListado;
         private Telerik.WinControls.UI.RadMenuItem MiReporteRanking;
         private Telerik.WinControls.UI.RadButton BtnProveedoresCtaCte;
@@ -1241,6 +1238,8 @@
         private Telerik.WinControls.UI.RadMenuItem MiRendirConsignacionCliente;
         private Telerik.WinControls.UI.RadMenuItem MiConsignacionesProveedor;
         private Telerik.WinControls.UI.RadMenuItem MiConsignacionesProveedorHistorial;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
+        private Telerik.WinControls.UI.RadMenu MainMenu;
 
     }
 }

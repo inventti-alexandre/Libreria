@@ -39,12 +39,26 @@ namespace LaPaz.Win.Forms.Consignaciones
             TxtProveedor.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.Proveedor.Denominacion;
             TxtLcn.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.LCN;
             TxtFechaConsignacion.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.FechaConsignacion.ToShortDateString();
-            TxtImporte.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.Importe.ToString("c2");
+            TxtImporteActual.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.Importe.ToString("c2");
+            TxtNuevoImporte.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.Importe.ToString("c2");
             TxtPagado.Text = _tituloConsignacionRendidaDto.TituloConsignacionRendida.Pagado.HasValue
                 ? _tituloConsignacionRendidaDto.TituloConsignacionRendida.Pagado.Value.ToString("c2")
                 : String.Empty;
 
             GridConsignacionTitulos.DataSource = _tituloConsignacionRendidaDto.TituloConsignacionRendidasDetalle;
+
+            if (_tituloConsignacionRendidaDto.TituloConsignacionRendida.Saldada)
+            {
+                EstablecerFormularioParaDetalle();
+            }
+        }
+
+        private void EstablecerFormularioParaDetalle()
+        {
+            this.BtnGuardar.Visible = false;
+            this.GridConsignacionTitulos.AllowEditRow = false;
+            this.LblNuevoImporte.Visible = false;
+            this.TxtNuevoImporte.Visible = false;
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -65,6 +79,19 @@ namespace LaPaz.Win.Forms.Consignaciones
             {
                 TituloConsignacionRendidaEditada(this, new EventArgs());
             }
+        }
+
+        private void GridConsignacionTitulos_CellValueChanged(object sender, Telerik.WinControls.UI.GridViewCellEventArgs e)
+        {
+            ActualizarNuevoImporte();
+        }
+
+        private void ActualizarNuevoImporte()
+        {
+            var nuevoImporte =
+                _tituloConsignacionRendidaDto.TituloConsignacionRendidasDetalle.Sum(x => x.PrecioCompra * x.Cantidad);
+
+            TxtNuevoImporte.Text = nuevoImporte.ToString("c2");
         }
     }
 }

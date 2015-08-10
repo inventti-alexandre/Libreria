@@ -240,6 +240,7 @@
     </Compile>
     <Compile Include="Extensiones\ConsignacionSinRendir.cs" />
     <Compile Include="Extensiones\ConsignacionParaDevolver.cs" />
+    <Compile Include="Extensiones\TituloConsignacionRendida.cs" />
     <Compile Include="Extensiones\RemitosVentaDetalle.cs" />
     <Compile Include="Extensiones\ExtProveedorCtaCte.cs" />
     <Compile Include="FacturasCompra.cs">

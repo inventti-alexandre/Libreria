@@ -126,7 +126,7 @@ namespace LaPaz.Negocio
         }
 
         public List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, Guid? proveedorId, int? cuenta,
-            string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta,
+            string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, bool? pendientePago,
             int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
@@ -137,15 +137,18 @@ namespace LaPaz.Negocio
             criteros.SortDirection = !string.IsNullOrEmpty(sortDirection) ? sortDirection : "DESC";
 
             Expression<Func<TituloConsignacionRendida, bool>> where = x => (
-                                                           (!cuenta.HasValue || (x.Proveedor.Cuenta.HasValue && x.Proveedor.Cuenta.ToString().Contains(cuenta.ToString()))) &&
-                                                           (string.IsNullOrEmpty(denominacion) ||
-                                                            x.Proveedor.Denominacion.Contains(denominacion)) &&
-                                                           (string.IsNullOrEmpty(cuit) || x.Proveedor.Cuit.Contains(cuit)) &&
-                                                           (!activo.HasValue || x.Proveedor.Activo == activo) &&
-                                                           (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
-                                                           (!fechaConsigDesde.HasValue || x.FechaConsignacion >= fechaConsigDesde) &&
-                                                           (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta) &&
-                                                           ((x.Importe - x.Pagado) > 0 || x.Pagado == null));
+                (!cuenta.HasValue ||
+                 (x.Proveedor.Cuenta.HasValue && x.Proveedor.Cuenta.ToString().Contains(cuenta.ToString()))) &&
+                (string.IsNullOrEmpty(denominacion) ||
+                 x.Proveedor.Denominacion.Contains(denominacion)) &&
+                (string.IsNullOrEmpty(cuit) || x.Proveedor.Cuit.Contains(cuit)) &&
+                (!activo.HasValue || x.Proveedor.Activo == activo) &&
+                (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
+                (!fechaConsigDesde.HasValue || x.FechaConsignacion >= fechaConsigDesde) &&
+                (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta) &&
+                (!pendientePago.HasValue ||
+                 (pendientePago.Value && ((x.Importe - x.Pagado) > 0 || x.Pagado == null))) ||
+                (!pendientePago.Value && ((x.Importe >= x.Pagado))));
 
             var resultados = Uow.TitulosConsignacionesRendidas.Listado(criteros, where, x => x.Proveedor);
 
@@ -180,8 +183,7 @@ namespace LaPaz.Negocio
             Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int pageIndex,
             int pageSize, out int pageTotal)
         {
-            return ProveedorConsignacion(sortBy, sortDirection, proveedorId, null, null, null, activo, fechaConsigDesde,
-                fechaConsigHasta, pageIndex, pageSize, out pageTotal);
+            return ProveedorConsignacion(sortBy, sortDirection, proveedorId, null, null, null, activo, fechaConsigDesde, fechaConsigHasta, null, pageIndex, pageSize, out pageTotal);
         }
 
         public void AnularSeniaProveedor(ProveedorSenia senia, Caja caja, Guid operadorId, int sucursalId)

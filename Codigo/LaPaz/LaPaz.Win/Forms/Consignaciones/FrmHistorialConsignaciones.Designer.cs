@@ -34,8 +34,9 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.UcConsignacionesProveedorListado = new LaPaz.Win.Forms.Consignaciones.UcConsignacionesProveedorListado();
             this.HistorialConsignacionesPager = new Framework.WinForm.Controls.MetroPager();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.ucFiltrosConsignaciones = new LaPaz.Win.Forms.Consignaciones.UcFiltrosConsignaciones();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ucFiltrosConsignaciones = new LaPaz.Win.Forms.Consignaciones.UcFiltrosConsignaciones();
+            this.UcProgressSpinner = new LaPaz.Win.Forms.Util.UcProgressSpinner();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -49,14 +50,13 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.UcConsignacionesProveedorListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UcConsignacionesProveedorListado.Location = new System.Drawing.Point(0, 0);
             this.UcConsignacionesProveedorListado.Name = "UcConsignacionesProveedorListado";
-            this.UcConsignacionesProveedorListado.Size = new System.Drawing.Size(1366, 776);
+            this.UcConsignacionesProveedorListado.Size = new System.Drawing.Size(1374, 776);
             this.UcConsignacionesProveedorListado.TabIndex = 1;
             // 
             // HistorialConsignacionesPager
             // 
             this.HistorialConsignacionesPager.CurrentPage = 1;
-            this.HistorialConsignacionesPager.Dock = System.Windows.Forms.DockStyle.Right;
-            this.HistorialConsignacionesPager.Location = new System.Drawing.Point(985, 94);
+            this.HistorialConsignacionesPager.Location = new System.Drawing.Point(993, 94);
             this.HistorialConsignacionesPager.Name = "HistorialConsignacionesPager";
             this.HistorialConsignacionesPager.PageSize = 50;
             this.HistorialConsignacionesPager.PageTotal = 1;
@@ -81,40 +81,50 @@ namespace LaPaz.Win.Forms.Consignaciones
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.UcConsignacionesProveedorListado);
-            this.splitContainer1.Size = new System.Drawing.Size(1366, 920);
+            this.splitContainer1.Size = new System.Drawing.Size(1374, 920);
             this.splitContainer1.SplitterDistance = 140;
             this.splitContainer1.TabIndex = 9;
             // 
-            // ucFiltrosConsignaciones
-            // 
-            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 7, 7, 19, 17, 55, 260);
-            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 8, 7, 19, 17, 55, 258);
-            this.ucFiltrosConsignaciones.Location = new System.Drawing.Point(3, 3);
-            this.ucFiltrosConsignaciones.Name = "ucFiltrosConsignaciones";
-            this.ucFiltrosConsignaciones.ProveedorId = null;
-            this.ucFiltrosConsignaciones.Size = new System.Drawing.Size(757, 85);
-            this.ucFiltrosConsignaciones.TabIndex = 1;
-            // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.ucFiltrosConsignaciones, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.HistorialConsignacionesPager, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.UcProgressSpinner, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.HistorialConsignacionesPager, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1366, 140);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1374, 140);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // ucFiltrosConsignaciones
+            // 
+            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 7, 10, 10, 12, 56, 533);
+            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 8, 10, 10, 12, 56, 527);
+            this.ucFiltrosConsignaciones.Location = new System.Drawing.Point(3, 3);
+            this.ucFiltrosConsignaciones.Name = "ucFiltrosConsignaciones";
+            this.ucFiltrosConsignaciones.ProveedorId = null;
+            this.ucFiltrosConsignaciones.Size = new System.Drawing.Size(757, 85);
+            this.ucFiltrosConsignaciones.TabIndex = 1;
+            // 
+            // UcProgressSpinner
+            // 
+            this.UcProgressSpinner.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.UcProgressSpinner.Location = new System.Drawing.Point(1209, 32);
+            this.UcProgressSpinner.Name = "UcProgressSpinner";
+            this.UcProgressSpinner.Size = new System.Drawing.Size(162, 27);
+            this.UcProgressSpinner.TabIndex = 18;
             // 
             // FrmHistorialConsignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 920);
+            this.ClientSize = new System.Drawing.Size(1374, 920);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -151,5 +161,6 @@ namespace LaPaz.Win.Forms.Consignaciones
         private Framework.WinForm.Controls.MetroPager HistorialConsignacionesPager;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private Util.UcProgressSpinner UcProgressSpinner;
     }
 }

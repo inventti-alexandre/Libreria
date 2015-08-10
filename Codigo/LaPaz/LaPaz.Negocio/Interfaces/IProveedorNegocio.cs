@@ -23,8 +23,8 @@ namespace LaPaz.Negocio.Interfaces
             string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal);
 
         List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, Guid? proveedorId,
-            int? cuenta,
-            string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta,
+            int? cuenta, string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde,
+            DateTime? fechaConsigHasta, bool? pendientePago,
             int pageIndex, int pageSize, out int pageTotal);
 
         List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection,

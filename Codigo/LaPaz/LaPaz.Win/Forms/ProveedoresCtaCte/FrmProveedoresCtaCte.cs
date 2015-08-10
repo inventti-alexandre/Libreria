@@ -186,13 +186,24 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             var page = ProveedoreCtaCtePager.CurrentPage;
             var pageSize = ProveedoreCtaCtePager.PageSize;
 
-            var proveedoresCtaCte = await Task.Run(() => _proveedorNegocio.ProveedorCtaCte(SortColumn, SortDirection, null, ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-                , true, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
-                                                      out pageTotal));
+            var proveedoresCtaCte =
+                await
+                    Task.Run(
+                        () =>
+                            _proveedorNegocio.ProveedorCtaCte(SortColumn, SortDirection, null,
+                                ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
+                                , true, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
+                                out pageTotal));
 
-            var proveedoresConsignacion = await Task.Run(() => _proveedorNegocio.ProveedorConsignacion(SortColumn, SortDirection, null, null, ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-               , true, null, null, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
-                                                     out pageTotal));
+            var proveedoresConsignacion =
+                await
+                    Task.Run(
+                        () =>
+                            _proveedorNegocio.ProveedorConsignacion(SortColumn, SortDirection, null, null,
+                                ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
+                                , true, null, null, true, ProveedoreCtaCtePager.CurrentPage,
+                                ProveedoreCtaCtePager.PageSize,
+                                out pageTotal));
 
             GridCtaCte.DataSource = proveedoresCtaCte;
 
