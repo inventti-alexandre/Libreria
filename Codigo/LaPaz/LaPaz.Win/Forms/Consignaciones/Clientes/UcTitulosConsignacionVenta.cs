@@ -168,6 +168,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                         {
                             tituloModificado.CntARendir = titulo.CntVendida;
                             tituloModificado.CntVendida = titulo.CntVendida;
+                            tituloModificado.CntADevolver = titulo.CntDevuelta;
                             tituloModificado.CntDevuelta = titulo.CntDevuelta;
                             tituloModificado.PrecioVenta = titulo.PrecioVenta;
                             tituloModificado.SubTotal = titulo.SubTotal;
@@ -210,6 +211,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             foreach (RemitosVentaDetalleDto remitosVentaDetalleDto in Titulos)
             {
                 remitosVentaDetalleDto.CntVendida = remitosVentaDetalleDto.CntARendir ?? 0;
+                remitosVentaDetalleDto.CntDevuelta = remitosVentaDetalleDto.CntADevolver ?? 0;
             }
         }
     }

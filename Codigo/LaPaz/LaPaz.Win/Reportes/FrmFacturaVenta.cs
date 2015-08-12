@@ -53,6 +53,9 @@ namespace LaPaz.Win.Reportes
 
         public void GenerarFactura()
         {
+            if (_ventaId==Guid.Empty)
+                return;
+
             var venta = Uow.Ventas.Obtener(v => v.Id == _ventaId, v => v.CondicionesVenta);
 
             var factura = venta.NumeroComprobante.ToString();

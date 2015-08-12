@@ -360,11 +360,11 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         private void BtnRendirConsignacion_Click(object sender, EventArgs e)
         {
           
-            if (UcTotalesVenta.SubTotal <= 0)
-            {
-                _messageBoxDisplayService.ShowError("Debe seleccionar libros a facturar");
-                return;
-            }
+            //if (UcTotalesVenta.SubTotal <= 0)
+            //{
+            //    _messageBoxDisplayService.ShowError("Debe seleccionar libros a facturar");
+            //    return;
+            //}
 
             if (_cliente == null)
             {
@@ -531,11 +531,16 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
                 using (var crearVenta = FormFactory.Create<FrmFacturaVenta>(ventaResponse.VentaId))
                 {
-                    crearVenta._descripcion = ventaResponse.FacturaInfo.Descripcion;
-                    crearVenta._formaPago = ventaResponse.FacturaInfo.FormaPago;
-                    crearVenta._recargo = UcTotalesVenta.Recargo.ToString();
+                    if (ventaResponse.VentaId!=Guid.Empty)
+                    {
+                        crearVenta._descripcion = ventaResponse.FacturaInfo.Descripcion;
+                        crearVenta._formaPago = ventaResponse.FacturaInfo.FormaPago;
+                        crearVenta._recargo = UcTotalesVenta.Recargo.ToString();
 
-                    crearVenta.ShowDialog();
+                        crearVenta.ShowDialog();   
+                    }
+
+                    
                 }
 
                 OnVentaRealizada();

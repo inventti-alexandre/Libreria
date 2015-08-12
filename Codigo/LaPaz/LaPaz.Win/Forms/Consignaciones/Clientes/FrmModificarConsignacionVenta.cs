@@ -71,7 +71,8 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                 TxtCntPropia.Text = remitoDetalle.CntPr.ToString();
                 TxtPrecioConsignado.Text = precioCn.ToString("N2");
                 TxtPrecioActual.Text = precioAc.ToString("N2");
-                var cntVendida = (remitoDetalle.Cantidad - cntCn + cntPr);
+                //var cntVendida = (remitoDetalle.Cantidad - cntCn + cntPr);
+                var cntVendida = (remitoDetalle.Cantidad - remitoDetalle.CntVendida - remitoDetalle.CntDevuelta);
                 if (cntVendida > 0)
                     TxtCntVendida.Text = cntVendida.ToString();
                 else
@@ -126,7 +127,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             var vendidaParse = int.TryParse(TxtCntVendida.Text, out vendida);
             var devueltaParse = int.TryParse(TxtCntDevuelta.Text, out devuelta);
 
-            if (remitoDetalle.Cantidad < (vendida + devuelta))
+            if ((remitoDetalle.Cantidad - remitoDetalle.CntDevuelta - remitoDetalle.CntVendida) < (vendida + devuelta))
             {
                 _messageBoxDisplayService.ShowError(Resources.ErrorMessageDifferentCuantity);
                 return false;

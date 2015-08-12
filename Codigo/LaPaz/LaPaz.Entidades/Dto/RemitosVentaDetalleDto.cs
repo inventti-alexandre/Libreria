@@ -20,6 +20,7 @@ namespace LaPaz.Entidades.Dto
         public int? CntVendida { get; set; }
         public int? CntDevuelta { get; set; }
         public int? CntARendir { get; set; }
+        public int? CntADevolver { get; set; }
         public int? Recargo { get; set; }
 
         public string TituloNombreTitulo { get; set; }
