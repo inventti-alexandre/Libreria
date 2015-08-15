@@ -331,6 +331,8 @@
     <Build Include="dbo\Stored Procedures\ReciboConsignacion.sql" />
     <None Include="Scripts\Post-Deploy\ProveedoresCtaCteEmptyInsert.sql" />
     <None Include="Scripts\Post-Deploy\TitulosConsignacionRendidaEmptyInsert.sql" />
+    <Build Include="ProveedoresMontosFavor.sql" />
+    <Build Include="ProveedoresMontosFavorDetalle.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LaPaz.Database.refactorlog" />
