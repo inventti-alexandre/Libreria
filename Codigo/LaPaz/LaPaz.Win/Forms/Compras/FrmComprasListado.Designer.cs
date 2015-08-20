@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -38,6 +39,10 @@
             this.ucFiltrosCompras = new LaPaz.Win.Forms.Compras.UcFiltrosCompras();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.pnlCompras = new Telerik.WinControls.UI.RadPanel();
+            this.TxtCompras = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtCantidad = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.metroLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.ComprasPager = new Framework.WinForm.Controls.MetroPager();
             this.ucProgressSpinner1 = new LaPaz.Win.Forms.Util.UcProgressSpinner();
             this.GridCompras = new Telerik.WinControls.UI.RadGridView();
@@ -45,6 +50,10 @@
             this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pnlCompras)).BeginInit();
             this.pnlCompras.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCompras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCompras.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -72,18 +81,64 @@
             // 
             // pnlCompras
             // 
+            this.pnlCompras.Controls.Add(this.TxtCompras);
+            this.pnlCompras.Controls.Add(this.TxtCantidad);
+            this.pnlCompras.Controls.Add(this.radLabel1);
+            this.pnlCompras.Controls.Add(this.metroLabel4);
             this.pnlCompras.Controls.Add(this.ComprasPager);
             this.pnlCompras.Controls.Add(this.ucProgressSpinner1);
             this.pnlCompras.Controls.Add(this.GridCompras);
             this.pnlCompras.Location = new System.Drawing.Point(12, 118);
             this.pnlCompras.Name = "pnlCompras";
-            this.pnlCompras.Size = new System.Drawing.Size(800, 389);
+            this.pnlCompras.Size = new System.Drawing.Size(800, 486);
             this.pnlCompras.TabIndex = 2;
+            // 
+            // TxtCompras
+            // 
+            this.TxtCompras.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCompras.Location = new System.Drawing.Point(172, 49);
+            this.TxtCompras.MaxLength = 11;
+            this.TxtCompras.Name = "TxtCompras";
+            this.TxtCompras.Size = new System.Drawing.Size(127, 26);
+            this.TxtCompras.TabIndex = 46;
+            this.TxtCompras.TabStop = false;
+            this.TxtCompras.ThemeName = "TelerikMetroBlue";
+            // 
+            // TxtCantidad
+            // 
+            this.TxtCantidad.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCantidad.Location = new System.Drawing.Point(172, 17);
+            this.TxtCantidad.MaxLength = 11;
+            this.TxtCantidad.Name = "TxtCantidad";
+            this.TxtCantidad.Size = new System.Drawing.Size(127, 26);
+            this.TxtCantidad.TabIndex = 45;
+            this.TxtCantidad.TabStop = false;
+            this.TxtCantidad.ThemeName = "TelerikMetroBlue";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(37, 51);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(129, 24);
+            this.radLabel1.TabIndex = 42;
+            this.radLabel1.Text = "Total de compras:";
+            this.radLabel1.ThemeName = "TelerikMetroBlue";
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroLabel4.Location = new System.Drawing.Point(10, 19);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(156, 24);
+            this.metroLabel4.TabIndex = 41;
+            this.metroLabel4.Text = "Cantidad de compras:";
+            this.metroLabel4.ThemeName = "TelerikMetroBlue";
             // 
             // ComprasPager
             // 
             this.ComprasPager.CurrentPage = 1;
-            this.ComprasPager.Location = new System.Drawing.Point(397, 3);
+            this.ComprasPager.Location = new System.Drawing.Point(397, 78);
             this.ComprasPager.Name = "ComprasPager";
             this.ComprasPager.PageSize = 50;
             this.ComprasPager.PageTotal = 1;
@@ -94,7 +149,7 @@
             // 
             // ucProgressSpinner1
             // 
-            this.ucProgressSpinner1.Location = new System.Drawing.Point(90, 14);
+            this.ucProgressSpinner1.Location = new System.Drawing.Point(618, 51);
             this.ucProgressSpinner1.Name = "ucProgressSpinner1";
             this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
             this.ucProgressSpinner1.TabIndex = 1;
@@ -106,7 +161,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridCompras.AutoScroll = true;
-            this.GridCompras.Location = new System.Drawing.Point(10, 51);
+            this.GridCompras.Location = new System.Drawing.Point(10, 126);
             // 
             // GridCompras
             // 
@@ -166,7 +221,7 @@
             gridViewCommandColumn1});
             this.GridCompras.Name = "GridCompras";
             this.GridCompras.ReadOnly = true;
-            this.GridCompras.Size = new System.Drawing.Size(773, 324);
+            this.GridCompras.Size = new System.Drawing.Size(773, 338);
             this.GridCompras.TabIndex = 0;
             this.GridCompras.ThemeName = "TelerikMetroBlue";
             this.GridCompras.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridCompras_CommandCellClick);
@@ -175,7 +230,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 824);
+            this.ClientSize = new System.Drawing.Size(1130, 652);
             this.Controls.Add(this.pnlCompras);
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -190,6 +245,11 @@
             this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pnlCompras)).EndInit();
             this.pnlCompras.ResumeLayout(false);
+            this.pnlCompras.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCompras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCompras.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
@@ -205,5 +265,9 @@
         private Telerik.WinControls.UI.RadGridView GridCompras;
         private Util.UcProgressSpinner ucProgressSpinner1;
         private Framework.WinForm.Controls.MetroPager ComprasPager;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadLabel metroLabel4;
+        private Telerik.WinControls.UI.RadTextBox TxtCompras;
+        private Telerik.WinControls.UI.RadTextBox TxtCantidad;
     }
 }

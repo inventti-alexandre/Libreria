@@ -98,6 +98,13 @@ namespace LaPaz.Win.Forms.Compras
             GridCompras.DataSource = compras;
 
            ComprasPager.UpdateState(pageTotal);
+
+            //Resumen de movimiento
+            TxtCantidad.Text = compras.Count.ToString();
+            TxtCompras.Text = compras.Select(c => c.ImporteNeto).Sum().ToString();
+
+
+
             return pageTotal;
         }
 
