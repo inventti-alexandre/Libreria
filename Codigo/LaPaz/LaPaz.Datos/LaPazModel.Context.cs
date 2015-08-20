@@ -191,6 +191,13 @@ namespace LaPaz.Entidades
         public virtual DbSet<MovimientosFondoDetalle> MovimientosFondoDetalles { get; set; }
         public virtual DbSet<PRECIOSACT> PRECIOSACTs { get; set; }
         public virtual DbSet<PRECIOSACT2> PRECIOSACT2 { get; set; }
+        public virtual DbSet<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalles { get; set; }
+        public virtual DbSet<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
+        public virtual DbSet<Comentario> Comentarios { get; set; }
+        public virtual DbSet<Email> Emails { get; set; }
+        public virtual DbSet<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
+        public virtual DbSet<rolesCtaCte> rolesCtaCtes { get; set; }
+        public virtual DbSet<user> users { get; set; }
     
         public virtual ObjectResult<SP_GenerarFacturaByVentaId_Result> SP_GenerarFacturaByVentaId(Nullable<System.Guid> ventaId)
         {

@@ -17,6 +17,7 @@ namespace LaPaz.Entidades
         public Cuenta()
         {
             this.CuentasMovimientos = new HashSet<CuentasMovimiento>();
+            this.OrdenesPagoTransferencias = new HashSet<OrdenesPagoTransferencia>();
         }
     
         public int Id { get; set; }
@@ -49,5 +50,6 @@ namespace LaPaz.Entidades
         public virtual Sucursal Sucursale1 { get; set; }
         public virtual TiposCuenta TiposCuenta { get; set; }
         public virtual ICollection<CuentasMovimiento> CuentasMovimientos { get; set; }
+        public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
     }
 }

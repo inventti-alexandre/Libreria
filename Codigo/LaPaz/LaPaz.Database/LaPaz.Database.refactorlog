@@ -259,4 +259,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="SucursalModificacionId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e8d72f9d-c977-4fc0-a6cc-27c127853a89" ChangeDateTime="08/15/2015 20:10:21">
+    <Property Name="ElementName" Value="[dbo].[ProveedoresMontosFavorDetalle].[OperadorModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProveedoresMontosFavorDetalle]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalModificacion" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d2f6360-803e-4f3e-ba58-f5c196972b88" ChangeDateTime="08/15/2015 20:14:53">
+    <Property Name="ElementName" Value="[dbo].[ProveedoresMontosFavorDetalle].[OperadorModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProveedoresMontosFavorDetalle]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="OperadorModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d95e85f1-8e47-445f-8452-3d9a6168f269" ChangeDateTime="08/15/2015 20:14:56">
+    <Property Name="ElementName" Value="[dbo].[ProveedoresMontosFavorDetalle].[SucursalModificacion]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProveedoresMontosFavorDetalle]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SucursalModificacionId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="2eac0395-4835-4a14-b55d-26e67fcb34d0" ChangeDateTime="08/19/2015 20:16:43">
+    <Property Name="ElementName" Value="[dbo].[ProveedoresSenias].[TipoComprobante]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ProveedoresSenias]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TiposComprobantes" />
+  </Operation>
 </Operations>

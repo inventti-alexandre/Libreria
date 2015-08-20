@@ -1859,6 +1859,7 @@
     <Resource Include="Resources\Customer.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Forms\ProveedoresDevolucion\" />
     <Folder Include="Mapping\" />
   </ItemGroup>
   <ItemGroup>

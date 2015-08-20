@@ -12,27 +12,28 @@ namespace LaPaz.Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class ProveedorSenia
+    public partial class OrdenesPagoTransferencia
     {
-        public System.Guid Id { get; set; }
-        public Nullable<System.Guid> ProveedorId { get; set; }
-        public Nullable<System.DateTime> FechaAlta { get; set; }
+        public int Id { get; set; }
+        public System.Guid OrdenPagoId { get; set; }
+        public int CuentaId { get; set; }
+        public string Numero { get; set; }
+        public System.DateTime Fecha { get; set; }
+        public decimal Importe { get; set; }
+        public string BancoDestino { get; set; }
+        public System.DateTime FechaAlta { get; set; }
+        public int SucursalAltaId { get; set; }
+        public System.Guid OperadorAltaId { get; set; }
         public Nullable<System.DateTime> FechaModificacion { get; set; }
-        public Nullable<decimal> Importe { get; set; }
-        public Nullable<decimal> ImporteUsado { get; set; }
-        public Nullable<System.Guid> OperadorAltaId { get; set; }
-        public Nullable<int> SucursalAltaId { get; set; }
-        public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
+        public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<System.DateTime> FechaAnulacion { get; set; }
-        public Nullable<System.Guid> OperadorAutoriza { get; set; }
-        public Nullable<LaPaz.Entidades.Enums.TipoComprobanteEnum> TiposComprobantes { get; set; }
     
+        public virtual Cuenta Cuenta { get; set; }
         public virtual Operador Operadore { get; set; }
         public virtual Operador Operadore1 { get; set; }
-        public virtual Proveedor Proveedore { get; set; }
+        public virtual OrdenesPago OrdenesPago { get; set; }
         public virtual Sucursal Sucursale { get; set; }
         public virtual Sucursal Sucursale1 { get; set; }
-        public virtual TipoComprobante TiposComprobante { get; set; }
     }
 }

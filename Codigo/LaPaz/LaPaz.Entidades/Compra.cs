@@ -21,6 +21,7 @@ namespace LaPaz.Entidades
             this.ProveedoresCuentasCorrientes = new HashSet<ProveedoresCuentasCorriente>();
             this.TitulosConsignacionesVendidas = new HashSet<TitulosConsignacionesVendida>();
             this.RemitosCompras = new HashSet<RemitosCompra>();
+            this.ProveedoresMontosFavors = new HashSet<ProveedoresMontosFavor>();
         }
     
         public System.Guid Id { get; set; }
@@ -58,5 +59,6 @@ namespace LaPaz.Entidades
         public virtual ICollection<RemitosCompra> RemitosCompras { get; set; }
         public virtual ProveedoresBulto ProveedoresBulto { get; set; }
         public virtual EstadosCompra EstadosCompra { get; set; }
+        public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
     }
 }

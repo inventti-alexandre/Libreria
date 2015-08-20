@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2362fe5205d14cf9bc4fba6735c280bf" Name="Principal" ZoomLevel="68">
+      <Diagram DiagramId="2362fe5205d14cf9bc4fba6735c280bf" Name="Principal" ZoomLevel="67">
         <EntityTypeShape EntityType="LaPaz.Datos.Cliente" Width="1.5" PointX="11" PointY="72.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LaPaz.Datos.EstadosCliente" Width="1.5" PointX="8.75" PointY="108.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LaPaz.Datos.Profesion" Width="1.5" PointX="8.75" PointY="91.25" IsExpanded="true" />
@@ -462,6 +462,34 @@
         <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesRendidas_TipoConsignacion" />
         <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesVendidas_TiposConsignaciones" />
         <AssociationConnector Association="LaPaz.Datos.FK_ProveedorPagoDetalle_ProveedorConsignacion1" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresMontosFavorDetalle" Width="1.5" PointX="3.375" PointY="25.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_Titulos" />
+        <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresMontosFavor" Width="1.5" PointX="36.25" PointY="54" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_Compra" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorAutoriza" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_ProveedorId" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_SucursalAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_SucursalModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavor_TipoComprobante" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_ProveedorMontoFavor" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Comentario" Width="1.5" PointX="26.375" PointY="11.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.Email" Width="1.5" PointX="26.375" PointY="14.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.OrdenesPagoTransferencia" Width="1.5" PointX="41.25" PointY="61.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.rolesCtaCte" Width="1.5" PointX="14.375" PointY="26.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.user" Width="1.5" PointX="16.375" PointY="26.75" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_Cuentas" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_OrdenesPago" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesAlta" />
+        <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion" />
+        <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_TiposComprobantes" />
         </Diagram>
       <Diagram DiagramId="740c15349039479da9e94b414197531b" Name="Ventas" ZoomLevel="60" >
         <EntityTypeShape EntityType="LaPaz.Datos.VentaDetalle" Width="1.5" PointX="0.75" PointY="0.75" />

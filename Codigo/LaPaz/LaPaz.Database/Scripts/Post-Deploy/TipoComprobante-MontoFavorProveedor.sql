@@ -10,7 +10,20 @@ Post-Deployment Script Template
 --------------------------------------------------------------------------------------
 */
 
-:r .\Roles.Data.sql
-:r .\ProveedoresCtaCteEmptyInsert.sql
-:R .\TitulosConsignacionRendidaEmptyInsert.sql
-:R .\TipoComprobante-MontoFavorProveedor.sql
+
+
+INSERT INTO [TiposComprobantes]
+           ([Id],
+		   [Nombre]
+           ,[Abreviatura]
+           ,[Descripcion]
+           ,[FechaAlta]
+           )
+     SELECT
+			40
+           ,'MONTO A FAVOR PROVEEDORES'
+           ,'MTOFVORPRV'
+           ,'MONTO A FAVOR'
+           ,GETDATE()
+           
+		   WHERE NOT EXISTS (SELECT 1 FROM TiposComprobantes WHERE Id = 40)

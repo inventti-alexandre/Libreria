@@ -23,6 +23,8 @@ namespace LaPaz.Entidades
             this.FacturasCompras = new HashSet<FacturasCompra>();
             this.OrdenesPagos = new HashSet<OrdenesPago>();
             this.ProveedoresPagos = new HashSet<ProveedoresPago>();
+            this.ProveedoresMontosFavors = new HashSet<ProveedoresMontosFavor>();
+            this.ProveedoresSenias = new HashSet<ProveedorSenia>();
         }
     
         public LaPaz.Entidades.Enums.TipoComprobanteEnum Id { get; set; }
@@ -46,5 +48,7 @@ namespace LaPaz.Entidades
         public virtual ICollection<FacturasCompra> FacturasCompras { get; set; }
         public virtual ICollection<OrdenesPago> OrdenesPagos { get; set; }
         public virtual ICollection<ProveedoresPago> ProveedoresPagos { get; set; }
+        public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
+        public virtual ICollection<ProveedorSenia> ProveedoresSenias { get; set; }
     }
 }

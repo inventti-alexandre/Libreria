@@ -128,6 +128,9 @@
     <Compile Include="CobradoresRecibo.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Comentario.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Compra.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
@@ -200,6 +203,9 @@
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Editorial.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Enums\CondicionVentaEnum.cs" />
@@ -351,6 +357,9 @@
     <Compile Include="OrdenesPagoDetalle.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrdenesPagoTransferencia.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="OrdenPagoCheque.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
@@ -404,6 +413,12 @@
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProveedoresCuentasCorriente.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresMontosFavor.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProveedoresMontosFavorDetalle.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ProveedoresPago.cs">
@@ -479,6 +494,9 @@
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="rolesCtaCte.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="RptInformeCajaRow.cs">
@@ -647,6 +665,9 @@
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Unidad.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="user.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Vale.cs">

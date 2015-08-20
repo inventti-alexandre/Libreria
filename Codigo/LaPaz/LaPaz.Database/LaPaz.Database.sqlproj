@@ -331,8 +331,8 @@
     <Build Include="dbo\Stored Procedures\ReciboConsignacion.sql" />
     <None Include="Scripts\Post-Deploy\ProveedoresCtaCteEmptyInsert.sql" />
     <None Include="Scripts\Post-Deploy\TitulosConsignacionRendidaEmptyInsert.sql" />
-    <Build Include="ProveedoresMontosFavor.sql" />
-    <Build Include="ProveedoresMontosFavorDetalle.sql" />
+    <Build Include="dbo\Tables\ProveedoresMontosFavor.sql" />
+    <Build Include="dbo\Tables\ProveedoresMontosFavorDetalle.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LaPaz.Database.refactorlog" />
@@ -347,6 +347,7 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deploy\Script.PostDeployment.sql" />
+    <None Include="Scripts\Post-Deploy\TipoComprobante-MontoFavorProveedor.sql" />
   </ItemGroup>
   <ItemGroup>
     <SqlCmdVariable Include="LapazMigracion">

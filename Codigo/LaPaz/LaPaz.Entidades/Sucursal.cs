@@ -97,6 +97,12 @@ namespace LaPaz.Entidades
             this.ProveedoresPagos1 = new HashSet<ProveedoresPago>();
             this.ProveedoresPagosDetalles = new HashSet<ProveedoresPagosDetalle>();
             this.ProveedoresPagosDetalles1 = new HashSet<ProveedoresPagosDetalle>();
+            this.ProveedoresMontosFavorDetalles = new HashSet<ProveedoresMontosFavorDetalle>();
+            this.ProveedoresMontosFavorDetalles1 = new HashSet<ProveedoresMontosFavorDetalle>();
+            this.ProveedoresMontosFavors = new HashSet<ProveedoresMontosFavor>();
+            this.ProveedoresMontosFavors1 = new HashSet<ProveedoresMontosFavor>();
+            this.OrdenesPagoTransferencias = new HashSet<OrdenesPagoTransferencia>();
+            this.OrdenesPagoTransferencias1 = new HashSet<OrdenesPagoTransferencia>();
         }
     
         public int Id { get; set; }
@@ -202,5 +208,11 @@ namespace LaPaz.Entidades
         public virtual ICollection<ProveedoresPago> ProveedoresPagos1 { get; set; }
         public virtual ICollection<ProveedoresPagosDetalle> ProveedoresPagosDetalles { get; set; }
         public virtual ICollection<ProveedoresPagosDetalle> ProveedoresPagosDetalles1 { get; set; }
+        public virtual ICollection<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalles { get; set; }
+        public virtual ICollection<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalles1 { get; set; }
+        public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
+        public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors1 { get; set; }
+        public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
+        public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias1 { get; set; }
     }
 }
