@@ -128,7 +128,7 @@ namespace LaPaz.Win.Forms.Compras
         private void ucTotalesCompraSeñaOnSeñaChanged(object sender, EventArgs e)
         {
             if (ucCuentaCorrienteCompra.Visible == true)
-                ucCuentaCorrienteCompra.Anticipo = ucTotalesCompraSeña1.Senas;
+                ucCuentaCorrienteCompra.Anticipo = ucTotalesCompraSeña1.Senas + ucTotalesCompraSeña1.Creditos;
             ActualizarMontos();
         }
 
@@ -311,7 +311,7 @@ namespace LaPaz.Win.Forms.Compras
         private void ActualizarMontos()
         {
             ucCuentaCorrienteCompra.Total = this.ucTitulosCompra.CalcularSubTotal();
-            ucCuentaCorrienteCompra.Adeuda = this.ucTitulosCompra.CalcularSubTotal() - ucTotalesCompraSeña1.Senas ;
+            ucCuentaCorrienteCompra.Adeuda = this.ucTitulosCompra.CalcularSubTotal() - ucTotalesCompraSeña1.Senas - ucTotalesCompraSeña1.Creditos;
             ucTotalesCompraSeña1.SubTotal = this.ucTitulosCompra.CalcularSubTotal();
 
             if (ucTotalesCompraSeña1.TotalPagar > 0)
@@ -347,6 +347,14 @@ namespace LaPaz.Win.Forms.Compras
             return proveedoresMontosFavor.Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteUsado.GetValueOrDefault());
         }
 
+        private decimal? CreditoAFavorProveedor(Guid proveedorId)
+        {
+            var proveedoresCreditoFavor = Uow.ProveedoresMontosFavor.Listado()
+                                      .Where(pmf => pmf.ProveedorId == proveedorId
+                                                  && pmf.ImporteOcupado < pmf.Importe)
+                                      .ToList();
+            return proveedoresCreditoFavor.Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteOcupado.GetValueOrDefault());
+        }
 
         private void ActualizarProveedor(Proveedor proveedor)
         {
@@ -359,6 +367,7 @@ namespace LaPaz.Win.Forms.Compras
                 if (ucTipoCompra.TipoComprobanteSeleccionado != TipoComprobanteEnum.RemitosConsignacProveedor)
                 {
                     ucTotalesCompraSeña1.SenasDisp = SeñaAFavorProveedor(_proveedor.Id);
+                    ucTotalesCompraSeña1.CreditosDisp = CreditoAFavorProveedor(_proveedor.Id);
                     ucTotalesCompraSeña1.ActualizarMontosAFavor(ucTotalesCompraSeña1.SenasDisp);
                 }
                 else
@@ -369,6 +378,8 @@ namespace LaPaz.Win.Forms.Compras
             }
 
     }
+
+        
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {

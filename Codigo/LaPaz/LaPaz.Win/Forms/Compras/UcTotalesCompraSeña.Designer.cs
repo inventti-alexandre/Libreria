@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.TxtSenas = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
             this.TxtFaltaPagar = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -44,6 +44,9 @@
             this.TxtSubtotal = new Telerik.WinControls.UI.RadTextBox();
             this.metroLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.Eliminar = new LaPaz.Win.Controls.DeleteCell.DeleteColumn();
+            this.TxtCreditos = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
+            this.TxtCreditoDisp = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSenas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFaltaPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -56,6 +59,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSubtotal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCreditos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCreditoDisp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtSenas
@@ -75,7 +81,7 @@
             // 
             this.TxtFaltaPagar.Enabled = false;
             this.TxtFaltaPagar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFaltaPagar.Location = new System.Drawing.Point(189, 298);
+            this.TxtFaltaPagar.Location = new System.Drawing.Point(189, 330);
             this.TxtFaltaPagar.MaxLength = 11;
             this.TxtFaltaPagar.Name = "TxtFaltaPagar";
             this.TxtFaltaPagar.Size = new System.Drawing.Size(141, 26);
@@ -87,7 +93,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(8, 299);
+            this.radLabel1.Location = new System.Drawing.Point(8, 331);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(86, 24);
             this.radLabel1.TabIndex = 44;
@@ -111,7 +117,7 @@
             // BtnAgregarPago
             // 
             this.BtnAgregarPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarPago.Location = new System.Drawing.Point(255, 108);
+            this.BtnAgregarPago.Location = new System.Drawing.Point(255, 140);
             this.BtnAgregarPago.Name = "BtnAgregarPago";
             this.BtnAgregarPago.Size = new System.Drawing.Size(75, 29);
             this.BtnAgregarPago.TabIndex = 5;
@@ -122,38 +128,38 @@
             // GrillaPagos
             // 
             this.GrillaPagos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GrillaPagos.Location = new System.Drawing.Point(8, 143);
+            this.GrillaPagos.Location = new System.Drawing.Point(8, 175);
             // 
             // GrillaPagos
             // 
             this.GrillaPagos.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "TipoPago";
-            gridViewTextBoxColumn1.HeaderText = "Tipo Pago";
-            gridViewTextBoxColumn1.Name = "TipoPago";
-            gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 79;
-            gridViewTextBoxColumn2.FieldName = "Descripcion";
-            gridViewTextBoxColumn2.HeaderText = "Descripción";
-            gridViewTextBoxColumn2.Name = "Descripcion";
-            gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 89;
-            gridViewTextBoxColumn3.FieldName = "Importe";
-            gridViewTextBoxColumn3.HeaderText = "Importe";
-            gridViewTextBoxColumn3.Name = "Importe";
-            gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 102;
-            gridViewCommandColumn1.HeaderText = "";
-            gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
-            gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
-            gridViewCommandColumn1.MaxWidth = 30;
-            gridViewCommandColumn1.MinWidth = 30;
-            gridViewCommandColumn1.Name = "Eliminar";
-            gridViewCommandColumn1.Width = 30;
+            gridViewTextBoxColumn4.FieldName = "TipoPago";
+            gridViewTextBoxColumn4.HeaderText = "Tipo Pago";
+            gridViewTextBoxColumn4.Name = "TipoPago";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 79;
+            gridViewTextBoxColumn5.FieldName = "Descripcion";
+            gridViewTextBoxColumn5.HeaderText = "Descripción";
+            gridViewTextBoxColumn5.Name = "Descripcion";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 89;
+            gridViewTextBoxColumn6.FieldName = "Importe";
+            gridViewTextBoxColumn6.HeaderText = "Importe";
+            gridViewTextBoxColumn6.Name = "Importe";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 102;
+            gridViewCommandColumn2.HeaderText = "";
+            gridViewCommandColumn2.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn2.ImageLayout = System.Windows.Forms.ImageLayout.Center;
+            gridViewCommandColumn2.MaxWidth = 30;
+            gridViewCommandColumn2.MinWidth = 30;
+            gridViewCommandColumn2.Name = "Eliminar";
+            gridViewCommandColumn2.Width = 30;
             this.GrillaPagos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewCommandColumn1});
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewCommandColumn2});
             this.GrillaPagos.MasterTemplate.EnableGrouping = false;
             this.GrillaPagos.Name = "GrillaPagos";
             this.GrillaPagos.ReadOnly = true;
@@ -167,7 +173,7 @@
             // 
             this.TxtTotalPagar.Enabled = false;
             this.TxtTotalPagar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotalPagar.Location = new System.Drawing.Point(189, 75);
+            this.TxtTotalPagar.Location = new System.Drawing.Point(189, 107);
             this.TxtTotalPagar.MaxLength = 11;
             this.TxtTotalPagar.Name = "TxtTotalPagar";
             this.TxtTotalPagar.Size = new System.Drawing.Size(141, 26);
@@ -179,7 +185,7 @@
             // metroLabel3
             // 
             this.metroLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel3.Location = new System.Drawing.Point(8, 77);
+            this.metroLabel3.Location = new System.Drawing.Point(8, 109);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(100, 24);
             this.metroLabel3.TabIndex = 38;
@@ -228,11 +234,50 @@
             this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Eliminar.Width = 30;
             // 
+            // TxtCreditos
+            // 
+            this.TxtCreditos.AceptaNegativos = false;
+            this.TxtCreditos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCreditos.Location = new System.Drawing.Point(264, 75);
+            this.TxtCreditos.Name = "TxtCreditos";
+            this.TxtCreditos.Size = new System.Drawing.Size(66, 26);
+            this.TxtCreditos.TabIndex = 36;
+            this.TxtCreditos.TabStop = false;
+            this.TxtCreditos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtCreditos.ThemeName = "TelerikMetroBlue";
+            this.TxtCreditos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCreditos_KeyUp);
+            // 
+            // TxtCreditoDisp
+            // 
+            this.TxtCreditoDisp.AceptaNegativos = false;
+            this.TxtCreditoDisp.Enabled = false;
+            this.TxtCreditoDisp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtCreditoDisp.Location = new System.Drawing.Point(189, 75);
+            this.TxtCreditoDisp.Name = "TxtCreditoDisp";
+            this.TxtCreditoDisp.Size = new System.Drawing.Size(66, 26);
+            this.TxtCreditoDisp.TabIndex = 35;
+            this.TxtCreditoDisp.TabStop = false;
+            this.TxtCreditoDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtCreditoDisp.ThemeName = "TelerikMetroBlue";
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(8, 77);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(68, 24);
+            this.radLabel2.TabIndex = 37;
+            this.radLabel2.Text = "Créditos:";
+            this.radLabel2.ThemeName = "TelerikMetroBlue";
+            // 
             // UcTotalesCompraSeña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TxtCreditos);
             this.Controls.Add(this.TxtSenas);
+            this.Controls.Add(this.TxtCreditoDisp);
+            this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.TxtFaltaPagar);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.TxtSenasDisp);
@@ -244,7 +289,7 @@
             this.Controls.Add(this.TxtSubtotal);
             this.Controls.Add(this.metroLabel7);
             this.Name = "UcTotalesCompraSeña";
-            this.Size = new System.Drawing.Size(340, 342);
+            this.Size = new System.Drawing.Size(340, 407);
             this.Load += new System.EventHandler(this.UcTotalesVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtSenas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFaltaPagar)).EndInit();
@@ -258,6 +303,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSubtotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCreditos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtCreditoDisp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +328,8 @@
         private Telerik.WinControls.UI.RadTextBox TxtFaltaPagar;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtSenas;
+        private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtCreditos;
+        private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtCreditoDisp;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
     }
 }
