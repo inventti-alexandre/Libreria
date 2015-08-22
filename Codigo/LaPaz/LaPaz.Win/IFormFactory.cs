@@ -10,9 +10,11 @@ namespace LaPaz.Win
         T Create<T>() where T : Form;
         T Create<T>(int id) where T : Form;
         T Create<T>(Guid id) where T : Form;
-        T Create<T>(Guid id,ActionFormMode mode) where T : Form;
+        T Create<T>(Guid id, ActionFormMode mode) where T : Form;
         T Create<T>(int id, ActionFormMode mode) where T : Form;
 
         T Create<T>(TipoProveedor tipoProveedor) where T : Form;
+
+        T Create<T>(Boolean? devolucion,Guid proveedor,ActionFormMode mode) where T : Form;
     }
 }

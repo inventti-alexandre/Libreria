@@ -687,6 +687,8 @@ namespace LaPaz.Win.Forms
             var pantalla = FormFactory.Create<FrmProveedoresDevolucion.FrmProveedoresDevolucion>(Guid.Empty, ActionFormMode.Create);
             AbrirTab(pantalla);
         }
+
+        
     }
 }
 

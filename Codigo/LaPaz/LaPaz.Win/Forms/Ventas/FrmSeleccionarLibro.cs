@@ -37,6 +37,7 @@ namespace LaPaz.Win.Forms.Ventas
         private Guid _Tituloid = Guid.Empty;
         private bool _libroPasado = false;
         private bool _cambiaPrecio = false;
+        private Guid _proveedorId;
 
         public FrmSeleccionarLibro(IClock clock, IFormFactory formFactory,
                                    IRepository<TituloStockMigracion> migracionRepo,
@@ -57,6 +58,7 @@ namespace LaPaz.Win.Forms.Ventas
             _messageBoxDisplayService = messageBoxDisplayService;
             _tituloNegocio = tituloNegocio;
             _Tituloid = id;
+            
 
             ConfigurarColumnas();
 

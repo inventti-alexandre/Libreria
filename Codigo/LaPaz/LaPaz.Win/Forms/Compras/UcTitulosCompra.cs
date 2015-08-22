@@ -120,7 +120,7 @@ namespace LaPaz.Win.Forms.Compras
             {
                 if (_proveedorId != Guid.Empty)
                 {
-                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(_proveedorId))
+                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty, ActionFormMode.Create))
                     {
                         formAgregarTitulo.TituloAgregado += (o, titulo) =>
                         {
@@ -146,8 +146,7 @@ namespace LaPaz.Win.Forms.Compras
             {
                 if (_proveedorId != Guid.Empty)
                 {
-                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibroCompra>(_proveedorId,
-                            ActionFormMode.Create))
+                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibroCompra>(_proveedorId,ActionFormMode.Create))
                     {
                         formAgregarTitulo.TituloAgregado += (o, titulo) =>
                         {
