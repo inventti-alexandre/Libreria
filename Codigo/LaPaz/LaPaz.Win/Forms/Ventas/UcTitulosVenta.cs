@@ -5,6 +5,7 @@ using System.Linq;
 using Framework.Ioc;
 using Framework.WinForm.Comun.Notification;
 using LaPaz.Negocio.Data;
+using LaPaz.Win.Enums;
 using LaPaz.Win.Forms.Presupuesto;
 using Telerik.WinControls.UI;
 
@@ -116,7 +117,7 @@ namespace LaPaz.Win.Forms.Ventas
 
         public void BtnAgregarTitulo_Click(object sender, EventArgs e)
         {
-            using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty))
+            using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty, ActionFormMode.Create))
             {
                 formAgregarTitulo.TituloAgregado += (o, titulo) =>
                 {

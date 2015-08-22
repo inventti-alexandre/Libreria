@@ -120,6 +120,7 @@ namespace LaPaz.Win.Forms.Compras
             this.ucTotalesCompraSeña1.SeñaChanged += ucTotalesCompraSeñaOnSeñaChanged;
             this.ucCuentaCorrienteCompra.AnticipoChanged += UcCuentaCorrienteInfoOnAnticipoChanged;
             ucTotalesCompraSeña1.Senas = 0;
+            ucTotalesCompraSeña1.Creditos = 0;
             DtpFechaEmision.Value = _clock.Now;
             //Deshabilito los controles
             DeshabilitarEdicion();
@@ -373,6 +374,7 @@ namespace LaPaz.Win.Forms.Compras
                 else
                 {
                     ucTotalesCompraSeña1.SenasDisp = 0;
+                    ucTotalesCompraSeña1.CreditosDisp = 0;
                     ucTotalesCompraSeña1.ActualizarMontosAFavor(0);
                 }
             }
@@ -789,6 +791,9 @@ namespace LaPaz.Win.Forms.Compras
 
                         //aca descontamos las señas en el caso de que se utilicen. 
                         var _seña = UsoDeSeña();
+                        var _credito = UsoDeCredito();
+
+                       
 
                         if (efectivo > 0)
                         {
@@ -802,11 +807,21 @@ namespace LaPaz.Win.Forms.Compras
                             cajaMovimiento.Importe = efectivo;
                             cajaMovimiento.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
                             cajaMovimiento.Efectivo = efectivo;
+
+                            cajaMovimiento.Senia = _seña + _credito;
                             if (_seña > 0)
                             {
-                                cajaMovimiento.Senia = _seña;
+                               // cajaMovimiento.Senia = _seña;
                                 _seña = 0;
                             }
+
+                            if (_credito > 0)
+                            {
+                                //cajaMovimiento.Senia += _credito;
+                                _credito = 0;
+                            }
+
+
                             cajaMovimiento.FechaAlta = _clock.Now;
 
                             cajaMovimiento.PcAlta = System.Environment.MachineName;
@@ -842,10 +857,14 @@ namespace LaPaz.Win.Forms.Compras
                             cajaMovimientoAnterior.Cheque = cheque;
                             cajaMovimientoAnterior.Transferencia = transferencia;
 
-                            if (_seña > 0)
-                            {
-                                cajaMovimientoAnterior.Senia = _seña;
-                            }
+                            cajaMovimientoAnterior.Senia = _seña + _credito;
+                          
+                            //if (_seña > 0)
+                            //{
+                            //    cajaMovimientoAnterior.Senia = _seña;
+                            //}
+
+                          
                             Uow.CajaMovimientos.Agregar(cajaMovimientoAnterior);
 
                             //Guardamos el movimiento del depósito
@@ -921,6 +940,7 @@ namespace LaPaz.Win.Forms.Compras
             {
                 //aca descontamos las señas en el caso de que se utilicen. 
                var _seña =  UsoDeSeña();
+               var _credito = UsoDeCredito();
 
                Caja caja = this.Context.CajaActual;
 
@@ -931,11 +951,15 @@ namespace LaPaz.Win.Forms.Compras
                cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.PagoProveedores;
                cajaMovimiento.TipoComprobante = ucTipoCompra.TipoComprobanteSeleccionado;
                cajaMovimiento.ComprobanteId = compraNueva.Id;
-               if (_seña > 0)
-               {
-                   cajaMovimiento.Senia = _seña;
-               }
-               
+
+               cajaMovimiento.Senia = _seña + _credito;
+                          
+
+               //if (_seña > 0)
+               //{
+               //    cajaMovimiento.Senia = _seña;
+               //}
+
                cajaMovimiento.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
 
                cajaMovimiento.PcAlta = System.Environment.MachineName;
@@ -987,6 +1011,42 @@ namespace LaPaz.Win.Forms.Compras
                 }
             }
             return _seña;
+        }
+
+        private decimal? UsoDeCredito()
+        {
+            decimal? Credito = (decimal?)ucTotalesCompraSeña1.Creditos;
+            if (Credito > 0)
+            {
+                var monto = Credito;
+
+                var proveedoresMontoFavor =
+                    Uow.ProveedoresMontosFavor.Listado().Where((ps => ps.ProveedorId == _proveedor.Id
+                                                                 && ps.ImporteOcupado < ps.Importe)).OrderBy(
+                                                                     p => p.FechaAlta).ToList();
+
+                foreach (ProveedoresMontosFavor proveedorCredito in proveedoresMontoFavor)
+                {
+                    if (monto != null)
+                    {
+                        if (monto > 0)
+                        {
+                            if ((proveedorCredito.Importe - proveedorCredito.ImporteOcupado) >= monto)
+                            {
+                                proveedorCredito.ImporteOcupado += monto;
+                                monto = 0;
+                            }
+                            else
+                            {
+                                monto -= (proveedorCredito.Importe - proveedorCredito.ImporteOcupado);
+                                proveedorCredito.ImporteOcupado = proveedorCredito.Importe;
+                            }
+                            Uow.ProveedoresMontosFavor.Modificar(proveedorCredito);
+                        }
+                    }
+                }
+            }
+            return Credito;
         }
 
         private void OnCompraRealizada()
