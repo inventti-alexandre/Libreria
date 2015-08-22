@@ -681,6 +681,12 @@ namespace LaPaz.Win.Forms
             var pantalla = FormFactory.Create<FrmHistorialConsignaciones>();
             AbrirTab(pantalla);
         }
+
+        private void BtnProveedoresDevolucion_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmProveedoresDevolucion.FrmProveedoresDevolucion>(Guid.Empty, ActionFormMode.Create);
+            AbrirTab(pantalla);
+        }
     }
 }
 

@@ -635,6 +635,12 @@
     <Compile Include="Forms\ProveedoresCtaCte\UcBuscadorProveedor.Designer.cs">
       <DependentUpon>UcBuscadorProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucion.Designer.cs">
+      <DependentUpon>FrmProveedoresDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProveedoresGastos\FrmCrearEditarProveedorGasto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1475,6 +1481,9 @@
     <EmbeddedResource Include="Forms\ProveedoresCtaCte\UcBuscadorProveedor.resx">
       <DependentUpon>UcBuscadorProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucion.resx">
+      <DependentUpon>FrmProveedoresDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresGastos\FrmCrearEditarProveedorGasto.resx">
       <DependentUpon>FrmCrearEditarProveedorGasto.cs</DependentUpon>
     </EmbeddedResource>
@@ -1859,7 +1868,6 @@
     <Resource Include="Resources\Customer.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\ProveedoresDevolucion\" />
     <Folder Include="Mapping\" />
   </ItemGroup>
   <ItemGroup>
