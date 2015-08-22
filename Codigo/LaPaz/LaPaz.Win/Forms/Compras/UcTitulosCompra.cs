@@ -41,11 +41,11 @@ namespace LaPaz.Win.Forms.Compras
 
         #region Propiedades
 
-        public IList<CompraTitulo> Titulos;
-        //{
-        //    get { return _titulos; }
-        //    set { _titulos = value; }
-        //}
+        public IList<CompraTitulo> Titulos
+        {
+            get { return _titulos; }
+            set { _titulos = value; }
+        }
         public IList<VentaTitulo> TitulosVenta
         {
             get { return _titulosVenta; }
@@ -120,7 +120,7 @@ namespace LaPaz.Win.Forms.Compras
             {
                 if (_proveedorId != Guid.Empty)
                 {
-                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty, ActionFormMode.Edit))
+                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(_proveedorId, ActionFormMode.Edit))
                     {
                         formAgregarTitulo.TituloAgregado += (o, titulo) =>
                         {

@@ -280,8 +280,9 @@ namespace LaPaz.Win.Forms.Ventas
             if (_formMode == ActionFormMode.Edit)
             {
                 UcFiltrosLibros.ProveedorId = _proveedorId;
+                UcFiltrosLibros.SetearProveedorDevolucion(_proveedorId);
             }
-
+            
         }
 
         private void CargarTitulo(Guid _Tituloid)

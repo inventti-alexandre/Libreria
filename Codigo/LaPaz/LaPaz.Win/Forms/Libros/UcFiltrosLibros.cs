@@ -49,6 +49,15 @@ namespace LaPaz.Win.Forms.Libros
             _limpiandoFiltros = false;
         }
 
+        public void SetearProveedorDevolucion(Guid proveedor)
+        {
+            ProveedorId = proveedor;
+            CbxProveedor.SelectedValue = proveedor;
+            CbxProveedor.Enabled = false;
+            CbxOchoDeMarzo.Enabled = false;
+            UcConStock.Enabled = false; 
+        }
+
         private bool _limpiandoFiltros;
 
         public UcFiltrosLibros()
