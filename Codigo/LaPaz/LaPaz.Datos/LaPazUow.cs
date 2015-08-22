@@ -88,6 +88,8 @@ namespace LaPaz.Datos
         public IReporteRepository Reportes { get { return GetRepo<IReporteRepository>(); } }
         public IConsignacionDevueltaRepository TitulosConsignacionesDevueltas { get { return GetRepo<IConsignacionDevueltaRepository>(); } }
         public IRepository<TitulosConsignacionesDevueltasDetalle> TitulosConsignacionesDevueltasDetalles { get { return GetStandardRepo<TitulosConsignacionesDevueltasDetalle>(); } }
+        public IRepository<ProveedoresMontosFavor> ProveedoresMontosFavor { get { return GetStandardRepo<ProveedoresMontosFavor>(); } }
+        public IRepository<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalle { get { return GetStandardRepo<ProveedoresMontosFavorDetalle>(); } }
 
         public bool IsDisposed { get; private set; }
 

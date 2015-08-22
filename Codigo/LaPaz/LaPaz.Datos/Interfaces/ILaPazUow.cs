@@ -79,6 +79,8 @@ namespace LaPaz.Datos.Interfaces
         IRepository<RemitosVentaDetalle> RemitosVentasDetalle { get; }
         IConsignacionDevueltaRepository TitulosConsignacionesDevueltas { get; }
         IRepository<TitulosConsignacionesDevueltasDetalle> TitulosConsignacionesDevueltasDetalles { get; }
+        IRepository<ProveedoresMontosFavor> ProveedoresMontosFavor { get; }
+        IRepository<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalle { get; }
 
         bool IsDisposed { get; }
 

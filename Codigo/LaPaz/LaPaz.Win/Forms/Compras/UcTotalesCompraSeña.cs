@@ -83,6 +83,32 @@ namespace LaPaz.Win.Forms.Compras
             }
         }
 
+        public decimal? Creditos
+        {
+            get
+            {
+                decimal creditos;
+                return decimal.TryParse(TxtCreditos.Text, out creditos) ? creditos : (decimal?)null;
+            }
+            set
+            {
+                TxtCreditos.Text = value.HasValue ? value.Value.ToString("n2") : string.Empty;
+                ActualizarTotal();
+            }
+        }
+        public decimal? CreditosDisp
+        {
+            get
+            {
+                decimal creditos;
+                return decimal.TryParse(TxtCreditoDisp.Text, out creditos) ? creditos : (decimal?)null;
+            }
+            set
+            {
+                TxtCreditoDisp.Text = value.HasValue ? value.Value.ToString("n2") : string.Empty;
+            }
+        }
+
        public decimal? TotalPagar
         {
             get
@@ -122,7 +148,7 @@ namespace LaPaz.Win.Forms.Compras
 
         private void ActualizarTotal()
         {
-            TotalPagar = SubTotal.GetValueOrDefault() - Senas.GetValueOrDefault() ;
+            TotalPagar = SubTotal.GetValueOrDefault() - Senas.GetValueOrDefault() - Creditos.GetValueOrDefault();
             FaltaPagar = TotalPagar - TotalPagos();
         }
 
@@ -429,6 +455,12 @@ namespace LaPaz.Win.Forms.Compras
         #endregion
 
         private void TxtSenas_KeyUp_1(object sender, KeyEventArgs e)
+        {
+            ActualizarTotal();
+            OnSeñaChanged();
+        }
+
+        private void TxtCreditos_KeyUp(object sender, KeyEventArgs e)
         {
             ActualizarTotal();
             OnSeñaChanged();
