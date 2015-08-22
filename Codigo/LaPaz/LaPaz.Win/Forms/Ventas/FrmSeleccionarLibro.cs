@@ -21,6 +21,7 @@ using LaPaz.Win.Helpers;
 using LaPaz.Win.Model;
 using LaPaz.Win.Properties;
 using LaPaz.Seguridad;
+using LaPaz.Win.Enums;
 
 namespace LaPaz.Win.Forms.Ventas
 {
@@ -38,13 +39,16 @@ namespace LaPaz.Win.Forms.Ventas
         private bool _libroPasado = false;
         private bool _cambiaPrecio = false;
         private Guid _proveedorId;
+        private bool? _devolucion = false;
+        private readonly ActionFormMode _formMode;
 
         public FrmSeleccionarLibro(IClock clock, IFormFactory formFactory,
                                    IRepository<TituloStockMigracion> migracionRepo,
                                    ILaPazUow uow,
                                    ITituloNegocio tituloNegocio,
                                    IMessageBoxDisplayService messageBoxDisplayService,
-                                   IPaseLibroNegocio paseLibroNegocio, Guid id)
+                                   IPaseLibroNegocio paseLibroNegocio, Guid id,
+                             ActionFormMode mode)
         {
             FormFactory = formFactory;
             Uow = uow;
@@ -58,7 +62,8 @@ namespace LaPaz.Win.Forms.Ventas
             _messageBoxDisplayService = messageBoxDisplayService;
             _tituloNegocio = tituloNegocio;
             _Tituloid = id;
-            
+            _formMode = mode;
+           // _devolucion = devolucion;
 
             ConfigurarColumnas();
 
@@ -68,8 +73,24 @@ namespace LaPaz.Win.Forms.Ventas
             this.UcFiltrosLibros.CkbEliminados.Visible = false;
 
             InicializarPaginador();
+            InicializarForm(mode);
         }
 
+        private void InicializarForm(ActionFormMode mode)
+        {
+            switch (mode)
+            {
+                case ActionFormMode.Create:
+                    this.Text = "Seleccionar libro Venta";
+                    break;
+                case ActionFormMode.Edit:
+                    this.Text = "Seleccionar libro Devolucion";
+                    _proveedorId = _Tituloid;
+                    _Tituloid=Guid.Empty;
+                    ;
+                    break;
+            }
+        }
         private void ConfigurarColumnas()
         {
             this.GridTitulos.Columns["FModificacion"].FormatString = "{0: d/M/yyyy}";
@@ -255,6 +276,11 @@ namespace LaPaz.Win.Forms.Ventas
             BtnPasarLibro.Enabled = false;
             if (!Context.IsInRole(RolesNames.Admin) || !Context.IsInRole(RolesNames.Administrativo) || !Context.IsInRole(RolesNames.SuperAdmin))
                 BtnPaseConsignacion.Visible = false;
+
+            if (_formMode == ActionFormMode.Edit)
+            {
+                UcFiltrosLibros.ProveedorId = _proveedorId;
+            }
 
         }
 

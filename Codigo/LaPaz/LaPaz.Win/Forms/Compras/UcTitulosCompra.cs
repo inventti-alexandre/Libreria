@@ -120,7 +120,7 @@ namespace LaPaz.Win.Forms.Compras
             {
                 if (_proveedorId != Guid.Empty)
                 {
-                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty, ActionFormMode.Create))
+                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty, ActionFormMode.Edit))
                     {
                         formAgregarTitulo.TituloAgregado += (o, titulo) =>
                         {
