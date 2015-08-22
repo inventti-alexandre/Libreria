@@ -359,12 +359,11 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
         private void BtnRendirConsignacion_Click(object sender, EventArgs e)
         {
-          
-            //if (UcTotalesVenta.SubTotal <= 0)
-            //{
-            //    _messageBoxDisplayService.ShowError("Debe seleccionar libros a facturar");
-            //    return;
-            //}
+            if (UcTitulosConsignacionVenta.Titulos.Sum(t => t.CntARendir) == 0 && UcTitulosConsignacionVenta.Titulos.Sum(t => t.CntADevolver) == 0)
+            {
+                _messageBoxDisplayService.ShowError("Debe seleccionar libros a facturar");
+                return;
+            }
 
             if (_cliente == null)
             {
