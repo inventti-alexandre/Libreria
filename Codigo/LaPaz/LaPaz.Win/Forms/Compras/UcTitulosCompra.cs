@@ -118,26 +118,29 @@ namespace LaPaz.Win.Forms.Compras
         {
             if (_devolucion)
             {
-                using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(Guid.Empty))
+                if (_proveedorId != Guid.Empty)
                 {
-                    formAgregarTitulo.TituloAgregado += (o, titulo) =>
+                    using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(_proveedorId))
                     {
-                        if (!this.TitulosVenta.Any(t => t.TituloId == titulo.TituloId))
+                        formAgregarTitulo.TituloAgregado += (o, titulo) =>
                         {
-                            TitulosVenta.Add(titulo);
-                            OnDevolucionTitulosChanged(TitulosVenta);
-                            RefrescarTitulos();
-                        }
-                        else
-                        {
-                            _messageBoxDisplayService.ShowInfo("Ya agregó el libro " + titulo.TituloNombre.ToString());
-                        }
+                            if (!this.TitulosVenta.Any(t => t.TituloId == titulo.TituloId))
+                            {
+                                TitulosVenta.Add(titulo);
+                                OnDevolucionTitulosChanged(TitulosVenta);
+                                RefrescarTitulos();
+                            }
+                            else
+                            {
+                                _messageBoxDisplayService.ShowInfo("Ya agregó el libro " + titulo.TituloNombre.ToString());
+                            }
+                            formAgregarTitulo.Close();
+                        };
 
-                        formAgregarTitulo.Close();
-                    };
-
-                    formAgregarTitulo.ShowDialog();
+                        formAgregarTitulo.ShowDialog();
+                    }
                 }
+                
             }
             else
             {
@@ -158,7 +161,6 @@ namespace LaPaz.Win.Forms.Compras
                             {
                                 _messageBoxDisplayService.ShowInfo("Ya agregó el libro " + titulo.TituloNombre.ToString());
                             }
-
                             formAgregarTitulo.Close();
                         };
 
