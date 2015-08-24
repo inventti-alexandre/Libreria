@@ -19,7 +19,7 @@ namespace LaPaz.Entidades
             this.TitulosConsignacionesDevueltasDetalles = new HashSet<TitulosConsignacionesDevueltasDetalle>();
         }
     
-        public int Id { get; set; }
+        public System.Guid Id { get; set; }
         public System.Guid ProveedorId { get; set; }
         public string LCN { get; set; }
         public string Observaciones { get; set; }

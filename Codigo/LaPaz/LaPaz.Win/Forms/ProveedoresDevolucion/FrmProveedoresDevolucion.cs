@@ -223,6 +223,11 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             Uow.ProveedoresMontosFavor.Agregar(proveedorMontoFavor);
             #endregion
 
+            #region TitulosConsignacionesDevueltas
+            //TitulosConsignacionesDevuelta titulosConsignacionesDevuelta = new TitulosConsignacionesDevuelta();
+
+            #endregion
+
             #region ProveedorMontoFavorDetalle
             foreach (var devolucionTitulo in ucTitulosDevolucion.TitulosDevolucion)
             {

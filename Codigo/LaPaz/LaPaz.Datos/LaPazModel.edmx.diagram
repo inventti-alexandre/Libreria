@@ -336,13 +336,6 @@
         <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentaDetalle_RemitosVenta" />
         <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_SucursalAlta" />
         <AssociationConnector Association="LaPaz.Datos.FK_RemitosVentas_SucursalModificacion" />
-        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevuelta" Width="1.5" PointX="17" PointY="60" />
-        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Width="1.5" PointX="35.75" PointY="61.25" />
-        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" />
-        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" />
-        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" />
-        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" />
-        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas" />
         <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresPago" Width="2" PointX="33" PointY="59.625" />
         <EntityTypeShape EntityType="LaPaz.Datos.ProveedoresPagosDetalle" Width="1.5" PointX="41.25" PointY="72.5" />
         <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresPagos_OperadorAltaId" />
@@ -490,6 +483,13 @@
         <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesAlta" />
         <AssociationConnector Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion" />
         <AssociationConnector Association="LaPaz.Datos.FK_ProveedoresSenias_TiposComprobantes" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevuelta" Width="1.5" PointX="17" PointY="59.625" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" />
+        <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Width="1.5" PointX="35.75" PointY="61.25" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" />
+        <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Id" />
         </Diagram>
       <Diagram DiagramId="740c15349039479da9e94b414197531b" Name="Ventas" ZoomLevel="60" >
         <EntityTypeShape EntityType="LaPaz.Datos.VentaDetalle" Width="1.5" PointX="0.75" PointY="0.75" />

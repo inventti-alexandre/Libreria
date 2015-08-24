@@ -323,7 +323,6 @@
     <Build Include="dbo\Tables\TitulosConsignacionesRendidasDetalle.sql" />
     <Build Include="dbo\Stored Procedures\Reporte_ClientesPorTitulos.sql" />
     <Build Include="dbo\Stored Procedures\Reporte_MultiRanking.sql" />
-    <Build Include="dbo\Tables\TitulosConsignacionesDevueltas.sql" />
     <Build Include="dbo\Stored Procedures\Consignaciones_VentasSinRendir.sql" />
     <Build Include="dbo\Tables\TitulosConsignacionesDevueltasDetalle.sql" />
     <Build Include="dbo\Tables\ProveedoresPagos.sql" />
@@ -333,6 +332,7 @@
     <None Include="Scripts\Post-Deploy\TitulosConsignacionRendidaEmptyInsert.sql" />
     <Build Include="dbo\Tables\ProveedoresMontosFavor.sql" />
     <Build Include="dbo\Tables\ProveedoresMontosFavorDetalle.sql" />
+    <Build Include="dbo\Tables\TitulosConsignacionesDevueltas.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LaPaz.Database.refactorlog" />

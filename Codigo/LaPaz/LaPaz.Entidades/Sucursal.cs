@@ -92,7 +92,6 @@ namespace LaPaz.Entidades
             this.RemitosVentaDetalles1 = new HashSet<RemitosVentaDetalle>();
             this.RemitosVentas = new HashSet<RemitosVenta>();
             this.RemitosVentas1 = new HashSet<RemitosVenta>();
-            this.TitulosConsignacionesDevueltas = new HashSet<TitulosConsignacionesDevuelta>();
             this.ProveedoresPagos = new HashSet<ProveedoresPago>();
             this.ProveedoresPagos1 = new HashSet<ProveedoresPago>();
             this.ProveedoresPagosDetalles = new HashSet<ProveedoresPagosDetalle>();
@@ -103,6 +102,7 @@ namespace LaPaz.Entidades
             this.ProveedoresMontosFavors1 = new HashSet<ProveedoresMontosFavor>();
             this.OrdenesPagoTransferencias = new HashSet<OrdenesPagoTransferencia>();
             this.OrdenesPagoTransferencias1 = new HashSet<OrdenesPagoTransferencia>();
+            this.TitulosConsignacionesDevueltas = new HashSet<TitulosConsignacionesDevuelta>();
         }
     
         public int Id { get; set; }
@@ -203,7 +203,6 @@ namespace LaPaz.Entidades
         public virtual ICollection<RemitosVentaDetalle> RemitosVentaDetalles1 { get; set; }
         public virtual ICollection<RemitosVenta> RemitosVentas { get; set; }
         public virtual ICollection<RemitosVenta> RemitosVentas1 { get; set; }
-        public virtual ICollection<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
         public virtual ICollection<ProveedoresPago> ProveedoresPagos { get; set; }
         public virtual ICollection<ProveedoresPago> ProveedoresPagos1 { get; set; }
         public virtual ICollection<ProveedoresPagosDetalle> ProveedoresPagosDetalles { get; set; }
@@ -214,5 +213,6 @@ namespace LaPaz.Entidades
         public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors1 { get; set; }
         public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
         public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias1 { get; set; }
+        public virtual ICollection<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
     }
 }

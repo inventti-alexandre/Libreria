@@ -2561,7 +2561,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ProveedorId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="LCN" Type="nchar" MaxLength="13" Nullable="false" />
           <Property Name="Observaciones" Type="varchar" MaxLength="2000" />
@@ -2574,7 +2574,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="TituloConsignacionDevueltaId" Type="int" Nullable="false" />
+          <Property Name="TituloConsignacionDevueltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TituloId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
         </EntityType>
@@ -6436,6 +6436,18 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TitulosConsignacionesDevueltasDetalle_Id">
+          <End Role="TitulosConsignacionesDevueltas" Type="Self.TitulosConsignacionesDevueltas" Multiplicity="1" />
+          <End Role="TitulosConsignacionesDevueltasDetalle" Type="Self.TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TitulosConsignacionesDevueltas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosConsignacionesDevueltasDetalle">
+              <PropertyRef Name="TituloConsignacionDevueltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos">
           <End Role="Titulos" Type="Self.Titulos" Multiplicity="1" />
           <End Role="TitulosConsignacionesDevueltasDetalle" Type="Self.TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
@@ -6445,18 +6457,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Principal>
             <Dependent Role="TitulosConsignacionesDevueltasDetalle">
               <PropertyRef Name="TituloId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas">
-          <End Role="TitulosConsignacionesDevueltas" Type="Self.TitulosConsignacionesDevueltas" Multiplicity="1" />
-          <End Role="TitulosConsignacionesDevueltasDetalle" Type="Self.TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TitulosConsignacionesDevueltas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TitulosConsignacionesDevueltasDetalle">
-              <PropertyRef Name="TituloConsignacionDevueltaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -8521,12 +8521,12 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="TitulosConsignacionesDevueltas" EntitySet="TitulosConsignacionesDevueltas" />
           </AssociationSet>
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos" Association="Self.FK_TitulosConsignacionesDevueltasDetalle_Titulos">
-            <End Role="Titulos" EntitySet="Titulos" />
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_Id" Association="Self.FK_TitulosConsignacionesDevueltasDetalle_Id">
+            <End Role="TitulosConsignacionesDevueltas" EntitySet="TitulosConsignacionesDevueltas" />
             <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalle" />
           </AssociationSet>
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas" Association="Self.FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas">
-            <End Role="TitulosConsignacionesDevueltas" EntitySet="TitulosConsignacionesDevueltas" />
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos" Association="Self.FK_TitulosConsignacionesDevueltasDetalle_Titulos">
+            <End Role="Titulos" EntitySet="Titulos" />
             <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_TitulosConsignacionesRendidas_OperadorAlta" Association="Self.FK_TitulosConsignacionesRendidas_OperadorAlta">
@@ -10083,28 +10083,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <FunctionImport Name="ReciboConsignacion" ReturnType="Collection(LaPaz.Datos.ReciboConsignacion)">
           <Parameter Name="ConsignacionId" Mode="In" Type="Guid" />
           </FunctionImport>
-          <EntitySet Name="TitulosConsignacionesDevueltas" EntityType="LaPaz.Datos.TitulosConsignacionesDevuelta" />
-          <EntitySet Name="TitulosConsignacionesDevueltasDetalles" EntityType="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" />
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltas_Operadores" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores">
-            <End Role="Operador" EntitySet="Operadores" />
-            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltas_Proveedores" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores">
-            <End Role="Proveedor" EntitySet="Proveedors" />
-            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltas_Sucursales" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales">
-            <End Role="Sucursal" EntitySet="Sucursales" />
-            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos">
-            <End Role="Titulo" EntitySet="Titulos" />
-            <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas">
-            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
-            <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalles" />
-          </AssociationSet>
           <EntitySet Name="ProveedoresPagos" EntityType="LaPaz.Datos.ProveedoresPago" />
           <EntitySet Name="ProveedoresPagosDetalles" EntityType="LaPaz.Datos.ProveedoresPagosDetalle" />
           <AssociationSet Name="FK_ProveedoresPagos_OperadorAltaId" Association="LaPaz.Datos.FK_ProveedoresPagos_OperadorAltaId">
@@ -10463,6 +10441,28 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <End Role="TipoComprobante" EntitySet="TipoComprobantes" />
             <End Role="ProveedorSenia" EntitySet="ProveedorSenias" />
           </AssociationSet>
+          <EntitySet Name="TitulosConsignacionesDevueltas" EntityType="LaPaz.Datos.TitulosConsignacionesDevuelta" />
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltas_Operadores" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltas_Proveedores" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores">
+            <End Role="Proveedor" EntitySet="Proveedors" />
+            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltas_Sucursales" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
+          </AssociationSet>
+          <EntitySet Name="TitulosConsignacionesDevueltasDetalles" EntityType="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" />
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos">
+            <End Role="Titulo" EntitySet="Titulos" />
+            <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosConsignacionesDevueltasDetalle_Id" Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Id">
+            <End Role="TitulosConsignacionesDevuelta" EntitySet="TitulosConsignacionesDevueltas" />
+            <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalles" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Provincia">
           <Key>
@@ -10542,9 +10542,9 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="Activo" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="RemitosCompras" Relationship="LaPaz.Datos.FK_RemitosCompra_Proveedor" FromRole="Proveedor" ToRole="RemitosCompra" />
           <NavigationProperty Name="TitulosConsignacionesRendidas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesRendidas_Proveedores" FromRole="Proveedor" ToRole="TitulosConsignacionesRendida" />
-          <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" FromRole="Proveedor" ToRole="TitulosConsignacionesDevuelta" />
           <NavigationProperty Name="ProveedoresPagos" Relationship="LaPaz.Datos.FK_ProveedoresPagos_Proveedores" FromRole="Proveedor" ToRole="ProveedoresPago" />
           <NavigationProperty Name="ProveedoresMontosFavors" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_ProveedorId" FromRole="Proveedor" ToRole="ProveedoresMontosFavor" />
+          <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" FromRole="Proveedor" ToRole="TitulosConsignacionesDevuelta" />
         </EntityType>
         <EntityType Name="Localidad">
           <Key>
@@ -10853,7 +10853,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="RemitosVentaDetalles1" Relationship="LaPaz.Datos.FK_RemitosVentaDetalle_OperadorModificacion" FromRole="Operador" ToRole="RemitosVentaDetalle" />
           <NavigationProperty Name="RemitosVentas" Relationship="LaPaz.Datos.FK_RemitosVentas_OperadorAlta" FromRole="Operador" ToRole="RemitosVenta" />
           <NavigationProperty Name="RemitosVentas1" Relationship="LaPaz.Datos.FK_RemitosVentas_OperadorModificacion" FromRole="Operador" ToRole="RemitosVenta" />
-          <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" FromRole="Operador" ToRole="TitulosConsignacionesDevuelta" />
           <NavigationProperty Name="ProveedoresPagos" Relationship="LaPaz.Datos.FK_ProveedoresPagos_OperadorAltaId" FromRole="Operador" ToRole="ProveedoresPago" />
           <NavigationProperty Name="ProveedoresPagos1" Relationship="LaPaz.Datos.FK_ProveedoresPagos_OperadorModificacionId" FromRole="Operador" ToRole="ProveedoresPago" />
           <NavigationProperty Name="ProveedoresPagosDetalles" Relationship="LaPaz.Datos.FK_ProveedorPagoDetalle_OperadorAlta" FromRole="Operador" ToRole="ProveedoresPagosDetalle" />
@@ -10865,6 +10864,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="ProveedoresMontosFavors2" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorModificacion" FromRole="Operador" ToRole="ProveedoresMontosFavor" />
           <NavigationProperty Name="OrdenesPagoTransferencias" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresAlta" FromRole="Operador" ToRole="OrdenesPagoTransferencia" />
           <NavigationProperty Name="OrdenesPagoTransferencias1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresModificacion" FromRole="Operador" ToRole="OrdenesPagoTransferencia" />
+          <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" FromRole="Operador" ToRole="TitulosConsignacionesDevuelta" />
           </EntityType>
         <EntityType Name="OperadorSucursal">
           <Key>
@@ -10984,7 +10984,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="RemitosVentaDetalles1" Relationship="LaPaz.Datos.FK_RemitosVentaDetalle_SucursalModificacion" FromRole="Sucursal" ToRole="RemitosVentaDetalle" />
           <NavigationProperty Name="RemitosVentas" Relationship="LaPaz.Datos.FK_RemitosVentas_SucursalAlta" FromRole="Sucursal" ToRole="RemitosVenta" />
           <NavigationProperty Name="RemitosVentas1" Relationship="LaPaz.Datos.FK_RemitosVentas_SucursalModificacion" FromRole="Sucursal" ToRole="RemitosVenta" />
-          <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" FromRole="Sucursal" ToRole="TitulosConsignacionesDevuelta" />
           <NavigationProperty Name="ProveedoresPagos" Relationship="LaPaz.Datos.FK_ProveedoresPagos_SucursalAltaId" FromRole="Sucursal" ToRole="ProveedoresPago" />
           <NavigationProperty Name="ProveedoresPagos1" Relationship="LaPaz.Datos.FK_ProveedoresPagos_SucursalModificacionId" FromRole="Sucursal" ToRole="ProveedoresPago" />
           <NavigationProperty Name="ProveedoresPagosDetalles" Relationship="LaPaz.Datos.FK_ProveedorPagoDetalle_SucursalAlta" FromRole="Sucursal" ToRole="ProveedoresPagosDetalle" />
@@ -10995,6 +10994,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="ProveedoresMontosFavors1" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_SucursalModificacion" FromRole="Sucursal" ToRole="ProveedoresMontosFavor" />
           <NavigationProperty Name="OrdenesPagoTransferencias" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesAlta" FromRole="Sucursal" ToRole="OrdenesPagoTransferencia" />
           <NavigationProperty Name="OrdenesPagoTransferencias1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion" FromRole="Sucursal" ToRole="OrdenesPagoTransferencia" />
+          <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" FromRole="Sucursal" ToRole="TitulosConsignacionesDevuelta" />
           </EntityType>
         <Association Name="FK_Clientes_OperadorAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operadore" Multiplicity="0..1" />
@@ -11208,9 +11208,9 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="RemitosCompraDetalles" Relationship="LaPaz.Datos.FK_RemitosCompraDetalle_Titulos" FromRole="Titulo" ToRole="RemitosCompraDetalle" />
           <NavigationProperty Name="TitulosConsignacionesRendidasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesRendidasDetalle_Titulos" FromRole="Titulo" ToRole="TitulosConsignacionesRendidasDetalle" />
           <NavigationProperty Name="RemitosVentaDetalles" Relationship="LaPaz.Datos.FK_RemitosVentaDetalle_Titulos" FromRole="Titulo" ToRole="RemitosVentaDetalle" />
-          <NavigationProperty Name="TitulosConsignacionesDevueltasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="Titulo" ToRole="TitulosConsignacionesDevueltasDetalle" />
           <NavigationProperty Name="NotasDeVentaDetalles" Relationship="LaPaz.Datos.FK_NotasDeVentaDetalle_Titulos" FromRole="Titulo" ToRole="NotasDeVentaDetalle" />
           <NavigationProperty Name="ProveedoresMontosFavorDetalles" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_Titulos" FromRole="Titulo" ToRole="ProveedoresMontosFavorDetalle" />
+          <NavigationProperty Name="TitulosConsignacionesDevueltasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="Titulo" ToRole="TitulosConsignacionesDevueltasDetalle" />
         </EntityType>
         <Association Name="FK_Titulos_OperadorAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operadore" Multiplicity="0..1" />
@@ -15989,93 +15989,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="Int32" Name="Descuento" Nullable="true" />
           <Property Type="Decimal" Name="Importe" Nullable="true" Precision="19" />
         </ComplexType>
-        <EntityType Name="TitulosConsignacionesDevuelta">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProveedorId" Type="Guid" Nullable="false" />
-          <Property Name="LCN" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
-          <Property Name="Observaciones" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
-          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
-          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Operadore" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" FromRole="TitulosConsignacionesDevuelta" ToRole="Operador" />
-          <NavigationProperty Name="Proveedore" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" FromRole="TitulosConsignacionesDevuelta" ToRole="Proveedor" />
-          <NavigationProperty Name="Sucursale" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" FromRole="TitulosConsignacionesDevuelta" ToRole="Sucursal" />
-          <NavigationProperty Name="TitulosConsignacionesDevueltasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas" FromRole="TitulosConsignacionesDevuelta" ToRole="TitulosConsignacionesDevueltasDetalle" />
-        </EntityType>
-        <EntityType Name="TitulosConsignacionesDevueltasDetalle">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TituloConsignacionDevueltaId" Type="Int32" Nullable="false" />
-          <Property Name="TituloId" Type="Guid" Nullable="false" />
-          <Property Name="Cantidad" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Titulo" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="TitulosConsignacionesDevueltasDetalle" ToRole="Titulo" />
-          <NavigationProperty Name="TitulosConsignacionesDevuelta" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas" FromRole="TitulosConsignacionesDevueltasDetalle" ToRole="TitulosConsignacionesDevuelta" />
-        </EntityType>
-        <Association Name="FK_TitulosConsignacionesDevueltas_Operadores">
-          <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="1" />
-          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operador">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TitulosConsignacionesDevuelta">
-              <PropertyRef Name="OperadorAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TitulosConsignacionesDevueltas_Proveedores">
-          <End Type="LaPaz.Datos.Proveedor" Role="Proveedor" Multiplicity="1" />
-          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Proveedor">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TitulosConsignacionesDevuelta">
-              <PropertyRef Name="ProveedorId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TitulosConsignacionesDevueltas_Sucursales">
-          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="1" />
-          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TitulosConsignacionesDevuelta">
-              <PropertyRef Name="SucursalAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos">
-          <End Type="LaPaz.Datos.Titulo" Role="Titulo" Multiplicity="1" />
-          <End Type="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Role="TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Titulo">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TitulosConsignacionesDevueltasDetalle">
-              <PropertyRef Name="TituloId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TitulosConsignacionesDevueltasDetalle_TitulosConsignacionesDevueltas">
-          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="1" />
-          <End Type="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Role="TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TitulosConsignacionesDevuelta">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TitulosConsignacionesDevueltasDetalle">
-              <PropertyRef Name="TituloConsignacionDevueltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="ProveedoresPago">
           <Key>
             <PropertyRef Name="Id" />
@@ -18254,6 +18167,93 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TitulosConsignacionesDevuelta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="ProveedorId" Type="Guid" Nullable="false" />
+          <Property Name="LCN" Type="String" Nullable="false" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="Observaciones" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
+          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Operadore" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" FromRole="TitulosConsignacionesDevuelta" ToRole="Operador" />
+          <NavigationProperty Name="Proveedore" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Proveedores" FromRole="TitulosConsignacionesDevuelta" ToRole="Proveedor" />
+          <NavigationProperty Name="Sucursale" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" FromRole="TitulosConsignacionesDevuelta" ToRole="Sucursal" />
+          <NavigationProperty Name="TitulosConsignacionesDevueltasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Id" FromRole="TitulosConsignacionesDevuelta" ToRole="TitulosConsignacionesDevueltasDetalle" />
+        </EntityType>
+        <Association Name="FK_TitulosConsignacionesDevueltas_Operadores">
+          <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="1" />
+          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosConsignacionesDevuelta">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosConsignacionesDevueltas_Proveedores">
+          <End Type="LaPaz.Datos.Proveedor" Role="Proveedor" Multiplicity="1" />
+          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosConsignacionesDevuelta">
+              <PropertyRef Name="ProveedorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosConsignacionesDevueltas_Sucursales">
+          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="1" />
+          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosConsignacionesDevuelta">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TitulosConsignacionesDevueltasDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TituloConsignacionDevueltaId" Type="Guid" Nullable="false" />
+          <Property Name="TituloId" Type="Guid" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Titulo" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="TitulosConsignacionesDevueltasDetalle" ToRole="Titulo" />
+          <NavigationProperty Name="TitulosConsignacionesDevuelta" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Id" FromRole="TitulosConsignacionesDevueltasDetalle" ToRole="TitulosConsignacionesDevuelta" />
+        </EntityType>
+        <Association Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos">
+          <End Type="LaPaz.Datos.Titulo" Role="Titulo" Multiplicity="1" />
+          <End Type="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Role="TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Titulo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosConsignacionesDevueltasDetalle">
+              <PropertyRef Name="TituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosConsignacionesDevueltasDetalle_Id">
+          <End Type="LaPaz.Datos.TitulosConsignacionesDevuelta" Role="TitulosConsignacionesDevuelta" Multiplicity="1" />
+          <End Type="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Role="TitulosConsignacionesDevueltasDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TitulosConsignacionesDevuelta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosConsignacionesDevueltasDetalle">
+              <PropertyRef Name="TituloConsignacionDevueltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -20368,29 +20368,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="TitulosConsignacionesDevueltas">
-            <EntityTypeMapping TypeName="LaPaz.Datos.TitulosConsignacionesDevuelta">
-              <MappingFragment StoreEntitySet="TitulosConsignacionesDevueltas">
-                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
-                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
-                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
-                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
-                <ScalarProperty Name="LCN" ColumnName="LCN" />
-                <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TitulosConsignacionesDevueltasDetalles">
-            <EntityTypeMapping TypeName="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle">
-              <MappingFragment StoreEntitySet="TitulosConsignacionesDevueltasDetalle">
-                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-                <ScalarProperty Name="TituloId" ColumnName="TituloId" />
-                <ScalarProperty Name="TituloConsignacionDevueltaId" ColumnName="TituloConsignacionDevueltaId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ProveedoresPagos">
             <EntityTypeMapping TypeName="LaPaz.Datos.ProveedoresPago">
               <MappingFragment StoreEntitySet="ProveedoresPagos">
@@ -21722,6 +21699,29 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="usuario" ColumnName="usuario" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TitulosConsignacionesDevueltas">
+            <EntityTypeMapping TypeName="LaPaz.Datos.TitulosConsignacionesDevuelta">
+              <MappingFragment StoreEntitySet="TitulosConsignacionesDevueltas">
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="LCN" ColumnName="LCN" />
+                <ScalarProperty Name="ProveedorId" ColumnName="ProveedorId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TitulosConsignacionesDevueltasDetalles">
+            <EntityTypeMapping TypeName="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle">
+              <MappingFragment StoreEntitySet="TitulosConsignacionesDevueltasDetalle">
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="TituloId" ColumnName="TituloId" />
+                <ScalarProperty Name="TituloConsignacionDevueltaId" ColumnName="TituloConsignacionDevueltaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

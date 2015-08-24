@@ -27,9 +27,9 @@ namespace LaPaz.Entidades
             this.ProveedoresSenias1 = new HashSet<ProveedorSenia>();
             this.RemitosCompras = new HashSet<RemitosCompra>();
             this.TitulosConsignacionesRendidas = new HashSet<TituloConsignacionRendida>();
-            this.TitulosConsignacionesDevueltas = new HashSet<TitulosConsignacionesDevuelta>();
             this.ProveedoresPagos = new HashSet<ProveedoresPago>();
             this.ProveedoresMontosFavors = new HashSet<ProveedoresMontosFavor>();
+            this.TitulosConsignacionesDevueltas = new HashSet<TitulosConsignacionesDevuelta>();
         }
     
         public System.Guid Id { get; set; }
@@ -85,8 +85,8 @@ namespace LaPaz.Entidades
         public virtual ICollection<ProveedorSenia> ProveedoresSenias1 { get; set; }
         public virtual ICollection<RemitosCompra> RemitosCompras { get; set; }
         public virtual ICollection<TituloConsignacionRendida> TitulosConsignacionesRendidas { get; set; }
-        public virtual ICollection<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
         public virtual ICollection<ProveedoresPago> ProveedoresPagos { get; set; }
         public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
+        public virtual ICollection<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
     }
 }

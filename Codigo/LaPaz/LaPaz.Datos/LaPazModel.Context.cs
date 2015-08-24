@@ -114,8 +114,6 @@ namespace LaPaz.Entidades
         public virtual DbSet<TituloConsignacionRendidasDetalle> TituloConsignacionRendidasDetalles { get; set; }
         public virtual DbSet<RemitosVentaDetalle> RemitosVentaDetalles { get; set; }
         public virtual DbSet<RemitosVenta> RemitosVentas { get; set; }
-        public virtual DbSet<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
-        public virtual DbSet<TitulosConsignacionesDevueltasDetalle> TitulosConsignacionesDevueltasDetalles { get; set; }
         public virtual DbSet<ProveedoresPago> ProveedoresPagos { get; set; }
         public virtual DbSet<ProveedoresPagosDetalle> ProveedoresPagosDetalles { get; set; }
         public virtual DbSet<C__RefactorLog> C__RefactorLog { get; set; }
@@ -198,6 +196,8 @@ namespace LaPaz.Entidades
         public virtual DbSet<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
         public virtual DbSet<rolesCtaCte> rolesCtaCtes { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
+        public virtual DbSet<TitulosConsignacionesDevueltasDetalle> TitulosConsignacionesDevueltasDetalles { get; set; }
     
         public virtual ObjectResult<SP_GenerarFacturaByVentaId_Result> SP_GenerarFacturaByVentaId(Nullable<System.Guid> ventaId)
         {

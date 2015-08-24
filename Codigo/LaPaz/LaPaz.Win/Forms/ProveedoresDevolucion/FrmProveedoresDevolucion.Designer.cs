@@ -85,7 +85,7 @@
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.Location = new System.Drawing.Point(3, 13);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(96, 29);
+            this.radLabel1.Size = new System.Drawing.Size(78, 24);
             this.radLabel1.TabIndex = 2;
             this.radLabel1.Text = "Proveedor";
             // 
@@ -102,7 +102,7 @@
             // ucProgressSpinner1
             // 
             this.ucProgressSpinner1.Location = new System.Drawing.Point(1040, 10);
-            this.ucProgressSpinner1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucProgressSpinner1.Margin = new System.Windows.Forms.Padding(4);
             this.ucProgressSpinner1.Name = "ucProgressSpinner1";
             this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
             this.ucProgressSpinner1.TabIndex = 0;
@@ -111,7 +111,7 @@
             // 
             this.ProveedoreCtaCtePager.CurrentPage = 1;
             this.ProveedoreCtaCtePager.Location = new System.Drawing.Point(370, 574);
-            this.ProveedoreCtaCtePager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProveedoreCtaCtePager.Margin = new System.Windows.Forms.Padding(4);
             this.ProveedoreCtaCtePager.Name = "ProveedoreCtaCtePager";
             this.ProveedoreCtaCtePager.PageSize = 50;
             this.ProveedoreCtaCtePager.PageTotal = 1;
@@ -134,7 +134,7 @@
             // ucTitulosCompra1
             // 
             this.ucTitulosCompra1.Location = new System.Drawing.Point(0, 0);
-            this.ucTitulosCompra1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucTitulosCompra1.Margin = new System.Windows.Forms.Padding(4);
             this.ucTitulosCompra1.Name = "ucTitulosCompra1";
             this.ucTitulosCompra1.Size = new System.Drawing.Size(889, 290);
             this.ucTitulosCompra1.TabIndex = 0;
@@ -142,7 +142,7 @@
             // ucTitulosCompra2
             // 
             this.ucTitulosCompra2.Location = new System.Drawing.Point(0, 0);
-            this.ucTitulosCompra2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucTitulosCompra2.Margin = new System.Windows.Forms.Padding(4);
             this.ucTitulosCompra2.Name = "ucTitulosCompra2";
             this.ucTitulosCompra2.Size = new System.Drawing.Size(889, 290);
             this.ucTitulosCompra2.TabIndex = 0;
@@ -150,7 +150,7 @@
             // ucTitulosCompra3
             // 
             this.ucTitulosCompra3.Location = new System.Drawing.Point(0, 0);
-            this.ucTitulosCompra3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucTitulosCompra3.Margin = new System.Windows.Forms.Padding(4);
             this.ucTitulosCompra3.Name = "ucTitulosCompra3";
             this.ucTitulosCompra3.Size = new System.Drawing.Size(889, 290);
             this.ucTitulosCompra3.TabIndex = 0;
@@ -158,7 +158,7 @@
             // ucTitulosDevolucion
             // 
             this.ucTitulosDevolucion.Location = new System.Drawing.Point(16, 72);
-            this.ucTitulosDevolucion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucTitulosDevolucion.Margin = new System.Windows.Forms.Padding(4);
             this.ucTitulosDevolucion.Name = "ucTitulosDevolucion";
             this.ucTitulosDevolucion.Size = new System.Drawing.Size(1247, 331);
             this.ucTitulosDevolucion.TabIndex = 9;
@@ -182,7 +182,7 @@
             this.TxtObservaciones.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtObservaciones.Location = new System.Drawing.Point(160, 60);
             this.TxtObservaciones.Name = "TxtObservaciones";
-            this.TxtObservaciones.Size = new System.Drawing.Size(1093, 29);
+            this.TxtObservaciones.Size = new System.Drawing.Size(1093, 25);
             this.TxtObservaciones.TabIndex = 13;
             this.TxtObservaciones.TabStop = false;
             // 
@@ -191,7 +191,7 @@
             this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel5.Location = new System.Drawing.Point(33, 53);
             this.radLabel5.Name = "radLabel5";
-            this.radLabel5.Size = new System.Drawing.Size(132, 28);
+            this.radLabel5.Size = new System.Drawing.Size(106, 23);
             this.radLabel5.TabIndex = 12;
             this.radLabel5.Text = "Observaciones:";
             // 
@@ -200,7 +200,7 @@
             this.TxtConcepto.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtConcepto.Location = new System.Drawing.Point(160, 20);
             this.TxtConcepto.Name = "TxtConcepto";
-            this.TxtConcepto.Size = new System.Drawing.Size(1091, 29);
+            this.TxtConcepto.Size = new System.Drawing.Size(1091, 25);
             this.TxtConcepto.TabIndex = 11;
             this.TxtConcepto.TabStop = false;
             // 
@@ -209,7 +209,7 @@
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel4.Location = new System.Drawing.Point(33, 16);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(92, 28);
+            this.radLabel4.Size = new System.Drawing.Size(74, 23);
             this.radLabel4.TabIndex = 10;
             this.radLabel4.Text = "Concepto:";
             // 
@@ -218,7 +218,7 @@
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(33, 85);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(53, 28);
+            this.radLabel2.Size = new System.Drawing.Size(43, 23);
             this.radLabel2.TabIndex = 9;
             this.radLabel2.Text = "Total:";
             // 
@@ -227,7 +227,7 @@
             this.LblImporte.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblImporte.Location = new System.Drawing.Point(105, 84);
             this.LblImporte.Name = "LblImporte";
-            this.LblImporte.Size = new System.Drawing.Size(18, 28);
+            this.LblImporte.Size = new System.Drawing.Size(15, 23);
             this.LblImporte.TabIndex = 10;
             this.LblImporte.Text = "0";
             // 
@@ -269,6 +269,7 @@
             // FrmProveedoresDevolucion
             // 
             this.ClientSize = new System.Drawing.Size(1276, 671);
+            this.ControlBox = false;
             this.Controls.Add(this.ucTitulosDevolucion);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.PnlProveedor);
