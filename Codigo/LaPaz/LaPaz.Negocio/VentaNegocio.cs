@@ -825,21 +825,21 @@ namespace LaPaz.Negocio
             //Busco las consignaciones de titulos y actualizo la columna CnVn
             var titulosConsignaciones =
                 Uow.TitulosConsignaciones.Listado().Where(
-                    tc => tc.TituloId == tituloId && tc.ProveedorId == proveedorId && tc.CntVn < tc.CntCn).
+                    tc => tc.TituloId == tituloId && tc.ProveedorId == proveedorId && (tc.CntVn + tc.CntDev) < tc.CntCn).
                     OrderBy(tc => tc.FechaAlta);
 
             foreach (TitulosConsignacion tituloConsignacion in titulosConsignaciones)
             {
                 if (cantconsiganda > 0)
                 {
-                    if (tituloConsignacion.CntCn - tituloConsignacion.CntVn >= cantconsiganda)
+                    if (tituloConsignacion.CntCn - tituloConsignacion.CntVn - tituloConsignacion.CntDev >= cantconsiganda)
                     {
                         tituloConsignacion.CntVn += cantconsiganda ?? 0;
                         cantconsiganda = 0;
                     }
                     else
                     {
-                        var disponible = tituloConsignacion.CntCn - tituloConsignacion.CntVn;
+                        var disponible = tituloConsignacion.CntCn - tituloConsignacion.CntVn - tituloConsignacion.CntDev;
                         cantconsiganda -= disponible;
                         tituloConsignacion.CntVn = tituloConsignacion.CntCn;
                     }
