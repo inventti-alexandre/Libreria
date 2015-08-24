@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LaPaz.Datos.Interfaces;
+using LaPaz.Entidades;
 using LaPaz.Negocio.Interfaces;
 
 namespace LaPaz.Negocio
@@ -16,6 +17,9 @@ namespace LaPaz.Negocio
             Uow = uow;
         }
 
+        public void GuardarDevolucion(ProveedoresMontosFavor proveedoresMontosFavor)
+        {
+        }
 
     }
 }

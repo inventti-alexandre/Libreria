@@ -14,7 +14,7 @@ namespace LaPaz.Entidades
     
     public partial class ProveedoresMontosFavorDetalle
     {
-        public int Id { get; set; }
+        public System.Guid Id { get; set; }
         public System.Guid ProveedoresMontosFavor { get; set; }
         public System.Guid TitulosId { get; set; }
         public Nullable<int> CantidadPropia { get; set; }

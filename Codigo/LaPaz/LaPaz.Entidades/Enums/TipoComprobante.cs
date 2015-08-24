@@ -43,6 +43,7 @@ namespace LaPaz.Entidades.Enums
         AdmRemitosTrnRechazar = 36,
         SeñaProveedor,
         FacturaAnulada,
-        PagoProveedores
+        PagoProveedores,
+        MontoFavorProveedor
     }
 }

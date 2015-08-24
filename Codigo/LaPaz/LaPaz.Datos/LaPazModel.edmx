@@ -468,14 +468,6 @@
           <Property Name="id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="comentario" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.ComentariosClientes' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="ComentariosClientes">
-          <Property Name="Cliente" Type="uniqueidentifier" />
-          <Property Name="Comentario" Type="uniqueidentifier" />
-          <Property Name="baja" Type="bit" />
-          <Property Name="Fecha" Type="datetime" />
-        </EntityType>-->
         <EntityType Name="Compras">
           <Key>
             <PropertyRef Name="Id" />
@@ -668,12 +660,6 @@ warning 6013: The table/view 'lapaz.dbo.ComentariosClientes' does not have a pri
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
           <Property Name="SucursalModificacionId" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.DUPLICADOS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="DUPLICADOS">
-          <Property Name="Cod" Type="varchar" MaxLength="17" />
-          <Property Name="Cantidad" Type="int" />
-        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'lapaz.dbo.DuplicadosTitulosStock' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DuplicadosTitulosStock">
@@ -1552,17 +1538,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="FeGr" Type="smalldatetime" />
           <Property Name="Cod" Type="nvarchar" MaxLength="17" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.PRECIOSACTlpc3' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="PRECIOSACTlpc3">
-          <Property Name="NombreTitulo" Type="varchar" MaxLength="50" />
-          <Property Name="PrecioCompraTitulo" Type="money" />
-          <Property Name="PrecioVentaTitulo" Type="money" />
-          <Property Name="PrcVta1" Type="real" />
-          <Property Name="PrcComp" Type="real" />
-          <Property Name="FeGr" Type="smalldatetime" />
-          <Property Name="SucGr" Type="tinyint" />
-        </EntityType>-->
         <EntityType Name="Presupuestos">
           <Key>
             <PropertyRef Name="Id" />
@@ -1746,7 +1721,7 @@ warning 6013: The table/view 'lapaz.dbo.PRECIOSACTlpc3' does not have a primary 
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ProveedoresMontosFavor" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TitulosId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="CantidadPropia" Type="int" />
@@ -2011,42 +1986,6 @@ warning 6013: The table/view 'lapaz.dbo.PRECIOSACTlpc3' does not have a primary 
           <Property Name="vp" Type="int" />
           <Property Name="vc" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.REP_VTAS_EDIT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="REP_VTAS_EDIT">
-          <Property Name="CodTipo" Type="int" />
-          <Property Name="Desc1" Type="nvarchar" MaxLength="50" />
-          <Property Name="Desc2" Type="nvarchar" MaxLength="50" />
-          <Property Name="Libro_Id" Type="uniqueidentifier" />
-          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Autor" Type="nvarchar" MaxLength="30" />
-          <Property Name="vp" Type="int" />
-          <Property Name="vc" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.REP_VTAS_PROV' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="REP_VTAS_PROV">
-          <Property Name="CodTipo" Type="int" />
-          <Property Name="Desc1" Type="nvarchar" MaxLength="50" />
-          <Property Name="Desc2" Type="nvarchar" MaxLength="50" />
-          <Property Name="Libro_Id" Type="uniqueidentifier" />
-          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Autor" Type="nvarchar" MaxLength="30" />
-          <Property Name="vp" Type="int" />
-          <Property Name="vc" Type="int" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.REP_VTAS_TEMA' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="REP_VTAS_TEMA">
-          <Property Name="CodTipo" Type="int" />
-          <Property Name="Desc1" Type="nvarchar" MaxLength="50" />
-          <Property Name="Desc2" Type="nvarchar" MaxLength="50" />
-          <Property Name="Libro_Id" Type="uniqueidentifier" />
-          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Autor" Type="nvarchar" MaxLength="30" />
-          <Property Name="vp" Type="int" />
-          <Property Name="vc" Type="int" />
-        </EntityType>-->
         <EntityType Name="Revistas">
           <Key>
             <PropertyRef Name="Id" />
@@ -2120,16 +2059,6 @@ warning 6013: The table/view 'lapaz.dbo.REP_VTAS_TEMA' does not have a primary k
           <Property Name="SucGr" Type="tinyint" />
           <Property Name="OpeGr" Type="nvarchar" MaxLength="20" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.s00LibrosSubTemas' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="s00LibrosSubTemas">
-          <Property Name="CodSub" Type="int" />
-          <Property Name="nTema" Type="smallint" />
-          <Property Name="cDescrip" Type="nvarchar" MaxLength="30" />
-          <Property Name="FeGr" Type="smalldatetime" />
-          <Property Name="SucGr" Type="tinyint" />
-          <Property Name="OpeGr" Type="nvarchar" MaxLength="10" />
-        </EntityType>-->
         <EntityType Name="s00SucCnExp">
           <Key>
             <PropertyRef Name="CodSuc" />
@@ -2234,19 +2163,6 @@ warning 6013: The table/view 'lapaz.dbo.s00LibrosSubTemas' does not have a prima
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.TablasTABLAS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TablasTABLAS">
-          <Property Name="knCodGen" Type="tinyint" />
-          <Property Name="knCodInd" Type="int" />
-          <Property Name="cDescrip" Type="nvarchar" MaxLength="40" />
-          <Property Name="cDescripCorta" Type="nvarchar" MaxLength="10" />
-          <Property Name="cUsoInterno" Type="nvarchar" MaxLength="10" />
-          <Property Name="lUsuUpdate" Type="tinyint" />
-          <Property Name="fegr" Type="smalldatetime" />
-          <Property Name="sucgr" Type="tinyint" />
-          <Property Name="opegr" Type="nvarchar" MaxLength="10" />
-        </EntityType>-->
         <EntityType Name="Tarjetas">
           <Key>
             <PropertyRef Name="Id" />
@@ -2722,89 +2638,6 @@ warning 6013: The table/view 'lapaz.dbo.TablasTABLAS' does not have a primary ke
           <Property Name="ConvenioId" Type="int" Nullable="false" />
           <Property Name="TituloId" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.TITULOSFALTA3' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TITULOSFALTA3">
-          <Property Name="Cod" Type="nvarchar" MaxLength="17" />
-          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Autor" Type="nvarchar" MaxLength="30" />
-          <Property Name="nEditorial" Type="int" />
-          <Property Name="rEditorial" Type="nvarchar" MaxLength="40" />
-          <Property Name="nProv" Type="int" />
-          <Property Name="rProv" Type="nvarchar" MaxLength="50" />
-          <Property Name="nTema" Type="int" />
-          <Property Name="rTema" Type="nvarchar" MaxLength="40" />
-          <Property Name="CodSub" Type="int" />
-          <Property Name="PrcVta1" Type="real" />
-          <Property Name="PrcComp" Type="real" />
-          <Property Name="ISBN" Type="nvarchar" MaxLength="15" />
-          <Property Name="CodBarra" Type="nvarchar" MaxLength="13" />
-          <Property Name="FAlta" Type="smalldatetime" />
-          <Property Name="ISBNg" Type="nvarchar" MaxLength="15" />
-          <Property Name="ModoStock" Type="int" />
-          <Property Name="nTipoArt" Type="int" />
-          <Property Name="nAdicional" Type="int" />
-          <Property Name="dePeso" Type="tinyint" />
-          <Property Name="nPaisOrigen" Type="int" />
-          <Property Name="FEdicion" Type="smalldatetime" />
-          <Property Name="nEstado" Type="int" />
-          <Property Name="Idioma" Type="int" />
-          <Property Name="nParte" Type="int" />
-          <Property Name="rParte" Type="nvarchar" MaxLength="40" />
-          <Property Name="Paginas" Type="int" />
-          <Property Name="Encuad" Type="tinyint" />
-          <Property Name="Comentario" Type="nvarchar" MaxLength="100" />
-          <Property Name="StkMin" Type="smallint" />
-          <Property Name="FUltVta" Type="smalldatetime" />
-          <Property Name="FeGr" Type="smalldatetime" />
-          <Property Name="SucGr" Type="tinyint" />
-          <Property Name="OpeGr" Type="nvarchar" MaxLength="10" />
-          <Property Name="Fingreso" Type="smalldatetime" />
-          <Property Name="nControl" Type="tinyint" />
-          <Property Name="nUbi" Type="smallint" />
-        </EntityType>-->
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'lapaz.dbo.TITULOSFALTALPC3' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="TITULOSFALTALPC3">
-          <Property Name="Cod" Type="nvarchar" MaxLength="17" />
-          <Property Name="Titulo" Type="nvarchar" MaxLength="50" />
-          <Property Name="Autor" Type="nvarchar" MaxLength="30" />
-          <Property Name="nEditorial" Type="int" />
-          <Property Name="rEditorial" Type="nvarchar" MaxLength="40" />
-          <Property Name="nProv" Type="int" />
-          <Property Name="rProv" Type="nvarchar" MaxLength="50" />
-          <Property Name="nTema" Type="int" />
-          <Property Name="rTema" Type="nvarchar" MaxLength="40" />
-          <Property Name="CodSub" Type="int" />
-          <Property Name="PrcVta1" Type="real" />
-          <Property Name="PrcComp" Type="real" />
-          <Property Name="ISBN" Type="nvarchar" MaxLength="15" />
-          <Property Name="CodBarra" Type="nvarchar" MaxLength="13" />
-          <Property Name="FAlta" Type="smalldatetime" />
-          <Property Name="ISBNg" Type="nvarchar" MaxLength="15" />
-          <Property Name="ModoStock" Type="int" />
-          <Property Name="nTipoArt" Type="int" />
-          <Property Name="nAdicional" Type="int" />
-          <Property Name="dePeso" Type="tinyint" />
-          <Property Name="nPaisOrigen" Type="int" />
-          <Property Name="FEdicion" Type="smalldatetime" />
-          <Property Name="nEstado" Type="int" />
-          <Property Name="Idioma" Type="int" />
-          <Property Name="nParte" Type="int" />
-          <Property Name="rParte" Type="nvarchar" MaxLength="40" />
-          <Property Name="Paginas" Type="int" />
-          <Property Name="Encuad" Type="tinyint" />
-          <Property Name="Comentario" Type="nvarchar" MaxLength="100" />
-          <Property Name="StkMin" Type="smallint" />
-          <Property Name="FUltVta" Type="smalldatetime" />
-          <Property Name="FeGr" Type="smalldatetime" />
-          <Property Name="SucGr" Type="tinyint" />
-          <Property Name="OpeGr" Type="nvarchar" MaxLength="10" />
-          <Property Name="Fingreso" Type="smalldatetime" />
-          <Property Name="nControl" Type="tinyint" />
-          <Property Name="nUbi" Type="smallint" />
-          <Property Name="MIG" Type="bit" />
-        </EntityType>-->
         <EntityType Name="TitulosModoStock">
           <Key>
             <PropertyRef Name="Id" />
@@ -3795,9 +3628,6 @@ warning 6013: The table/view 'lapaz.dbo.TITULOSFALTALPC3' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <!--Errors Found During Generation:
-error 6004: The table 'lapaz.dbo.ComentariosClientes' is referenced by a relationship, but cannot be found.
-        <Association Name="FK_ComentariosClientes_Comentarios" />-->
         <Association Name="FK_Compras_Bulto">
           <End Role="ProveedoresBultos" Type="Self.ProveedoresBultos" Multiplicity="0..1" />
           <End Role="Compras" Type="Self.Compras" Multiplicity="*" />
@@ -18062,7 +17892,7 @@ error 6004: The table 'lapaz.dbo.ComentariosClientes' is referenced by a relatio
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="ProveedoresMontosFavor" Type="Guid" Nullable="false" />
           <Property Name="TitulosId" Type="Guid" Nullable="false" />
           <Property Name="CantidadPropia" Type="Int32" />

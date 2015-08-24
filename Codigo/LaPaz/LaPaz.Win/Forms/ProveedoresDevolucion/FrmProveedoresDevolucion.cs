@@ -17,6 +17,7 @@ using LaPaz.Win.Model;
 using LaPaz.Entidades;
 using System.Linq;
 using System.Drawing;
+using System.Dynamic;
 using LaPaz.Entidades.Dto;
 using Framework.WinForm.Comun.Notification;
 using LaPaz.Negocio.Data;
@@ -68,8 +69,18 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
         private void FrmProveedoresDevolucion_Load(object sender, EventArgs e)
         {
             this.ucFiltroProveedor1.SeleccionarFinished+=UcFiltroProveedor1_SeleccionarFinished;
+            this.ucTitulosDevolucion.VentaTitulosChanged += ucTitulosDevolucion_CompraTitulosChanged;
 
 
+
+
+        }
+
+        private void ucTitulosDevolucion_CompraTitulosChanged(object sender, IList<VentaTitulo> e)
+        {
+           
+
+            LblImporte.Text = ucTitulosDevolucion.CalcularSubTotalDevolucion().ToString();
         }
 
         private void UcFiltroProveedor1_SeleccionarFinished(object sender, Proveedor proveedor)
@@ -177,19 +188,110 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            _pagoIdConsignacion = Guid.NewGuid();
-            _pagoIdCtaCte = Guid.NewGuid();
-            //if (RpvPagos.SelectedPage.Name == "CuentaCorriente")
-            //{
-            //    GuardarCuotas();
-            //}
-            //else
-            //{
-            //    GuardarConsignacion();
-            //}
-            //OnCuentaRealizada();
+          GuardarDevolucion();           
+        }
+
+        private void DescontarLibros(int propio,int consignado,Guid TituloId)
+        {
+            var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalAltaId == Context.SucursalActual.Id);
+            if (tituloStock != null)
+            {
+                tituloStock.StkCn -= consignado;
+                tituloStock.StkPr -= propio;
+                Uow.TitulosStock.Modificar(tituloStock);
+            }
+        }
+
+        private void GuardarDevolucion()
+        {
+
+            #region ProveedorMontoFavor
+            ProveedoresMontosFavor proveedorMontoFavor = new ProveedoresMontosFavor();
+
+            proveedorMontoFavor.Id = Guid.NewGuid();
+            proveedorMontoFavor.ProveedorId = _proveedor.Id;
+            proveedorMontoFavor.TipoComprobanteId = TipoComprobanteEnum.MontoFavorProveedor;
+            proveedorMontoFavor.LCN = GenerarLcn();
+            proveedorMontoFavor.Concepto = TxtConcepto.Text;
+            proveedorMontoFavor.Importe = Convert.ToDecimal(LblImporte.Text);
+            proveedorMontoFavor.ImporteOcupado = 0;
+            proveedorMontoFavor.Observaciones = TxtObservaciones.Text;
+            proveedorMontoFavor.FechaAlta = _clock.Now;
+            proveedorMontoFavor.SucursalAltaId = Context.SucursalActual.Id;
+            proveedorMontoFavor.OperadorAltaId = Context.OperadorActual.Id;
+
+            Uow.ProveedoresMontosFavor.Agregar(proveedorMontoFavor);
+            #endregion
+
+            #region ProveedorMontoFavorDetalle
+            foreach (var devolucionTitulo in ucTitulosDevolucion.TitulosDevolucion)
+            {
+                int _propia = 0;
+                int? _consignada = 0;
+                int? _cantidadTotal = devolucionTitulo.Cantidad;
+                ProveedoresMontosFavorDetalle proveedoresMontosFavorDetalle = new ProveedoresMontosFavorDetalle();
+                proveedoresMontosFavorDetalle.Id = Guid.NewGuid();
+                proveedoresMontosFavorDetalle.ProveedoresMontosFavor = proveedorMontoFavor.Id;
+                proveedoresMontosFavorDetalle.TitulosId = devolucionTitulo.TituloId;
+                _consignada = CalcularConsignadas(Convert.ToInt16(_cantidadTotal), devolucionTitulo.CantidadConsignada);
+                _propia = CalcularPropias(Convert.ToInt16(_cantidadTotal), _consignada);
+                proveedoresMontosFavorDetalle.CantidadPropia = _propia;
+                proveedoresMontosFavorDetalle.CantidadConsignada = _consignada;
+                proveedoresMontosFavorDetalle.FechaAlta = _clock.Now;
+                proveedoresMontosFavorDetalle.SucursalAltaId = Context.SucursalActual.Id;
+                proveedoresMontosFavorDetalle.OperadorAltaId = Context.OperadorActual.Id;
+                Uow.ProveedoresMontosFavorDetalle.Agregar(proveedoresMontosFavorDetalle);
+
+                DescontarLibros(_propia, Convert.ToInt16(_consignada), proveedoresMontosFavorDetalle.TitulosId);
+            }
+            #endregion
+
+            
+            Uow.Commit();
+        }
+
+        private int CalcularPropias(int cantidadTotal, int? consignada)
+        {
+            if (consignada < cantidadTotal)
+                return (cantidadTotal - Convert.ToInt16(consignada));
+            else
+            {
+                return 0;
+            }
 
         }
+
+        private int CalcularConsignadas(int _cantidadTotal,int? consignada)
+        {
+            if (consignada >= _cantidadTotal)
+                return _cantidadTotal;
+            else
+            {
+                return (Convert.ToInt16(consignada));
+            }
+            
+        }
+
+        private string GenerarLcn()
+        {
+             
+            var ultimoPresupuesto = Uow.ProveedoresMontosFavor.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id)
+                .OrderByDescending(p => p.FechaAlta).Take(1).FirstOrDefault();
+            int lcnNuevo = 0;
+
+            if (ultimoPresupuesto != null)
+            {
+                var lcn = ultimoPresupuesto.LCN.Substring(5);
+                lcnNuevo = int.TryParse(lcn, out lcnNuevo) ? lcnNuevo : 0;
+            }
+
+            lcnNuevo += 1;
+
+            return "X" + "0001" + lcnNuevo.ToString().PadLeft(8, '0');
+          
+        }
+
+
 
         
 

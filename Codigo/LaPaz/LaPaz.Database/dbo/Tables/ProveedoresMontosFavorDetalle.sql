@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[ProveedoresMontosFavorDetalle]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
+	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
     [ProveedoresMontosFavor] UNIQUEIDENTIFIER NOT NULL, 
     [TitulosId] UNIQUEIDENTIFIER NOT NULL, 
     [CantidadPropia] INT NULL, 

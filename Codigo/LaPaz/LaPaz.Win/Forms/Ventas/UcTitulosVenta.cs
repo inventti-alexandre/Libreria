@@ -133,7 +133,7 @@ namespace LaPaz.Win.Forms.Ventas
                     }
 
                     formAgregarTitulo.Close();
-                };
+                };  
 
                 formAgregarTitulo.ShowDialog();
             }

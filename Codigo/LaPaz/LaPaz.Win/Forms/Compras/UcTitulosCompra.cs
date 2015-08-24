@@ -20,7 +20,7 @@ namespace LaPaz.Win.Forms.Compras
     public partial class UcTitulosCompra : UserControlBase
     {
         private IList<CompraTitulo> _titulos = new List<CompraTitulo>();
-        private IList<VentaTitulo> _titulosVenta = new List<VentaTitulo>();
+        private IList<VentaTitulo> _titulosDevolucion = new List<VentaTitulo>();
         private Guid _proveedorId;
         private readonly IMessageBoxDisplayService _messageBoxDisplayService = new MessageBoxDisplayService();
         private Boolean _devolucion = false;
@@ -46,14 +46,11 @@ namespace LaPaz.Win.Forms.Compras
             get { return _titulos; }
             set { _titulos = value; }
         }
-        public IList<VentaTitulo> TitulosVenta
+        public IList<VentaTitulo> TitulosDevolucion
         {
-            get { return _titulosVenta; }
-            set { _titulosVenta = value; }
+            get { return _titulosDevolucion; }
+            set { _titulosDevolucion = value; }
         }
-
-
-
         #endregion
 
         #region Metodos Publicos
@@ -69,6 +66,19 @@ namespace LaPaz.Win.Forms.Compras
                 return 0;
             }
             
+        }
+
+        public decimal CalcularSubTotalDevolucion()
+        {
+            if (TitulosDevolucion != null)
+            {
+                return TitulosDevolucion.Sum(t => t.SubTotal ?? 0);
+            }
+            else
+            {
+                return 0;
+            }
+
         }
 
         public void ActualizarProveedorId(Guid proveedorId)
@@ -96,7 +106,11 @@ namespace LaPaz.Win.Forms.Compras
             if (!_devolucion)
                 return Titulos.Sum(t => t.CantidadCompra ?? 0);
             else
-                return TitulosVenta.Sum(t => t.Cantidad ?? 0);
+            {
+                GrillaTitulos.Columns[4].FieldName = "Cantidad";
+                return TitulosDevolucion.Sum(t => t.Cantidad ?? 0);
+            }
+            
             
         }
 
@@ -110,7 +124,7 @@ namespace LaPaz.Win.Forms.Compras
                 GrillaTitulos.DataSource = Titulos.ToList();
             else
             {
-                GrillaTitulos.DataSource = TitulosVenta.ToList();
+                GrillaTitulos.DataSource = TitulosDevolucion.ToList();
             }
         }
 
@@ -124,10 +138,10 @@ namespace LaPaz.Win.Forms.Compras
                     {
                         formAgregarTitulo.TituloAgregado += (o, titulo) =>
                         {
-                            if (!this.TitulosVenta.Any(t => t.TituloId == titulo.TituloId))
+                            if (!this.TitulosDevolucion.Any(t => t.TituloId == titulo.TituloId))
                             {
-                                TitulosVenta.Add(titulo);
-                                OnDevolucionTitulosChanged(TitulosVenta);
+                                TitulosDevolucion.Add(titulo);
+                                OnDevolucionTitulosChanged(TitulosDevolucion);
                                 RefrescarTitulos();
                             }
                             else
@@ -255,6 +269,11 @@ namespace LaPaz.Win.Forms.Compras
             Titulos.Remove(compraTitulo);
             RefrescarTitulos();
             OnCompraTitulosChanged(Titulos);
+        }
+
+        private void UcTitulosCompra_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
