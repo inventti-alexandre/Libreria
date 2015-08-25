@@ -14,10 +14,10 @@ namespace LaPaz.Entidades
     
     public partial class TitulosConsignacionesDevueltasDetalle
     {
-        public int Id { get; set; }
+        public System.Guid Id { get; set; }
         public System.Guid TituloConsignacionDevueltaId { get; set; }
         public System.Guid TituloId { get; set; }
-        public int Cantidad { get; set; }
+        public int? Cantidad { get; set; }
     
         public virtual Titulo Titulo { get; set; }
         public virtual TitulosConsignacionesDevuelta TitulosConsignacionesDevuelta { get; set; }

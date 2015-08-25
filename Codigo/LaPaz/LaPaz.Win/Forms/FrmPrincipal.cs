@@ -158,6 +158,15 @@ namespace LaPaz.Win.Forms
             }
         }
 
+        private void CrearDevolucionOnDevolucionRealizada(object sender, EventArgs eventArgs)
+        {
+            var form = sender as Form;
+            if (form != null)
+            {
+                CerrarTab(form);
+            }
+        }
+
         public void AbrirTab(Form form)
         {
             form.Cursor = Cursors.WaitCursor;
@@ -684,8 +693,9 @@ namespace LaPaz.Win.Forms
 
         private void BtnProveedoresDevolucion_Click(object sender, EventArgs e)
         {
-            var pantalla = FormFactory.Create<FrmProveedoresDevolucion.FrmProveedoresDevolucion>(Guid.Empty, ActionFormMode.Create);
-            AbrirTab(pantalla);
+            var crearDevolucion = FormFactory.Create<FrmProveedoresDevolucion.FrmProveedoresDevolucion>();
+            crearDevolucion.DevolucionRealizada += CrearDevolucionOnDevolucionRealizada;
+            AbrirTab(crearDevolucion);
         }
 
         
