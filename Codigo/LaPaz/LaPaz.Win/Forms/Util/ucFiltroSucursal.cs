@@ -23,6 +23,7 @@ namespace LaPaz.Win.Forms.Util
         public Sucursal Sucursal
         {
             get { return _sucursal; }
+
         }
 
         public int? SucursalId

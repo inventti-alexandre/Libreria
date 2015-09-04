@@ -78,6 +78,8 @@ namespace LaPaz.Win.Forms.OrdenesPagos
             //Fix para diseñador.
             if (Uow == null) return;
 
+            CbxSucursalGasto.SucursalId = Context.SucursalActual.Id;
+            
             CbxCentroCosto.SeleccionarFinished += OnFiltered;
             CbxSucursalGasto.SeleccionarFinished += OnFiltered;
             CbxTipoComprobante.SeleccionarFinished += OnFiltered;
