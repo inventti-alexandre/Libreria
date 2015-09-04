@@ -616,7 +616,7 @@ namespace LaPaz.Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ReporteAutorTitulosListado>("ReporteAutorTitulosListado", codigoProveedorParameter, codigoLibroCompletoParameter, iSBNParameter, codigoBarraParameter, tituloNombreParameter, proveedorIdParameter, temaIdParameter, autorNombreParameter, editorialIdParameter, conStockParameter, sucursalIdParameter, ochoDeMarzoParameter);
         }
     
-        public virtual ObjectResult<ConsignacionSinRendir> ConsignacionesVentasSinRendir(Nullable<System.Guid> proveedorId, Nullable<System.DateTime> desde, Nullable<System.DateTime> hasta)
+        public virtual ObjectResult<ConsignacionSinRendir> ConsignacionesVentasSinRendir(Nullable<System.Guid> proveedorId, Nullable<System.DateTime> desde, Nullable<System.DateTime> hasta, Nullable<int> sucursalId)
         {
             var proveedorIdParameter = proveedorId.HasValue ?
                 new ObjectParameter("ProveedorId", proveedorId) :
@@ -630,7 +630,11 @@ namespace LaPaz.Entidades
                 new ObjectParameter("Hasta", hasta) :
                 new ObjectParameter("Hasta", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ConsignacionSinRendir>("ConsignacionesVentasSinRendir", proveedorIdParameter, desdeParameter, hastaParameter);
+            var sucursalIdParameter = sucursalId.HasValue ?
+                new ObjectParameter("SucursalId", sucursalId) :
+                new ObjectParameter("SucursalId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ConsignacionSinRendir>("ConsignacionesVentasSinRendir", proveedorIdParameter, desdeParameter, hastaParameter, sucursalIdParameter);
         }
     
         public virtual ObjectResult<ReporteClientesPorTitulo> ReporteClientesPorTitulos(Nullable<System.Guid> tituloId, Nullable<System.DateTime> fechaDesde, Nullable<System.DateTime> fechaHasta, Nullable<int> sucursalId)

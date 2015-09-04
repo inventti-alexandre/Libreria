@@ -139,7 +139,7 @@ namespace LaPaz.Win.Forms.Autenticacion
             }
 
             CbxUsuario.SeleccionarFinished += UsuarioSeleccionado;
-            CbxUsuario.CargarOperadores(2);
+            CbxUsuario.CargarOperadores(Context.SucursalActual.Id);//estaba 2
         }
 
         private void UsuarioSeleccionado(object sender, Operador operador)

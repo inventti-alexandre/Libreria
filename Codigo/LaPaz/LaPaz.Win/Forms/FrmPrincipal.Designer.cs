@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LnkAbrirCerraCaja = new System.Windows.Forms.LinkLabel();
-            this.LnkUsuarioActual = new System.Windows.Forms.LinkLabel();
             this.MainMenu = new Telerik.WinControls.UI.RadMenu();
             this.MiOperaciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiVentas = new Telerik.WinControls.UI.RadMenuItem();
@@ -82,6 +81,7 @@
             this.MiUsuariosListado = new Telerik.WinControls.UI.RadMenuItem();
             this.MiAyuda = new Telerik.WinControls.UI.RadMenuItem();
             this.MiTicketConsulta = new Telerik.WinControls.UI.RadMenuItem();
+            this.LnkUsuarioActual = new System.Windows.Forms.LinkLabel();
             this.TabsPrincipal = new Telerik.WinControls.UI.RadPageView();
             this.PageAccesos = new Telerik.WinControls.UI.RadPageViewPage();
             this.BtnProveedoresDevolucion = new Telerik.WinControls.UI.RadButton();
@@ -142,7 +142,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1640, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 40);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // LnkAbrirCerraCaja
@@ -150,7 +150,7 @@
             this.LnkAbrirCerraCaja.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkAbrirCerraCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LnkAbrirCerraCaja.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkAbrirCerraCaja.Location = new System.Drawing.Point(1526, 7);
+            this.LnkAbrirCerraCaja.Location = new System.Drawing.Point(856, 7);
             this.LnkAbrirCerraCaja.Name = "LnkAbrirCerraCaja";
             this.LnkAbrirCerraCaja.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.LnkAbrirCerraCaja.Size = new System.Drawing.Size(111, 25);
@@ -160,23 +160,6 @@
             this.LnkAbrirCerraCaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LnkAbrirCerraCaja.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkAbrirCerraCaja.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkAbrirCerraCaja_LinkClicked);
-            // 
-            // LnkUsuarioActual
-            // 
-            this.LnkUsuarioActual.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkUsuarioActual.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.LnkUsuarioActual.AutoSize = true;
-            this.LnkUsuarioActual.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkUsuarioActual.Location = new System.Drawing.Point(1324, 4);
-            this.LnkUsuarioActual.Name = "LnkUsuarioActual";
-            this.LnkUsuarioActual.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.LnkUsuarioActual.Size = new System.Drawing.Size(196, 32);
-            this.LnkUsuarioActual.TabIndex = 18;
-            this.LnkUsuarioActual.TabStop = true;
-            this.LnkUsuarioActual.Text = "{{Usuario Actual}}";
-            this.LnkUsuarioActual.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.LnkUsuarioActual.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkUsuarioActual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkUsuarioActual_LinkClicked);
             // 
             // MainMenu
             // 
@@ -197,7 +180,7 @@
             // 
             // 
             this.MainMenu.RootElement.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.MainMenu.Size = new System.Drawing.Size(1315, 34);
+            this.MainMenu.Size = new System.Drawing.Size(682, 29);
             this.MainMenu.TabIndex = 19;
             this.MainMenu.Text = "MainMenu";
             this.MainMenu.ThemeName = "TelerikMetroBlue";
@@ -689,6 +672,23 @@
             this.MiTicketConsulta.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiTicketConsulta.Click += new System.EventHandler(this.MiTicketConsulta_Click);
             // 
+            // LnkUsuarioActual
+            // 
+            this.LnkUsuarioActual.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
+            this.LnkUsuarioActual.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.LnkUsuarioActual.AutoSize = true;
+            this.LnkUsuarioActual.LinkColor = System.Drawing.Color.DodgerBlue;
+            this.LnkUsuarioActual.Location = new System.Drawing.Point(691, 7);
+            this.LnkUsuarioActual.Name = "LnkUsuarioActual";
+            this.LnkUsuarioActual.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.LnkUsuarioActual.Size = new System.Drawing.Size(159, 25);
+            this.LnkUsuarioActual.TabIndex = 18;
+            this.LnkUsuarioActual.TabStop = true;
+            this.LnkUsuarioActual.Text = "{{Usuario Actual}}";
+            this.LnkUsuarioActual.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.LnkUsuarioActual.VisitedLinkColor = System.Drawing.Color.DodgerBlue;
+            this.LnkUsuarioActual.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LnkUsuarioActual_LinkClicked);
+            // 
             // TabsPrincipal
             // 
             this.TabsPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -699,7 +699,7 @@
             this.TabsPrincipal.Location = new System.Drawing.Point(12, 44);
             this.TabsPrincipal.Name = "TabsPrincipal";
             this.TabsPrincipal.SelectedPage = this.PageAccesos;
-            this.TabsPrincipal.Size = new System.Drawing.Size(1628, 700);
+            this.TabsPrincipal.Size = new System.Drawing.Size(1028, 700);
             this.TabsPrincipal.TabIndex = 16;
             this.TabsPrincipal.ThemeName = "TelerikMetroBlue";
             this.TabsPrincipal.SelectedPageChanging += new System.EventHandler<Telerik.WinControls.UI.RadPageViewCancelEventArgs>(this.TabsPrincipal_SelectedPageChanging);
@@ -727,9 +727,9 @@
             this.PageAccesos.Controls.Add(this.BtnClienteListado);
             this.PageAccesos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PageAccesos.ForeColor = System.Drawing.Color.White;
-            this.PageAccesos.Location = new System.Drawing.Point(5, 48);
+            this.PageAccesos.Location = new System.Drawing.Point(5, 41);
             this.PageAccesos.Name = "PageAccesos";
-            this.PageAccesos.Size = new System.Drawing.Size(1618, 647);
+            this.PageAccesos.Size = new System.Drawing.Size(1018, 654);
             this.PageAccesos.Text = "Accesos";
             // 
             // BtnProveedoresDevolucion
@@ -737,9 +737,9 @@
             this.BtnProveedoresDevolucion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedoresDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresDevolucion.Image")));
             this.BtnProveedoresDevolucion.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProveedoresDevolucion.Location = new System.Drawing.Point(1084, 406);
+            this.BtnProveedoresDevolucion.Location = new System.Drawing.Point(790, 324);
             this.BtnProveedoresDevolucion.Name = "BtnProveedoresDevolucion";
-            this.BtnProveedoresDevolucion.Size = new System.Drawing.Size(185, 176);
+            this.BtnProveedoresDevolucion.Size = new System.Drawing.Size(151, 148);
             this.BtnProveedoresDevolucion.TabIndex = 19;
             this.BtnProveedoresDevolucion.Text = "Devolucion";
             this.BtnProveedoresDevolucion.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -760,9 +760,9 @@
             this.BtnRendirConsignacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRendirConsignacion.Image = ((System.Drawing.Image)(resources.GetObject("BtnRendirConsignacion.Image")));
             this.BtnRendirConsignacion.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnRendirConsignacion.Location = new System.Drawing.Point(867, 406);
+            this.BtnRendirConsignacion.Location = new System.Drawing.Point(635, 324);
             this.BtnRendirConsignacion.Name = "BtnRendirConsignacion";
-            this.BtnRendirConsignacion.Size = new System.Drawing.Size(185, 176);
+            this.BtnRendirConsignacion.Size = new System.Drawing.Size(149, 148);
             this.BtnRendirConsignacion.TabIndex = 33;
             this.BtnRendirConsignacion.Text = "Rendir Consignaciones";
             this.BtnRendirConsignacion.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -783,9 +783,9 @@
             this.BtnConsignaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsignaciones.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsignaciones.Image")));
             this.BtnConsignaciones.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnConsignaciones.Location = new System.Drawing.Point(648, 406);
+            this.BtnConsignaciones.Location = new System.Drawing.Point(480, 324);
             this.BtnConsignaciones.Name = "BtnConsignaciones";
-            this.BtnConsignaciones.Size = new System.Drawing.Size(185, 176);
+            this.BtnConsignaciones.Size = new System.Drawing.Size(149, 148);
             this.BtnConsignaciones.TabIndex = 32;
             this.BtnConsignaciones.Text = "Consignaciones";
             this.BtnConsignaciones.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -806,9 +806,9 @@
             this.BtnProveedoresCtaCte.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedoresCtaCte.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresCtaCte.Image")));
             this.BtnProveedoresCtaCte.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProveedoresCtaCte.Location = new System.Drawing.Point(425, 406);
+            this.BtnProveedoresCtaCte.Location = new System.Drawing.Point(325, 324);
             this.BtnProveedoresCtaCte.Name = "BtnProveedoresCtaCte";
-            this.BtnProveedoresCtaCte.Size = new System.Drawing.Size(185, 176);
+            this.BtnProveedoresCtaCte.Size = new System.Drawing.Size(149, 148);
             this.BtnProveedoresCtaCte.TabIndex = 33;
             this.BtnProveedoresCtaCte.Text = "Proveedores CtaCte";
             this.BtnProveedoresCtaCte.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -829,9 +829,9 @@
             this.btnListadoCompras.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListadoCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoCompras.Image")));
             this.btnListadoCompras.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.btnListadoCompras.Location = new System.Drawing.Point(219, 406);
+            this.btnListadoCompras.Location = new System.Drawing.Point(170, 324);
             this.btnListadoCompras.Name = "btnListadoCompras";
-            this.btnListadoCompras.Size = new System.Drawing.Size(185, 176);
+            this.btnListadoCompras.Size = new System.Drawing.Size(149, 148);
             this.btnListadoCompras.TabIndex = 32;
             this.btnListadoCompras.Text = "Listado de Compras";
             this.btnListadoCompras.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -852,9 +852,9 @@
             this.btnFacturasReservadas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacturasReservadas.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturasReservadas.Image")));
             this.btnFacturasReservadas.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFacturasReservadas.Location = new System.Drawing.Point(1084, 211);
+            this.btnFacturasReservadas.Location = new System.Drawing.Point(790, 173);
             this.btnFacturasReservadas.Name = "btnFacturasReservadas";
-            this.btnFacturasReservadas.Size = new System.Drawing.Size(185, 176);
+            this.btnFacturasReservadas.Size = new System.Drawing.Size(151, 145);
             this.btnFacturasReservadas.TabIndex = 31;
             this.btnFacturasReservadas.Text = "Facturas Reservadas";
             this.btnFacturasReservadas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -875,9 +875,9 @@
             this.BtnPagosProgramdos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPagosProgramdos.Image = ((System.Drawing.Image)(resources.GetObject("BtnPagosProgramdos.Image")));
             this.BtnPagosProgramdos.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPagosProgramdos.Location = new System.Drawing.Point(867, 16);
+            this.BtnPagosProgramdos.Location = new System.Drawing.Point(635, 16);
             this.BtnPagosProgramdos.Name = "BtnPagosProgramdos";
-            this.BtnPagosProgramdos.Size = new System.Drawing.Size(185, 176);
+            this.BtnPagosProgramdos.Size = new System.Drawing.Size(149, 148);
             this.BtnPagosProgramdos.TabIndex = 30;
             this.BtnPagosProgramdos.Text = "Pagos Programados";
             this.BtnPagosProgramdos.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -898,9 +898,9 @@
             this.BtnSeñaProveedor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSeñaProveedor.Image = ((System.Drawing.Image)(resources.GetObject("BtnSeñaProveedor.Image")));
             this.BtnSeñaProveedor.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnSeñaProveedor.Location = new System.Drawing.Point(867, 211);
+            this.BtnSeñaProveedor.Location = new System.Drawing.Point(635, 170);
             this.BtnSeñaProveedor.Name = "BtnSeñaProveedor";
-            this.BtnSeñaProveedor.Size = new System.Drawing.Size(185, 176);
+            this.BtnSeñaProveedor.Size = new System.Drawing.Size(149, 148);
             this.BtnSeñaProveedor.TabIndex = 23;
             this.BtnSeñaProveedor.Text = "Señas a proveedor";
             this.BtnSeñaProveedor.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -921,9 +921,9 @@
             this.BtnInformeCaja.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInformeCaja.Image = ((System.Drawing.Image)(resources.GetObject("BtnInformeCaja.Image")));
             this.BtnInformeCaja.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnInformeCaja.Location = new System.Drawing.Point(425, 16);
+            this.BtnInformeCaja.Location = new System.Drawing.Point(325, 16);
             this.BtnInformeCaja.Name = "BtnInformeCaja";
-            this.BtnInformeCaja.Size = new System.Drawing.Size(185, 176);
+            this.BtnInformeCaja.Size = new System.Drawing.Size(149, 148);
             this.BtnInformeCaja.TabIndex = 25;
             this.BtnInformeCaja.Text = "Informe de Caja";
             this.BtnInformeCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -944,9 +944,9 @@
             this.BtnCrearDevolucion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearDevolucion.Image")));
             this.BtnCrearDevolucion.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCrearDevolucion.Location = new System.Drawing.Point(425, 211);
+            this.BtnCrearDevolucion.Location = new System.Drawing.Point(325, 170);
             this.BtnCrearDevolucion.Name = "BtnCrearDevolucion";
-            this.BtnCrearDevolucion.Size = new System.Drawing.Size(185, 176);
+            this.BtnCrearDevolucion.Size = new System.Drawing.Size(149, 148);
             this.BtnCrearDevolucion.TabIndex = 24;
             this.BtnCrearDevolucion.Text = "Devolucion";
             this.BtnCrearDevolucion.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -967,9 +967,9 @@
             this.BtnCrearSeña.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearSeña.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearSeña.Image")));
             this.BtnCrearSeña.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCrearSeña.Location = new System.Drawing.Point(648, 16);
+            this.BtnCrearSeña.Location = new System.Drawing.Point(480, 16);
             this.BtnCrearSeña.Name = "BtnCrearSeña";
-            this.BtnCrearSeña.Size = new System.Drawing.Size(185, 176);
+            this.BtnCrearSeña.Size = new System.Drawing.Size(149, 148);
             this.BtnCrearSeña.TabIndex = 23;
             this.BtnCrearSeña.Text = "Señas";
             this.BtnCrearSeña.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -990,9 +990,9 @@
             this.BtnOrdenesPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnOrdenesPago.Image = ((System.Drawing.Image)(resources.GetObject("BtnOrdenesPago.Image")));
             this.BtnOrdenesPago.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnOrdenesPago.Location = new System.Drawing.Point(219, 16);
+            this.BtnOrdenesPago.Location = new System.Drawing.Point(170, 16);
             this.BtnOrdenesPago.Name = "BtnOrdenesPago";
-            this.BtnOrdenesPago.Size = new System.Drawing.Size(185, 176);
+            this.BtnOrdenesPago.Size = new System.Drawing.Size(149, 148);
             this.BtnOrdenesPago.TabIndex = 20;
             this.BtnOrdenesPago.Text = "Ordenes de Pago";
             this.BtnOrdenesPago.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1013,9 +1013,9 @@
             this.BtnCrearCompra.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearCompra.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearCompra.Image")));
             this.BtnCrearCompra.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCrearCompra.Location = new System.Drawing.Point(15, 406);
+            this.BtnCrearCompra.Location = new System.Drawing.Point(15, 324);
             this.BtnCrearCompra.Name = "BtnCrearCompra";
-            this.BtnCrearCompra.Size = new System.Drawing.Size(185, 176);
+            this.BtnCrearCompra.Size = new System.Drawing.Size(149, 148);
             this.BtnCrearCompra.TabIndex = 22;
             this.BtnCrearCompra.Text = "Compra de libros";
             this.BtnCrearCompra.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1038,7 +1038,7 @@
             this.BtnCrearVenta.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.BtnCrearVenta.Location = new System.Drawing.Point(15, 16);
             this.BtnCrearVenta.Name = "BtnCrearVenta";
-            this.BtnCrearVenta.Size = new System.Drawing.Size(185, 176);
+            this.BtnCrearVenta.Size = new System.Drawing.Size(149, 148);
             this.BtnCrearVenta.TabIndex = 21;
             this.BtnCrearVenta.Text = "Venta";
             this.BtnCrearVenta.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1061,9 +1061,9 @@
             this.BtnTicketsConsulta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnTicketsConsulta.Image = ((System.Drawing.Image)(resources.GetObject("BtnTicketsConsulta.Image")));
             this.BtnTicketsConsulta.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnTicketsConsulta.Location = new System.Drawing.Point(1084, 16);
+            this.BtnTicketsConsulta.Location = new System.Drawing.Point(790, 16);
             this.BtnTicketsConsulta.Name = "BtnTicketsConsulta";
-            this.BtnTicketsConsulta.Size = new System.Drawing.Size(185, 176);
+            this.BtnTicketsConsulta.Size = new System.Drawing.Size(151, 148);
             this.BtnTicketsConsulta.TabIndex = 20;
             this.BtnTicketsConsulta.Text = "Tickets de Consulta";
             this.BtnTicketsConsulta.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1084,9 +1084,9 @@
             this.BtnProveedoresListado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedoresListado.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresListado.Image")));
             this.BtnProveedoresListado.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProveedoresListado.Location = new System.Drawing.Point(648, 211);
+            this.BtnProveedoresListado.Location = new System.Drawing.Point(480, 170);
             this.BtnProveedoresListado.Name = "BtnProveedoresListado";
-            this.BtnProveedoresListado.Size = new System.Drawing.Size(185, 176);
+            this.BtnProveedoresListado.Size = new System.Drawing.Size(149, 148);
             this.BtnProveedoresListado.TabIndex = 18;
             this.BtnProveedoresListado.Text = "Proveedores";
             this.BtnProveedoresListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1107,9 +1107,9 @@
             this.BtnLibrosListado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLibrosListado.Image = ((System.Drawing.Image)(resources.GetObject("BtnLibrosListado.Image")));
             this.BtnLibrosListado.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnLibrosListado.Location = new System.Drawing.Point(15, 211);
+            this.BtnLibrosListado.Location = new System.Drawing.Point(15, 170);
             this.BtnLibrosListado.Name = "BtnLibrosListado";
-            this.BtnLibrosListado.Size = new System.Drawing.Size(185, 176);
+            this.BtnLibrosListado.Size = new System.Drawing.Size(149, 148);
             this.BtnLibrosListado.TabIndex = 17;
             this.BtnLibrosListado.Text = "Libros";
             this.BtnLibrosListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1130,9 +1130,9 @@
             this.BtnClienteListado.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClienteListado.Image = ((System.Drawing.Image)(resources.GetObject("BtnClienteListado.Image")));
             this.BtnClienteListado.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnClienteListado.Location = new System.Drawing.Point(219, 211);
+            this.BtnClienteListado.Location = new System.Drawing.Point(170, 170);
             this.BtnClienteListado.Name = "BtnClienteListado";
-            this.BtnClienteListado.Size = new System.Drawing.Size(185, 176);
+            this.BtnClienteListado.Size = new System.Drawing.Size(149, 148);
             this.BtnClienteListado.TabIndex = 16;
             this.BtnClienteListado.Text = "Clientes";
             this.BtnClienteListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
@@ -1150,12 +1150,11 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1640, 773);
+            this.ClientSize = new System.Drawing.Size(970, 624);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.TabsPrincipal);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             // 
             // 

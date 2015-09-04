@@ -68,7 +68,7 @@ namespace LaPaz.Win.Forms.LotesDeFacturas
             int pageTotal = 0;
 
 
-            var lotes = await Task.Run(() => Uow.LotesFacturas.Listado().OrderByDescending(l=>l.NroLote).Where(l => l.OperadorLote == Context.OperadorActual.Id));
+            var lotes = await Task.Run(() => Uow.LotesFacturas.Listado().OrderByDescending(l=>l.NroLote).Where(l => l.OperadorLote == Context.OperadorActual.Id && l.SucursalAltaId==Context.SucursalActual.Id));
                 
             GrillaLotes.DataSource = lotes.ToList();
 

@@ -52,7 +52,8 @@ namespace LaPaz.Win.Forms.Util
                 return;
 
             _cargandoSucursales = true;
-            var sucursal = Uow.Sucursales.Listado().OrderBy(s => s.Nombre).ToList();
+            //var sucursal = Uow.Sucursales.Listado().OrderBy(s => s.Nombre).ToList();
+            var sucursal = Uow.Sucursales.Listado().OrderBy(s => s.Nombre).Where(s=>s.SucursalNumero != null).ToList();
             sucursal.Insert(0, new Sucursal() { Nombre= "SELECCIONE SUCURSAL", Id = 0 });
             Combo.DataSource = sucursal;
             DefinirCombo();

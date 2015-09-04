@@ -53,6 +53,7 @@ namespace LaPaz.Win.Forms.Consignaciones
                 _proveedorNegocio.ProveedorConsignacion(string.Empty, string.Empty, proveedorId, null,
                     desde,
                     hasta,
+                    Context.SucursalActual.Id,
                     pageIndex,
                     pageSize,
                     out pageTotal));

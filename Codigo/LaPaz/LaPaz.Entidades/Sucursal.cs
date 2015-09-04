@@ -124,6 +124,7 @@ namespace LaPaz.Entidades
         public decimal MaximoImporteVenta { get; set; }
         public decimal MaximoPorcentajeDescuento { get; set; }
         public int MaximoNroLineasPorVenta { get; set; }
+        public Nullable<int> SucursalNumero { get; set; }
     
         public virtual ICollection<Cliente> Clientes { get; set; }
         public virtual ICollection<Cliente> Clientes1 { get; set; }

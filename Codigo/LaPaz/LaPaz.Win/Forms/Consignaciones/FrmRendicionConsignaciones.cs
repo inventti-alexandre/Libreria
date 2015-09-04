@@ -48,7 +48,8 @@ namespace LaPaz.Win.Forms.Consignaciones
             var resultados = _consignacionNegocio.VentasSinRendir(
               ucFiltrosConsignaciones.ProveedorId,
               ucFiltrosConsignaciones.Desde.AddDays(-1),
-              ucFiltrosConsignaciones.Hasta);
+              ucFiltrosConsignaciones.Hasta,
+              Context.SucursalActual.Id);
 
             if (resultados.Any())
             {

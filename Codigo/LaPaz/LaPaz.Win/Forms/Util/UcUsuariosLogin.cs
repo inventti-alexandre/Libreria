@@ -57,7 +57,13 @@ namespace LaPaz.Win.Forms.Util
                 return;
 
             _cargandoUsuarios = true;
+
             var operadoresId = Uow.OperadorSucursales.Listado().Where(os => os.SucursalId == sucursalId).Select(os => os.OperadorId).ToList();
+            if (sucursalId==0)
+            {
+                operadoresId = Uow.OperadorSucursales.Listado().Select(os => os.OperadorId).ToList();
+            }
+            
             var operador = Uow.Operadores.Listado().Where(o => operadoresId.Contains(o.Id) && o.Habilitado).ToList();
             operador.Insert(0, new Operador() { Usuario = "SELECCIONE USUARIO", Id = Guid.Empty });
             Combo.DataSource = operador;

@@ -87,7 +87,7 @@ namespace LaPaz.Negocio
             return (decimal)cuentasCorrientes.Select(cc => cc.Importe - cc.Pagado).DefaultIfEmpty(0).Sum();
         }
 
-        public List<ClienteMontoFavor> Senias(string sortBy, string sortDirection, Guid? clienteId, int pageIndex, int pageSize, out int pageTotal)
+        public List<ClienteMontoFavor> Senias(string sortBy, string sortDirection, Guid? clienteId, int sucursalId, int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
 
@@ -98,7 +98,9 @@ namespace LaPaz.Negocio
 
             Expression<Func<ClienteMontoFavor, bool>> where = x => x.ClienteId == clienteId &&
                                                              (x.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente ||
-                                                              x.TipoComprobanteId == TipoComprobanteEnum.NotaCrédito);
+                                                              x.TipoComprobanteId == TipoComprobanteEnum.NotaCrédito)
+                                                              && x.SucursalAltaId== sucursalId
+                                                              ;
 
             var resultados = Uow.ClientesMontosFavor.Listado(criteros, where);
 

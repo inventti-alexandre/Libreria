@@ -99,7 +99,7 @@ namespace LaPaz.Win.Forms.Ventas
 
             if (_formMode == ActionFormMode.Create)
             {
-                TxtNroFactura.Text = _ventaNegocio.SiguienteNumeroFactura(Context.OperadorActual.Id).ToString();
+                TxtNroFactura.Text = _ventaNegocio.SiguienteNumeroFactura(Context.OperadorActual.Id, Context.SucursalActual.Id).ToString();
             }
             if (_formMode == ActionFormMode.Edit)
             {
@@ -264,8 +264,8 @@ namespace LaPaz.Win.Forms.Ventas
             UcClienteDetalle.ActualizarCliente(_cliente, deudaTotal, deudaVencida);
             UcCuentaCorrienteInfo.ActualizarInfoCuentaCorriente(_cliente);
 
-            UcTotalesVenta.SenasDisp = _ventaNegocio.SenaAFavorCliente(_cliente.Id);
-            UcTotalesVenta.CreditosDevolucionDisp = _ventaNegocio.CreditosPorDevolucion(_cliente.Id);
+            UcTotalesVenta.SenasDisp = _ventaNegocio.SenaAFavorCliente(_cliente.Id, Context.SucursalActual.Id);
+            UcTotalesVenta.CreditosDevolucionDisp = _ventaNegocio.CreditosPorDevolucion(_cliente.Id, Context.SucursalActual.Id);
 
             UcTotalesVenta.ActualizarMontosAFavor(UcTotalesVenta.SenasDisp, UcTotalesVenta.CreditosDevolucionDisp);
             UcTotalesVenta.Senas = 0;
@@ -489,7 +489,7 @@ namespace LaPaz.Win.Forms.Ventas
         {
             using (var ventaNegocio = Ioc.Container.Get<IVentaNegocio>())
             {
-                TxtNroFactura.Text = ventaNegocio.SiguienteNumeroFactura(Context.OperadorActual.Id).ToString();
+                TxtNroFactura.Text = ventaNegocio.SiguienteNumeroFactura(Context.OperadorActual.Id, Context.SucursalActual.Id).ToString();
             }
         }
 

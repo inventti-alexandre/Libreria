@@ -170,7 +170,9 @@ namespace LaPaz.Win.Forms.OrdenesPagos
         {
             base.FormBaseListado_Load(sender, e);
             GridOrdenesPago.AutoGenerateColumns = false;
+            
             RefrescarListado();
+
             UcFiltrosOrdenesPago.Filtered += Filtered;
         }
 

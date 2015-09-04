@@ -343,9 +343,11 @@ namespace LaPaz.Win.Forms.Compras
         {
             var proveedoresMontosFavor = Uow.ProveedoresSenias.Listado()
                                        .Where(ps => ps.ProveedorId == proveedorId
-                                                   && ps.ImporteUsado < ps.Importe)
+                                                   && ps.ImporteUsado < ps.Importe
+                                                   && ps.SucursalAltaId==Context.SucursalActual.Id)
                                        .ToList();
-            return proveedoresMontosFavor.Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteUsado.GetValueOrDefault());
+            return proveedoresMontosFavor.Where(ps=> ps.SucursalAltaId==Context.SucursalActual.Id).Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteUsado.GetValueOrDefault()
+                );
         }
 
         private decimal? CreditoAFavorProveedor(Guid proveedorId)

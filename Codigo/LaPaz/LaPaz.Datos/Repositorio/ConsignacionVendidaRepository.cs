@@ -22,9 +22,9 @@ namespace LaPaz.Datos.Repositorio
         {
         }
 
-        public List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta)
+        public List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta, int SucursalId)
         {
-            return LaPazEntities.ConsignacionesVentasSinRendir(proveedorId, desde, hasta).ToList();
+            return LaPazEntities.ConsignacionesVentasSinRendir(proveedorId, desde, hasta, SucursalId).ToList();
         }
 
 

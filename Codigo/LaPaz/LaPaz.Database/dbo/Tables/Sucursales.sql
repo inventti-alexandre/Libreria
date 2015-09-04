@@ -18,6 +18,7 @@
     [MaximoImporteVenta] MONEY NOT NULL DEFAULT 1000, 
     [MaximoPorcentajeDescuento] DECIMAL(18, 2) NOT NULL DEFAULT 0, 
     [MaximoNroLineasPorVenta] INT NOT NULL DEFAULT 10, 
+    [SucursalNumero] INT NULL, 
     CONSTRAINT [PK_s00Sucursales] PRIMARY KEY CLUSTERED ([Id] ASC), 
     CONSTRAINT [FK_Sucursales_Provincias] FOREIGN KEY ([ProvinciaId]) REFERENCES [Provincias]([Id]), 
     CONSTRAINT [FK_Sucursales_Localidades] FOREIGN KEY ([LocalidadId]) REFERENCES [Localidades]([Id])

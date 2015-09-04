@@ -20,8 +20,9 @@ namespace LaPaz.Negocio.Interfaces
         CrearVentaResponse CrearVenta(CrearVentaData venta);
         CrearVentaResponse CrearVentaRendicionConsignacionCliente(RendirConsignacionClienteData ventaData);
         void ReservarFactura(ReservarFacturaData reservarFacturaData);
-        int SiguienteNumeroFactura(Guid opertadorId);
-        decimal SenaAFavorCliente(Guid clienteId);
-        decimal CreditosPorDevolucion(Guid clienteId);
+      //  int SiguienteNumeroFactura(Guid opertadorId);
+        int SiguienteNumeroFactura(Guid opertadorId, int sucursalId);
+        decimal SenaAFavorCliente(Guid clienteId, int sucursalId);
+        decimal CreditosPorDevolucion(Guid clienteId, int sucursalId);
     }
 }

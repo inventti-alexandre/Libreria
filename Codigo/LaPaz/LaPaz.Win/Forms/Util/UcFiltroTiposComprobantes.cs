@@ -47,6 +47,7 @@ namespace LaPaz.Win.Forms.Util
                 TipoComprobanteEnum tipoComprobante;
                 Enum.TryParse(tipoComprobanteSeleccionado.ToString(), out tipoComprobante);
                 return tipoComprobante;
+
             }
             set { Combo.SelectedValue = value.HasValue ? (int)value : 0; }
         }

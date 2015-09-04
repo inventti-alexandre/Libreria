@@ -494,8 +494,8 @@ namespace LaPaz.Win.Forms.Senias
             _cliente = cliente;
             TxtCliente.Text = cliente.Denominacion;
             TxtDni.Text = cliente.Cuit.TrimStart('0');
-            TxtSenias.Text = _ventaNegocio.SenaAFavorCliente(_cliente.Id).ToString("N2");
-            TxtCreditos.Text = _ventaNegocio.CreditosPorDevolucion(_cliente.Id).ToString("N2");
+            TxtSenias.Text = _ventaNegocio.SenaAFavorCliente(_cliente.Id, Context.SucursalActual.Id).ToString("N2");
+            TxtCreditos.Text = _ventaNegocio.CreditosPorDevolucion(_cliente.Id, Context.SucursalActual.Id).ToString("N2");
             TxtTelefono.Text = cliente.Telefono;
             RefrescarHistorial();
             LnkEditarCliente.Enabled = true;
@@ -510,7 +510,7 @@ namespace LaPaz.Win.Forms.Senias
             var senias = await
                          Task.Run(
                              () =>
-                             _clienteNegocio.Senias("FechaAlta", "DESC", _cliente.Id, currentPage, pageSize, out pageTotal));
+                             _clienteNegocio.Senias("FechaAlta", "DESC", _cliente.Id, Context.SucursalActual.Id, currentPage, pageSize, out pageTotal));
 
             ClientesSeniasPager.UpdateState(pageTotal);
 

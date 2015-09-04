@@ -130,7 +130,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                         () =>
                             _proveedorNegocio.ProveedorCtaCte(SortColumn, SortDirection, null,
                                 ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-                                , true, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
+                                , true, Context.SucursalActual.Id, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
                                 out pageTotal));
 
             var proveedoresConsignacion =
@@ -139,7 +139,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                         () =>
                             _proveedorNegocio.ProveedorConsignacion(SortColumn, SortDirection, null, null,
                                 ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-                                , true, null, null, true, ProveedoreCtaCtePager.CurrentPage,
+                                , true, null, null, true, Context.SucursalActual.Id, ProveedoreCtaCtePager.CurrentPage,
                                 ProveedoreCtaCtePager.PageSize,
                                 out pageTotal));
 

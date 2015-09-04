@@ -23,11 +23,11 @@ namespace LaPaz.Negocio
             Uow = uow;
         }
 
-        public List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta)
+        public List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta, int sucursalId)
         {
             try
             {
-                var resultados = Uow.TitulosConsignacionesVendidas.VentasSinRendir(proveedorId, desde, hasta);
+                var resultados = Uow.TitulosConsignacionesVendidas.VentasSinRendir(proveedorId, desde, hasta, sucursalId);
                 return resultados;
             }
             catch (Exception ex)

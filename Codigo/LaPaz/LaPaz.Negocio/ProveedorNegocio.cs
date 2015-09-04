@@ -62,7 +62,7 @@ namespace LaPaz.Negocio
             return resultados.Entities.Project().To<ProveedorDto>().ToList();
         }
 
-        public List<ProveedorSenia> Senias(string sortBy, string sortDirection, Guid? proveedorId, int pageIndex, int pageSize, out int pageTotal)
+        public List<ProveedorSenia> Senias(string sortBy, string sortDirection, Guid? proveedorId, int sucursalId, int pageIndex, int pageSize, out int pageTotal)
         {
             using (var uow = UowFactory.Create<ILaPazUow>())
             {
@@ -73,7 +73,9 @@ namespace LaPaz.Negocio
                 criteros.SortBy = !string.IsNullOrEmpty(sortBy) ? sortBy : "FechaAlta";
                 criteros.SortDirection = !string.IsNullOrEmpty(sortDirection) ? sortDirection : "DESC";
 
-                Expression<Func<ProveedorSenia, bool>> where = x => !proveedorId.HasValue || x.ProveedorId == proveedorId;
+                Expression<Func<ProveedorSenia, bool>> where =
+                    x => (!proveedorId.HasValue || x.ProveedorId == proveedorId)
+                         && x.SucursalAltaId == sucursalId;
 
                 var resultados = uow.ProveedoresSenias.Listado(criteros, where);
 
@@ -83,11 +85,12 @@ namespace LaPaz.Negocio
             }
         }
 
-        public decimal SenaAFavorProveedor(Guid proveedorId)
+        public decimal SenaAFavorProveedor(Guid proveedorId, int sucursalId)
         {
             using (var uow = UowFactory.Create<ILaPazUow>())
             {
                 var proveedorMontosFavor = uow.ProveedoresSenias.Listado().Where(ps => ps.ProveedorId == proveedorId
+                                                                                         && ps.SucursalAltaId==sucursalId
                                                                                        && ps.ImporteUsado < ps.Importe)
                     .ToList();
 
@@ -97,7 +100,7 @@ namespace LaPaz.Negocio
 
         }
 
-        public List<ProveedorCtaCteDto> ProveedorCtaCte(string sortBy, string sortDirection, int? cuenta, string denominacion, string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal)
+        public List<ProveedorCtaCteDto> ProveedorCtaCte(string sortBy, string sortDirection, int? cuenta, string denominacion, string cuit, bool? activo, int sucursalId, int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
 
@@ -112,7 +115,8 @@ namespace LaPaz.Negocio
                                                             x.Proveedor.Denominacion.Contains(denominacion)) &&
                                                            (string.IsNullOrEmpty(cuit) || x.Proveedor.Cuit.Contains(cuit)) &&
                                                            (!activo.HasValue || x.Proveedor.Activo == activo) &&
-                                                           ((x.Importe - x.Pagado) > 0));
+                                                           ((x.Importe - x.Pagado) > 0)
+                                                           && x.SucursalAltaId== sucursalId);
 
             var resultados = Uow.ProveedoresCuentasCorrientes.Listado(criteros,
                                                      where,
@@ -127,6 +131,7 @@ namespace LaPaz.Negocio
 
         public List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, Guid? proveedorId, int? cuenta,
             string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, bool? pendientePago,
+            int sucursalId,
             int pageIndex, int pageSize, out int pageTotal)
         {
             var criteros = new PagingCriteria();
@@ -136,7 +141,7 @@ namespace LaPaz.Negocio
             criteros.SortBy = !string.IsNullOrEmpty(sortBy) ? sortBy : "Id";
             criteros.SortDirection = !string.IsNullOrEmpty(sortDirection) ? sortDirection : "DESC";
 
-            Expression<Func<TituloConsignacionRendida, bool>> where = x => (
+            Expression<Func<TituloConsignacionRendida, bool>> where = x => (x.SucursalAltaId == sucursalId &&
                 (!cuenta.HasValue ||
                  (x.Proveedor.Cuenta.HasValue && x.Proveedor.Cuenta.ToString().Contains(cuenta.ToString()))) &&
                 (string.IsNullOrEmpty(denominacion) ||
@@ -180,10 +185,10 @@ namespace LaPaz.Negocio
         }
 
         public List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection,
-            Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int pageIndex,
+            Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int sucursalId, int pageIndex,
             int pageSize, out int pageTotal)
         {
-            return ProveedorConsignacion(sortBy, sortDirection, proveedorId, null, null, null, activo, fechaConsigDesde, fechaConsigHasta, null, pageIndex, pageSize, out pageTotal);
+            return ProveedorConsignacion(sortBy, sortDirection, proveedorId, null, null, null, activo, fechaConsigDesde, fechaConsigHasta,null, sucursalId, pageIndex, pageSize, out pageTotal);
         }
 
         public void AnularSeniaProveedor(ProveedorSenia senia, Caja caja, Guid operadorId, int sucursalId)

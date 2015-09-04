@@ -9,6 +9,6 @@ namespace LaPaz.Datos.Interfaces
 {
     public interface IConsignacionVendidaRepository : IRepository<TitulosConsignacionesVendida>
     {
-        List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta);
+        List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta, int sucursalId);
     }
 }

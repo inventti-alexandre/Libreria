@@ -11,7 +11,7 @@ namespace LaPaz.Negocio.Interfaces
 {
     public interface IConsignacionNegocio : IDisposable
     {
-        List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta);
+        List<ConsignacionSinRendir> VentasSinRendir(Guid? proveedorId, DateTime desde, DateTime hasta, int sucursalId);
         List<ConsignacionesParaDevolver> ConsignacionesParaDevolver(Guid? proveedorId, DateTime desde, DateTime hasta);
     }
 }

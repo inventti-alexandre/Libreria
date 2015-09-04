@@ -94,7 +94,7 @@ namespace LaPaz.Win.Forms.Senias
                     _proveedor = proveedor;
 
                     UcProveedorDetalle.ActualizarProveedor(proveedor);
-                    UcProveedorDetalle.Disponible = _proveedorNegocio.SenaAFavorProveedor(proveedor.Id);
+                    UcProveedorDetalle.Disponible = _proveedorNegocio.SenaAFavorProveedor(proveedor.Id, Context.SucursalActual.Id);
 
                     RefrescarHistorial();
                 }
@@ -207,7 +207,7 @@ namespace LaPaz.Win.Forms.Senias
             var senias = await
                 Task.Run(
                     () =>
-                        _proveedorNegocio.Senias("FechaAlta", "DESC", _proveedor.Id, currentPage, pageSize,
+                        _proveedorNegocio.Senias("FechaAlta", "DESC", _proveedor.Id, Context.SucursalActual.Id, currentPage, pageSize,
                             out pageTotal));
 
             GridSenias.DataSource = senias;

@@ -342,14 +342,14 @@ namespace LaPaz.Negocio
         {
             LoteFactura loteFactura =
                Uow.LotesFacturas.Obtener(
-                   l => l.OperadorLote == reservarFacturaData.OperadorActualId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo);
+                   l => l.OperadorLote == reservarFacturaData.OperadorActualId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo && l.SucursalAltaId==reservarFacturaData.SucursalActualId);
 
             // Guardar Reservar Factura
             VentaReservada ventaReservada = new VentaReservada();
             ventaReservada.SucReserva = reservarFacturaData.SucursalActualId;
             ventaReservada.NroLote = loteFactura.NroLote;
 
-            ventaReservada.LCN = LcnHelper.ObtenerLcn(this.SiguienteNumeroFactura(reservarFacturaData.OperadorActualId));
+            ventaReservada.LCN = LcnHelper.ObtenerLcn(this.SiguienteNumeroFactura(reservarFacturaData.OperadorActualId, reservarFacturaData.SucursalActualId));
             ventaReservada.FechaAlta = _clock.Now;
             ventaReservada.SucursalAltaId = reservarFacturaData.SucursalActualId;
             ventaReservada.OperadorAltaId = reservarFacturaData.OperadorActualId;
@@ -359,7 +359,7 @@ namespace LaPaz.Negocio
 
             Uow.Commit();
         }
-
+        
         public LoteFactura UltimoNroLote(Guid opertadorId)
         {
             using (var uow = UowFactory.Create<ILaPazUow>())
@@ -368,11 +368,39 @@ namespace LaPaz.Negocio
             }
         }
 
-        public int SiguienteNumeroFactura(Guid opertadorId)
+        public LoteFactura UltimoNroLote(Guid opertadorId, int sucursalId)
+        {
+            using (var uow = UowFactory.Create<ILaPazUow>())
+            {
+                return uow.LotesFacturas.Obtener(l => l.OperadorLote == opertadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo && l.SucursalAltaId==sucursalId);
+            }
+        }
+        //public int SiguienteNumeroFactura(Guid opertadorId)
+        //{
+
+        //   //var usuario = Uow.
+        //    var loteFactura = UltimoNroLote(opertadorId);// Uow.LotesFacturas.Obtener(l => l.OperadorLote == opertadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo);
+
+        //    if (loteFactura == null)
+        //    {
+        //        throw new ApplicationException("No se ha encontrado el lote de factura para el operador actual");
+        //    }
+
+        //    var numeroFactura = (loteFactura.NroActual ?? 0) + 1;
+
+        //    if (numeroFactura > loteFactura.NroHasta)
+        //    {
+        //        throw new ApplicationException("Ya se ha alcanzado el último número de factura dentro del lote");
+        //    }
+
+        //    return numeroFactura;
+        //}
+
+        public int SiguienteNumeroFactura(Guid opertadorId, int sucursalId)
         {
 
-           //var usuario = Uow.
-            var loteFactura = UltimoNroLote(opertadorId);// Uow.LotesFacturas.Obtener(l => l.OperadorLote == opertadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo);
+           // var usuario = Uow.
+            var loteFactura = UltimoNroLote(opertadorId, sucursalId);// Uow.LotesFacturas.Obtener(l => l.OperadorLote == opertadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo);
 
             if (loteFactura == null)
             {
@@ -427,28 +455,27 @@ namespace LaPaz.Negocio
             return caja.Id;
         }
 
-        public decimal SenaAFavorCliente(Guid clienteId)
+        public decimal SenaAFavorCliente(Guid clienteId, int sucursalId)
         {
-            //var usuario = Uow.
             var clientesMontosFavor = Uow.ClientesMontosFavor.Listado()
                                        .Where(cm => cm.ClienteId == clienteId
                                                     && cm.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente
                                                     && !cm.FechaAnulacion.HasValue
                                            //&& !cm.VentaId.HasValue 
+                                           && cm.SucursalAltaId == sucursalId
                                                     && cm.ImpOcupado < cm.Importe)
                                        .ToList();
 
             return clientesMontosFavor.Sum(cm => cm.Importe.GetValueOrDefault() - cm.ImpOcupado.GetValueOrDefault());
         }
 
-        public decimal CreditosPorDevolucion(Guid clienteId)
+        public decimal CreditosPorDevolucion(Guid clienteId, int sucursalId)
         {
-            //var usuario = Uow.
             var clientesMontosFavor = Uow.ClientesMontosFavor.Listado()
                                        .Where(cm => cm.ClienteId == clienteId
                                                     && cm.TipoComprobanteId == TipoComprobanteEnum.NotaCrédito
                                                     && !cm.FechaAnulacion.HasValue
-                                           //&& !cm.VentaId.HasValue
+                                                    && cm.SucursalAltaId == sucursalId
                                                     && cm.ImpOcupado < cm.Importe)
                                        .ToList();
 
@@ -474,9 +501,9 @@ namespace LaPaz.Negocio
         {
             LoteFactura loteFactura =
                 Uow.LotesFacturas.Obtener(
-                    l => l.OperadorLote == operadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo);
+                    l => l.OperadorLote == operadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo && l.SucursalAltaId==sucursalId);
 
-            var ultimo = this.SiguienteNumeroFactura(operadorId);
+            var ultimo = this.SiguienteNumeroFactura(operadorId, sucursalId);
             if (ultimo == loteFactura.NroActual)
             {
                 loteFactura.Estado = EstadoLoteEnum.Cerrado;
@@ -501,7 +528,7 @@ namespace LaPaz.Negocio
 
             if (!ventaData.EsVentaReservada)
             {
-                venta.NumeroComprobante = this.SiguienteNumeroFactura(ventaData.OperadorId);
+                venta.NumeroComprobante = this.SiguienteNumeroFactura(ventaData.OperadorId, ventaData.SucursalId);
             }
             else
             {
@@ -565,6 +592,7 @@ namespace LaPaz.Negocio
             var montoCredito = ventaData.CreditosDevolucion;
             var clientesCreditoFavor = Uow.ClientesMontosFavor.Listado()
                 .Where(cm => cm.ClienteId == ventaData.ClienteId
+                    && cm.SucursalAltaId == ventaData.SucursalId
                              && cm.TipoComprobanteId == TipoComprobanteEnum.NotaCrédito
                              && !cm.FechaAnulacion.HasValue
                              && cm.ImpOcupado < cm.Importe).OrderBy(cmf => cmf.FechaAlta)
@@ -611,6 +639,7 @@ namespace LaPaz.Negocio
                                                                                      &&
                                                                                      cm.TipoComprobanteId ==
                                                                                      TipoComprobanteEnum.SeñaCliente
+                                                                                     && cm.SucursalAltaId== ventaData.SucursalId
                                                                                      && !cm.FechaAnulacion.HasValue
                                                                                      && cm.ImpOcupado < cm.Importe))
                 .OrderBy(cmf => cmf.FechaAlta)

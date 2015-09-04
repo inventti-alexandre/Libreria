@@ -16,24 +16,25 @@ namespace LaPaz.Negocio.Interfaces
             int? provinciaId, int? localidadId, TipoProveedor tipoProveedor, bool? activo, int pageIndex, int pageSize,
             out int pageTotal);
 
-        List<ProveedorSenia> Senias(string sortBy, string sortDirection, Guid? proveedorId, int pageIndex, int pageSize,
+        List<ProveedorSenia> Senias(string sortBy, string sortDirection, Guid? proveedorId, int sucursalId, int pageIndex, int pageSize,
                                     out int pageTotal);
 
         List<ProveedorCtaCteDto> ProveedorCtaCte(string sortBy1, string sortDirection, int? cuenta, string denominacion,
-            string cuit, bool? activo, int pageIndex, int pageSize, out int pageTotal);
+            string cuit, bool? activo, int sucursalid, int pageIndex, int pageSize, out int pageTotal);
 
         List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection, Guid? proveedorId,
             int? cuenta, string denominacion, string cuit, bool? activo, DateTime? fechaConsigDesde,
-            DateTime? fechaConsigHasta, bool? pendientePago,
+            DateTime? fechaConsigHasta, bool? pendientePago, int sucursalId,
             int pageIndex, int pageSize, out int pageTotal);
 
         List<ProveedorConsignacionDto> ProveedorConsignacion(string sortBy, string sortDirection,
-            Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int pageIndex,
+            Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta,
+            int sucursalId, int pageIndex,
             int pageSize, out int pageTotal);
 
         TituloConsignacionRendidaDto ObtenerTituloConsignacionPorId(Guid tituloConsignacionRendidaId);
 
-        decimal SenaAFavorProveedor(Guid proveedorId);
+        decimal SenaAFavorProveedor(Guid proveedorId, int sucursalId);
 
         void AnularSeniaProveedor(ProveedorSenia senia, Caja caja, Guid operadorId, int sucursalId);
 

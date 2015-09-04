@@ -129,9 +129,13 @@ namespace LaPaz.Win.Forms.LotesDeFacturas
         private bool ValidarNumeroLote()
         {
 
-            var loteDesde1 = Uow.LotesFacturas.Listado().Where((l => l.NroDesde <= NroDesde && l.NroHasta >= NroDesde && l.PtoVenta == 1)).ToList();
+            //var loteDesde1 = Uow.LotesFacturas.Listado().Where((l => l.NroDesde <= NroDesde && l.NroHasta >= NroDesde && l.PtoVenta == 1)).ToList();
 
-            var loteHasta1 = Uow.LotesFacturas.Listado().Where(l => l.NroHasta <= NroHasta && l.NroHasta >= NroHasta && l.PtoVenta == 1).ToList();
+            //var loteHasta1 = Uow.LotesFacturas.Listado().Where(l => l.NroHasta <= NroHasta && l.NroHasta >= NroHasta && l.PtoVenta == 1).ToList();
+
+            var loteDesde1 = Uow.LotesFacturas.Listado().Where((l => l.NroDesde <= NroDesde && l.NroHasta >= NroDesde && l.PtoVenta == Context.SucursalActual.SucursalNumero)).ToList();
+
+            var loteHasta1 = Uow.LotesFacturas.Listado().Where(l => l.NroHasta <= NroHasta && l.NroHasta >= NroHasta && l.PtoVenta == Context.SucursalActual.SucursalNumero).ToList();
 
             if ((loteDesde1.Count > 0 ) || (loteHasta1.Count > 0 ))
             {

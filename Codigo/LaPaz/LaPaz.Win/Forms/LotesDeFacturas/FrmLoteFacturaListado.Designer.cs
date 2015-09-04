@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -51,7 +52,7 @@
             // 
             this.radPanel1.Controls.Add(this.ProveedoresPager);
             this.radPanel1.Controls.Add(this.GrillaLotes);
-            this.radPanel1.Location = new System.Drawing.Point(12, 81);
+            this.radPanel1.Location = new System.Drawing.Point(12, 45);
             this.radPanel1.Name = "radPanel1";
             this.radPanel1.Size = new System.Drawing.Size(800, 449);
             this.radPanel1.TabIndex = 0;
@@ -139,7 +140,7 @@
             // 
             this.BtnNuevo.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnNuevo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnNuevo.Location = new System.Drawing.Point(712, 45);
+            this.BtnNuevo.Location = new System.Drawing.Point(712, 9);
             this.BtnNuevo.Name = "BtnNuevo";
             this.BtnNuevo.Size = new System.Drawing.Size(100, 30);
             this.BtnNuevo.TabIndex = 18;
@@ -152,6 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 542);
+            this.ControlBox = false;
             this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.ucProgressSpinner);
             this.Controls.Add(this.radPanel1);

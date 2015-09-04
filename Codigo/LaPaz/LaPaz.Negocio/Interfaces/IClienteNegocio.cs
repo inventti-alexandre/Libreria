@@ -15,7 +15,7 @@ namespace LaPaz.Negocio.Interfaces
         List<ClienteDto> Listado(string sortBy, string sortDirection, string denominacion, string cuit,bool? activo, int pageIndex, int pageSize, out int pageTotal);
         decimal DeudaTotal(Guid clienteId, int? sucursalId);
         decimal DeudaVencida(Guid clienteId, int? sucursalId);
-        List<ClienteMontoFavor> Senias(string sortBy, string sortDirection, Guid? clienteId, int pageIndex, int pageSize,
+        List<ClienteMontoFavor> Senias(string sortBy, string sortDirection, Guid? clienteId,int sucursalId, int pageIndex, int pageSize,
                                        out int pageTotal);
 
         Cliente ObtenerPorId(Guid clienteId);

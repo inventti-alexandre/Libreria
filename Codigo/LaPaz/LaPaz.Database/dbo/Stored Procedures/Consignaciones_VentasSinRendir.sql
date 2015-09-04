@@ -1,7 +1,8 @@
 ﻿CREATE PROCEDURE Consignaciones_VentasSinRendir
 	@ProveedorId uniqueidentifier = null,
 	@Desde datetime,
-	@Hasta datetime
+	@Hasta datetime,
+	@SucursalId int
 AS
 BEGIN
 	WITH TituloCTE (Editorial, TituloId, NombreTitulo, Autor, Codigo, 
@@ -27,6 +28,7 @@ BEGIN
 		WHERE TCV.ProveedorId = @ProveedorId
 			AND @Desde < TCV.FechaAlta
 			AND @Hasta > TCV.FechaAlta
+			AND @SucursalId = TCV.SucursalAltaId
 		GROUP BY T.Id, E.Nombre, T.NombreTitulo, A.Nombre, T.Cod, 
 				T.PrecioVentaTitulo, T.PrecioCompraTitulo
 	)
