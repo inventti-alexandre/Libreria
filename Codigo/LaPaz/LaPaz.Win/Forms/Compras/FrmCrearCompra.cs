@@ -619,10 +619,10 @@ namespace LaPaz.Win.Forms.Compras
                 compraDetalle.PrecioCompra = titulo.PrecioBase;
                 compraDetalle.PrecioVenta = titulo.PrecioVenta;
                 compraDetalle.FechaAlta = _clock.Now;
-                compraDetalle.SucursalAltaId = 2;
+                compraDetalle.SucursalAltaId = Context.SucursalActual.Id;
                 compraDetalle.OperadorAltaId = Context.OperadorActual.Id;
                 compraDetalle.FechaModificacion = _clock.Now;
-                compraDetalle.SucursalModificacionId = 2;
+                compraDetalle.SucursalModificacionId = Context.SucursalActual.Id;
                 compraDetalle.OperadorModificacionId = Context.OperadorActual.Id;
                 Uow.ComprasDetalles.Agregar(compraDetalle);
 
@@ -632,7 +632,7 @@ namespace LaPaz.Win.Forms.Compras
                 {
                     TituloStock tituloStockNuevo = new TituloStock();
                     tituloStockNuevo.TituloId = titulo.TituloId;
-                    tituloStockNuevo.SucursalId = 2;
+                    tituloStockNuevo.SucursalId = Context.SucursalActual.Id;
                     if (ucTipoCompra.TipoComprobanteSeleccionado == Entidades.Enums.TipoComprobanteEnum.RemitosConsignacProveedor)
                     {
                         tituloStockNuevo.StkPr = 0;
@@ -646,7 +646,7 @@ namespace LaPaz.Win.Forms.Compras
 
                     tituloStockNuevo.FechaAlta = _clock.Now;
                     tituloStockNuevo.OperadorAltaId = (Context.OperadorActual.Id);
-                    tituloStockNuevo.SucursalAltaId = 2;
+                    tituloStockNuevo.SucursalAltaId = Context.SucursalActual.Id;
                     Uow.TitulosStock.Agregar(tituloStockNuevo);
                 }
                 else
@@ -667,7 +667,7 @@ namespace LaPaz.Win.Forms.Compras
 
                     tituloStock.FechaModificacion = _clock.Now;
                     tituloStock.OperadorModificacionId = (Context.OperadorActual.Id);
-                    tituloStock.SucursalModificacionId = 2;
+                    tituloStock.SucursalModificacionId = Context.SucursalActual.Id;
                     Uow.TitulosStock.Modificar(tituloStock);
                 }
 

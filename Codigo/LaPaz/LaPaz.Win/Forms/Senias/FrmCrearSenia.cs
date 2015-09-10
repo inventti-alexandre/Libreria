@@ -265,7 +265,7 @@ namespace LaPaz.Win.Forms.Senias
                 caja.Ingresos += (float?)UcTotalesSenia.TotalPagar;
                 caja.Saldo += (float?)UcTotalesSenia.TotalPagar;
                 caja.FechaModificacion = _clock.Now;
-                caja.SucursalModificacionId = 2;//Sucursal del operador
+                caja.SucursalModificacionId = Context.SucursalActual.Id;//Sucursal del operador
                 caja.OperadorModificacionId = (Context.OperadorActual.Id);//Id el operador
 
                 Uow.Cajas.Modificar(caja);
@@ -531,11 +531,21 @@ namespace LaPaz.Win.Forms.Senias
 
         private string CalcularLCN()
         {
-            var ultimoLCN = Uow.ClientesMontosFavor.Listado().Where(c => c.SucursalAltaId == Context.SucursalActual.Id).OrderByDescending(c => c.FechaAlta).First().LCN;
+            var ultimoLCN = Uow.ClientesMontosFavor.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id).OrderByDescending(p => p.FechaAlta).Take(1).FirstOrDefault();
 
-            int lcn;
-            int proximolcn = int.TryParse(ultimoLCN.Substring(5), out lcn) ? lcn : 0;
-            return (proximolcn + 1).ToString();
+            int lcnNuevo = 0;
+
+            if (ultimoLCN != null)
+            {
+                var lcn = ultimoLCN.LCN.Substring(5);
+                lcnNuevo = int.TryParse(lcn, out lcnNuevo) ? lcnNuevo : 0;
+            }
+
+            lcnNuevo += 1;
+
+            return (lcnNuevo.ToString());
+            //return "X" + "0001" + lcnNuevo.ToString().PadLeft(8, '0');
+
         }
 
         private void Anular(ClienteMontoFavor senia)

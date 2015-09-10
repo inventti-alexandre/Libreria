@@ -152,11 +152,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 542);
+            this.ClientSize = new System.Drawing.Size(832, 578);
             this.ControlBox = false;
             this.Controls.Add(this.BtnNuevo);
             this.Controls.Add(this.ucProgressSpinner);
             this.Controls.Add(this.radPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmLoteFacturaListado";
             // 
             // 

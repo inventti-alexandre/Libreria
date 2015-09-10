@@ -274,11 +274,19 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
 
         private string CalcularLCN()
         {
-            var ultimoLCN = Uow.ClientesMontosFavor.Listado().Where(c => c.SucursalAltaId == 2).OrderByDescending(c => c.FechaAlta).First().LCN;
+           var ultimoLCN = Uow.ClientesMontosFavor.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id).OrderByDescending(p => p.FechaAlta).Take(1).FirstOrDefault();
 
-            int lcn;
-            int proximolcn = int.TryParse(ultimoLCN.Substring(5), out lcn) ? lcn : 0;
-            return (proximolcn + 1).ToString();
+            int lcnNuevo = 0;
+
+            if (ultimoLCN != null)
+            {
+                var lcn = ultimoLCN.LCN.Substring(5);
+                lcnNuevo = int.TryParse(lcn, out lcnNuevo) ? lcnNuevo : 0;
+            }
+
+            lcnNuevo += 1;
+
+            return (lcnNuevo.ToString());
 
         }
 

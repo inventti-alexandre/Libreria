@@ -224,7 +224,7 @@ namespace LaPaz.Win.Forms.Ventas.AnulacionFacturas
                 clienteMontoFavor.Observaciones = TipoComprobanteEnum.SeñaCliente.ToString() + "Por anulación de factura";
                 clienteMontoFavor.FechaAlta = _clock.Now;
                 clienteMontoFavor.OperadorAltaId = Context.OperadorActual.Id;
-                clienteMontoFavor.SucursalAltaId = 2;
+                clienteMontoFavor.SucursalAltaId = Context.SucursalActual.Id;
 
                 Uow.ClientesMontosFavor.Agregar(clienteMontoFavor);
 

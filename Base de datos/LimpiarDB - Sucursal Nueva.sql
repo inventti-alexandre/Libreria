@@ -33,6 +33,7 @@ DELETE FROM FacturasComprasDetalle
 DELETE FROM FacturasCompra 
 DELETE FROM RemitosCompraDetalle
 DELETE FROM RemitosCompra
+DELETE FROM Compras
 DELETE FROM Compras WHERE ID <>  '00000000-0000-0000-0000-000000000000'
 
 --Cuenta Movimiento
@@ -113,8 +114,8 @@ DELETE FROM RemitosVenta
 
 --TITULOS
 DELETE FROM TitulosConsignaciones
-DELETE FROM TitulosConsignacionesDevueltasDetalles
-DELETE FROM TitulosConsignacionesDevueltasDetalles
+DELETE FROM TitulosConsignacionesDevueltas
+DELETE FROM TitulosConsignacionesDevueltasDetalle
 DELETE FROM TitulosConsignacionesRendidasDetalle
 DELETE FROM TitulosConsignacionesRendidasDetalle
 DELETE FROM TitulosConsignacionesVendidas
