@@ -54,7 +54,7 @@ namespace LaPaz.Negocio
             return resultados.Entities.Project().To<RemitosVentaDto>().ToList();
         }
 
-        public List<RemitosVentaDto> GetByClienteId(Guid clienteId)
+        public List<RemitosVentaDto> GetByClienteId(Guid clienteId, int sucursalId)
         {
 
             var criteros = new PagingCriteria();
@@ -65,6 +65,7 @@ namespace LaPaz.Negocio
             criteros.SortDirection = "DESC";
 
             Expression<Func<RemitosVenta, bool>> where = x => x.ClienteId == clienteId &&
+                                                                x.SucursalAltaId==sucursalId &&
                                                               x.TipoComprobante ==
                                                               (int) TipoComprobanteEnum.RemitosConsignacCliente
                                                           &&
@@ -81,9 +82,9 @@ namespace LaPaz.Negocio
             return resultados.Entities.Project().To<RemitosVentaDto>().ToList();
         }
 
-        public int SiguienteNroConsignacion()
+        public int SiguienteNroConsignacion(int sucursalId)
         {
-            var ultConsignacion = Uow.RemitosVentas.Listado().Where(r => r.TipoComprobante == (int)TipoComprobanteEnum.RemitosConsignacCliente).OrderByDescending(r => r.FechaAlta).FirstOrDefault() ;
+            var ultConsignacion = Uow.RemitosVentas.Listado().Where(r => r.TipoComprobante == (int)TipoComprobanteEnum.RemitosConsignacCliente && r.SucursalAltaId== sucursalId).OrderByDescending(r => r.FechaAlta).FirstOrDefault() ;
              
             int nroConsignacion = 1;
 

@@ -59,10 +59,10 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
         private void BtnBuscarConsignacion_Click(object sender, EventArgs e)
         {
-            BuscarConsignacion();
+            BuscarConsignacion(Context.SucursalActual.Id);
         }
 
-        private void BuscarConsignacion()
+        private void BuscarConsignacion(int sucursalId)
         {
             int nroConsginacion;
             var isNumeric = int.TryParse(TxtTextoBuscar.Text, out nroConsginacion);
@@ -73,7 +73,8 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             }
 
             Expression<Func<RemitosVenta, bool>> where = x => x.NumeroComprobante == nroConsginacion.ToString() &&
-               x.TipoComprobante == (int)TipoComprobanteEnum.RemitosConsignacCliente;
+               x.TipoComprobante == (int)TipoComprobanteEnum.RemitosConsignacCliente &&
+               x.SucursalAltaId==sucursalId;
 
             Cursor.Current = Cursors.WaitCursor;
 
@@ -148,7 +149,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         {
             if (e.KeyCode == Keys.Enter)
             {
-                BuscarConsignacion();
+                BuscarConsignacion(Context.SucursalActual.Id);
             }
         }
 

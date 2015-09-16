@@ -15,8 +15,8 @@ namespace LaPaz.Negocio.Interfaces
                                Guid clienteId, int? numeroComprobante,
                                int pageIndex, int pageSize, out int pageTotal);
 
-        List<RemitosVentaDto> GetByClienteId(Guid clienteId);
+        List<RemitosVentaDto> GetByClienteId(Guid clienteId, int sucursalId);
 
-        int SiguienteNroConsignacion();
+        int SiguienteNroConsignacion(int sucursalId);
     }
 }

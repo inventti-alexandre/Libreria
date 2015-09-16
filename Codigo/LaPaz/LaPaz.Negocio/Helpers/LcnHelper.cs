@@ -10,12 +10,12 @@ namespace LaPaz.Negocio.Helpers
     {
         public const string LetraConsumidorFinal = "C";
 
-        public static string ObtenerLcn(int nroComprobante, int nroSucursal = 1, string letraCompraobante = "C")
+        public static string ObtenerLcn(int nroComprobante, int nroSucursal, string letraCompraobante = "C")
         {
             return ObtenerLcn(nroComprobante.ToString(),nroSucursal,letraCompraobante);
         }
 
-        public static string ObtenerLcn(string nroComprobante, int nroSucursal = 1, string letraCompraobante = "C")
+        public static string ObtenerLcn(string nroComprobante, int nroSucursal, string letraCompraobante = "C")
         {
             var lcnNro = nroComprobante.ToString().PadLeft(8, '0');
             var lcnSuc = nroSucursal.ToString().PadLeft(4, '0');

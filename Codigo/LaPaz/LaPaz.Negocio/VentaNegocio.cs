@@ -213,6 +213,13 @@ namespace LaPaz.Negocio
             foreach (var remitoVentaDetalleActualizado in ventaData.RemitosVentaDetalle)
             {
                 var remitoVentaDetalle = Uow.RemitosVentasDetalle.Obtener(r => r.Id == remitoVentaDetalleActualizado.Id);
+
+                var cantidadVendidaPropia =
+                    remitoVentaDetalle.CalcularNuevaCantidadVendidaPropia(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
+
+                var cantidadVendidaConsignacion =
+                    remitoVentaDetalle.CalcularNuevaCantidadVendidaConsignacion(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
+
                 
                 AumentarStockConCantidadDevuelta(ventaData, remitoVentaDetalleActualizado, remitoVentaDetalle);
                 //Actualizar remito venta.
@@ -224,11 +231,11 @@ namespace LaPaz.Negocio
                 Uow.RemitosVentasDetalle.Modificar(remitoVentaDetalle);
 
 
-                var cantidadVendidaPropia =
-                    remitoVentaDetalle.CalcularNuevaCantidadVendidaPropia(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
+                //var cantidadVendidaPropia =
+                //    remitoVentaDetalle.CalcularNuevaCantidadVendidaPropia(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
 
-                var cantidadVendidaConsignacion =
-                    remitoVentaDetalle.CalcularNuevaCantidadVendidaConsignacion(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
+                //var cantidadVendidaConsignacion =
+                //    remitoVentaDetalle.CalcularNuevaCantidadVendidaConsignacion(remitoVentaDetalleActualizado.CntVendida.GetValueOrDefault());
 
                 if (remitoVentaDetalleActualizado.CntVendida > 0)
                 {
@@ -349,7 +356,7 @@ namespace LaPaz.Negocio
             ventaReservada.SucReserva = reservarFacturaData.SucursalActualId;
             ventaReservada.NroLote = loteFactura.NroLote;
 
-            ventaReservada.LCN = LcnHelper.ObtenerLcn(this.SiguienteNumeroFactura(reservarFacturaData.OperadorActualId, reservarFacturaData.SucursalActualId));
+            ventaReservada.LCN = LcnHelper.ObtenerLcn(this.SiguienteNumeroFactura(reservarFacturaData.OperadorActualId, reservarFacturaData.SucursalActualId), reservarFacturaData.PuntoVenta);
             ventaReservada.FechaAlta = _clock.Now;
             ventaReservada.SucursalAltaId = reservarFacturaData.SucursalActualId;
             ventaReservada.OperadorAltaId = reservarFacturaData.OperadorActualId;
@@ -375,27 +382,7 @@ namespace LaPaz.Negocio
                 return uow.LotesFacturas.Obtener(l => l.OperadorLote == opertadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo && l.SucursalAltaId==sucursalId);
             }
         }
-        //public int SiguienteNumeroFactura(Guid opertadorId)
-        //{
-
-        //   //var usuario = Uow.
-        //    var loteFactura = UltimoNroLote(opertadorId);// Uow.LotesFacturas.Obtener(l => l.OperadorLote == opertadorId && l.NroActual < l.NroHasta && l.Estado == EstadoLoteEnum.Activo);
-
-        //    if (loteFactura == null)
-        //    {
-        //        throw new ApplicationException("No se ha encontrado el lote de factura para el operador actual");
-        //    }
-
-        //    var numeroFactura = (loteFactura.NroActual ?? 0) + 1;
-
-        //    if (numeroFactura > loteFactura.NroHasta)
-        //    {
-        //        throw new ApplicationException("Ya se ha alcanzado el último número de factura dentro del lote");
-        //    }
-
-        //    return numeroFactura;
-        //}
-
+ 
         public int SiguienteNumeroFactura(Guid opertadorId, int sucursalId)
         {
 
@@ -484,7 +471,7 @@ namespace LaPaz.Negocio
 
         private void ActualizarVentaReservada(VentaDataBase ventaData)
         {
-            var lcn = LcnHelper.ObtenerLcn(ventaData.NumeroComprobante.GetValueOrDefault());
+            var lcn = LcnHelper.ObtenerLcn(ventaData.NumeroComprobante.GetValueOrDefault(), ventaData.PuntoVenta);
 
             var ventaReservada = Uow.VentasReservadas.Obtener(v => v.LCN == lcn);
 
@@ -538,11 +525,11 @@ namespace LaPaz.Negocio
             }
 
             venta.LetraComprobante = LcnHelper.LetraConsumidorFinal;
-            venta.LCN = LcnHelper.ObtenerLcn(venta.NumeroComprobante);
+            venta.LCN = LcnHelper.ObtenerLcn(venta.NumeroComprobante, ventaData.PuntoVenta);
             venta.ComprobanteId = ventaData.TipoComprobanteSeleccionado;
             venta.ClienteId = ventaData.ClienteId;
 
-            venta.PuntoVenta = 1;
+            venta.PuntoVenta = ventaData.PuntoVenta;
             venta.FechaComprobante = _clock.Now;
             venta.FechaVencimiento = _clock.Now;
             venta.CondicionVentaId = ventaData.CondicionVentaSeleccionada;

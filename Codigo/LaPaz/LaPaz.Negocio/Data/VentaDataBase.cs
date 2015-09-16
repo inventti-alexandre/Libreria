@@ -48,5 +48,7 @@ namespace LaPaz.Negocio.Data
         public DateTime VencimientoCuota { get; set; }
         
         public string PcAlta { get; set; }
+
+        public int PuntoVenta { get; set; }
     }
 }

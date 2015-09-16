@@ -83,7 +83,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
             if (_formMode == ActionFormMode.Create)
             {
-                TxtNroConsignacion.Text = _consignacionNegocio.SiguienteNroConsignacion().ToString();
+                TxtNroConsignacion.Text = _consignacionNegocio.SiguienteNroConsignacion(Context.SucursalActual.Id).ToString();
             }
             if (_formMode == ActionFormMode.Edit)
             {
@@ -175,7 +175,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             switch (_formMode)
             {
                 case ActionFormMode.Create:
-                    _consignacion.NumeroComprobante = _consignacionNegocio.SiguienteNroConsignacion().ToString();
+                    _consignacion.NumeroComprobante = _consignacionNegocio.SiguienteNroConsignacion(Context.SucursalActual.Id).ToString();
                     break;
                 case ActionFormMode.Edit:
                     TxtNroConsignacion.Text = _consignacion.NumeroComprobante;
@@ -193,7 +193,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             _consignacion.ImporteIVA = IvaHelper.CalcularIva(_consignacion.ImporteNeto.Value);
             _consignacion.FechaEmision = _clock.Now;
             _consignacion.NumeroComprobante = TxtNroConsignacion.Text;
-            _consignacion.LCN = LcnHelper.ObtenerLcn(_consignacion.NumeroComprobante, 1, "X");
+            _consignacion.LCN = LcnHelper.ObtenerLcn(_consignacion.NumeroComprobante,Context.SucursalActual.SucursalNumero ?? 1, "X");
             _consignacion.Concepto = "CONSIGNACION PARA CLIENTES";
             _consignacion.TipoComprobante = (int)Entidades.Enums.TipoComprobanteEnum.RemitosConsignacCliente;
             _consignacion.Observaciones = TxtObservacion.Text;
@@ -285,7 +285,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
         private void BtnRecargarNroFactura_Click(object sender, EventArgs e)
         {
-            TxtNroConsignacion.Text = _consignacionNegocio.SiguienteNroConsignacion().ToString();
+            TxtNroConsignacion.Text = _consignacionNegocio.SiguienteNroConsignacion(Context.SucursalActual.Id).ToString();
         }
 
         private void BtnConsignar_Click(object sender, EventArgs e)

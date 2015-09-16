@@ -279,7 +279,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         private void SeleccionarRemitos()
         {
             //Mas de uno encontrado.
-            var remitosList = _remitoNegocio.GetByClienteId(_cliente.Id);
+            var remitosList = _remitoNegocio.GetByClienteId(_cliente.Id, Context.SucursalActual.Id);
             if (remitosList.Any())
             {
                 if (remitosList.Count > 1)
@@ -489,6 +489,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             consignacionData.Montocuota = UcCuentaCorrienteInfo.Montocuota;
             consignacionData.VencimientoCuota = UcCuentaCorrienteInfo.Vencimiento;
             consignacionData.PcAlta = Environment.MachineName;
+            consignacionData.PuntoVenta = Context.SucursalActual.SucursalNumero ?? 1;
 
             CrearVentaResponse ventaResponse;
 

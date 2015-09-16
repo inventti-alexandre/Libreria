@@ -403,7 +403,7 @@ namespace LaPaz.Win.Forms.Ventas
             ventaData.Montocuota = UcCuentaCorrienteInfo.Montocuota;
             ventaData.VencimientoCuota = UcCuentaCorrienteInfo.Vencimiento;
             ventaData.PcAlta = Environment.MachineName;
-
+            ventaData.PuntoVenta = Context.SucursalActual.SucursalNumero ?? 1;
             CrearVentaResponse ventaResponse;
 
             try
@@ -472,7 +472,7 @@ namespace LaPaz.Win.Forms.Ventas
             ReservarFacturaData reservarFacturaData = new ReservarFacturaData();
             reservarFacturaData.OperadorActualId = Context.OperadorActual.Id;
             reservarFacturaData.SucursalActualId = Context.SucursalActual.Id;
-
+            reservarFacturaData.PuntoVenta = Context.SucursalActual.SucursalNumero ??1;
             _ventaNegocio.ReservarFactura(reservarFacturaData);
 
             _messageBoxDisplayService.ShowSuccess("Factura reservada");

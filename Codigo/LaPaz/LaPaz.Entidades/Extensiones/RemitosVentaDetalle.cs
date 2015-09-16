@@ -15,6 +15,9 @@ namespace LaPaz.Entidades
                 if (this.CntDevuelta <= this.CntPr)
                 {
                     return this.CntDevuelta;
+                }else if (this.CntDevuelta==null)
+                {
+                    return 0;
                 }
 
                 return this.CntPr;
@@ -41,6 +44,10 @@ namespace LaPaz.Entidades
                 if (this.CntVendida <= this.CntPr)
                 {
                     return this.CntVendida;
+                }
+                else if (this.CntDevuelta == null)
+                {
+                    return 0;
                 }
 
                 return this.CntPr;

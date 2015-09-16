@@ -12,5 +12,7 @@ namespace LaPaz.Negocio.Data
         public Guid OperadorActualId { get; set; }
 
         public int SucursalActualId { get; set; }
+
+        public int PuntoVenta { get; set; }
     }
 }
