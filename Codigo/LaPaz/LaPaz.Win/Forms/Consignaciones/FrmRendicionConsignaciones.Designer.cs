@@ -30,10 +30,12 @@ namespace LaPaz.Win.Forms.Consignaciones
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlAcciones = new System.Windows.Forms.Panel();
+            this.BtnImprimir = new Telerik.WinControls.UI.RadButton();
             this.lblObservaciones = new Telerik.WinControls.UI.RadLabel();
             this.TxtObservaciones = new Telerik.WinControls.UI.RadTextBox();
             this.BtnGuardar = new Telerik.WinControls.UI.RadButton();
@@ -43,7 +45,6 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.ucFiltrosConsignaciones = new LaPaz.Win.Forms.Consignaciones.UcFiltrosConsignaciones();
             this.scrlPanel = new Telerik.WinControls.UI.RadScrollablePanel();
             this.flpContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.BtnImprimir = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,13 +52,13 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlAcciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.scrlPanel)).BeginInit();
             this.scrlPanel.PanelContainer.SuspendLayout();
             this.scrlPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +78,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.scrlPanel);
-            this.splitContainer1.Size = new System.Drawing.Size(1310, 788);
+            this.splitContainer1.Size = new System.Drawing.Size(1300, 820);
             this.splitContainer1.SplitterDistance = 98;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -92,7 +93,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1310, 98);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1300, 98);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -102,7 +103,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1304, 92);
+            this.panel1.Size = new System.Drawing.Size(1294, 92);
             this.panel1.TabIndex = 0;
             // 
             // pnlAcciones
@@ -114,11 +115,23 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.pnlAcciones.Controls.Add(this.chxImprimir);
             this.pnlAcciones.Controls.Add(this.lblTotalValue);
             this.pnlAcciones.Controls.Add(this.lblTotal1);
-            this.pnlAcciones.Location = new System.Drawing.Point(763, 0);
+            this.pnlAcciones.Location = new System.Drawing.Point(640, 0);
             this.pnlAcciones.Name = "pnlAcciones";
-            this.pnlAcciones.Size = new System.Drawing.Size(524, 100);
+            this.pnlAcciones.Size = new System.Drawing.Size(647, 100);
             this.pnlAcciones.TabIndex = 97;
             this.pnlAcciones.Visible = false;
+            // 
+            // BtnImprimir
+            // 
+            this.BtnImprimir.Enabled = false;
+            this.BtnImprimir.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnImprimir.Location = new System.Drawing.Point(380, 35);
+            this.BtnImprimir.Name = "BtnImprimir";
+            this.BtnImprimir.Size = new System.Drawing.Size(88, 29);
+            this.BtnImprimir.TabIndex = 8;
+            this.BtnImprimir.Text = "Imprimir";
+            this.BtnImprimir.ThemeName = "TelerikMetroBlue";
+            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // lblObservaciones
             // 
@@ -193,12 +206,12 @@ namespace LaPaz.Win.Forms.Consignaciones
             // 
             // ucFiltrosConsignaciones
             // 
-            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 4, 3, 17, 26, 32, 267);
-            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 5, 3, 17, 26, 32, 264);
+            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 8, 17, 10, 57, 54, 589);
+            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 9, 17, 10, 57, 54, 582);
             this.ucFiltrosConsignaciones.Location = new System.Drawing.Point(0, 0);
             this.ucFiltrosConsignaciones.Name = "ucFiltrosConsignaciones";
             this.ucFiltrosConsignaciones.ProveedorId = null;
-            this.ucFiltrosConsignaciones.Size = new System.Drawing.Size(757, 92);
+            this.ucFiltrosConsignaciones.Size = new System.Drawing.Size(634, 92);
             this.ucFiltrosConsignaciones.TabIndex = 1;
             // 
             // scrlPanel
@@ -217,13 +230,13 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.scrlPanel.PanelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.scrlPanel.PanelContainer.Location = new System.Drawing.Point(1, 1);
             this.scrlPanel.PanelContainer.Name = "PanelContainer";
-            this.scrlPanel.PanelContainer.Size = new System.Drawing.Size(1308, 684);
+            this.scrlPanel.PanelContainer.Size = new System.Drawing.Size(1298, 716);
             this.scrlPanel.PanelContainer.TabIndex = 0;
             // 
             // 
             // 
             this.scrlPanel.RootElement.Padding = new System.Windows.Forms.Padding(1);
-            this.scrlPanel.Size = new System.Drawing.Size(1310, 686);
+            this.scrlPanel.Size = new System.Drawing.Size(1300, 718);
             this.scrlPanel.TabIndex = 0;
             this.scrlPanel.Text = "radScrollablePanel1";
             // 
@@ -234,27 +247,15 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.flpContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpContainer.Location = new System.Drawing.Point(0, 0);
             this.flpContainer.Name = "flpContainer";
-            this.flpContainer.Size = new System.Drawing.Size(1308, 684);
+            this.flpContainer.Size = new System.Drawing.Size(1298, 716);
             this.flpContainer.TabIndex = 0;
             this.flpContainer.WrapContents = false;
-            // 
-            // BtnImprimir
-            // 
-            this.BtnImprimir.Enabled = false;
-            this.BtnImprimir.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimir.Location = new System.Drawing.Point(380, 35);
-            this.BtnImprimir.Name = "BtnImprimir";
-            this.BtnImprimir.Size = new System.Drawing.Size(88, 29);
-            this.BtnImprimir.TabIndex = 8;
-            this.BtnImprimir.Text = "Imprimir";
-            this.BtnImprimir.ThemeName = "TelerikMetroBlue";
-            this.BtnImprimir.Click += new System.EventHandler(this.BtnImprimir_Click);
             // 
             // FrmRendicionConsignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1310, 788);
+            this.ClientSize = new System.Drawing.Size(1300, 820);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -273,6 +274,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.panel1.ResumeLayout(false);
             this.pnlAcciones.ResumeLayout(false);
             this.pnlAcciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblObservaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
@@ -280,7 +282,6 @@ namespace LaPaz.Win.Forms.Consignaciones
             ((System.ComponentModel.ISupportInitialize)(this.scrlPanel)).EndInit();
             this.scrlPanel.ResumeLayout(false);
             this.scrlPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnImprimir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

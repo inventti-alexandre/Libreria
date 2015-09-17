@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn81 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn82 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn83 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn84 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn85 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn86 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn87 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn88 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn11 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn89 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn90 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn91 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn92 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn93 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn94 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn95 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn12 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn96 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn1 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.ucFiltroProveedor1 = new LaPaz.Win.Forms.Util.UcFiltroProveedor();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.PnlProveedor = new Telerik.WinControls.UI.RadPanel();
@@ -92,11 +92,9 @@
             this.CuentaCorriente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).BeginInit();
-            this.GridCtaCte.SuspendLayout();
             this.Consignaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).BeginInit();
-            this.GridConsignaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PnlPagos)).BeginInit();
             this.PnlPagos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BtnCosas)).BeginInit();
@@ -239,6 +237,7 @@
             // 
             // CuentaCorriente
             // 
+            this.CuentaCorriente.Controls.Add(this.ChkSeleccionCtaCte);
             this.CuentaCorriente.Controls.Add(this.GridCtaCte);
             this.CuentaCorriente.Location = new System.Drawing.Point(5, 36);
             this.CuentaCorriente.Name = "CuentaCorriente";
@@ -248,89 +247,89 @@
             // GridCtaCte
             // 
             this.GridCtaCte.AutoSizeRows = true;
-            this.GridCtaCte.Controls.Add(this.ChkSeleccionCtaCte);
-            this.GridCtaCte.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridCtaCte.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridCtaCte.Location = new System.Drawing.Point(0, 0);
+            this.GridCtaCte.Location = new System.Drawing.Point(0, 3);
             // 
             // GridCtaCte
             // 
             this.GridCtaCte.MasterTemplate.AllowAddNewRow = false;
+            this.GridCtaCte.MasterTemplate.AllowColumnReorder = false;
             this.GridCtaCte.MasterTemplate.AllowDragToGroup = false;
             this.GridCtaCte.MasterTemplate.AutoGenerateColumns = false;
             this.GridCtaCte.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn81.FieldName = "FechaVencimiento";
-            gridViewTextBoxColumn81.FormatString = "";
-            gridViewTextBoxColumn81.HeaderText = "Fecha Venc.";
-            gridViewTextBoxColumn81.Name = "FechaVencimiento";
-            gridViewTextBoxColumn81.ReadOnly = true;
-            gridViewTextBoxColumn81.Width = 133;
-            gridViewTextBoxColumn82.FieldName = "Fecha";
-            gridViewTextBoxColumn82.FormatString = "";
-            gridViewTextBoxColumn82.HeaderText = "Fecha Compra";
-            gridViewTextBoxColumn82.Name = "Fecha";
-            gridViewTextBoxColumn82.ReadOnly = true;
-            gridViewTextBoxColumn82.Width = 133;
-            gridViewTextBoxColumn83.FieldName = "CompraNumeroComprobante";
-            gridViewTextBoxColumn83.FormatString = "";
-            gridViewTextBoxColumn83.HeaderText = "Nro Factura";
-            gridViewTextBoxColumn83.Name = "CompraId";
-            gridViewTextBoxColumn83.ReadOnly = true;
-            gridViewTextBoxColumn83.Width = 133;
-            gridViewTextBoxColumn84.FormatString = "";
-            gridViewTextBoxColumn84.HeaderText = "Total";
-            gridViewTextBoxColumn84.IsVisible = false;
-            gridViewTextBoxColumn84.Name = "TotalVenta";
-            gridViewTextBoxColumn84.ReadOnly = true;
-            gridViewTextBoxColumn84.Width = 89;
-            gridViewTextBoxColumn85.FieldName = "Cuota";
-            gridViewTextBoxColumn85.FormatString = "";
-            gridViewTextBoxColumn85.HeaderText = "Cuota";
-            gridViewTextBoxColumn85.Name = "Cuota";
-            gridViewTextBoxColumn85.ReadOnly = true;
-            gridViewTextBoxColumn85.Width = 60;
-            gridViewTextBoxColumn86.FieldName = "Importe";
-            gridViewTextBoxColumn86.FormatString = "";
-            gridViewTextBoxColumn86.HeaderText = "Importe";
-            gridViewTextBoxColumn86.Name = "Importe";
-            gridViewTextBoxColumn86.ReadOnly = true;
-            gridViewTextBoxColumn86.Width = 99;
-            gridViewTextBoxColumn87.FieldName = "Pagado";
-            gridViewTextBoxColumn87.FormatString = "";
-            gridViewTextBoxColumn87.HeaderText = "Pagado";
-            gridViewTextBoxColumn87.Name = "Pagado";
-            gridViewTextBoxColumn87.ReadOnly = true;
-            gridViewTextBoxColumn87.Width = 99;
-            gridViewTextBoxColumn88.AllowGroup = false;
-            gridViewTextBoxColumn88.AllowSort = false;
-            gridViewTextBoxColumn88.FieldName = "Pago";
-            gridViewTextBoxColumn88.HeaderText = "A pagar";
-            gridViewTextBoxColumn88.Name = "Pago";
-            gridViewTextBoxColumn88.Width = 99;
-            gridViewCheckBoxColumn11.AllowGroup = false;
-            gridViewCheckBoxColumn11.AllowHide = false;
-            gridViewCheckBoxColumn11.AllowSort = false;
-            gridViewCheckBoxColumn11.HeaderText = "Pagar";
-            gridViewCheckBoxColumn11.Name = "Pagar";
-            gridViewCheckBoxColumn11.Width = 93;
-            gridViewTextBoxColumn89.FieldName = "Id";
-            gridViewTextBoxColumn89.HeaderText = "Id";
-            gridViewTextBoxColumn89.IsVisible = false;
-            gridViewTextBoxColumn89.Name = "Id";
-            gridViewTextBoxColumn89.Width = 45;
+            gridViewTextBoxColumn1.FieldName = "FechaVencimiento";
+            gridViewTextBoxColumn1.FormatString = "";
+            gridViewTextBoxColumn1.HeaderText = "Fecha Venc.";
+            gridViewTextBoxColumn1.Name = "FechaVencimiento";
+            gridViewTextBoxColumn1.ReadOnly = true;
+            gridViewTextBoxColumn1.Width = 133;
+            gridViewTextBoxColumn2.FieldName = "Fecha";
+            gridViewTextBoxColumn2.FormatString = "";
+            gridViewTextBoxColumn2.HeaderText = "Fecha Compra";
+            gridViewTextBoxColumn2.Name = "Fecha";
+            gridViewTextBoxColumn2.ReadOnly = true;
+            gridViewTextBoxColumn2.Width = 133;
+            gridViewTextBoxColumn3.FieldName = "CompraNumeroComprobante";
+            gridViewTextBoxColumn3.FormatString = "";
+            gridViewTextBoxColumn3.HeaderText = "Nro Factura";
+            gridViewTextBoxColumn3.Name = "CompraId";
+            gridViewTextBoxColumn3.ReadOnly = true;
+            gridViewTextBoxColumn3.Width = 133;
+            gridViewTextBoxColumn4.FormatString = "";
+            gridViewTextBoxColumn4.HeaderText = "Total";
+            gridViewTextBoxColumn4.IsVisible = false;
+            gridViewTextBoxColumn4.Name = "TotalVenta";
+            gridViewTextBoxColumn4.ReadOnly = true;
+            gridViewTextBoxColumn4.Width = 89;
+            gridViewTextBoxColumn5.FieldName = "Cuota";
+            gridViewTextBoxColumn5.FormatString = "";
+            gridViewTextBoxColumn5.HeaderText = "Cuota";
+            gridViewTextBoxColumn5.Name = "Cuota";
+            gridViewTextBoxColumn5.ReadOnly = true;
+            gridViewTextBoxColumn5.Width = 60;
+            gridViewTextBoxColumn6.FieldName = "Importe";
+            gridViewTextBoxColumn6.FormatString = "";
+            gridViewTextBoxColumn6.HeaderText = "Importe";
+            gridViewTextBoxColumn6.Name = "Importe";
+            gridViewTextBoxColumn6.ReadOnly = true;
+            gridViewTextBoxColumn6.Width = 99;
+            gridViewTextBoxColumn7.FieldName = "Pagado";
+            gridViewTextBoxColumn7.FormatString = "";
+            gridViewTextBoxColumn7.HeaderText = "Pagado";
+            gridViewTextBoxColumn7.Name = "Pagado";
+            gridViewTextBoxColumn7.ReadOnly = true;
+            gridViewTextBoxColumn7.Width = 99;
+            gridViewTextBoxColumn8.AllowGroup = false;
+            gridViewTextBoxColumn8.AllowSort = false;
+            gridViewTextBoxColumn8.FieldName = "Pago";
+            gridViewTextBoxColumn8.HeaderText = "A pagar";
+            gridViewTextBoxColumn8.Name = "Pago";
+            gridViewTextBoxColumn8.Width = 99;
+            gridViewCheckBoxColumn1.AllowGroup = false;
+            gridViewCheckBoxColumn1.AllowHide = false;
+            gridViewCheckBoxColumn1.AllowSort = false;
+            gridViewCheckBoxColumn1.HeaderText = "Pagar";
+            gridViewCheckBoxColumn1.Name = "Pagar";
+            gridViewCheckBoxColumn1.Width = 93;
+            gridViewTextBoxColumn9.FieldName = "Id";
+            gridViewTextBoxColumn9.HeaderText = "Id";
+            gridViewTextBoxColumn9.IsVisible = false;
+            gridViewTextBoxColumn9.Name = "Id";
+            gridViewTextBoxColumn9.Width = 45;
             this.GridCtaCte.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn81,
-            gridViewTextBoxColumn82,
-            gridViewTextBoxColumn83,
-            gridViewTextBoxColumn84,
-            gridViewTextBoxColumn85,
-            gridViewTextBoxColumn86,
-            gridViewTextBoxColumn87,
-            gridViewTextBoxColumn88,
-            gridViewCheckBoxColumn11,
-            gridViewTextBoxColumn89});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
+            gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
+            gridViewTextBoxColumn8,
+            gridViewCheckBoxColumn1,
+            gridViewTextBoxColumn9});
             this.GridCtaCte.Name = "GridCtaCte";
-            this.GridCtaCte.Size = new System.Drawing.Size(864, 361);
+            this.GridCtaCte.ReadOnly = true;
+            this.GridCtaCte.Size = new System.Drawing.Size(864, 358);
             this.GridCtaCte.TabIndex = 0;
             this.GridCtaCte.Text = "radGridView1";
             this.GridCtaCte.ThemeName = "TelerikMetroBlue";
@@ -340,9 +339,9 @@
             // ChkSeleccionCtaCte
             // 
             this.ChkSeleccionCtaCte.BackColor = System.Drawing.Color.Transparent;
-            this.ChkSeleccionCtaCte.Location = new System.Drawing.Point(778, 3);
+            this.ChkSeleccionCtaCte.Location = new System.Drawing.Point(742, 0);
             this.ChkSeleccionCtaCte.Name = "ChkSeleccionCtaCte";
-            this.ChkSeleccionCtaCte.Size = new System.Drawing.Size(98, 24);
+            this.ChkSeleccionCtaCte.Size = new System.Drawing.Size(122, 24);
             this.ChkSeleccionCtaCte.TabIndex = 0;
             this.ChkSeleccionCtaCte.Text = "Seleccionar";
             this.ChkSeleccionCtaCte.UseVisualStyleBackColor = false;
@@ -351,6 +350,7 @@
             // 
             // Consignaciones
             // 
+            this.Consignaciones.Controls.Add(this.ChkSeleccionarTodoConsignacion);
             this.Consignaciones.Controls.Add(this.GridConsignaciones);
             this.Consignaciones.Location = new System.Drawing.Point(5, 36);
             this.Consignaciones.Name = "Consignaciones";
@@ -360,74 +360,75 @@
             // GridConsignaciones
             // 
             this.GridConsignaciones.AutoSizeRows = true;
-            this.GridConsignaciones.Controls.Add(this.ChkSeleccionarTodoConsignacion);
-            this.GridConsignaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridConsignaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GridConsignaciones.Location = new System.Drawing.Point(0, 0);
+            this.GridConsignaciones.Location = new System.Drawing.Point(0, 33);
             // 
-            // 
+            // GridConsignaciones
             // 
             this.GridConsignaciones.MasterTemplate.AllowAddNewRow = false;
+            this.GridConsignaciones.MasterTemplate.AllowColumnReorder = false;
             this.GridConsignaciones.MasterTemplate.AutoGenerateColumns = false;
             this.GridConsignaciones.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn90.FieldName = "FechaConsignacion";
-            gridViewTextBoxColumn90.FormatString = "";
-            gridViewTextBoxColumn90.HeaderText = "Fecha Consig.";
-            gridViewTextBoxColumn90.Name = "FechaConsignacion";
-            gridViewTextBoxColumn90.ReadOnly = true;
-            gridViewTextBoxColumn90.Width = 172;
-            gridViewTextBoxColumn91.FieldName = "LCN";
-            gridViewTextBoxColumn91.FormatString = "";
-            gridViewTextBoxColumn91.HeaderText = "LCN";
-            gridViewTextBoxColumn91.Name = "LCN";
-            gridViewTextBoxColumn91.ReadOnly = true;
-            gridViewTextBoxColumn91.Width = 172;
-            gridViewTextBoxColumn92.FormatString = "";
-            gridViewTextBoxColumn92.HeaderText = "Total";
-            gridViewTextBoxColumn92.IsVisible = false;
-            gridViewTextBoxColumn92.Name = "TotalVenta";
-            gridViewTextBoxColumn92.ReadOnly = true;
-            gridViewTextBoxColumn92.Width = 89;
-            gridViewTextBoxColumn93.FieldName = "Importe";
-            gridViewTextBoxColumn93.FormatString = "";
-            gridViewTextBoxColumn93.HeaderText = "Importe";
-            gridViewTextBoxColumn93.Name = "Importe";
-            gridViewTextBoxColumn93.ReadOnly = true;
-            gridViewTextBoxColumn93.Width = 128;
-            gridViewTextBoxColumn94.FieldName = "Pagado";
-            gridViewTextBoxColumn94.FormatString = "";
-            gridViewTextBoxColumn94.HeaderText = "Pagado";
-            gridViewTextBoxColumn94.Name = "Pagado";
-            gridViewTextBoxColumn94.ReadOnly = true;
-            gridViewTextBoxColumn94.Width = 128;
-            gridViewTextBoxColumn95.AllowGroup = false;
-            gridViewTextBoxColumn95.AllowSort = false;
-            gridViewTextBoxColumn95.FieldName = "Pago";
-            gridViewTextBoxColumn95.HeaderText = "A pagar";
-            gridViewTextBoxColumn95.Name = "Pago";
-            gridViewTextBoxColumn95.Width = 128;
-            gridViewCheckBoxColumn12.AllowGroup = false;
-            gridViewCheckBoxColumn12.AllowHide = false;
-            gridViewCheckBoxColumn12.AllowSort = false;
-            gridViewCheckBoxColumn12.HeaderText = "Pagar";
-            gridViewCheckBoxColumn12.Name = "Pagar";
-            gridViewCheckBoxColumn12.Width = 119;
-            gridViewTextBoxColumn96.FieldName = "Id";
-            gridViewTextBoxColumn96.HeaderText = "Id";
-            gridViewTextBoxColumn96.IsVisible = false;
-            gridViewTextBoxColumn96.Name = "Id";
-            gridViewTextBoxColumn96.Width = 47;
+            gridViewTextBoxColumn10.FieldName = "FechaConsignacion";
+            gridViewTextBoxColumn10.FormatString = "";
+            gridViewTextBoxColumn10.HeaderText = "Fecha Consig.";
+            gridViewTextBoxColumn10.Name = "FechaConsignacion";
+            gridViewTextBoxColumn10.ReadOnly = true;
+            gridViewTextBoxColumn10.Width = 172;
+            gridViewTextBoxColumn11.FieldName = "LCN";
+            gridViewTextBoxColumn11.FormatString = "";
+            gridViewTextBoxColumn11.HeaderText = "LCN";
+            gridViewTextBoxColumn11.Name = "LCN";
+            gridViewTextBoxColumn11.ReadOnly = true;
+            gridViewTextBoxColumn11.Width = 172;
+            gridViewTextBoxColumn12.FormatString = "";
+            gridViewTextBoxColumn12.HeaderText = "Total";
+            gridViewTextBoxColumn12.IsVisible = false;
+            gridViewTextBoxColumn12.Name = "TotalVenta";
+            gridViewTextBoxColumn12.ReadOnly = true;
+            gridViewTextBoxColumn12.Width = 89;
+            gridViewTextBoxColumn13.FieldName = "Importe";
+            gridViewTextBoxColumn13.FormatString = "";
+            gridViewTextBoxColumn13.HeaderText = "Importe";
+            gridViewTextBoxColumn13.Name = "Importe";
+            gridViewTextBoxColumn13.ReadOnly = true;
+            gridViewTextBoxColumn13.Width = 128;
+            gridViewTextBoxColumn14.FieldName = "Pagado";
+            gridViewTextBoxColumn14.FormatString = "";
+            gridViewTextBoxColumn14.HeaderText = "Pagado";
+            gridViewTextBoxColumn14.Name = "Pagado";
+            gridViewTextBoxColumn14.ReadOnly = true;
+            gridViewTextBoxColumn14.Width = 128;
+            gridViewTextBoxColumn15.AllowGroup = false;
+            gridViewTextBoxColumn15.AllowSort = false;
+            gridViewTextBoxColumn15.FieldName = "Pago";
+            gridViewTextBoxColumn15.HeaderText = "A pagar";
+            gridViewTextBoxColumn15.Name = "Pago";
+            gridViewTextBoxColumn15.Width = 128;
+            gridViewCheckBoxColumn2.AllowGroup = false;
+            gridViewCheckBoxColumn2.AllowHide = false;
+            gridViewCheckBoxColumn2.AllowSort = false;
+            gridViewCheckBoxColumn2.HeaderText = "Pagar";
+            gridViewCheckBoxColumn2.Name = "Pagar";
+            gridViewCheckBoxColumn2.Width = 119;
+            gridViewTextBoxColumn16.FieldName = "Id";
+            gridViewTextBoxColumn16.HeaderText = "Id";
+            gridViewTextBoxColumn16.IsVisible = false;
+            gridViewTextBoxColumn16.Name = "Id";
+            gridViewTextBoxColumn16.Width = 47;
             this.GridConsignaciones.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn90,
-            gridViewTextBoxColumn91,
-            gridViewTextBoxColumn92,
-            gridViewTextBoxColumn93,
-            gridViewTextBoxColumn94,
-            gridViewTextBoxColumn95,
-            gridViewCheckBoxColumn12,
-            gridViewTextBoxColumn96});
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewCheckBoxColumn2,
+            gridViewTextBoxColumn16});
+            this.GridConsignaciones.MasterTemplate.EnableGrouping = false;
             this.GridConsignaciones.Name = "GridConsignaciones";
-            this.GridConsignaciones.Size = new System.Drawing.Size(864, 361);
+            this.GridConsignaciones.ReadOnly = true;
+            this.GridConsignaciones.Size = new System.Drawing.Size(864, 328);
             this.GridConsignaciones.TabIndex = 1;
             this.GridConsignaciones.Text = "radGridView1";
             this.GridConsignaciones.ThemeName = "TelerikMetroBlue";
@@ -436,9 +437,9 @@
             // ChkSeleccionarTodoConsignacion
             // 
             this.ChkSeleccionarTodoConsignacion.BackColor = System.Drawing.Color.Transparent;
-            this.ChkSeleccionarTodoConsignacion.Location = new System.Drawing.Point(778, 3);
+            this.ChkSeleccionarTodoConsignacion.Location = new System.Drawing.Point(757, 0);
             this.ChkSeleccionarTodoConsignacion.Name = "ChkSeleccionarTodoConsignacion";
-            this.ChkSeleccionarTodoConsignacion.Size = new System.Drawing.Size(98, 24);
+            this.ChkSeleccionarTodoConsignacion.Size = new System.Drawing.Size(104, 24);
             this.ChkSeleccionarTodoConsignacion.TabIndex = 1;
             this.ChkSeleccionarTodoConsignacion.Text = "Seleccionar";
             this.ChkSeleccionarTodoConsignacion.UseVisualStyleBackColor = false;
@@ -472,7 +473,7 @@
             this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
             this.ucTotalesCompraSeña1.Senas = null;
             this.ucTotalesCompraSeña1.SenasDisp = null;
-            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(340, 342);
+            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(340, 378);
             this.ucTotalesCompraSeña1.SubTotal = null;
             this.ucTotalesCompraSeña1.TabIndex = 7;
             this.ucTotalesCompraSeña1.TotalPagar = null;
@@ -486,7 +487,7 @@
             this.PnlPagos.Controls.Add(this.ucTotalesCompraSeña1);
             this.PnlPagos.Location = new System.Drawing.Point(892, 136);
             this.PnlPagos.Name = "PnlPagos";
-            this.PnlPagos.Size = new System.Drawing.Size(376, 402);
+            this.PnlPagos.Size = new System.Drawing.Size(376, 428);
             this.PnlPagos.TabIndex = 8;
             // 
             // BtnCosas
@@ -540,13 +541,13 @@
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1292, 563);
+            this.ClientSize = new System.Drawing.Size(1300, 599);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.ucProgressSpinner1);
             this.Controls.Add(this.RpvPagos);
             this.Controls.Add(this.PnlProveedor);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProveedoresCtaCte";
             // 
             // 
@@ -574,11 +575,9 @@
             this.CuentaCorriente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).EndInit();
-            this.GridCtaCte.ResumeLayout(false);
             this.Consignaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).EndInit();
-            this.GridConsignaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PnlPagos)).EndInit();
             this.PnlPagos.ResumeLayout(false);
             this.PnlPagos.PerformLayout();

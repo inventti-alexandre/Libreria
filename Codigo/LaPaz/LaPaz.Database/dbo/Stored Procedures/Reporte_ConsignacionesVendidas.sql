@@ -23,8 +23,10 @@ BEGIN
 			INNER JOIN Ventas V ON TCV.ComprobanteId = V.Id
 			INNER JOIN Proveedores P ON TCV.ProveedorId = P.Id
 		WHERE V.EstadoVentaId <> 2
-			AND TCV.Fecha >= @FechaInicio
-			AND TCV.Fecha < @FechaFin
+			--AND TCV.Fecha >= @FechaInicio
+			--AND TCV.Fecha < @FechaFin
+			AND @FechaInicio < TCV.FechaAlta
+			AND @FechaFin > TCV.FechaAlta
 			AND TCV.SucursalAltaId = @SucursalId
 			AND (@ProveedorId IS NULL OR @ProveedorId = TCV.ProveedorId)
 			AND (@OperadorId IS NULL OR @OperadorId = TCV.OperadorAltaId)

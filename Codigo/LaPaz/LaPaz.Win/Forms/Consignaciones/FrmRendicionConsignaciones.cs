@@ -45,10 +45,13 @@ namespace LaPaz.Win.Forms.Consignaciones
             //    ucFiltrosConsignaciones.Desde,
             //    ucFiltrosConsignaciones.Hasta.AddDays(1));
 
+            var inicio = ucFiltrosConsignaciones.Desde.Date;
+            var fin = ucFiltrosConsignaciones.Hasta.Date.AddDays(1);
+
             var resultados = _consignacionNegocio.VentasSinRendir(
               ucFiltrosConsignaciones.ProveedorId,
-              ucFiltrosConsignaciones.Desde.AddDays(-1),
-              ucFiltrosConsignaciones.Hasta,
+              inicio,
+              fin,
               Context.SucursalActual.Id);
 
             if (resultados.Any())
@@ -138,7 +141,10 @@ namespace LaPaz.Win.Forms.Consignaciones
                 //Primero descuento para cada título, la cantidad a rendir distribuida en
                 //todas sus lineas de TitulosConsignacionesVendidas
                 var provId = ucFiltrosConsignaciones.ProveedorId;
-                var desde = ucFiltrosConsignaciones.Desde.AddDays(-1);
+                //var desde = ucFiltrosConsignaciones.Desde.AddDays(-1);
+                //var hasta = ucFiltrosConsignaciones.Hasta.AddDays(1);
+
+                var desde = ucFiltrosConsignaciones.Desde.Date;
                 var hasta = ucFiltrosConsignaciones.Hasta.AddDays(1);
 
                 var originales = Uow.TitulosConsignacionesVendidas.Listado()
