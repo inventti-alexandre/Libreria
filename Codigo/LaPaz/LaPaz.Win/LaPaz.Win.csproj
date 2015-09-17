@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://190.228.29.71/htdocs/trabajos/ElVecinito/</PublishUrl>
+    <PublishUrl>ftp://190.228.29.71/htdocs/trabajos/libreriaNuevo/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,12 +24,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinito/</InstallUrl>
-    <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinito/</UpdateUrl>
+    <InstallUrl>http://www.sistemas-aa.com.ar/trabajos/libreriaNuevo/</InstallUrl>
+    <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/libreriaNuevo/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.16</MinimumRequiredVersion>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>148</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

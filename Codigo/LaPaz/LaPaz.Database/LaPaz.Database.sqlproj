@@ -344,6 +344,7 @@
     <None Include="LaPaz.DatabasePRAGMA.publish.xml" />
     <None Include="DEVlCorrientes.DatabaseercerCtes.publish.xml" />
     <None Include="ProduccionLaPaz.Database.publish.xml" />
+    <None Include="LCorrientes.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deploy\Script.PostDeployment.sql" />
