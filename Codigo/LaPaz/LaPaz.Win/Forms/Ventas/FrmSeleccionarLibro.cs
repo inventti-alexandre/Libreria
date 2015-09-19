@@ -539,7 +539,17 @@ namespace LaPaz.Win.Forms.Ventas
 
                 Descuento = null;
                 _cambiaPrecio = false;
-                PrecioVenta = _tituloseleccionado.PrecioVentaTitulo;
+
+                if (_formMode == ActionFormMode.Create)
+                {
+                    PrecioVenta = _tituloseleccionado.PrecioVentaTitulo;
+                   // SubTotal = PrecioVenta;
+                }
+                else
+                {
+                    PrecioVenta = _tituloseleccionado.PrecioCompraTitulo;
+                }
+
                 SubTotal = PrecioVenta;
             }
         }
