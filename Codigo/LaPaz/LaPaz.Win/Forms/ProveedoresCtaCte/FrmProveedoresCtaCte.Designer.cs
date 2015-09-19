@@ -52,6 +52,7 @@
             this.PnlProveedor = new Telerik.WinControls.UI.RadPanel();
             this.LblConsignaVencida = new Telerik.WinControls.UI.RadLabel();
             this.lblDeudaVencida = new Telerik.WinControls.UI.RadLabel();
+            this.ucProgressSpinner1 = new LaPaz.Win.Forms.Util.UcProgressSpinner();
             this.LblConsigna = new Telerik.WinControls.UI.RadLabel();
             this.lblDeuda = new Telerik.WinControls.UI.RadLabel();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
@@ -64,9 +65,8 @@
             this.GridCtaCte = new Telerik.WinControls.UI.RadGridView();
             this.ChkSeleccionCtaCte = new System.Windows.Forms.CheckBox();
             this.Consignaciones = new Telerik.WinControls.UI.RadPageViewPage();
-            this.GridConsignaciones = new Telerik.WinControls.UI.RadGridView();
             this.ChkSeleccionarTodoConsignacion = new System.Windows.Forms.CheckBox();
-            this.ucProgressSpinner1 = new LaPaz.Win.Forms.Util.UcProgressSpinner();
+            this.GridConsignaciones = new Telerik.WinControls.UI.RadGridView();
             this.ProveedoreCtaCtePager = new Framework.WinForm.Controls.MetroPager();
             this.ucTotalesCompraSeña1 = new LaPaz.Win.Forms.Compras.UcTotalesCompraSeña();
             this.PnlPagos = new Telerik.WinControls.UI.RadPanel();
@@ -74,6 +74,7 @@
             this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
             this.DtpFechaPago = new Telerik.WinControls.UI.RadDateTimePicker();
             this.BtnGuardar = new Telerik.WinControls.UI.RadButton();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PnlProveedor)).BeginInit();
             this.PnlProveedor.SuspendLayout();
@@ -92,6 +93,7 @@
             this.CuentaCorriente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).BeginInit();
+            this.GridCtaCte.SuspendLayout();
             this.Consignaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).BeginInit();
@@ -101,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +129,7 @@
             // 
             this.PnlProveedor.Controls.Add(this.LblConsignaVencida);
             this.PnlProveedor.Controls.Add(this.lblDeudaVencida);
+            this.PnlProveedor.Controls.Add(this.ucProgressSpinner1);
             this.PnlProveedor.Controls.Add(this.LblConsigna);
             this.PnlProveedor.Controls.Add(this.lblDeuda);
             this.PnlProveedor.Controls.Add(this.radLabel7);
@@ -136,7 +140,7 @@
             this.PnlProveedor.Controls.Add(this.ucFiltroProveedor1);
             this.PnlProveedor.Location = new System.Drawing.Point(12, 12);
             this.PnlProveedor.Name = "PnlProveedor";
-            this.PnlProveedor.Size = new System.Drawing.Size(1256, 96);
+            this.PnlProveedor.Size = new System.Drawing.Size(1181, 96);
             this.PnlProveedor.TabIndex = 3;
             // 
             // LblConsignaVencida
@@ -156,6 +160,13 @@
             this.lblDeudaVencida.Size = new System.Drawing.Size(16, 24);
             this.lblDeudaVencida.TabIndex = 5;
             this.lblDeudaVencida.Text = "0";
+            // 
+            // ucProgressSpinner1
+            // 
+            this.ucProgressSpinner1.Location = new System.Drawing.Point(720, 13);
+            this.ucProgressSpinner1.Name = "ucProgressSpinner1";
+            this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
+            this.ucProgressSpinner1.TabIndex = 0;
             // 
             // LblConsigna
             // 
@@ -229,7 +240,7 @@
             this.RpvPagos.Location = new System.Drawing.Point(12, 114);
             this.RpvPagos.Name = "RpvPagos";
             this.RpvPagos.SelectedPage = this.CuentaCorriente;
-            this.RpvPagos.Size = new System.Drawing.Size(874, 402);
+            this.RpvPagos.Size = new System.Drawing.Size(831, 402);
             this.RpvPagos.TabIndex = 4;
             this.RpvPagos.Text = "radPageView1";
             this.RpvPagos.ThemeName = "TelerikMetroBlue";
@@ -237,16 +248,16 @@
             // 
             // CuentaCorriente
             // 
-            this.CuentaCorriente.Controls.Add(this.ChkSeleccionCtaCte);
             this.CuentaCorriente.Controls.Add(this.GridCtaCte);
             this.CuentaCorriente.Location = new System.Drawing.Point(5, 36);
             this.CuentaCorriente.Name = "CuentaCorriente";
-            this.CuentaCorriente.Size = new System.Drawing.Size(864, 361);
+            this.CuentaCorriente.Size = new System.Drawing.Size(821, 361);
             this.CuentaCorriente.Text = "Cuenta Corriente";
             // 
             // GridCtaCte
             // 
             this.GridCtaCte.AutoSizeRows = true;
+            this.GridCtaCte.Controls.Add(this.ChkSeleccionCtaCte);
             this.GridCtaCte.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GridCtaCte.Location = new System.Drawing.Point(0, 3);
             // 
@@ -262,19 +273,19 @@
             gridViewTextBoxColumn1.HeaderText = "Fecha Venc.";
             gridViewTextBoxColumn1.Name = "FechaVencimiento";
             gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 133;
+            gridViewTextBoxColumn1.Width = 125;
             gridViewTextBoxColumn2.FieldName = "Fecha";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Fecha Compra";
             gridViewTextBoxColumn2.Name = "Fecha";
             gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 133;
+            gridViewTextBoxColumn2.Width = 125;
             gridViewTextBoxColumn3.FieldName = "CompraNumeroComprobante";
             gridViewTextBoxColumn3.FormatString = "";
             gridViewTextBoxColumn3.HeaderText = "Nro Factura";
             gridViewTextBoxColumn3.Name = "CompraId";
             gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 133;
+            gridViewTextBoxColumn3.Width = 125;
             gridViewTextBoxColumn4.FormatString = "";
             gridViewTextBoxColumn4.HeaderText = "Total";
             gridViewTextBoxColumn4.IsVisible = false;
@@ -286,31 +297,31 @@
             gridViewTextBoxColumn5.HeaderText = "Cuota";
             gridViewTextBoxColumn5.Name = "Cuota";
             gridViewTextBoxColumn5.ReadOnly = true;
-            gridViewTextBoxColumn5.Width = 60;
+            gridViewTextBoxColumn5.Width = 57;
             gridViewTextBoxColumn6.FieldName = "Importe";
             gridViewTextBoxColumn6.FormatString = "";
             gridViewTextBoxColumn6.HeaderText = "Importe";
             gridViewTextBoxColumn6.Name = "Importe";
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 99;
+            gridViewTextBoxColumn6.Width = 93;
             gridViewTextBoxColumn7.FieldName = "Pagado";
             gridViewTextBoxColumn7.FormatString = "";
             gridViewTextBoxColumn7.HeaderText = "Pagado";
             gridViewTextBoxColumn7.Name = "Pagado";
             gridViewTextBoxColumn7.ReadOnly = true;
-            gridViewTextBoxColumn7.Width = 99;
+            gridViewTextBoxColumn7.Width = 93;
             gridViewTextBoxColumn8.AllowGroup = false;
             gridViewTextBoxColumn8.AllowSort = false;
             gridViewTextBoxColumn8.FieldName = "Pago";
             gridViewTextBoxColumn8.HeaderText = "A pagar";
             gridViewTextBoxColumn8.Name = "Pago";
-            gridViewTextBoxColumn8.Width = 99;
+            gridViewTextBoxColumn8.Width = 93;
             gridViewCheckBoxColumn1.AllowGroup = false;
             gridViewCheckBoxColumn1.AllowHide = false;
             gridViewCheckBoxColumn1.AllowSort = false;
             gridViewCheckBoxColumn1.HeaderText = "Pagar";
             gridViewCheckBoxColumn1.Name = "Pagar";
-            gridViewCheckBoxColumn1.Width = 93;
+            gridViewCheckBoxColumn1.Width = 89;
             gridViewTextBoxColumn9.FieldName = "Id";
             gridViewTextBoxColumn9.HeaderText = "Id";
             gridViewTextBoxColumn9.IsVisible = false;
@@ -329,7 +340,7 @@
             gridViewTextBoxColumn9});
             this.GridCtaCte.Name = "GridCtaCte";
             this.GridCtaCte.ReadOnly = true;
-            this.GridCtaCte.Size = new System.Drawing.Size(864, 358);
+            this.GridCtaCte.Size = new System.Drawing.Size(815, 358);
             this.GridCtaCte.TabIndex = 0;
             this.GridCtaCte.Text = "radGridView1";
             this.GridCtaCte.ThemeName = "TelerikMetroBlue";
@@ -339,7 +350,7 @@
             // ChkSeleccionCtaCte
             // 
             this.ChkSeleccionCtaCte.BackColor = System.Drawing.Color.Transparent;
-            this.ChkSeleccionCtaCte.Location = new System.Drawing.Point(742, 0);
+            this.ChkSeleccionCtaCte.Location = new System.Drawing.Point(690, -3);
             this.ChkSeleccionCtaCte.Name = "ChkSeleccionCtaCte";
             this.ChkSeleccionCtaCte.Size = new System.Drawing.Size(122, 24);
             this.ChkSeleccionCtaCte.TabIndex = 0;
@@ -354,8 +365,19 @@
             this.Consignaciones.Controls.Add(this.GridConsignaciones);
             this.Consignaciones.Location = new System.Drawing.Point(5, 36);
             this.Consignaciones.Name = "Consignaciones";
-            this.Consignaciones.Size = new System.Drawing.Size(864, 361);
+            this.Consignaciones.Size = new System.Drawing.Size(821, 361);
             this.Consignaciones.Text = "Consignaciones";
+            // 
+            // ChkSeleccionarTodoConsignacion
+            // 
+            this.ChkSeleccionarTodoConsignacion.BackColor = System.Drawing.Color.Transparent;
+            this.ChkSeleccionarTodoConsignacion.Location = new System.Drawing.Point(711, 3);
+            this.ChkSeleccionarTodoConsignacion.Name = "ChkSeleccionarTodoConsignacion";
+            this.ChkSeleccionarTodoConsignacion.Size = new System.Drawing.Size(104, 24);
+            this.ChkSeleccionarTodoConsignacion.TabIndex = 1;
+            this.ChkSeleccionarTodoConsignacion.Text = "Seleccionar";
+            this.ChkSeleccionarTodoConsignacion.UseVisualStyleBackColor = false;
+            this.ChkSeleccionarTodoConsignacion.Visible = false;
             // 
             // GridConsignaciones
             // 
@@ -374,13 +396,13 @@
             gridViewTextBoxColumn10.HeaderText = "Fecha Consig.";
             gridViewTextBoxColumn10.Name = "FechaConsignacion";
             gridViewTextBoxColumn10.ReadOnly = true;
-            gridViewTextBoxColumn10.Width = 172;
+            gridViewTextBoxColumn10.Width = 162;
             gridViewTextBoxColumn11.FieldName = "LCN";
             gridViewTextBoxColumn11.FormatString = "";
             gridViewTextBoxColumn11.HeaderText = "LCN";
             gridViewTextBoxColumn11.Name = "LCN";
             gridViewTextBoxColumn11.ReadOnly = true;
-            gridViewTextBoxColumn11.Width = 172;
+            gridViewTextBoxColumn11.Width = 162;
             gridViewTextBoxColumn12.FormatString = "";
             gridViewTextBoxColumn12.HeaderText = "Total";
             gridViewTextBoxColumn12.IsVisible = false;
@@ -392,25 +414,25 @@
             gridViewTextBoxColumn13.HeaderText = "Importe";
             gridViewTextBoxColumn13.Name = "Importe";
             gridViewTextBoxColumn13.ReadOnly = true;
-            gridViewTextBoxColumn13.Width = 128;
+            gridViewTextBoxColumn13.Width = 121;
             gridViewTextBoxColumn14.FieldName = "Pagado";
             gridViewTextBoxColumn14.FormatString = "";
             gridViewTextBoxColumn14.HeaderText = "Pagado";
             gridViewTextBoxColumn14.Name = "Pagado";
             gridViewTextBoxColumn14.ReadOnly = true;
-            gridViewTextBoxColumn14.Width = 128;
+            gridViewTextBoxColumn14.Width = 121;
             gridViewTextBoxColumn15.AllowGroup = false;
             gridViewTextBoxColumn15.AllowSort = false;
             gridViewTextBoxColumn15.FieldName = "Pago";
             gridViewTextBoxColumn15.HeaderText = "A pagar";
             gridViewTextBoxColumn15.Name = "Pago";
-            gridViewTextBoxColumn15.Width = 128;
+            gridViewTextBoxColumn15.Width = 121;
             gridViewCheckBoxColumn2.AllowGroup = false;
             gridViewCheckBoxColumn2.AllowHide = false;
             gridViewCheckBoxColumn2.AllowSort = false;
             gridViewCheckBoxColumn2.HeaderText = "Pagar";
             gridViewCheckBoxColumn2.Name = "Pagar";
-            gridViewCheckBoxColumn2.Width = 119;
+            gridViewCheckBoxColumn2.Width = 111;
             gridViewTextBoxColumn16.FieldName = "Id";
             gridViewTextBoxColumn16.HeaderText = "Id";
             gridViewTextBoxColumn16.IsVisible = false;
@@ -428,34 +450,16 @@
             this.GridConsignaciones.MasterTemplate.EnableGrouping = false;
             this.GridConsignaciones.Name = "GridConsignaciones";
             this.GridConsignaciones.ReadOnly = true;
-            this.GridConsignaciones.Size = new System.Drawing.Size(864, 328);
+            this.GridConsignaciones.Size = new System.Drawing.Size(815, 328);
             this.GridConsignaciones.TabIndex = 1;
             this.GridConsignaciones.Text = "radGridView1";
             this.GridConsignaciones.ThemeName = "TelerikMetroBlue";
             this.GridConsignaciones.ValueChanged += new System.EventHandler(this.GridConsignaciones_ValueChanged);
             // 
-            // ChkSeleccionarTodoConsignacion
-            // 
-            this.ChkSeleccionarTodoConsignacion.BackColor = System.Drawing.Color.Transparent;
-            this.ChkSeleccionarTodoConsignacion.Location = new System.Drawing.Point(757, 0);
-            this.ChkSeleccionarTodoConsignacion.Name = "ChkSeleccionarTodoConsignacion";
-            this.ChkSeleccionarTodoConsignacion.Size = new System.Drawing.Size(104, 24);
-            this.ChkSeleccionarTodoConsignacion.TabIndex = 1;
-            this.ChkSeleccionarTodoConsignacion.Text = "Seleccionar";
-            this.ChkSeleccionarTodoConsignacion.UseVisualStyleBackColor = false;
-            this.ChkSeleccionarTodoConsignacion.Visible = false;
-            // 
-            // ucProgressSpinner1
-            // 
-            this.ucProgressSpinner1.Location = new System.Drawing.Point(1169, 12);
-            this.ucProgressSpinner1.Name = "ucProgressSpinner1";
-            this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
-            this.ucProgressSpinner1.TabIndex = 0;
-            // 
             // ProveedoreCtaCtePager
             // 
             this.ProveedoreCtaCtePager.CurrentPage = 1;
-            this.ProveedoreCtaCtePager.Location = new System.Drawing.Point(500, 522);
+            this.ProveedoreCtaCtePager.Location = new System.Drawing.Point(446, 555);
             this.ProveedoreCtaCtePager.Name = "ProveedoreCtaCtePager";
             this.ProveedoreCtaCtePager.PageSize = 50;
             this.ProveedoreCtaCtePager.PageTotal = 1;
@@ -469,11 +473,11 @@
             this.ucTotalesCompraSeña1.Creditos = null;
             this.ucTotalesCompraSeña1.CreditosDisp = null;
             this.ucTotalesCompraSeña1.FaltaPagar = null;
-            this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(19, 33);
+            this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(3, 58);
             this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
             this.ucTotalesCompraSeña1.Senas = null;
             this.ucTotalesCompraSeña1.SenasDisp = null;
-            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(340, 378);
+            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(339, 416);
             this.ucTotalesCompraSeña1.SubTotal = null;
             this.ucTotalesCompraSeña1.TabIndex = 7;
             this.ucTotalesCompraSeña1.TotalPagar = null;
@@ -485,15 +489,15 @@
             this.PnlPagos.Controls.Add(this.DtpFechaPago);
             this.PnlPagos.Controls.Add(this.BtnGuardar);
             this.PnlPagos.Controls.Add(this.ucTotalesCompraSeña1);
-            this.PnlPagos.Location = new System.Drawing.Point(892, 136);
+            this.PnlPagos.Location = new System.Drawing.Point(849, 110);
             this.PnlPagos.Name = "PnlPagos";
-            this.PnlPagos.Size = new System.Drawing.Size(376, 428);
+            this.PnlPagos.Size = new System.Drawing.Size(344, 499);
             this.PnlPagos.TabIndex = 8;
             // 
             // BtnCosas
             // 
             this.BtnCosas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCosas.Location = new System.Drawing.Point(135, 370);
+            this.BtnCosas.Location = new System.Drawing.Point(119, 445);
             this.BtnCosas.Name = "BtnCosas";
             this.BtnCosas.Size = new System.Drawing.Size(102, 29);
             this.BtnCosas.TabIndex = 9;
@@ -505,7 +509,7 @@
             // radLabel4
             // 
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(29, 14);
+            this.radLabel4.Location = new System.Drawing.Point(12, 33);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(50, 24);
             this.radLabel4.TabIndex = 10;
@@ -514,24 +518,24 @@
             // DtpFechaPago
             // 
             this.DtpFechaPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.DtpFechaPago.Location = new System.Drawing.Point(122, 11);
+            this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaPago.Location = new System.Drawing.Point(192, 28);
             this.DtpFechaPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.DtpFechaPago.MinDate = new System.DateTime(((long)(0)));
             this.DtpFechaPago.Name = "DtpFechaPago";
             this.DtpFechaPago.NullableValue = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
             this.DtpFechaPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaPago.Size = new System.Drawing.Size(228, 29);
+            this.DtpFechaPago.Size = new System.Drawing.Size(137, 29);
             this.DtpFechaPago.TabIndex = 9;
             this.DtpFechaPago.TabStop = false;
-            this.DtpFechaPago.Text = "sábado, 13 de junio de 2015";
+            this.DtpFechaPago.Text = "13/06/2015";
             this.DtpFechaPago.ThemeName = "TelerikMetroBlue";
             this.DtpFechaPago.Value = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
             // 
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(243, 370);
+            this.BtnGuardar.Location = new System.Drawing.Point(227, 445);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(102, 29);
             this.BtnGuardar.TabIndex = 8;
@@ -539,14 +543,22 @@
             this.BtnGuardar.ThemeName = "TelerikMetroBlue";
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
+            // radPanel1
+            // 
+            this.radPanel1.Location = new System.Drawing.Point(12, 110);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(832, 499);
+            this.radPanel1.TabIndex = 9;
+            this.radPanel1.Text = "radPanel1";
+            // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1300, 599);
+            this.ClientSize = new System.Drawing.Size(1233, 750);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
-            this.Controls.Add(this.ucProgressSpinner1);
             this.Controls.Add(this.RpvPagos);
             this.Controls.Add(this.PnlProveedor);
+            this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProveedoresCtaCte";
             // 
@@ -575,6 +587,7 @@
             this.CuentaCorriente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).EndInit();
+            this.GridCtaCte.ResumeLayout(false);
             this.Consignaciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).EndInit();
@@ -585,6 +598,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -619,5 +633,6 @@
         private Telerik.WinControls.UI.RadLabel LblConsigna;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadLabel radLabel9;
+        private Telerik.WinControls.UI.RadPanel radPanel1;
     }
 }

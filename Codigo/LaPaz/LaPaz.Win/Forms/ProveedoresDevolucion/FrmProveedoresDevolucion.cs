@@ -62,7 +62,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             //this.GridCtaCte.CellFormatting += this.Grilla_CellFormatting;
 
             //MainGrid = GridCtaCte;
-            MainPager = ProveedoreCtaCtePager;
+            //MainPager = ProveedoreCtaCtePager;
             Spinner = ucProgressSpinner1;
         }
 
@@ -102,7 +102,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
         private void InicializarPaginador()
         {
-            ProveedoreCtaCtePager.RefreshActionAsync = RefrescarListado;
+           // ProveedoreCtaCtePager.RefreshActionAsync = RefrescarListado;
         }
 
         #endregion
@@ -121,8 +121,8 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
             var codigoProveedor = ucFiltroProveedor1.ProveedorId;
 
-            var page = ProveedoreCtaCtePager.CurrentPage;
-            var pageSize = ProveedoreCtaCtePager.PageSize;
+            //var page = ProveedoreCtaCtePager.CurrentPage;
+            //var pageSize = ProveedoreCtaCtePager.PageSize;
 
             var proveedoresCtaCte =
                 await
@@ -130,7 +130,8 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                         () =>
                             _proveedorNegocio.ProveedorCtaCte(SortColumn, SortDirection, null,
                                 ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-                                , true, Context.SucursalActual.Id, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
+                                , true, Context.SucursalActual.Id, 1, 50,
+                                //, true, Context.SucursalActual.Id, ProveedoreCtaCtePager.CurrentPage, ProveedoreCtaCtePager.PageSize,
                                 out pageTotal));
 
             var proveedoresConsignacion =
@@ -139,11 +140,11 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                         () =>
                             _proveedorNegocio.ProveedorConsignacion(SortColumn, SortDirection, null, null,
                                 ucFiltroProveedor1.Proveedor.Denominacion, ucFiltroProveedor1.Proveedor.Cuit
-                                , true, null, null, true, Context.SucursalActual.Id, ProveedoreCtaCtePager.CurrentPage,
-                                ProveedoreCtaCtePager.PageSize,
+                                , true, null, null, true, Context.SucursalActual.Id, 1,50,
+                                //, true, null, null, true, Context.SucursalActual.Id, ProveedoreCtaCtePager.CurrentPage,ProveedoreCtaCtePager.PageSize,
                                 out pageTotal));
 
-            ProveedoreCtaCtePager.UpdateState(pageTotal);
+          //  ProveedoreCtaCtePager.UpdateState(pageTotal);
            
 
             return pageTotal;

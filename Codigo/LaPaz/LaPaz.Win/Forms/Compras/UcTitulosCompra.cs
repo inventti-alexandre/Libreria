@@ -41,16 +41,17 @@ namespace LaPaz.Win.Forms.Compras
 
         #region Propiedades
 
-        public IList<CompraTitulo> Titulos
-        {
-            get { return _titulos; }
-            set { _titulos = value; }
-        }
-        public IList<VentaTitulo> TitulosDevolucion
-        {
-            get { return _titulosDevolucion; }
-            set { _titulosDevolucion = value; }
-        }
+        public IList<CompraTitulo> Titulos;
+        //{
+        //    get { return _titulos; }
+        //    set { _titulos = value; }
+        //}
+
+        public IList<VentaTitulo> TitulosDevolucion;
+        //{
+        //    get { return _titulosDevolucion; }
+        //    set { _titulosDevolucion = value; }
+        //}
         #endregion
 
         #region Metodos Publicos
