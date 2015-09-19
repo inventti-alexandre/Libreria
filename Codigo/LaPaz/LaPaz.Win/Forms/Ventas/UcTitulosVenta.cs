@@ -179,7 +179,7 @@ namespace LaPaz.Win.Forms.Ventas
         {
             if (BtnAgregarTitulo.Visible)
             {
-                using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(ventaTitulo.TituloId))
+                using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(ventaTitulo.TituloId,ActionFormMode.Create))
                 {
                     formAgregarTitulo.TituloAgregado += (o, titulo) =>
                     {
