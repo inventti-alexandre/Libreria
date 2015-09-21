@@ -171,7 +171,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.UcCuentaCorrienteInfo.SubTotal = null;
             this.UcCuentaCorrienteInfo.TabIndex = 4;
             this.UcCuentaCorrienteInfo.Total = null;
-            this.UcCuentaCorrienteInfo.Vencimiento = new System.DateTime(2015, 8, 15, 0, 0, 0, 0);
+            this.UcCuentaCorrienteInfo.Vencimiento = new System.DateTime(2015, 10, 19, 0, 0, 0, 0);
             // 
             // metroPanel1
             // 
@@ -275,7 +275,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.UcBuscadorConsignacion.Location = new System.Drawing.Point(6, 4);
             this.UcBuscadorConsignacion.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.UcBuscadorConsignacion.Name = "UcBuscadorConsignacion";
-            this.UcBuscadorConsignacion.Size = new System.Drawing.Size(437, 125);
+            this.UcBuscadorConsignacion.Size = new System.Drawing.Size(431, 125);
             this.UcBuscadorConsignacion.TabIndex = 0;
             // 
             // radPanel2
@@ -334,7 +334,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1307, 860);
+            this.ClientSize = new System.Drawing.Size(1300, 820);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.RPCtaccte);

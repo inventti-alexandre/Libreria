@@ -47,8 +47,20 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCheckBoxColumn gridViewCheckBoxColumn2 = new Telerik.WinControls.UI.GridViewCheckBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            this.ucFiltroProveedor1 = new LaPaz.Win.Forms.Util.UcFiltroProveedor();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.PnlPagos = new Telerik.WinControls.UI.RadPanel();
+            this.BtnCosas = new Telerik.WinControls.UI.RadButton();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.DtpFechaPago = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.BtnGuardar = new Telerik.WinControls.UI.RadButton();
+            this.ucTotalesCompraSeña1 = new LaPaz.Win.Forms.Compras.UcTotalesCompraSeña();
+            this.ProveedoreCtaCtePager = new Framework.WinForm.Controls.MetroPager();
+            this.RpvPagos = new Telerik.WinControls.UI.RadPageView();
+            this.CuentaCorriente = new Telerik.WinControls.UI.RadPageViewPage();
+            this.GridCtaCte = new Telerik.WinControls.UI.RadGridView();
+            this.ChkSeleccionCtaCte = new System.Windows.Forms.CheckBox();
+            this.Consignaciones = new Telerik.WinControls.UI.RadPageViewPage();
+            this.ChkSeleccionarTodoConsignacion = new System.Windows.Forms.CheckBox();
+            this.GridConsignaciones = new Telerik.WinControls.UI.RadGridView();
             this.PnlProveedor = new Telerik.WinControls.UI.RadPanel();
             this.LblConsignaVencida = new Telerik.WinControls.UI.RadLabel();
             this.lblDeudaVencida = new Telerik.WinControls.UI.RadLabel();
@@ -60,22 +72,23 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel9 = new Telerik.WinControls.UI.RadLabel();
             this.LblDeudas = new Telerik.WinControls.UI.RadLabel();
-            this.RpvPagos = new Telerik.WinControls.UI.RadPageView();
-            this.CuentaCorriente = new Telerik.WinControls.UI.RadPageViewPage();
-            this.GridCtaCte = new Telerik.WinControls.UI.RadGridView();
-            this.ChkSeleccionCtaCte = new System.Windows.Forms.CheckBox();
-            this.Consignaciones = new Telerik.WinControls.UI.RadPageViewPage();
-            this.ChkSeleccionarTodoConsignacion = new System.Windows.Forms.CheckBox();
-            this.GridConsignaciones = new Telerik.WinControls.UI.RadGridView();
-            this.ProveedoreCtaCtePager = new Framework.WinForm.Controls.MetroPager();
-            this.ucTotalesCompraSeña1 = new LaPaz.Win.Forms.Compras.UcTotalesCompraSeña();
-            this.PnlPagos = new Telerik.WinControls.UI.RadPanel();
-            this.BtnCosas = new Telerik.WinControls.UI.RadButton();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.DtpFechaPago = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.BtnGuardar = new Telerik.WinControls.UI.RadButton();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.ucFiltroProveedor1 = new LaPaz.Win.Forms.Util.UcFiltroProveedor();
+            ((System.ComponentModel.ISupportInitialize)(this.PnlPagos)).BeginInit();
+            this.PnlPagos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCosas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaPago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RpvPagos)).BeginInit();
+            this.RpvPagos.SuspendLayout();
+            this.CuentaCorriente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).BeginInit();
+            this.GridCtaCte.SuspendLayout();
+            this.Consignaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PnlProveedor)).BeginInit();
             this.PnlProveedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LblConsignaVencida)).BeginInit();
@@ -88,149 +101,96 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LblDeudas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RpvPagos)).BeginInit();
-            this.RpvPagos.SuspendLayout();
-            this.CuentaCorriente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).BeginInit();
-            this.GridCtaCte.SuspendLayout();
-            this.Consignaciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PnlPagos)).BeginInit();
-            this.PnlPagos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCosas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaPago)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
-            // ucFiltroProveedor1
+            // PnlPagos
             // 
-            this.ucFiltroProveedor1.EsGasto = false;
-            this.ucFiltroProveedor1.Location = new System.Drawing.Point(101, 10);
-            this.ucFiltroProveedor1.Name = "ucFiltroProveedor1";
-            this.ucFiltroProveedor1.ProveedorId = null;
-            this.ucFiltroProveedor1.Size = new System.Drawing.Size(351, 27);
-            this.ucFiltroProveedor1.TabIndex = 0;
+            this.PnlPagos.Controls.Add(this.BtnCosas);
+            this.PnlPagos.Controls.Add(this.radLabel4);
+            this.PnlPagos.Controls.Add(this.DtpFechaPago);
+            this.PnlPagos.Controls.Add(this.BtnGuardar);
+            this.PnlPagos.Controls.Add(this.ucTotalesCompraSeña1);
+            this.PnlPagos.Location = new System.Drawing.Point(849, 110);
+            this.PnlPagos.Name = "PnlPagos";
+            this.PnlPagos.Size = new System.Drawing.Size(344, 499);
+            this.PnlPagos.TabIndex = 8;
             // 
-            // radLabel1
+            // BtnCosas
             // 
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(3, 13);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(78, 24);
-            this.radLabel1.TabIndex = 2;
-            this.radLabel1.Text = "Proveedor";
+            this.BtnCosas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCosas.Location = new System.Drawing.Point(119, 445);
+            this.BtnCosas.Name = "BtnCosas";
+            this.BtnCosas.Size = new System.Drawing.Size(102, 29);
+            this.BtnCosas.TabIndex = 9;
+            this.BtnCosas.Text = "Guardar";
+            this.BtnCosas.ThemeName = "TelerikMetroBlue";
+            this.BtnCosas.Visible = false;
+            this.BtnCosas.Click += new System.EventHandler(this.BtnCosas_Click);
             // 
-            // PnlProveedor
+            // radLabel4
             // 
-            this.PnlProveedor.Controls.Add(this.LblConsignaVencida);
-            this.PnlProveedor.Controls.Add(this.lblDeudaVencida);
-            this.PnlProveedor.Controls.Add(this.ucProgressSpinner1);
-            this.PnlProveedor.Controls.Add(this.LblConsigna);
-            this.PnlProveedor.Controls.Add(this.lblDeuda);
-            this.PnlProveedor.Controls.Add(this.radLabel7);
-            this.PnlProveedor.Controls.Add(this.radLabel3);
-            this.PnlProveedor.Controls.Add(this.radLabel9);
-            this.PnlProveedor.Controls.Add(this.LblDeudas);
-            this.PnlProveedor.Controls.Add(this.radLabel1);
-            this.PnlProveedor.Controls.Add(this.ucFiltroProveedor1);
-            this.PnlProveedor.Location = new System.Drawing.Point(12, 12);
-            this.PnlProveedor.Name = "PnlProveedor";
-            this.PnlProveedor.Size = new System.Drawing.Size(1181, 96);
-            this.PnlProveedor.TabIndex = 3;
+            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel4.Location = new System.Drawing.Point(12, 33);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(50, 24);
+            this.radLabel4.TabIndex = 10;
+            this.radLabel4.Text = "Fecha:";
             // 
-            // LblConsignaVencida
+            // DtpFechaPago
             // 
-            this.LblConsignaVencida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblConsignaVencida.Location = new System.Drawing.Point(298, 67);
-            this.LblConsignaVencida.Name = "LblConsignaVencida";
-            this.LblConsignaVencida.Size = new System.Drawing.Size(16, 24);
-            this.LblConsignaVencida.TabIndex = 9;
-            this.LblConsignaVencida.Text = "0";
+            this.DtpFechaPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaPago.Location = new System.Drawing.Point(192, 28);
+            this.DtpFechaPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaPago.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaPago.Name = "DtpFechaPago";
+            this.DtpFechaPago.NullableValue = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
+            this.DtpFechaPago.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaPago.Size = new System.Drawing.Size(137, 29);
+            this.DtpFechaPago.TabIndex = 9;
+            this.DtpFechaPago.TabStop = false;
+            this.DtpFechaPago.Text = "13/06/2015";
+            this.DtpFechaPago.ThemeName = "TelerikMetroBlue";
+            this.DtpFechaPago.Value = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
             // 
-            // lblDeudaVencida
+            // BtnGuardar
             // 
-            this.lblDeudaVencida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeudaVencida.Location = new System.Drawing.Point(122, 68);
-            this.lblDeudaVencida.Name = "lblDeudaVencida";
-            this.lblDeudaVencida.Size = new System.Drawing.Size(16, 24);
-            this.lblDeudaVencida.TabIndex = 5;
-            this.lblDeudaVencida.Text = "0";
+            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.Location = new System.Drawing.Point(227, 445);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Size = new System.Drawing.Size(102, 29);
+            this.BtnGuardar.TabIndex = 8;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.ThemeName = "TelerikMetroBlue";
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // ucProgressSpinner1
+            // ucTotalesCompraSeña1
             // 
-            this.ucProgressSpinner1.Location = new System.Drawing.Point(720, 13);
-            this.ucProgressSpinner1.Name = "ucProgressSpinner1";
-            this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
-            this.ucProgressSpinner1.TabIndex = 0;
+            this.ucTotalesCompraSeña1.Creditos = null;
+            this.ucTotalesCompraSeña1.CreditosDisp = null;
+            this.ucTotalesCompraSeña1.FaltaPagar = null;
+            this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(3, 58);
+            this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
+            this.ucTotalesCompraSeña1.Senas = null;
+            this.ucTotalesCompraSeña1.SenasDisp = null;
+            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(339, 416);
+            this.ucTotalesCompraSeña1.SubTotal = null;
+            this.ucTotalesCompraSeña1.TabIndex = 7;
+            this.ucTotalesCompraSeña1.TotalPagar = null;
             // 
-            // LblConsigna
+            // ProveedoreCtaCtePager
             // 
-            this.LblConsigna.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblConsigna.Location = new System.Drawing.Point(234, 43);
-            this.LblConsigna.Name = "LblConsigna";
-            this.LblConsigna.Size = new System.Drawing.Size(16, 24);
-            this.LblConsigna.TabIndex = 7;
-            this.LblConsigna.Text = "0";
-            // 
-            // lblDeuda
-            // 
-            this.lblDeuda.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeuda.Location = new System.Drawing.Point(64, 44);
-            this.lblDeuda.Name = "lblDeuda";
-            this.lblDeuda.Size = new System.Drawing.Size(16, 24);
-            this.lblDeuda.TabIndex = 4;
-            this.lblDeuda.Text = "0";
-            // 
-            // radLabel7
-            // 
-            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(158, 67);
-            this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(133, 24);
-            this.radLabel7.TabIndex = 8;
-            this.radLabel7.Text = "Consigna Vencida:";
-            // 
-            // radLabel3
-            // 
-            this.radLabel3.Controls.Add(this.radLabel2);
-            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(5, 68);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(114, 24);
-            this.radLabel3.TabIndex = 4;
-            this.radLabel3.Text = "Deuda Vencida:";
-            // 
-            // radLabel2
-            // 
-            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(120, 0);
-            this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(16, 24);
-            this.radLabel2.TabIndex = 5;
-            this.radLabel2.Text = "0";
-            // 
-            // radLabel9
-            // 
-            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel9.Location = new System.Drawing.Point(158, 43);
-            this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(74, 24);
-            this.radLabel9.TabIndex = 6;
-            this.radLabel9.Text = "Consigna:";
-            // 
-            // LblDeudas
-            // 
-            this.LblDeudas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDeudas.Location = new System.Drawing.Point(5, 44);
-            this.LblDeudas.Name = "LblDeudas";
-            this.LblDeudas.Size = new System.Drawing.Size(55, 24);
-            this.LblDeudas.TabIndex = 3;
-            this.LblDeudas.Text = "Deuda:";
+            this.ProveedoreCtaCtePager.CurrentPage = 1;
+            this.ProveedoreCtaCtePager.Location = new System.Drawing.Point(446, 555);
+            this.ProveedoreCtaCtePager.Name = "ProveedoreCtaCtePager";
+            this.ProveedoreCtaCtePager.PageSize = 50;
+            this.ProveedoreCtaCtePager.PageTotal = 1;
+            this.ProveedoreCtaCtePager.RefreshAction = null;
+            this.ProveedoreCtaCtePager.RefreshActionAsync = null;
+            this.ProveedoreCtaCtePager.Size = new System.Drawing.Size(386, 42);
+            this.ProveedoreCtaCtePager.TabIndex = 5;
             // 
             // RpvPagos
             // 
@@ -456,109 +416,138 @@
             this.GridConsignaciones.ThemeName = "TelerikMetroBlue";
             this.GridConsignaciones.ValueChanged += new System.EventHandler(this.GridConsignaciones_ValueChanged);
             // 
-            // ProveedoreCtaCtePager
+            // PnlProveedor
             // 
-            this.ProveedoreCtaCtePager.CurrentPage = 1;
-            this.ProveedoreCtaCtePager.Location = new System.Drawing.Point(446, 555);
-            this.ProveedoreCtaCtePager.Name = "ProveedoreCtaCtePager";
-            this.ProveedoreCtaCtePager.PageSize = 50;
-            this.ProveedoreCtaCtePager.PageTotal = 1;
-            this.ProveedoreCtaCtePager.RefreshAction = null;
-            this.ProveedoreCtaCtePager.RefreshActionAsync = null;
-            this.ProveedoreCtaCtePager.Size = new System.Drawing.Size(386, 42);
-            this.ProveedoreCtaCtePager.TabIndex = 5;
+            this.PnlProveedor.Controls.Add(this.LblConsignaVencida);
+            this.PnlProveedor.Controls.Add(this.lblDeudaVencida);
+            this.PnlProveedor.Controls.Add(this.ucProgressSpinner1);
+            this.PnlProveedor.Controls.Add(this.LblConsigna);
+            this.PnlProveedor.Controls.Add(this.lblDeuda);
+            this.PnlProveedor.Controls.Add(this.radLabel7);
+            this.PnlProveedor.Controls.Add(this.radLabel3);
+            this.PnlProveedor.Controls.Add(this.radLabel9);
+            this.PnlProveedor.Controls.Add(this.LblDeudas);
+            this.PnlProveedor.Controls.Add(this.radLabel1);
+            this.PnlProveedor.Controls.Add(this.ucFiltroProveedor1);
+            this.PnlProveedor.Location = new System.Drawing.Point(12, 12);
+            this.PnlProveedor.Name = "PnlProveedor";
+            this.PnlProveedor.Size = new System.Drawing.Size(1181, 96);
+            this.PnlProveedor.TabIndex = 3;
             // 
-            // ucTotalesCompraSeña1
+            // LblConsignaVencida
             // 
-            this.ucTotalesCompraSeña1.Creditos = null;
-            this.ucTotalesCompraSeña1.CreditosDisp = null;
-            this.ucTotalesCompraSeña1.FaltaPagar = null;
-            this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(3, 58);
-            this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
-            this.ucTotalesCompraSeña1.Senas = null;
-            this.ucTotalesCompraSeña1.SenasDisp = null;
-            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(339, 416);
-            this.ucTotalesCompraSeña1.SubTotal = null;
-            this.ucTotalesCompraSeña1.TabIndex = 7;
-            this.ucTotalesCompraSeña1.TotalPagar = null;
+            this.LblConsignaVencida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblConsignaVencida.Location = new System.Drawing.Point(298, 67);
+            this.LblConsignaVencida.Name = "LblConsignaVencida";
+            this.LblConsignaVencida.Size = new System.Drawing.Size(16, 24);
+            this.LblConsignaVencida.TabIndex = 9;
+            this.LblConsignaVencida.Text = "0";
             // 
-            // PnlPagos
+            // lblDeudaVencida
             // 
-            this.PnlPagos.Controls.Add(this.BtnCosas);
-            this.PnlPagos.Controls.Add(this.radLabel4);
-            this.PnlPagos.Controls.Add(this.DtpFechaPago);
-            this.PnlPagos.Controls.Add(this.BtnGuardar);
-            this.PnlPagos.Controls.Add(this.ucTotalesCompraSeña1);
-            this.PnlPagos.Location = new System.Drawing.Point(849, 110);
-            this.PnlPagos.Name = "PnlPagos";
-            this.PnlPagos.Size = new System.Drawing.Size(344, 499);
-            this.PnlPagos.TabIndex = 8;
+            this.lblDeudaVencida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeudaVencida.Location = new System.Drawing.Point(122, 68);
+            this.lblDeudaVencida.Name = "lblDeudaVencida";
+            this.lblDeudaVencida.Size = new System.Drawing.Size(16, 24);
+            this.lblDeudaVencida.TabIndex = 5;
+            this.lblDeudaVencida.Text = "0";
             // 
-            // BtnCosas
+            // ucProgressSpinner1
             // 
-            this.BtnCosas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCosas.Location = new System.Drawing.Point(119, 445);
-            this.BtnCosas.Name = "BtnCosas";
-            this.BtnCosas.Size = new System.Drawing.Size(102, 29);
-            this.BtnCosas.TabIndex = 9;
-            this.BtnCosas.Text = "Guardar";
-            this.BtnCosas.ThemeName = "TelerikMetroBlue";
-            this.BtnCosas.Visible = false;
-            this.BtnCosas.Click += new System.EventHandler(this.BtnCosas_Click);
+            this.ucProgressSpinner1.Location = new System.Drawing.Point(720, 13);
+            this.ucProgressSpinner1.Name = "ucProgressSpinner1";
+            this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
+            this.ucProgressSpinner1.TabIndex = 0;
             // 
-            // radLabel4
+            // LblConsigna
             // 
-            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(12, 33);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(50, 24);
-            this.radLabel4.TabIndex = 10;
-            this.radLabel4.Text = "Fecha:";
+            this.LblConsigna.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblConsigna.Location = new System.Drawing.Point(234, 43);
+            this.LblConsigna.Name = "LblConsigna";
+            this.LblConsigna.Size = new System.Drawing.Size(16, 24);
+            this.LblConsigna.TabIndex = 7;
+            this.LblConsigna.Text = "0";
             // 
-            // DtpFechaPago
+            // lblDeuda
             // 
-            this.DtpFechaPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaPago.Location = new System.Drawing.Point(192, 28);
-            this.DtpFechaPago.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DtpFechaPago.MinDate = new System.DateTime(((long)(0)));
-            this.DtpFechaPago.Name = "DtpFechaPago";
-            this.DtpFechaPago.NullableValue = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
-            this.DtpFechaPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaPago.Size = new System.Drawing.Size(137, 29);
-            this.DtpFechaPago.TabIndex = 9;
-            this.DtpFechaPago.TabStop = false;
-            this.DtpFechaPago.Text = "13/06/2015";
-            this.DtpFechaPago.ThemeName = "TelerikMetroBlue";
-            this.DtpFechaPago.Value = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
+            this.lblDeuda.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeuda.Location = new System.Drawing.Point(64, 44);
+            this.lblDeuda.Name = "lblDeuda";
+            this.lblDeuda.Size = new System.Drawing.Size(16, 24);
+            this.lblDeuda.TabIndex = 4;
+            this.lblDeuda.Text = "0";
             // 
-            // BtnGuardar
+            // radLabel7
             // 
-            this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(227, 445);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(102, 29);
-            this.BtnGuardar.TabIndex = 8;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.ThemeName = "TelerikMetroBlue";
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
+            this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel7.Location = new System.Drawing.Point(158, 67);
+            this.radLabel7.Name = "radLabel7";
+            this.radLabel7.Size = new System.Drawing.Size(133, 24);
+            this.radLabel7.TabIndex = 8;
+            this.radLabel7.Text = "Consigna Vencida:";
             // 
-            // radPanel1
+            // radLabel3
             // 
-            this.radPanel1.Location = new System.Drawing.Point(12, 110);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(832, 499);
-            this.radPanel1.TabIndex = 9;
-            this.radPanel1.Text = "radPanel1";
+            this.radLabel3.Controls.Add(this.radLabel2);
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel3.Location = new System.Drawing.Point(5, 68);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(114, 24);
+            this.radLabel3.TabIndex = 4;
+            this.radLabel3.Text = "Deuda Vencida:";
+            // 
+            // radLabel2
+            // 
+            this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel2.Location = new System.Drawing.Point(120, 0);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(16, 24);
+            this.radLabel2.TabIndex = 5;
+            this.radLabel2.Text = "0";
+            // 
+            // radLabel9
+            // 
+            this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel9.Location = new System.Drawing.Point(158, 43);
+            this.radLabel9.Name = "radLabel9";
+            this.radLabel9.Size = new System.Drawing.Size(74, 24);
+            this.radLabel9.TabIndex = 6;
+            this.radLabel9.Text = "Consigna:";
+            // 
+            // LblDeudas
+            // 
+            this.LblDeudas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblDeudas.Location = new System.Drawing.Point(5, 44);
+            this.LblDeudas.Name = "LblDeudas";
+            this.LblDeudas.Size = new System.Drawing.Size(55, 24);
+            this.LblDeudas.TabIndex = 3;
+            this.LblDeudas.Text = "Deuda:";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(3, 13);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(78, 24);
+            this.radLabel1.TabIndex = 2;
+            this.radLabel1.Text = "Proveedor";
+            // 
+            // ucFiltroProveedor1
+            // 
+            this.ucFiltroProveedor1.EsGasto = false;
+            this.ucFiltroProveedor1.Location = new System.Drawing.Point(101, 10);
+            this.ucFiltroProveedor1.Name = "ucFiltroProveedor1";
+            this.ucFiltroProveedor1.ProveedorId = null;
+            this.ucFiltroProveedor1.Size = new System.Drawing.Size(351, 27);
+            this.ucFiltroProveedor1.TabIndex = 0;
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1233, 750);
+            this.ClientSize = new System.Drawing.Size(1241, 786);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.RpvPagos);
             this.Controls.Add(this.PnlProveedor);
-            this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmProveedoresCtaCte";
             // 
@@ -567,7 +556,22 @@
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Proveedores Rendicion";
             this.Load += new System.EventHandler(this.FrmProveedoresCtaCte_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PnlPagos)).EndInit();
+            this.PnlPagos.ResumeLayout(false);
+            this.PnlPagos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnCosas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaPago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RpvPagos)).EndInit();
+            this.RpvPagos.ResumeLayout(false);
+            this.CuentaCorriente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).EndInit();
+            this.GridCtaCte.ResumeLayout(false);
+            this.Consignaciones.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PnlProveedor)).EndInit();
             this.PnlProveedor.ResumeLayout(false);
             this.PnlProveedor.PerformLayout();
@@ -582,23 +586,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LblDeudas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.RpvPagos)).EndInit();
-            this.RpvPagos.ResumeLayout(false);
-            this.CuentaCorriente.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridCtaCte)).EndInit();
-            this.GridCtaCte.ResumeLayout(false);
-            this.Consignaciones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PnlPagos)).EndInit();
-            this.PnlPagos.ResumeLayout(false);
-            this.PnlPagos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnCosas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaPago)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -633,6 +621,5 @@
         private Telerik.WinControls.UI.RadLabel LblConsigna;
         private Telerik.WinControls.UI.RadLabel radLabel7;
         private Telerik.WinControls.UI.RadLabel radLabel9;
-        private Telerik.WinControls.UI.RadPanel radPanel1;
     }
 }

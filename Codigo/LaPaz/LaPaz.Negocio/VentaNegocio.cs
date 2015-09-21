@@ -204,8 +204,9 @@ namespace LaPaz.Negocio
 
                     Uow.Commit();
 
-                    return reponse;
+                    //return reponse;
                 }
+                return reponse;
             }
 
             var venta = AgregarVenta(ventaData);
@@ -325,23 +326,29 @@ namespace LaPaz.Negocio
                 int? cantconsiganda = 0;
                 int? cantidadADevolver = remitoVentaDetalleActualizado.CntDevuelta;
 
-                if (remitoVentaDetalle.CntPr > 0)
+                //Primero devuelvo los consignados
+                if (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta > 0)
                 {
-                    if (remitoVentaDetalle.CntPr >= remitoVentaDetalleActualizado.CntDevuelta)
+                    if ((remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta) >= remitoVentaDetalleActualizado.CntDevuelta)
                     {
-                        tituloStock.StkPr += remitoVentaDetalleActualizado.CntDevuelta;
+                        tituloStock.StkCn += remitoVentaDetalleActualizado.CntDevuelta;
+                        cantidadADevolver = 0;
                     }
                     else
                     {
-                        tituloStock.StkPr += remitoVentaDetalle.CntPr;
-                        cantidadADevolver -= remitoVentaDetalle.CntPr;
-
-                        if (remitoVentaDetalle.CntCn > 0)
-                        {
-                            tituloStock.StkCn += cantidadADevolver;
-                        }
+                        tituloStock.StkCn += remitoVentaDetalleActualizado.CntDevuelta - (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta);
+                        cantidadADevolver -= (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta);
                     }
                 }
+                //Despues los propios
+                if (remitoVentaDetalle.CntPr > 0 && cantidadADevolver > 0)
+                {
+                    if (remitoVentaDetalle.CntPr >= cantidadADevolver)
+                    {
+                        tituloStock.StkPr += cantidadADevolver;
+                    }
+                }
+
             }
         }
 
