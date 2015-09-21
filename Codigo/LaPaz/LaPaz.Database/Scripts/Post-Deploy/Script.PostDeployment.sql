@@ -14,3 +14,5 @@ Post-Deployment Script Template
 :r .\ProveedoresCtaCteEmptyInsert.sql
 :R .\TitulosConsignacionRendidaEmptyInsert.sql
 :R .\TipoComprobante-MontoFavorProveedor.sql
+:R .\TipoMovimientoCaja-PagoCtaProveedorCajaAnterior.sql
+:R .\TipoComprobante-NotaCreditoProveedor.sql

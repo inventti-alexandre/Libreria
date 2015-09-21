@@ -42,7 +42,7 @@ namespace LaPaz.Entidades.Enums
         SeñaProveedor = 32,//1031,//32,
         SeñaProveedorCajaAnterior = 33,//2034,//33,
         PagoProveedorCajaAnterior = 34,//2035,//34,
-        AnulacionSeniaProveedor = 35
-
+        AnulacionSeniaProveedor = 35,
+        PagoCtaProveedorCajaAnterior = 36
     }
 }

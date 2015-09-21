@@ -199,7 +199,7 @@
             this.RpvPagos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RpvPagos.Location = new System.Drawing.Point(12, 114);
             this.RpvPagos.Name = "RpvPagos";
-            this.RpvPagos.SelectedPage = this.Consignaciones;
+            this.RpvPagos.SelectedPage = this.CuentaCorriente;
             this.RpvPagos.Size = new System.Drawing.Size(831, 402);
             this.RpvPagos.TabIndex = 4;
             this.RpvPagos.Text = "radPageView1";
@@ -541,7 +541,7 @@
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1249, 820);
+            this.ClientSize = new System.Drawing.Size(1257, 820);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.RpvPagos);

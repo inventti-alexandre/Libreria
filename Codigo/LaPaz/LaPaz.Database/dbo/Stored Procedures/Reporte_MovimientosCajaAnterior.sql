@@ -135,6 +135,41 @@ BEGIN
 		AND CM.SucursalAltaId = @SucursalId
 		AND (@OperadorId IS NULL OR CM.OperadorAltaId = @OperadorId)
 
+
+		-----------------------------------------------------------------------
+	----------------  PAGO A PROVEEDORES CON CAJA ANTERIOR-----------------
+	-----------------------------------------------------------------------
+			
+	INSERT INTO @Temp
+	SELECT 'Egresos',
+			'Pagos a Proveedores con Caja Anterior',
+			'',
+			CM.FechaAlta,
+			'Pago Cuenta',
+			P.Denominacion,
+			O.Usuario,
+			ISNULL(CM.Senia, 0),
+			ISNULL(CM.Recargo, 0),
+			ISNULL(CM.ImpFac, 0),
+			ISNULL(CM.Importe, 0),
+			ISNULL(CM.Efectivo, 0),
+			ISNULL(CM.Tarjeta, 0),
+			ISNULL(CM.Cheque, 0),
+			ISNULL(CM.Deposito, 0),
+			ISNULL(CM.Transferencia, 0)
+	FROM CajasMovimientos CM
+		LEFT JOIN ProveedoresPagos PP
+			ON CM.ComprobanteId = PP.Id
+		LEFT JOIN Operadores O
+			ON CM.OperadorAltaId = O.Id
+		LEFT JOIN Proveedores P
+			ON PP.ProveedorId = P.Id
+	WHERE CM.TipoMovimientoCajaId = 36 --PAGO CUENTA A PROVEEDORES
+		AND CM.FechaAlta >= @FechaInicio
+		AND CM.FechaAlta < @FechaFin
+		AND CM.SucursalAltaId = @SucursalId
+		AND (@OperadorId IS NULL OR CM.OperadorAltaId = @OperadorId)
+
 	
 	
 	DECLARE @Final TABLE 

@@ -723,7 +723,6 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
 
                 cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.PagoProveedores;
 
-                //le paso guid empty pero hay que ver que se le pasa
                 cajaMovimiento.ComprobanteId = _pagoIdCtaCte;
                 cajaMovimiento.Importe = efectivo;
                 cajaMovimiento.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
@@ -761,11 +760,13 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 cajaMovimientoAnterior.Id = Guid.NewGuid();
                 cajaMovimientoAnterior.CajaId = caja.Id;
 
-                cajaMovimientoAnterior.TipoMovimientoCajaId =
-                    TipoMovimientoCajaEnum.PagoProveedorCajaAnterior;
+                //cajaMovimientoAnterior.TipoMovimientoCajaId =
+                //    TipoMovimientoCajaEnum.PagoProveedorCajaAnterior -1;
 
-                //le paso guid empty pero hay que ver que se le pasa
-                cajaMovimientoAnterior.ComprobanteId = Guid.Empty;
+                cajaMovimientoAnterior.TipoMovimientoCajaId =
+                    TipoMovimientoCajaEnum.PagoCtaProveedorCajaAnterior;
+
+                cajaMovimientoAnterior.ComprobanteId = _pagoIdCtaCte;
                 cajaMovimientoAnterior.Importe = tarjeta + deposito + cheque + efectivoCajaAnterior + transferencia;
                 cajaMovimientoAnterior.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
                 cajaMovimientoAnterior.FechaAlta = _clock.Now;
@@ -1028,9 +1029,10 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 cajaMovimientoAnterior.Id = Guid.NewGuid();
                 cajaMovimientoAnterior.CajaId = caja.Id;
 
+                //cajaMovimientoAnterior.TipoMovimientoCajaId =
+                //    TipoMovimientoCajaEnum.PagoProveedorCajaAnterior; -2
                 cajaMovimientoAnterior.TipoMovimientoCajaId =
-                    TipoMovimientoCajaEnum.PagoProveedorCajaAnterior;
-
+                    TipoMovimientoCajaEnum.PagoCtaProveedorCajaAnterior;
 
                 cajaMovimientoAnterior.ComprobanteId = _pagoIdConsignacion;
                 cajaMovimientoAnterior.Importe = tarjeta + deposito + cheque + efectivoCajaAnterior + transferencia;
