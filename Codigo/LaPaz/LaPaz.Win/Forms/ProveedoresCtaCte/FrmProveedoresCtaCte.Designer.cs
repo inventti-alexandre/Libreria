@@ -199,7 +199,7 @@
             this.RpvPagos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RpvPagos.Location = new System.Drawing.Point(12, 114);
             this.RpvPagos.Name = "RpvPagos";
-            this.RpvPagos.SelectedPage = this.CuentaCorriente;
+            this.RpvPagos.SelectedPage = this.Consignaciones;
             this.RpvPagos.Size = new System.Drawing.Size(831, 402);
             this.RpvPagos.TabIndex = 4;
             this.RpvPagos.Text = "radPageView1";
@@ -299,7 +299,6 @@
             gridViewCheckBoxColumn1,
             gridViewTextBoxColumn9});
             this.GridCtaCte.Name = "GridCtaCte";
-            this.GridCtaCte.ReadOnly = true;
             this.GridCtaCte.Size = new System.Drawing.Size(815, 358);
             this.GridCtaCte.TabIndex = 0;
             this.GridCtaCte.Text = "radGridView1";
@@ -409,7 +408,6 @@
             gridViewTextBoxColumn16});
             this.GridConsignaciones.MasterTemplate.EnableGrouping = false;
             this.GridConsignaciones.Name = "GridConsignaciones";
-            this.GridConsignaciones.ReadOnly = true;
             this.GridConsignaciones.Size = new System.Drawing.Size(815, 328);
             this.GridConsignaciones.TabIndex = 1;
             this.GridConsignaciones.Text = "radGridView1";
@@ -543,7 +541,7 @@
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1241, 786);
+            this.ClientSize = new System.Drawing.Size(1249, 820);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.RpvPagos);
