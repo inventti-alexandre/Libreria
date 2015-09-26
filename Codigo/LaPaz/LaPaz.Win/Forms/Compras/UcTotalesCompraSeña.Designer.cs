@@ -47,6 +47,9 @@
             this.TxtCreditos = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
             this.TxtCreditoDisp = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.TxtEgresos = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
+            this.TxtEgresosDisp = new Framework.WinForm.Controls.CustomControls.DecimalTextBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             ((System.ComponentModel.ISupportInitialize)(this.TxtSenas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtFaltaPagar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
@@ -62,6 +65,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtCreditos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCreditoDisp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtEgresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtEgresosDisp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtSenas
@@ -81,7 +87,7 @@
             // 
             this.TxtFaltaPagar.Enabled = false;
             this.TxtFaltaPagar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFaltaPagar.Location = new System.Drawing.Point(189, 330);
+            this.TxtFaltaPagar.Location = new System.Drawing.Point(189, 368);
             this.TxtFaltaPagar.MaxLength = 11;
             this.TxtFaltaPagar.Name = "TxtFaltaPagar";
             this.TxtFaltaPagar.Size = new System.Drawing.Size(141, 26);
@@ -93,7 +99,7 @@
             // radLabel1
             // 
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(8, 331);
+            this.radLabel1.Location = new System.Drawing.Point(8, 369);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(86, 24);
             this.radLabel1.TabIndex = 44;
@@ -117,7 +123,7 @@
             // BtnAgregarPago
             // 
             this.BtnAgregarPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarPago.Location = new System.Drawing.Point(255, 140);
+            this.BtnAgregarPago.Location = new System.Drawing.Point(255, 178);
             this.BtnAgregarPago.Name = "BtnAgregarPago";
             this.BtnAgregarPago.Size = new System.Drawing.Size(75, 29);
             this.BtnAgregarPago.TabIndex = 5;
@@ -128,7 +134,7 @@
             // GrillaPagos
             // 
             this.GrillaPagos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GrillaPagos.Location = new System.Drawing.Point(8, 175);
+            this.GrillaPagos.Location = new System.Drawing.Point(8, 213);
             // 
             // GrillaPagos
             // 
@@ -173,7 +179,7 @@
             // 
             this.TxtTotalPagar.Enabled = false;
             this.TxtTotalPagar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotalPagar.Location = new System.Drawing.Point(189, 107);
+            this.TxtTotalPagar.Location = new System.Drawing.Point(189, 140);
             this.TxtTotalPagar.MaxLength = 11;
             this.TxtTotalPagar.Name = "TxtTotalPagar";
             this.TxtTotalPagar.Size = new System.Drawing.Size(141, 26);
@@ -185,7 +191,7 @@
             // metroLabel3
             // 
             this.metroLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel3.Location = new System.Drawing.Point(8, 109);
+            this.metroLabel3.Location = new System.Drawing.Point(8, 142);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(100, 24);
             this.metroLabel3.TabIndex = 38;
@@ -265,17 +271,56 @@
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(8, 77);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(68, 24);
+            this.radLabel2.Size = new System.Drawing.Size(131, 24);
             this.radLabel2.TabIndex = 37;
-            this.radLabel2.Text = "Créditos:";
+            this.radLabel2.Text = "Notas de créditos:";
             this.radLabel2.ThemeName = "TelerikMetroBlue";
+            // 
+            // TxtEgresos
+            // 
+            this.TxtEgresos.AceptaNegativos = false;
+            this.TxtEgresos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtEgresos.Location = new System.Drawing.Point(264, 108);
+            this.TxtEgresos.Name = "TxtEgresos";
+            this.TxtEgresos.Size = new System.Drawing.Size(66, 26);
+            this.TxtEgresos.TabIndex = 39;
+            this.TxtEgresos.TabStop = false;
+            this.TxtEgresos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtEgresos.ThemeName = "TelerikMetroBlue";
+            this.TxtEgresos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtEgresos_KeyUp);
+            // 
+            // TxtEgresosDisp
+            // 
+            this.TxtEgresosDisp.AceptaNegativos = false;
+            this.TxtEgresosDisp.Enabled = false;
+            this.TxtEgresosDisp.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtEgresosDisp.Location = new System.Drawing.Point(189, 108);
+            this.TxtEgresosDisp.Name = "TxtEgresosDisp";
+            this.TxtEgresosDisp.Size = new System.Drawing.Size(66, 26);
+            this.TxtEgresosDisp.TabIndex = 38;
+            this.TxtEgresosDisp.TabStop = false;
+            this.TxtEgresosDisp.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtEgresosDisp.ThemeName = "TelerikMetroBlue";
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel3.Location = new System.Drawing.Point(8, 110);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(91, 24);
+            this.radLabel3.TabIndex = 40;
+            this.radLabel3.Text = "Por Egresos:";
+            this.radLabel3.ThemeName = "TelerikMetroBlue";
             // 
             // UcTotalesCompraSeña
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.TxtEgresos);
             this.Controls.Add(this.TxtCreditos);
+            this.Controls.Add(this.TxtEgresosDisp);
             this.Controls.Add(this.TxtSenas);
+            this.Controls.Add(this.radLabel3);
             this.Controls.Add(this.TxtCreditoDisp);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.TxtFaltaPagar);
@@ -306,6 +351,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtCreditos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCreditoDisp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtEgresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtEgresosDisp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +379,8 @@
         private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtCreditos;
         private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtCreditoDisp;
         private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtEgresos;
+        private Framework.WinForm.Controls.CustomControls.DecimalTextBox TxtEgresosDisp;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
     }
 }

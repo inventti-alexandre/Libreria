@@ -109,6 +109,33 @@ namespace LaPaz.Win.Forms.Compras
             }
         }
 
+        public decimal? Egresos
+        {
+            get
+            {
+                decimal egresos;
+                return decimal.TryParse(TxtEgresos.Text, out egresos) ? egresos : (decimal?)null;
+            }
+            set
+            {
+                TxtEgresos.Text = value.HasValue ? value.Value.ToString("n2") : string.Empty;
+                ActualizarTotal();
+            }
+        }
+        public decimal? EgresosDisp
+        {
+            get
+            {
+                decimal egresos;
+                return decimal.TryParse(TxtEgresosDisp.Text, out egresos) ? egresos : (decimal?)null;
+            }
+            set
+            {
+                TxtEgresosDisp.Text = value.HasValue ? value.Value.ToString("n2") : string.Empty;
+            }
+        }
+
+
        public decimal? TotalPagar
         {
             get
@@ -148,7 +175,7 @@ namespace LaPaz.Win.Forms.Compras
 
         private void ActualizarTotal()
         {
-            TotalPagar = SubTotal.GetValueOrDefault() - Senas.GetValueOrDefault() - Creditos.GetValueOrDefault();
+            TotalPagar = SubTotal.GetValueOrDefault() - Senas.GetValueOrDefault() - Creditos.GetValueOrDefault() - Egresos.GetValueOrDefault();
             FaltaPagar = TotalPagar - TotalPagos();
         }
 
@@ -339,6 +366,7 @@ namespace LaPaz.Win.Forms.Compras
             }
         }
 
+      
         private void TxtTotalPagar_TextChanged(object sender, EventArgs e)
         {
             OnTotalAPagarChanged(TotalPagar);
@@ -461,6 +489,12 @@ namespace LaPaz.Win.Forms.Compras
         }
 
         private void TxtCreditos_KeyUp(object sender, KeyEventArgs e)
+        {
+            ActualizarTotal();
+            OnSeñaChanged();
+        }
+
+        private void TxtEgresos_KeyUp(object sender, KeyEventArgs e)
         {
             ActualizarTotal();
             OnSeñaChanged();

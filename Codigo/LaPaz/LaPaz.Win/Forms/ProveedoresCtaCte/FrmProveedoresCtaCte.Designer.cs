@@ -120,7 +120,7 @@
             // BtnCosas
             // 
             this.BtnCosas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCosas.Location = new System.Drawing.Point(119, 445);
+            this.BtnCosas.Location = new System.Drawing.Point(119, 458);
             this.BtnCosas.Name = "BtnCosas";
             this.BtnCosas.Size = new System.Drawing.Size(102, 29);
             this.BtnCosas.TabIndex = 9;
@@ -158,7 +158,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(227, 445);
+            this.BtnGuardar.Location = new System.Drawing.Point(227, 458);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(102, 29);
             this.BtnGuardar.TabIndex = 8;
@@ -170,6 +170,8 @@
             // 
             this.ucTotalesCompraSeña1.Creditos = null;
             this.ucTotalesCompraSeña1.CreditosDisp = null;
+            this.ucTotalesCompraSeña1.Egresos = null;
+            this.ucTotalesCompraSeña1.EgresosDisp = null;
             this.ucTotalesCompraSeña1.FaltaPagar = null;
             this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(3, 58);
             this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
@@ -344,7 +346,7 @@
             this.GridConsignaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GridConsignaciones.Location = new System.Drawing.Point(0, 33);
             // 
-            // GridConsignaciones
+            // 
             // 
             this.GridConsignaciones.MasterTemplate.AllowAddNewRow = false;
             this.GridConsignaciones.MasterTemplate.AllowColumnReorder = false;
@@ -541,7 +543,7 @@
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1257, 820);
+            this.ClientSize = new System.Drawing.Size(1265, 820);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.RpvPagos);

@@ -38,7 +38,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
         private Guid _pagoIdConsignacion;
         private int _celdasSeleccionadas = 0;
         private Proveedor _proveedor;
-
+        private TipoComprobanteEnum _tipoComprobante= TipoComprobanteEnum.NotaCreditoProveedor;
 
         public event EventHandler DevolucionRealizada;
 
@@ -200,7 +200,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
             proveedorMontoFavor.Id = Guid.NewGuid();
             proveedorMontoFavor.ProveedorId = _proveedor.Id;
-            proveedorMontoFavor.TipoComprobanteId = TipoComprobanteEnum.MontoFavorProveedor;
+            proveedorMontoFavor.TipoComprobanteId = _tipoComprobante;// TipoComprobanteEnum.MontoFavorProveedor;
             proveedorMontoFavor.LCN = GenerarLcnMontoFavor();
             proveedorMontoFavor.Concepto = TxtConcepto.Text;
             proveedorMontoFavor.Importe = Convert.ToDecimal(LblImporte.Text);
@@ -375,6 +375,16 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
             return "X" + "0001" + lcnNuevo.ToString().PadLeft(8, '0');
 
+        }
+
+        private void RbEgreso_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            _tipoComprobante= TipoComprobanteEnum.MontoFavorProveedor;
+        }
+
+        private void RbNotaCredito_ToggleStateChanged(object sender, StateChangedEventArgs args)
+        {
+            _tipoComprobante= TipoComprobanteEnum.NotaCreditoProveedor;
         }
 
 

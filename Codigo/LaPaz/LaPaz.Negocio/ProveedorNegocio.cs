@@ -150,10 +150,12 @@ namespace LaPaz.Negocio
                 (!activo.HasValue || x.Proveedor.Activo == activo) &&
                 (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
                 (!fechaConsigDesde.HasValue || x.FechaConsignacion >= fechaConsigDesde) &&
-                (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta) &&
-                (!pendientePago.HasValue ||
-                 (pendientePago.Value && ((x.Importe - x.Pagado) > 0 || x.Pagado == null))) ||
-                (!pendientePago.Value && ((x.Importe >= x.Pagado))));
+                (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta) 
+                //&&
+                //(!pendientePago.HasValue ||
+                // (pendientePago.Value && ((x.Importe - x.Pagado) > 0 || x.Pagado == null))) ||
+                //(!pendientePago.Value && ((x.Importe >= x.Pagado)))
+                );
 
             var resultados = Uow.TitulosConsignacionesRendidas.Listado(criteros, where, x => x.Proveedor);
 

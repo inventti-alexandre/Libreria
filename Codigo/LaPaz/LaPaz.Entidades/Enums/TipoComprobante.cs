@@ -44,6 +44,7 @@ namespace LaPaz.Entidades.Enums
         SeñaProveedor,
         FacturaAnulada,
         PagoProveedores,
-        MontoFavorProveedor
+        MontoFavorProveedor,
+        NotaCreditoProveedor
     }
 }

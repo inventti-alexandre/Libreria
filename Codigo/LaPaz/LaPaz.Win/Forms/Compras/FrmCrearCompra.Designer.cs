@@ -58,6 +58,7 @@ namespace LaPaz.Win.Forms.Compras
             this.RpObservaciones = new Telerik.WinControls.UI.RadPanel();
             this.ucCuentaCorrienteCompra = new LaPaz.Win.Forms.Compras.UcCuentaCorrienteCompra();
             this.ucTotalesCompraSeña1 = new LaPaz.Win.Forms.Compras.UcTotalesCompraSeña();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DtpFechaEmision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RpFecha)).BeginInit();
@@ -82,6 +83,8 @@ namespace LaPaz.Win.Forms.Compras
             ((System.ComponentModel.ISupportInitialize)(this.TxtObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RpObservaciones)).BeginInit();
             this.RpObservaciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,7 +98,7 @@ namespace LaPaz.Win.Forms.Compras
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(1021, 390);
+            this.BtnGuardar.Location = new System.Drawing.Point(227, 455);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(102, 29);
             this.BtnGuardar.TabIndex = 5;
@@ -347,25 +350,37 @@ namespace LaPaz.Win.Forms.Compras
             this.ucCuentaCorrienteCompra.SubTotal = null;
             this.ucCuentaCorrienteCompra.TabIndex = 16;
             this.ucCuentaCorrienteCompra.Total = null;
-            this.ucCuentaCorrienteCompra.Vencimiento = new System.DateTime(2015, 3, 21, 0, 0, 0, 0);
+            this.ucCuentaCorrienteCompra.Vencimiento = new System.DateTime(2015, 10, 26, 0, 0, 0, 0);
             // 
             // ucTotalesCompraSeña1
             // 
+            this.ucTotalesCompraSeña1.Creditos = null;
+            this.ucTotalesCompraSeña1.CreditosDisp = null;
+            this.ucTotalesCompraSeña1.Egresos = null;
+            this.ucTotalesCompraSeña1.EgresosDisp = null;
             this.ucTotalesCompraSeña1.FaltaPagar = null;
-            this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(795, 56);
+            this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(799, 56);
             this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
             this.ucTotalesCompraSeña1.Senas = null;
             this.ucTotalesCompraSeña1.SenasDisp = null;
-            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(340, 328);
+            this.ucTotalesCompraSeña1.Size = new System.Drawing.Size(340, 405);
             this.ucTotalesCompraSeña1.SubTotal = null;
             this.ucTotalesCompraSeña1.TabIndex = 17;
             this.ucTotalesCompraSeña1.TotalPagar = null;
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.Controls.Add(this.BtnGuardar);
+            this.radPanel1.Location = new System.Drawing.Point(795, 12);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Size = new System.Drawing.Size(349, 556);
+            this.radPanel1.TabIndex = 18;
             // 
             // FrmCrearCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 788);
+            this.ClientSize = new System.Drawing.Size(1242, 820);
             this.Controls.Add(this.ucTotalesCompraSeña1);
             this.Controls.Add(this.ucCuentaCorrienteCompra);
             this.Controls.Add(this.RpFactura);
@@ -375,8 +390,8 @@ namespace LaPaz.Win.Forms.Compras
             this.Controls.Add(this.RpRemito);
             this.Controls.Add(this.RpFecha);
             this.Controls.Add(this.ucTipoCompra);
-            this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.ucTitulosCompra);
+            this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCrearCompra";
             // 
@@ -414,6 +429,8 @@ namespace LaPaz.Win.Forms.Compras
             ((System.ComponentModel.ISupportInitialize)(this.RpObservaciones)).EndInit();
             this.RpObservaciones.ResumeLayout(false);
             this.RpObservaciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            this.radPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -445,6 +462,7 @@ namespace LaPaz.Win.Forms.Compras
         private Telerik.WinControls.UI.RadPanel RpObservaciones;
         private UcCuentaCorrienteCompra ucCuentaCorrienteCompra;
         private UcTotalesCompraSeña ucTotalesCompraSeña1;
+        private Telerik.WinControls.UI.RadPanel radPanel1;
 
     }
 }

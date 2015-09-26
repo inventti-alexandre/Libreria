@@ -652,6 +652,12 @@
     <Compile Include="Forms\ProveedoresGastos\FrmDetalleEliminarProveedorGasto.Designer.cs">
       <DependentUpon>FrmDetalleEliminarProveedorGasto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Proveedores\FrmProveedorMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Proveedores\FrmProveedorMovimientos.Designer.cs">
+      <DependentUpon>FrmProveedorMovimientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Proveedores\UcProveedorDetalle.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1488,6 +1494,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresGastos\FrmDetalleEliminarProveedorGasto.resx">
       <DependentUpon>FrmDetalleEliminarProveedorGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Proveedores\FrmProveedorMovimientos.resx">
+      <DependentUpon>FrmProveedorMovimientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Proveedores\UcProveedorDetalle.resx">
       <DependentUpon>UcProveedorDetalle.cs</DependentUpon>

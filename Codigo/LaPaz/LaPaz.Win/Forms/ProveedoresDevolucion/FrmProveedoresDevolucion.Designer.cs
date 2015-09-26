@@ -49,6 +49,9 @@
             this.ucTitulosCompra1 = new LaPaz.Win.Forms.Compras.UcTitulosCompra();
             this.ucTitulosCompra2 = new LaPaz.Win.Forms.Compras.UcTitulosCompra();
             this.ucTitulosCompra3 = new LaPaz.Win.Forms.Compras.UcTitulosCompra();
+            this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
+            this.RbNotaCredito = new Telerik.WinControls.UI.RadRadioButton();
+            this.RbEgreso = new Telerik.WinControls.UI.RadRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radTextBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LabelImporte)).BeginInit();
@@ -66,6 +69,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).BeginInit();
             this.radPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).BeginInit();
+            this.radPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.RbNotaCredito)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RbEgreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,6 +142,7 @@
             // 
             // radPanel1
             // 
+            this.radPanel1.Controls.Add(this.radPanel3);
             this.radPanel1.Controls.Add(this.TxtObservaciones);
             this.radPanel1.Controls.Add(this.radLabel5);
             this.radPanel1.Controls.Add(this.TxtConcepto);
@@ -204,7 +212,7 @@
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(612, 91);
+            this.BtnGuardar.Location = new System.Drawing.Point(824, 78);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(102, 29);
             this.BtnGuardar.TabIndex = 8;
@@ -253,9 +261,42 @@
             this.ucTitulosCompra3.Size = new System.Drawing.Size(889, 290);
             this.ucTitulosCompra3.TabIndex = 0;
             // 
+            // radPanel3
+            // 
+            this.radPanel3.Controls.Add(this.RbEgreso);
+            this.radPanel3.Controls.Add(this.RbNotaCredito);
+            this.radPanel3.Location = new System.Drawing.Point(759, 16);
+            this.radPanel3.Name = "radPanel3";
+            this.radPanel3.Size = new System.Drawing.Size(167, 56);
+            this.radPanel3.TabIndex = 14;
+            // 
+            // RbNotaCredito
+            // 
+            this.RbNotaCredito.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbNotaCredito.Location = new System.Drawing.Point(14, 7);
+            this.RbNotaCredito.Name = "RbNotaCredito";
+            this.RbNotaCredito.Size = new System.Drawing.Size(140, 18);
+            this.RbNotaCredito.TabIndex = 0;
+            this.RbNotaCredito.TabStop = true;
+            this.RbNotaCredito.Text = "Nota de crédito";
+            this.RbNotaCredito.ThemeName = "TelerikMetroBlue";
+            this.RbNotaCredito.ToggleState = Telerik.WinControls.Enumerations.ToggleState.On;
+            this.RbNotaCredito.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.RbNotaCredito_ToggleStateChanged);
+            // 
+            // RbEgreso
+            // 
+            this.RbEgreso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RbEgreso.Location = new System.Drawing.Point(14, 34);
+            this.RbEgreso.Name = "RbEgreso";
+            this.RbEgreso.Size = new System.Drawing.Size(140, 18);
+            this.RbEgreso.TabIndex = 1;
+            this.RbEgreso.Text = "Monto a favor";
+            this.RbEgreso.ThemeName = "TelerikMetroBlue";
+            this.RbEgreso.ToggleStateChanged += new Telerik.WinControls.UI.StateChangedEventHandler(this.RbEgreso_ToggleStateChanged);
+            // 
             // FrmProveedoresDevolucion
             // 
-            this.ClientSize = new System.Drawing.Size(1146, 622);
+            this.ClientSize = new System.Drawing.Size(1154, 658);
             this.ControlBox = false;
             this.Controls.Add(this.PnlProveedor);
             this.Controls.Add(this.radPanel1);
@@ -287,6 +328,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel2)).EndInit();
             this.radPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel3)).EndInit();
+            this.radPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.RbNotaCredito)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RbEgreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -314,5 +359,8 @@
         private Telerik.WinControls.UI.RadTextBox radTextBox1;
         private Telerik.WinControls.UI.RadTextBox radTextBox2;
         private Telerik.WinControls.UI.RadLabel LabelImporte;
+        private Telerik.WinControls.UI.RadPanel radPanel3;
+        private Telerik.WinControls.UI.RadRadioButton RbEgreso;
+        private Telerik.WinControls.UI.RadRadioButton RbNotaCredito;
     }
 }

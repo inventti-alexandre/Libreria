@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[TitulosConsignacionesDevueltaDetalles]
+﻿CREATE TABLE [dbo].[TitulosConsignacionesDevueltasDetalles]
 (
 	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
 	[TituloConsignacionDevueltaId] UNIQUEIDENTIFIER NOT NULL, 

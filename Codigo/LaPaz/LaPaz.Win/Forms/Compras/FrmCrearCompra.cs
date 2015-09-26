@@ -121,6 +121,7 @@ namespace LaPaz.Win.Forms.Compras
             this.ucCuentaCorrienteCompra.AnticipoChanged += UcCuentaCorrienteInfoOnAnticipoChanged;
             ucTotalesCompraSeña1.Senas = 0;
             ucTotalesCompraSeña1.Creditos = 0;
+            ucTotalesCompraSeña1.Egresos = 0;
             DtpFechaEmision.Value = _clock.Now;
             //Deshabilito los controles
             DeshabilitarEdicion();
@@ -129,7 +130,7 @@ namespace LaPaz.Win.Forms.Compras
         private void ucTotalesCompraSeñaOnSeñaChanged(object sender, EventArgs e)
         {
             if (ucCuentaCorrienteCompra.Visible == true)
-                ucCuentaCorrienteCompra.Anticipo = ucTotalesCompraSeña1.Senas + ucTotalesCompraSeña1.Creditos;
+                ucCuentaCorrienteCompra.Anticipo = ucTotalesCompraSeña1.Senas + ucTotalesCompraSeña1.Creditos + ucTotalesCompraSeña1.Egresos;
             ActualizarMontos();
         }
 
@@ -312,7 +313,7 @@ namespace LaPaz.Win.Forms.Compras
         private void ActualizarMontos()
         {
             ucCuentaCorrienteCompra.Total = this.ucTitulosCompra.CalcularSubTotal();
-            ucCuentaCorrienteCompra.Adeuda = this.ucTitulosCompra.CalcularSubTotal() - ucTotalesCompraSeña1.Senas - ucTotalesCompraSeña1.Creditos;
+            ucCuentaCorrienteCompra.Adeuda = this.ucTitulosCompra.CalcularSubTotal() - ucTotalesCompraSeña1.Senas - ucTotalesCompraSeña1.Creditos - ucTotalesCompraSeña1.Egresos;
             ucTotalesCompraSeña1.SubTotal = this.ucTitulosCompra.CalcularSubTotal();
 
             if (ucTotalesCompraSeña1.TotalPagar > 0)
@@ -353,7 +354,16 @@ namespace LaPaz.Win.Forms.Compras
         private decimal? CreditoAFavorProveedor(Guid proveedorId)
         {
             var proveedoresCreditoFavor = Uow.ProveedoresMontosFavor.Listado()
-                                      .Where(pmf => pmf.ProveedorId == proveedorId
+                                      .Where(pmf => pmf.ProveedorId == proveedorId && pmf.TipoComprobanteId == TipoComprobanteEnum.NotaCreditoProveedor
+                                                  && pmf.ImporteOcupado < pmf.Importe)
+                                      .ToList();
+            return proveedoresCreditoFavor.Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteOcupado.GetValueOrDefault());
+        }
+
+        private decimal? EgresoProveedor(Guid proveedorId)
+        {
+            var proveedoresCreditoFavor = Uow.ProveedoresMontosFavor.Listado()
+                                      .Where(pmf => pmf.ProveedorId == proveedorId && pmf.TipoComprobanteId == TipoComprobanteEnum.MontoFavorProveedor
                                                   && pmf.ImporteOcupado < pmf.Importe)
                                       .ToList();
             return proveedoresCreditoFavor.Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteOcupado.GetValueOrDefault());
@@ -371,12 +381,14 @@ namespace LaPaz.Win.Forms.Compras
                 {
                     ucTotalesCompraSeña1.SenasDisp = SeñaAFavorProveedor(_proveedor.Id);
                     ucTotalesCompraSeña1.CreditosDisp = CreditoAFavorProveedor(_proveedor.Id);
+                    ucTotalesCompraSeña1.EgresosDisp = EgresoProveedor(_proveedor.Id);
                     ucTotalesCompraSeña1.ActualizarMontosAFavor(ucTotalesCompraSeña1.SenasDisp);
                 }
                 else
                 {
                     ucTotalesCompraSeña1.SenasDisp = 0;
                     ucTotalesCompraSeña1.CreditosDisp = 0;
+                    ucTotalesCompraSeña1.EgresosDisp = 0;
                     ucTotalesCompraSeña1.ActualizarMontosAFavor(0);
                 }
             }
@@ -483,7 +495,7 @@ namespace LaPaz.Win.Forms.Compras
             //Compras
             Guid _idCompra = Guid.NewGuid();
             string _lcn = "";
-            PuntoVenta = 1;
+            PuntoVenta = Context.SucursalActual.SucursalNumero ?? 1;
             Compra compraNueva = new Compra();
 
             switch (ucTipoCompra.TipoComprobanteSeleccionado)
@@ -524,7 +536,7 @@ namespace LaPaz.Win.Forms.Compras
                 _ceros += "0";
             }
 
-            _lcn += LetraComprobante + "00" + PuntoVenta + _ceros + NumeroComprobante;
+            _lcn += LetraComprobante + PuntoVenta.ToString().PadLeft(3,'0')+ _ceros + NumeroComprobante;
             NumeroComprobante = TxtRemito1.Text + TxtRemito2.Text;
 
             //compraNueva.
@@ -552,7 +564,7 @@ namespace LaPaz.Win.Forms.Compras
             facturaCompra.TipoComprobante = ucTipoCompra.TipoComprobanteSeleccionado;
             facturaCompra.ProveedorId = _proveedor.Id;
             facturaCompra.LCN = _lcn;
-            facturaCompra.PuntoVenta = 1;
+            facturaCompra.PuntoVenta = PuntoVenta;
             facturaCompra.NumeroComprobante = NumeroComprobante;
             facturaCompra.Concepto = ucTipoCompra.TipoComprobanteSeleccionado.ToString();
             facturaCompra.FechaComprobante = _clock.Now;
@@ -578,7 +590,7 @@ namespace LaPaz.Win.Forms.Compras
             //remitoCompra.TipoComprobante = ucTipoCompra.TipoComprobanteSeleccionado;
             remitoCompra.ProveedorId = _proveedor.Id;
             remitoCompra.LCN = _lcn;
-            remitoCompra.PuntoVenta = 1;
+            remitoCompra.PuntoVenta = PuntoVenta;
             remitoCompra.NumeroComprobante = NumeroComprobante;
             remitoCompra.Concepto = ucTipoCompra.TipoComprobanteSeleccionado.ToString();
             remitoCompra.FechaComprobante = DtpFechaEmision.Value;
@@ -794,7 +806,7 @@ namespace LaPaz.Win.Forms.Compras
                         //aca descontamos las señas en el caso de que se utilicen. 
                         var _seña = UsoDeSeña();
                         var _credito = UsoDeCredito();
-
+                        var _egreso = UsoEgreso();
                        
 
                         if (efectivo > 0)
@@ -810,7 +822,7 @@ namespace LaPaz.Win.Forms.Compras
                             cajaMovimiento.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
                             cajaMovimiento.Efectivo = efectivo;
 
-                            cajaMovimiento.Senia = _seña + _credito;
+                            cajaMovimiento.Senia = _seña + _credito + _egreso ;
                             if (_seña > 0)
                             {
                                // cajaMovimiento.Senia = _seña;
@@ -823,6 +835,11 @@ namespace LaPaz.Win.Forms.Compras
                                 _credito = 0;
                             }
 
+                            if (_egreso > 0)
+                            {
+                                //cajaMovimiento.Senia += _credito;
+                                _egreso = 0;
+                            }
 
                             cajaMovimiento.FechaAlta = _clock.Now;
 
@@ -834,7 +851,7 @@ namespace LaPaz.Win.Forms.Compras
                             Uow.CajaMovimientos.Agregar(cajaMovimiento);
                         }
 
-                        if (tarjeta > 0 || deposito > 0 || cheque > 0 || efectivoCajaAnterior >0 || transferencia>0)
+                        if (tarjeta > 0 || deposito > 0 || cheque > 0 || efectivoCajaAnterior > 0 || transferencia > 0)
                         {
                             CajaMovimiento cajaMovimientoAnterior = new CajaMovimiento();
                             cajaMovimientoAnterior.Id = Guid.NewGuid();
@@ -859,7 +876,7 @@ namespace LaPaz.Win.Forms.Compras
                             cajaMovimientoAnterior.Cheque = cheque;
                             cajaMovimientoAnterior.Transferencia = transferencia;
 
-                            cajaMovimientoAnterior.Senia = _seña + _credito;
+                            cajaMovimientoAnterior.Senia = _seña + _credito + _egreso;
                           
                             //if (_seña > 0)
                             //{
@@ -943,6 +960,7 @@ namespace LaPaz.Win.Forms.Compras
                 //aca descontamos las señas en el caso de que se utilicen. 
                var _seña =  UsoDeSeña();
                var _credito = UsoDeCredito();
+                var _egreso = UsoEgreso();
 
                Caja caja = this.Context.CajaActual;
 
@@ -954,7 +972,7 @@ namespace LaPaz.Win.Forms.Compras
                cajaMovimiento.TipoComprobante = ucTipoCompra.TipoComprobanteSeleccionado;
                cajaMovimiento.ComprobanteId = compraNueva.Id;
 
-               cajaMovimiento.Senia = _seña + _credito;
+               cajaMovimiento.Senia = _seña + _credito + _egreso;
                           
 
                //if (_seña > 0)
@@ -1023,7 +1041,7 @@ namespace LaPaz.Win.Forms.Compras
                 var monto = Credito;
 
                 var proveedoresMontoFavor =
-                    Uow.ProveedoresMontosFavor.Listado().Where((ps => ps.ProveedorId == _proveedor.Id
+                    Uow.ProveedoresMontosFavor.Listado().Where((ps => ps.ProveedorId == _proveedor.Id && ps.TipoComprobanteId==TipoComprobanteEnum.NotaCreditoProveedor
                                                                  && ps.ImporteOcupado < ps.Importe)).OrderBy(
                                                                      p => p.FechaAlta).ToList();
 
@@ -1049,6 +1067,42 @@ namespace LaPaz.Win.Forms.Compras
                 }
             }
             return Credito;
+        }
+
+        private decimal? UsoEgreso()
+        {
+            decimal? egreso = (decimal?)ucTotalesCompraSeña1.Egresos;
+            if (egreso > 0)
+            {
+                var monto = egreso;
+
+                var proveedoresMontoFavor =
+                    Uow.ProveedoresMontosFavor.Listado().Where((ps => ps.ProveedorId == _proveedor.Id && ps.TipoComprobanteId==TipoComprobanteEnum.MontoFavorProveedor
+                                                                 && ps.ImporteOcupado < ps.Importe)).OrderBy(
+                                                                     p => p.FechaAlta).ToList();
+
+                foreach (ProveedoresMontosFavor proveedorEgreso in proveedoresMontoFavor)
+                {
+                    if (monto != null)
+                    {
+                        if (monto > 0)
+                        {
+                            if ((proveedorEgreso.Importe - proveedorEgreso.ImporteOcupado) >= monto)
+                            {
+                                proveedorEgreso.ImporteOcupado += monto;
+                                monto = 0;
+                            }
+                            else
+                            {
+                                monto -= (proveedorEgreso.Importe - proveedorEgreso.ImporteOcupado);
+                                proveedorEgreso.ImporteOcupado = proveedorEgreso.Importe;
+                            }
+                            Uow.ProveedoresMontosFavor.Modificar(proveedorEgreso);
+                        }
+                    }
+                }
+            }
+            return egreso;
         }
 
         private void OnCompraRealizada()
