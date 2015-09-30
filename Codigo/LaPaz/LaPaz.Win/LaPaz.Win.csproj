@@ -28,7 +28,7 @@
     <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/libreriaNuevo/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.16</MinimumRequiredVersion>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>148</ApplicationRevision>
+    <ApplicationRevision>151</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
