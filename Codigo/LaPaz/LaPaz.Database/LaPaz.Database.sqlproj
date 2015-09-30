@@ -334,6 +334,7 @@
     <Build Include="dbo\Tables\TitulosConsignacionesDevueltas.sql" />
     <Build Include="dbo\Tables\TitulosConsignacionesDevueltasDetalles.sql" />
     <None Include="Scripts\Post-Deploy\TipoComprobante-NotaCreditoProveedor.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_Proveedor_General.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LaPaz.Database.refactorlog" />

@@ -17,6 +17,8 @@ namespace LaPaz.Negocio.Interfaces
 
         List<ReporteCajaResumidaVentasRow> CajaResumidaVentas(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId);
 
+        List<Reporte_Proveedor_General_Result> ReporteProveedorGeneral(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? proveedorId);
+
         List<ReporteCajaResumidaIngresosEgreso> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId);
 
         List<ReporteCajaResumidaIngresosEgreso> CajaResumidaEgresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId);

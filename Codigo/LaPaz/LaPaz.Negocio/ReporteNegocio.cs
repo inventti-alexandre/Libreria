@@ -35,6 +35,11 @@ namespace LaPaz.Negocio
             return Uow.Reportes.CajaResumidaVentas(inicio, fin, sucursalId, operadorId);
         }
 
+        public List<Reporte_Proveedor_General_Result> ReporteProveedorGeneral(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? proveedorId)
+        {
+            return Uow.Reportes.ReporteProveedorGeneral(inicio, fin, sucursalId, operadorId, proveedorId);
+        }
+        
         public List<ReporteCajaResumidaIngresosEgreso> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
         {
             return Uow.Reportes.CajaResumidaIngresos(inicio, fin, sucursalId, operadorId);

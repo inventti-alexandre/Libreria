@@ -688,6 +688,12 @@
     <Compile Include="Forms\OrdenesPagos\UcFiltrosOrdenesPago.Designer.cs">
       <DependentUpon>UcFiltrosOrdenesPago.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Reportes\FrmProveedorGeneral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes\FrmProveedorGeneral.Designer.cs">
+      <DependentUpon>FrmProveedorGeneral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Reportes\FrmClientesPorTitulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1512,6 +1518,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrdenesPagos\UcFiltrosOrdenesPago.resx">
       <DependentUpon>UcFiltrosOrdenesPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes\FrmProveedorGeneral.resx">
+      <DependentUpon>FrmProveedorGeneral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reportes\FrmClientesPorTitulo.resx">
       <DependentUpon>FrmClientesPorTitulo.cs</DependentUpon>

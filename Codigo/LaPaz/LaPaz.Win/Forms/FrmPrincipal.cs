@@ -698,6 +698,12 @@ namespace LaPaz.Win.Forms
             AbrirTab(crearDevolucion);
         }
 
+        private void radMenuItem5_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmProveedorGeneral>();
+            AbrirTab(pantalla);
+        }
+
         
     }
 }

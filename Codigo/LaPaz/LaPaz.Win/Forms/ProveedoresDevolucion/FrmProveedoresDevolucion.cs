@@ -266,7 +266,8 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             titulosConsignacionesDevueltasDetalle.Id = Guid.NewGuid();
             titulosConsignacionesDevueltasDetalle.TituloConsignacionDevueltaId = tituloconsignaciondevuelta;
             titulosConsignacionesDevueltasDetalle.TituloId = devolucionTitulo.TituloId;
-            titulosConsignacionesDevueltasDetalle.Cantidad = _propia + _consignada;
+            //titulosConsignacionesDevueltasDetalle.Cantidad = _propia + _consignada;
+            titulosConsignacionesDevueltasDetalle.Cantidad =  _consignada ?? 0;
             Uow.TitulosConsignacionesDevueltasDetalles.Agregar(titulosConsignacionesDevueltasDetalle);
         }
 
