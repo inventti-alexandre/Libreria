@@ -75,7 +75,7 @@
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(44, 24);
             this.metroLabel7.TabIndex = 34;
-            this.metroLabel7.Text = "Seña:";
+            this.metroLabel7.Text = "Anticipo:";
             this.metroLabel7.ThemeName = "TelerikMetroBlue";
             // 
             // TxtAdeuda

@@ -150,11 +150,11 @@ namespace LaPaz.Negocio
                 (!activo.HasValue || x.Proveedor.Activo == activo) &&
                 (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
                 (!fechaConsigDesde.HasValue || x.FechaConsignacion >= fechaConsigDesde) &&
-                (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta) 
-                //&&
-                //(!pendientePago.HasValue ||
-                // (pendientePago.Value && ((x.Importe - x.Pagado) > 0 || x.Pagado == null))) ||
-                //(!pendientePago.Value && ((x.Importe >= x.Pagado)))
+                (!fechaConsigHasta.HasValue || x.FechaConsignacion <= fechaConsigHasta)
+                &&
+                (!pendientePago.HasValue ||
+                 (pendientePago.Value && ((x.Importe - x.Pagado) > 0 || x.Pagado == null))) ||
+                (!pendientePago.Value && ((x.Importe >= x.Pagado)))
                 );
 
             var resultados = Uow.TitulosConsignacionesRendidas.Listado(criteros, where, x => x.Proveedor);
@@ -162,6 +162,13 @@ namespace LaPaz.Negocio
             pageTotal = resultados.PagedMetadata.TotalItemCount;
 
             return resultados.Entities.Project().To<ProveedorConsignacionDto>().ToList();
+        }
+
+       
+
+        public List<ProveedorConsignacionDto> ProveedorConsignacionHistorial(string sortBy, string sortDirection, Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta, int sucursalId, int pageIndex, int pageSize, out int pageTotal)
+        {
+            return ProveedorConsignacion(sortBy, sortDirection, proveedorId, null, null, null, activo, fechaConsigDesde, fechaConsigHasta, null, sucursalId, pageIndex, pageSize, out pageTotal);
         }
 
         public TituloConsignacionRendidaDto ObtenerTituloConsignacionPorId(Guid tituloConsignacionRendidaId)

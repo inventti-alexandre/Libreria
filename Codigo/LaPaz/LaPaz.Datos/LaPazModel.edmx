@@ -7137,6 +7137,20 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
           <Parameter Name="ProveedorId" Type="uniqueidentifier" Mode="In" />
         </Function>
+        <Function Name="Reporte_Proveedor_General_AFavor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SucursalId" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+          <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+          <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProveedorId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="Reporte_Proveedor_General_Pagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SucursalId" Type="int" Mode="In" />
+          <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
+          <Parameter Name="FechaFin" Type="datetime" Mode="In" />
+          <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ProveedorId" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="Reporte_TarjetasChequesYDepositos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SucursalId" Type="int" Mode="In" />
           <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
@@ -10474,6 +10488,20 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <End Role="TitulosConsignacionesDevueltasDetalle" EntitySet="TitulosConsignacionesDevueltasDetalles" />
           </AssociationSet>
           <FunctionImport Name="Reporte_Proveedor_General" ReturnType="Collection(LaPaz.Datos.Reporte_Proveedor_General_Result)">
+            <Parameter Name="SucursalId" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+            <Parameter Name="OperadorId" Mode="In" Type="Guid" />
+            <Parameter Name="ProveedorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="Reporte_Proveedor_General_Pagos" ReturnType="Collection(LaPaz.Datos.Reporte_Proveedor_General_Pagos_Result)">
+            <Parameter Name="SucursalId" Mode="In" Type="Int32" />
+            <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
+            <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
+            <Parameter Name="OperadorId" Mode="In" Type="Guid" />
+            <Parameter Name="ProveedorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="Reporte_Proveedor_General_AFavor" ReturnType="Collection(LaPaz.Datos.Reporte_Proveedor_General_AFavor_Result)">
             <Parameter Name="SucursalId" Mode="In" Type="Int32" />
             <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
@@ -18277,6 +18305,16 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="Int32" Name="Cantidad" Nullable="false" />
           <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
         </ComplexType>
+        <ComplexType Name="Reporte_Proveedor_General_Pagos_Result">
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
+        </ComplexType>
+        <ComplexType Name="Reporte_Proveedor_General_AFavor_Result">
+          <Property Type="String" Name="Nombre" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Cantidad" Nullable="false" />
+          <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -21752,6 +21790,24 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <FunctionImportMapping FunctionImportName="Reporte_Proveedor_General" FunctionName="LaPaz.Datos.Store.Reporte_Proveedor_General">
             <ResultMapping>
               <ComplexTypeMapping TypeName="LaPaz.Datos.Reporte_Proveedor_General_Result">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Reporte_Proveedor_General_Pagos" FunctionName="LaPaz.Datos.Store.Reporte_Proveedor_General_Pagos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaPaz.Datos.Reporte_Proveedor_General_Pagos_Result">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Reporte_Proveedor_General_AFavor" FunctionName="LaPaz.Datos.Store.Reporte_Proveedor_General_AFavor">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaPaz.Datos.Reporte_Proveedor_General_AFavor_Result">
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Total" ColumnName="Total" />

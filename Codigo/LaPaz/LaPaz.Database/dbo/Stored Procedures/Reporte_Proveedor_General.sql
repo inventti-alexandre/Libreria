@@ -26,13 +26,15 @@ BEGIN
 	(
 		Concepto varchar(50),
 		Cantidad int,
-		Total money
+		Total money,
+		Tipo int
 	)
 				
 	INSERT INTO @Temp
 	SELECT C.Concepto,
 			COUNT(*),
-			SUM(C.ImporteNeto)
+			SUM(C.ImporteNeto),
+			C.TipoComprobanteId
 	FROM Compras C
 		--LEFT JOIN @Conceptos C
 			--ON CM.TipoMovimientoCajaId = C.Id
@@ -50,13 +52,13 @@ BEGIN
 			AND C.SucursalAltaId = @SucursalId
 			AND C.ProveedorId = @ProveedorId
 			--AND (@OperadorId IS NULL OR @OperadorId = CM)
-	GROUP BY C.Concepto
+	GROUP BY C.Concepto, c.TipoComprobanteId
 		
 	SELECT C.Nombre,
 		   Cantidad = ISNULL(CTE.Cantidad, 0),
 		   Total = ISNULL(CTE.Total, 0)
 	FROM @Conceptos C
 		LEFT JOIN @Temp CTE
-			ON C.Nombre = CTE.Concepto
+			ON C.Id = CTE.tipo
 END
 --RETURN 0

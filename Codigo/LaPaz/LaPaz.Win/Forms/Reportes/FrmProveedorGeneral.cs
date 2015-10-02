@@ -50,15 +50,15 @@ namespace LaPaz.Win.Forms.Reportes
             var inicio = SetTimeToZero(DtpFechaInicio.Value);
             var fin = SetTimeToZero(DtpFechaFin.Value.AddDays(1));
 
-            Guid? operadorId = ucFiltroOperadores.OperadorId;
+            Guid? proveedorId = ucFiltroProveedor.ProveedorId;
 
-            var operador = operadorId == null
-                               ? "TODOS"
-                               : ucFiltroOperadores.Operador.Usuario;
+            //var proveedor = proveedorId == null
+            //                   ? "TODOS"
+            //                   : ucFiltroOperadores.Operador.Usuario;
 
-            var compras = _reporteNegocio.ReporteProveedorGeneral(inicio, fin, Context.SucursalActual.Id, operadorId, null);
-            //var ventas = _reporteNegocio.CajaResumidaVentas(inicio, fin, Context.SucursalActual.Id, operadorId);
-            //var ingresos = _reporteNegocio.CajaResumidaIngresos(inicio, fin, Context.SucursalActual.Id, operadorId);
+            var compras = _reporteNegocio.ReporteProveedorGeneral(inicio, fin, Context.SucursalActual.Id, null, proveedorId);
+            var pagos = _reporteNegocio.ReporteProveedorGeneralPagos(inicio, fin, Context.SucursalActual.Id, null, proveedorId);
+            var montofavor = _reporteNegocio.ReporteProveedorGeneralAFavor(inicio, fin, Context.SucursalActual.Id, null, proveedorId);
             //var egresos = _reporteNegocio.CajaResumidaEgresos(inicio, fin, Context.SucursalActual.Id, operadorId);
             //var composicionIngresos = _reporteNegocio.CajaResumidaComposicionIngresos(inicio, fin, Context.SucursalActual.Id, operadorId);
             //var composicionEgresos = _reporteNegocio.CajaResumidaComposicionEgresos(inicio, fin, Context.SucursalActual.Id, operadorId);
@@ -72,8 +72,8 @@ namespace LaPaz.Win.Forms.Reportes
             //};
 
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Compras", compras));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Ingresos", ingresos));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Egresos", egresos));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Pagos", pagos));
+            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("MontosFavor", montofavor));
             //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", composicionIngresos));
             //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ComposicionEgresos", composicionEgresos));
             //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ComposicionVentas", composicionVentas));
@@ -93,8 +93,8 @@ namespace LaPaz.Win.Forms.Reportes
                                     new ReportParameter("Hora", hora),
                                     new ReportParameter("Desde", DtpFechaInicio.Value.ToShortDateString()),
                                     new ReportParameter("Hasta", DtpFechaFin.Value.ToShortDateString()),
-                                    new ReportParameter("Operador", operador),
-                                    //new ReportParameter("Proveedor", null)
+                                   // new ReportParameter("OperadorId", null),
+                                    new ReportParameter("ProveedorId", proveedorId.ToString())
                                 };
             reportViewer1.LocalReport.SetParameters(parametros);
             this.reportViewer1.RefreshReport();

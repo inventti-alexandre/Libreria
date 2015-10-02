@@ -51,6 +51,16 @@ namespace LaPaz.Datos.Repositorio
             return LaPazEntities.Reporte_Proveedor_General(sucursalId, inicio, fin, operadorId, proveedorId).ToList();
         }
 
+        public List<Reporte_Proveedor_General_Pagos_Result> ReporteProveedorGeneralPagos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? proveedorId)
+        {
+            return LaPazEntities.Reporte_Proveedor_General_Pagos(sucursalId, inicio, fin, operadorId, proveedorId).ToList();
+        }
+
+        public List<Reporte_Proveedor_General_AFavor_Result> ReporteProveedorGeneralAFavor(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId, Guid? proveedorId)
+        {
+            return LaPazEntities.Reporte_Proveedor_General_AFavor(sucursalId, inicio, fin, operadorId, proveedorId).ToList();
+        }
+
         public List<ReporteCajaResumidaIngresosEgreso> CajaResumidaIngresos(DateTime inicio, DateTime fin, int sucursalId, Guid? operadorId)
         {
             return LaPazEntities.ReporteCajaResumidaIngresos(sucursalId, inicio, fin, operadorId).ToList();

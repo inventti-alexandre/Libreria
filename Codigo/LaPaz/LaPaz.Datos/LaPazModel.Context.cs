@@ -737,5 +737,55 @@ namespace LaPaz.Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_Proveedor_General_Result>("Reporte_Proveedor_General", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, proveedorIdParameter);
         }
+    
+        public virtual ObjectResult<Reporte_Proveedor_General_Pagos_Result> Reporte_Proveedor_General_Pagos(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> proveedorId)
+        {
+            var sucursalIdParameter = sucursalId.HasValue ?
+                new ObjectParameter("SucursalId", sucursalId) :
+                new ObjectParameter("SucursalId", typeof(int));
+    
+            var fechaInicioParameter = fechaInicio.HasValue ?
+                new ObjectParameter("FechaInicio", fechaInicio) :
+                new ObjectParameter("FechaInicio", typeof(System.DateTime));
+    
+            var fechaFinParameter = fechaFin.HasValue ?
+                new ObjectParameter("FechaFin", fechaFin) :
+                new ObjectParameter("FechaFin", typeof(System.DateTime));
+    
+            var operadorIdParameter = operadorId.HasValue ?
+                new ObjectParameter("OperadorId", operadorId) :
+                new ObjectParameter("OperadorId", typeof(System.Guid));
+    
+            var proveedorIdParameter = proveedorId.HasValue ?
+                new ObjectParameter("ProveedorId", proveedorId) :
+                new ObjectParameter("ProveedorId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_Proveedor_General_Pagos_Result>("Reporte_Proveedor_General_Pagos", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, proveedorIdParameter);
+        }
+    
+        public virtual ObjectResult<Reporte_Proveedor_General_AFavor_Result> Reporte_Proveedor_General_AFavor(Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<System.Guid> operadorId, Nullable<System.Guid> proveedorId)
+        {
+            var sucursalIdParameter = sucursalId.HasValue ?
+                new ObjectParameter("SucursalId", sucursalId) :
+                new ObjectParameter("SucursalId", typeof(int));
+    
+            var fechaInicioParameter = fechaInicio.HasValue ?
+                new ObjectParameter("FechaInicio", fechaInicio) :
+                new ObjectParameter("FechaInicio", typeof(System.DateTime));
+    
+            var fechaFinParameter = fechaFin.HasValue ?
+                new ObjectParameter("FechaFin", fechaFin) :
+                new ObjectParameter("FechaFin", typeof(System.DateTime));
+    
+            var operadorIdParameter = operadorId.HasValue ?
+                new ObjectParameter("OperadorId", operadorId) :
+                new ObjectParameter("OperadorId", typeof(System.Guid));
+    
+            var proveedorIdParameter = proveedorId.HasValue ?
+                new ObjectParameter("ProveedorId", proveedorId) :
+                new ObjectParameter("ProveedorId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_Proveedor_General_AFavor_Result>("Reporte_Proveedor_General_AFavor", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, proveedorIdParameter);
+        }
     }
 }

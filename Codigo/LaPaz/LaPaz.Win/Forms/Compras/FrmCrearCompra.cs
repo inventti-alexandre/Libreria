@@ -973,14 +973,116 @@ namespace LaPaz.Win.Forms.Compras
                cajaMovimiento.ComprobanteId = compraNueva.Id;
 
                cajaMovimiento.Senia = _seña + _credito + _egreso;
-                          
-
-               //if (_seña > 0)
-               //{
-               //    cajaMovimiento.Senia = _seña;
-               //}
-
                cajaMovimiento.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
+
+               //////////////////////////////////////////////////////////////////////////////
+               if (efectivo > 0)
+               {
+                   cajaMovimiento.Importe = efectivo;
+                   cajaMovimiento.Efectivo = efectivo;
+
+                   cajaMovimiento.Senia = _seña + _credito + _egreso;
+               }
+
+                  if (tarjeta > 0 || deposito > 0 || cheque > 0 || efectivoCajaAnterior > 0 || transferencia > 0)
+                        {
+                            CajaMovimiento cajaMovimientoAnterior = new CajaMovimiento();
+                            cajaMovimientoAnterior.Id = Guid.NewGuid();
+                            cajaMovimientoAnterior.CajaId = caja.Id;
+
+                            cajaMovimientoAnterior.TipoMovimientoCajaId =
+                                TipoMovimientoCajaEnum.PagoProveedorCajaAnterior;
+                            cajaMovimientoAnterior.ComprobanteId = compraNueva.Id;
+                            cajaMovimientoAnterior.Importe = tarjeta+deposito+cheque+efectivoCajaAnterior+transferencia;
+                            cajaMovimientoAnterior.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
+                            cajaMovimientoAnterior.FechaAlta = _clock.Now;
+                            cajaMovimientoAnterior.FechaModificacion = _clock.Now;
+                            cajaMovimientoAnterior.PcAlta = System.Environment.MachineName;
+                            cajaMovimientoAnterior.OperadorAltaId = Context.OperadorActual.Id;
+                            cajaMovimientoAnterior.SucursalAltaId = Context.SucursalActual.Id;
+                            cajaMovimientoAnterior.OperadorModificacionId = Context.OperadorActual.Id;
+                            cajaMovimientoAnterior.SucursalModificacionId = Context.SucursalActual.Id;
+                            cajaMovimientoAnterior.TipoComprobante = ucTipoCompra.TipoComprobanteSeleccionado; // TipoComprobanteEnum.FacCpraContado;
+                            cajaMovimientoAnterior.Efectivo = efectivoCajaAnterior;
+                            cajaMovimientoAnterior.Tarjeta = tarjeta;
+                            cajaMovimientoAnterior.Deposito = deposito;
+                            cajaMovimientoAnterior.Cheque = cheque;
+                            cajaMovimientoAnterior.Transferencia = transferencia;
+
+                            cajaMovimientoAnterior.Senia = _seña + _credito + _egreso;
+                          
+                            //if (_seña > 0)
+                            //{
+                            //    cajaMovimientoAnterior.Senia = _seña;
+                            //}
+
+                          
+                            Uow.CajaMovimientos.Agregar(cajaMovimientoAnterior);
+
+                            //Guardamos el movimiento del depósito
+                             foreach (var pago in ucTotalesCompraSeña1.Pagos)
+                            {
+                                switch (pago.TipoPago)
+                                {
+                                    case FormaPago.Cheque:
+                                       // HACER ALGO
+                                        break;
+
+                                    case FormaPago.Deposito:
+                                        var pagoDeposito = pago as VentaPagoDeposito;
+                                        
+                                        CuentasMovimiento cuentasMovimiento = new CuentasMovimiento();
+                                        cuentasMovimiento.CuentaId = pagoDeposito.CuentaId ?? 0;
+                                        cuentasMovimiento.TipoMovimientoId = 1;//Deposito a proveedor
+                                        cuentasMovimiento.FechaMovimiento = pagoDeposito.Fecha;
+                                        cuentasMovimiento.EstadoMovimientoCuentaId = 0;
+                                        cuentasMovimiento.TipoComprobanteId = ucTipoCompra.TipoComprobanteSeleccionado;
+                                        cuentasMovimiento.ComprobanteId = compraNueva.Id;
+                                        cuentasMovimiento.MonedaId = 0;
+                                        cuentasMovimiento.NroMovimiento = pagoDeposito.Numero;
+                                        cuentasMovimiento.Descripcion = "DEPOSITO NRO " + pagoDeposito.Numero.ToString();
+                                        cuentasMovimiento.FechaCobro = _clock.Now;
+                                        cuentasMovimiento.Debito = pago.Importe;
+                                        cuentasMovimiento.Credito = 0;
+                                        cuentasMovimiento.TipoCarga = 1;
+                                        cuentasMovimiento.CajaId = caja.Id;
+                                        cuentasMovimiento.FechaAlta = _clock.Now;
+                                        cuentasMovimiento.OperadorAltaId = Context.OperadorActual.Id;
+                                        cuentasMovimiento.SucursalAltaId = Context.SucursalActual.Id;
+
+                                        Uow.CuentasMovimientos.Agregar(cuentasMovimiento);
+                                        break;
+
+                                    case FormaPago.Transferencia:
+                                        var pagoTransferencia = pago as VentaPagoTransferencia;
+                                        
+                                        CuentasMovimiento cuentasMovimientoTransferecia = new CuentasMovimiento();
+                                        cuentasMovimientoTransferecia.CuentaId = pagoTransferencia.CuentaId ?? 0;
+                                        cuentasMovimientoTransferecia.TipoMovimientoId = 1;//Deposito a proveedor
+                                        cuentasMovimientoTransferecia.FechaMovimiento = pagoTransferencia.Fecha;
+                                        cuentasMovimientoTransferecia.EstadoMovimientoCuentaId = 0;
+                                        cuentasMovimientoTransferecia.TipoComprobanteId = ucTipoCompra.TipoComprobanteSeleccionado;
+                                        cuentasMovimientoTransferecia.ComprobanteId = compraNueva.Id;
+                                        cuentasMovimientoTransferecia.MonedaId = 0;
+                                        cuentasMovimientoTransferecia.NroMovimiento = pagoTransferencia.Numero;
+                                        cuentasMovimientoTransferecia.Descripcion = "TRANSFERENCIA NRO " + pagoTransferencia.Numero.ToString();
+                                        cuentasMovimientoTransferecia.FechaCobro = _clock.Now;
+                                        cuentasMovimientoTransferecia.Debito = pago.Importe;
+                                        cuentasMovimientoTransferecia.Credito = 0;
+                                        cuentasMovimientoTransferecia.TipoCarga = 1;
+                                        cuentasMovimientoTransferecia.CajaId = caja.Id;
+                                        cuentasMovimientoTransferecia.FechaAlta = _clock.Now;
+                                        cuentasMovimientoTransferecia.OperadorAltaId = Context.OperadorActual.Id;
+                                        cuentasMovimientoTransferecia.SucursalAltaId = Context.SucursalActual.Id;
+
+                                        Uow.CuentasMovimientos.Agregar(cuentasMovimientoTransferecia);
+                                        break;
+                                }
+                            }
+                           
+                        }
+
+                //////////////////////////////////////////////////////////////////////////////
 
                cajaMovimiento.PcAlta = System.Environment.MachineName;
                cajaMovimiento.FechaAlta = _clock.Now;

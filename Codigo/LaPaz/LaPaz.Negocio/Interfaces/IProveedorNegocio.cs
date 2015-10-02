@@ -32,6 +32,11 @@ namespace LaPaz.Negocio.Interfaces
             int sucursalId, int pageIndex,
             int pageSize, out int pageTotal);
 
+        List<ProveedorConsignacionDto> ProveedorConsignacionHistorial(string sortBy, string sortDirection,
+         Guid? proveedorId, bool? activo, DateTime? fechaConsigDesde, DateTime? fechaConsigHasta,
+         int sucursalId, int pageIndex,
+         int pageSize, out int pageTotal);
+
         TituloConsignacionRendidaDto ObtenerTituloConsignacionPorId(Guid tituloConsignacionRendidaId);
 
         decimal SenaAFavorProveedor(Guid proveedorId, int sucursalId);

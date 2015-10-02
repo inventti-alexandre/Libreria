@@ -50,7 +50,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             UcProgressSpinner.Show();
 
             var proveedoresConsignacion = await Task.Run(() =>
-                _proveedorNegocio.ProveedorConsignacion(string.Empty, string.Empty, proveedorId, null,
+                _proveedorNegocio.ProveedorConsignacionHistorial(string.Empty, string.Empty, proveedorId, null,
                     desde,
                     hasta,
                     Context.SucursalActual.Id,

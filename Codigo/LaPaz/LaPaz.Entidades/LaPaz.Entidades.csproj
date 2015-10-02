@@ -487,6 +487,12 @@
     <Compile Include="ReporteVentasRow.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Reporte_Proveedor_General_AFavor_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Proveedor_General_Pagos_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Reporte_Proveedor_General_Result.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
