@@ -23,6 +23,7 @@ namespace LaPaz.Win.Forms.Consignaciones
         private readonly IConsignacionNegocio _consignacionNegocio;
         private Proveedor Proveedor { get; set; }
         private decimal _total;
+        private int _cantidad;
 
         public FrmRendicionConsignaciones(IFormFactory formFactory, ILaPazUow uow, IConsignacionNegocio consignacionNegocio)
         {
@@ -93,7 +94,9 @@ namespace LaPaz.Win.Forms.Consignaciones
             lblObservaciones.Visible = true;
             TxtObservaciones.Visible = true;
             _total = listado.Sum(x => x.TotalARendir);
+            _cantidad = listado.Sum(x => x.CantidadARendir);
             lblTotalValue.Text = String.Format("${0}", _total.ToString("N2"));
+            lblTotalCantidad.Text = _cantidad.ToString();
         }
 
 

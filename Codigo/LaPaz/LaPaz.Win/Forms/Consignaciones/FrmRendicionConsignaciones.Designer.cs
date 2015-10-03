@@ -35,6 +35,8 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlAcciones = new System.Windows.Forms.Panel();
+            this.lblTotalCantidad = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.BtnImprimir = new Telerik.WinControls.UI.RadButton();
             this.lblObservaciones = new Telerik.WinControls.UI.RadLabel();
             this.TxtObservaciones = new Telerik.WinControls.UI.RadTextBox();
@@ -108,6 +110,8 @@ namespace LaPaz.Win.Forms.Consignaciones
             // 
             // pnlAcciones
             // 
+            this.pnlAcciones.Controls.Add(this.lblTotalCantidad);
+            this.pnlAcciones.Controls.Add(this.label1);
             this.pnlAcciones.Controls.Add(this.BtnImprimir);
             this.pnlAcciones.Controls.Add(this.lblObservaciones);
             this.pnlAcciones.Controls.Add(this.TxtObservaciones);
@@ -121,11 +125,31 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.pnlAcciones.TabIndex = 97;
             this.pnlAcciones.Visible = false;
             // 
+            // lblTotalCantidad
+            // 
+            this.lblTotalCantidad.AutoSize = true;
+            this.lblTotalCantidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalCantidad.Location = new System.Drawing.Point(377, 28);
+            this.lblTotalCantidad.Name = "lblTotalCantidad";
+            this.lblTotalCantidad.Size = new System.Drawing.Size(19, 21);
+            this.lblTotalCantidad.TabIndex = 98;
+            this.lblTotalCantidad.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(268, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 21);
+            this.label1.TabIndex = 97;
+            this.label1.Text = "Cantidad:";
+            // 
             // BtnImprimir
             // 
             this.BtnImprimir.Enabled = false;
             this.BtnImprimir.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnImprimir.Location = new System.Drawing.Point(380, 35);
+            this.BtnImprimir.Location = new System.Drawing.Point(377, 58);
             this.BtnImprimir.Name = "BtnImprimir";
             this.BtnImprimir.Size = new System.Drawing.Size(88, 29);
             this.BtnImprimir.TabIndex = 8;
@@ -163,7 +187,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             // 
             this.BtnGuardar.Enabled = false;
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(272, 35);
+            this.BtnGuardar.Location = new System.Drawing.Point(272, 58);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(90, 29);
             this.BtnGuardar.TabIndex = 6;
@@ -176,7 +200,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.chxImprimir.AutoSize = true;
             this.chxImprimir.Enabled = false;
             this.chxImprimir.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.chxImprimir.Location = new System.Drawing.Point(272, 65);
+            this.chxImprimir.Location = new System.Drawing.Point(509, 68);
             this.chxImprimir.Name = "chxImprimir";
             this.chxImprimir.Size = new System.Drawing.Size(72, 19);
             this.chxImprimir.TabIndex = 7;
@@ -186,10 +210,10 @@ namespace LaPaz.Win.Forms.Consignaciones
             // lblTotalValue
             // 
             this.lblTotalValue.AutoSize = true;
-            this.lblTotalValue.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalValue.Location = new System.Drawing.Point(393, 9);
+            this.lblTotalValue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalValue.Location = new System.Drawing.Point(377, 4);
             this.lblTotalValue.Name = "lblTotalValue";
-            this.lblTotalValue.Size = new System.Drawing.Size(56, 25);
+            this.lblTotalValue.Size = new System.Drawing.Size(46, 21);
             this.lblTotalValue.TabIndex = 9;
             this.lblTotalValue.Text = "$500";
             this.lblTotalValue.Visible = false;
@@ -197,17 +221,18 @@ namespace LaPaz.Win.Forms.Consignaciones
             // lblTotal1
             // 
             this.lblTotal1.AutoSize = true;
-            this.lblTotal1.Location = new System.Drawing.Point(267, 9);
+            this.lblTotal1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal1.Location = new System.Drawing.Point(267, 4);
             this.lblTotal1.Name = "lblTotal1";
-            this.lblTotal1.Size = new System.Drawing.Size(129, 25);
+            this.lblTotal1.Size = new System.Drawing.Size(105, 21);
             this.lblTotal1.TabIndex = 8;
             this.lblTotal1.Text = "Total General:";
             this.lblTotal1.Visible = false;
             // 
             // ucFiltrosConsignaciones
             // 
-            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 8, 17, 10, 57, 54, 589);
-            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 9, 17, 10, 57, 54, 582);
+            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 9, 3, 11, 43, 43, 745);
+            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 10, 3, 11, 43, 43, 727);
             this.ucFiltrosConsignaciones.Location = new System.Drawing.Point(0, 0);
             this.ucFiltrosConsignaciones.Name = "ucFiltrosConsignaciones";
             this.ucFiltrosConsignaciones.ProveedorId = null;
@@ -312,5 +337,7 @@ namespace LaPaz.Win.Forms.Consignaciones
         private Telerik.WinControls.UI.RadLabel lblObservaciones;
         private System.Windows.Forms.Panel pnlAcciones;
         private Telerik.WinControls.UI.RadButton BtnImprimir;
+        private System.Windows.Forms.Label lblTotalCantidad;
+        private System.Windows.Forms.Label label1;
     }
 }
