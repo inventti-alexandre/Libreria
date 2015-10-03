@@ -93,7 +93,7 @@ namespace LaPaz.Win.Forms.Reportes
                                     new ReportParameter("Hora", hora),
                                     new ReportParameter("Desde", DtpFechaInicio.Value.ToShortDateString()),
                                     new ReportParameter("Hasta", DtpFechaFin.Value.ToShortDateString()),
-                                   // new ReportParameter("OperadorId", null),
+                                    //new ReportParameter("OperadorId", null),
                                     new ReportParameter("ProveedorId", proveedorId.ToString())
                                 };
             reportViewer1.LocalReport.SetParameters(parametros);

@@ -1836,6 +1836,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="RDLS\DevolucionConsignaciones.rdl" />
+    <Content Include="RDLS\ProveedorGeneral.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web References\PragmaService\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
