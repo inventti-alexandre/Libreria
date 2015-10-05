@@ -11,12 +11,13 @@ BEGIN
 	WITH ConsignacionCTE (Cantidad, Codigo, NombreTitulo, PrecioCompraUnitario, PrecioCompraSubtotal, Proveedor)
 	AS
 	(
-		SELECT SUM(TCV.CntCn) Cantidad,
+		--SELECT SUM(TCV.CntCn) Cantidad,
+		SELECT SUM(TCV.CntCn - CAST(TCV.CntPag as int) )Cantidad,
 			T.Cod Codigo,
 			T.NombreTitulo,
 			--TCV.Fecha,
 			T.PrecioCompraTitulo PrecioCompraUnitario,
-			PrecioCompraSubtotal = T.PrecioCompraTitulo * SUM(TCV.CntCn),
+			PrecioCompraSubtotal = T.PrecioCompraTitulo * SUM(TCV.CntCn - CAST(TCV.CntPag as int)) ,
 			P.Denominacion Proveedor
 		FROM TitulosConsignacionesVendidas TCV
 			INNER JOIN Titulos T ON TCV.TituloId = T.Id

@@ -32,7 +32,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Compras Contado',
 			COUNT(*),
-			SUM(C.ImporteNeto),
+			SUM(C.ImporteNeto + cm.Senia),
 			C.TipoComprobanteId
 	from CajasMovimientos CM
 	INNER JOIN Compras C
@@ -51,7 +51,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Anticipos Cta Cte',
 			COUNT(*),
-			SUM(CM.Importe),
+			SUM(CM.Importe + cm.Senia),
 			C.TipoComprobanteId
 	from CajasMovimientos CM
 	INNER JOIN Compras C
@@ -71,7 +71,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Pagos CtaCte/Consign.',
 			COUNT(*),
-			SUM(CM.Importe),
+			SUM(CM.Importe + cm.Senia),
 			CM.TipoComprobante
 	from CajasMovimientos CM
 	INNER JOIN ProveedoresPagos PP

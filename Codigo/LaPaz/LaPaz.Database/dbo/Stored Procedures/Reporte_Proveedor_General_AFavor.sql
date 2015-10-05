@@ -54,7 +54,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Notas de Crédito',
 			COUNT(*),
-			SUM(PMF.Importe),
+			SUM(PMF.Importe - PMF.ImporteOcupado),
 			PMF.TipoComprobanteId
 	from ProveedoresMontosFavor PMF
 	--INNER JOIN Proveedores PS
@@ -74,7 +74,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Egresos',
 			COUNT(*),
-			SUM(PMF.Importe),
+			SUM(PMF.Importe - PMF.ImporteOcupado),
 			PMF.TipoComprobanteId
 	from ProveedoresMontosFavor PMF
 	--INNER JOIN Proveedores PS

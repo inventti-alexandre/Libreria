@@ -129,7 +129,6 @@
             gridViewCommandColumn2});
             this.GrillaTitulos.MasterTemplate.EnableGrouping = false;
             this.GrillaTitulos.Name = "GrillaTitulos";
-            this.GrillaTitulos.ReadOnly = true;
             this.GrillaTitulos.Size = new System.Drawing.Size(889, 182);
             this.GrillaTitulos.TabIndex = 42;
             this.GrillaTitulos.ThemeName = "TelerikMetroBlue";

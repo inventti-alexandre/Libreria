@@ -35,6 +35,7 @@
             this.detailsColumn1 = new LaPaz.Win.Controls.DetailCell.DetailsColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ucFiltroProveedor = new LaPaz.Win.Forms.Util.UcFiltroProveedor();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.DtpFechaFin = new Telerik.WinControls.UI.RadDateTimePicker();
             this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
@@ -42,7 +43,6 @@
             this.BtnBuscar = new Telerik.WinControls.UI.RadButton();
             this.metroLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ucFiltroProveedor = new LaPaz.Win.Forms.Util.UcFiltroProveedor();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
@@ -111,7 +111,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1278, 820);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1715, 1060);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // panel1
@@ -126,15 +126,25 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1272, 77);
+            this.panel1.Size = new System.Drawing.Size(1709, 101);
             this.panel1.TabIndex = 0;
+            // 
+            // ucFiltroProveedor
+            // 
+            this.ucFiltroProveedor.EsGasto = false;
+            this.ucFiltroProveedor.Location = new System.Drawing.Point(567, 21);
+            this.ucFiltroProveedor.Margin = new System.Windows.Forms.Padding(4);
+            this.ucFiltroProveedor.Name = "ucFiltroProveedor";
+            this.ucFiltroProveedor.ProveedorId = null;
+            this.ucFiltroProveedor.Size = new System.Drawing.Size(277, 27);
+            this.ucFiltroProveedor.TabIndex = 50;
             // 
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(480, 25);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(81, 24);
+            this.radLabel2.Size = new System.Drawing.Size(101, 29);
             this.radLabel2.TabIndex = 49;
             this.radLabel2.Text = "Proveedor:";
             this.radLabel2.ThemeName = "TelerikMetroBlue";
@@ -149,7 +159,7 @@
             this.DtpFechaFin.Name = "DtpFechaFin";
             this.DtpFechaFin.NullableValue = null;
             this.DtpFechaFin.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaFin.Size = new System.Drawing.Size(130, 29);
+            this.DtpFechaFin.Size = new System.Drawing.Size(130, 34);
             this.DtpFechaFin.TabIndex = 2;
             this.DtpFechaFin.TabStop = false;
             this.DtpFechaFin.ThemeName = "TelerikMetroBlue";
@@ -160,7 +170,7 @@
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.Location = new System.Drawing.Point(250, 24);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(49, 24);
+            this.radLabel1.Size = new System.Drawing.Size(61, 29);
             this.radLabel1.TabIndex = 46;
             this.radLabel1.Text = "Hasta:";
             this.radLabel1.ThemeName = "TelerikMetroBlue";
@@ -175,7 +185,7 @@
             this.DtpFechaInicio.Name = "DtpFechaInicio";
             this.DtpFechaInicio.NullableValue = null;
             this.DtpFechaInicio.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaInicio.Size = new System.Drawing.Size(130, 29);
+            this.DtpFechaInicio.Size = new System.Drawing.Size(130, 34);
             this.DtpFechaInicio.TabIndex = 1;
             this.DtpFechaInicio.TabStop = false;
             this.DtpFechaInicio.ThemeName = "TelerikMetroBlue";
@@ -197,7 +207,7 @@
             this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel1.Location = new System.Drawing.Point(20, 24);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(53, 24);
+            this.metroLabel1.Size = new System.Drawing.Size(66, 29);
             this.metroLabel1.TabIndex = 44;
             this.metroLabel1.Text = "Desde:";
             this.metroLabel1.ThemeName = "TelerikMetroBlue";
@@ -205,34 +215,26 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.reportViewer1.Location = new System.Drawing.Point(3, 86);
+            this.reportViewer1.Location = new System.Drawing.Point(3, 110);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1272, 731);
+            this.reportViewer1.Size = new System.Drawing.Size(1709, 947);
             this.reportViewer1.TabIndex = 4;
-            // 
-            // ucFiltroProveedor
-            // 
-            this.ucFiltroProveedor.EsGasto = false;
-            this.ucFiltroProveedor.Location = new System.Drawing.Point(567, 21);
-            this.ucFiltroProveedor.Name = "ucFiltroProveedor";
-            this.ucFiltroProveedor.ProveedorId = null;
-            this.ucFiltroProveedor.Size = new System.Drawing.Size(277, 27);
-            this.ucFiltroProveedor.TabIndex = 50;
             // 
             // FrmProveedorGeneral
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 820);
+            this.ClientSize = new System.Drawing.Size(1715, 1060);
             this.ControlBox = false;
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmProveedorGeneral";
             // 
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Informe de Caja Resumida";
+            this.Text = "Reporte Proveedor";
             this.Load += new System.EventHandler(this.FrmProveedorGeneral_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
