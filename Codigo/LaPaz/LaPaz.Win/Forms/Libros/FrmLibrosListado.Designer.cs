@@ -85,7 +85,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.GridLibros);
-            this.splitContainer1.Size = new System.Drawing.Size(1380, 920);
+            this.splitContainer1.Size = new System.Drawing.Size(1240, 972);
             this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -98,12 +98,13 @@
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1380, 250);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1240, 250);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // UcFiltrosLibros
@@ -118,12 +119,13 @@
             this.UcFiltrosLibros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UcFiltrosLibros.EditorialId = null;
             this.UcFiltrosLibros.ISBN = "";
-            this.UcFiltrosLibros.Location = new System.Drawing.Point(3, 43);
+            this.UcFiltrosLibros.Location = new System.Drawing.Point(5, 54);
+            this.UcFiltrosLibros.Margin = new System.Windows.Forms.Padding(5);
             this.UcFiltrosLibros.Name = "UcFiltrosLibros";
             this.UcFiltrosLibros.NombreTitulo = "";
             this.UcFiltrosLibros.OchoDeMarzo = null;
             this.UcFiltrosLibros.ProveedorId = null;
-            this.UcFiltrosLibros.Size = new System.Drawing.Size(1374, 154);
+            this.UcFiltrosLibros.Size = new System.Drawing.Size(1230, 129);
             this.UcFiltrosLibros.TabIndex = 16;
             this.UcFiltrosLibros.TemaId = null;
             // 
@@ -135,20 +137,22 @@
             this.tableLayoutPanel2.Controls.Add(this.BtnCrearProveedor, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.UcProgressSpinner, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1374, 34);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1232, 41);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
             // BtnCrearProveedor
             // 
             this.BtnCrearProveedor.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BtnCrearProveedor.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.BtnCrearProveedor.Location = new System.Drawing.Point(3, 3);
+            this.BtnCrearProveedor.Location = new System.Drawing.Point(4, 4);
+            this.BtnCrearProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.BtnCrearProveedor.Name = "BtnCrearProveedor";
-            this.BtnCrearProveedor.Size = new System.Drawing.Size(75, 28);
+            this.BtnCrearProveedor.Size = new System.Drawing.Size(100, 33);
             this.BtnCrearProveedor.TabIndex = 16;
             this.BtnCrearProveedor.Text = "Crear";
             this.BtnCrearProveedor.ThemeName = "TelerikMetroBlue";
@@ -157,9 +161,10 @@
             // UcProgressSpinner
             // 
             this.UcProgressSpinner.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.UcProgressSpinner.Location = new System.Drawing.Point(1209, 3);
+            this.UcProgressSpinner.Location = new System.Drawing.Point(1011, 5);
+            this.UcProgressSpinner.Margin = new System.Windows.Forms.Padding(5);
             this.UcProgressSpinner.Name = "UcProgressSpinner";
-            this.UcProgressSpinner.Size = new System.Drawing.Size(162, 27);
+            this.UcProgressSpinner.Size = new System.Drawing.Size(216, 31);
             this.UcProgressSpinner.TabIndex = 17;
             // 
             // tableLayoutPanel3
@@ -170,32 +175,36 @@
             this.tableLayoutPanel3.Controls.Add(this.ucEstadoTitulos1, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.TitulosPager, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 203);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 192);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1374, 44);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1232, 54);
             this.tableLayoutPanel3.TabIndex = 18;
             // 
             // ucEstadoTitulos1
             // 
             this.ucEstadoTitulos1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ucEstadoTitulos1.Location = new System.Drawing.Point(3, 10);
+            this.ucEstadoTitulos1.Location = new System.Drawing.Point(5, 12);
+            this.ucEstadoTitulos1.Margin = new System.Windows.Forms.Padding(5);
             this.ucEstadoTitulos1.Name = "ucEstadoTitulos1";
-            this.ucEstadoTitulos1.Size = new System.Drawing.Size(266, 24);
+            this.ucEstadoTitulos1.Size = new System.Drawing.Size(355, 30);
             this.ucEstadoTitulos1.TabIndex = 0;
             // 
             // TitulosPager
             // 
-            this.TitulosPager.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TitulosPager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TitulosPager.CurrentPage = 1;
-            this.TitulosPager.Location = new System.Drawing.Point(993, 3);
+            this.TitulosPager.Location = new System.Drawing.Point(723, 5);
+            this.TitulosPager.Margin = new System.Windows.Forms.Padding(5);
             this.TitulosPager.Name = "TitulosPager";
             this.TitulosPager.PageSize = 50;
             this.TitulosPager.PageTotal = 1;
             this.TitulosPager.RefreshAction = null;
             this.TitulosPager.RefreshActionAsync = null;
-            this.TitulosPager.Size = new System.Drawing.Size(378, 38);
+            this.TitulosPager.Size = new System.Drawing.Size(504, 44);
             this.TitulosPager.TabIndex = 14;
             // 
             // GridLibros
@@ -203,6 +212,7 @@
             this.GridLibros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridLibros.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.GridLibros.Location = new System.Drawing.Point(0, 0);
+            this.GridLibros.Margin = new System.Windows.Forms.Padding(4);
             // 
             // GridLibros
             // 
@@ -217,53 +227,53 @@
             gridViewTextBoxColumn2.FieldName = "Cod";
             gridViewTextBoxColumn2.HeaderText = "Código";
             gridViewTextBoxColumn2.Name = "Codigo";
-            gridViewTextBoxColumn2.Width = 142;
+            gridViewTextBoxColumn2.Width = 126;
             gridViewTextBoxColumn3.FieldName = "NombreTitulo";
             gridViewTextBoxColumn3.HeaderText = "Título";
             gridViewTextBoxColumn3.Name = "NombreTitulo";
             gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 247;
+            gridViewTextBoxColumn3.Width = 220;
             gridViewTextBoxColumn4.FieldName = "AutorNombre";
             gridViewTextBoxColumn4.HeaderText = "Autor";
             gridViewTextBoxColumn4.Name = "AutorNombre";
-            gridViewTextBoxColumn4.Width = 140;
+            gridViewTextBoxColumn4.Width = 124;
             gridViewTextBoxColumn5.FieldName = "EditorialNombre";
             gridViewTextBoxColumn5.HeaderText = "Editorial";
             gridViewTextBoxColumn5.Name = "EditorialNombre";
-            gridViewTextBoxColumn5.Width = 124;
+            gridViewTextBoxColumn5.Width = 111;
             gridViewTextBoxColumn6.FieldName = "PrecioVentaTitulo";
             gridViewTextBoxColumn6.FormatString = "{0:c2}";
             gridViewTextBoxColumn6.HeaderText = "Precio";
             gridViewTextBoxColumn6.Name = "PrecioVentaTitulo";
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 117;
+            gridViewTextBoxColumn6.Width = 104;
             gridViewTextBoxColumn7.FieldName = "FechaModificacion";
             gridViewTextBoxColumn7.FormatString = "{0:dd/MM/yyyy}";
             gridViewTextBoxColumn7.HeaderText = "Modificación";
             gridViewTextBoxColumn7.Name = "FechaModificacion";
-            gridViewTextBoxColumn7.Width = 26;
+            gridViewTextBoxColumn7.Width = 23;
             gridViewTextBoxColumn8.FieldName = "UsuarioUltimoPrecio";
             gridViewTextBoxColumn8.HeaderText = "Operador";
             gridViewTextBoxColumn8.Name = "UsuarioUltimoPrecio";
-            gridViewTextBoxColumn8.Width = 113;
+            gridViewTextBoxColumn8.Width = 101;
             gridViewTextBoxColumn9.FieldName = "TituloStockStkPr";
             gridViewTextBoxColumn9.HeaderText = "St. Pr.";
             gridViewTextBoxColumn9.Name = "StockPropio";
             gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 67;
+            gridViewTextBoxColumn9.Width = 58;
             gridViewTextBoxColumn10.FieldName = "TituloStockStkCn";
             gridViewTextBoxColumn10.HeaderText = "St. Cn.";
             gridViewTextBoxColumn10.Name = "StockConsignado";
             gridViewTextBoxColumn10.ReadOnly = true;
-            gridViewTextBoxColumn10.Width = 67;
+            gridViewTextBoxColumn10.Width = 58;
             gridViewTextBoxColumn11.FieldName = "TituloStockStkPrViejo";
             gridViewTextBoxColumn11.HeaderText = "PR 8";
             gridViewTextBoxColumn11.Name = "StockPropioViejo";
-            gridViewTextBoxColumn11.Width = 67;
+            gridViewTextBoxColumn11.Width = 58;
             gridViewTextBoxColumn12.FieldName = "TituloStockStkCnViejo";
             gridViewTextBoxColumn12.HeaderText = "CN 8";
             gridViewTextBoxColumn12.Name = "StockConsignadoViejo";
-            gridViewTextBoxColumn12.Width = 113;
+            gridViewTextBoxColumn12.Width = 100;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.View_Details;
             gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -320,7 +330,7 @@
             this.GridLibros.MasterTemplate.EnableGrouping = false;
             this.GridLibros.Name = "GridLibros";
             this.GridLibros.ReadOnly = true;
-            this.GridLibros.Size = new System.Drawing.Size(1380, 666);
+            this.GridLibros.Size = new System.Drawing.Size(1240, 718);
             this.GridLibros.TabIndex = 12;
             this.GridLibros.ThemeName = "TelerikMetroBlue";
             this.GridLibros.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.GridLibros_RowFormatting);
@@ -329,13 +339,14 @@
             // 
             // FrmLibrosListado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1380, 920);
+            this.ClientSize = new System.Drawing.Size(1240, 972);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmLibrosListado";
             // 
             // 
