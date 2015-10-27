@@ -49,6 +49,7 @@
             // GridConsignaciones
             // 
             this.GridConsignaciones.MasterTemplate.AllowAddNewRow = false;
+            this.GridConsignaciones.MasterTemplate.AllowCellContextMenu = false;
             this.GridConsignaciones.MasterTemplate.AllowEditRow = false;
             this.GridConsignaciones.MasterTemplate.AutoGenerateColumns = false;
             this.GridConsignaciones.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
@@ -84,7 +85,7 @@
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.View_Details;
             gridViewCommandColumn1.Name = "ColumnaDetalle";
-            gridViewCommandColumn1.Width = 14;
+            gridViewCommandColumn1.Width = 13;
             this.GridConsignaciones.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,

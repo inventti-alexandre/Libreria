@@ -211,20 +211,88 @@ namespace LaPaz.Win.Forms.Compras
                 return;
             }
 
-            var compraTitulo = selectedRow.DataBoundItem as CompraTitulo;
+            //if (_titulos.Count > 0)
+            //    _messageBoxDisplayService.ShowInfo("Compra");
+            //else if (_titulosDevolucion.Count > 0)
+            //    _messageBoxDisplayService.ShowInfo("Devolucion");
 
-            if (compraTitulo == null)
+            var compraTitulo = selectedRow.DataBoundItem as CompraTitulo;
+            var compraTituloDevolucion = selectedRow.DataBoundItem as VentaTitulo;
+
+            if (compraTitulo == null && compraTituloDevolucion == null)
                 return;
-            switch (commandCell.ColumnInfo.Name)
+            if (compraTitulo != null)
             {
-                case "Editar":
-                    EditarTitulo(compraTitulo);
-                    break;
-                case "Eliminar":
-                    EliminarTitulo(compraTitulo);
-                    break;
+                switch (commandCell.ColumnInfo.Name)
+                {
+                    case "Editar":
+                        EditarTitulo(compraTitulo);
+                        break;
+                    case "Eliminar":
+                        EliminarTitulo(compraTitulo);
+                        break;
+                }
+            }
+            else if (compraTituloDevolucion != null)
+            {
+                switch (commandCell.ColumnInfo.Name)
+                {
+                    case "Editar":
+                        EditarTituloDevolucion(compraTituloDevolucion);
+                        break;
+                    case "Eliminar":
+                        EliminarTituloDevolucion(compraTituloDevolucion);
+                        break;
+                }
             }
 
+            
+
+        }
+
+        private void EditarTituloDevolucion(VentaTitulo compraTituloDevolucion)
+        {
+            using (var formAgregarTitulo = FormFactory.Create<FrmSeleccionarLibro>(compraTituloDevolucion.TituloId, ActionFormMode.Edit))
+            {
+                formAgregarTitulo.Cantidad = compraTituloDevolucion.Cantidad;
+                formAgregarTitulo.TituloAgregado += (o, titulo) =>
+                {
+                    if (!this.Titulos.Any(t => t.TituloId == titulo.TituloId))
+                    {
+                        TitulosDevolucion.Add(titulo);
+                        OnCompraTitulosChanged(Titulos);
+                        RefrescarTitulos();
+                    }
+                    else
+                    {
+                        foreach (VentaTitulo devolucionTitulo in TitulosDevolucion)
+                        {
+                            if (devolucionTitulo.TituloId == titulo.TituloId)
+                            {
+                                devolucionTitulo.TituloId = titulo.TituloId;
+                                devolucionTitulo.TituloNombre = titulo.TituloNombre;
+                                devolucionTitulo.Cantidad = titulo.CantidadPropia;
+                                devolucionTitulo.PrecioBase = titulo.PrecioBase;
+                                devolucionTitulo.PrecioVenta = titulo.PrecioVenta;
+                                devolucionTitulo.SubTotal = titulo.SubTotal;
+                                OnCompraTitulosChanged(Titulos);
+                                RefrescarTitulos();
+                            }
+                        }
+                    }
+
+                    formAgregarTitulo.Close();
+                };
+
+                formAgregarTitulo.ShowDialog();
+            }
+        }
+
+        private void EliminarTituloDevolucion(VentaTitulo compraTituloDevolucion)
+        {
+            TitulosDevolucion.Remove(compraTituloDevolucion);
+            RefrescarTitulos();
+            OnCompraTitulosChanged(Titulos);
         }
 
         private void EditarTitulo(CompraTitulo compraTitulo)

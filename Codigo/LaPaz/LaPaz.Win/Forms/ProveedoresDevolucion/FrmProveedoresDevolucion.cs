@@ -181,12 +181,22 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                 _messageBoxDisplayService.ShowError("Debe Seleccionar por lo menos un título para devolución");            }
         }
 
-        private void DescontarLibros(int propio,int consignado,Guid TituloId)
+        //private void DescontarLibros(int propio,int consignado,Guid TituloId)
+        //{
+        //    var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalAltaId == Context.SucursalActual.Id);
+        //    if (tituloStock != null)
+        //    {
+        //        tituloStock.StkCn -= consignado;
+        //        tituloStock.StkPr -= propio;
+        //        Uow.TitulosStock.Modificar(tituloStock);
+        //    }
+        //}
+
+        private void DescontarLibrosPropios(int? propio, Guid TituloId)
         {
             var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalAltaId == Context.SucursalActual.Id);
             if (tituloStock != null)
             {
-                tituloStock.StkCn -= consignado;
                 tituloStock.StkPr -= propio;
                 Uow.TitulosStock.Modificar(tituloStock);
             }
@@ -228,19 +238,32 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                 proveedoresMontosFavorDetalle.Id = Guid.NewGuid();
                 proveedoresMontosFavorDetalle.ProveedoresMontosFavor = proveedorMontoFavor.Id;
                 proveedoresMontosFavorDetalle.TitulosId = devolucionTitulo.TituloId;
-                _consignada = CalcularConsignadas(Convert.ToInt16(_cantidadTotal), devolucionTitulo.CantidadConsignada);
-                _propia = CalcularPropias(Convert.ToInt16(_cantidadTotal), _consignada);
-                proveedoresMontosFavorDetalle.CantidadPropia = _propia;
-                proveedoresMontosFavorDetalle.CantidadConsignada = _consignada;
-                proveedoresMontosFavorDetalle.FechaAlta = _clock.Now;
-                proveedoresMontosFavorDetalle.SucursalAltaId = Context.SucursalActual.Id;
-                proveedoresMontosFavorDetalle.OperadorAltaId = Context.OperadorActual.Id;
-                Uow.ProveedoresMontosFavorDetalle.Agregar(proveedoresMontosFavorDetalle);
 
-               
-                TitulosConsignacionesDevueltaDetalle(devolucionTitulo, _propia, _consignada, titulosConsignacionDevuelta);
-                DescontarLibros(_propia, Convert.ToInt16(_consignada), proveedoresMontosFavorDetalle.TitulosId);
-                DescontarTitulosConsignacion(devolucionTitulo.TituloId, proveedorMontoFavor.ProveedorId, _consignada);
+                if (devolucionTitulo.CantidadPropia >= _cantidadTotal)
+                {
+                     //_consignada = CalcularConsignadas(Convert.ToInt16(_cantidadTotal), devolucionTitulo.CantidadConsignada);
+                    //_propia = CalcularPropias(Convert.ToInt16(_cantidadTotal), _consignada);
+
+                    //proveedoresMontosFavorDetalle.CantidadPropia = _propia;
+                    proveedoresMontosFavorDetalle.CantidadPropia = _cantidadTotal;
+                    //proveedoresMontosFavorDetalle.CantidadConsignada = _consignada;
+                    proveedoresMontosFavorDetalle.FechaAlta = _clock.Now;
+                    proveedoresMontosFavorDetalle.SucursalAltaId = Context.SucursalActual.Id;
+                    proveedoresMontosFavorDetalle.OperadorAltaId = Context.OperadorActual.Id;
+                    Uow.ProveedoresMontosFavorDetalle.Agregar(proveedoresMontosFavorDetalle);
+
+                    DescontarLibrosPropios(_cantidadTotal, proveedoresMontosFavorDetalle.TitulosId);
+                    //TitulosConsignacionesDevueltaDetalle(devolucionTitulo, _propia, _consignada, titulosConsignacionDevuelta);
+                    //DescontarLibros(_propia, Convert.ToInt16(_consignada), proveedoresMontosFavorDetalle.TitulosId);
+                    //DescontarTitulosConsignacion(devolucionTitulo.TituloId, proveedorMontoFavor.ProveedorId, _consignada);
+                }
+                else
+                {
+                    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible de libro: " + devolucionTitulo.TituloNombre);
+                    return;
+                }
+
+
             }
             #endregion
 

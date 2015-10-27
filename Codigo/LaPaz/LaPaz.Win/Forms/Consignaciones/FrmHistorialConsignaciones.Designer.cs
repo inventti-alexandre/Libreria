@@ -50,13 +50,13 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.UcConsignacionesProveedorListado.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UcConsignacionesProveedorListado.Location = new System.Drawing.Point(0, 0);
             this.UcConsignacionesProveedorListado.Name = "UcConsignacionesProveedorListado";
-            this.UcConsignacionesProveedorListado.Size = new System.Drawing.Size(1374, 776);
+            this.UcConsignacionesProveedorListado.Size = new System.Drawing.Size(1300, 676);
             this.UcConsignacionesProveedorListado.TabIndex = 1;
             // 
             // HistorialConsignacionesPager
             // 
             this.HistorialConsignacionesPager.CurrentPage = 1;
-            this.HistorialConsignacionesPager.Location = new System.Drawing.Point(993, 94);
+            this.HistorialConsignacionesPager.Location = new System.Drawing.Point(919, 94);
             this.HistorialConsignacionesPager.Name = "HistorialConsignacionesPager";
             this.HistorialConsignacionesPager.PageSize = 50;
             this.HistorialConsignacionesPager.PageTotal = 1;
@@ -81,7 +81,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.UcConsignacionesProveedorListado);
-            this.splitContainer1.Size = new System.Drawing.Size(1374, 920);
+            this.splitContainer1.Size = new System.Drawing.Size(1300, 820);
             this.splitContainer1.SplitterDistance = 140;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -99,13 +99,13 @@ namespace LaPaz.Win.Forms.Consignaciones
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1374, 140);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1300, 140);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ucFiltrosConsignaciones
             // 
-            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 7, 10, 10, 12, 56, 533);
-            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 8, 10, 10, 12, 56, 527);
+            this.ucFiltrosConsignaciones.Desde = new System.DateTime(2015, 9, 26, 19, 3, 14, 370);
+            this.ucFiltrosConsignaciones.Hasta = new System.DateTime(2015, 10, 26, 19, 3, 14, 368);
             this.ucFiltrosConsignaciones.Location = new System.Drawing.Point(3, 3);
             this.ucFiltrosConsignaciones.Name = "ucFiltrosConsignaciones";
             this.ucFiltrosConsignaciones.ProveedorId = null;
@@ -115,7 +115,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             // UcProgressSpinner
             // 
             this.UcProgressSpinner.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.UcProgressSpinner.Location = new System.Drawing.Point(1209, 32);
+            this.UcProgressSpinner.Location = new System.Drawing.Point(1135, 32);
             this.UcProgressSpinner.Name = "UcProgressSpinner";
             this.UcProgressSpinner.Size = new System.Drawing.Size(162, 27);
             this.UcProgressSpinner.TabIndex = 18;
@@ -124,7 +124,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1374, 920);
+            this.ClientSize = new System.Drawing.Size(1300, 820);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -133,7 +133,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             // 
             // 
             this.RootElement.ApplyShapeToControl = true;
-            this.Text = "Rendir Consignaciones";
+            this.Text = "Historial Consignaciones Proveedor";
             this.Load += new System.EventHandler(this.FrmRendicionConsignaciones_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

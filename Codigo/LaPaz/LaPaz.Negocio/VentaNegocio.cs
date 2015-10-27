@@ -327,17 +327,17 @@ namespace LaPaz.Negocio
                 int? cantidadADevolver = remitoVentaDetalleActualizado.CntDevuelta;
 
                 //Primero devuelvo los consignados
-                if (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta > 0)
+                if (remitoVentaDetalle.CntCn - (remitoVentaDetalle.CntDevuelta ?? 0) > 0)
                 {
-                    if ((remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta) >= remitoVentaDetalleActualizado.CntDevuelta)
+                    if ((remitoVentaDetalle.CntCn - (remitoVentaDetalle.CntDevuelta ?? 0)) >= remitoVentaDetalleActualizado.CntDevuelta)
                     {
                         tituloStock.StkCn += remitoVentaDetalleActualizado.CntDevuelta;
                         cantidadADevolver = 0;
                     }
                     else
                     {
-                        tituloStock.StkCn += remitoVentaDetalleActualizado.CntDevuelta - (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta);
-                        cantidadADevolver -= (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta);
+                        tituloStock.StkCn += (remitoVentaDetalleActualizado.CntDevuelta ??0) - (remitoVentaDetalle.CntCn - remitoVentaDetalle.CntDevuelta);
+                        cantidadADevolver -= (remitoVentaDetalle.CntCn - (remitoVentaDetalle.CntDevuelta ?? 0 ));
                     }
                 }
                 //Despues los propios

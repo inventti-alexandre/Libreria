@@ -419,36 +419,40 @@ namespace LaPaz.Win.Forms.Ventas
 
         private void ActualizarPrecioTitulos(VentaTitulo titulo)
         {
-            List<Titulo> titulosModificar;
-            if (String.IsNullOrEmpty(titulo.CodigoBarra))
-                titulosModificar = Uow.Titulos.Listado().Where(t => t.Id == titulo.TituloId).ToList();
-            else
+            if (_formMode!= ActionFormMode.Edit)
             {
-                int codigo;
-                int codBarra = int.TryParse(titulo.CodigoBarra, out codigo) ? codigo : codigo;
-                if (codBarra==0)
+                List<Titulo> titulosModificar;
+                if (String.IsNullOrEmpty(titulo.CodigoBarra))
                     titulosModificar = Uow.Titulos.Listado().Where(t => t.Id == titulo.TituloId).ToList();
                 else
-                titulosModificar = Uow.Titulos.Listado().Where(t => t.CodigoBarra == titulo.CodigoBarra).ToList();
-            }
-            
-
-            if (titulosModificar != null)
-            {
-                foreach (var tituloModificar in titulosModificar)
                 {
-                    tituloModificar.PrecioVentaTitulo = PrecioVenta;
-                    tituloModificar.OperadorModificacionId = Context.OperadorActual.Id;
-                    tituloModificar.FechaModificacion = _clock.Now;
-                    tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
-                    tituloModificar.UbicacionId = null;
-                    tituloModificar.OperadorUltimoPrecioId = this.Context.OperadorActual.Id;
+                    int codigo;
+                    int codBarra = int.TryParse(titulo.CodigoBarra, out codigo) ? codigo : codigo;
+                    if (codBarra == 0)
+                        titulosModificar = Uow.Titulos.Listado().Where(t => t.Id == titulo.TituloId).ToList();
+                    else
+                        titulosModificar = Uow.Titulos.Listado().Where(t => t.CodigoBarra == titulo.CodigoBarra).ToList();
+                }
 
-                    Uow.Titulos.Modificar(tituloModificar);
+
+                if (titulosModificar != null)
+                {
+                    foreach (var tituloModificar in titulosModificar)
+                    {
+                        tituloModificar.PrecioVentaTitulo = PrecioVenta;
+                        tituloModificar.OperadorModificacionId = Context.OperadorActual.Id;
+                        tituloModificar.FechaModificacion = _clock.Now;
+                        tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
+                        tituloModificar.UbicacionId = null;
+                        tituloModificar.OperadorUltimoPrecioId = this.Context.OperadorActual.Id;
+
+                        Uow.Titulos.Modificar(tituloModificar);
+                    }
+                    Uow.Commit();
                 }
                 Uow.Commit();
             }
-            Uow.Commit();
+        
         }
 
         private void OnTituloAgregado(VentaTitulo titulo)
@@ -592,25 +596,34 @@ namespace LaPaz.Win.Forms.Ventas
 
         private bool ValidarCantidad()
         {
-            int sumaStock = Convert.ToInt16(TxtPropio.Text) + Convert.ToInt16(TxtConsignado.Text);
-            int cantidad;
-            if (TxtCantidad.Text != "")
-                cantidad = Convert.ToInt16(TxtCantidad.Text);
-            else
-                cantidad = 0;
+            if (_formMode != ActionFormMode.Edit)
+            {
+                int sumaStock = Convert.ToInt16(TxtPropio.Text) + Convert.ToInt16(TxtConsignado.Text);
+                int cantidad;
+                if (TxtCantidad.Text != "")
+                    cantidad = Convert.ToInt16(TxtCantidad.Text);
+                else
+                    cantidad = 0;
 
-            if (cantidad <= sumaStock)
+                if (cantidad <= sumaStock)
+                {
+                    return true;
+                }
+                else
+                {
+                    _messageBoxDisplayService.ShowWarning(
+                        Resources.WarningMessageCantidadSeleccionadaSuperaStockDisponible);
+                    TxtCantidad.Text = sumaStock.ToString();
+                    return false;
+                }
+            }
+            else
             {
                 return true;
             }
-            else
-            {
-                _messageBoxDisplayService.ShowWarning(Resources.WarningMessageCantidadSeleccionadaSuperaStockDisponible);
-                TxtCantidad.Text = sumaStock.ToString();
-                return false;
-            }
 
         }
+
 
         private void ActualizarSubtotal()
         {
