@@ -22,6 +22,7 @@ using LaPaz.Win.Forms.Libros;
 using LaPaz.Win.Forms.LotesDeFacturas;
 using LaPaz.Win.Forms.Operadores;
 using LaPaz.Win.Forms.Presupuesto;
+using LaPaz.Win.Forms.ProveedoresDevolucion;
 using LaPaz.Win.Forms.Reportes;
 using LaPaz.Win.Forms.Senias;
 using LaPaz.Win.Forms.SubTemas;
@@ -702,6 +703,13 @@ namespace LaPaz.Win.Forms
         {
             var pantalla = FormFactory.Create<FrmProveedorGeneral>();
             AbrirTab(pantalla);
+        }
+
+        private void BtnProveedoresdevConsig_Click(object sender, EventArgs e)
+        {
+            var crearDevolucion = FormFactory.Create<FrmProveedoresDevolucionConsignados>();
+            crearDevolucion.DevolucionRealizada += CrearDevolucionOnDevolucionRealizada;
+            AbrirTab(crearDevolucion);
         }
 
         

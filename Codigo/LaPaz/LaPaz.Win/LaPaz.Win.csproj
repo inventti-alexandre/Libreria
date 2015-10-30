@@ -635,6 +635,12 @@
     <Compile Include="Forms\ProveedoresCtaCte\UcBuscadorProveedor.Designer.cs">
       <DependentUpon>UcBuscadorProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.Designer.cs">
+      <DependentUpon>FrmProveedoresDevolucionConsignados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1492,6 +1498,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresCtaCte\UcBuscadorProveedor.resx">
       <DependentUpon>UcBuscadorProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.resx">
+      <DependentUpon>FrmProveedoresDevolucionConsignados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucion.resx">
       <DependentUpon>FrmProveedoresDevolucion.cs</DependentUpon>

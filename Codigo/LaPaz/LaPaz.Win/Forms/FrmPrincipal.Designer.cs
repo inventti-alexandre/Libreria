@@ -85,6 +85,7 @@
             this.LnkUsuarioActual = new System.Windows.Forms.LinkLabel();
             this.TabsPrincipal = new Telerik.WinControls.UI.RadPageView();
             this.PageAccesos = new Telerik.WinControls.UI.RadPageViewPage();
+            this.BtnProveedoresdevConsig = new Telerik.WinControls.UI.RadButton();
             this.BtnProveedoresDevolucion = new Telerik.WinControls.UI.RadButton();
             this.BtnRendirConsignacion = new Telerik.WinControls.UI.RadButton();
             this.BtnConsignaciones = new Telerik.WinControls.UI.RadButton();
@@ -108,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).BeginInit();
             this.TabsPrincipal.SuspendLayout();
             this.PageAccesos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnProveedoresdevConsig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnProveedoresDevolucion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRendirConsignacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnConsignaciones)).BeginInit();
@@ -143,7 +145,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1291, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1105, 40);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // LnkAbrirCerraCaja
@@ -151,7 +153,7 @@
             this.LnkAbrirCerraCaja.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkAbrirCerraCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LnkAbrirCerraCaja.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkAbrirCerraCaja.Location = new System.Drawing.Point(1177, 7);
+            this.LnkAbrirCerraCaja.Location = new System.Drawing.Point(991, 7);
             this.LnkAbrirCerraCaja.Name = "LnkAbrirCerraCaja";
             this.LnkAbrirCerraCaja.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.LnkAbrirCerraCaja.Size = new System.Drawing.Size(111, 25);
@@ -181,7 +183,7 @@
             // 
             // 
             this.MainMenu.RootElement.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.MainMenu.Size = new System.Drawing.Size(966, 34);
+            this.MainMenu.Size = new System.Drawing.Size(817, 29);
             this.MainMenu.TabIndex = 19;
             this.MainMenu.Text = "MainMenu";
             this.MainMenu.ThemeName = "TelerikMetroBlue";
@@ -689,10 +691,10 @@
             this.LnkUsuarioActual.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LnkUsuarioActual.AutoSize = true;
             this.LnkUsuarioActual.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkUsuarioActual.Location = new System.Drawing.Point(975, 4);
+            this.LnkUsuarioActual.Location = new System.Drawing.Point(826, 7);
             this.LnkUsuarioActual.Name = "LnkUsuarioActual";
             this.LnkUsuarioActual.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.LnkUsuarioActual.Size = new System.Drawing.Size(196, 32);
+            this.LnkUsuarioActual.Size = new System.Drawing.Size(159, 25);
             this.LnkUsuarioActual.TabIndex = 18;
             this.LnkUsuarioActual.TabStop = true;
             this.LnkUsuarioActual.Text = "{{Usuario Actual}}";
@@ -710,7 +712,7 @@
             this.TabsPrincipal.Location = new System.Drawing.Point(12, 44);
             this.TabsPrincipal.Name = "TabsPrincipal";
             this.TabsPrincipal.SelectedPage = this.PageAccesos;
-            this.TabsPrincipal.Size = new System.Drawing.Size(1267, 586);
+            this.TabsPrincipal.Size = new System.Drawing.Size(1402, 852);
             this.TabsPrincipal.TabIndex = 16;
             this.TabsPrincipal.ThemeName = "TelerikMetroBlue";
             this.TabsPrincipal.SelectedPageChanging += new System.EventHandler<Telerik.WinControls.UI.RadPageViewCancelEventArgs>(this.TabsPrincipal_SelectedPageChanging);
@@ -718,6 +720,7 @@
             // 
             // PageAccesos
             // 
+            this.PageAccesos.Controls.Add(this.BtnProveedoresdevConsig);
             this.PageAccesos.Controls.Add(this.BtnProveedoresDevolucion);
             this.PageAccesos.Controls.Add(this.BtnRendirConsignacion);
             this.PageAccesos.Controls.Add(this.BtnConsignaciones);
@@ -738,28 +741,51 @@
             this.PageAccesos.Controls.Add(this.BtnClienteListado);
             this.PageAccesos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PageAccesos.ForeColor = System.Drawing.Color.White;
-            this.PageAccesos.Location = new System.Drawing.Point(5, 48);
+            this.PageAccesos.Location = new System.Drawing.Point(5, 41);
             this.PageAccesos.Name = "PageAccesos";
-            this.PageAccesos.Size = new System.Drawing.Size(1257, 533);
+            this.PageAccesos.Size = new System.Drawing.Size(1392, 806);
             this.PageAccesos.Text = "Accesos";
+            // 
+            // BtnProveedoresdevConsig
+            // 
+            this.BtnProveedoresdevConsig.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnProveedoresdevConsig.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresdevConsig.Image")));
+            this.BtnProveedoresdevConsig.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnProveedoresdevConsig.Location = new System.Drawing.Point(795, 484);
+            this.BtnProveedoresdevConsig.Name = "BtnProveedoresdevConsig";
+            this.BtnProveedoresdevConsig.Size = new System.Drawing.Size(150, 150);
+            this.BtnProveedoresdevConsig.TabIndex = 34;
+            this.BtnProveedoresdevConsig.Text = "Devolucion Consignados";
+            this.BtnProveedoresdevConsig.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnProveedoresdevConsig.ThemeName = "TelerikMetroBlue";
+            this.BtnProveedoresdevConsig.Click += new System.EventHandler(this.BtnProveedoresdevConsig_Click);
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresdevConsig.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresdevConsig.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresdevConsig.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresdevConsig.GetChildAt(0))).Text = "Devolucion Consignados";
+            ((Telerik.WinControls.Primitives.FillPrimitive)(this.BtnProveedoresdevConsig.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Highlight;
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnProveedoresdevConsig.GetChildAt(0).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnProveedoresdevConsig.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnProveedoresdevConsig.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Margin = new System.Windows.Forms.Padding(0, -2, 0, 0);
+            ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnProveedoresdevConsig.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // BtnProveedoresDevolucion
             // 
             this.BtnProveedoresDevolucion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedoresDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresDevolucion.Image")));
             this.BtnProveedoresDevolucion.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProveedoresDevolucion.Location = new System.Drawing.Point(905, 362);
+            this.BtnProveedoresDevolucion.Location = new System.Drawing.Point(795, 328);
             this.BtnProveedoresDevolucion.Name = "BtnProveedoresDevolucion";
-            this.BtnProveedoresDevolucion.Size = new System.Drawing.Size(174, 167);
+            this.BtnProveedoresDevolucion.Size = new System.Drawing.Size(150, 150);
             this.BtnProveedoresDevolucion.TabIndex = 19;
-            this.BtnProveedoresDevolucion.Text = "Devolucion";
+            this.BtnProveedoresDevolucion.Text = "Devolucion propios";
             this.BtnProveedoresDevolucion.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnProveedoresDevolucion.ThemeName = "TelerikMetroBlue";
             this.BtnProveedoresDevolucion.Click += new System.EventHandler(this.BtnProveedoresDevolucion_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresDevolucion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresDevolucion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresDevolucion.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresDevolucion.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresDevolucion.GetChildAt(0))).Text = "Devolucion";
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresDevolucion.GetChildAt(0))).Text = "Devolucion propios";
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.BtnProveedoresDevolucion.GetChildAt(0).GetChildAt(0))).BackColor = System.Drawing.SystemColors.Highlight;
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnProveedoresDevolucion.GetChildAt(0).GetChildAt(1).GetChildAt(1))).ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnProveedoresDevolucion.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -771,15 +797,15 @@
             this.BtnRendirConsignacion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRendirConsignacion.Image = ((System.Drawing.Image)(resources.GetObject("BtnRendirConsignacion.Image")));
             this.BtnRendirConsignacion.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnRendirConsignacion.Location = new System.Drawing.Point(727, 362);
+            this.BtnRendirConsignacion.Location = new System.Drawing.Point(639, 328);
             this.BtnRendirConsignacion.Name = "BtnRendirConsignacion";
-            this.BtnRendirConsignacion.Size = new System.Drawing.Size(172, 167);
+            this.BtnRendirConsignacion.Size = new System.Drawing.Size(150, 150);
             this.BtnRendirConsignacion.TabIndex = 33;
             this.BtnRendirConsignacion.Text = "Rendir Consignaciones";
             this.BtnRendirConsignacion.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnRendirConsignacion.ThemeName = "TelerikMetroBlue";
             this.BtnRendirConsignacion.Click += new System.EventHandler(this.BtnRendirConsignacion_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnRendirConsignacion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnRendirConsignacion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnRendirConsignacion.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnRendirConsignacion.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnRendirConsignacion.GetChildAt(0))).Text = "Rendir Consignaciones";
@@ -794,15 +820,15 @@
             this.BtnConsignaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsignaciones.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsignaciones.Image")));
             this.BtnConsignaciones.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnConsignaciones.Location = new System.Drawing.Point(549, 362);
+            this.BtnConsignaciones.Location = new System.Drawing.Point(483, 328);
             this.BtnConsignaciones.Name = "BtnConsignaciones";
-            this.BtnConsignaciones.Size = new System.Drawing.Size(172, 167);
+            this.BtnConsignaciones.Size = new System.Drawing.Size(150, 150);
             this.BtnConsignaciones.TabIndex = 32;
             this.BtnConsignaciones.Text = "Consignaciones";
             this.BtnConsignaciones.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnConsignaciones.ThemeName = "TelerikMetroBlue";
             this.BtnConsignaciones.Click += new System.EventHandler(this.BtnConsignaciones_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnConsignaciones.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnConsignaciones.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnConsignaciones.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnConsignaciones.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnConsignaciones.GetChildAt(0))).Text = "Consignaciones";
@@ -817,15 +843,15 @@
             this.BtnProveedoresCtaCte.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedoresCtaCte.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresCtaCte.Image")));
             this.BtnProveedoresCtaCte.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProveedoresCtaCte.Location = new System.Drawing.Point(371, 362);
+            this.BtnProveedoresCtaCte.Location = new System.Drawing.Point(327, 328);
             this.BtnProveedoresCtaCte.Name = "BtnProveedoresCtaCte";
-            this.BtnProveedoresCtaCte.Size = new System.Drawing.Size(172, 167);
+            this.BtnProveedoresCtaCte.Size = new System.Drawing.Size(150, 150);
             this.BtnProveedoresCtaCte.TabIndex = 33;
             this.BtnProveedoresCtaCte.Text = "Proveedores CtaCte";
             this.BtnProveedoresCtaCte.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnProveedoresCtaCte.ThemeName = "TelerikMetroBlue";
             this.BtnProveedoresCtaCte.Click += new System.EventHandler(this.BtnProveedoresCtaCte_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresCtaCte.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresCtaCte.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresCtaCte.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresCtaCte.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresCtaCte.GetChildAt(0))).Text = "Proveedores CtaCte";
@@ -840,15 +866,15 @@
             this.btnListadoCompras.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListadoCompras.Image = ((System.Drawing.Image)(resources.GetObject("btnListadoCompras.Image")));
             this.btnListadoCompras.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.btnListadoCompras.Location = new System.Drawing.Point(193, 362);
+            this.btnListadoCompras.Location = new System.Drawing.Point(171, 328);
             this.btnListadoCompras.Name = "btnListadoCompras";
-            this.btnListadoCompras.Size = new System.Drawing.Size(172, 167);
+            this.btnListadoCompras.Size = new System.Drawing.Size(150, 150);
             this.btnListadoCompras.TabIndex = 32;
             this.btnListadoCompras.Text = "Listado de Compras";
             this.btnListadoCompras.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.btnListadoCompras.ThemeName = "TelerikMetroBlue";
             this.btnListadoCompras.Click += new System.EventHandler(this.btnListadoCompras_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnListadoCompras.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnListadoCompras.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnListadoCompras.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnListadoCompras.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnListadoCompras.GetChildAt(0))).Text = "Listado de Compras";
@@ -863,15 +889,15 @@
             this.btnFacturasReservadas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFacturasReservadas.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturasReservadas.Image")));
             this.btnFacturasReservadas.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFacturasReservadas.Location = new System.Drawing.Point(905, 192);
+            this.btnFacturasReservadas.Location = new System.Drawing.Point(795, 175);
             this.btnFacturasReservadas.Name = "btnFacturasReservadas";
-            this.btnFacturasReservadas.Size = new System.Drawing.Size(174, 164);
+            this.btnFacturasReservadas.Size = new System.Drawing.Size(150, 150);
             this.btnFacturasReservadas.TabIndex = 31;
             this.btnFacturasReservadas.Text = "Facturas Reservadas";
             this.btnFacturasReservadas.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.btnFacturasReservadas.ThemeName = "TelerikMetroBlue";
             this.btnFacturasReservadas.Click += new System.EventHandler(this.btnFacturasReservadas_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.btnFacturasReservadas.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.btnFacturasReservadas.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnFacturasReservadas.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnFacturasReservadas.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnFacturasReservadas.GetChildAt(0))).Text = "Facturas Reservadas";
@@ -886,15 +912,15 @@
             this.BtnPagosProgramdos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPagosProgramdos.Image = ((System.Drawing.Image)(resources.GetObject("BtnPagosProgramdos.Image")));
             this.BtnPagosProgramdos.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnPagosProgramdos.Location = new System.Drawing.Point(727, 16);
+            this.BtnPagosProgramdos.Location = new System.Drawing.Point(639, 16);
             this.BtnPagosProgramdos.Name = "BtnPagosProgramdos";
-            this.BtnPagosProgramdos.Size = new System.Drawing.Size(172, 167);
+            this.BtnPagosProgramdos.Size = new System.Drawing.Size(150, 150);
             this.BtnPagosProgramdos.TabIndex = 30;
             this.BtnPagosProgramdos.Text = "Pagos Programados";
             this.BtnPagosProgramdos.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnPagosProgramdos.ThemeName = "TelerikMetroBlue";
             this.BtnPagosProgramdos.Click += new System.EventHandler(this.BtnPagosProgramdos_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnPagosProgramdos.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image6")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnPagosProgramdos.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnPagosProgramdos.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnPagosProgramdos.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnPagosProgramdos.GetChildAt(0))).Text = "Pagos Programados";
@@ -909,15 +935,15 @@
             this.BtnSeñaProveedor.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSeñaProveedor.Image = ((System.Drawing.Image)(resources.GetObject("BtnSeñaProveedor.Image")));
             this.BtnSeñaProveedor.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnSeñaProveedor.Location = new System.Drawing.Point(727, 189);
+            this.BtnSeñaProveedor.Location = new System.Drawing.Point(639, 172);
             this.BtnSeñaProveedor.Name = "BtnSeñaProveedor";
-            this.BtnSeñaProveedor.Size = new System.Drawing.Size(172, 167);
+            this.BtnSeñaProveedor.Size = new System.Drawing.Size(150, 150);
             this.BtnSeñaProveedor.TabIndex = 23;
             this.BtnSeñaProveedor.Text = "Señas a proveedor";
             this.BtnSeñaProveedor.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnSeñaProveedor.ThemeName = "TelerikMetroBlue";
             this.BtnSeñaProveedor.Click += new System.EventHandler(this.BtnSeñaProveedor_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnSeñaProveedor.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image7")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnSeñaProveedor.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnSeñaProveedor.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnSeñaProveedor.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnSeñaProveedor.GetChildAt(0))).Text = "Señas a proveedor";
@@ -932,15 +958,15 @@
             this.BtnInformeCaja.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInformeCaja.Image = ((System.Drawing.Image)(resources.GetObject("BtnInformeCaja.Image")));
             this.BtnInformeCaja.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnInformeCaja.Location = new System.Drawing.Point(371, 16);
+            this.BtnInformeCaja.Location = new System.Drawing.Point(327, 16);
             this.BtnInformeCaja.Name = "BtnInformeCaja";
-            this.BtnInformeCaja.Size = new System.Drawing.Size(172, 167);
+            this.BtnInformeCaja.Size = new System.Drawing.Size(150, 150);
             this.BtnInformeCaja.TabIndex = 25;
             this.BtnInformeCaja.Text = "Informe de Caja";
             this.BtnInformeCaja.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnInformeCaja.ThemeName = "TelerikMetroBlue";
             this.BtnInformeCaja.Click += new System.EventHandler(this.BtnInformeCaja_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnInformeCaja.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image8")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnInformeCaja.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnInformeCaja.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnInformeCaja.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnInformeCaja.GetChildAt(0))).Text = "Informe de Caja";
@@ -955,15 +981,15 @@
             this.BtnCrearDevolucion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearDevolucion.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearDevolucion.Image")));
             this.BtnCrearDevolucion.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCrearDevolucion.Location = new System.Drawing.Point(371, 189);
+            this.BtnCrearDevolucion.Location = new System.Drawing.Point(327, 172);
             this.BtnCrearDevolucion.Name = "BtnCrearDevolucion";
-            this.BtnCrearDevolucion.Size = new System.Drawing.Size(172, 167);
+            this.BtnCrearDevolucion.Size = new System.Drawing.Size(150, 150);
             this.BtnCrearDevolucion.TabIndex = 24;
             this.BtnCrearDevolucion.Text = "Devolucion";
             this.BtnCrearDevolucion.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCrearDevolucion.ThemeName = "TelerikMetroBlue";
             this.BtnCrearDevolucion.Click += new System.EventHandler(this.BtnCrearDevolucion_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearDevolucion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image9")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearDevolucion.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearDevolucion.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearDevolucion.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearDevolucion.GetChildAt(0))).Text = "Devolucion";
@@ -978,15 +1004,15 @@
             this.BtnCrearSeña.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearSeña.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearSeña.Image")));
             this.BtnCrearSeña.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCrearSeña.Location = new System.Drawing.Point(549, 16);
+            this.BtnCrearSeña.Location = new System.Drawing.Point(483, 16);
             this.BtnCrearSeña.Name = "BtnCrearSeña";
-            this.BtnCrearSeña.Size = new System.Drawing.Size(172, 167);
+            this.BtnCrearSeña.Size = new System.Drawing.Size(150, 150);
             this.BtnCrearSeña.TabIndex = 23;
             this.BtnCrearSeña.Text = "Señas";
             this.BtnCrearSeña.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCrearSeña.ThemeName = "TelerikMetroBlue";
             this.BtnCrearSeña.Click += new System.EventHandler(this.BtnCrearSeña_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearSeña.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image10")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearSeña.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearSeña.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearSeña.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearSeña.GetChildAt(0))).Text = "Señas";
@@ -1001,15 +1027,15 @@
             this.BtnOrdenesPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnOrdenesPago.Image = ((System.Drawing.Image)(resources.GetObject("BtnOrdenesPago.Image")));
             this.BtnOrdenesPago.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnOrdenesPago.Location = new System.Drawing.Point(193, 16);
+            this.BtnOrdenesPago.Location = new System.Drawing.Point(171, 16);
             this.BtnOrdenesPago.Name = "BtnOrdenesPago";
-            this.BtnOrdenesPago.Size = new System.Drawing.Size(172, 167);
+            this.BtnOrdenesPago.Size = new System.Drawing.Size(150, 150);
             this.BtnOrdenesPago.TabIndex = 20;
             this.BtnOrdenesPago.Text = "Ordenes de Pago";
             this.BtnOrdenesPago.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnOrdenesPago.ThemeName = "TelerikMetroBlue";
             this.BtnOrdenesPago.Click += new System.EventHandler(this.BtnOrdenesPago_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnOrdenesPago.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image11")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnOrdenesPago.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnOrdenesPago.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnOrdenesPago.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnOrdenesPago.GetChildAt(0))).Text = "Ordenes de Pago";
@@ -1024,15 +1050,15 @@
             this.BtnCrearCompra.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearCompra.Image = ((System.Drawing.Image)(resources.GetObject("BtnCrearCompra.Image")));
             this.BtnCrearCompra.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnCrearCompra.Location = new System.Drawing.Point(15, 362);
+            this.BtnCrearCompra.Location = new System.Drawing.Point(15, 328);
             this.BtnCrearCompra.Name = "BtnCrearCompra";
-            this.BtnCrearCompra.Size = new System.Drawing.Size(172, 167);
+            this.BtnCrearCompra.Size = new System.Drawing.Size(150, 150);
             this.BtnCrearCompra.TabIndex = 22;
             this.BtnCrearCompra.Text = "Compra de libros";
             this.BtnCrearCompra.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCrearCompra.ThemeName = "TelerikMetroBlue";
             this.BtnCrearCompra.Click += new System.EventHandler(this.BtnCrearCompra_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearCompra.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image12")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearCompra.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearCompra.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearCompra.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearCompra.GetChildAt(0))).Text = "Compra de libros";
@@ -1049,13 +1075,13 @@
             this.BtnCrearVenta.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.BtnCrearVenta.Location = new System.Drawing.Point(15, 16);
             this.BtnCrearVenta.Name = "BtnCrearVenta";
-            this.BtnCrearVenta.Size = new System.Drawing.Size(172, 167);
+            this.BtnCrearVenta.Size = new System.Drawing.Size(150, 150);
             this.BtnCrearVenta.TabIndex = 21;
             this.BtnCrearVenta.Text = "Venta";
             this.BtnCrearVenta.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCrearVenta.ThemeName = "TelerikMetroBlue";
             this.BtnCrearVenta.Click += new System.EventHandler(this.BtnCrearVenta_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearVenta.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image13")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearVenta.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearVenta.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearVenta.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnCrearVenta.GetChildAt(0))).Text = "Venta";
@@ -1072,15 +1098,15 @@
             this.BtnTicketsConsulta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnTicketsConsulta.Image = ((System.Drawing.Image)(resources.GetObject("BtnTicketsConsulta.Image")));
             this.BtnTicketsConsulta.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnTicketsConsulta.Location = new System.Drawing.Point(905, 16);
+            this.BtnTicketsConsulta.Location = new System.Drawing.Point(795, 16);
             this.BtnTicketsConsulta.Name = "BtnTicketsConsulta";
-            this.BtnTicketsConsulta.Size = new System.Drawing.Size(174, 167);
+            this.BtnTicketsConsulta.Size = new System.Drawing.Size(150, 150);
             this.BtnTicketsConsulta.TabIndex = 20;
             this.BtnTicketsConsulta.Text = "Tickets de Consulta";
             this.BtnTicketsConsulta.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnTicketsConsulta.ThemeName = "TelerikMetroBlue";
             this.BtnTicketsConsulta.Click += new System.EventHandler(this.BtnTicketsConsulta_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnTicketsConsulta.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image14")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnTicketsConsulta.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnTicketsConsulta.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnTicketsConsulta.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnTicketsConsulta.GetChildAt(0))).Text = "Tickets de Consulta";
@@ -1095,15 +1121,15 @@
             this.BtnProveedoresListado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnProveedoresListado.Image = ((System.Drawing.Image)(resources.GetObject("BtnProveedoresListado.Image")));
             this.BtnProveedoresListado.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProveedoresListado.Location = new System.Drawing.Point(549, 189);
+            this.BtnProveedoresListado.Location = new System.Drawing.Point(483, 172);
             this.BtnProveedoresListado.Name = "BtnProveedoresListado";
-            this.BtnProveedoresListado.Size = new System.Drawing.Size(172, 167);
+            this.BtnProveedoresListado.Size = new System.Drawing.Size(150, 150);
             this.BtnProveedoresListado.TabIndex = 18;
             this.BtnProveedoresListado.Text = "Proveedores";
             this.BtnProveedoresListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnProveedoresListado.ThemeName = "TelerikMetroBlue";
             this.BtnProveedoresListado.Click += new System.EventHandler(this.BtnProveedoresListado_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresListado.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image15")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresListado.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresListado.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresListado.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnProveedoresListado.GetChildAt(0))).Text = "Proveedores";
@@ -1118,15 +1144,15 @@
             this.BtnLibrosListado.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLibrosListado.Image = ((System.Drawing.Image)(resources.GetObject("BtnLibrosListado.Image")));
             this.BtnLibrosListado.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnLibrosListado.Location = new System.Drawing.Point(15, 189);
+            this.BtnLibrosListado.Location = new System.Drawing.Point(15, 172);
             this.BtnLibrosListado.Name = "BtnLibrosListado";
-            this.BtnLibrosListado.Size = new System.Drawing.Size(172, 167);
+            this.BtnLibrosListado.Size = new System.Drawing.Size(150, 150);
             this.BtnLibrosListado.TabIndex = 17;
             this.BtnLibrosListado.Text = "Libros";
             this.BtnLibrosListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnLibrosListado.ThemeName = "TelerikMetroBlue";
             this.BtnLibrosListado.Click += new System.EventHandler(this.BtnLibrosListado_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnLibrosListado.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image16")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnLibrosListado.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnLibrosListado.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnLibrosListado.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnLibrosListado.GetChildAt(0))).Text = "Libros";
@@ -1141,15 +1167,15 @@
             this.BtnClienteListado.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnClienteListado.Image = ((System.Drawing.Image)(resources.GetObject("BtnClienteListado.Image")));
             this.BtnClienteListado.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnClienteListado.Location = new System.Drawing.Point(193, 189);
+            this.BtnClienteListado.Location = new System.Drawing.Point(171, 172);
             this.BtnClienteListado.Name = "BtnClienteListado";
-            this.BtnClienteListado.Size = new System.Drawing.Size(172, 167);
+            this.BtnClienteListado.Size = new System.Drawing.Size(150, 150);
             this.BtnClienteListado.TabIndex = 16;
             this.BtnClienteListado.Text = "Clientes";
             this.BtnClienteListado.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnClienteListado.ThemeName = "TelerikMetroBlue";
             this.BtnClienteListado.Click += new System.EventHandler(this.BtnClienteListado_Click);
-            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnClienteListado.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image17")));
+            ((Telerik.WinControls.UI.RadButtonElement)(this.BtnClienteListado.GetChildAt(0))).Image = ((System.Drawing.Image)(resources.GetObject("resource.Image18")));
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnClienteListado.GetChildAt(0))).ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnClienteListado.GetChildAt(0))).TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             ((Telerik.WinControls.UI.RadButtonElement)(this.BtnClienteListado.GetChildAt(0))).Text = "Clientes";
@@ -1161,12 +1187,11 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1291, 643);
+            this.ClientSize = new System.Drawing.Size(1105, 784);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.TabsPrincipal);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmPrincipal";
             // 
             // 
@@ -1181,6 +1206,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).EndInit();
             this.TabsPrincipal.ResumeLayout(false);
             this.PageAccesos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.BtnProveedoresdevConsig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnProveedoresDevolucion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnRendirConsignacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnConsignaciones)).EndInit();
@@ -1281,6 +1307,7 @@
         private Telerik.WinControls.UI.RadMenu MainMenu;
         private Telerik.WinControls.UI.RadButton BtnProveedoresDevolucion;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
+        private Telerik.WinControls.UI.RadButton BtnProveedoresdevConsig;
 
     }
 }

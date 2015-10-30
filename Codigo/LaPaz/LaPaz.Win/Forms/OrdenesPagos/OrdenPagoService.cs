@@ -63,6 +63,8 @@ namespace LaPaz.Win.Forms.OrdenesPagos
 
             var pago = ObtenerFormaPago(ordenesPago, detalle);
 
+            pago.IsDeleted = true;
+
             AgregarMovimientos(ordenesPago, detalle, pago);
 
             if (pago.TipoPago == FormaPago.Transferencia || pago.TipoPago == FormaPago.Deposito)

@@ -257,7 +257,7 @@ namespace LaPaz.Win.Forms.Compras
                 formAgregarTitulo.Cantidad = compraTituloDevolucion.Cantidad;
                 formAgregarTitulo.TituloAgregado += (o, titulo) =>
                 {
-                    if (!this.Titulos.Any(t => t.TituloId == titulo.TituloId))
+                    if (!this.TitulosDevolucion.Any(t => t.TituloId == titulo.TituloId))
                     {
                         TitulosDevolucion.Add(titulo);
                         OnCompraTitulosChanged(Titulos);
@@ -271,7 +271,7 @@ namespace LaPaz.Win.Forms.Compras
                             {
                                 devolucionTitulo.TituloId = titulo.TituloId;
                                 devolucionTitulo.TituloNombre = titulo.TituloNombre;
-                                devolucionTitulo.Cantidad = titulo.CantidadPropia;
+                                devolucionTitulo.Cantidad = titulo.Cantidad;
                                 devolucionTitulo.PrecioBase = titulo.PrecioBase;
                                 devolucionTitulo.PrecioVenta = titulo.PrecioVenta;
                                 devolucionTitulo.SubTotal = titulo.SubTotal;

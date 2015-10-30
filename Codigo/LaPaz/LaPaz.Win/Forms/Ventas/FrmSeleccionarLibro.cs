@@ -86,9 +86,9 @@ namespace LaPaz.Win.Forms.Ventas
                 case ActionFormMode.Edit:
                     this.Text = "Seleccionar libro Devolucion";
                     _proveedorId = _Tituloid;
-                    _Tituloid=Guid.Empty;
-                    ;
-                    break;
+                    //_Tituloid=Guid.Empty;
+                    CargarTitulo(_Tituloid);
+                   break;
             }
         }
         private void ConfigurarColumnas()
@@ -287,36 +287,46 @@ namespace LaPaz.Win.Forms.Ventas
 
         private void CargarTitulo(Guid _Tituloid)
         {
-            UcFiltrosLibros.Spinner.Show();
+            var titulo = new  Titulo();
+            if (_formMode == ActionFormMode.Create)
+                titulo = Uow.Titulos.Obtener(t => t.Id == _Tituloid);
+            else
+                titulo = Uow.Titulos.Obtener(t => t.Id == _proveedorId);
+            
+            if (titulo!=null)
+            {
+                 //UcFiltrosLibros.Spinner.Show();
 
-            int pageTotal = 0;
+                int pageTotal = 0;
 
-            var codigoProveedor = UcFiltrosLibros.CodigoProveedor;
-            var codigoLibroCompleto = Uow.Titulos.Obtener(t => t.Id == _Tituloid).Cod;
-            var isbn = UcFiltrosLibros.ISBN;
-            var nombreTitulo = UcFiltrosLibros.NombreTitulo;
-            var proveedorId = UcFiltrosLibros.ProveedorId;
-            var temaId = UcFiltrosLibros.TemaId;
-            var autorNombre = UcFiltrosLibros.AutorNombre;
-            var editorialId = UcFiltrosLibros.EditorialId;
-            var conStock = UcFiltrosLibros.ConStock;
-            var sucursalId = this.Context.SucursalActual.Id;
-            var conOchoDeMarzo = UcFiltrosLibros.OchoDeMarzo;
-            string codigoBarra = UcFiltrosLibros.CodigoBarra;
-            var activos = UcFiltrosLibros.Activos;
+                var codigoProveedor = UcFiltrosLibros.CodigoProveedor;
+                var codigoLibroCompleto = titulo.Cod;// Uow.Titulos.Obtener(t => t.Id == _proveedorId).Cod;
+                var isbn = UcFiltrosLibros.ISBN;
+                var nombreTitulo = UcFiltrosLibros.NombreTitulo;
+                var proveedorId = UcFiltrosLibros.ProveedorId;
+                var temaId = UcFiltrosLibros.TemaId;
+                var autorNombre = UcFiltrosLibros.AutorNombre;
+                var editorialId = UcFiltrosLibros.EditorialId;
+                var conStock = UcFiltrosLibros.ConStock;
+                var sucursalId = this.Context.SucursalActual.Id;
+                var conOchoDeMarzo = UcFiltrosLibros.OchoDeMarzo;
+                string codigoBarra = UcFiltrosLibros.CodigoBarra;
+                var activos = UcFiltrosLibros.Activos;
 
-            var titulos = _tituloNegocio.Listado(SortColumn, SortDirection, codigoProveedor, codigoLibroCompleto, isbn,
-                                                 codigoBarra, nombreTitulo, proveedorId, temaId,
-                                                 autorNombre, editorialId, conStock, sucursalId, conOchoDeMarzo,
-                                                 activos, TitulosPager.CurrentPage,
-                                                 TitulosPager.PageSize,
-                                                 out pageTotal);
+                var titulos = _tituloNegocio.Listado(SortColumn, SortDirection, codigoProveedor, codigoLibroCompleto, isbn,
+                                                     codigoBarra, nombreTitulo, proveedorId, temaId,
+                                                     autorNombre, editorialId, conStock, sucursalId, conOchoDeMarzo,
+                                                     activos, TitulosPager.CurrentPage,
+                                                     TitulosPager.PageSize,
+                                                     out pageTotal);
 
-            GridTitulos.DataSource = titulos;
+                GridTitulos.DataSource = titulos;
 
-            TitulosPager.UpdateState(pageTotal);
+                TitulosPager.UpdateState(pageTotal);
 
-            Spinner.Hide();
+                //Spinner.Hide();
+            }
+           
         }
 
         private void Filtered(object sender, EventArgs eventArgs)
@@ -624,7 +634,6 @@ namespace LaPaz.Win.Forms.Ventas
 
         }
 
-
         private void ActualizarSubtotal()
         {
             if (Descuento == null)
@@ -856,7 +865,6 @@ namespace LaPaz.Win.Forms.Ventas
             Uow.TitulosStock.Modificar(tituloStock);
             Uow.Commit();
         }
-
 
         private void PasarLibroFuturoJournal()
         {
