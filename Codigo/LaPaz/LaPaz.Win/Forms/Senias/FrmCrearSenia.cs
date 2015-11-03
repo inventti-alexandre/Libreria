@@ -235,7 +235,7 @@ namespace LaPaz.Win.Forms.Senias
             }
 
             //TODO: Reemplzar el numero cuando se agrege la columna a sucursal.
-            int numeroDeSucursal = 1;
+            int numeroDeSucursal = Context.SucursalActual.SucursalNumero ?? 1;
 
             ClienteMontoFavor clienteMontoFavor = new ClienteMontoFavor();
             clienteMontoFavor.Id = Guid.NewGuid();
@@ -389,13 +389,15 @@ namespace LaPaz.Win.Forms.Senias
         {
             using (var crearSenia = FormFactory.Create<FrmComprobante>())
             {
-                crearSenia._concepto = "Seña de Cliente";
+                crearSenia._concepto = clienteMontoFavor.Concepto;// "Seña de Cliente";
                 crearSenia._LCN = clienteMontoFavor.LCN;
                 crearSenia._formaPago = formaPagoComprobante;
 
                 var conv = new Conversion();
 
-                crearSenia._montoTexto = conv.enletras(UcTotalesSenia.TotalPagar.ToString());
+                var monto = clienteMontoFavor.Importe - clienteMontoFavor.ImpOcupado;
+
+                crearSenia._montoTexto = conv.enletras(monto.ToString());// conv.enletras(UcTotalesSenia.TotalPagar.ToString());
                 crearSenia.ShowDialog();
             }
         }

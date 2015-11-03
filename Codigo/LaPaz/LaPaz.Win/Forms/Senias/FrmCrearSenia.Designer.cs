@@ -35,6 +35,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.TabSeñas = new Telerik.WinControls.UI.RadPageView();
@@ -207,7 +208,7 @@
             gridViewTextBoxColumn2.FieldName = "Concepto";
             gridViewTextBoxColumn2.HeaderText = "Concepto";
             gridViewTextBoxColumn2.Name = "Concepto";
-            gridViewTextBoxColumn2.Width = 262;
+            gridViewTextBoxColumn2.Width = 189;
             gridViewTextBoxColumn3.FieldName = "Importe";
             gridViewTextBoxColumn3.FormatString = "";
             gridViewTextBoxColumn3.HeaderText = "Importe";
@@ -228,7 +229,7 @@
             gridViewTextBoxColumn5.HeaderText = "Disponible";
             gridViewTextBoxColumn5.Name = "Disponible";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 142;
+            gridViewTextBoxColumn5.Width = 107;
             gridViewTextBoxColumn6.FieldName = "FechaAnulacion";
             gridViewTextBoxColumn6.HeaderText = "Fecha Anulacion";
             gridViewTextBoxColumn6.MaxWidth = 120;
@@ -236,6 +237,10 @@
             gridViewTextBoxColumn6.Name = "FechaAnulacion";
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 120;
+            gridViewTextBoxColumn7.FieldName = "FechaModificacion";
+            gridViewTextBoxColumn7.HeaderText = "Fecha uso";
+            gridViewTextBoxColumn7.Name = "FechaModificacion";
+            gridViewTextBoxColumn7.Width = 109;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
             gridViewCommandColumn1.MaxWidth = 30;
@@ -257,6 +262,7 @@
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.GridSeñas.MasterTemplate.EnableGrouping = false;
@@ -529,7 +535,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 687);
+            this.ClientSize = new System.Drawing.Size(1027, 820);
             this.Controls.Add(this.PanelPagos);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.pnlBuscador);

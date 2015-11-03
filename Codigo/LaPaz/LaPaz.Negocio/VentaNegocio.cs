@@ -608,6 +608,10 @@ namespace LaPaz.Negocio
                             clienteCreditoFavor.ImpOcupado = clienteCreditoFavor.Importe;
                         }
 
+                        clienteCreditoFavor.FechaModificacion = _clock.Now;
+                        clienteCreditoFavor.OperadorModificacionId = ventaData.OperadorId;
+                        clienteCreditoFavor.SucursalAltaId = ventaData.SucursalId;
+
                         Uow.ClientesMontosFavor.Modificar(clienteCreditoFavor);
 
                         if (clienteCreditoFavor.Importe != clienteCreditoFavor.ImpOcupado)
@@ -656,6 +660,10 @@ namespace LaPaz.Negocio
                             monto -= (clienteMontoFavor.Importe - clienteMontoFavor.ImpOcupado);
                             clienteMontoFavor.ImpOcupado = clienteMontoFavor.Importe;
                         }
+
+                        clienteMontoFavor.FechaModificacion = _clock.Now;
+                        clienteMontoFavor.OperadorModificacionId = ventaData.OperadorId;
+                        clienteMontoFavor.SucursalAltaId = ventaData.SucursalId;
 
                         Uow.ClientesMontosFavor.Modificar(clienteMontoFavor);
 
