@@ -260,6 +260,7 @@ namespace LaPaz.Win.Forms.Compras
                     if (!this.TitulosDevolucion.Any(t => t.TituloId == titulo.TituloId))
                     {
                         TitulosDevolucion.Add(titulo);
+                        OnDevolucionTitulosChanged(TitulosDevolucion);
                         OnCompraTitulosChanged(Titulos);
                         RefrescarTitulos();
                     }
@@ -275,6 +276,7 @@ namespace LaPaz.Win.Forms.Compras
                                 devolucionTitulo.PrecioBase = titulo.PrecioBase;
                                 devolucionTitulo.PrecioVenta = titulo.PrecioVenta;
                                 devolucionTitulo.SubTotal = titulo.SubTotal;
+                                OnDevolucionTitulosChanged(TitulosDevolucion);
                                 OnCompraTitulosChanged(Titulos);
                                 RefrescarTitulos();
                             }
@@ -292,6 +294,7 @@ namespace LaPaz.Win.Forms.Compras
         {
             TitulosDevolucion.Remove(compraTituloDevolucion);
             RefrescarTitulos();
+            OnDevolucionTitulosChanged(TitulosDevolucion);
             OnCompraTitulosChanged(Titulos);
         }
 

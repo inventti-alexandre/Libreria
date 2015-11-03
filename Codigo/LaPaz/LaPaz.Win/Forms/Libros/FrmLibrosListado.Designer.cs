@@ -46,6 +46,7 @@
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn5 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn6 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.UcFiltrosLibros = new LaPaz.Win.Forms.Libros.UcFiltrosLibros();
@@ -85,7 +86,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.GridLibros);
-            this.splitContainer1.Size = new System.Drawing.Size(1240, 972);
+            this.splitContainer1.Size = new System.Drawing.Size(1376, 805);
             this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 9;
             // 
@@ -104,7 +105,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 62F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1240, 250);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1376, 250);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // UcFiltrosLibros
@@ -125,7 +126,7 @@
             this.UcFiltrosLibros.NombreTitulo = "";
             this.UcFiltrosLibros.OchoDeMarzo = null;
             this.UcFiltrosLibros.ProveedorId = null;
-            this.UcFiltrosLibros.Size = new System.Drawing.Size(1230, 129);
+            this.UcFiltrosLibros.Size = new System.Drawing.Size(1366, 129);
             this.UcFiltrosLibros.TabIndex = 16;
             this.UcFiltrosLibros.TemaId = null;
             // 
@@ -142,7 +143,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1232, 41);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1368, 41);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
             // BtnCrearProveedor
@@ -161,7 +162,7 @@
             // UcProgressSpinner
             // 
             this.UcProgressSpinner.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.UcProgressSpinner.Location = new System.Drawing.Point(1011, 5);
+            this.UcProgressSpinner.Location = new System.Drawing.Point(1147, 5);
             this.UcProgressSpinner.Margin = new System.Windows.Forms.Padding(5);
             this.UcProgressSpinner.Name = "UcProgressSpinner";
             this.UcProgressSpinner.Size = new System.Drawing.Size(216, 31);
@@ -181,7 +182,7 @@
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1232, 54);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1368, 54);
             this.tableLayoutPanel3.TabIndex = 18;
             // 
             // ucEstadoTitulos1
@@ -197,7 +198,7 @@
             // 
             this.TitulosPager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TitulosPager.CurrentPage = 1;
-            this.TitulosPager.Location = new System.Drawing.Point(723, 5);
+            this.TitulosPager.Location = new System.Drawing.Point(859, 5);
             this.TitulosPager.Margin = new System.Windows.Forms.Padding(5);
             this.TitulosPager.Name = "TitulosPager";
             this.TitulosPager.PageSize = 50;
@@ -227,53 +228,53 @@
             gridViewTextBoxColumn2.FieldName = "Cod";
             gridViewTextBoxColumn2.HeaderText = "Código";
             gridViewTextBoxColumn2.Name = "Codigo";
-            gridViewTextBoxColumn2.Width = 126;
+            gridViewTextBoxColumn2.Width = 137;
             gridViewTextBoxColumn3.FieldName = "NombreTitulo";
             gridViewTextBoxColumn3.HeaderText = "Título";
             gridViewTextBoxColumn3.Name = "NombreTitulo";
             gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 220;
+            gridViewTextBoxColumn3.Width = 237;
             gridViewTextBoxColumn4.FieldName = "AutorNombre";
             gridViewTextBoxColumn4.HeaderText = "Autor";
             gridViewTextBoxColumn4.Name = "AutorNombre";
-            gridViewTextBoxColumn4.Width = 124;
+            gridViewTextBoxColumn4.Width = 135;
             gridViewTextBoxColumn5.FieldName = "EditorialNombre";
             gridViewTextBoxColumn5.HeaderText = "Editorial";
             gridViewTextBoxColumn5.Name = "EditorialNombre";
-            gridViewTextBoxColumn5.Width = 111;
+            gridViewTextBoxColumn5.Width = 120;
             gridViewTextBoxColumn6.FieldName = "PrecioVentaTitulo";
             gridViewTextBoxColumn6.FormatString = "{0:c2}";
             gridViewTextBoxColumn6.HeaderText = "Precio";
             gridViewTextBoxColumn6.Name = "PrecioVentaTitulo";
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 104;
+            gridViewTextBoxColumn6.Width = 113;
             gridViewTextBoxColumn7.FieldName = "FechaModificacion";
             gridViewTextBoxColumn7.FormatString = "{0:dd/MM/yyyy}";
             gridViewTextBoxColumn7.HeaderText = "Modificación";
             gridViewTextBoxColumn7.Name = "FechaModificacion";
-            gridViewTextBoxColumn7.Width = 23;
+            gridViewTextBoxColumn7.Width = 25;
             gridViewTextBoxColumn8.FieldName = "UsuarioUltimoPrecio";
             gridViewTextBoxColumn8.HeaderText = "Operador";
             gridViewTextBoxColumn8.Name = "UsuarioUltimoPrecio";
-            gridViewTextBoxColumn8.Width = 101;
+            gridViewTextBoxColumn8.Width = 112;
             gridViewTextBoxColumn9.FieldName = "TituloStockStkPr";
             gridViewTextBoxColumn9.HeaderText = "St. Pr.";
             gridViewTextBoxColumn9.Name = "StockPropio";
             gridViewTextBoxColumn9.ReadOnly = true;
-            gridViewTextBoxColumn9.Width = 58;
+            gridViewTextBoxColumn9.Width = 62;
             gridViewTextBoxColumn10.FieldName = "TituloStockStkCn";
             gridViewTextBoxColumn10.HeaderText = "St. Cn.";
             gridViewTextBoxColumn10.Name = "StockConsignado";
             gridViewTextBoxColumn10.ReadOnly = true;
-            gridViewTextBoxColumn10.Width = 58;
+            gridViewTextBoxColumn10.Width = 62;
             gridViewTextBoxColumn11.FieldName = "TituloStockStkPrViejo";
             gridViewTextBoxColumn11.HeaderText = "PR 8";
             gridViewTextBoxColumn11.Name = "StockPropioViejo";
-            gridViewTextBoxColumn11.Width = 58;
+            gridViewTextBoxColumn11.Width = 62;
             gridViewTextBoxColumn12.FieldName = "TituloStockStkCnViejo";
             gridViewTextBoxColumn12.HeaderText = "CN 8";
             gridViewTextBoxColumn12.Name = "StockConsignadoViejo";
-            gridViewTextBoxColumn12.Width = 100;
+            gridViewTextBoxColumn12.Width = 109;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.View_Details;
             gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -309,6 +310,9 @@
             gridViewCommandColumn5.MinWidth = 30;
             gridViewCommandColumn5.Name = "ColumnaReporte";
             gridViewCommandColumn5.Width = 30;
+            gridViewCommandColumn6.HeaderText = "";
+            gridViewCommandColumn6.Name = "column1";
+            gridViewCommandColumn6.Width = 46;
             this.GridLibros.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -326,11 +330,12 @@
             gridViewCommandColumn2,
             gridViewCommandColumn3,
             gridViewCommandColumn4,
-            gridViewCommandColumn5});
+            gridViewCommandColumn5,
+            gridViewCommandColumn6});
             this.GridLibros.MasterTemplate.EnableGrouping = false;
             this.GridLibros.Name = "GridLibros";
             this.GridLibros.ReadOnly = true;
-            this.GridLibros.Size = new System.Drawing.Size(1240, 718);
+            this.GridLibros.Size = new System.Drawing.Size(1376, 551);
             this.GridLibros.TabIndex = 12;
             this.GridLibros.ThemeName = "TelerikMetroBlue";
             this.GridLibros.RowFormatting += new Telerik.WinControls.UI.RowFormattingEventHandler(this.GridLibros_RowFormatting);
@@ -341,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1240, 972);
+            this.ClientSize = new System.Drawing.Size(1376, 805);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
