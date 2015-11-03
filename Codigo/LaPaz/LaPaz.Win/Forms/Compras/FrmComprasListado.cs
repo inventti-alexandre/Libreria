@@ -134,6 +134,7 @@ namespace LaPaz.Win.Forms.Compras
         {
             using (var formDetalle = FormFactory.Create<FrmDetalleCompra>(compraid))
             {
+               // formDetalle.ShowDialog();
                 var result = formDetalle.ShowDialog();
                 if (result == DialogResult.OK)
                 {

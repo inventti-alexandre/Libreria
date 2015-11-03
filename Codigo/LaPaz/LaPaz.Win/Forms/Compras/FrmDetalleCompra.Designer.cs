@@ -79,7 +79,7 @@
             // ListadoPager
             // 
             this.ListadoPager.CurrentPage = 1;
-            this.ListadoPager.Location = new System.Drawing.Point(430, 33);
+            this.ListadoPager.Location = new System.Drawing.Point(405, 0);
             this.ListadoPager.Name = "ListadoPager";
             this.ListadoPager.PageSize = 50;
             this.ListadoPager.PageTotal = 1;
@@ -105,6 +105,7 @@
             // pageCompraDetalle
             // 
             this.pageCompraDetalle.Controls.Add(this.GridCompraDetalle);
+            this.pageCompraDetalle.Controls.Add(this.ListadoPager);
             this.pageCompraDetalle.Location = new System.Drawing.Point(5, 31);
             this.pageCompraDetalle.Name = "pageCompraDetalle";
             this.pageCompraDetalle.Size = new System.Drawing.Size(794, 409);
@@ -113,7 +114,7 @@
             // GridCompraDetalle
             // 
             this.GridCompraDetalle.AllowDrop = true;
-            this.GridCompraDetalle.Location = new System.Drawing.Point(0, 16);
+            this.GridCompraDetalle.Location = new System.Drawing.Point(0, 51);
             // 
             // GridCompraDetalle
             // 
@@ -129,23 +130,23 @@
             gridViewTextBoxColumn1.FieldName = "TituloNombreTitulo";
             gridViewTextBoxColumn1.HeaderText = "Titulo";
             gridViewTextBoxColumn1.Name = "Titulo";
-            gridViewTextBoxColumn1.Width = 291;
+            gridViewTextBoxColumn1.Width = 316;
             gridViewTextBoxColumn2.FieldName = "CntPr";
             gridViewTextBoxColumn2.HeaderText = "Propia";
             gridViewTextBoxColumn2.Name = "Propia";
-            gridViewTextBoxColumn2.Width = 99;
+            gridViewTextBoxColumn2.Width = 108;
             gridViewTextBoxColumn3.FieldName = "CntCn";
             gridViewTextBoxColumn3.HeaderText = "Consignada";
             gridViewTextBoxColumn3.Name = "Consignada";
-            gridViewTextBoxColumn3.Width = 99;
+            gridViewTextBoxColumn3.Width = 108;
             gridViewTextBoxColumn4.FieldName = "PrecioCompra";
             gridViewTextBoxColumn4.HeaderText = "PrecioCompra";
             gridViewTextBoxColumn4.Name = "PrecioCompra";
-            gridViewTextBoxColumn4.Width = 99;
+            gridViewTextBoxColumn4.Width = 108;
             gridViewTextBoxColumn5.FieldName = "PrecioVenta";
             gridViewTextBoxColumn5.HeaderText = "PrecioVenta";
             gridViewTextBoxColumn5.Name = "PrecioVenta";
-            gridViewTextBoxColumn5.Width = 123;
+            gridViewTextBoxColumn5.Width = 133;
             this.GridCompraDetalle.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -154,7 +155,7 @@
             gridViewTextBoxColumn5});
             this.GridCompraDetalle.Name = "GridCompraDetalle";
             this.GridCompraDetalle.ReadOnly = true;
-            this.GridCompraDetalle.Size = new System.Drawing.Size(729, 390);
+            this.GridCompraDetalle.Size = new System.Drawing.Size(791, 355);
             this.GridCompraDetalle.TabIndex = 0;
             this.GridCompraDetalle.Text = "radGridView1";
             this.GridCompraDetalle.ThemeName = "TelerikMetroBlue";
@@ -222,7 +223,7 @@
             this.GrillaPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GrillaPagos.Location = new System.Drawing.Point(0, 0);
             // 
-            // GrillaPagos
+            // 
             // 
             this.GrillaPagos.MasterTemplate.AllowAddNewRow = false;
             this.GrillaPagos.MasterTemplate.AllowColumnReorder = false;
@@ -285,7 +286,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 608);
             this.Controls.Add(this.ucProgressSpinner);
-            this.Controls.Add(this.ListadoPager);
             this.Controls.Add(this.Tabs);
             this.Name = "FrmDetalleCompra";
             // 
