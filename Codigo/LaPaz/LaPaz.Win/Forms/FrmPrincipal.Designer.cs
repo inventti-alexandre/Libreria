@@ -712,7 +712,7 @@
             this.TabsPrincipal.Location = new System.Drawing.Point(12, 44);
             this.TabsPrincipal.Name = "TabsPrincipal";
             this.TabsPrincipal.SelectedPage = this.PageAccesos;
-            this.TabsPrincipal.Size = new System.Drawing.Size(1002, 752);
+            this.TabsPrincipal.Size = new System.Drawing.Size(1085, 752);
             this.TabsPrincipal.TabIndex = 16;
             this.TabsPrincipal.ThemeName = "TelerikMetroBlue";
             this.TabsPrincipal.SelectedPageChanging += new System.EventHandler<Telerik.WinControls.UI.RadPageViewCancelEventArgs>(this.TabsPrincipal_SelectedPageChanging);
@@ -743,7 +743,7 @@
             this.PageAccesos.ForeColor = System.Drawing.Color.White;
             this.PageAccesos.Location = new System.Drawing.Point(5, 41);
             this.PageAccesos.Name = "PageAccesos";
-            this.PageAccesos.Size = new System.Drawing.Size(992, 706);
+            this.PageAccesos.Size = new System.Drawing.Size(1075, 706);
             this.PageAccesos.Text = "Accesos";
             // 
             // BtnProveedoresdevConsig
