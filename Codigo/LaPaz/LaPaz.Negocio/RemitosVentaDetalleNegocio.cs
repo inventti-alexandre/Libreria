@@ -61,7 +61,7 @@ namespace LaPaz.Negocio
             Guid.TryParse(remitoVentaId, out _remitoVentaId);
 
             criteros.PageNumber = 1;
-            criteros.PageSize = 20;
+            criteros.PageSize = 100;
             criteros.SortBy = "FechaAlta";
             criteros.SortDirection =  "DESC";
             
