@@ -52,5 +52,22 @@ namespace LaPaz.Negocio
             return resultados.Entities.Project().To<ComprasDto>().ToList();
         }
 
+        public decimal? CompraTotal(Guid? proveedorId, int? sucursalId, DateTime fechaInicio, DateTime fechaFin)
+        {
+            var compraTotal = Uow.Compras.Listado().Where(x=> (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
+                                                                       (!sucursalId.HasValue || x.SucursalAltaId == sucursalId) &&
+                                                           (x.FechaAlta > fechaInicio) && (x.FechaAlta < fechaFin));
+
+            return (decimal?)compraTotal.Select(c => c.ImporteNeto).DefaultIfEmpty(0).Sum() ?? 0;
+        }
+
+        public int? CantidadCompra(Guid? proveedorId, int? sucursalId, DateTime fechaInicio, DateTime fechaFin)
+        {
+            var compraTotal = Uow.Compras.Listado().Where(x => (!proveedorId.HasValue || x.ProveedorId == proveedorId) &&
+                                                                       (!sucursalId.HasValue || x.SucursalAltaId == sucursalId) &&
+                                                           (x.FechaAlta > fechaInicio) && (x.FechaAlta < fechaFin));
+
+            return (int?)compraTotal.Count() ?? 0;
+        }
     }
 }

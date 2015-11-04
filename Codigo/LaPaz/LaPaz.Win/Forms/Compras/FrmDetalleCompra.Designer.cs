@@ -71,7 +71,7 @@
             // 
             // ucProgressSpinner
             // 
-            this.ucProgressSpinner.Location = new System.Drawing.Point(270, 48);
+            this.ucProgressSpinner.Location = new System.Drawing.Point(245, 3);
             this.ucProgressSpinner.Name = "ucProgressSpinner";
             this.ucProgressSpinner.Size = new System.Drawing.Size(154, 27);
             this.ucProgressSpinner.TabIndex = 2;
@@ -104,6 +104,7 @@
             // 
             // pageCompraDetalle
             // 
+            this.pageCompraDetalle.Controls.Add(this.ucProgressSpinner);
             this.pageCompraDetalle.Controls.Add(this.GridCompraDetalle);
             this.pageCompraDetalle.Controls.Add(this.ListadoPager);
             this.pageCompraDetalle.Location = new System.Drawing.Point(5, 31);
@@ -285,7 +286,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 608);
-            this.Controls.Add(this.ucProgressSpinner);
             this.Controls.Add(this.Tabs);
             this.Name = "FrmDetalleCompra";
             // 

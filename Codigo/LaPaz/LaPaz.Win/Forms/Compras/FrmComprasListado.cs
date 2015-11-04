@@ -100,8 +100,8 @@ namespace LaPaz.Win.Forms.Compras
            ComprasPager.UpdateState(pageTotal);
 
             //Resumen de movimiento
-            TxtCantidad.Text = compras.Count.ToString();
-            TxtCompras.Text = compras.Select(c => c.ImporteNeto).Sum().ToString();
+            TxtCantidad.Text = _compraNegocio.CantidadCompra(codigoProveedor, Context.SucursalActual.Id,desde,hasta).ToString(); // compras.Count.ToString();
+            TxtCompras.Text = _compraNegocio.CompraTotal(codigoProveedor, Context.SucursalActual.Id,desde,hasta).ToString(); // compras.Select(c => c.ImporteNeto).Sum().ToString();
 
 
 
