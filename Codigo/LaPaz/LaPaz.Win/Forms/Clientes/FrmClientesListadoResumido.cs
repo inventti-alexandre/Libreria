@@ -22,5 +22,10 @@ namespace LaPaz.Win.Forms.Clientes
         {
             GrillaClientes.DataSource = clientes;
         }
+
+        public void ActualizarRemitosVenta(List<RemitosVentaDetalle> remitosVentas)
+        {
+            grillaRemitos.DataSource = remitosVentas;
+        }
     }
 }
