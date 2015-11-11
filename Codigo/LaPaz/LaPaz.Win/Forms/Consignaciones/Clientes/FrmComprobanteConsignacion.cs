@@ -51,8 +51,16 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
             RptComprobanteConsignacion.LocalReport.DataSources.Clear();
             RptComprobanteConsignacion.ProcessingMode = ProcessingMode.Local;
-            string appPath = Application.StartupPath.Replace("\\bin\\Debug", "");
-            string reportPath = @"\RDLS\ComprobanteConsignacion.rdl";
+            string appPath = Application.StartupPath.Replace("\\bin\\Debug", "");   
+            string reportPath = "";
+
+            if (Context.SucursalActual.Id==2)
+                 reportPath = @"\RDLS\ComprobanteConsignacion.rdl";
+            else
+            {
+                if (Context.SucursalActual.Id==27)
+                     reportPath = @"\RDLS\ComprobanteConsignacionVecinito.rdl";
+            }
             RptComprobanteConsignacion.LocalReport.ReportPath = appPath + reportPath;
 
             var lineasConsignacion = Uow.Reportes.ReciboConsignacion(remito.Id);

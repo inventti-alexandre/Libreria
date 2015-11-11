@@ -52,12 +52,26 @@ namespace LaPaz.Win.Forms.Ventas
             RtvComprobante.ProcessingMode = ProcessingMode.Local;
             string appPath = Application.StartupPath.Replace("\\bin\\Debug", "");
             string reportPath = "";
-            if (_montoActualizado == 0)
-                reportPath = @"\RDLS\ClienteMontoFavor.rdl";
-            else
+
+            if (Context.SucursalActual.Id==2)
             {
-                reportPath = @"\RDLS\ClienteMontoFavorActulizacion.rdl";
+                if (_montoActualizado == 0)
+                    reportPath = @"\RDLS\ClienteMontoFavor.rdl";
+                else
+                {
+                    reportPath = @"\RDLS\ClienteMontoFavorActulizacion.rdl";
+                }
             }
+            else if (Context.SucursalActual.Id == 27)
+            {
+                if (_montoActualizado == 0)
+                    reportPath = @"\RDLS\ClienteMontoFavorVecinito.rdl";
+                else
+                {
+                    reportPath = @"\RDLS\ClienteMontoFavorActulizacionVecinito.rdl";
+                }
+            }
+            
 
             RtvComprobante.LocalReport.ReportPath = appPath + reportPath;
 

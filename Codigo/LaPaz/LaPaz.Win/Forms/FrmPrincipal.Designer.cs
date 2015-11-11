@@ -1192,6 +1192,7 @@
             this.ClientSize = new System.Drawing.Size(1105, 784);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.TabsPrincipal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             // 
             // 

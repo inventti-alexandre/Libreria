@@ -8,4 +8,5 @@ AS
 		INNER JOIN TiposComprobantes tc
 		on tc.id = cmf.TipoComprobanteId
 		where cmf.LCN = @lcn
+		order by cmf.FechaAlta desc
 RETURN 0
