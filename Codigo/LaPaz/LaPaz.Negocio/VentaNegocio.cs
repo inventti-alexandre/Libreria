@@ -480,7 +480,8 @@ namespace LaPaz.Negocio
         {
             var lcn = LcnHelper.ObtenerLcn(ventaData.NumeroComprobante.GetValueOrDefault(), ventaData.PuntoVenta);
 
-            var ventaReservada = Uow.VentasReservadas.Obtener(v => v.LCN == lcn);
+            //var ventaReservada = Uow.VentasReservadas.Obtener(v => v.LCN == lcn);
+            var ventaReservada = Uow.VentasReservadas.Listado().OrderByDescending(v=>v.FechaAlta).FirstOrDefault(v => v.LCN == lcn);
 
             if (ventaReservada != null)
             {
