@@ -55,6 +55,8 @@
             this.GridCuotas = new Telerik.WinControls.UI.RadGridView();
             this.PagePagos = new Telerik.WinControls.UI.RadPageViewPage();
             this.GrillaPagos = new Telerik.WinControls.UI.RadGridView();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.txtObservaciones = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Tabs)).BeginInit();
             this.Tabs.SuspendLayout();
             this.pageCompraDetalle.SuspendLayout();
@@ -66,6 +68,8 @@
             this.PagePagos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPagos.MasterTemplate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +97,7 @@
             this.Tabs.Controls.Add(this.pageCompraDetalle);
             this.Tabs.Controls.Add(this.pageCuotas);
             this.Tabs.Controls.Add(this.PagePagos);
-            this.Tabs.Location = new System.Drawing.Point(12, 81);
+            this.Tabs.Location = new System.Drawing.Point(12, 33);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedPage = this.pageCompraDetalle;
             this.Tabs.Size = new System.Drawing.Size(804, 445);
@@ -281,11 +285,38 @@
             this.GrillaPagos.TabIndex = 0;
             this.GrillaPagos.ThemeName = "TelerikMetroBlue";
             // 
+            // radLabel1
+            // 
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(17, 497);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(110, 24);
+            this.radLabel1.TabIndex = 1;
+            this.radLabel1.Text = "Observaciones:";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Enabled = false;
+            this.txtObservaciones.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObservaciones.Location = new System.Drawing.Point(133, 497);
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            // 
+            // 
+            // 
+            this.txtObservaciones.RootElement.StretchVertically = true;
+            this.txtObservaciones.Size = new System.Drawing.Size(613, 60);
+            this.txtObservaciones.TabIndex = 2;
+            this.txtObservaciones.TabStop = false;
+            this.txtObservaciones.ThemeName = "TelerikMetroBlue";
+            // 
             // FrmDetalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(843, 608);
+            this.Controls.Add(this.txtObservaciones);
+            this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.Tabs);
             this.Name = "FrmDetalleCompra";
             // 
@@ -305,8 +336,11 @@
             this.PagePagos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPagos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPagos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtObservaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -321,5 +355,7 @@
         private Telerik.WinControls.UI.RadGridView GridCuotas;
         private Telerik.WinControls.UI.RadPageViewPage PagePagos;
         private Telerik.WinControls.UI.RadGridView GrillaPagos;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadTextBox txtObservaciones;
     }
 }

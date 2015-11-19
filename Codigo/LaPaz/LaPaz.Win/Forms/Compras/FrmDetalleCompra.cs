@@ -152,6 +152,7 @@ namespace LaPaz.Win.Forms.Compras
 
             ucProgressSpinner.Hide();
 
+            txtObservaciones.Text = _compra.Observaciones;
             return pageTotal;
         }
     }

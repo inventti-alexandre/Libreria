@@ -31,10 +31,6 @@ namespace LaPaz.Win.Forms.Compras
 
             _compraNegocio = compraNegocio;
 
-            //SortColumnMappings = new Dictionary<string, string>();
-            //SortColumnMappings["TemaNombre"] = "Tema.Nombre";
-            //SortColumnMappings["ProveedorDenominacion"] = "Proveedor.Denominacion";
-
             InitializeComponent();
 
             InicializarPaginador();
@@ -101,7 +97,9 @@ namespace LaPaz.Win.Forms.Compras
 
             //Resumen de movimiento
             TxtCantidad.Text = _compraNegocio.CantidadCompra(codigoProveedor, Context.SucursalActual.Id,desde,hasta).ToString(); // compras.Count.ToString();
-            TxtCompras.Text = _compraNegocio.CompraTotal(codigoProveedor, Context.SucursalActual.Id,desde,hasta).ToString(); // compras.Select(c => c.ImporteNeto).Sum().ToString();
+
+            decimal total = _compraNegocio.CompraTotal(codigoProveedor, Context.SucursalActual.Id, desde, hasta) ?? 0;
+            TxtCompras.Text = total.ToString("n2"); // compras.Select(c => c.ImporteNeto).Sum().ToString();
 
 
 
