@@ -575,8 +575,6 @@ namespace LaPaz.Win.Forms.Compras
                             "Seleccionaste el titulo de otro proveedor, se desplegaran los datos del titulo del proveedor", Resources.LabelCompras);
                         _tituloCompra = _tituloCompraProveedor;
                         RefrescarListado(_tituloCompra.Cod, _proveedorId);
-                        //var titulos = Uow.Titulos.Listado().Where(t => t.Id == _tituloCompra.Id);
-                        //GridTitulos.DataSource = titulos.ToList();
                     }
                 }
 

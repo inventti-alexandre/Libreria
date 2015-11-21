@@ -174,6 +174,24 @@ namespace LaPaz.Win.Forms.Consignaciones
                         cantARendir -= Convert.ToInt32(rendir);
                         i++;
                     }
+
+                    //Controlo si se modificaron los precio de compra de los tiulos
+                    var titulooriginal = Uow.Titulos.Obtener(t => t.Id == titulo.TituloId);
+                    if ((titulo.PrecioCompraCalculado > titulooriginal.PrecioCompraTitulo) || (titulo.PrecioVentaTitulo > titulooriginal.PrecioVentaTitulo))
+                    {
+                        if (titulo.PrecioCompraCalculado > titulooriginal.PrecioCompraTitulo)
+                            titulooriginal.PrecioCompraTitulo = titulo.PrecioCompraCalculado;
+                        if (titulo.PrecioVentaTitulo > titulooriginal.PrecioVentaTitulo)
+                             titulooriginal.PrecioVentaTitulo = titulo.PrecioVentaTitulo;
+
+                        titulooriginal.FechaModificacion = DateTime.Now;
+                        titulooriginal.OperadorModificacionId = Context.OperadorActual.Id;
+                        titulooriginal.SucursalModificacionId = Context.SucursalActual.Id;
+
+                        Uow.Titulos.Modificar(titulooriginal);
+                        //MessageBox.Show(titulo.NombreTitulo + " " + titulo.PrecioCompraTitulo.ToString() + " " +
+                        //                titulo.PrecioCompraCalculado.ToString());
+                    }
                 }
 
                 //Ahora guardo la tabla ConsignacionRendida
