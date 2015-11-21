@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
@@ -54,7 +55,7 @@
             this.TxtCantidad = new Telerik.WinControls.UI.RadTextBox();
             this.metroLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.metroLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.metroLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.LblPrecio = new Telerik.WinControls.UI.RadLabel();
             this.metroLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.metroLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.UcFiltrosLibros = new LaPaz.Win.Forms.Libros.UcFiltrosLibros();
@@ -81,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LblPrecio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMigracionPropio)).BeginInit();
@@ -219,7 +220,7 @@
             this.metroPanel1.Controls.Add(this.TxtCantidad);
             this.metroPanel1.Controls.Add(this.metroLabel5);
             this.metroPanel1.Controls.Add(this.metroLabel4);
-            this.metroPanel1.Controls.Add(this.metroLabel3);
+            this.metroPanel1.Controls.Add(this.LblPrecio);
             this.metroPanel1.Controls.Add(this.metroLabel2);
             this.metroPanel1.Controls.Add(this.metroLabel1);
             this.metroPanel1.Location = new System.Drawing.Point(1070, 256);
@@ -335,15 +336,15 @@
             this.metroLabel4.Text = "Descuento:";
             this.metroLabel4.ThemeName = "TelerikMetroBlue";
             // 
-            // metroLabel3
+            // LblPrecio
             // 
-            this.metroLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel3.Location = new System.Drawing.Point(11, 90);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(94, 24);
-            this.metroLabel3.TabIndex = 5;
-            this.metroLabel3.Text = "Precio venta:";
-            this.metroLabel3.ThemeName = "TelerikMetroBlue";
+            this.LblPrecio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblPrecio.Location = new System.Drawing.Point(11, 90);
+            this.LblPrecio.Name = "LblPrecio";
+            this.LblPrecio.Size = new System.Drawing.Size(94, 24);
+            this.LblPrecio.TabIndex = 5;
+            this.LblPrecio.Text = "Precio venta:";
+            this.LblPrecio.ThemeName = "TelerikMetroBlue";
             // 
             // metroLabel2
             // 
@@ -370,6 +371,7 @@
             this.UcFiltrosLibros.Activos = true;
             this.UcFiltrosLibros.AutorNombre = "";
             this.UcFiltrosLibros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UcFiltrosLibros.BtnBuscarTexto = "Buscar";
             this.UcFiltrosLibros.CodigoBarra = "";
             this.UcFiltrosLibros.CodigoLibroCompleto = null;
             this.UcFiltrosLibros.CodigoProveedor = null;
@@ -513,7 +515,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LblPrecio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtMigracionPropio)).EndInit();
@@ -542,7 +544,7 @@
         private Telerik.WinControls.UI.RadTextBox TxtPropio;
         private Telerik.WinControls.UI.RadLabel metroLabel5;
         private Telerik.WinControls.UI.RadLabel metroLabel4;
-        private Telerik.WinControls.UI.RadLabel metroLabel3;
+        private Telerik.WinControls.UI.RadLabel LblPrecio;
         private Telerik.WinControls.UI.RadLabel metroLabel2;
         private Telerik.WinControls.UI.RadLabel metroLabel1;
         private Telerik.WinControls.UI.GridViewTextBoxColumn Codigo;
