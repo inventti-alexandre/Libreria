@@ -6,7 +6,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using Framework.Comun.Attributes;
 using Framework.Comun.Extentensions;
 using LaPaz.Datos.Helpers;
 using LaPaz.Datos.Interfaces;
@@ -18,7 +17,6 @@ using LaPaz.Entidades;
 
 namespace LaPaz.Negocio
 {
-    [SharedContext]
     public class RemitosVentaNegocio : NegocioBase, IRemitosVentaNegocio
     {
         public RemitosVentaNegocio(ILaPazUow uow)

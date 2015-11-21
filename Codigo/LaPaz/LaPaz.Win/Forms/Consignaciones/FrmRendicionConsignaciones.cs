@@ -25,11 +25,12 @@ namespace LaPaz.Win.Forms.Consignaciones
         private decimal _total;
         private int _cantidad;
 
-        public FrmRendicionConsignaciones(IFormFactory formFactory, ILaPazUow uow, IConsignacionNegocio consignacionNegocio)
+        public FrmRendicionConsignaciones(IFormFactory formFactory, IUowFactory uowFactory, ILaPazUow uow, IConsignacionNegocio consignacionNegocio)
         {
             FormFactory = formFactory;
 
             Uow = uow;
+            UowFactory = uowFactory;
 
             _consignacionNegocio = consignacionNegocio;
 
@@ -211,7 +212,7 @@ namespace LaPaz.Win.Forms.Consignaciones
 
                 if (chxImprimir.Checked)
                 {
-                    using (var popup = new FrmReporteConsignaciones(Uow, listado,
+                    using (var popup = new FrmReporteConsignaciones(UowFactory, listado,
                         ucFiltrosConsignaciones.ProveedorId.GetValueOrDefault(),
                         ucFiltrosConsignaciones.Desde, ucFiltrosConsignaciones.Hasta))
                     {
@@ -261,7 +262,7 @@ namespace LaPaz.Win.Forms.Consignaciones
 
             if (listado.Sum(x => x.CantidadARendir) > 0)
             {
-                using (var popup = new FrmReporteConsignaciones(Uow, listado,
+                using (var popup = new FrmReporteConsignaciones(UowFactory, listado,
                     ucFiltrosConsignaciones.ProveedorId.GetValueOrDefault(),
                     ucFiltrosConsignaciones.Desde, ucFiltrosConsignaciones.Hasta))
                 {

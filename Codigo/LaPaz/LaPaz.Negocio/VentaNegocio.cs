@@ -6,7 +6,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using Framework.Comun.Attributes;
 using Framework.Comun.Extentensions;
 using LaPaz.Datos.Helpers;
 using LaPaz.Datos.Interfaces;
