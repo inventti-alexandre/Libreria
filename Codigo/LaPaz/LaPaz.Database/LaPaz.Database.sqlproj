@@ -342,7 +342,6 @@
     <RefactorLog Include="LaPaz.Database.refactorlog" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="LaPaz.Database.publish.xml" />
     <None Include="Scripts\Post-Deploy\Roles.Data.sql" />
     <None Include="LaPaz.DatabaseercerCtes.publish.xml" />
     <None Include="LaPaz.DatabasePRAGMA.publish.xml" />
@@ -350,6 +349,7 @@
     <None Include="ProduccionLaPaz.Database.publish.xml" />
     <None Include="LCorrientes.Database.publish.xml" />
     <None Include="Scripts\Post-Deploy\TipoMovimientoCaja-PagoCtaProveedorCajaAnterior.sql" />
+    <None Include="LaPaz.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deploy\Script.PostDeployment.sql" />
