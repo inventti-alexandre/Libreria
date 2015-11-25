@@ -90,6 +90,7 @@ namespace LaPaz.Win.Forms.Ventas
             this.UcTotalesVenta.RecargoChanged += UcTotalesVentaOnRecargoChanged;
             this.UcTotalesVenta.TotalChanged += UcTotalesVentaOnTotalChanged;
             this.UcTotalesVenta.FaltaPagarChanged += UcTotalesVentaOnFaltaPagarChanged;
+            this.UcTotalesVenta.InteresesChanged += UcTotalesVentaOnIntesesChanged;
 
             this.UcCuentaCorrienteInfo.AnticipoChanged += UcCuentaCorrienteInfoOnAnticipoChanged;
             this.UcClienteDetalle.ClienteEdited += UcClienteDetalleOnClienteEdited;
@@ -104,6 +105,11 @@ namespace LaPaz.Win.Forms.Ventas
             }
 
             UcBuscadorCliente.Foco();
+        }
+
+        private void UcTotalesVentaOnIntesesChanged(object sender, decimal? interes)
+        {
+            UcTitulosVenta.ActualizarInteres(interes);
         }
 
         private void UcTotalesVentaOnRecargoChanged(object sender, int? e)

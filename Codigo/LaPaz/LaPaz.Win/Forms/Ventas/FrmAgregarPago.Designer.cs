@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PnlPagoAnterior = new Telerik.WinControls.UI.RadPanel();
             this.ChkCajaAnterior = new Telerik.WinControls.UI.RadCheckBox();
             this.TabsFormaPago = new Telerik.WinControls.UI.RadPageView();
             this.TabEfectivo = new Telerik.WinControls.UI.RadPageViewPage();
             this.TabTarjeta = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.TxtSubTotal = new Telerik.WinControls.UI.RadTextBox();
+            this.TxtInteres = new Framework.WinForm.Controls.CustomControls.NumericTextBox();
             this.CbxTarjeta = new Telerik.WinControls.UI.RadDropDownList();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.metroLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.TxtCuponNumero = new Telerik.WinControls.UI.RadTextBox();
             this.metroLabel3 = new Telerik.WinControls.UI.RadLabel();
@@ -68,7 +73,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.TabsFormaPago)).BeginInit();
             this.TabsFormaPago.SuspendLayout();
             this.TabTarjeta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSubTotal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtInteres)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTarjeta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCuponNumero)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel3)).BeginInit();
@@ -127,7 +136,7 @@
             this.TabsFormaPago.Controls.Add(this.TabTransferencia);
             this.TabsFormaPago.Location = new System.Drawing.Point(12, 76);
             this.TabsFormaPago.Name = "TabsFormaPago";
-            this.TabsFormaPago.SelectedPage = this.TabEfectivo;
+            this.TabsFormaPago.SelectedPage = this.TabTarjeta;
             this.TabsFormaPago.Size = new System.Drawing.Size(412, 190);
             this.TabsFormaPago.TabIndex = 35;
             this.TabsFormaPago.Text = "radPageView1";
@@ -143,7 +152,11 @@
             // 
             // TabTarjeta
             // 
+            this.TabTarjeta.Controls.Add(this.radLabel4);
+            this.TabTarjeta.Controls.Add(this.TxtSubTotal);
+            this.TabTarjeta.Controls.Add(this.TxtInteres);
             this.TabTarjeta.Controls.Add(this.CbxTarjeta);
+            this.TabTarjeta.Controls.Add(this.radLabel3);
             this.TabTarjeta.Controls.Add(this.metroLabel2);
             this.TabTarjeta.Controls.Add(this.TxtCuponNumero);
             this.TabTarjeta.Controls.Add(this.metroLabel3);
@@ -152,12 +165,54 @@
             this.TabTarjeta.Size = new System.Drawing.Size(402, 154);
             this.TabTarjeta.Text = "Tarjeta";
             // 
+            // radLabel4
+            // 
+            this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel4.Location = new System.Drawing.Point(15, 125);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(45, 24);
+            this.radLabel4.TabIndex = 43;
+            this.radLabel4.Text = "Total:";
+            // 
+            // TxtSubTotal
+            // 
+            this.TxtSubTotal.Enabled = false;
+            this.TxtSubTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtSubTotal.Location = new System.Drawing.Point(132, 123);
+            this.TxtSubTotal.Name = "TxtSubTotal";
+            this.TxtSubTotal.Size = new System.Drawing.Size(111, 26);
+            this.TxtSubTotal.TabIndex = 42;
+            this.TxtSubTotal.TabStop = false;
+            this.TxtSubTotal.ThemeName = "TelerikMetroBlue";
+            // 
+            // TxtInteres
+            // 
+            this.TxtInteres.DecimalNumbers = 2;
+            this.TxtInteres.DecimalText = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.TxtInteres.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtInteres.ForeColor = System.Drawing.Color.Black;
+            this.TxtInteres.Format = "^(\\-?)(\\d*)(\\,?)(\\d?)(\\d?)$";
+            this.TxtInteres.HasNegatives = true;
+            this.TxtInteres.Location = new System.Drawing.Point(133, 89);
+            this.TxtInteres.Name = "TxtInteres";
+            this.TxtInteres.Size = new System.Drawing.Size(110, 25);
+            this.TxtInteres.TabIndex = 41;
+            this.TxtInteres.TabStop = false;
+            this.TxtInteres.Text = "0";
+            this.TxtInteres.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtInteres.ThemeName = "ControlDefault";
+            this.TxtInteres.TextChanged += new System.EventHandler(this.TxtInteres_TextChanged);
+            // 
             // CbxTarjeta
             // 
             this.CbxTarjeta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CbxTarjeta.DropDownAnimationEnabled = true;
             this.CbxTarjeta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbxTarjeta.Location = new System.Drawing.Point(133, 14);
+            this.CbxTarjeta.Location = new System.Drawing.Point(133, 9);
             this.CbxTarjeta.MaxDropDownItems = 0;
             this.CbxTarjeta.Name = "CbxTarjeta";
             this.CbxTarjeta.ShowImageInEditorArea = true;
@@ -165,10 +220,19 @@
             this.CbxTarjeta.TabIndex = 2;
             this.CbxTarjeta.ThemeName = "TelerikMetroBlue";
             // 
+            // radLabel3
+            // 
+            this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel3.Location = new System.Drawing.Point(15, 90);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(74, 24);
+            this.radLabel3.TabIndex = 40;
+            this.radLabel3.Text = "Interes %:";
+            // 
             // metroLabel2
             // 
             this.metroLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel2.Location = new System.Drawing.Point(15, 15);
+            this.metroLabel2.Location = new System.Drawing.Point(15, 10);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(57, 24);
             this.metroLabel2.TabIndex = 20;
@@ -178,7 +242,7 @@
             // TxtCuponNumero
             // 
             this.TxtCuponNumero.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCuponNumero.Location = new System.Drawing.Point(133, 59);
+            this.TxtCuponNumero.Location = new System.Drawing.Point(133, 50);
             this.TxtCuponNumero.Name = "TxtCuponNumero";
             this.TxtCuponNumero.Size = new System.Drawing.Size(252, 26);
             this.TxtCuponNumero.TabIndex = 3;
@@ -188,7 +252,7 @@
             // metroLabel3
             // 
             this.metroLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel3.Location = new System.Drawing.Point(15, 60);
+            this.metroLabel3.Location = new System.Drawing.Point(15, 51);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(86, 24);
             this.metroLabel3.TabIndex = 22;
@@ -475,12 +539,13 @@
             this.TxtMonto.TabStop = false;
             this.TxtMonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtMonto.ThemeName = "TelerikMetroBlue";
+            this.TxtMonto.TextChanged += new System.EventHandler(this.TxtMonto_TextChanged);
             // 
             // BtnAgregar
             // 
             this.BtnAgregar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.BtnAgregar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregar.Location = new System.Drawing.Point(219, 282);
+            this.BtnAgregar.Location = new System.Drawing.Point(216, 313);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(100, 30);
             this.BtnAgregar.TabIndex = 10;
@@ -492,7 +557,7 @@
             // 
             this.BtnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.BtnCancelar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCancelar.Location = new System.Drawing.Point(325, 282);
+            this.BtnCancelar.Location = new System.Drawing.Point(322, 313);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(100, 30);
             this.BtnCancelar.TabIndex = 11;
@@ -501,7 +566,7 @@
             // 
             // FrmAgregarPago
             // 
-            this.ClientSize = new System.Drawing.Size(441, 329);
+            this.ClientSize = new System.Drawing.Size(441, 366);
             this.Controls.Add(this.PnlPagoAnterior);
             this.Controls.Add(this.TabsFormaPago);
             this.Controls.Add(this.metroLabel1);
@@ -527,7 +592,11 @@
             this.TabsFormaPago.ResumeLayout(false);
             this.TabTarjeta.ResumeLayout(false);
             this.TabTarjeta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtSubTotal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtInteres)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTarjeta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCuponNumero)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel3)).EndInit();
@@ -600,5 +669,9 @@
         private Telerik.WinControls.UI.RadLabel radLabel5;
         private Telerik.WinControls.UI.RadLabel radLabel1;
         private Telerik.WinControls.UI.RadDateTimePicker DtpTransferencia;
+        private Telerik.WinControls.UI.RadLabel radLabel3;
+        private Framework.WinForm.Controls.CustomControls.NumericTextBox TxtInteres;
+        private Telerik.WinControls.UI.RadLabel radLabel4;
+        private Telerik.WinControls.UI.RadTextBox TxtSubTotal;
     }
 }

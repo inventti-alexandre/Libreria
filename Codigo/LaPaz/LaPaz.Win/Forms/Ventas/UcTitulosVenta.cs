@@ -312,5 +312,25 @@ namespace LaPaz.Win.Forms.Ventas
             btnAgregarPresupuesto.Left = BtnAgregarTitulo.Left;
             btnAgregarPresupuesto.Top = btnAgregarPresupuesto.Top;
         }
+
+        public void ActualizarInteres(decimal? intereses)
+        {
+            //_messageBoxDisplayService.ShowInfo("Actualizar interes " +  intereses.ToString());
+            if (Titulos.Count > 0)
+            {
+                Titulos.First().SubTotal += intereses;
+                var diferencia = Titulos.First().PrecioVenta - Titulos.First().SubTotal;
+                if (diferencia != 0)
+                {
+                    var porcentaje = (int)(diferencia * 100 / Titulos.First().PrecioVenta);
+                    if (porcentaje > 0)
+                        Titulos.First().Descuento = porcentaje; 
+                }
+                
+                
+                OnVentaTitulosChanged(Titulos);
+                RefrescarTitulos();
+            }
+        }
     }
 }
