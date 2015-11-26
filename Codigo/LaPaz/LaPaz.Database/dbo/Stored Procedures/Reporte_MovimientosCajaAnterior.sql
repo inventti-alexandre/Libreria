@@ -74,7 +74,7 @@ BEGIN
 				'Seña a proveedores con Caja Anterior',
 				'-',
 				CM.FechaAlta,
-				'Seña a Proveedor - transferencia',
+				'Seña a Proveedor',
 				P.Denominacion,
 				O.Usuario,
 				ISNULL(CM.Senia, 0),

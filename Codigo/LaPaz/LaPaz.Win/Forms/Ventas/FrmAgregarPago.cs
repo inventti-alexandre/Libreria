@@ -266,7 +266,8 @@ namespace LaPaz.Win.Forms.Ventas
 
                 PnlPagoAnterior.Visible = true;
                 ChkCajaAnterior.Checked = false;
-                //TabsFormaPago.Pages.ElementAt(1).Enabled = false;
+                TabsFormaPago.Pages.ElementAt(0).Enabled = true;
+                TabsFormaPago.Pages.ElementAt(0).Visible = true;
 
             }
             CargarCombos();

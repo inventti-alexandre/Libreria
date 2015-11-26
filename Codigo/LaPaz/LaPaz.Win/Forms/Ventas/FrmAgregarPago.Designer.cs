@@ -136,7 +136,7 @@
             this.TabsFormaPago.Controls.Add(this.TabTransferencia);
             this.TabsFormaPago.Location = new System.Drawing.Point(12, 76);
             this.TabsFormaPago.Name = "TabsFormaPago";
-            this.TabsFormaPago.SelectedPage = this.TabTarjeta;
+            this.TabsFormaPago.SelectedPage = this.TabEfectivo;
             this.TabsFormaPago.Size = new System.Drawing.Size(412, 190);
             this.TabsFormaPago.TabIndex = 35;
             this.TabsFormaPago.Text = "radPageView1";
