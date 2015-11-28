@@ -60,5 +60,18 @@ namespace LaPaz.Win.Forms.Consignaciones
                 AbrirDetalle(this, id);
             }
         }
+
+        private void UcConsignacionesProveedorListado_Load(object sender, EventArgs e)
+        {
+
+            this.GridConsignaciones.Columns["FechaConsignacion"].DataType = typeof(DateTime);
+            this.GridConsignaciones.Columns["FechaConsignacion"].FormatString = "{0: dd/M/yyyy}";
+            this.GridConsignaciones.Columns["UltimaFechaPago"].DataType = typeof(DateTime);
+            this.GridConsignaciones.Columns["UltimaFechaPago"].FormatString = "{0: dd/M/yyyy}";
+            this.GridConsignaciones.Columns["Importe"].DataType = typeof(decimal);
+            this.GridConsignaciones.Columns["Importe"].FormatString = "{0:N2}";
+            this.GridConsignaciones.Columns["Pagado"].DataType = typeof(decimal);
+            this.GridConsignaciones.Columns["Pagado"].FormatString = "{0:N2}";
+        }
     }
 }

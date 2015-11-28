@@ -13,5 +13,7 @@ namespace LaPaz.Negocio.Interfaces
     {
         Compra CrearCompra(Compra compra);
         List<ComprasDto> Listado(string sortBy, string sortDirection, Guid? proveedorId, string nroComprobante, TipoComprobanteEnum? tipoId, int sucursal,  DateTime fechaInicio, DateTime fechaFin, int pageIndex, int pageSize, out int pageTotal);
+        decimal? CompraTotal(Guid? proveedorId, int? sucursalId, DateTime fechaInicio, DateTime fechaFin);
+        int? CantidadCompra(Guid? proveedorId, int? sucursalId, DateTime fechaInicio, DateTime fechaFin);
     }
 }

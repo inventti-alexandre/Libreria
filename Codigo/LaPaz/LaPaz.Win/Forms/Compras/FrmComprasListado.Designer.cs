@@ -35,6 +35,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.ucFiltrosCompras = new LaPaz.Win.Forms.Compras.UcFiltrosCompras();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
@@ -67,7 +68,7 @@
             this.ucFiltrosCompras.Name = "ucFiltrosCompras";
             this.ucFiltrosCompras.NroComprobante = "";
             this.ucFiltrosCompras.ProveedorId = null;
-            this.ucFiltrosCompras.Size = new System.Drawing.Size(786, 88);
+            this.ucFiltrosCompras.Size = new System.Drawing.Size(895, 88);
             this.ucFiltrosCompras.TabIndex = 0;
             this.ucFiltrosCompras.TipoId = null;
             // 
@@ -76,7 +77,7 @@
             this.radPanel1.Controls.Add(this.ucFiltrosCompras);
             this.radPanel1.Location = new System.Drawing.Point(12, 12);
             this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Size = new System.Drawing.Size(800, 100);
+            this.radPanel1.Size = new System.Drawing.Size(935, 100);
             this.radPanel1.TabIndex = 1;
             // 
             // pnlCompras
@@ -90,7 +91,7 @@
             this.pnlCompras.Controls.Add(this.GridCompras);
             this.pnlCompras.Location = new System.Drawing.Point(12, 118);
             this.pnlCompras.Name = "pnlCompras";
-            this.pnlCompras.Size = new System.Drawing.Size(800, 486);
+            this.pnlCompras.Size = new System.Drawing.Size(935, 486);
             this.pnlCompras.TabIndex = 2;
             // 
             // TxtCompras
@@ -138,7 +139,7 @@
             // ComprasPager
             // 
             this.ComprasPager.CurrentPage = 1;
-            this.ComprasPager.Location = new System.Drawing.Point(397, 78);
+            this.ComprasPager.Location = new System.Drawing.Point(543, 78);
             this.ComprasPager.Name = "ComprasPager";
             this.ComprasPager.PageSize = 50;
             this.ComprasPager.PageTotal = 1;
@@ -149,7 +150,7 @@
             // 
             // ucProgressSpinner1
             // 
-            this.ucProgressSpinner1.Location = new System.Drawing.Point(618, 51);
+            this.ucProgressSpinner1.Location = new System.Drawing.Point(764, 51);
             this.ucProgressSpinner1.Name = "ucProgressSpinner1";
             this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
             this.ucProgressSpinner1.TabIndex = 1;
@@ -176,34 +177,38 @@
             gridViewTextBoxColumn1.FieldName = "ProveedorDenominacion";
             gridViewTextBoxColumn1.HeaderText = "Proveedor";
             gridViewTextBoxColumn1.Name = "Proveedor";
-            gridViewTextBoxColumn1.Width = 401;
+            gridViewTextBoxColumn1.Width = 262;
             gridViewTextBoxColumn2.FieldName = "TipoComprobanteId";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Tipo";
             gridViewTextBoxColumn2.Name = "TipoComprobanteId";
-            gridViewTextBoxColumn2.Width = 143;
-            gridViewTextBoxColumn3.FieldName = "FechaAlta";
-            gridViewTextBoxColumn3.FormatString = "";
-            gridViewTextBoxColumn3.HeaderText = "Fecha";
-            gridViewTextBoxColumn3.Name = "FechaAlta";
-            gridViewTextBoxColumn3.Width = 98;
-            gridViewTextBoxColumn4.FieldName = "LCN";
+            gridViewTextBoxColumn2.Width = 168;
+            gridViewTextBoxColumn3.FieldName = "Observaciones";
+            gridViewTextBoxColumn3.HeaderText = "Observaciones";
+            gridViewTextBoxColumn3.Name = "Observaciones";
+            gridViewTextBoxColumn3.Width = 218;
+            gridViewTextBoxColumn4.FieldName = "FechaAlta";
             gridViewTextBoxColumn4.FormatString = "";
-            gridViewTextBoxColumn4.HeaderText = "LCN";
-            gridViewTextBoxColumn4.IsVisible = false;
-            gridViewTextBoxColumn4.Name = "LCN";
-            gridViewTextBoxColumn4.Width = 116;
-            gridViewTextBoxColumn5.FieldName = "ImporteNeto";
+            gridViewTextBoxColumn4.HeaderText = "Fecha";
+            gridViewTextBoxColumn4.Name = "FechaAlta";
+            gridViewTextBoxColumn4.Width = 115;
+            gridViewTextBoxColumn5.FieldName = "LCN";
             gridViewTextBoxColumn5.FormatString = "";
-            gridViewTextBoxColumn5.HeaderText = "Importe";
-            gridViewTextBoxColumn5.Name = "ImporteNeto";
-            gridViewTextBoxColumn5.Width = 83;
-            gridViewTextBoxColumn6.FieldName = "FechaVencimiento";
+            gridViewTextBoxColumn5.HeaderText = "LCN";
+            gridViewTextBoxColumn5.IsVisible = false;
+            gridViewTextBoxColumn5.Name = "LCN";
+            gridViewTextBoxColumn5.Width = 116;
+            gridViewTextBoxColumn6.FieldName = "ImporteNeto";
             gridViewTextBoxColumn6.FormatString = "";
-            gridViewTextBoxColumn6.HeaderText = "Vencimiento";
-            gridViewTextBoxColumn6.IsVisible = false;
-            gridViewTextBoxColumn6.Name = "FechaVencimiento";
-            gridViewTextBoxColumn6.Width = 328;
+            gridViewTextBoxColumn6.HeaderText = "Importe";
+            gridViewTextBoxColumn6.Name = "ImporteNeto";
+            gridViewTextBoxColumn6.Width = 98;
+            gridViewTextBoxColumn7.FieldName = "FechaVencimiento";
+            gridViewTextBoxColumn7.FormatString = "";
+            gridViewTextBoxColumn7.HeaderText = "Vencimiento";
+            gridViewTextBoxColumn7.IsVisible = false;
+            gridViewTextBoxColumn7.Name = "FechaVencimiento";
+            gridViewTextBoxColumn7.Width = 328;
             gridViewCommandColumn1.FormatString = "";
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.View_Details;
@@ -218,10 +223,11 @@
             gridViewTextBoxColumn4,
             gridViewTextBoxColumn5,
             gridViewTextBoxColumn6,
+            gridViewTextBoxColumn7,
             gridViewCommandColumn1});
             this.GridCompras.Name = "GridCompras";
             this.GridCompras.ReadOnly = true;
-            this.GridCompras.Size = new System.Drawing.Size(773, 338);
+            this.GridCompras.Size = new System.Drawing.Size(908, 338);
             this.GridCompras.TabIndex = 0;
             this.GridCompras.ThemeName = "TelerikMetroBlue";
             this.GridCompras.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridCompras_CommandCellClick);
@@ -230,7 +236,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 652);
+            this.ClientSize = new System.Drawing.Size(1146, 724);
             this.Controls.Add(this.pnlCompras);
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

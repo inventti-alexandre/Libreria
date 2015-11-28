@@ -14,6 +14,8 @@ namespace LaPaz.Negocio.Data
     
         [Required(ErrorMessage = "Debe ingresar un importe")]
         public decimal? Importe { get; set; }
+
+        public decimal? Intereses { get; set; }
     }
 
     public class VentaPagoTarjeta : VentaPago
@@ -22,6 +24,8 @@ namespace LaPaz.Negocio.Data
         public int? TarjetaId { get; set; }
 
         public string CuponNumero { get; set; }
+
+        public int Interes { get; set; }
     }
 
     public class VentaPagoCheque : VentaPago

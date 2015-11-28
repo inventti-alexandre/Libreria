@@ -18,6 +18,7 @@ namespace LaPaz.Win.Forms.Ventas
         private IList<VentaPago> _pagos = new List<VentaPago>();
         private decimal? _senaTotal;
         private decimal? _creditoDevolucionTotal;
+        private decimal _intereses = 0;
 
         public UcTotalesVenta()
         {
@@ -38,6 +39,7 @@ namespace LaPaz.Win.Forms.Ventas
         public event EventHandler<int?> RecargoChanged;
         public event EventHandler TotalChanged;
         public event EventHandler<decimal?> PagosChanged;
+        public event EventHandler<decimal?> InteresesChanged; 
 
         #region Propiedades
 
@@ -213,6 +215,14 @@ namespace LaPaz.Win.Forms.Ventas
                 formAgregarPago.PagoAgregado += (o, pago) =>
                 {
                     Pagos.Add(pago);
+                    //Para intereses
+                    if (pago.TipoPago == FormaPago.Tarjeta)
+                    {
+                        _intereses = pago.Intereses ?? 0;
+                        OnInteresesChanged();
+                    }
+                    
+                    // 
                     RefrescarPagos();
                     if (pago.TipoPago != FormaPago.Efectivo)
                     {
@@ -294,8 +304,7 @@ namespace LaPaz.Win.Forms.Ventas
                 }
             }
         }
-
-
+        
         public void GenerarPagoAnticipoNuevo(decimal? monto, FormaPago tipoPago)
         {
             if (Pagos.Count != 0)
@@ -362,7 +371,7 @@ namespace LaPaz.Win.Forms.Ventas
         {
             GrillaPagos.DataSource = Pagos.ToList();
             var total = TotalPagos();
-            FaltaPagar = TotalPagar - total;
+            FaltaPagar = TotalPagar - total;// +_intereses;
         }
 
         public decimal TotalPagos()
@@ -519,6 +528,14 @@ namespace LaPaz.Win.Forms.Ventas
                 //ActualizarTotal();
             }
         }
+
+        private void OnInteresesChanged()
+        {
+            if (InteresesChanged != null)
+            {
+                InteresesChanged(this,_intereses);
+             }
+        }
         private void TxtTotalPagar_TextChanged(object sender, EventArgs e)
         {
             OnTotalAPagarChanged(TotalPagar);
@@ -536,8 +553,6 @@ namespace LaPaz.Win.Forms.Ventas
                 TotalAPagarChanged(this, monto);
             }
         }
-
-
 
         #endregion
 

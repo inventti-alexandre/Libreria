@@ -136,6 +136,9 @@
   <data name="LabelEditarProveedor" xml:space="preserve">
     <value>Editar Proveedor</value>
   </data>
+  <data name="Counting-Machine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Counting-Machine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LabelCrearCuenta" xml:space="preserve">
     <value>Crear Cuenta</value>
   </data>
@@ -193,6 +196,9 @@
   <data name="ErrorMessageEditorialConTitulos" xml:space="preserve">
     <value>No se puede eliminar la editorial tiene titulos asociados</value>
   </data>
+  <data name="LabelCrearProveedorGasto" xml:space="preserve">
+    <value>Crear Proveedor Gasto</value>
+  </data>
   <data name="LabelEditarAutor" xml:space="preserve">
     <value>Editar Autor</value>
   </data>
@@ -207,9 +213,6 @@
   </data>
   <data name="devoluviones" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\devoluviones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LabelCrearPago" xml:space="preserve">
-    <value>Crear Pago</value>
   </data>
   <data name="LabelCrearOrdenDePago" xml:space="preserve">
     <value>Crear Orden de Pago</value>
@@ -226,14 +229,8 @@
   <data name="LabelAbrirCaja" xml:space="preserve">
     <value>Abrir Caja</value>
   </data>
-  <data name="devolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\devolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="LabelBancos" xml:space="preserve">
     <value>Bancos</value>
-  </data>
-  <data name="Print-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Print-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Van - 02" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Van - 02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,8 +238,8 @@
   <data name="LabelCrearCliente" xml:space="preserve">
     <value>Crear Cliente</value>
   </data>
-  <data name="LabelConfirmarCerrarCaja" xml:space="preserve">
-    <value>¿Esta seguro que cerrar la caja para el usuario actual: {0}?</value>
+  <data name="Data-Edit-Con1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Data-Edit-Con1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ComboBoxOptionSeleccionarFormaPago" xml:space="preserve">
     <value>SELECCIONE FORMA DE PAGO</value>
@@ -258,6 +255,9 @@
   </data>
   <data name="LabelEditarEditorial" xml:space="preserve">
     <value>Editar Editorial</value>
+  </data>
+  <data name="LabelDetalleOrdenDePago" xml:space="preserve">
+    <value>Detalle Orden de Pago</value>
   </data>
   <data name="ComboBoxOptionSeleccionarCondicionCompra" xml:space="preserve">
     <value>SELECCIONE CONDICION</value>
@@ -292,14 +292,14 @@
   <data name="LabelEliminarAutor" xml:space="preserve">
     <value>Eliminar Autor</value>
   </data>
-  <data name="LabelPresupuesto" xml:space="preserve">
-    <value>Presupuesto</value>
-  </data>
   <data name="LabelEliminarLibro" xml:space="preserve">
     <value>Eliminar Libro</value>
   </data>
   <data name="LabelDetalleAutor" xml:space="preserve">
     <value>Detalle de Autor</value>
+  </data>
+  <data name="LabelCrearTema" xml:space="preserve">
+    <value>Crear Tema</value>
   </data>
   <data name="LabelDetalleSubTema" xml:space="preserve">
     <value>Detalle Sub Tema</value>
@@ -319,6 +319,9 @@
   <data name="LabelAutores" xml:space="preserve">
     <value>Autores</value>
   </data>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="MensajeClienteInactivo" xml:space="preserve">
     <value>El cliente {0}, DNI:{1} no se encuentra actívo</value>
   </data>
@@ -334,17 +337,14 @@
   <data name="MessageSuccessSeniaExitosa" xml:space="preserve">
     <value>La seña se cargó con éxito</value>
   </data>
-  <data name="MessageSuccessVentaExitosa" xml:space="preserve">
-    <value>La venta se realizó con éxito</value>
-  </data>
   <data name="ErrorMessageBancoConDatos" xml:space="preserve">
     <value>El banco no puede eliminarse ya que tiene cheques de terceros o movimientos de tarjeta asociados</value>
   </data>
   <data name="LabelDetalleBanco" xml:space="preserve">
     <value>Detalle de Banco</value>
   </data>
-  <data name="Counting-Machine" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Counting-Machine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LabelCrearPago" xml:space="preserve">
+    <value>Crear Pago</value>
   </data>
   <data name="TooltipAnulacionCompleta" xml:space="preserve">
     <value>Anulación Completa</value>
@@ -355,8 +355,8 @@
   <data name="reservada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reservada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LabelDetalleOrdenDePago" xml:space="preserve">
-    <value>Detalle Orden de Pago</value>
+  <data name="MessageSuccessVentaExitosa" xml:space="preserve">
+    <value>La venta se realizó con éxito</value>
   </data>
   <data name="LabelEditarPago" xml:space="preserve">
     <value>Editar Pago</value>
@@ -364,8 +364,8 @@
   <data name="Reload_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reload_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ErrorMessageClienteConDeuda" xml:space="preserve">
-    <value>El cliente que esta tratando de eliminar tiene deudas activas. Por favor revíselas he intente nuevamente</value>
+  <data name="LabelConfirmarCerrarCaja" xml:space="preserve">
+    <value>¿Esta seguro que cerrar la caja para el usuario actual: {0}?</value>
   </data>
   <data name="LabelEliminarCuenta" xml:space="preserve">
     <value>Cerrar Cuenta</value>
@@ -388,8 +388,8 @@
   <data name="LabelDetalleLibro" xml:space="preserve">
     <value>Detalle Libro</value>
   </data>
-  <data name="MessageSuccessPagoExitoso" xml:space="preserve">
-    <value>Pagos guardados con éxito</value>
+  <data name="LabelDetalleProveedorGasto" xml:space="preserve">
+    <value>Detalle Proveedor Gasto</value>
   </data>
   <data name="Purchase-Order" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Purchase-Order.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -397,8 +397,8 @@
   <data name="Data-Edit-Con" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Data-Edit-Con.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Book-Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Book-Open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LabelEliminarProveedorGasto" xml:space="preserve">
+    <value>Eliminar Proveedor Gasto</value>
   </data>
   <data name="LabelCrearEditorial" xml:space="preserve">
     <value>Crear Editorial</value>
@@ -414,6 +414,9 @@
   </data>
   <data name="Van - 01" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Van - 01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ErrorMessageSubTemasConTitulos" xml:space="preserve">
+    <value>No se puede eliminar la sub temas tiene titulos asociados</value>
   </data>
   <data name="ConsignacionCliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ConsignacionCliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -445,8 +448,8 @@
   <data name="ErrorMessageSeleccionarCliente" xml:space="preserve">
     <value>Debe seleccionar un cliente</value>
   </data>
-  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warning.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LabelPresupuesto" xml:space="preserve">
+    <value>Presupuesto</value>
   </data>
   <data name="LabelEliminarDetalle" xml:space="preserve">
     <value>Eliminar Pago</value>
@@ -454,8 +457,8 @@
   <data name="ErrorMessageVentaSinLibros" xml:space="preserve">
     <value>Debe agregar al menos un libro a la venta</value>
   </data>
-  <data name="LabelCerrarCaja" xml:space="preserve">
-    <value>Cerra Caja</value>
+  <data name="LabelDetalleTema" xml:space="preserve">
+    <value>Detalle Tema</value>
   </data>
   <data name="Reload" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reload.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,11 +466,11 @@
   <data name="LabelEditarLibro" xml:space="preserve">
     <value>Editar Libro</value>
   </data>
+  <data name="LabelCerrarCaja" xml:space="preserve">
+    <value>Cerra Caja</value>
+  </data>
   <data name="ErrorIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wrong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MessageSuccessConsignacionExitosa" xml:space="preserve">
-    <value>La consignación se realizó con éxito</value>
   </data>
   <data name="LabelAnularSenia" xml:space="preserve">
     <value>Anular Seña</value>
@@ -484,8 +487,8 @@
   <data name="LabelEditarProveedorGasto" xml:space="preserve">
     <value>Editar Proveedor Gasto</value>
   </data>
-  <data name="LabelEliminarProveedorGasto" xml:space="preserve">
-    <value>Eliminar Proveedor Gasto</value>
+  <data name="ErrorMessageClienteConDeuda" xml:space="preserve">
+    <value>El cliente que esta tratando de eliminar tiene deudas activas. Por favor revíselas he intente nuevamente</value>
   </data>
   <data name="reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -496,29 +499,29 @@
   <data name="LabelEliminarTema" xml:space="preserve">
     <value>Eliminar Tema</value>
   </data>
-  <data name="LabelDetalleTema" xml:space="preserve">
-    <value>Detalle Tema</value>
+  <data name="Print-16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Print-16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LabelCrearAutor" xml:space="preserve">
     <value>Crear Autor</value>
   </data>
-  <data name="LabelCrearTema" xml:space="preserve">
-    <value>Crear Tema</value>
+  <data name="MessageSuccessPagoExitoso" xml:space="preserve">
+    <value>Pagos guardados con éxito</value>
   </data>
-  <data name="ErrorMessageSubTemasConTitulos" xml:space="preserve">
-    <value>No se puede eliminar la sub temas tiene titulos asociados</value>
+  <data name="devolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\devolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Garbage_Closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Garbage-Closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Book-Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Book-Open.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LabelDetalleProveedorGasto" xml:space="preserve">
-    <value>Detalle Proveedor Gasto</value>
+  <data name="MessageSuccessConsignacionExitosa" xml:space="preserve">
+    <value>La consignación se realizó con éxito</value>
   </data>
   <data name="Add_New_blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Add-New-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LabelCrearProveedorGasto" xml:space="preserve">
-    <value>Crear Proveedor Gasto</value>
+  <data name="Garbage_Closed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Garbage-Closed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LabelCrearSubTema" xml:space="preserve">
     <value>Crear Sub Tema</value>
@@ -538,7 +541,7 @@
   <data name="Bank" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Data-Edit-Con1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Data-Edit-Con1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoVecinito" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoVecinito.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

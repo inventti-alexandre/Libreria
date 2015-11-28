@@ -21,10 +21,10 @@ namespace LaPaz.Win.Forms.Consignaciones
         public DateTime Desde { get; set; }
         public DateTime Hasta { get; set; }
 
-        public FrmReporteConsignaciones(ILaPazUow uow, List<ConsignacionSinRendir> listado, 
+        public FrmReporteConsignaciones(IUowFactory uowFactory, List<ConsignacionSinRendir> listado, 
             Guid proveedorId, DateTime desde, DateTime hasta)
         {
-            Uow = uow;
+            UowFactory = uowFactory;
             ProveedorId = proveedorId;
             Listado = listado;
             Desde = desde;
@@ -43,15 +43,17 @@ namespace LaPaz.Win.Forms.Consignaciones
             reportViewer1.LocalReport.ReportPath = appPath + reportPath;
             reportViewer1.ZoomPercent = 130;
 
-            var proveedor = Uow.Proveedores.Obtener(p => p.Id == ProveedorId);
-            
-            reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReporteDataset", Listado));
-            
-            var fecha = DateTime.Now.ToShortDateString();
-            var hora = DateTime.Now.ToShortTimeString();
+            using (var uow = UowFactory.Create<ILaPazUow>())
+            {
+                var proveedor = uow.Proveedores.Obtener(p => p.Id == ProveedorId);
 
-            
-            var parametros = new List<ReportParameter>
+                reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ReporteDataset", Listado));
+
+                var fecha = DateTime.Now.ToShortDateString();
+                var hora = DateTime.Now.ToShortTimeString();
+
+
+                var parametros = new List<ReportParameter>
                                  {
                                      new ReportParameter("Fecha", fecha),
                                      new ReportParameter("Hora", hora),
@@ -60,10 +62,10 @@ namespace LaPaz.Win.Forms.Consignaciones
                                      new ReportParameter("ProveedorNombre", proveedor.Denominacion)
                                  };
 
-            reportViewer1.LocalReport.SetParameters(parametros);
-            this.reportViewer1.RefreshReport();
-            this.Cursor = Cursors.Default;
-            
+                reportViewer1.LocalReport.SetParameters(parametros);
+                this.reportViewer1.RefreshReport();
+                this.Cursor = Cursors.Default;
+            }
         }
     }
 }

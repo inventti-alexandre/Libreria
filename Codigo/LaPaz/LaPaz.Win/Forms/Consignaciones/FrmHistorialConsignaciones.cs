@@ -71,6 +71,7 @@ namespace LaPaz.Win.Forms.Consignaciones
             ucFiltrosConsignaciones.Cleaned += Filtered;
 
             UcConsignacionesProveedorListado.AbrirDetalle += UcConsignacionesProveedorListado_AbrirDetalle;
+
         }
 
         private void UcConsignacionesProveedorListado_AbrirDetalle(object sender, Guid tituloConsignacionRendidaId)

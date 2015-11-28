@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using Framework.Comun.Attributes;
 using Framework.Ioc;
 using LaPaz.Datos.Interfaces;
 using LaPaz.Entidades;
@@ -70,27 +69,12 @@ namespace LaPaz.Win.Forms
         {
             if (Uow != null && Uow is IDisposable)
             {
-                if (IsLastForm && UseSharedContext)
+                if (!Uow.IsDisposed)
                 {
-                    if (!Uow.IsDisposed)
-                    {
-                        ((IDisposable)Uow).Dispose();
-                    }
+                    ((IDisposable)Uow).Dispose();
+                }
 
-                    Uow = null;
-                }
-                else
-                {
-                    if (!UseSharedContext)
-                    {
-                        if (!Uow.IsDisposed)
-                        {
-                            ((IDisposable)Uow).Dispose();    
-                        }
-                        
-                        Uow = null;
-                    }
-                }
+                Uow = null;
             }
 
             base.Dispose(disposing);
@@ -104,13 +88,6 @@ namespace LaPaz.Win.Forms
             }
         }
 
-        public bool UseSharedContext
-        {
-            get
-            {
-                return Attribute.IsDefined(this.GetType(), typeof(SharedContext));
-            }
-        }
 
         protected virtual void Grilla_CellFormatting(object sender, CellFormattingEventArgs e)
         {

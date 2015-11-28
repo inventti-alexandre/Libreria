@@ -105,7 +105,7 @@ namespace LaPaz.Win.Forms.Compras
             }
         }
 
-        public decimal? PrecioBase
+       public decimal? PrecioBase
         {
             get
             {
@@ -427,21 +427,34 @@ namespace LaPaz.Win.Forms.Compras
                     {
                         if (tituloModificar.ProveedorId == _proveedorId)
                         {
+                            //Precio de Venta
                             if (PrecioVenta >= tituloModificar.PrecioVentaTitulo)
-                                ActualizarPrecio(tituloModificar);
+                                ActualizarPrecioVenta(tituloModificar);
                         
                             else if (PrecioVenta<tituloModificar.PrecioVentaTitulo)
                             {
                                 //_messageBoxDisplayService.ShowInfo("")
                                 _messageBoxDisplayService.ShowConfirmationDialog(
                                     "El precio del título es menor. Desea almacenarlo?", "Actualizar Precio",
-                                    () => { ActualizarPrecio(tituloModificar); });
+                                    () => { ActualizarPrecioVenta(tituloModificar); });
                             }
+
+                            //Precio de Compra
+                            if (PrecioBase >= tituloModificar.PrecioCompraTitulo)
+                                ActualizarPrecioCompra(tituloModificar);
+
+                            //else if (PrecioBase < tituloModificar.PrecioCompraTitulo)
+                            //{
+                            //    _messageBoxDisplayService.ShowConfirmationDialog(
+                            //        "El precio del título es menor. Desea almacenarlo?", "Actualizar Precio",
+                            //        () => { ActualizarPrecioCompra(tituloModificar); });
+                            //}
+
                         }
                         else
                         {
-                            if (PrecioVenta > tituloModificar.PrecioVentaTitulo)
-                                ActualizarPrecio(tituloModificar);
+                            if ((PrecioVenta > tituloModificar.PrecioVentaTitulo) || (PrecioBase > tituloModificar.PrecioCompraTitulo))
+                                ActualizarPrecioVenta(tituloModificar);
                         }
                     }
                
@@ -449,9 +462,20 @@ namespace LaPaz.Win.Forms.Compras
             
         }
 
-        private void ActualizarPrecio(Titulo tituloModificar)
+        private void ActualizarPrecioVenta(Titulo tituloModificar)
         {
             tituloModificar.PrecioVentaTitulo = PrecioVenta;
+            tituloModificar.OperadorModificacionId = Context.OperadorActual.Id;
+            tituloModificar.FechaModificacion = _clock.Now;
+            tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
+            tituloModificar.UbicacionId = null;
+            Uow.Titulos.Modificar(tituloModificar);
+            Uow.Commit();
+        }
+
+        private void ActualizarPrecioCompra(Titulo tituloModificar)
+        {
+            tituloModificar.PrecioCompraTitulo = PrecioBase;
             tituloModificar.OperadorModificacionId = Context.OperadorActual.Id;
             tituloModificar.FechaModificacion = _clock.Now;
             tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
@@ -551,8 +575,6 @@ namespace LaPaz.Win.Forms.Compras
                             "Seleccionaste el titulo de otro proveedor, se desplegaran los datos del titulo del proveedor", Resources.LabelCompras);
                         _tituloCompra = _tituloCompraProveedor;
                         RefrescarListado(_tituloCompra.Cod, _proveedorId);
-                        //var titulos = Uow.Titulos.Listado().Where(t => t.Id == _tituloCompra.Id);
-                        //GridTitulos.DataSource = titulos.ToList();
                     }
                 }
 
@@ -597,7 +619,8 @@ namespace LaPaz.Win.Forms.Compras
             }
             else if (ChkCalcular.Checked == true)
             {
-                PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
+                //PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
+                PrecioBase = (100 * PrecioVenta) / (100 + Descuento);
                 TxtPrecioCompra.Text = PrecioBase.ToString();
 
             }
@@ -610,8 +633,8 @@ namespace LaPaz.Win.Forms.Compras
         {
             if (ChkCalcular.Checked == true)
             {
-                PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
-
+                //PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
+                PrecioBase = (100*PrecioVenta)/(100 + Descuento);
             }
             SubTotal = PrecioBase * Cantidad;
 

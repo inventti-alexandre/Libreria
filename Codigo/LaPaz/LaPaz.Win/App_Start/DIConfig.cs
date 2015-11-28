@@ -1,6 +1,5 @@
 ﻿using System;
 using Entidades.Migracion;
-using Framework.Comun.Attributes;
 using Framework.Comun.Utility;
 using Framework.Ioc;
 using Framework.WinForm.Comun.Notification;

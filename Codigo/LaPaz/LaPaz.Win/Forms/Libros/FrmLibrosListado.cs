@@ -74,9 +74,14 @@ namespace LaPaz.Win.Forms.Libros
             {
                 using (var form = FormFactory.Create<FrmClientesListadoResumido>())
                 {
-                    var clientes = _tituloNegocio.ClientesConsignacion(tituloSeleccionadoContextMenu.Id,
+                    //var clientes = _tituloNegocio.ClientesConsignacion(tituloSeleccionadoContextMenu.Id,
+                    //    this.Context.SucursalActual.Id);
+
+                    var remitos = _tituloNegocio.RemitosConsignacion(tituloSeleccionadoContextMenu.Id,
                         this.Context.SucursalActual.Id);
-                    form.ActualizarClientes(clientes);
+
+                    //form.ActualizarClientes(clientes);
+                    form.ActualizarRemitosVenta(remitos);
                     form.ShowDialog();
                 }
 

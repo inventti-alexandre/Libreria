@@ -97,7 +97,8 @@ namespace LaPaz.Win.Forms.Senias
         {
             using (var formAgregarPago = FormFactory.Create<FrmAgregarPago>(Guid.Empty, ActionFormMode.Edit))
             {
-                formAgregarPago.PermitirPagoEfectivo = false;
+                formAgregarPago.PermitirPagoEfectivo = true;
+                //formAgregarPago.PermitirPagoEfectivo = false;
                 formAgregarPago.PagoAgregado += (o, pago) =>
                 {
                     Pagos.Add(pago);

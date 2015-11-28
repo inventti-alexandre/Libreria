@@ -85,6 +85,7 @@ namespace LaPaz.Win.Forms.Ventas
                     break;
                 case ActionFormMode.Edit:
                     this.Text = "Seleccionar libro Devolucion";
+                    LblPrecio.Text = "Prec. Compra";
                     _proveedorId = _Tituloid;
                     //_Tituloid=Guid.Empty;
                     CargarTitulo(_Tituloid);
@@ -462,7 +463,40 @@ namespace LaPaz.Win.Forms.Ventas
                 }
                 Uow.Commit();
             }
-        
+            else if (_formMode == ActionFormMode.Edit)
+            {
+                List<Titulo> titulosModificar;
+                if (String.IsNullOrEmpty(titulo.CodigoBarra))
+                    titulosModificar = Uow.Titulos.Listado().Where(t => t.Id == titulo.TituloId).ToList();
+                else
+                {
+                    int codigo;
+                    int codBarra = int.TryParse(titulo.CodigoBarra, out codigo) ? codigo : codigo;
+                    if (codBarra == 0)
+                        titulosModificar = Uow.Titulos.Listado().Where(t => t.Id == titulo.TituloId).ToList();
+                    else
+                        titulosModificar = Uow.Titulos.Listado().Where(t => t.CodigoBarra == titulo.CodigoBarra).ToList();
+                }
+
+
+                if (titulosModificar != null)
+                {
+                    foreach (var tituloModificar in titulosModificar)
+                    {
+                        tituloModificar.PrecioCompraTitulo = PrecioBase;
+                        tituloModificar.OperadorModificacionId = Context.OperadorActual.Id;
+                        tituloModificar.FechaModificacion = _clock.Now;
+                        tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
+                        tituloModificar.UbicacionId = null;
+                        tituloModificar.OperadorUltimoPrecioId = this.Context.OperadorActual.Id;
+
+                        Uow.Titulos.Modificar(tituloModificar);
+                    }
+                    Uow.Commit();
+                }
+                Uow.Commit();
+            }
+
         }
 
         private void OnTituloAgregado(VentaTitulo titulo)

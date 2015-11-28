@@ -66,6 +66,19 @@ namespace LaPaz.Win.Forms.Ventas
             set { TxtCuponNumero.Text = value; }
         }
 
+        public int Interes
+        {
+            get
+            {
+                int interes;
+                return int.TryParse(TxtInteres.Text, out interes) ? interes : 0;
+            }
+            set
+            {
+                TxtInteres.Text = value.ToString();
+            }
+        }
+
         public string ChequeNumero
         {
             get { return TxtChequeNumero.Text; }
@@ -178,11 +191,16 @@ namespace LaPaz.Win.Forms.Ventas
             if (TabsFormaPago.SelectedPage == this.TabTarjeta)
             {
                 var ventaPagoTarjeta = new VentaPagoTarjeta();
-                ventaPagoTarjeta.Importe = Importe;
+                ventaPagoTarjeta.Interes = Interes;
+                //ventaPagoTarjeta.Importe = Importe;
+                var interes = Importe * Interes/100;
+                ventaPagoTarjeta.Intereses = interes;
+                ventaPagoTarjeta.Importe = Importe + interes;
                 ventaPagoTarjeta.TipoPago = FormaPago.Tarjeta;
                 ventaPagoTarjeta.TarjetaId = TarjetaId;
                 ventaPagoTarjeta.CuponNumero = CuponNumero;
                 ventaPagoTarjeta.Descripcion = CbxTarjeta.Text + " - " + CuponNumero;
+                
                 ventaPago = ventaPagoTarjeta;
             }
 
@@ -248,7 +266,8 @@ namespace LaPaz.Win.Forms.Ventas
 
                 PnlPagoAnterior.Visible = true;
                 ChkCajaAnterior.Checked = false;
-                //TabsFormaPago.Pages.ElementAt(1).Enabled = false;
+                TabsFormaPago.Pages.ElementAt(0).Enabled = true;
+                TabsFormaPago.Pages.ElementAt(0).Visible = true;
 
             }
             CargarCombos();
@@ -284,5 +303,15 @@ namespace LaPaz.Win.Forms.Ventas
         }
 
         #endregion
+
+        private void TxtMonto_TextChanged(object sender, EventArgs e)
+        {
+            TxtSubTotal.Text = (Importe + (Importe*Interes/100)).ToString();
+        }
+
+        private void TxtInteres_TextChanged(object sender, EventArgs e)
+        {
+            TxtSubTotal.Text = (Importe + (Importe * Interes / 100)).ToString();
+        }
     }
 }

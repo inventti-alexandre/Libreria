@@ -11,6 +11,7 @@ using LaPaz.Entidades;
 using LaPaz.Entidades.Dto;
 using LaPaz.Negocio.Interfaces;
 using System.Linq;
+using LaPaz.Win.Model;
 
 namespace LaPaz.Negocio
 {
@@ -55,5 +56,13 @@ namespace LaPaz.Negocio
                                 rv.RemitosVentaDetalles.Any(
                                     rvd => rvd.TituloId == tituloId && rvd.SucursalAltaId == sucursalId))).ToList();
         }
-    }
+
+        public List<RemitosVentaDetalle> RemitosConsignacion(Guid tituloId, int sucursalId)
+        {
+            return
+                Uow.RemitosVentasDetalle.Listado(rvd => rvd.RemitosVenta, rvd=>rvd.RemitosVenta.ClienteConsignado)
+                .Where(rvd => rvd.TituloId == tituloId && rvd.SucursalAltaId == sucursalId).ToList();
+        }
+
+      }
 }

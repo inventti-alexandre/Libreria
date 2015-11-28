@@ -36,7 +36,7 @@ namespace LaPaz.Win.Forms.Compras
 
 
             InitializeComponent();
-            //InicializarPaginador();
+            InicializarPaginador();
 
             //Fix para centrar columnas.
             this.MainPager = ListadoPager;
@@ -53,7 +53,8 @@ namespace LaPaz.Win.Forms.Compras
         {
            if (Tabs.SelectedPage==pageCompraDetalle)
             {
-                CargarCompraDetalle();
+                //CargarCompraDetalle();
+                RefrescarListado();
             }
            if (Tabs.SelectedPage == pageCuotas)
            {
@@ -85,7 +86,8 @@ namespace LaPaz.Win.Forms.Compras
             FormatoGrillas();
 
             _compra = Uow.Compras.Obtener(c => c.Id == _compraId);
-            CargarCompraDetalle();
+            RefrescarListado();
+            //CargarCompraDetalle();
 
         }
 
@@ -111,14 +113,47 @@ namespace LaPaz.Win.Forms.Compras
         {
               ucProgressSpinner.Show();
 
+              var page = ListadoPager.CurrentPage;
+              var pageSize = ListadoPager.PageSize;
             int pageTotal = 0;
 
             var compraDetalle = _compraDetalleNegocio.Listado("FechaAlta", "ASC", _compraId, null, Context.SucursalActual.Id, ListadoPager.CurrentPage,
                                                                         ListadoPager.PageSize, out pageTotal);
 
+            ListadoPager.UpdateState(pageTotal);
             GridCompraDetalle.DataSource = compraDetalle.ToList();
 
             ucProgressSpinner.Hide();
+        }
+
+        public override async Task<int> RefrescarListado()
+        {
+            ucProgressSpinner.Show();
+
+            int pageTotal = 0;
+
+            //var codigoProveedor = ucFiltrosCompras.ProveedorId;
+            //var nroComprobante = ucFiltrosCompras.NroComprobante;
+            //var tipoId = ucFiltrosCompras.TipoId;
+            //var desde = ucFiltrosCompras.FechaInicio.AddDays(-1);
+            //var hasta = ucFiltrosCompras.FechaHasta;
+
+            var page = ListadoPager.CurrentPage;
+            var pageSize = ListadoPager.PageSize;
+
+           // var filtrosVacios = ucFiltrosCompras.FiltrosVacios;
+
+            var compras = await Task.Run(() =>  _compraDetalleNegocio.Listado("FechaAlta", "ASC", _compraId, null, Context.SucursalActual.Id, ListadoPager.CurrentPage,
+                                                                        ListadoPager.PageSize, out pageTotal));
+
+            GridCompraDetalle.DataSource = compras;
+
+            ListadoPager.UpdateState(pageTotal);
+
+            ucProgressSpinner.Hide();
+
+            txtObservaciones.Text = _compra.Observaciones;
+            return pageTotal;
         }
     }
 }

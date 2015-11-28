@@ -63,7 +63,15 @@ namespace LaPaz.Win.Presupuesto
             RptFacturaVenta.LocalReport.DataSources.Clear();
             RptFacturaVenta.ProcessingMode = ProcessingMode.Local;
             string appPath = Application.StartupPath.Replace("\\bin\\Debug", "");
-            string reportPath = @"\RDLS\ComprobantePresupuesto.rdl";
+
+            string reportPath = "";
+            if (Context.SucursalActual.Id==2)
+                reportPath = @"\RDLS\ComprobantePresupuesto.rdl";
+            else
+            {
+                if (Context.SucursalActual.Id==27)
+                    reportPath = @"\RDLS\ComprobantePresupuestoVecinito.rdl";
+            }
             RptFacturaVenta.LocalReport.ReportPath = appPath + reportPath;
 
             var lineasPresupuesto = Uow.Reportes.PresupuestoById(_presupuestoId);

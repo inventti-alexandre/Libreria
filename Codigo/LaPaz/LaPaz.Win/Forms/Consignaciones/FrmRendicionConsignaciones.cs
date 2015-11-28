@@ -25,11 +25,12 @@ namespace LaPaz.Win.Forms.Consignaciones
         private decimal _total;
         private int _cantidad;
 
-        public FrmRendicionConsignaciones(IFormFactory formFactory, ILaPazUow uow, IConsignacionNegocio consignacionNegocio)
+        public FrmRendicionConsignaciones(IFormFactory formFactory, IUowFactory uowFactory, ILaPazUow uow, IConsignacionNegocio consignacionNegocio)
         {
             FormFactory = formFactory;
 
             Uow = uow;
+            UowFactory = uowFactory;
 
             _consignacionNegocio = consignacionNegocio;
 
@@ -173,6 +174,24 @@ namespace LaPaz.Win.Forms.Consignaciones
                         cantARendir -= Convert.ToInt32(rendir);
                         i++;
                     }
+
+                    //Controlo si se modificaron los precio de compra de los tiulos
+                    var titulooriginal = Uow.Titulos.Obtener(t => t.Id == titulo.TituloId);
+                    if ((titulo.PrecioCompraCalculado > titulooriginal.PrecioCompraTitulo) || (titulo.PrecioVentaTitulo > titulooriginal.PrecioVentaTitulo))
+                    {
+                        if (titulo.PrecioCompraCalculado > titulooriginal.PrecioCompraTitulo)
+                            titulooriginal.PrecioCompraTitulo = titulo.PrecioCompraCalculado;
+                        if (titulo.PrecioVentaTitulo > titulooriginal.PrecioVentaTitulo)
+                             titulooriginal.PrecioVentaTitulo = titulo.PrecioVentaTitulo;
+
+                        titulooriginal.FechaModificacion = DateTime.Now;
+                        titulooriginal.OperadorModificacionId = Context.OperadorActual.Id;
+                        titulooriginal.SucursalModificacionId = Context.SucursalActual.Id;
+
+                        Uow.Titulos.Modificar(titulooriginal);
+                        //MessageBox.Show(titulo.NombreTitulo + " " + titulo.PrecioCompraTitulo.ToString() + " " +
+                        //                titulo.PrecioCompraCalculado.ToString());
+                    }
                 }
 
                 //Ahora guardo la tabla ConsignacionRendida
@@ -211,7 +230,7 @@ namespace LaPaz.Win.Forms.Consignaciones
 
                 if (chxImprimir.Checked)
                 {
-                    using (var popup = new FrmReporteConsignaciones(Uow, listado,
+                    using (var popup = new FrmReporteConsignaciones(UowFactory, listado,
                         ucFiltrosConsignaciones.ProveedorId.GetValueOrDefault(),
                         ucFiltrosConsignaciones.Desde, ucFiltrosConsignaciones.Hasta))
                     {
@@ -261,7 +280,7 @@ namespace LaPaz.Win.Forms.Consignaciones
 
             if (listado.Sum(x => x.CantidadARendir) > 0)
             {
-                using (var popup = new FrmReporteConsignaciones(Uow, listado,
+                using (var popup = new FrmReporteConsignaciones(UowFactory, listado,
                     ucFiltrosConsignaciones.ProveedorId.GetValueOrDefault(),
                     ucFiltrosConsignaciones.Desde, ucFiltrosConsignaciones.Hasta))
                 {

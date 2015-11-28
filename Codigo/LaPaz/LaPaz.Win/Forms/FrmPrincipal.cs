@@ -294,7 +294,11 @@ namespace LaPaz.Win.Forms
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            if (Context.SucursalActual.Id == 27)
+            {
+                this.Text = "Sistema de Gestion El Vecinito";
+               // this.Icon = "\Resources\logovecinito.ico";
+            }
         }
 
         private void BtnOrdenesPago_Click(object sender, EventArgs e)

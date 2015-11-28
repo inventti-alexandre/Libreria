@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
-using Framework.Comun.Attributes;
 using Framework.Comun.Utility;
 using Framework.Ioc;
 using Framework.WinForm.Comun.Notification;

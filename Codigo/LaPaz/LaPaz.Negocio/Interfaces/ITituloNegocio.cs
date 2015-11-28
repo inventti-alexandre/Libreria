@@ -18,5 +18,6 @@ namespace LaPaz.Negocio.Interfaces
         List<TituloDto> Listado(string sortBy, string sortDirection, int? codigoProveedor, string codigoLibroCompleto, int pageIndex, int pageSize, out int pageTotal);
         List<TituloDto> Listado(string sortBy, string sortDirection, int pageIndex, int pageSize, out int pageTotal);
         List<Cliente> ClientesConsignacion(Guid tituloId, int sucursalId);
+        List<RemitosVentaDetalle> RemitosConsignacion(Guid tituloId, int sucursalId);
     }
 }

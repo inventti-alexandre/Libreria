@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
-using Framework.Comun.Attributes;
 using Framework.Comun.Utility;
 using Framework.Ioc;
 using Framework.WinForm.Comun.Notification;
@@ -40,7 +39,6 @@ namespace LaPaz.Win.Forms.Ventas
         public FrmCrearVenta(IClock clock,
                              IFormFactory formFactory,
                              IMessageBoxDisplayService messageBoxDisplayService,
-                             ILaPazUow uow,
                              IVentaNegocio ventaNegocio,
                              IClienteNegocio clienteNegocio,
                              IFormRegistry formRegistry, 
@@ -49,7 +47,6 @@ namespace LaPaz.Win.Forms.Ventas
                              ActionFormMode mode)
         {
             FormFactory = formFactory;
-            Uow = uow;
             FormRegistry = formRegistry;
 
             _clock = clock;
@@ -93,6 +90,7 @@ namespace LaPaz.Win.Forms.Ventas
             this.UcTotalesVenta.RecargoChanged += UcTotalesVentaOnRecargoChanged;
             this.UcTotalesVenta.TotalChanged += UcTotalesVentaOnTotalChanged;
             this.UcTotalesVenta.FaltaPagarChanged += UcTotalesVentaOnFaltaPagarChanged;
+            this.UcTotalesVenta.InteresesChanged += UcTotalesVentaOnIntesesChanged;
 
             this.UcCuentaCorrienteInfo.AnticipoChanged += UcCuentaCorrienteInfoOnAnticipoChanged;
             this.UcClienteDetalle.ClienteEdited += UcClienteDetalleOnClienteEdited;
@@ -107,6 +105,11 @@ namespace LaPaz.Win.Forms.Ventas
             }
 
             UcBuscadorCliente.Foco();
+        }
+
+        private void UcTotalesVentaOnIntesesChanged(object sender, decimal? interes)
+        {
+            UcTitulosVenta.ActualizarInteres(interes);
         }
 
         private void UcTotalesVentaOnRecargoChanged(object sender, int? e)

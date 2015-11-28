@@ -56,7 +56,7 @@
             gridViewTextBoxColumn1.FieldName = "ProveedorDenominacion";
             gridViewTextBoxColumn1.HeaderText = "Proveedor";
             gridViewTextBoxColumn1.Name = "ProveedorDenominacion";
-            gridViewTextBoxColumn1.Width = 232;
+            gridViewTextBoxColumn1.Width = 215;
             gridViewTextBoxColumn2.FieldName = "LCN";
             gridViewTextBoxColumn2.HeaderText = "LCN";
             gridViewTextBoxColumn2.MinWidth = 120;
@@ -84,8 +84,10 @@
             gridViewTextBoxColumn6.Width = 130;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.View_Details;
+            gridViewCommandColumn1.MaxWidth = 30;
+            gridViewCommandColumn1.MinWidth = 30;
             gridViewCommandColumn1.Name = "ColumnaDetalle";
-            gridViewCommandColumn1.Width = 13;
+            gridViewCommandColumn1.Width = 30;
             this.GridConsignaciones.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -108,6 +110,7 @@
             this.Controls.Add(this.GridConsignaciones);
             this.Name = "UcConsignacionesProveedorListado";
             this.Size = new System.Drawing.Size(931, 111);
+            this.Load += new System.EventHandler(this.UcConsignacionesProveedorListado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridConsignaciones)).EndInit();
             this.ResumeLayout(false);

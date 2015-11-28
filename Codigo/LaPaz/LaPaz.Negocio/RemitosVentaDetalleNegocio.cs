@@ -6,7 +6,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using Framework.Comun.Attributes;
 using Framework.Comun.Extentensions;
 using LaPaz.Datos.Helpers;
 using LaPaz.Datos.Interfaces;
@@ -18,7 +17,6 @@ using LaPaz.Entidades;
 
 namespace LaPaz.Negocio
 {
-    [SharedContext]
     public class RemitosVentaDetalleNegocio : NegocioBase, IRemitosVentaDetalleNegocio
     {
         public RemitosVentaDetalleNegocio(ILaPazUow uow)
@@ -61,7 +59,7 @@ namespace LaPaz.Negocio
             Guid.TryParse(remitoVentaId, out _remitoVentaId);
 
             criteros.PageNumber = 1;
-            criteros.PageSize = 20;
+            criteros.PageSize = 100;
             criteros.SortBy = "FechaAlta";
             criteros.SortDirection =  "DESC";
             

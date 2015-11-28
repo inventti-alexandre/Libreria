@@ -6,7 +6,6 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper.QueryableExtensions;
-using Framework.Comun.Attributes;
 using Framework.Comun.Extentensions;
 using LaPaz.Datos.Helpers;
 using LaPaz.Datos.Interfaces;
@@ -480,7 +479,8 @@ namespace LaPaz.Negocio
         {
             var lcn = LcnHelper.ObtenerLcn(ventaData.NumeroComprobante.GetValueOrDefault(), ventaData.PuntoVenta);
 
-            var ventaReservada = Uow.VentasReservadas.Obtener(v => v.LCN == lcn);
+            //var ventaReservada = Uow.VentasReservadas.Obtener(v => v.LCN == lcn);
+            var ventaReservada = Uow.VentasReservadas.Listado().OrderByDescending(v=>v.FechaAlta).FirstOrDefault(v => v.LCN == lcn);
 
             if (ventaReservada != null)
             {
@@ -608,6 +608,10 @@ namespace LaPaz.Negocio
                             clienteCreditoFavor.ImpOcupado = clienteCreditoFavor.Importe;
                         }
 
+                        clienteCreditoFavor.FechaModificacion = _clock.Now;
+                        clienteCreditoFavor.OperadorModificacionId = ventaData.OperadorId;
+                        clienteCreditoFavor.SucursalAltaId = ventaData.SucursalId;
+
                         Uow.ClientesMontosFavor.Modificar(clienteCreditoFavor);
 
                         if (clienteCreditoFavor.Importe != clienteCreditoFavor.ImpOcupado)
@@ -656,6 +660,10 @@ namespace LaPaz.Negocio
                             monto -= (clienteMontoFavor.Importe - clienteMontoFavor.ImpOcupado);
                             clienteMontoFavor.ImpOcupado = clienteMontoFavor.Importe;
                         }
+
+                        clienteMontoFavor.FechaModificacion = _clock.Now;
+                        clienteMontoFavor.OperadorModificacionId = ventaData.OperadorId;
+                        clienteMontoFavor.SucursalAltaId = ventaData.SucursalId;
 
                         Uow.ClientesMontosFavor.Modificar(clienteMontoFavor);
 
