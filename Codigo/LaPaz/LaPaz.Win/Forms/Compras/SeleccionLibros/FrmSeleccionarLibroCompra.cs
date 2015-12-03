@@ -633,8 +633,11 @@ namespace LaPaz.Win.Forms.Compras
         {
             if (ChkCalcular.Checked == true)
             {
-                //PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
-                PrecioBase = (100*PrecioVenta)/(100 + Descuento);
+                //santy
+                PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
+                
+                //sil
+                //PrecioBase = (100*PrecioVenta)/(100 + Descuento);
             }
             SubTotal = PrecioBase * Cantidad;
 
