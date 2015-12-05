@@ -598,12 +598,6 @@ namespace LaPaz.Win.Forms.Compras
         }
 
         
-
-
-        
-        
-
-
         private void GridTitulos_SelectionChanged(object sender, EventArgs e)
         {
             InformacionDeLibro();
@@ -619,8 +613,11 @@ namespace LaPaz.Win.Forms.Compras
             }
             else if (ChkCalcular.Checked == true)
             {
-                //PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
-                PrecioBase = (100 * PrecioVenta) / (100 + Descuento);
+                //Santy
+                PrecioBase = PrecioVenta * ((100 - Descuento) / 100);
+
+                //Sil
+                //PrecioBase = (100 * PrecioVenta) / (100 + Descuento);
                 TxtPrecioCompra.Text = PrecioBase.ToString();
 
             }
