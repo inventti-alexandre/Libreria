@@ -20,11 +20,13 @@ Public Class clsVariableSesion
             '& "Pooling=false;Connection Lifetime=1; Max Pool Size=1;Allow User Variables=True;allow zero datetime=yes"
 
 
-            _conn.ConnectionString = "data source=EQUIPO-SIL;initial catalog=lapaz;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+            '_conn.ConnectionString = "data source=EQUIPO-SIL;initial catalog=lapaz;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
 
             '_conn.ConnectionString = "Data Source=10.1.4.10\SERVERCTES\Administrador,1433;Initial Catalog=lapaz;user id=userctacte;password=ap_sys"
 
             '_conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
+            'ElVecinito
+            _conn.ConnectionString = "Data Source=.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
 
         Catch ex As Exception
             MsgBox(ex.Message)

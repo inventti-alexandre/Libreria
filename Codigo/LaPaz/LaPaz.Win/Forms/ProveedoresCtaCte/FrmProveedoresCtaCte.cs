@@ -245,11 +245,11 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             {
                 foreach (var cuenta in proveedoresConsigna)
                 {
-                    Consignacion += (cuenta.Importe - cuenta.Pagado);
+                    Consignacion += (cuenta.Importe - (cuenta.Pagado ?? 0));
                     var total = (DateTime.Now - Convert.ToDateTime(cuenta.FechaConsignacion)).Days;
                     if (total >= 30)
                     {
-                        ConsignacionVencida += (cuenta.Importe - cuenta.Pagado);
+                        ConsignacionVencida += (cuenta.Importe - (cuenta.Pagado ?? 0));
                     }
                 }
             }

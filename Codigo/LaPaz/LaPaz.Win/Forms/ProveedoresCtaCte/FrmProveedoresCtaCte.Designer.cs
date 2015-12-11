@@ -462,7 +462,7 @@
             // LblConsigna
             // 
             this.LblConsigna.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblConsigna.Location = new System.Drawing.Point(234, 43);
+            this.LblConsigna.Location = new System.Drawing.Point(260, 43);
             this.LblConsigna.Name = "LblConsigna";
             this.LblConsigna.Size = new System.Drawing.Size(16, 24);
             this.LblConsigna.TabIndex = 7;
@@ -543,7 +543,7 @@
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1265, 820);
+            this.ClientSize = new System.Drawing.Size(1273, 820);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.RpvPagos);

@@ -23,12 +23,14 @@ Partial Class frmPrincipal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPrincipal))
         Me.msMenu = New System.Windows.Forms.MenuStrip()
         Me.CobroDeCuentasCorrientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InfomeClientesDeudoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeudasFiltroMontoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReImprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AdministraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeCuotasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoUsuarioToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -36,7 +38,6 @@ Partial Class frmPrincipal
         Me.EnvioDeMailsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnviarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HistorialToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReImprimirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambiarContraseñaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IniciarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -97,6 +98,13 @@ Partial Class frmPrincipal
         Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem.Size = New System.Drawing.Size(323, 24)
         Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem.Text = "Listado Deudas - Filtros Fecha  Monto"
         '
+        'ReImprimirToolStripMenuItem
+        '
+        Me.ReImprimirToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
+        Me.ReImprimirToolStripMenuItem.Name = "ReImprimirToolStripMenuItem"
+        Me.ReImprimirToolStripMenuItem.Size = New System.Drawing.Size(92, 63)
+        Me.ReImprimirToolStripMenuItem.Text = "ReImprimir"
+        '
         'AdministraciónToolStripMenuItem
         '
         Me.AdministraciónToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
@@ -146,13 +154,6 @@ Partial Class frmPrincipal
         Me.HistorialToolStripMenuItem.Name = "HistorialToolStripMenuItem"
         Me.HistorialToolStripMenuItem.Size = New System.Drawing.Size(133, 24)
         Me.HistorialToolStripMenuItem.Text = "Historial"
-        '
-        'ReImprimirToolStripMenuItem
-        '
-        Me.ReImprimirToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
-        Me.ReImprimirToolStripMenuItem.Name = "ReImprimirToolStripMenuItem"
-        Me.ReImprimirToolStripMenuItem.Size = New System.Drawing.Size(92, 63)
-        Me.ReImprimirToolStripMenuItem.Text = "ReImprimir"
         '
         'CerrarSesiónToolStripMenuItem
         '
@@ -204,6 +205,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.msMenu)
         Me.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.msMenu
         Me.Name = "frmPrincipal"

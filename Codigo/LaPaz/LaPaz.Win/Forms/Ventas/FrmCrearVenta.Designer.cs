@@ -181,7 +181,7 @@
             this.UcCuentaCorrienteInfo.SubTotal = null;
             this.UcCuentaCorrienteInfo.TabIndex = 4;
             this.UcCuentaCorrienteInfo.Total = null;
-            this.UcCuentaCorrienteInfo.Vencimiento = new System.DateTime(2015, 12, 17, 0, 0, 0, 0);
+            this.UcCuentaCorrienteInfo.Vencimiento = new System.DateTime(2016, 1, 10, 0, 0, 0, 0);
             // 
             // metroPanel1
             // 
@@ -326,7 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1275, 820);
+            this.ClientSize = new System.Drawing.Size(1291, 820);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.RPCtaccte);
             this.Controls.Add(this.radPanel3);
