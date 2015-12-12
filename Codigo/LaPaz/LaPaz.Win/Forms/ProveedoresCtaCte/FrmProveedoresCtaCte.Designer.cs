@@ -134,7 +134,7 @@
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel4.Location = new System.Drawing.Point(12, 33);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(50, 24);
+            this.radLabel4.Size = new System.Drawing.Size(62, 29);
             this.radLabel4.TabIndex = 10;
             this.radLabel4.Text = "Fecha:";
             // 
@@ -148,10 +148,10 @@
             this.DtpFechaPago.Name = "DtpFechaPago";
             this.DtpFechaPago.NullableValue = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
             this.DtpFechaPago.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaPago.Size = new System.Drawing.Size(137, 29);
+            this.DtpFechaPago.Size = new System.Drawing.Size(137, 34);
             this.DtpFechaPago.TabIndex = 9;
             this.DtpFechaPago.TabStop = false;
-            this.DtpFechaPago.Text = "13/06/2015";
+            this.DtpFechaPago.Text = "13/6/2015";
             this.DtpFechaPago.ThemeName = "TelerikMetroBlue";
             this.DtpFechaPago.Value = new System.DateTime(2015, 6, 13, 17, 58, 26, 545);
             // 
@@ -174,6 +174,7 @@
             this.ucTotalesCompraSeña1.EgresosDisp = null;
             this.ucTotalesCompraSeña1.FaltaPagar = null;
             this.ucTotalesCompraSeña1.Location = new System.Drawing.Point(3, 58);
+            this.ucTotalesCompraSeña1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucTotalesCompraSeña1.Name = "ucTotalesCompraSeña1";
             this.ucTotalesCompraSeña1.Senas = null;
             this.ucTotalesCompraSeña1.SenasDisp = null;
@@ -186,6 +187,7 @@
             // 
             this.ProveedoreCtaCtePager.CurrentPage = 1;
             this.ProveedoreCtaCtePager.Location = new System.Drawing.Point(446, 555);
+            this.ProveedoreCtaCtePager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ProveedoreCtaCtePager.Name = "ProveedoreCtaCtePager";
             this.ProveedoreCtaCtePager.PageSize = 50;
             this.ProveedoreCtaCtePager.PageTotal = 1;
@@ -211,9 +213,9 @@
             // CuentaCorriente
             // 
             this.CuentaCorriente.Controls.Add(this.GridCtaCte);
-            this.CuentaCorriente.Location = new System.Drawing.Point(5, 36);
+            this.CuentaCorriente.Location = new System.Drawing.Point(5, 41);
             this.CuentaCorriente.Name = "CuentaCorriente";
-            this.CuentaCorriente.Size = new System.Drawing.Size(821, 361);
+            this.CuentaCorriente.Size = new System.Drawing.Size(821, 356);
             this.CuentaCorriente.Text = "Cuenta Corriente";
             // 
             // GridCtaCte
@@ -439,7 +441,7 @@
             this.LblConsignaVencida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblConsignaVencida.Location = new System.Drawing.Point(298, 67);
             this.LblConsignaVencida.Name = "LblConsignaVencida";
-            this.LblConsignaVencida.Size = new System.Drawing.Size(16, 24);
+            this.LblConsignaVencida.Size = new System.Drawing.Size(19, 29);
             this.LblConsignaVencida.TabIndex = 9;
             this.LblConsignaVencida.Text = "0";
             // 
@@ -448,13 +450,14 @@
             this.lblDeudaVencida.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeudaVencida.Location = new System.Drawing.Point(122, 68);
             this.lblDeudaVencida.Name = "lblDeudaVencida";
-            this.lblDeudaVencida.Size = new System.Drawing.Size(16, 24);
+            this.lblDeudaVencida.Size = new System.Drawing.Size(19, 29);
             this.lblDeudaVencida.TabIndex = 5;
             this.lblDeudaVencida.Text = "0";
             // 
             // ucProgressSpinner1
             // 
             this.ucProgressSpinner1.Location = new System.Drawing.Point(720, 13);
+            this.ucProgressSpinner1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucProgressSpinner1.Name = "ucProgressSpinner1";
             this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
             this.ucProgressSpinner1.TabIndex = 0;
@@ -464,7 +467,7 @@
             this.LblConsigna.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblConsigna.Location = new System.Drawing.Point(260, 43);
             this.LblConsigna.Name = "LblConsigna";
-            this.LblConsigna.Size = new System.Drawing.Size(16, 24);
+            this.LblConsigna.Size = new System.Drawing.Size(19, 29);
             this.LblConsigna.TabIndex = 7;
             this.LblConsigna.Text = "0";
             // 
@@ -473,7 +476,7 @@
             this.lblDeuda.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeuda.Location = new System.Drawing.Point(64, 44);
             this.lblDeuda.Name = "lblDeuda";
-            this.lblDeuda.Size = new System.Drawing.Size(16, 24);
+            this.lblDeuda.Size = new System.Drawing.Size(19, 29);
             this.lblDeuda.TabIndex = 4;
             this.lblDeuda.Text = "0";
             // 
@@ -482,7 +485,7 @@
             this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel7.Location = new System.Drawing.Point(158, 67);
             this.radLabel7.Name = "radLabel7";
-            this.radLabel7.Size = new System.Drawing.Size(133, 24);
+            this.radLabel7.Size = new System.Drawing.Size(165, 29);
             this.radLabel7.TabIndex = 8;
             this.radLabel7.Text = "Consigna Vencida:";
             // 
@@ -492,7 +495,7 @@
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel3.Location = new System.Drawing.Point(5, 68);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(114, 24);
+            this.radLabel3.Size = new System.Drawing.Size(142, 29);
             this.radLabel3.TabIndex = 4;
             this.radLabel3.Text = "Deuda Vencida:";
             // 
@@ -501,7 +504,7 @@
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(120, 0);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(16, 24);
+            this.radLabel2.Size = new System.Drawing.Size(19, 29);
             this.radLabel2.TabIndex = 5;
             this.radLabel2.Text = "0";
             // 
@@ -510,7 +513,7 @@
             this.radLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel9.Location = new System.Drawing.Point(158, 43);
             this.radLabel9.Name = "radLabel9";
-            this.radLabel9.Size = new System.Drawing.Size(74, 24);
+            this.radLabel9.Size = new System.Drawing.Size(92, 29);
             this.radLabel9.TabIndex = 6;
             this.radLabel9.Text = "Consigna:";
             // 
@@ -519,7 +522,7 @@
             this.LblDeudas.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblDeudas.Location = new System.Drawing.Point(5, 44);
             this.LblDeudas.Name = "LblDeudas";
-            this.LblDeudas.Size = new System.Drawing.Size(55, 24);
+            this.LblDeudas.Size = new System.Drawing.Size(69, 29);
             this.LblDeudas.TabIndex = 3;
             this.LblDeudas.Text = "Deuda:";
             // 
@@ -528,7 +531,7 @@
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.Location = new System.Drawing.Point(3, 13);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(78, 24);
+            this.radLabel1.Size = new System.Drawing.Size(96, 29);
             this.radLabel1.TabIndex = 2;
             this.radLabel1.Text = "Proveedor";
             // 
@@ -536,6 +539,7 @@
             // 
             this.ucFiltroProveedor1.EsGasto = false;
             this.ucFiltroProveedor1.Location = new System.Drawing.Point(101, 10);
+            this.ucFiltroProveedor1.Margin = new System.Windows.Forms.Padding(4);
             this.ucFiltroProveedor1.Name = "ucFiltroProveedor1";
             this.ucFiltroProveedor1.ProveedorId = null;
             this.ucFiltroProveedor1.Size = new System.Drawing.Size(351, 27);
@@ -543,7 +547,7 @@
             // 
             // FrmProveedoresCtaCte
             // 
-            this.ClientSize = new System.Drawing.Size(1273, 820);
+            this.ClientSize = new System.Drawing.Size(1281, 861);
             this.Controls.Add(this.PnlPagos);
             this.Controls.Add(this.ProveedoreCtaCtePager);
             this.Controls.Add(this.RpvPagos);

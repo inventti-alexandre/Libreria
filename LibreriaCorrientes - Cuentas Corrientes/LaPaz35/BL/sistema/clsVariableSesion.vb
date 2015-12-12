@@ -25,6 +25,7 @@ Public Class clsVariableSesion
             '_conn.ConnectionString = "Data Source=10.1.4.10\SERVERCTES\Administrador,1433;Initial Catalog=lapaz;user id=userctacte;password=ap_sys"
 
             '_conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
+
             'ElVecinito
             _conn.ConnectionString = "Data Source=.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
 

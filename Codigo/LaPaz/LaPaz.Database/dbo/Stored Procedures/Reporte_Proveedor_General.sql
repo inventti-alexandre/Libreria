@@ -15,7 +15,7 @@ BEGIN
 	
 	INSERT INTO @Conceptos VALUES(29, 'Compras Contado')
 	INSERT INTO @Conceptos VALUES(2, 'Compras Cta Cte')
-	--INSERT INTO @Conceptos VALUES(8, 'Consignacion')
+	INSERT INTO @Conceptos VALUES(8, 'Consignacion Rendida')
 
 	
 	DECLARE @Temp TABLE 
@@ -34,13 +34,28 @@ BEGIN
 	FROM Compras C
 	WHERE (C.TipoComprobanteId = 29
 			OR C.TipoComprobanteId = 2
-			OR C.TipoComprobanteId = 8
 		)
 			AND C.FechaAlta >= @FechaInicio
 			AND C.FechaAlta < @FechaFin
 			AND C.SucursalAltaId = @SucursalId
-			AND C.ProveedorId = @ProveedorId
+			AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
 	GROUP BY C.Concepto, c.TipoComprobanteId
+
+	-----------------------------------------------------------
+	------------  PAGOS - CUENTA CORRIENTE - CONSIGNACIONES ------------------
+	-----------------------------------------------------------
+
+	INSERT INTO @Temp
+	SELECT 'Consignaciones Rendidas',
+			COUNT(*),
+			SUM(TCR.Importe),
+			8
+	FROM TitulosConsignacionesRendidas TCR
+	WHERE 
+			TCR.FechaAlta >= @FechaInicio
+			AND TCR.FechaAlta < @FechaFin
+			AND TCR.SucursalAltaId = @SucursalId
+			AND (@ProveedorId IS NULL OR @ProveedorId = TCR.ProveedorId)
 		
 	SELECT C.Nombre,
 		   Cantidad = ISNULL(CTE.Cantidad, 0),

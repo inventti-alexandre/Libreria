@@ -1903,6 +1903,7 @@
     <ReportParameter Name="ProveedorId">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
+      <AllowBlank>true</AllowBlank>
       <Prompt>Proveedor Id</Prompt>
     </ReportParameter>
   </ReportParameters>

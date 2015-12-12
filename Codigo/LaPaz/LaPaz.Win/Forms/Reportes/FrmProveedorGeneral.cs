@@ -32,7 +32,7 @@ namespace LaPaz.Win.Forms.Reportes
         {
             this.reportViewer1.RefreshReport();
 
-            DtpFechaInicio.Value = DateTime.Now;
+            DtpFechaInicio.Value = DateTime.Now.AddMonths(-1);
             DtpFechaFin.Value = DateTime.Now;
         }
 
@@ -51,6 +51,8 @@ namespace LaPaz.Win.Forms.Reportes
             var fin = SetTimeToZero(DtpFechaFin.Value.AddDays(1));
 
             Guid? proveedorId = ucFiltroProveedor.ProveedorId;
+            if (proveedorId == Guid.Empty)
+                proveedorId = null;
 
             //var proveedor = proveedorId == null
             //                   ? "TODOS"
@@ -59,26 +61,11 @@ namespace LaPaz.Win.Forms.Reportes
             var compras = _reporteNegocio.ReporteProveedorGeneral(inicio, fin, Context.SucursalActual.Id, null, proveedorId);
             var pagos = _reporteNegocio.ReporteProveedorGeneralPagos(inicio, fin, Context.SucursalActual.Id, null, proveedorId);
             var montofavor = _reporteNegocio.ReporteProveedorGeneralAFavor(inicio, fin, Context.SucursalActual.Id, null, proveedorId);
-            //var egresos = _reporteNegocio.CajaResumidaEgresos(inicio, fin, Context.SucursalActual.Id, operadorId);
-            //var composicionIngresos = _reporteNegocio.CajaResumidaComposicionIngresos(inicio, fin, Context.SucursalActual.Id, operadorId);
-            //var composicionEgresos = _reporteNegocio.CajaResumidaComposicionEgresos(inicio, fin, Context.SucursalActual.Id, operadorId);
-            //var composicionVentas = _reporteNegocio.CajaResumidaComposicionVentas(inicio, fin, Context.SucursalActual.Id, operadorId);
-
-            //"Compras"
-            //var totales = new EgresosTotalesRow()
-            //{
-            //    Cantidad = (int)egresos.Where(eg => eg.Nombre != "Depósitos con Caja Anterior").Sum(eg => eg.Cantidad),
-            //    Total = (int)egresos.Where(eg => eg.Nombre != "Depósitos con Caja Anterior").Sum(eg => eg.Total)
-            //};
-
+            
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Compras", compras));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Pagos", pagos));
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("MontosFavor", montofavor));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ComposicionIngresos", composicionIngresos));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ComposicionEgresos", composicionEgresos));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ComposicionVentas", composicionVentas));
-            //reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("EgresosTotales", new List<EgresosTotalesRow> { totales }));
-
+            
             var sucursal = Context.SucursalActual.Nombre;
             var fecha = DateTime.Now.ToShortDateString();
             var hora = DateTime.Now.ToShortTimeString();

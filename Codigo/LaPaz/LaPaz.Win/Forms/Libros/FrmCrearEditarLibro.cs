@@ -278,6 +278,8 @@ namespace LaPaz.Win.Forms.Libros
                 }
                 Uow.Commit();
 
+                ActualizarPrecioTitulo(titulo);
+
                 if (_formMode == ActionFormMode.Create)
                 {
                     OnTituloAgregado(titulo);
@@ -477,6 +479,72 @@ namespace LaPaz.Win.Forms.Libros
             {
                 TituloAgregado(this, titulo);
             }
+        }
+
+        #endregion
+
+        #region ActualizarPrecioVenta
+        private void ActualizarPrecioTitulo(Titulo titulo)
+        {
+            //MOdificar el de todos los proveedores?
+            var titulosModificar = new List<Titulo>();
+            int _codigo;
+            var co = int.TryParse(titulo.CodigoBarra, out _codigo);
+
+
+            if (String.IsNullOrEmpty(titulo.CodigoBarra) || _codigo == 0)
+            {
+                titulosModificar = Uow.Titulos.Listado().Where(t => t.Id == titulo.Id).ToList();
+            }
+            else
+            {
+                titulosModificar = Uow.Titulos.Listado().Where(t => t.CodigoBarra == titulo.CodigoBarra).ToList();
+            }
+
+            if (titulosModificar.Count > 0)
+            {
+                foreach (var tituloModificar in titulosModificar)
+                {
+                    if (tituloModificar.ProveedorId == _titulo.ProveedorId)
+                    {
+                        //Precio de Venta
+                        if (PrecioVenta >= tituloModificar.PrecioVentaTitulo)
+                            ActualizarPrecioVenta(tituloModificar);
+
+                        else if (PrecioVenta < tituloModificar.PrecioVentaTitulo)
+                        {
+                            //_messageBoxDisplayService.ShowInfo("")
+                            _messageBoxDisplayService.ShowConfirmationDialog(
+                                "El precio del título es menor. Desea almacenarlo?", "Actualizar Precio",
+                                () => { ActualizarPrecioVenta(tituloModificar); });
+                        }
+
+                        //Precio de Compra
+                        //if (PrecioBase >= tituloModificar.PrecioCompraTitulo)
+                        //    ActualizarPrecioCompra(tituloModificar);
+
+                      
+
+                    }
+                    else
+                    {
+                        if ((PrecioVenta > tituloModificar.PrecioVentaTitulo))//|| (PrecioBase > tituloModificar.PrecioCompraTitulo))
+                            ActualizarPrecioVenta(tituloModificar);
+                    }
+                }
+
+            }
+
+        }
+        private void ActualizarPrecioVenta(Titulo tituloModificar)
+        {
+            tituloModificar.PrecioVentaTitulo = PrecioVenta;
+            tituloModificar.OperadorModificacionId = Context.OperadorActual.Id;
+            tituloModificar.FechaModificacion = _clock.Now;
+            tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
+            tituloModificar.UbicacionId = null;
+            Uow.Titulos.Modificar(tituloModificar);
+            Uow.Commit();
         }
 
         #endregion

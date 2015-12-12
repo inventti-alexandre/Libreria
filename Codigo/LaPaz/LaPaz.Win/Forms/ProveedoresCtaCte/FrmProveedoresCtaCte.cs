@@ -62,6 +62,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             MainGrid = GridCtaCte;
             MainPager = ProveedoreCtaCtePager;
             Spinner = ucProgressSpinner1;
+
         }
 
         private void FrmProveedoresCtaCte_Load(object sender, EventArgs e)
@@ -77,8 +78,8 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             this.GridCtaCte.Columns["Pagado"].FormatString = "{0:N2}";
             this.GridCtaCte.Columns["Pago"].FormatString = "{0:N2}";
 
-            this.GridCtaCte.Columns["Importe"].FormatString = "{0:N2}";
-            this.GridCtaCte.Columns["Pagado"].FormatString = "{0:N2}";
+            this.GridConsignaciones.Columns["Importe"].FormatString = "{0:N2}";
+            this.GridConsignaciones.Columns["Pagado"].FormatString = "{0:N2}";
             DtpFechaPago.Value = _clock.Now;
         }
 
@@ -146,7 +147,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             {
                 return Convert.ToDecimal(lblDeuda.Text);
             }
-            set { lblDeuda.Text = value.ToString(); }
+            set { lblDeuda.Text = value.Value.ToString("n2"); }
         }
 
         public decimal? DeudaVencida
@@ -155,19 +156,19 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
             {
                 return Convert.ToDecimal(lblDeudaVencida.Text);
             }
-            set { lblDeudaVencida.Text = value.ToString(); }
+            set { lblDeudaVencida.Text = value.Value.ToString("n2"); }
         }
 
         public decimal? Consignacion
         {
             get { return Convert.ToDecimal(LblConsigna.Text); }
-            set { LblConsigna.Text = value.ToString(); }
+            set { LblConsigna.Text = value.Value.ToString("n2"); }
         }
 
         public decimal? ConsignacionVencida
         {
             get { return Convert.ToDecimal(LblConsignaVencida.Text); }
-            set { LblConsignaVencida.Text = value.ToString(); }
+            set { LblConsignaVencida.Text = value.Value.ToString("n2"); }
         }
 
 

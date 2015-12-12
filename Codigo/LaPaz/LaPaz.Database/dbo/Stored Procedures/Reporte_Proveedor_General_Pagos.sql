@@ -32,7 +32,8 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Compras Contado',
 			COUNT(*),
-			SUM(C.ImporteNeto + cm.Senia),
+			--SUM(C.ImporteNeto + cm.Senia),
+			SUM(CM.Importe + cm.Senia),
 			C.TipoComprobanteId
 	from CajasMovimientos CM
 	INNER JOIN Compras C
@@ -42,7 +43,7 @@ DECLARE @Conceptos TABLE
 	AND C.FechaAlta >= @FechaInicio
 	AND C.FechaAlta < @FechaFin
 	AND C.SucursalAltaId = @SucursalId
-	AND C.ProveedorId = @ProveedorId
+	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
 	GROUP BY C.TipoComprobanteId
 
 	-----------------------------------------------------------
@@ -61,7 +62,7 @@ DECLARE @Conceptos TABLE
 	AND C.FechaAlta >= @FechaInicio
 	AND C.FechaAlta < @FechaFin
 	AND C.SucursalAltaId = @SucursalId
-	AND C.ProveedorId = @ProveedorId
+	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
 	GROUP BY C.TipoComprobanteId
 
 	-----------------------------------------------------------
@@ -81,7 +82,7 @@ DECLARE @Conceptos TABLE
 	AND CM.FechaAlta >= @FechaInicio
 	AND CM.FechaAlta < @FechaFin
 	AND CM.SucursalAltaId = @SucursalId
-	AND PP.ProveedorId = @ProveedorId
+	AND (@ProveedorId IS NULL OR @ProveedorId = PP.ProveedorId)
 	GROUP BY CM.TipoComprobante
 
 	
