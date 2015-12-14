@@ -16,7 +16,7 @@
     <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinitoCtaCte/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -32,7 +32,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>logovecinito.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -594,10 +594,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="logovecinito.ico" />
     <Content Include="Resources\Agregar.png" />
     <Content Include="Resources\Agregar1.png" />
     <Content Include="Resources\boton.png" />
     <Content Include="Resources\buscar.png" />
+    <None Include="Resources\vecinito.bmp" />
     <None Include="Resources\superior.jpg" />
     <None Include="Resources\inferior.jpg" />
     <Content Include="Resources\linea.png" />
