@@ -37,6 +37,8 @@ namespace LaPaz.Win.Forms.Reportes
 
         private void FrmClientesPorTitulo_Load(object sender, EventArgs e)
         {
+            CargarCombos();
+
             DtpFechaInicio.Value = DateTime.Now.AddMonths(-1);
             DtpFechaFin.Value = DateTime.Now;
             CbxColumnas.SelectedIndex = 0;
@@ -85,6 +87,32 @@ namespace LaPaz.Win.Forms.Reportes
         private void reportViewer1_ReportRefresh(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Refresh();
+        }
+
+        private async Task CargarCombos()
+        {
+            //_limpiandoFiltros = true;
+
+            var proveedores = Uow.Proveedores.Listado().Where(p => p.Gto == false).OrderBy(p => p.Denominacion).ToList();
+            proveedores.Insert(0, new Proveedor() { Denominacion = "SELECCIONE PROVEEDOR", Cuenta = 0 });
+
+            GridProveedores.DisplayMember = "Denominacion";
+            GridProveedores.ValueMember = "Id";
+            GridProveedores.DataSource = proveedores;
+
+            var tema = Uow.Temas.Listado().OrderBy(t => t.Nombre).ToList();
+            tema.Insert(0, new Tema() { Nombre = "SELECCIONE TEMA" });
+            gridTemas.DataSource = tema;
+            gridTemas.DisplayMember = "Nombre";
+            gridTemas.ValueMember = "Id";
+
+            var titulo = Uow.Titulos.Listado().Distinct().OrderBy(t => t.NombreTitulo).ToList();
+            titulo.Insert(0, new Titulo() { NombreTitulo = "SELECCIONE TITULO" });
+            GridLibros.DataSource = tema;
+            GridLibros.DisplayMember = "NombreTitulo";
+            GridLibros.ValueMember = "Id";
+
+            //_limpiandoFiltros = false;
         }
     }
 }

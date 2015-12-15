@@ -34,10 +34,10 @@ namespace LaPaz.Win.Forms.Ventas
             set
             {
                 TabEfectivo.Item.Visibility = value ? ElementVisibility.Visible : ElementVisibility.Collapsed;
-                if (TabEfectivo.Item.IsSelected)
-                {
-                    this.TabsFormaPago.SelectedPage = TabTarjeta;
-                }
+                //if (TabEfectivo.Item.IsSelected)
+                //{
+                //    this.TabsFormaPago.SelectedPage = TabTarjeta;
+                //}
             }
         }
 

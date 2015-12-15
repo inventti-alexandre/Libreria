@@ -40,11 +40,10 @@ DECLARE @Conceptos TABLE
 	INNER JOIN ProveedoresSenias PS
 	ON PS.Id= CM.ComprobanteId
 	where CM.TipoComprobante = 37 -- SENAS A PROVEEDORES
-	--AND C.ProveedorId='FB8C2F3A-E38A-4D30-A758-DAC31195CFE1' 
 	AND CM.FechaAlta >= @FechaInicio
 	AND CM.FechaAlta < @FechaFin
 	AND CM.SucursalAltaId = @SucursalId
-	AND PS.ProveedorId = @ProveedorId
+	AND (@ProveedorId IS NULL OR @ProveedorId = PS.ProveedorId)
 	GROUP BY CM.TipoComprobante
 
 	-----------------------------------------------------------
@@ -64,7 +63,7 @@ DECLARE @Conceptos TABLE
 	AND PMF.FechaAlta >= @FechaInicio
 	AND PMF.FechaAlta < @FechaFin
 	AND PMF.SucursalAltaId = @SucursalId
-	AND PMF.ProveedorId = @ProveedorId
+	AND (@ProveedorId IS NULL OR @ProveedorId = PMF.ProveedorId)
 	GROUP BY PMF.TipoComprobanteId
 
 		-----------------------------------------------------------
@@ -84,7 +83,7 @@ DECLARE @Conceptos TABLE
 	AND PMF.FechaAlta >= @FechaInicio
 	AND PMF.FechaAlta < @FechaFin
 	AND PMF.SucursalAltaId = @SucursalId
-	AND PMF.ProveedorId = @ProveedorId
+	AND (@ProveedorId IS NULL OR @ProveedorId = PMF.ProveedorId)
 	GROUP BY PMF.TipoComprobanteId
 
 	SELECT C.Nombre,

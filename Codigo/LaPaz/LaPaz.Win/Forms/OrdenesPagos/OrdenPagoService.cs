@@ -117,12 +117,16 @@ namespace LaPaz.Win.Forms.OrdenesPagos
         public void AgregarMovimientos(OrdenesPago ordenPago, OrdenesPagoDetalle pago, DetalleFormaPago vPago)
         {
             var movimiento = new CajaMovimiento();
+            var movimientoAnterior = new CajaMovimiento();
+            if (vPago.IsDeleted)
+                movimientoAnterior = _uow.CajaMovimientos.Obtener(c => c.ComprobanteId == ordenPago.Id);
 
             movimiento.Id = Guid.NewGuid();
             movimiento.Importe = pago.ImportePagado;
             movimiento.ComprobanteId = ordenPago.Id;
             movimiento.TipoComprobante = TipoComprobanteEnum.OrdenPago;
-            movimiento.TipoMovimientoCajaId = vPago.IsDeleted ? TipoMovimientoCajaEnum.AnulaciónOrdenPago : TipoMovimientoCajaEnum.PagoGastos;
+            movimiento.TipoMovimientoCajaId = vPago.IsDeleted ? movimientoAnterior.TipoMovimientoCajaId : TipoMovimientoCajaEnum.PagoGastos;
+            //movimiento.TipoMovimientoCajaId = vPago.IsDeleted ? TipoMovimientoCajaEnum.AnulaciónOrdenPago : TipoMovimientoCajaEnum.PagoGastos;
             movimiento.PcAlta = Environment.MachineName;
             movimiento.CajaId = _cajaActual.Id;
 
