@@ -611,11 +611,8 @@
     <Content Include="Resources\Agregar1.png" />
     <Content Include="Resources\boton.png" />
     <Content Include="Resources\buscar.png" />
-<<<<<<< HEAD
     <None Include="Resources\vecinito.bmp" />
-=======
     <None Include="packages.config" />
->>>>>>> origin/master
     <None Include="Resources\superior.jpg" />
     <None Include="Resources\inferior.jpg" />
     <Content Include="Resources\linea.png" />
