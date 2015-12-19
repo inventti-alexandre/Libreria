@@ -514,6 +514,12 @@
     <Compile Include="Forms\Libros\FrmActualizarStockLibro.Designer.cs">
       <DependentUpon>FrmActualizarStockLibro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Libros\FrmBuscarTitulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Libros\FrmBuscarTitulo.Designer.cs">
+      <DependentUpon>FrmBuscarTitulo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Libros\UcEstadoTitulos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1438,6 +1444,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Libros\FrmActualizarStockLibro.resx">
       <DependentUpon>FrmActualizarStockLibro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Libros\FrmBuscarTitulo.resx">
+      <DependentUpon>FrmBuscarTitulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Libros\UcEstadoTitulos.resx">
       <DependentUpon>UcEstadoTitulos.cs</DependentUpon>

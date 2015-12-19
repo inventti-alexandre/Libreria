@@ -12,6 +12,7 @@ using LaPaz.Win.Enums;
 using LaPaz.Win.Helpers;
 using Microsoft.Reporting.WinForms;
 using Telerik.WinControls.UI;
+using LaPaz.Win.Forms.Libros;
 
 namespace LaPaz.Win.Forms.Reportes
 {
@@ -19,6 +20,7 @@ namespace LaPaz.Win.Forms.Reportes
     {
         private readonly IReporteNegocio _reporteNegocio;
         private Guid _tituloId;
+        private string _isbn;
 
         public FrmMultiRanking(IFormFactory formFactory, ILaPazUow uow, IReporteNegocio reporteNegocio)
         {
@@ -43,6 +45,8 @@ namespace LaPaz.Win.Forms.Reportes
             DtpFechaFin.Value = DateTime.Now;
             CbxColumnas.SelectedIndex = 0;
             CbxTipoRanking.SelectedIndex = 0;
+
+            
         }
 
         private void Refresh()
@@ -59,8 +63,15 @@ namespace LaPaz.Win.Forms.Reportes
             var tipo = CbxTipoRanking.Text;
             var col = CbxColumnas.SelectedIndex != 0;
             var cantFilas = (TxtCantidadFilas.Text == null ? 10 : Convert.ToInt32(TxtCantidadFilas.Text));
+            Guid? proveedor = (Guid?) ddlProveedores.SelectedValue;
+            if (proveedor == Guid.Empty)
+                proveedor = null;
+            
+            int? tema = (int)ddlTemas.SelectedValue;
+            if (tema == 0)
+                tema = null;
 
-            var multi = _reporteNegocio.ReporteMultiRanking(tipo, inicio, fin, this.Context.SucursalActual.Id, col, cantFilas);
+           var multi = _reporteNegocio.ReporteMultiRanking(tipo, inicio, fin, this.Context.SucursalActual.Id, col, cantFilas,_isbn,proveedor,tema);
 
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("ds", multi));
 
@@ -94,25 +105,43 @@ namespace LaPaz.Win.Forms.Reportes
             //_limpiandoFiltros = true;
 
             var proveedores = Uow.Proveedores.Listado().Where(p => p.Gto == false).OrderBy(p => p.Denominacion).ToList();
-            proveedores.Insert(0, new Proveedor() { Denominacion = "SELECCIONE PROVEEDOR", Cuenta = 0 });
+            proveedores.Insert(0, new Proveedor() { Denominacion = "SELECCIONE PROVEEDOR", Cuenta = null });
 
-            GridProveedores.DisplayMember = "Denominacion";
-            GridProveedores.ValueMember = "Id";
-            GridProveedores.DataSource = proveedores;
+            ddlProveedores.DisplayMember = "Denominacion";
+            ddlProveedores.ValueMember = "Id";
+            ddlProveedores.DataSource = proveedores;
 
             var tema = Uow.Temas.Listado().OrderBy(t => t.Nombre).ToList();
-            tema.Insert(0, new Tema() { Nombre = "SELECCIONE TEMA" });
-            gridTemas.DataSource = tema;
-            gridTemas.DisplayMember = "Nombre";
-            gridTemas.ValueMember = "Id";
-
-            var titulo = Uow.Titulos.Listado().Distinct().OrderBy(t => t.NombreTitulo).ToList();
-            titulo.Insert(0, new Titulo() { NombreTitulo = "SELECCIONE TITULO" });
-            GridLibros.DataSource = tema;
-            GridLibros.DisplayMember = "NombreTitulo";
-            GridLibros.ValueMember = "Id";
+            tema.Insert(0, new Tema() { Nombre = "SELECCIONE TEMA" , Id= 0});
+            ddlTemas.DataSource = tema;
+            ddlTemas.DisplayMember = "Nombre";
+            ddlTemas.ValueMember = "Id";
 
             //_limpiandoFiltros = false;
+        }
+
+        private void BtnBuscarLibro_Click(object sender, EventArgs e)
+        {
+
+            using (var formSeleccionarTitulo = FormFactory.Create<FrmBuscarTitulo>())
+            {
+                formSeleccionarTitulo.TituloSelected += (o, titulo) =>
+                {
+                    TxtTitulo.Text = titulo.NombreTitulo;
+                    _isbn = titulo.ISBN;
+                    formSeleccionarTitulo.Close();
+                };
+
+                formSeleccionarTitulo.ShowDialog();
+            }
+        }
+
+        private void BtnLimpiar_Click(object sender, EventArgs e)
+        {
+            _isbn = null;
+            TxtTitulo.Text = null;
+            ddlProveedores.SelectedIndex = 0;
+            ddlTemas.SelectedIndex = 0;
         }
     }
 }

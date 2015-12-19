@@ -84,7 +84,7 @@
         <EntityTypeShape EntityType="LaPaz.Datos.Especialidad" Width="1.5" PointX="8.75" PointY="100.625" />
         <AssociationConnector Association="LaPaz.Datos.FK_Clientes_Especialidad" />
         <AssociationConnector Association="LaPaz.Datos.FK_Especialidades_Profesion" />
-        <EntityTypeShape EntityType="LaPaz.Datos.VentaConvenio" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LaPaz.Datos.VentaConvenio" Width="1.5" PointX="0.5" PointY="0.75" />
         <EntityTypeShape EntityType="LaPaz.Datos.Venta" Width="1.875" PointX="20" PointY="74.375" />
         <EntityTypeShape EntityType="LaPaz.Datos.VentaDetalle" Width="1.5" PointX="31.75" PointY="75.5" IsExpanded="true" />
         <EntityTypeShape EntityType="LaPaz.Datos.VentaPendientEntrega" Width="1.875" PointX="2.75" PointY="0.75" />

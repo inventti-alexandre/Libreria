@@ -46,7 +46,7 @@ namespace LaPaz.Negocio.Interfaces
         List<ReporteClientesPorTitulo> ReporteClientesPorTitulo(Guid tituloId, DateTime fechaDesde, DateTime fechaHasta, int sucursalId);
 
         List<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, DateTime fechaDesde, DateTime fechaHasta,
-                                                      int sucursalId, bool muestraCantidad, int cantidadFilas);
+                                                      int sucursalId, bool muestraCantidad, int cantidadFilas, string TituloISBN, Guid? proveedorId, int? temaId);
 
         List<ReciboConsignacion> ReciboConsignacion(Guid consignacionId);
     }

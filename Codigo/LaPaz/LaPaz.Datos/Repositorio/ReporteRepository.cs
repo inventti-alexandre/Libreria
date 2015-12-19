@@ -121,13 +121,14 @@ namespace LaPaz.Datos.Repositorio
             return LaPazEntities.ReporteClientesPorTitulos(tituloId, fechaDesde, fechaHasta, sucursalId).ToList();
         }
 
-        public List<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, DateTime fechaDesde, DateTime fechaHasta, int sucursalId, bool? muestraCantidad, int cantidadFilas)
+        public List<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, DateTime fechaDesde, DateTime fechaHasta, int sucursalId, bool? muestraCantidad, int cantidadFilas, string TituloISBN, Guid? proveedorId, int? temaId)
         {
             return
                 LaPazEntities.ReporteMultiRanking(tipoRanking, sucursalId, fechaDesde, fechaHasta, cantidadFilas,
-                                                  muestraCantidad).ToList();
+                                                  muestraCantidad, TituloISBN, proveedorId, temaId).ToList();
         }
 
+        
         public List<ReciboConsignacion> ReciboConsignacion(Guid consginacionId)
         {
             return LaPazEntities.ReciboConsignacion(consginacionId).ToList();

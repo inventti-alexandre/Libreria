@@ -126,9 +126,9 @@ namespace LaPaz.Negocio
             return Uow.Reportes.ReporteClientesPorTitulo(tituloId,fechaDesde,fechaHasta,sucursalId);
         }
 
-        public List<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, DateTime fechaDesde, DateTime fechaHasta, int sucursalId, bool muestraCantidad, int cantidadFilas)
+        public List<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, DateTime fechaDesde, DateTime fechaHasta, int sucursalId, bool muestraCantidad, int cantidadFilas, string TituloISBN, Guid? proveedorId, int? temaId)
         {
-            return Uow.Reportes.ReporteMultiRanking(tipoRanking, fechaDesde, fechaHasta, sucursalId, muestraCantidad, cantidadFilas).ToList();
+            return Uow.Reportes.ReporteMultiRanking(tipoRanking, fechaDesde, fechaHasta, sucursalId, muestraCantidad, cantidadFilas, TituloISBN, proveedorId,temaId).ToList();
         }
 
         public List<ReciboConsignacion> ReciboConsignacion(Guid consignacionId)

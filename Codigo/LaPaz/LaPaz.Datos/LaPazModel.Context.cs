@@ -658,7 +658,7 @@ namespace LaPaz.Entidades
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ReporteClientesPorTitulo>("ReporteClientesPorTitulos", tituloIdParameter, fechaDesdeParameter, fechaHastaParameter, sucursalIdParameter);
         }
     
-        public virtual ObjectResult<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<int> cantidadFilas, Nullable<bool> muestraCantidad)
+        public virtual ObjectResult<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, Nullable<int> sucursalId, Nullable<System.DateTime> fechaInicio, Nullable<System.DateTime> fechaFin, Nullable<int> cantidadFilas, Nullable<bool> muestraCantidad, string tituloISBN, Nullable<System.Guid> proveedorId, Nullable<int> temaId)
         {
             var tipoRankingParameter = tipoRanking != null ?
                 new ObjectParameter("TipoRanking", tipoRanking) :
@@ -684,7 +684,19 @@ namespace LaPaz.Entidades
                 new ObjectParameter("MuestraCantidad", muestraCantidad) :
                 new ObjectParameter("MuestraCantidad", typeof(bool));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ReporteMultiRanking>("ReporteMultiRanking", tipoRankingParameter, sucursalIdParameter, fechaInicioParameter, fechaFinParameter, cantidadFilasParameter, muestraCantidadParameter);
+            var tituloISBNParameter = tituloISBN != null ?
+                new ObjectParameter("TituloISBN", tituloISBN) :
+                new ObjectParameter("TituloISBN", typeof(string));
+    
+            var proveedorIdParameter = proveedorId.HasValue ?
+                new ObjectParameter("ProveedorId", proveedorId) :
+                new ObjectParameter("ProveedorId", typeof(System.Guid));
+    
+            var temaIdParameter = temaId.HasValue ?
+                new ObjectParameter("TemaId", temaId) :
+                new ObjectParameter("TemaId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ReporteMultiRanking>("ReporteMultiRanking", tipoRankingParameter, sucursalIdParameter, fechaInicioParameter, fechaFinParameter, cantidadFilasParameter, muestraCantidadParameter, tituloISBNParameter, proveedorIdParameter, temaIdParameter);
         }
     
         public virtual ObjectResult<ConsignacionesParaDevolver> ConsignacionesParaDevolver(Nullable<System.Guid> proveedorId, Nullable<System.DateTime> desde, Nullable<System.DateTime> hasta)
