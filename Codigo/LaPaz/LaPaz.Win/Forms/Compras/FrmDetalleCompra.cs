@@ -64,11 +64,22 @@ namespace LaPaz.Win.Forms.Compras
            {
                CargarPagos();
            }
+           if (Tabs.SelectedPage == PageProveedoresPagos)
+           {
+               CargarProveedoresPagos();
+           }
+        }
+
+        private void CargarProveedoresPagos()
+        {
+            var proveedoresPago = Uow.ProveedoresPagos.Listado().Where(pp => pp.ProveedorId == _compra.ProveedorId).ToList();
+            grillaProveedoresPago.DataSource = proveedoresPago;
         }
 
         private void CargarPagos()
         {
             var pagos = Uow.CajaMovimientos.Listado().Where(cm => cm.ComprobanteId == _compraId).ToList();
+            
             GrillaPagos.DataSource = pagos;
         }
 

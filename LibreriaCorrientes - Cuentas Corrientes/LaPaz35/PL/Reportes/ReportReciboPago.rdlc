@@ -6,7 +6,7 @@
         <ReportItems>
           <Image Name="Logo2">
             <Source>Embedded</Source>
-            <Value>logoVecinito</Value>
+            <Value>nuevologo1</Value>
             <Sizing>FitProportional</Sizing>
             <Left>0.37571cm</Left>
             <Height>2.04956cm</Height>
@@ -1267,7 +1267,7 @@
           </Rectangle>
           <Image Name="Logo3">
             <Source>Embedded</Source>
-            <Value>logoVecinito</Value>
+            <Value>nuevologo1</Value>
             <Sizing>FitProportional</Sizing>
             <Left>0.21341cm</Left>
             <Height>2.04956cm</Height>

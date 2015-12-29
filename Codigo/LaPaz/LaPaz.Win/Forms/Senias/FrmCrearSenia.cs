@@ -589,8 +589,8 @@ namespace LaPaz.Win.Forms.Senias
                     caja.Saldo = 0;
                 caja.Saldo -= (float?)diferencia;
                 caja.FechaModificacion = _clock.Now;
-                caja.SucursalModificacionId = Context.SucursalActual.Id;//Sucursal del operador
-                caja.OperadorModificacionId = (Context.OperadorActual.Id);//Id el operador
+                caja.SucursalModificacionId = Context.SucursalActual.Id;
+                caja.OperadorModificacionId = (Context.OperadorActual.Id);
 
                 Uow.Cajas.Modificar(caja);
 
@@ -610,11 +610,11 @@ namespace LaPaz.Win.Forms.Senias
                 cajaMovimiento.Deposito = cajaMovimientoAnterior.Deposito;
                 cajaMovimiento.ImpFac = 0;
                 cajaMovimiento.PcAlta = Environment.MachineName;
-                cajaMovimiento.SucursalAltaId = cajaMovimientoAnterior.SucursalAltaId;
-                cajaMovimiento.OperadorAltaId = cajaMovimientoAnterior.OperadorAltaId;
+                cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id; //cajaMovimientoAnterior.SucursalAltaId;
+                cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id; //cajaMovimientoAnterior.OperadorAltaId;
                 cajaMovimiento.FechaAlta = _clock.Now;
-                cajaMovimiento.SucursalModificacionId = Context.SucursalActual.Id;//Sucursal del operador
-                cajaMovimiento.OperadorModificacionId = (Context.OperadorActual.Id);//Id el operador
+                cajaMovimiento.SucursalModificacionId = Context.SucursalActual.Id;
+                cajaMovimiento.OperadorModificacionId = (Context.OperadorActual.Id);
                 cajaMovimiento.FechaModificacion = _clock.Now;
                 Uow.CajaMovimientos.Agregar(cajaMovimiento);
 

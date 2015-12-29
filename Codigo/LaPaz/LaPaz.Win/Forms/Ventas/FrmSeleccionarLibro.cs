@@ -649,6 +649,13 @@ namespace LaPaz.Win.Forms.Ventas
                 else
                     cantidad = 0;
 
+                if (cantidad == 0)
+                {
+                    _messageBoxDisplayService.ShowWarning(
+                       "La cantidad seleccionada no puede ser 0 (cero).");
+                    return false;
+
+                }
                 if (cantidad <= sumaStock)
                 {
                     return true;

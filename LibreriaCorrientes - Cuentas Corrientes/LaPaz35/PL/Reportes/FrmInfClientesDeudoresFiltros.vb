@@ -15,7 +15,7 @@ Public Class FrmInfClientesDeudoresFiltros
         Dim Reporte As New crInformeDeudasPorFecha
 
         'Dim conne As New SqlConnection("data source=EQUIPO-SIL;initial catalog=lapaz;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
-        Dim conne As New SqlConnection("Data Source=10.1.4.10\SQLEXPRESSPRAGMA;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
+        Dim conne As New SqlConnection("Data Source=10.1.4.11\.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
 
         Dim da As New SqlDataAdapter("ClientesCuentaCorrienteVencida", conne)
         da.SelectCommand.CommandType = CommandType.StoredProcedure
