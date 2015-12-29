@@ -7043,6 +7043,10 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Parameter Name="Hasta" Type="datetime" Mode="In" />
           <Parameter Name="SucursalId" Type="int" Mode="In" />
         </Function>
+        <Function Name="HistorialPagos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="compraId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="proveedorId" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="ReciboConsignacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ConsignacionId" Type="uniqueidentifier" Mode="In" />
         </Function>
@@ -10513,6 +10517,10 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <Parameter Name="FechaFin" Mode="In" Type="DateTime" />
             <Parameter Name="OperadorId" Mode="In" Type="Guid" />
             <Parameter Name="ProveedorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="HistorialPagos" ReturnType="Collection(LaPaz.Datos.HistorialPagos_Result)">
+            <Parameter Name="compraId" Mode="In" Type="Guid" />
+            <Parameter Name="proveedorId" Mode="In" Type="Guid" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="Provincia">
@@ -18321,6 +18329,37 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="Int32" Name="Cantidad" Nullable="false" />
           <Property Type="Decimal" Name="Total" Nullable="false" Precision="19" />
         </ComplexType>
+        <ComplexType Name="HistorialPagos_Result">
+          <Property Type="Guid" Name="Id" Nullable="false" />
+          <Property Type="Guid" Name="CajaId" Nullable="false" />
+          <Property Type="Int32" Name="TipoMovimientoCajaId" Nullable="true" />
+          <Property Type="Int32" Name="TipoComprobante" Nullable="true" />
+          <Property Type="Guid" Name="ComprobanteId" Nullable="true" />
+          <Property Type="Decimal" Name="Senia" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Recargo" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Importe" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="ImpFac" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Efectivo" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Tarjeta" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Cheque" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Bono" Nullable="true" Precision="19" />
+          <Property Type="String" Name="fpcBono" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="Deposito" Nullable="true" Precision="19" />
+          <Property Type="String" Name="CajaIdAnt" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CompIdAnt" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="CompLcnAnt" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="FacturaReservadas" Nullable="true" />
+          <Property Type="String" Name="PcAlta" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="OperadorAltaId" Nullable="true" />
+          <Property Type="Int32" Name="SucursalAltaId" Nullable="true" />
+          <Property Type="DateTime" Name="FechaModificacion" Nullable="true" Precision="23" />
+          <Property Type="Guid" Name="OperadorModificacionId" Nullable="true" />
+          <Property Type="Int32" Name="SucursalModificacionId" Nullable="true" />
+          <Property Type="Decimal" Name="Transferencia" Nullable="true" Precision="19" />
+          <Property Type="String" Name="TipoMovimientoCaja" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ComprobanteTipo" Nullable="true" MaxLength="50" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -21817,6 +21856,41 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HistorialPagos" FunctionName="LaPaz.Datos.Store.HistorialPagos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaPaz.Datos.HistorialPagos_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CajaId" ColumnName="CajaId" />
+                <ScalarProperty Name="TipoComprobante" ColumnName="TipoComprobante" />
+                <ScalarProperty Name="ComprobanteId" ColumnName="ComprobanteId" />
+                <ScalarProperty Name="Senia" ColumnName="Senia" />
+                <ScalarProperty Name="Recargo" ColumnName="Recargo" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="ImpFac" ColumnName="ImpFac" />
+                <ScalarProperty Name="Efectivo" ColumnName="Efectivo" />
+                <ScalarProperty Name="Tarjeta" ColumnName="Tarjeta" />
+                <ScalarProperty Name="Cheque" ColumnName="Cheque" />
+                <ScalarProperty Name="Bono" ColumnName="Bono" />
+                <ScalarProperty Name="fpcBono" ColumnName="fpcBono" />
+                <ScalarProperty Name="Deposito" ColumnName="Deposito" />
+                <ScalarProperty Name="CajaIdAnt" ColumnName="CajaIdAnt" />
+                <ScalarProperty Name="CompIdAnt" ColumnName="CompIdAnt" />
+                <ScalarProperty Name="CompLcnAnt" ColumnName="CompLcnAnt" />
+                <ScalarProperty Name="FacturaReservadas" ColumnName="FacturaReservadas" />
+                <ScalarProperty Name="PcAlta" ColumnName="PcAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
+                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
+                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
+                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
+                <ScalarProperty Name="Transferencia" ColumnName="Transferencia" />
+                <ScalarProperty Name="TipoMovimientoCajaId" ColumnName="TipoMovimientoCajaId" />
+                <ScalarProperty Name="TipoMovimientoCaja" ColumnName="TipoMovimientoCaja" />
+                <ScalarProperty Name="ComprobanteTipo" ColumnName="ComprobanteTipo" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

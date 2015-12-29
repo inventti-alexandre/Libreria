@@ -133,5 +133,10 @@ namespace LaPaz.Datos.Repositorio
         {
             return LaPazEntities.ReciboConsignacion(consginacionId).ToList();
         }
+
+        public List<HistorialPagos_Result> HistorialPagos(Guid? CompraId, Guid? ProveedorId)
+        {
+            return LaPazEntities.HistorialPagos(CompraId, ProveedorId).ToList();
+        }
     }
 }

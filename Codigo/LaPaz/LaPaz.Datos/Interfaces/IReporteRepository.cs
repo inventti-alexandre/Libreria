@@ -50,6 +50,8 @@ namespace LaPaz.Datos.Interfaces
         List<ReporteMultiRanking> ReporteMultiRanking(string tipoRanking, DateTime fechaDesde, DateTime fechaHasta, int sucursalId, bool? muestraCantidad, int cantidadFilas, string TituloISBN, Guid? proveedorId, int? temaId);
 
         List<ReciboConsignacion> ReciboConsignacion(Guid consignacionId);
+
+        List<HistorialPagos_Result> HistorialPagos(Guid? CompraId, Guid? ProveedorId);
     }
 
 }

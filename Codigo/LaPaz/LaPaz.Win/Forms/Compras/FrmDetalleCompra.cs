@@ -72,7 +72,8 @@ namespace LaPaz.Win.Forms.Compras
 
         private void CargarProveedoresPagos()
         {
-            var proveedoresPago = Uow.ProveedoresPagos.Listado().Where(pp => pp.ProveedorId == _compra.ProveedorId).ToList();
+            //var proveedoresPago = Uow.ProveedoresPagos.Listado().Where(pp => pp.ProveedorId == _compra.ProveedorId).ToList();
+            var proveedoresPago = Uow.Reportes.HistorialPagos(_compra.Id, null).ToList();
             grillaProveedoresPago.DataSource = proveedoresPago;
         }
 

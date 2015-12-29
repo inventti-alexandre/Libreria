@@ -799,5 +799,18 @@ namespace LaPaz.Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_Proveedor_General_AFavor_Result>("Reporte_Proveedor_General_AFavor", sucursalIdParameter, fechaInicioParameter, fechaFinParameter, operadorIdParameter, proveedorIdParameter);
         }
+    
+        public virtual ObjectResult<HistorialPagos_Result> HistorialPagos(Nullable<System.Guid> compraId, Nullable<System.Guid> proveedorId)
+        {
+            var compraIdParameter = compraId.HasValue ?
+                new ObjectParameter("compraId", compraId) :
+                new ObjectParameter("compraId", typeof(System.Guid));
+    
+            var proveedorIdParameter = proveedorId.HasValue ?
+                new ObjectParameter("proveedorId", proveedorId) :
+                new ObjectParameter("proveedorId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<HistorialPagos_Result>("HistorialPagos", compraIdParameter, proveedorIdParameter);
+        }
     }
 }

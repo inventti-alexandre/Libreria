@@ -14,7 +14,7 @@ Public Class FrmInformeDeudasPorMonto
 
         'Dim conne As New SqlConnection("data source=EQUIPO-SIL;initial catalog=lapaz;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
         'Dim conne As New SqlConnection("Data Source=10.1.4.10\SERVERCTES\Administrador,1433;Initial Catalog=lapaz;user id=userctacte;password=ap_sys")
-        Dim conne As New SqlConnection("Data Source=10.1.4.11\.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
+        Dim conne As New SqlConnection("Data Source=10.1.4.11;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
 
         Dim da As New SqlDataAdapter("ClientesCuentaCorrienteVencidaMonto", conne)
         da.SelectCommand.CommandType = CommandType.StoredProcedure

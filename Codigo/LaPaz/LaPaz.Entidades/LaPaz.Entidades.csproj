@@ -264,6 +264,9 @@
     <Compile Include="GruposTitulo.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="HistorialPagos_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Idioma.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>

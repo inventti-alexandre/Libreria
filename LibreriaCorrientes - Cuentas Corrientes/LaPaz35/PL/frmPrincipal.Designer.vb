@@ -53,6 +53,7 @@ Partial Class frmPrincipal
         Me.msMenu.BackColor = System.Drawing.Color.White
         Me.msMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.msMenu.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.msMenu.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.msMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CobroDeCuentasCorrientesToolStripMenuItem, Me.InformesToolStripMenuItem, Me.ReImprimirToolStripMenuItem, Me.AdministraciónToolStripMenuItem, Me.CerrarSesiónToolStripMenuItem, Me.CambiarContraseñaToolStripMenuItem, Me.IniciarSesiónToolStripMenuItem, Me.ActualizarBDToolStripMenuItem})
         Me.msMenu.Location = New System.Drawing.Point(0, 0)
         Me.msMenu.Name = "msMenu"
@@ -69,7 +70,7 @@ Partial Class frmPrincipal
         Me.CobroDeCuentasCorrientesToolStripMenuItem.Enabled = False
         Me.CobroDeCuentasCorrientesToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.CobroDeCuentasCorrientesToolStripMenuItem.Name = "CobroDeCuentasCorrientesToolStripMenuItem"
-        Me.CobroDeCuentasCorrientesToolStripMenuItem.Size = New System.Drawing.Size(207, 63)
+        Me.CobroDeCuentasCorrientesToolStripMenuItem.Size = New System.Drawing.Size(264, 63)
         Me.CobroDeCuentasCorrientesToolStripMenuItem.Text = "Cobro de Cuentas Corrientes"
         '
         'InformesToolStripMenuItem
@@ -77,32 +78,32 @@ Partial Class frmPrincipal
         Me.InformesToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InfomeClientesDeudoresToolStripMenuItem, Me.ListadoDeudasFiltroMontoToolStripMenuItem, Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(78, 63)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(96, 63)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'InfomeClientesDeudoresToolStripMenuItem
         '
         Me.InfomeClientesDeudoresToolStripMenuItem.Name = "InfomeClientesDeudoresToolStripMenuItem"
-        Me.InfomeClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(323, 24)
+        Me.InfomeClientesDeudoresToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
         Me.InfomeClientesDeudoresToolStripMenuItem.Text = "Listado Deudas - Filtro Fecha"
         '
         'ListadoDeudasFiltroMontoToolStripMenuItem
         '
         Me.ListadoDeudasFiltroMontoToolStripMenuItem.Name = "ListadoDeudasFiltroMontoToolStripMenuItem"
-        Me.ListadoDeudasFiltroMontoToolStripMenuItem.Size = New System.Drawing.Size(323, 24)
+        Me.ListadoDeudasFiltroMontoToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
         Me.ListadoDeudasFiltroMontoToolStripMenuItem.Text = "Listado Deudas - Filtro Monto"
         '
         'ListadoDeudasFiltrosFechaMontoToolStripMenuItem
         '
         Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem.Name = "ListadoDeudasFiltrosFechaMontoToolStripMenuItem"
-        Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem.Size = New System.Drawing.Size(323, 24)
+        Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem.Size = New System.Drawing.Size(401, 28)
         Me.ListadoDeudasFiltrosFechaMontoToolStripMenuItem.Text = "Listado Deudas - Filtros Fecha  Monto"
         '
         'ReImprimirToolStripMenuItem
         '
         Me.ReImprimirToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
         Me.ReImprimirToolStripMenuItem.Name = "ReImprimirToolStripMenuItem"
-        Me.ReImprimirToolStripMenuItem.Size = New System.Drawing.Size(92, 63)
+        Me.ReImprimirToolStripMenuItem.Size = New System.Drawing.Size(115, 63)
         Me.ReImprimirToolStripMenuItem.Text = "ReImprimir"
         '
         'AdministraciónToolStripMenuItem
@@ -114,25 +115,25 @@ Partial Class frmPrincipal
         Me.AdministraciónToolStripMenuItem.Enabled = False
         Me.AdministraciónToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.AdministraciónToolStripMenuItem.Name = "AdministraciónToolStripMenuItem"
-        Me.AdministraciónToolStripMenuItem.Size = New System.Drawing.Size(118, 63)
+        Me.AdministraciónToolStripMenuItem.Size = New System.Drawing.Size(149, 63)
         Me.AdministraciónToolStripMenuItem.Text = "Administración"
         '
         'GestiónDeCuotasToolStripMenuItem1
         '
         Me.GestiónDeCuotasToolStripMenuItem1.Name = "GestiónDeCuotasToolStripMenuItem1"
-        Me.GestiónDeCuotasToolStripMenuItem1.Size = New System.Drawing.Size(261, 24)
+        Me.GestiónDeCuotasToolStripMenuItem1.Size = New System.Drawing.Size(323, 28)
         Me.GestiónDeCuotasToolStripMenuItem1.Text = "Gestión de Cuotas"
         '
         'NuevoUsuarioToolStripMenuItem1
         '
         Me.NuevoUsuarioToolStripMenuItem1.Name = "NuevoUsuarioToolStripMenuItem1"
-        Me.NuevoUsuarioToolStripMenuItem1.Size = New System.Drawing.Size(261, 24)
+        Me.NuevoUsuarioToolStripMenuItem1.Size = New System.Drawing.Size(323, 28)
         Me.NuevoUsuarioToolStripMenuItem1.Text = "Nuevo Usuario"
         '
         'CuentaCorrienteResguardoToolStripMenuItem
         '
         Me.CuentaCorrienteResguardoToolStripMenuItem.Name = "CuentaCorrienteResguardoToolStripMenuItem"
-        Me.CuentaCorrienteResguardoToolStripMenuItem.Size = New System.Drawing.Size(261, 24)
+        Me.CuentaCorrienteResguardoToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
         Me.CuentaCorrienteResguardoToolStripMenuItem.Text = "Cuenta Corriente Resguardo"
         Me.CuentaCorrienteResguardoToolStripMenuItem.Visible = False
         '
@@ -140,19 +141,19 @@ Partial Class frmPrincipal
         '
         Me.EnvioDeMailsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EnviarToolStripMenuItem, Me.HistorialToolStripMenuItem})
         Me.EnvioDeMailsToolStripMenuItem.Name = "EnvioDeMailsToolStripMenuItem"
-        Me.EnvioDeMailsToolStripMenuItem.Size = New System.Drawing.Size(261, 24)
+        Me.EnvioDeMailsToolStripMenuItem.Size = New System.Drawing.Size(323, 28)
         Me.EnvioDeMailsToolStripMenuItem.Text = "Envio de Mails"
         '
         'EnviarToolStripMenuItem
         '
         Me.EnviarToolStripMenuItem.Name = "EnviarToolStripMenuItem"
-        Me.EnviarToolStripMenuItem.Size = New System.Drawing.Size(133, 24)
+        Me.EnviarToolStripMenuItem.Size = New System.Drawing.Size(156, 28)
         Me.EnviarToolStripMenuItem.Text = "Enviar"
         '
         'HistorialToolStripMenuItem
         '
         Me.HistorialToolStripMenuItem.Name = "HistorialToolStripMenuItem"
-        Me.HistorialToolStripMenuItem.Size = New System.Drawing.Size(133, 24)
+        Me.HistorialToolStripMenuItem.Size = New System.Drawing.Size(156, 28)
         Me.HistorialToolStripMenuItem.Text = "Historial"
         '
         'CerrarSesiónToolStripMenuItem
@@ -161,7 +162,7 @@ Partial Class frmPrincipal
         Me.CerrarSesiónToolStripMenuItem.Enabled = False
         Me.CerrarSesiónToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(107, 63)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(133, 63)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'CambiarContraseñaToolStripMenuItem
@@ -169,7 +170,7 @@ Partial Class frmPrincipal
         Me.CambiarContraseñaToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
         Me.CambiarContraseñaToolStripMenuItem.Enabled = False
         Me.CambiarContraseñaToolStripMenuItem.Name = "CambiarContraseñaToolStripMenuItem"
-        Me.CambiarContraseñaToolStripMenuItem.Size = New System.Drawing.Size(153, 63)
+        Me.CambiarContraseñaToolStripMenuItem.Size = New System.Drawing.Size(193, 63)
         Me.CambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña"
         '
         'IniciarSesiónToolStripMenuItem
@@ -177,14 +178,14 @@ Partial Class frmPrincipal
         Me.IniciarSesiónToolStripMenuItem.BackColor = System.Drawing.Color.DarkGray
         Me.IniciarSesiónToolStripMenuItem.ForeColor = System.Drawing.Color.White
         Me.IniciarSesiónToolStripMenuItem.Name = "IniciarSesiónToolStripMenuItem"
-        Me.IniciarSesiónToolStripMenuItem.Size = New System.Drawing.Size(107, 63)
+        Me.IniciarSesiónToolStripMenuItem.Size = New System.Drawing.Size(132, 63)
         Me.IniciarSesiónToolStripMenuItem.Text = "Iniciar Sesión"
         '
         'ActualizarBDToolStripMenuItem
         '
         Me.ActualizarBDToolStripMenuItem.Enabled = False
         Me.ActualizarBDToolStripMenuItem.Name = "ActualizarBDToolStripMenuItem"
-        Me.ActualizarBDToolStripMenuItem.Size = New System.Drawing.Size(108, 63)
+        Me.ActualizarBDToolStripMenuItem.Size = New System.Drawing.Size(133, 63)
         Me.ActualizarBDToolStripMenuItem.Text = "Actualizar BD"
         Me.ActualizarBDToolStripMenuItem.Visible = False
         '
@@ -198,7 +199,7 @@ Partial Class frmPrincipal
         '
         'frmPrincipal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(1256, 557)
