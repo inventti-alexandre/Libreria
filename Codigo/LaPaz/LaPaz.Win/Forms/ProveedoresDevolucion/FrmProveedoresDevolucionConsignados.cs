@@ -172,6 +172,17 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
         private void GuardarDevolucion()
         {
+            //Recorro y controlo que ninguna cantidad sea mayor a la disponible
+            foreach (var devolucionesTitulos in ucTitulosDevolucion.TitulosDevolucion)
+            {
+                int? _cantidadTotal = devolucionesTitulos.Cantidad;
+
+                if (devolucionesTitulos.CantidadConsignada < _cantidadTotal)
+                {
+                    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible del libro: " + devolucionesTitulos.TituloNombre);
+                    return;
+                }
+            }
 
             //Genero TitulosConsignacionesDevueltas
             Guid titulosConsignacionDevuelta= TitulosConsignacionesDevueltas(_proveedor.Id);
@@ -188,11 +199,11 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
                     ModificarTitulosConsignacion(devolucionTitulo.TituloId, _proveedor.Id, _cantidadTotal);
                     TitulosConsignacionesDevueltaDetalle(devolucionTitulo, _cantidadTotal, titulosConsignacionDevuelta);
                 }
-                else
-                {
-                    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible de libro: " + devolucionTitulo.TituloNombre);
-                    return;
-                }
+                //else
+                //{
+                //    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible del libro: " + devolucionTitulo.TituloNombre);
+                //    return;
+                //}
 
 
             }

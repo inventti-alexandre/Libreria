@@ -121,7 +121,7 @@
             this.Tabs.Controls.Add(this.PageProveedoresPagos);
             this.Tabs.Location = new System.Drawing.Point(12, 33);
             this.Tabs.Name = "Tabs";
-            this.Tabs.SelectedPage = this.PageProveedoresPagos;
+            this.Tabs.SelectedPage = this.pageCompraDetalle;
             this.Tabs.Size = new System.Drawing.Size(1302, 445);
             this.Tabs.TabIndex = 0;
             this.Tabs.Text = "Detalle";

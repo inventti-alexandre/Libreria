@@ -204,7 +204,16 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
         private void GuardarDevolucion()
         {
+            //Controlar que las cantidades no superen el disponible
+            foreach (var devolucionTitulos in ucTitulosDevolucion.TitulosDevolucion)
+            {
+                if (devolucionTitulos.CantidadPropia < devolucionTitulos.Cantidad)
+                {
+                    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible de libro: " + devolucionTitulos.TituloNombre);
+                    return;
+                }
 
+            }
             #region ProveedorMontoFavor
             ProveedoresMontosFavor proveedorMontoFavor = new ProveedoresMontosFavor();
 
@@ -241,26 +250,19 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
                 if (devolucionTitulo.CantidadPropia >= _cantidadTotal)
                 {
-                     //_consignada = CalcularConsignadas(Convert.ToInt16(_cantidadTotal), devolucionTitulo.CantidadConsignada);
-                    //_propia = CalcularPropias(Convert.ToInt16(_cantidadTotal), _consignada);
-
-                    //proveedoresMontosFavorDetalle.CantidadPropia = _propia;
                     proveedoresMontosFavorDetalle.CantidadPropia = _cantidadTotal;
-                    //proveedoresMontosFavorDetalle.CantidadConsignada = _consignada;
                     proveedoresMontosFavorDetalle.FechaAlta = _clock.Now;
                     proveedoresMontosFavorDetalle.SucursalAltaId = Context.SucursalActual.Id;
                     proveedoresMontosFavorDetalle.OperadorAltaId = Context.OperadorActual.Id;
                     Uow.ProveedoresMontosFavorDetalle.Agregar(proveedoresMontosFavorDetalle);
 
                     DescontarLibrosPropios(_cantidadTotal, proveedoresMontosFavorDetalle.TitulosId);
-                    //TitulosConsignacionesDevueltaDetalle(devolucionTitulo, _propia, _consignada, titulosConsignacionDevuelta);
-                    //DescontarLibros(_propia, Convert.ToInt16(_consignada), proveedoresMontosFavorDetalle.TitulosId);
-                    //DescontarTitulosConsignacion(devolucionTitulo.TituloId, proveedorMontoFavor.ProveedorId, _consignada);
+                   
                 }
                 else
                 {
-                    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible de libro: " + devolucionTitulo.TituloNombre);
-                    return;
+                    //_messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible de libro: " + devolucionTitulo.TituloNombre);
+                    //return;
                 }
 
 
