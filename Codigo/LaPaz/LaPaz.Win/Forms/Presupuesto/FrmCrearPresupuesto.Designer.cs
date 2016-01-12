@@ -150,7 +150,7 @@
             // pnlClienteDetalle
             // 
             this.pnlClienteDetalle.Controls.Add(this.UcClienteDetalle);
-            this.pnlClienteDetalle.Location = new System.Drawing.Point(12, 106);
+            this.pnlClienteDetalle.Location = new System.Drawing.Point(12, 102);
             this.pnlClienteDetalle.Name = "pnlClienteDetalle";
             this.pnlClienteDetalle.Size = new System.Drawing.Size(682, 188);
             this.pnlClienteDetalle.TabIndex = 4;
@@ -173,7 +173,7 @@
             // 
             this.pnlTotales.Controls.Add(this.BtnPresupuestar);
             this.pnlTotales.Controls.Add(this.UcTotalesPresupuesto);
-            this.pnlTotales.Location = new System.Drawing.Point(701, 107);
+            this.pnlTotales.Location = new System.Drawing.Point(701, 101);
             this.pnlTotales.Name = "pnlTotales";
             this.pnlTotales.Size = new System.Drawing.Size(348, 187);
             this.pnlTotales.TabIndex = 6;
@@ -209,9 +209,9 @@
             // pnlTitulos
             // 
             this.pnlTitulos.Controls.Add(this.UcTitulosVenta);
-            this.pnlTitulos.Location = new System.Drawing.Point(12, 301);
+            this.pnlTitulos.Location = new System.Drawing.Point(12, 293);
             this.pnlTitulos.Name = "pnlTitulos";
-            this.pnlTitulos.Size = new System.Drawing.Size(682, 339);
+            this.pnlTitulos.Size = new System.Drawing.Size(682, 331);
             this.pnlTitulos.TabIndex = 7;
             // 
             // UcTitulosVenta
@@ -220,14 +220,14 @@
             this.UcTitulosVenta.Location = new System.Drawing.Point(4, 5);
             this.UcTitulosVenta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UcTitulosVenta.Name = "UcTitulosVenta";
-            this.UcTitulosVenta.Size = new System.Drawing.Size(667, 329);
+            this.UcTitulosVenta.Size = new System.Drawing.Size(667, 318);
             this.UcTitulosVenta.TabIndex = 0;
             // 
             // FrmCrearPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1133, 858);
+            this.ClientSize = new System.Drawing.Size(1141, 656);
             this.Controls.Add(this.pnlTitulos);
             this.Controls.Add(this.pnlTotales);
             this.Controls.Add(this.pnlBuscador);
