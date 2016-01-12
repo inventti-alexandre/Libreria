@@ -50,7 +50,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GrillaPagos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GrillaPagos.Location = new System.Drawing.Point(11, 38);
+            this.GrillaPagos.Location = new System.Drawing.Point(15, 47);
+            this.GrillaPagos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             // 
             // GrillaPagos
             // 
@@ -59,19 +60,19 @@
             gridViewTextBoxColumn1.HeaderText = "Tipo Pago";
             gridViewTextBoxColumn1.Name = "TipoPago";
             gridViewTextBoxColumn1.ReadOnly = true;
-            gridViewTextBoxColumn1.Width = 174;
+            gridViewTextBoxColumn1.Width = 218;
             gridViewTextBoxColumn2.FieldName = "Descripcion";
             gridViewTextBoxColumn2.HeaderText = "Descripción";
             gridViewTextBoxColumn2.Name = "Descripcion";
             gridViewTextBoxColumn2.ReadOnly = true;
-            gridViewTextBoxColumn2.Width = 196;
+            gridViewTextBoxColumn2.Width = 245;
             gridViewTextBoxColumn3.FieldName = "Importe";
             gridViewTextBoxColumn3.FormatString = "{0:c2}";
             gridViewTextBoxColumn3.HeaderText = "Importe";
             gridViewTextBoxColumn3.Name = "Importe";
             gridViewTextBoxColumn3.ReadOnly = true;
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 226;
+            gridViewTextBoxColumn3.Width = 282;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
             gridViewCommandColumn1.ImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -87,7 +88,7 @@
             this.GrillaPagos.MasterTemplate.EnableGrouping = false;
             this.GrillaPagos.Name = "GrillaPagos";
             this.GrillaPagos.ReadOnly = true;
-            this.GrillaPagos.Size = new System.Drawing.Size(645, 171);
+            this.GrillaPagos.Size = new System.Drawing.Size(794, 210);
             this.GrillaPagos.TabIndex = 6;
             this.GrillaPagos.ThemeName = "TelerikMetroBlue";
             this.GrillaPagos.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GrillaPagos_CommandCellClick);
@@ -107,9 +108,10 @@
             // 
             this.BtnAgregarPago.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnAgregarPago.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarPago.Location = new System.Drawing.Point(581, 3);
+            this.BtnAgregarPago.Location = new System.Drawing.Point(709, 4);
+            this.BtnAgregarPago.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnAgregarPago.Name = "BtnAgregarPago";
-            this.BtnAgregarPago.Size = new System.Drawing.Size(75, 29);
+            this.BtnAgregarPago.Size = new System.Drawing.Size(100, 36);
             this.BtnAgregarPago.TabIndex = 5;
             this.BtnAgregarPago.Text = "Agregar";
             this.BtnAgregarPago.ThemeName = "TelerikMetroBlue";
@@ -120,10 +122,11 @@
             this.TxtTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtTotal.Enabled = false;
             this.TxtTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTotal.Location = new System.Drawing.Point(515, 227);
+            this.TxtTotal.Location = new System.Drawing.Point(619, 262);
+            this.TxtTotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TxtTotal.MaxLength = 11;
             this.TxtTotal.Name = "TxtTotal";
-            this.TxtTotal.Size = new System.Drawing.Size(141, 26);
+            this.TxtTotal.Size = new System.Drawing.Size(188, 31);
             this.TxtTotal.TabIndex = 43;
             this.TxtTotal.TabStop = false;
             this.TxtTotal.ThemeName = "TelerikMetroBlue";
@@ -133,23 +136,25 @@
             // 
             this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(464, 229);
+            this.radLabel1.Location = new System.Drawing.Point(551, 265);
+            this.radLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(45, 24);
+            this.radLabel1.Size = new System.Drawing.Size(55, 29);
             this.radLabel1.TabIndex = 44;
             this.radLabel1.Text = "Total:";
             this.radLabel1.ThemeName = "TelerikMetroBlue";
             // 
-            // UcTotalesSeña
+            // UcTotalesSenia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.BtnAgregarPago);
             this.Controls.Add(this.GrillaPagos);
-            this.Name = "UcTotalesSeña";
-            this.Size = new System.Drawing.Size(659, 263);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "UcTotalesSenia";
+            this.Size = new System.Drawing.Size(879, 324);
             this.Load += new System.EventHandler(this.UcTotalesVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPagos.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrillaPagos)).EndInit();

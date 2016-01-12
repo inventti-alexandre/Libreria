@@ -45,10 +45,6 @@
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.BtnBuscar = new Telerik.WinControls.UI.RadButton();
             this.CbxTipoRanking = new Telerik.WinControls.UI.RadDropDownList();
-            this.DtpFechaFin = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
-            this.DtpFechaInicio = new Telerik.WinControls.UI.RadDateTimePicker();
-            this.metroLabel1 = new Telerik.WinControls.UI.RadLabel();
             this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
             this.TxtCantidadFilas = new Framework.WinForm.Controls.CustomControls.IntegerTextBox();
             this.CbxColumnas = new Telerik.WinControls.UI.RadDropDownList();
@@ -60,6 +56,10 @@
             this.ddlProveedores = new Telerik.WinControls.UI.RadDropDownList();
             this.radLabel5 = new Telerik.WinControls.UI.RadLabel();
             this.BtnLimpiar = new Telerik.WinControls.UI.RadButton();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.DtpFechaFin = new Telerik.WinControls.UI.RadDateTimePicker();
+            this.metroLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.DtpFechaInicio = new Telerik.WinControls.UI.RadDateTimePicker();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -70,10 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoRanking)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaFin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaInicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidadFilas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxColumnas)).BeginInit();
@@ -85,6 +81,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnLimpiar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaFin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaInicio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +145,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.reportViewer1);
-            this.splitContainer1.Size = new System.Drawing.Size(1361, 1092);
+            this.splitContainer1.Size = new System.Drawing.Size(1393, 1084);
             this.splitContainer1.SplitterDistance = 106;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -158,10 +158,10 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.06357F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.542651F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.97675F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.456088F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.630063F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.15009F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.542958F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2.977487F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.932462F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.65287F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.133624F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.542958F));
             this.tableLayoutPanel1.Controls.Add(this.radLabel4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.radLabel2, 0, 0);
@@ -190,14 +190,14 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1361, 130);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1393, 130);
             this.tableLayoutPanel1.TabIndex = 47;
             // 
             // radLabel4
             // 
             this.radLabel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel4.Location = new System.Drawing.Point(281, 50);
+            this.radLabel4.Location = new System.Drawing.Point(288, 50);
             this.radLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(89, 29);
@@ -221,7 +221,7 @@
             // 
             this.BtnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.BtnBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnBuscar.Location = new System.Drawing.Point(650, 90);
+            this.BtnBuscar.Location = new System.Drawing.Point(667, 90);
             this.BtnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(141, 36);
@@ -251,7 +251,7 @@
             this.CbxTipoRanking.Items.Add(radListDataItem3);
             this.CbxTipoRanking.Items.Add(radListDataItem4);
             this.CbxTipoRanking.Items.Add(radListDataItem5);
-            this.CbxTipoRanking.Location = new System.Drawing.Point(78, 5);
+            this.CbxTipoRanking.Location = new System.Drawing.Point(80, 5);
             this.CbxTipoRanking.Margin = new System.Windows.Forms.Padding(4);
             this.CbxTipoRanking.MaxDropDownItems = 0;
             this.CbxTipoRanking.Name = "CbxTipoRanking";
@@ -259,66 +259,6 @@
             this.CbxTipoRanking.Size = new System.Drawing.Size(174, 32);
             this.CbxTipoRanking.TabIndex = 47;
             this.CbxTipoRanking.ThemeName = "TelerikMetroBlue";
-            // 
-            // DtpFechaFin
-            // 
-            this.DtpFechaFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.DtpFechaFin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaFin.Location = new System.Drawing.Point(650, 47);
-            this.DtpFechaFin.Margin = new System.Windows.Forms.Padding(4);
-            this.DtpFechaFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DtpFechaFin.MinDate = new System.DateTime(((long)(0)));
-            this.DtpFechaFin.Name = "DtpFechaFin";
-            this.DtpFechaFin.NullableValue = null;
-            this.DtpFechaFin.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaFin.Size = new System.Drawing.Size(141, 34);
-            this.DtpFechaFin.TabIndex = 2;
-            this.DtpFechaFin.TabStop = false;
-            this.DtpFechaFin.ThemeName = "TelerikMetroBlue";
-            this.DtpFechaFin.Value = new System.DateTime(((long)(0)));
-            // 
-            // radLabel1
-            // 
-            this.radLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel1.Location = new System.Drawing.Point(561, 50);
-            this.radLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(61, 29);
-            this.radLabel1.TabIndex = 46;
-            this.radLabel1.Text = "Hasta:";
-            this.radLabel1.ThemeName = "TelerikMetroBlue";
-            // 
-            // DtpFechaInicio
-            // 
-            this.DtpFechaInicio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.DtpFechaInicio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtpFechaInicio.Location = new System.Drawing.Point(650, 4);
-            this.DtpFechaInicio.Margin = new System.Windows.Forms.Padding(4);
-            this.DtpFechaInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.DtpFechaInicio.MinDate = new System.DateTime(((long)(0)));
-            this.DtpFechaInicio.Name = "DtpFechaInicio";
-            this.DtpFechaInicio.NullableValue = null;
-            this.DtpFechaInicio.NullDate = new System.DateTime(((long)(0)));
-            this.DtpFechaInicio.Size = new System.Drawing.Size(141, 34);
-            this.DtpFechaInicio.TabIndex = 1;
-            this.DtpFechaInicio.TabStop = false;
-            this.DtpFechaInicio.ThemeName = "TelerikMetroBlue";
-            this.DtpFechaInicio.Value = new System.DateTime(((long)(0)));
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel1.Location = new System.Drawing.Point(561, 7);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(66, 29);
-            this.metroLabel1.TabIndex = 44;
-            this.metroLabel1.Text = "Desde:";
-            this.metroLabel1.ThemeName = "TelerikMetroBlue";
             // 
             // radLabel3
             // 
@@ -335,7 +275,7 @@
             // TxtCantidadFilas
             // 
             this.TxtCantidadFilas.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.TxtCantidadFilas.Location = new System.Drawing.Point(78, 47);
+            this.TxtCantidadFilas.Location = new System.Drawing.Point(80, 47);
             this.TxtCantidadFilas.Margin = new System.Windows.Forms.Padding(4);
             this.TxtCantidadFilas.MaxLength = 3;
             this.TxtCantidadFilas.Name = "TxtCantidadFilas";
@@ -358,7 +298,7 @@
             radListDataItem7.TextWrap = true;
             this.CbxColumnas.Items.Add(radListDataItem6);
             this.CbxColumnas.Items.Add(radListDataItem7);
-            this.CbxColumnas.Location = new System.Drawing.Point(384, 48);
+            this.CbxColumnas.Location = new System.Drawing.Point(394, 48);
             this.CbxColumnas.Margin = new System.Windows.Forms.Padding(4);
             this.CbxColumnas.MaxDropDownItems = 0;
             this.CbxColumnas.Name = "CbxColumnas";
@@ -369,10 +309,10 @@
             // 
             // BtnBuscarLibro
             // 
-            this.BtnBuscarLibro.Location = new System.Drawing.Point(1182, 90);
+            this.BtnBuscarLibro.Location = new System.Drawing.Point(1188, 90);
             this.BtnBuscarLibro.Margin = new System.Windows.Forms.Padding(4);
             this.BtnBuscarLibro.Name = "BtnBuscarLibro";
-            this.BtnBuscarLibro.Size = new System.Drawing.Size(81, 30);
+            this.BtnBuscarLibro.Size = new System.Drawing.Size(104, 30);
             this.BtnBuscarLibro.TabIndex = 57;
             this.BtnBuscarLibro.Text = "Seleccionar";
             this.BtnBuscarLibro.ThemeName = "TelerikMetroBlue";
@@ -382,7 +322,7 @@
             // 
             this.TxtTitulo.Enabled = false;
             this.TxtTitulo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTitulo.Location = new System.Drawing.Point(1003, 89);
+            this.TxtTitulo.Location = new System.Drawing.Point(997, 89);
             this.TxtTitulo.Name = "TxtTitulo";
             this.TxtTitulo.Size = new System.Drawing.Size(172, 33);
             this.TxtTitulo.TabIndex = 58;
@@ -392,7 +332,7 @@
             // radLabel7
             // 
             this.radLabel7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel7.Location = new System.Drawing.Point(886, 88);
+            this.radLabel7.Location = new System.Drawing.Point(873, 88);
             this.radLabel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radLabel7.Name = "radLabel7";
             this.radLabel7.Size = new System.Drawing.Size(65, 31);
@@ -402,8 +342,9 @@
             // ddlTemas
             // 
             this.ddlTemas.DropDownAnimationEnabled = true;
+            this.ddlTemas.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlTemas.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlTemas.Location = new System.Drawing.Point(1003, 45);
+            this.ddlTemas.Location = new System.Drawing.Point(997, 45);
             this.ddlTemas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ddlTemas.MaxDropDownItems = 0;
             this.ddlTemas.Name = "ddlTemas";
@@ -415,7 +356,7 @@
             // radLabel6
             // 
             this.radLabel6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel6.Location = new System.Drawing.Point(886, 45);
+            this.radLabel6.Location = new System.Drawing.Point(873, 45);
             this.radLabel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radLabel6.Name = "radLabel6";
             this.radLabel6.Size = new System.Drawing.Size(63, 31);
@@ -425,8 +366,9 @@
             // ddlProveedores
             // 
             this.ddlProveedores.DropDownAnimationEnabled = true;
+            this.ddlProveedores.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlProveedores.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlProveedores.Location = new System.Drawing.Point(1003, 2);
+            this.ddlProveedores.Location = new System.Drawing.Point(997, 2);
             this.ddlProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ddlProveedores.MaxDropDownItems = 0;
             this.ddlProveedores.Name = "ddlProveedores";
@@ -438,7 +380,7 @@
             // radLabel5
             // 
             this.radLabel5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel5.Location = new System.Drawing.Point(886, 2);
+            this.radLabel5.Location = new System.Drawing.Point(873, 2);
             this.radLabel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radLabel5.Name = "radLabel5";
             this.radLabel5.Size = new System.Drawing.Size(107, 31);
@@ -447,14 +389,74 @@
             // 
             // BtnLimpiar
             // 
-            this.BtnLimpiar.Location = new System.Drawing.Point(1271, 90);
+            this.BtnLimpiar.Location = new System.Drawing.Point(1301, 90);
             this.BtnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnLimpiar.Name = "BtnLimpiar";
-            this.BtnLimpiar.Size = new System.Drawing.Size(86, 30);
+            this.BtnLimpiar.Size = new System.Drawing.Size(84, 30);
             this.BtnLimpiar.TabIndex = 59;
             this.BtnLimpiar.Text = "Limpiar";
             this.BtnLimpiar.ThemeName = "TelerikMetroBlue";
             this.BtnLimpiar.Click += new System.EventHandler(this.BtnLimpiar_Click);
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radLabel1.Location = new System.Drawing.Point(576, 50);
+            this.radLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(61, 29);
+            this.radLabel1.TabIndex = 46;
+            this.radLabel1.Text = "Hasta:";
+            this.radLabel1.ThemeName = "TelerikMetroBlue";
+            // 
+            // DtpFechaFin
+            // 
+            this.DtpFechaFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DtpFechaFin.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaFin.Location = new System.Drawing.Point(667, 47);
+            this.DtpFechaFin.Margin = new System.Windows.Forms.Padding(4);
+            this.DtpFechaFin.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaFin.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaFin.Name = "DtpFechaFin";
+            this.DtpFechaFin.NullableValue = null;
+            this.DtpFechaFin.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaFin.Size = new System.Drawing.Size(141, 34);
+            this.DtpFechaFin.TabIndex = 2;
+            this.DtpFechaFin.TabStop = false;
+            this.DtpFechaFin.ThemeName = "TelerikMetroBlue";
+            this.DtpFechaFin.Value = new System.DateTime(((long)(0)));
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.metroLabel1.Location = new System.Drawing.Point(576, 7);
+            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(66, 29);
+            this.metroLabel1.TabIndex = 44;
+            this.metroLabel1.Text = "Desde:";
+            this.metroLabel1.ThemeName = "TelerikMetroBlue";
+            // 
+            // DtpFechaInicio
+            // 
+            this.DtpFechaInicio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.DtpFechaInicio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtpFechaInicio.Location = new System.Drawing.Point(667, 4);
+            this.DtpFechaInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.DtpFechaInicio.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.DtpFechaInicio.MinDate = new System.DateTime(((long)(0)));
+            this.DtpFechaInicio.Name = "DtpFechaInicio";
+            this.DtpFechaInicio.NullableValue = null;
+            this.DtpFechaInicio.NullDate = new System.DateTime(((long)(0)));
+            this.DtpFechaInicio.Size = new System.Drawing.Size(141, 34);
+            this.DtpFechaInicio.TabIndex = 1;
+            this.DtpFechaInicio.TabStop = false;
+            this.DtpFechaInicio.ThemeName = "TelerikMetroBlue";
+            this.DtpFechaInicio.Value = new System.DateTime(((long)(0)));
             // 
             // reportViewer1
             // 
@@ -462,7 +464,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1361, 982);
+            this.reportViewer1.Size = new System.Drawing.Size(1393, 974);
             this.reportViewer1.TabIndex = 5;
             this.reportViewer1.ReportRefresh += new System.ComponentModel.CancelEventHandler(this.reportViewer1_ReportRefresh);
             // 
@@ -470,7 +472,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1361, 1092);
+            this.ClientSize = new System.Drawing.Size(1393, 1084);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -492,10 +494,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxTipoRanking)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaFin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaInicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidadFilas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CbxColumnas)).EndInit();
@@ -507,6 +505,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.ddlProveedores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnLimpiar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaFin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DtpFechaInicio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

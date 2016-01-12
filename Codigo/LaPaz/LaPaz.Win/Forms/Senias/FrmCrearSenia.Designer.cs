@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn7 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
-            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn8 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn3 = new Telerik.WinControls.UI.GridViewCommandColumn();
+            Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn4 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.TabSeñas = new Telerik.WinControls.UI.RadPageView();
             this.TabSeñasNueva = new Telerik.WinControls.UI.RadPageViewPage();
             this.UcTotalesSenia = new LaPaz.Win.Forms.Senias.UcTotalesSenia();
@@ -114,10 +114,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabSeñas.Controls.Add(this.TabSeñasNueva);
             this.TabSeñas.Controls.Add(this.TabSeñasHistorial);
-            this.TabSeñas.Location = new System.Drawing.Point(14, 50);
+            this.TabSeñas.Location = new System.Drawing.Point(14, 60);
             this.TabSeñas.Name = "TabSeñas";
-            this.TabSeñas.SelectedPage = this.TabSeñasHistorial;
-            this.TabSeñas.Size = new System.Drawing.Size(917, 329);
+            this.TabSeñas.SelectedPage = this.TabSeñasNueva;
+            this.TabSeñas.Size = new System.Drawing.Size(970, 329);
             this.TabSeñas.TabIndex = 0;
             this.TabSeñas.Text = "radPageView1";
             this.TabSeñas.ThemeName = "TelerikMetroBlue";
@@ -129,15 +129,15 @@
             this.TabSeñasNueva.Controls.Add(this.UcTotalesSenia);
             this.TabSeñasNueva.Location = new System.Drawing.Point(5, 36);
             this.TabSeñasNueva.Name = "TabSeñasNueva";
-            this.TabSeñasNueva.Size = new System.Drawing.Size(907, 288);
+            this.TabSeñasNueva.Size = new System.Drawing.Size(960, 288);
             this.TabSeñasNueva.Text = "Nueva Seña";
             // 
             // UcTotalesSenia
             // 
-            this.UcTotalesSenia.Location = new System.Drawing.Point(3, 3);
-            this.UcTotalesSenia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.UcTotalesSenia.Location = new System.Drawing.Point(3, 12);
+            this.UcTotalesSenia.Margin = new System.Windows.Forms.Padding(4);
             this.UcTotalesSenia.Name = "UcTotalesSenia";
-            this.UcTotalesSenia.Size = new System.Drawing.Size(901, 260);
+            this.UcTotalesSenia.Size = new System.Drawing.Size(952, 260);
             this.UcTotalesSenia.TabIndex = 6;
             this.UcTotalesSenia.TotalPagar = new decimal(new int[] {
             0,
@@ -194,79 +194,79 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.GridSeñas.Location = new System.Drawing.Point(5, 39);
             // 
-            // GridSeñas
+            // 
             // 
             this.GridSeñas.MasterTemplate.AllowAddNewRow = false;
             this.GridSeñas.MasterTemplate.AllowColumnReorder = false;
             this.GridSeñas.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "FechaAlta";
-            gridViewTextBoxColumn1.FormatString = "";
-            gridViewTextBoxColumn1.HeaderText = "Fecha";
-            gridViewTextBoxColumn1.MaxWidth = 100;
-            gridViewTextBoxColumn1.MinWidth = 100;
-            gridViewTextBoxColumn1.Name = "Fecha";
-            gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 100;
-            gridViewTextBoxColumn2.FieldName = "Concepto";
-            gridViewTextBoxColumn2.HeaderText = "Concepto";
-            gridViewTextBoxColumn2.Name = "Concepto";
-            gridViewTextBoxColumn2.Width = 189;
-            gridViewTextBoxColumn3.FieldName = "Importe";
-            gridViewTextBoxColumn3.FormatString = "";
-            gridViewTextBoxColumn3.HeaderText = "Importe";
-            gridViewTextBoxColumn3.MaxWidth = 100;
-            gridViewTextBoxColumn3.MinWidth = 100;
-            gridViewTextBoxColumn3.Name = "Importe";
-            gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn3.Width = 100;
-            gridViewTextBoxColumn4.FieldName = "ImpOcupado";
-            gridViewTextBoxColumn4.FormatString = "";
-            gridViewTextBoxColumn4.HeaderText = "Utilizado";
-            gridViewTextBoxColumn4.MaxWidth = 100;
-            gridViewTextBoxColumn4.MinWidth = 100;
-            gridViewTextBoxColumn4.Name = "Utilizado";
-            gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn4.Width = 100;
-            gridViewTextBoxColumn5.Expression = "Importe - Utilizado ";
-            gridViewTextBoxColumn5.HeaderText = "Disponible";
-            gridViewTextBoxColumn5.Name = "Disponible";
-            gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 107;
-            gridViewTextBoxColumn6.FieldName = "FechaAnulacion";
-            gridViewTextBoxColumn6.HeaderText = "Fecha Anulacion";
-            gridViewTextBoxColumn6.MaxWidth = 120;
-            gridViewTextBoxColumn6.MinWidth = 120;
-            gridViewTextBoxColumn6.Name = "FechaAnulacion";
-            gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn6.Width = 120;
-            gridViewTextBoxColumn7.FieldName = "FechaModificacion";
-            gridViewTextBoxColumn7.HeaderText = "Fecha uso";
-            gridViewTextBoxColumn7.Name = "FechaModificacion";
-            gridViewTextBoxColumn7.Width = 109;
-            gridViewCommandColumn1.HeaderText = "";
-            gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
-            gridViewCommandColumn1.MaxWidth = 30;
-            gridViewCommandColumn1.MinWidth = 30;
-            gridViewCommandColumn1.Name = "Eliminar";
-            gridViewCommandColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCommandColumn1.Width = 30;
-            gridViewCommandColumn2.HeaderText = "";
-            gridViewCommandColumn2.Image = global::LaPaz.Win.Properties.Resources.Print_16x16;
-            gridViewCommandColumn2.MaxWidth = 30;
-            gridViewCommandColumn2.MinWidth = 30;
-            gridViewCommandColumn2.Name = "Imprimir";
-            gridViewCommandColumn2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewCommandColumn2.Width = 30;
+            gridViewTextBoxColumn8.FieldName = "FechaAlta";
+            gridViewTextBoxColumn8.FormatString = "";
+            gridViewTextBoxColumn8.HeaderText = "Fecha";
+            gridViewTextBoxColumn8.MaxWidth = 100;
+            gridViewTextBoxColumn8.MinWidth = 100;
+            gridViewTextBoxColumn8.Name = "Fecha";
+            gridViewTextBoxColumn8.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn8.Width = 100;
+            gridViewTextBoxColumn9.FieldName = "Concepto";
+            gridViewTextBoxColumn9.HeaderText = "Concepto";
+            gridViewTextBoxColumn9.Name = "Concepto";
+            gridViewTextBoxColumn9.Width = 189;
+            gridViewTextBoxColumn10.FieldName = "Importe";
+            gridViewTextBoxColumn10.FormatString = "";
+            gridViewTextBoxColumn10.HeaderText = "Importe";
+            gridViewTextBoxColumn10.MaxWidth = 100;
+            gridViewTextBoxColumn10.MinWidth = 100;
+            gridViewTextBoxColumn10.Name = "Importe";
+            gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn10.Width = 100;
+            gridViewTextBoxColumn11.FieldName = "ImpOcupado";
+            gridViewTextBoxColumn11.FormatString = "";
+            gridViewTextBoxColumn11.HeaderText = "Utilizado";
+            gridViewTextBoxColumn11.MaxWidth = 100;
+            gridViewTextBoxColumn11.MinWidth = 100;
+            gridViewTextBoxColumn11.Name = "Utilizado";
+            gridViewTextBoxColumn11.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn11.Width = 100;
+            gridViewTextBoxColumn12.Expression = "Importe - Utilizado ";
+            gridViewTextBoxColumn12.HeaderText = "Disponible";
+            gridViewTextBoxColumn12.Name = "Disponible";
+            gridViewTextBoxColumn12.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            gridViewTextBoxColumn12.Width = 107;
+            gridViewTextBoxColumn13.FieldName = "FechaAnulacion";
+            gridViewTextBoxColumn13.HeaderText = "Fecha Anulacion";
+            gridViewTextBoxColumn13.MaxWidth = 120;
+            gridViewTextBoxColumn13.MinWidth = 120;
+            gridViewTextBoxColumn13.Name = "FechaAnulacion";
+            gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewTextBoxColumn13.Width = 120;
+            gridViewTextBoxColumn14.FieldName = "FechaModificacion";
+            gridViewTextBoxColumn14.HeaderText = "Fecha uso";
+            gridViewTextBoxColumn14.Name = "FechaModificacion";
+            gridViewTextBoxColumn14.Width = 109;
+            gridViewCommandColumn3.HeaderText = "";
+            gridViewCommandColumn3.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
+            gridViewCommandColumn3.MaxWidth = 30;
+            gridViewCommandColumn3.MinWidth = 30;
+            gridViewCommandColumn3.Name = "Eliminar";
+            gridViewCommandColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn3.Width = 30;
+            gridViewCommandColumn4.HeaderText = "";
+            gridViewCommandColumn4.Image = global::LaPaz.Win.Properties.Resources.Print_16x16;
+            gridViewCommandColumn4.MaxWidth = 30;
+            gridViewCommandColumn4.MinWidth = 30;
+            gridViewCommandColumn4.Name = "Imprimir";
+            gridViewCommandColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            gridViewCommandColumn4.Width = 30;
             this.GridSeñas.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2,
-            gridViewTextBoxColumn3,
-            gridViewTextBoxColumn4,
-            gridViewTextBoxColumn5,
-            gridViewTextBoxColumn6,
-            gridViewTextBoxColumn7,
-            gridViewCommandColumn1,
-            gridViewCommandColumn2});
+            gridViewTextBoxColumn8,
+            gridViewTextBoxColumn9,
+            gridViewTextBoxColumn10,
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewCommandColumn3,
+            gridViewCommandColumn4});
             this.GridSeñas.MasterTemplate.EnableGrouping = false;
             this.GridSeñas.Name = "GridSeñas";
             this.GridSeñas.ReadOnly = true;
@@ -288,10 +288,10 @@
             // ucBuscadorClienteSimple
             // 
             this.ucBuscadorClienteSimple.Cuit = "";
-            this.ucBuscadorClienteSimple.Location = new System.Drawing.Point(100, 2);
+            this.ucBuscadorClienteSimple.Location = new System.Drawing.Point(8, 3);
             this.ucBuscadorClienteSimple.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucBuscadorClienteSimple.Name = "ucBuscadorClienteSimple";
-            this.ucBuscadorClienteSimple.Size = new System.Drawing.Size(540, 38);
+            this.ucBuscadorClienteSimple.Size = new System.Drawing.Size(633, 51);
             this.ucBuscadorClienteSimple.TabIndex = 1;
             // 
             // pnlBuscador
@@ -300,7 +300,7 @@
             this.pnlBuscador.Controls.Add(this.ucBuscadorClienteSimple);
             this.pnlBuscador.Location = new System.Drawing.Point(12, 12);
             this.pnlBuscador.Name = "pnlBuscador";
-            this.pnlBuscador.Size = new System.Drawing.Size(943, 45);
+            this.pnlBuscador.Size = new System.Drawing.Size(996, 60);
             this.pnlBuscador.TabIndex = 3;
             // 
             // radPanel2
@@ -315,7 +315,7 @@
             // 
             this.TxtCliente.Enabled = false;
             this.TxtCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCliente.Location = new System.Drawing.Point(164, 5);
+            this.TxtCliente.Location = new System.Drawing.Point(196, 5);
             this.TxtCliente.Name = "TxtCliente";
             this.TxtCliente.Size = new System.Drawing.Size(295, 31);
             this.TxtCliente.TabIndex = 3;
@@ -337,7 +337,7 @@
             this.TxtDni.Controls.Add(this.radTextBox4);
             this.TxtDni.Enabled = false;
             this.TxtDni.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtDni.Location = new System.Drawing.Point(164, 36);
+            this.TxtDni.Location = new System.Drawing.Point(196, 42);
             this.TxtDni.Name = "TxtDni";
             this.TxtDni.Size = new System.Drawing.Size(295, 31);
             this.TxtDni.TabIndex = 5;
@@ -356,20 +356,20 @@
             // 
             // radPanel3
             // 
+            this.radPanel3.Controls.Add(this.TxtCreditos);
             this.radPanel3.Controls.Add(this.TxtTelefono);
             this.radPanel3.Controls.Add(this.radLabel5);
             this.radPanel3.Controls.Add(this.LnkEditarCliente);
             this.radPanel3.Controls.Add(this.TxtSenias);
-            this.radPanel3.Controls.Add(this.TxtCreditos);
             this.radPanel3.Controls.Add(this.TxtDni);
             this.radPanel3.Controls.Add(this.radLabel3);
             this.radPanel3.Controls.Add(this.radLabel2);
             this.radPanel3.Controls.Add(this.LblCliente);
             this.radPanel3.Controls.Add(this.TxtCliente);
             this.radPanel3.Controls.Add(this.radLabel1);
-            this.radPanel3.Location = new System.Drawing.Point(12, 63);
+            this.radPanel3.Location = new System.Drawing.Point(12, 73);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(943, 108);
+            this.radPanel3.Size = new System.Drawing.Size(996, 135);
             this.radPanel3.TabIndex = 4;
             // 
             // TxtTelefono
@@ -377,7 +377,7 @@
             this.TxtTelefono.Controls.Add(this.radTextBox2);
             this.TxtTelefono.Enabled = false;
             this.TxtTelefono.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtTelefono.Location = new System.Drawing.Point(164, 70);
+            this.TxtTelefono.Location = new System.Drawing.Point(196, 79);
             this.TxtTelefono.Name = "TxtTelefono";
             this.TxtTelefono.Size = new System.Drawing.Size(295, 31);
             this.TxtTelefono.TabIndex = 13;
@@ -409,7 +409,7 @@
             this.LnkEditarCliente.Enabled = false;
             this.LnkEditarCliente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LnkEditarCliente.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkEditarCliente.Location = new System.Drawing.Point(826, 79);
+            this.LnkEditarCliente.Location = new System.Drawing.Point(674, 79);
             this.LnkEditarCliente.Name = "LnkEditarCliente";
             this.LnkEditarCliente.Size = new System.Drawing.Size(105, 23);
             this.LnkEditarCliente.TabIndex = 11;
@@ -422,7 +422,7 @@
             this.TxtSenias.Controls.Add(this.radTextBox6);
             this.TxtSenias.Enabled = false;
             this.TxtSenias.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtSenias.Location = new System.Drawing.Point(636, 5);
+            this.TxtSenias.Location = new System.Drawing.Point(679, 5);
             this.TxtSenias.Name = "TxtSenias";
             this.TxtSenias.Size = new System.Drawing.Size(295, 31);
             this.TxtSenias.TabIndex = 10;
@@ -443,7 +443,7 @@
             // 
             this.TxtCreditos.Enabled = false;
             this.TxtCreditos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCreditos.Location = new System.Drawing.Point(636, 36);
+            this.TxtCreditos.Location = new System.Drawing.Point(679, 42);
             this.TxtCreditos.Name = "TxtCreditos";
             this.TxtCreditos.Size = new System.Drawing.Size(295, 31);
             this.TxtCreditos.TabIndex = 8;
@@ -453,7 +453,7 @@
             // radLabel3
             // 
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel3.Location = new System.Drawing.Point(480, 37);
+            this.radLabel3.Location = new System.Drawing.Point(512, 37);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(161, 31);
             this.radLabel3.TabIndex = 7;
@@ -463,7 +463,7 @@
             // radLabel2
             // 
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radLabel2.Location = new System.Drawing.Point(480, 6);
+            this.radLabel2.Location = new System.Drawing.Point(512, 6);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(66, 31);
             this.radLabel2.TabIndex = 6;
@@ -475,15 +475,15 @@
             this.PanelPagos.Controls.Add(this.BtnGuardar);
             this.PanelPagos.Controls.Add(this.pnlMontoSenia);
             this.PanelPagos.Controls.Add(this.TabSeñas);
-            this.PanelPagos.Location = new System.Drawing.Point(12, 177);
+            this.PanelPagos.Location = new System.Drawing.Point(12, 209);
             this.PanelPagos.Name = "PanelPagos";
-            this.PanelPagos.Size = new System.Drawing.Size(943, 438);
+            this.PanelPagos.Size = new System.Drawing.Size(996, 438);
             this.PanelPagos.TabIndex = 5;
             // 
             // BtnGuardar
             // 
             this.BtnGuardar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.Location = new System.Drawing.Point(828, 385);
+            this.BtnGuardar.Location = new System.Drawing.Point(828, 395);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(103, 29);
             this.BtnGuardar.TabIndex = 4;
@@ -498,14 +498,14 @@
             this.pnlMontoSenia.Controls.Add(this.radLabel4);
             this.pnlMontoSenia.Location = new System.Drawing.Point(8, 5);
             this.pnlMontoSenia.Name = "pnlMontoSenia";
-            this.pnlMontoSenia.Size = new System.Drawing.Size(345, 39);
+            this.pnlMontoSenia.Size = new System.Drawing.Size(425, 49);
             this.pnlMontoSenia.TabIndex = 8;
             // 
             // TxtMonto
             // 
             this.TxtMonto.AceptaNegativos = false;
             this.TxtMonto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMonto.Location = new System.Drawing.Point(69, 8);
+            this.TxtMonto.Location = new System.Drawing.Point(83, 8);
             this.TxtMonto.Name = "TxtMonto";
             this.TxtMonto.Size = new System.Drawing.Size(128, 30);
             this.TxtMonto.TabIndex = 2;
@@ -516,7 +516,7 @@
             // BtnAgregarMontoAuto
             // 
             this.BtnAgregarMontoAuto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarMontoAuto.Location = new System.Drawing.Point(204, 6);
+            this.BtnAgregarMontoAuto.Location = new System.Drawing.Point(233, 9);
             this.BtnAgregarMontoAuto.Name = "BtnAgregarMontoAuto";
             this.BtnAgregarMontoAuto.Size = new System.Drawing.Size(111, 27);
             this.BtnAgregarMontoAuto.TabIndex = 3;
@@ -538,12 +538,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1380, 1060);
+            this.ClientSize = new System.Drawing.Size(1396, 1092);
             this.Controls.Add(this.PanelPagos);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.pnlBuscador);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCrearSenia";
             // 
             // 

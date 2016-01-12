@@ -13,7 +13,7 @@ DECLARE @Conceptos TABLE
 		Nombre varchar(50)
 	)
 	
-	INSERT INTO @Conceptos VALUES(27, 'Señas')
+	INSERT INTO @Conceptos VALUES(37, 'Señas')
 	INSERT INTO @Conceptos VALUES(41, 'Notas de Crédito')
 	INSERT INTO @Conceptos VALUES(40, 'Egresos')
 
@@ -34,7 +34,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Señas',
 			COUNT(*),
-			SUM(CM.Importe),
+			SUM (PS.Importe - PS.ImporteUsado),
 			CM.TipoComprobante
 	from CajasMovimientos CM
 	INNER JOIN ProveedoresSenias PS

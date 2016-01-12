@@ -16,7 +16,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Conceptos VALUES(29, 'Compras Contado')
 	INSERT INTO @Conceptos VALUES(2, 'Anticipos Cta Cte')
 	INSERT INTO @Conceptos VALUES(39, 'Pagos CtaCte/Consign.')
-
+	INSERT INTO @Conceptos VALUES(40, 'Uso señas')
 
 	DECLARE @Temp TABLE 
 	(
@@ -84,6 +84,23 @@ DECLARE @Conceptos TABLE
 	AND CM.SucursalAltaId = @SucursalId
 	AND (@ProveedorId IS NULL OR @ProveedorId = PP.ProveedorId)
 	GROUP BY CM.TipoComprobante
+
+	-----------------------------------------------------------
+	------------  Uso de Señas ------------------
+	-----------------------------------------------------------
+	INSERT INTO @Temp
+	SELECT 'Uso señas',
+			COUNT(*),
+			SUM( cm.Senia),
+			40
+	from CajasMovimientos CM
+	INNER JOIN Compras C
+	ON C.Id= CM.ComprobanteId
+	where 
+	C.FechaAlta >= @FechaInicio
+	AND C.FechaAlta < @FechaFin
+	AND C.SucursalAltaId = @SucursalId
+	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
 
 	
 	SELECT C.Nombre,

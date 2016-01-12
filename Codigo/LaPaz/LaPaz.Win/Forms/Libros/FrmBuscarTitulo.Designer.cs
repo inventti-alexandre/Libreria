@@ -60,13 +60,13 @@
             this.UcFiltrosLibros.ConStock = null;
             this.UcFiltrosLibros.EditorialId = null;
             this.UcFiltrosLibros.ISBN = "";
-            this.UcFiltrosLibros.Location = new System.Drawing.Point(4, 4);
+            this.UcFiltrosLibros.Location = new System.Drawing.Point(12, 13);
             this.UcFiltrosLibros.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UcFiltrosLibros.Name = "UcFiltrosLibros";
             this.UcFiltrosLibros.NombreTitulo = "";
             this.UcFiltrosLibros.OchoDeMarzo = null;
             this.UcFiltrosLibros.ProveedorId = null;
-            this.UcFiltrosLibros.Size = new System.Drawing.Size(1588, 193);
+            this.UcFiltrosLibros.Size = new System.Drawing.Size(1592, 201);
             this.UcFiltrosLibros.TabIndex = 0;
             this.UcFiltrosLibros.TemaId = null;
             // 
@@ -74,7 +74,7 @@
             // 
             this.GridLibros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridLibros.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.GridLibros.Location = new System.Drawing.Point(4, 273);
+            this.GridLibros.Location = new System.Drawing.Point(4, 11);
             this.GridLibros.Margin = new System.Windows.Forms.Padding(4);
             // 
             // GridLibros
@@ -90,26 +90,26 @@
             gridViewTextBoxColumn2.FieldName = "Cod";
             gridViewTextBoxColumn2.HeaderText = "Código";
             gridViewTextBoxColumn2.Name = "Codigo";
-            gridViewTextBoxColumn2.Width = 251;
+            gridViewTextBoxColumn2.Width = 185;
             gridViewTextBoxColumn3.FieldName = "NombreTitulo";
             gridViewTextBoxColumn3.HeaderText = "Título";
             gridViewTextBoxColumn3.Name = "NombreTitulo";
             gridViewTextBoxColumn3.ReadOnly = true;
-            gridViewTextBoxColumn3.Width = 519;
+            gridViewTextBoxColumn3.Width = 382;
             gridViewTextBoxColumn4.FieldName = "AutorNombre";
             gridViewTextBoxColumn4.HeaderText = "Autor";
             gridViewTextBoxColumn4.Name = "AutorNombre";
-            gridViewTextBoxColumn4.Width = 248;
+            gridViewTextBoxColumn4.Width = 183;
             gridViewTextBoxColumn5.FieldName = "EditorialNombre";
             gridViewTextBoxColumn5.HeaderText = "Editorial";
             gridViewTextBoxColumn5.Name = "EditorialNombre";
-            gridViewTextBoxColumn5.Width = 222;
+            gridViewTextBoxColumn5.Width = 164;
             gridViewTextBoxColumn6.FieldName = "PrecioVentaTitulo";
             gridViewTextBoxColumn6.FormatString = "{0:c2}";
             gridViewTextBoxColumn6.HeaderText = "Precio";
             gridViewTextBoxColumn6.Name = "PrecioVentaTitulo";
             gridViewTextBoxColumn6.ReadOnly = true;
-            gridViewTextBoxColumn6.Width = 229;
+            gridViewTextBoxColumn6.Width = 166;
             gridViewTextBoxColumn7.FieldName = "TituloStockStkPr";
             gridViewTextBoxColumn7.HeaderText = "St. Pr.";
             gridViewTextBoxColumn7.MaxWidth = 40;
@@ -157,7 +157,7 @@
             this.GridLibros.MasterTemplate.EnableGrouping = false;
             this.GridLibros.Name = "GridLibros";
             this.GridLibros.ReadOnly = true;
-            this.GridLibros.Size = new System.Drawing.Size(1672, 409);
+            this.GridLibros.Size = new System.Drawing.Size(1283, 461);
             this.GridLibros.TabIndex = 13;
             this.GridLibros.ThemeName = "TelerikMetroBlue";
             this.GridLibros.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridLibros_CommandCellClick);
@@ -166,21 +166,21 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.UcFiltrosLibros, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.GridLibros, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 35);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 245);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 417F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1680, 686);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 469F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1291, 476);
             this.tableLayoutPanel1.TabIndex = 14;
             // 
             // FrmBuscarTitulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1704, 733);
+            this.ClientSize = new System.Drawing.Size(1625, 733);
+            this.Controls.Add(this.UcFiltrosLibros);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmBuscarTitulo";
             // 

@@ -122,7 +122,7 @@
             this.Tabs.Location = new System.Drawing.Point(12, 33);
             this.Tabs.Name = "Tabs";
             this.Tabs.SelectedPage = this.pageCompraDetalle;
-            this.Tabs.Size = new System.Drawing.Size(1302, 445);
+            this.Tabs.Size = new System.Drawing.Size(1092, 445);
             this.Tabs.TabIndex = 0;
             this.Tabs.Text = "Detalle";
             this.Tabs.ThemeName = "TelerikMetroBlue";
@@ -135,7 +135,7 @@
             this.pageCompraDetalle.Controls.Add(this.ListadoPager);
             this.pageCompraDetalle.Location = new System.Drawing.Point(5, 36);
             this.pageCompraDetalle.Name = "pageCompraDetalle";
-            this.pageCompraDetalle.Size = new System.Drawing.Size(1292, 404);
+            this.pageCompraDetalle.Size = new System.Drawing.Size(1082, 404);
             this.pageCompraDetalle.Text = "Detalle";
             // 
             // ucProgressSpinner
@@ -167,23 +167,23 @@
             gridViewTextBoxColumn1.FieldName = "TituloNombreTitulo";
             gridViewTextBoxColumn1.HeaderText = "Titulo";
             gridViewTextBoxColumn1.Name = "Titulo";
-            gridViewTextBoxColumn1.Width = 521;
+            gridViewTextBoxColumn1.Width = 435;
             gridViewTextBoxColumn2.FieldName = "CntPr";
             gridViewTextBoxColumn2.HeaderText = "Propia";
             gridViewTextBoxColumn2.Name = "Propia";
-            gridViewTextBoxColumn2.Width = 178;
+            gridViewTextBoxColumn2.Width = 149;
             gridViewTextBoxColumn3.FieldName = "CntCn";
             gridViewTextBoxColumn3.HeaderText = "Consignada";
             gridViewTextBoxColumn3.Name = "Consignada";
-            gridViewTextBoxColumn3.Width = 178;
+            gridViewTextBoxColumn3.Width = 149;
             gridViewTextBoxColumn4.FieldName = "PrecioCompra";
             gridViewTextBoxColumn4.HeaderText = "PrecioCompra";
             gridViewTextBoxColumn4.Name = "PrecioCompra";
-            gridViewTextBoxColumn4.Width = 178;
+            gridViewTextBoxColumn4.Width = 149;
             gridViewTextBoxColumn5.FieldName = "PrecioVenta";
             gridViewTextBoxColumn5.HeaderText = "PrecioVenta";
             gridViewTextBoxColumn5.Name = "PrecioVenta";
-            gridViewTextBoxColumn5.Width = 219;
+            gridViewTextBoxColumn5.Width = 182;
             this.GridCompraDetalle.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
@@ -192,7 +192,7 @@
             gridViewTextBoxColumn5});
             this.GridCompraDetalle.Name = "GridCompraDetalle";
             this.GridCompraDetalle.ReadOnly = true;
-            this.GridCompraDetalle.Size = new System.Drawing.Size(1292, 330);
+            this.GridCompraDetalle.Size = new System.Drawing.Size(1082, 330);
             this.GridCompraDetalle.TabIndex = 0;
             this.GridCompraDetalle.Text = "radGridView1";
             this.GridCompraDetalle.ThemeName = "TelerikMetroBlue";
@@ -335,7 +335,7 @@
             this.PageProveedoresPagos.Controls.Add(this.grillaProveedoresPago);
             this.PageProveedoresPagos.Location = new System.Drawing.Point(5, 36);
             this.PageProveedoresPagos.Name = "PageProveedoresPagos";
-            this.PageProveedoresPagos.Size = new System.Drawing.Size(1292, 404);
+            this.PageProveedoresPagos.Size = new System.Drawing.Size(1082, 404);
             this.PageProveedoresPagos.Text = "Pagos";
             // 
             // grillaProveedoresPago
@@ -352,45 +352,43 @@
             gridViewTextBoxColumn18.FieldName = "TipoMovimientoCaja";
             gridViewTextBoxColumn18.FormatString = "";
             gridViewTextBoxColumn18.HeaderText = "TipoMovimientoCaja";
-            gridViewTextBoxColumn18.MinWidth = 250;
             gridViewTextBoxColumn18.Name = "TipoMovimientoCaja";
-            gridViewTextBoxColumn18.Width = 298;
+            gridViewTextBoxColumn18.Width = 250;
             gridViewTextBoxColumn19.FieldName = "ComprobanteTipo";
             gridViewTextBoxColumn19.FormatString = "";
             gridViewTextBoxColumn19.HeaderText = "ComprobanteTipo";
-            gridViewTextBoxColumn19.MinWidth = 250;
             gridViewTextBoxColumn19.Name = "ComprobanteTipo";
-            gridViewTextBoxColumn19.Width = 298;
+            gridViewTextBoxColumn19.Width = 250;
             gridViewTextBoxColumn20.FieldName = "Importe";
             gridViewTextBoxColumn20.FormatString = "";
             gridViewTextBoxColumn20.HeaderText = "Importe";
             gridViewTextBoxColumn20.Name = "Importe";
-            gridViewTextBoxColumn20.Width = 119;
+            gridViewTextBoxColumn20.Width = 99;
             gridViewTextBoxColumn21.FieldName = "ImpFact";
             gridViewTextBoxColumn21.FormatString = "";
             gridViewTextBoxColumn21.HeaderText = "ImpFact";
             gridViewTextBoxColumn21.Name = "ImpFact";
-            gridViewTextBoxColumn21.Width = 116;
+            gridViewTextBoxColumn21.Width = 97;
             gridViewTextBoxColumn22.FieldName = "Efectivo";
             gridViewTextBoxColumn22.FormatString = "";
             gridViewTextBoxColumn22.HeaderText = "Efectivo";
             gridViewTextBoxColumn22.Name = "Efectivo";
-            gridViewTextBoxColumn22.Width = 116;
+            gridViewTextBoxColumn22.Width = 97;
             gridViewTextBoxColumn23.FieldName = "Tarjeta";
             gridViewTextBoxColumn23.FormatString = "";
             gridViewTextBoxColumn23.HeaderText = "Tarjeta";
             gridViewTextBoxColumn23.Name = "Tarjeta";
-            gridViewTextBoxColumn23.Width = 116;
+            gridViewTextBoxColumn23.Width = 97;
             gridViewTextBoxColumn24.FieldName = "Cheque";
             gridViewTextBoxColumn24.FormatString = "";
             gridViewTextBoxColumn24.HeaderText = "Cheque";
             gridViewTextBoxColumn24.Name = "Cheque";
-            gridViewTextBoxColumn24.Width = 116;
+            gridViewTextBoxColumn24.Width = 97;
             gridViewTextBoxColumn25.FieldName = "Deposito";
             gridViewTextBoxColumn25.FormatString = "";
             gridViewTextBoxColumn25.HeaderText = "Deposito";
             gridViewTextBoxColumn25.Name = "Deposito";
-            gridViewTextBoxColumn25.Width = 98;
+            gridViewTextBoxColumn25.Width = 80;
             this.grillaProveedoresPago.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn18,
             gridViewTextBoxColumn19,
@@ -402,7 +400,7 @@
             gridViewTextBoxColumn25});
             this.grillaProveedoresPago.Name = "grillaProveedoresPago";
             this.grillaProveedoresPago.ReadOnly = true;
-            this.grillaProveedoresPago.Size = new System.Drawing.Size(1292, 404);
+            this.grillaProveedoresPago.Size = new System.Drawing.Size(1082, 404);
             this.grillaProveedoresPago.TabIndex = 0;
             this.grillaProveedoresPago.Text = "radGridView1";
             this.grillaProveedoresPago.ThemeName = "TelerikMetroBlue";
@@ -411,7 +409,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1326, 606);
+            this.ClientSize = new System.Drawing.Size(1149, 606);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.radLabel1);
             this.Controls.Add(this.Tabs);
