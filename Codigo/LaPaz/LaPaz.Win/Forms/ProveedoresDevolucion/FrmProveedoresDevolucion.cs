@@ -181,16 +181,6 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                 _messageBoxDisplayService.ShowError("Debe Seleccionar por lo menos un título para devolución");            }
         }
 
-        //private void DescontarLibros(int propio,int consignado,Guid TituloId)
-        //{
-        //    var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalAltaId == Context.SucursalActual.Id);
-        //    if (tituloStock != null)
-        //    {
-        //        tituloStock.StkCn -= consignado;
-        //        tituloStock.StkPr -= propio;
-        //        Uow.TitulosStock.Modificar(tituloStock);
-        //    }
-        //}
 
         private void DescontarLibrosPropios(int? propio, Guid TituloId)
         {
@@ -261,8 +251,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                 }
                 else
                 {
-                    //_messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible de libro: " + devolucionTitulo.TituloNombre);
-                    //return;
+
                 }
 
 

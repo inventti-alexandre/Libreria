@@ -165,7 +165,7 @@
             this.TabSeñas.Controls.Add(this.TabSeñasHistorial);
             this.TabSeñas.Location = new System.Drawing.Point(14, 60);
             this.TabSeñas.Name = "TabSeñas";
-            this.TabSeñas.SelectedPage = this.TabSeñasNueva;
+            this.TabSeñas.SelectedPage = this.TabSeñasHistorial;
             this.TabSeñas.Size = new System.Drawing.Size(984, 462);
             this.TabSeñas.TabIndex = 0;
             this.TabSeñas.Text = "radPageView1";
@@ -253,7 +253,7 @@
             // 
             this.GridSeñas.Location = new System.Drawing.Point(5, 71);
             // 
-            // 
+            // GridSeñas
             // 
             this.GridSeñas.MasterTemplate.AllowAddNewRow = false;
             this.GridSeñas.MasterTemplate.AllowColumnReorder = false;
@@ -533,7 +533,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1343, 972);
+            this.ClientSize = new System.Drawing.Size(1351, 1013);
             this.Controls.Add(this.PanelPagos);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.pnlBuscador);

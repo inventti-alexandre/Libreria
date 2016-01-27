@@ -189,8 +189,6 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
             
             foreach (var devolucionTitulo in ucTitulosDevolucion.TitulosDevolucion)
             {
-                //int _propia = 0;
-                //int? _consignada = 0;
                 int? _cantidadTotal = devolucionTitulo.Cantidad;
              
                 if (devolucionTitulo.CantidadConsignada >= _cantidadTotal)
@@ -199,12 +197,6 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
                     ModificarTitulosConsignacion(devolucionTitulo.TituloId, _proveedor.Id, _cantidadTotal);
                     TitulosConsignacionesDevueltaDetalle(devolucionTitulo, _cantidadTotal, titulosConsignacionDevuelta);
                 }
-                //else
-                //{
-                //    _messageBoxDisplayService.ShowError("La cantidad devuleta es mayor a la cantidad disponible del libro: " + devolucionTitulo.TituloNombre);
-                //    return;
-                //}
-
 
             }
             
@@ -301,48 +293,7 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
         }
 
-        //private int CalcularPropias(int cantidadTotal, int? consignada)
-        //{
-        //    if (consignada < cantidadTotal)
-        //        return (cantidadTotal - Convert.ToInt16(consignada));
-        //    else
-        //    {
-        //        return 0;
-        //    }
-
-        //}
-
-        //private int CalcularConsignadas(int _cantidadTotal,int? consignada)
-        //{
-        //    if (consignada >= _cantidadTotal)
-        //        return _cantidadTotal;
-        //    else
-        //    {
-        //        return (Convert.ToInt16(consignada));
-        //    }
-            
-        //}
-
-        //private string GenerarLcnMontoFavor()
-        //{
-             
-        //    var ultimoMontoFavor = Uow.ProveedoresMontosFavor.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id)
-        //        .OrderByDescending(p => p.FechaAlta).Take(1).FirstOrDefault();
-        //    int lcnNuevo = 0;
-
-        //    if (ultimoMontoFavor != null)
-        //    {
-        //        var lcn = ultimoMontoFavor.LCN.Substring(5);
-        //        lcnNuevo = int.TryParse(lcn, out lcnNuevo) ? lcnNuevo : 0;
-        //    }
-
-        //    lcnNuevo += 1;
-
-        //    return "X" + "0001" + lcnNuevo.ToString().PadLeft(8, '0');
-          
-        //}
-
-        private string GenerarLcnTitulosDevolucion()
+         private string GenerarLcnTitulosDevolucion()
         {
 
             var ultimaDevolucion = Uow.TitulosConsignacionesDevueltas.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id)
