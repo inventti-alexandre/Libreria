@@ -808,8 +808,8 @@ namespace LaPaz.Win.Forms.Compras
                         var _credito = UsoDeCredito();
                         var _egreso = UsoEgreso();
                        
-
-                        if (efectivo > 0)
+                        //Desde aca Controlar
+                        if (efectivo > 0 || (_seña+_credito+_egreso) >0)
                         {
                             CajaMovimiento cajaMovimiento = new CajaMovimiento();
                             cajaMovimiento.Id = Guid.NewGuid();

@@ -16,7 +16,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Conceptos VALUES(29, 'Compras Contado')
 	INSERT INTO @Conceptos VALUES(2, 'Anticipos Cta Cte')
 	INSERT INTO @Conceptos VALUES(39, 'Pagos CtaCte/Consign.')
-	INSERT INTO @Conceptos VALUES(40, 'Uso señas')
+	--INSERT INTO @Conceptos VALUES(40, 'Uso señas')
 
 	DECLARE @Temp TABLE 
 	(
@@ -52,7 +52,7 @@ DECLARE @Conceptos TABLE
 	INSERT INTO @Temp
 	SELECT 'Anticipos Cta Cte',
 			COUNT(*),
-			SUM(CM.Importe + cm.Senia),
+			SUM(ISNULL(CM.Importe,0) + cm.Senia),
 			C.TipoComprobanteId
 	from CajasMovimientos CM
 	INNER JOIN Compras C
@@ -88,20 +88,44 @@ DECLARE @Conceptos TABLE
 	-----------------------------------------------------------
 	------------  Uso de Señas ------------------
 	-----------------------------------------------------------
+	--INSERT INTO @Temp
+	--SELECT 'Uso señas',
+	---		COUNT(*),
+	--		SUM( cm.Senia),
+	--		40
+	--from CajasMovimientos CM
+	--INNER JOIN Compras C
+--	ON C.Id= CM.ComprobanteId
+--	where 
+--	C.FechaAlta >= @FechaInicio
+--	AND C.FechaAlta < @FechaFin
+--	AND C.SucursalAltaId = @SucursalId
+--	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
+
+
+	-----------------------------------------------------------
+	------------  COMPRAS - CONTADO CON USO DE SEñAS MAL GUARDADAS  ------------------
+	-----------------------------------------------------------
+			
 	INSERT INTO @Temp
-	SELECT 'Uso señas',
+	SELECT 'Compras Contado', 
 			COUNT(*),
-			SUM( cm.Senia),
-			40
-	from CajasMovimientos CM
-	INNER JOIN Compras C
-	ON C.Id= CM.ComprobanteId
-	where 
-	C.FechaAlta >= @FechaInicio
+			SUM(C.ImporteNeto),
+			C.TipoComprobanteId
+	FROM Compras c
+	LEFT JOIN CajasMovimientos cm
+	ON cm.ComprobanteId = c.Id
+	where C.TipoComprobanteId = 29
+	AND C.FechaAlta >= @FechaInicio
 	AND C.FechaAlta < @FechaFin
 	AND C.SucursalAltaId = @SucursalId
 	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
-
+	and (cm.Id)IS NULL 
+	GROUP BY C.TipoComprobanteId
+	
+	------------------------------------------------------------------------
+	------------RESULTADOS-------------------------------------
+	------------------------------------------------------------------------
 	
 	SELECT C.Nombre,
 		   Cantidad = ISNULL(CTE.Cantidad, 0),
