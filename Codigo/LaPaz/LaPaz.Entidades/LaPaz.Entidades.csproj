@@ -535,6 +535,9 @@
     <Compile Include="SP_ClienteMontoFavorByLCN_Result.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sp_DevolucionLibros_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="SP_GenerarFacturaByVentaId_Result.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>

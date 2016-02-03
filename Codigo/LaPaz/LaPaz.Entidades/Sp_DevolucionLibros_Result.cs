@@ -10,17 +10,16 @@
 namespace LaPaz.Entidades
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TitulosConsignacionesDevueltasDetalle
+    public partial class Sp_DevolucionLibros_Result
     {
-        public System.Guid Id { get; set; }
-        public System.Guid TituloConsignacionDevueltaId { get; set; }
-        public System.Guid TituloId { get; set; }
+        public string Codigo { get; set; }
         public Nullable<int> Cantidad { get; set; }
-        public Nullable<int> CantidadPropia { get; set; }
-    
-        public virtual Titulo Titulo { get; set; }
-        public virtual TitulosConsignacionesDevuelta TitulosConsignacionesDevuelta { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<decimal> Precio { get; set; }
+        public Nullable<decimal> Subtotal { get; set; }
+        public string LCN { get; set; }
+        public string Denominacion { get; set; }
+        public System.DateTime FechaAlta { get; set; }
     }
 }

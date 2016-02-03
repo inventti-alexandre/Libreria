@@ -2577,7 +2577,8 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TituloConsignacionDevueltaId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="TituloId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="Cantidad" Type="int" />
+          <Property Name="CantidadPropia" Type="int" />
         </EntityType>
         <EntityType Name="TitulosConsignacionesRendidas">
           <Key>
@@ -7178,6 +7179,9 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
         <Function Name="SP_ClienteMontoFavorByLCN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="lcn" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="Sp_DevolucionLibros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="devolucionId" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="SP_GenerarFacturaByVentaId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ventaId" Type="uniqueidentifier" Mode="In" />
         </Function>
@@ -10521,6 +10525,9 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <FunctionImport Name="HistorialPagos" ReturnType="Collection(LaPaz.Datos.HistorialPagos_Result)">
             <Parameter Name="compraId" Mode="In" Type="Guid" />
             <Parameter Name="proveedorId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="Sp_DevolucionLibros" ReturnType="Collection(LaPaz.Datos.Sp_DevolucionLibros_Result)">
+            <Parameter Name="devolucionId" Mode="In" Type="Guid" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="Provincia">
@@ -18286,9 +18293,10 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="TituloConsignacionDevueltaId" Type="Guid" Nullable="false" />
           <Property Name="TituloId" Type="Guid" Nullable="false" />
-          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="Cantidad" Type="Int32" />
           <NavigationProperty Name="Titulo" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="TitulosConsignacionesDevueltasDetalle" ToRole="Titulo" />
           <NavigationProperty Name="TitulosConsignacionesDevuelta" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Id" FromRole="TitulosConsignacionesDevueltasDetalle" ToRole="TitulosConsignacionesDevuelta" />
+          <Property Name="CantidadPropia" Type="Int32" />
         </EntityType>
         <Association Name="FK_TitulosConsignacionesDevueltasDetalle_Titulos">
           <End Type="LaPaz.Datos.Titulo" Role="Titulo" Multiplicity="1" />
@@ -18359,6 +18367,16 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="Decimal" Name="Transferencia" Nullable="true" Precision="19" />
           <Property Type="String" Name="TipoMovimientoCaja" Nullable="true" MaxLength="50" />
           <Property Type="String" Name="ComprobanteTipo" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="Sp_DevolucionLibros_Result">
+          <Property Type="String" Name="Codigo" Nullable="true" MaxLength="17" />
+          <Property Type="Int32" Name="Cantidad" Nullable="true" />
+          <Property Type="String" Name="Descripcion" Nullable="true" MaxLength="103" />
+          <Property Type="Decimal" Name="Precio" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Subtotal" Nullable="true" Precision="19" />
+          <Property Type="String" Name="LCN" Nullable="false" MaxLength="13" />
+          <Property Type="String" Name="Denominacion" Nullable="true" MaxLength="80" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" Precision="23" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -21825,6 +21843,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <EntitySetMapping Name="TitulosConsignacionesDevueltasDetalles">
             <EntityTypeMapping TypeName="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle">
               <MappingFragment StoreEntitySet="TitulosConsignacionesDevueltasDetalles">
+                <ScalarProperty Name="CantidadPropia" ColumnName="CantidadPropia" />
                 <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
                 <ScalarProperty Name="TituloId" ColumnName="TituloId" />
                 <ScalarProperty Name="TituloConsignacionDevueltaId" ColumnName="TituloConsignacionDevueltaId" />
@@ -21891,6 +21910,20 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
                 <ScalarProperty Name="TipoMovimientoCajaId" ColumnName="TipoMovimientoCajaId" />
                 <ScalarProperty Name="TipoMovimientoCaja" ColumnName="TipoMovimientoCaja" />
                 <ScalarProperty Name="ComprobanteTipo" ColumnName="ComprobanteTipo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Sp_DevolucionLibros" FunctionName="LaPaz.Datos.Store.Sp_DevolucionLibros">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaPaz.Datos.Sp_DevolucionLibros_Result">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="LCN" ColumnName="LCN" />
+                <ScalarProperty Name="Denominacion" ColumnName="Denominacion" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

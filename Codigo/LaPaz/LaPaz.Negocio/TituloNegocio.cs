@@ -59,9 +59,12 @@ namespace LaPaz.Negocio
 
         public List<RemitosVentaDetalle> RemitosConsignacion(Guid tituloId, int sucursalId)
         {
+            //return
+            //    Uow.RemitosVentasDetalle.Listado(rvd => rvd.RemitosVenta, rvd=>rvd.RemitosVenta.ClienteConsignado)
+            //    .Where(rvd => rvd.TituloId == tituloId && rvd.SucursalAltaId == sucursalId).ToList();
             return
-                Uow.RemitosVentasDetalle.Listado(rvd => rvd.RemitosVenta, rvd=>rvd.RemitosVenta.ClienteConsignado)
-                .Where(rvd => rvd.TituloId == tituloId && rvd.SucursalAltaId == sucursalId).ToList();
+               Uow.RemitosVentasDetalle.Listado(rvd => rvd.RemitosVenta, rvd => rvd.RemitosVenta.ClienteConsignado)
+               .Where(rvd => rvd.TituloId == tituloId && rvd.SucursalAltaId == sucursalId && (rvd.CntPr + rvd.CntCn) > ((rvd.CntVendida ?? 0) + (rvd.CntDevuelta ?? 0))).ToList();
         }
 
       }

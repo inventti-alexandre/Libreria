@@ -225,7 +225,8 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             //Genero TitulosConsignacionesDevueltas
             Guid titulosConsignacionDevuelta= TitulosConsignacionesDevueltas(proveedorMontoFavor);
 
-          
+            //
+                   
 
             #region ProveedorMontoFavorDetalle
             foreach (var devolucionTitulo in ucTitulosDevolucion.TitulosDevolucion)
@@ -247,6 +248,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
                     Uow.ProveedoresMontosFavorDetalle.Agregar(proveedoresMontosFavorDetalle);
 
                     DescontarLibrosPropios(_cantidadTotal, proveedoresMontosFavorDetalle.TitulosId);
+                    TitulosConsignacionesDevueltaDetalle(devolucionTitulo, _cantidadTotal, titulosConsignacionDevuelta);
                    
                 }
                 else
@@ -273,7 +275,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
         }
 
-        private void TitulosConsignacionesDevueltaDetalle(VentaTitulo devolucionTitulo, int _propia, int? _consignada,Guid tituloconsignaciondevuelta)
+        private void TitulosConsignacionesDevueltaDetalle(VentaTitulo devolucionTitulo, int? _propia,Guid tituloconsignaciondevuelta)
         {
             TitulosConsignacionesDevueltasDetalle titulosConsignacionesDevueltasDetalle =
                 new TitulosConsignacionesDevueltasDetalle();
@@ -281,7 +283,7 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             titulosConsignacionesDevueltasDetalle.TituloConsignacionDevueltaId = tituloconsignaciondevuelta;
             titulosConsignacionesDevueltasDetalle.TituloId = devolucionTitulo.TituloId;
             //titulosConsignacionesDevueltasDetalle.Cantidad = _propia + _consignada;
-            titulosConsignacionesDevueltasDetalle.Cantidad =  _consignada ?? 0;
+            titulosConsignacionesDevueltasDetalle.CantidadPropia =  _propia ?? 0;
             Uow.TitulosConsignacionesDevueltasDetalles.Agregar(titulosConsignacionesDevueltasDetalle);
         }
 
