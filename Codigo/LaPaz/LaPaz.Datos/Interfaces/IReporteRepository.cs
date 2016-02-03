@@ -13,6 +13,8 @@ namespace LaPaz.Datos.Interfaces
 
         IQueryable<SP_PresupuestoById1_Result> PresupuestoById(Guid presupuestoId);
 
+        IQueryable<Sp_DevolucionLibros_Result> DevolucionById(Guid devolucionId);
+
         IQueryable<SP_ClienteMontoFavorByLCN_Result> ClienteMontoFavorByLcn(string lcn);
 
         List<RptInformeCajaRow> InformeCaja(DateTime fechaInicio, DateTime fechaFin, int sucursalId, Guid? operadorId);

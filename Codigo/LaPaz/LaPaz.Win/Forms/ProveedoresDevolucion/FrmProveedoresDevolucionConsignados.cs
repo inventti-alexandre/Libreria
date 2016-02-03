@@ -22,6 +22,7 @@ using LaPaz.Entidades.Dto;
 using Framework.WinForm.Comun.Notification;
 using LaPaz.Negocio.Data;
 using LaPaz.Win.Properties;
+using LaPaz.Win.ProveedoresDevolucion;
 
 namespace LaPaz.Win.Forms.ProveedoresDevolucion
 {
@@ -157,18 +158,16 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
             return proveedoresMontosFavor.Sum(ps => ps.Importe.GetValueOrDefault() - ps.ImporteUsado.GetValueOrDefault());
         }
 
-        #endregion
-
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            if (ucTitulosDevolucion.CalcularCantidad()>0)
+            if (ucTitulosDevolucion.CalcularCantidad() > 0)
                 GuardarDevolucion();
             else
             {
-                _messageBoxDisplayService.ShowError("Debe Seleccionar por lo menos un título para devolución");            }
+                _messageBoxDisplayService.ShowError("Debe Seleccionar por lo menos un título para devolución");
+            }
         }
 
-        
 
         private void GuardarDevolucion()
         {
@@ -185,12 +184,12 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
             }
 
             //Genero TitulosConsignacionesDevueltas
-            Guid titulosConsignacionDevuelta= TitulosConsignacionesDevueltas(_proveedor.Id);
-            
+            Guid titulosConsignacionDevuelta = TitulosConsignacionesDevueltas(_proveedor.Id);
+
             foreach (var devolucionTitulo in ucTitulosDevolucion.TitulosDevolucion)
             {
                 int? _cantidadTotal = devolucionTitulo.Cantidad;
-             
+
                 if (devolucionTitulo.CantidadConsignada >= _cantidadTotal)
                 {
                     DescontarLibrosConsignados(_cantidadTotal, devolucionTitulo.TituloId);
@@ -199,9 +198,15 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
                 }
 
             }
-            
+
             Uow.Commit();
             _messageBoxDisplayService.ShowSuccess("Devolución guardada correctamente");
+
+            using (var crearComprobante = FormFactory.Create<FrmComprobanteDevolucion>(titulosConsignacionDevuelta))
+            {
+                crearComprobante.ShowDialog();
+            }
+
             onDevolucionRealizada();
         }
 
@@ -224,9 +229,8 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
                 Uow.TitulosStock.Modificar(tituloStock);
             }
         }
-        
 
-        private void TitulosConsignacionesDevueltaDetalle(VentaTitulo devolucionTitulo, int? cantidad,Guid tituloconsignaciondevuelta)
+        private void TitulosConsignacionesDevueltaDetalle(VentaTitulo devolucionTitulo, int? cantidad, Guid tituloconsignaciondevuelta)
         {
             TitulosConsignacionesDevueltasDetalle titulosConsignacionesDevueltasDetalle =
                 new TitulosConsignacionesDevueltasDetalle();
@@ -251,9 +255,9 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
             return titulosConsignacionesDevuelta.Id;
         }
 
-        private void ModificarTitulosConsignacion(Guid titulo,Guid proveedor,int? cantdevuelta)
+        private void ModificarTitulosConsignacion(Guid titulo, Guid proveedor, int? cantdevuelta)
         {
-           //Busco las consignaciones de titulos y actualizo la columna CnVn
+            //Busco las consignaciones de titulos y actualizo la columna CnVn
             var titulosConsignaciones =
                 Uow.TitulosConsignaciones.Listado().Where(
                     tc => tc.TituloId == titulo && tc.ProveedorId == proveedor && (tc.CntVn + tc.CntDev) < tc.CntCn).
@@ -293,7 +297,7 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
         }
 
-         private string GenerarLcnTitulosDevolucion()
+        private string GenerarLcnTitulosDevolucion()
         {
 
             var ultimaDevolucion = Uow.TitulosConsignacionesDevueltas.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id)
@@ -307,21 +311,13 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
             }
 
             lcnNuevo += 1;
-
-            return "X" + "0001" + lcnNuevo.ToString().PadLeft(8, '0');
+            string sucursal = Context.SucursalActual.SucursalNumero.ToString();
+            return "X" + "000" + sucursal + lcnNuevo.ToString().PadLeft(8, '0');
 
         }
+   
+        #endregion
 
-      
-
-
-
-        
-
-    
-
-      
-
-
+       
     }
 }

@@ -30,6 +30,11 @@ namespace LaPaz.Datos.Repositorio
             return LaPazEntities.SP_PresupuestoById1(presupuestoId).AsQueryable();
         }
 
+        public IQueryable<Sp_DevolucionLibros_Result> DevolucionById(Guid devolucionId)
+        {
+            return LaPazEntities.Sp_DevolucionLibros(devolucionId).AsQueryable();
+        }
+
         public IQueryable<SP_ClienteMontoFavorByLCN_Result> ClienteMontoFavorByLcn(string lcn)
         {
             return LaPazEntities.SP_ClienteMontoFavorByLCN(lcn).AsQueryable();

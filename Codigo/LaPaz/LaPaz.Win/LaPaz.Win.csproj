@@ -641,6 +641,12 @@
     <Compile Include="Forms\ProveedoresCtaCte\UcBuscadorProveedor.Designer.cs">
       <DependentUpon>UcBuscadorProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmComprobanteDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmComprobanteDevolucion.Designer.cs">
+      <DependentUpon>FrmComprobanteDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1508,6 +1514,9 @@
     <EmbeddedResource Include="Forms\ProveedoresCtaCte\UcBuscadorProveedor.resx">
       <DependentUpon>UcBuscadorProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmComprobanteDevolucion.resx">
+      <DependentUpon>FrmComprobanteDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.resx">
       <DependentUpon>FrmProveedoresDevolucionConsignados.cs</DependentUpon>
     </EmbeddedResource>
@@ -1864,6 +1873,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="RDLS\ComprobantePresupuestoVecinito.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLS\ComprobanteDevolucion.rdl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="RDLS\ComprobanteDevolucionVecinito.rdl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="RDLS\DevolucionConsignaciones.rdl" />

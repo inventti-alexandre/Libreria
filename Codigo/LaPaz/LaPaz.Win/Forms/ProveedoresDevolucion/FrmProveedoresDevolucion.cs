@@ -22,6 +22,7 @@ using LaPaz.Entidades.Dto;
 using Framework.WinForm.Comun.Notification;
 using LaPaz.Negocio.Data;
 using LaPaz.Win.Properties;
+using LaPaz.Win.ProveedoresDevolucion;
 
 namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 {
@@ -263,6 +264,13 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             
             Uow.Commit();
             _messageBoxDisplayService.ShowSuccess("Devolución guardada correctamente");
+
+
+            using (var crearComprobante = FormFactory.Create<FrmComprobanteDevolucion>(titulosConsignacionDevuelta))
+            {
+                crearComprobante.ShowDialog();
+            }
+
             onDevolucionRealizada();
         }
 
@@ -389,8 +397,8 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
             }
 
             lcnNuevo += 1;
-
-            return "X" + "0001" + lcnNuevo.ToString().PadLeft(8, '0');
+            string sucursal = Context.SucursalActual.SucursalNumero.ToString();
+            return "X" + "000" + sucursal + lcnNuevo.ToString().PadLeft(8, '0');
 
         }
 

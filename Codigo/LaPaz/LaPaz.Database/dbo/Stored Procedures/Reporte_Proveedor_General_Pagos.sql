@@ -13,10 +13,10 @@ DECLARE @Conceptos TABLE
 		Nombre varchar(50)
 	)
 	
-	INSERT INTO @Conceptos VALUES(29, 'Compras Contado')
+INSERT INTO @Conceptos VALUES(29, 'Compras Contado')
 	INSERT INTO @Conceptos VALUES(2, 'Anticipos Cta Cte')
-	INSERT INTO @Conceptos VALUES(39, 'Pagos CtaCte/Consign.')
-	--INSERT INTO @Conceptos VALUES(40, 'Uso señas')
+	--INSERT INTO @Conceptos VALUES(39, 'Pagos CtaCte/Consign.')
+	INSERT INTO @Conceptos VALUES(50, 'Pagos Proveedores')
 
 	DECLARE @Temp TABLE 
 	(
@@ -123,6 +123,44 @@ DECLARE @Conceptos TABLE
 	and (cm.Id)IS NULL 
 	GROUP BY C.TipoComprobanteId
 	
+	-----------------------------------------------------------
+	------------  COMPRAS - CtaCte CON USO DE SEñAS MAL GUARDADAS  ------------------
+	-----------------------------------------------------------
+			
+	INSERT INTO @Temp
+	SELECT 'Anticipos Cta Cte', 
+			COUNT(*),
+			SUM(C.ImporteNeto),
+			C.TipoComprobanteId
+	FROM Compras c
+	LEFT JOIN CajasMovimientos cm
+	ON cm.ComprobanteId = c.Id
+	where C.TipoComprobanteId = 2
+	AND C.FechaAlta >= @FechaInicio
+	AND C.FechaAlta < @FechaFin
+	AND C.SucursalAltaId = @SucursalId
+	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
+	and (cm.Id)IS NULL 
+	GROUP BY C.TipoComprobanteId
+
+	-----------------------------------------------------------
+	------------  COMPRAS - CtaCte CON USO DE SEñAS MAL GUARDADAS  ------------------
+	-----------------------------------------------------------
+	INSERT INTO @Temp
+	SELECT 'Pagos Proveedores', 
+			COUNT(*),
+			SUM(C.Importe),
+			50
+	FROM ProveedoresPagos C
+	where --C.TipoComprobanteId = 2
+	--AND 
+	C.FechaAlta >= @FechaInicio
+	AND C.FechaAlta < @FechaFin
+	AND C.SucursalAltaId = @SucursalId
+	AND (@ProveedorId IS NULL OR @ProveedorId = C.ProveedorId)
+	--GROUP BY C.TipoComprobanteId
+
+	
 	------------------------------------------------------------------------
 	------------RESULTADOS-------------------------------------
 	------------------------------------------------------------------------
@@ -134,5 +172,3 @@ DECLARE @Conceptos TABLE
 		LEFT JOIN @Temp CTE
 			ON C.Id = CTE.tipo
 END
-	
---RETURN 0
