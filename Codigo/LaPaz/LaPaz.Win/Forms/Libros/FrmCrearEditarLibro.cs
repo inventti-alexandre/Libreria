@@ -214,6 +214,14 @@ namespace LaPaz.Win.Forms.Libros
             this.PrecioVenta = _titulo.PrecioVentaTitulo;
             this.PrecioCompra = _titulo.PrecioCompraTitulo;
             this.Comentario = _titulo.Comentario;
+
+            //Si el titulo tiene stock, no se debe permitir cambiar el proveedor
+            //var stock = Uow.TitulosStock.Listado().Where(ts => ts.TituloId == tituloId).FirstOrDefault();
+            //if (stock.StkCn > 0 || stock.StkPr > 0)
+            //{
+            //    CbxProveedor.Enabled = false;
+            //    tituloId = default(Guid);
+            //}
         }
 
         protected override object ObtenerEntidad()
@@ -255,6 +263,7 @@ namespace LaPaz.Win.Forms.Libros
 
         private void GuardarLibro()
         {
+
             var esValido = this.ValidarForm();
 
             //if (TxtPrecioVenta.Text == "")

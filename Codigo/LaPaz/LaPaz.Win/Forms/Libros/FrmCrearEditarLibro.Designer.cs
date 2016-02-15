@@ -30,6 +30,7 @@ namespace LaPaz.Win.Forms.Libros
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.BtnCancelar = new Telerik.WinControls.UI.RadButton();
             this.CbxProveedor = new LaPaz.Win.Forms.Util.UcFiltroProveedor();
             this.BtnAddSubtema = new Telerik.WinControls.UI.RadButton();
@@ -109,8 +110,10 @@ namespace LaPaz.Win.Forms.Libros
             // 
             // CbxProveedor
             // 
+            this.CbxProveedor.Enabled = false;
             this.CbxProveedor.EsGasto = false;
             this.CbxProveedor.Location = new System.Drawing.Point(142, 145);
+            this.CbxProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.CbxProveedor.Name = "CbxProveedor";
             this.CbxProveedor.ProveedorId = null;
             this.CbxProveedor.Size = new System.Drawing.Size(205, 27);
@@ -199,7 +202,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxProveedorCodigo.MaxDropDownItems = 15;
             this.CbxProveedorCodigo.Name = "CbxProveedorCodigo";
             this.CbxProveedorCodigo.ShowImageInEditorArea = true;
-            this.CbxProveedorCodigo.Size = new System.Drawing.Size(205, 27);
+            this.CbxProveedorCodigo.Size = new System.Drawing.Size(205, 32);
             this.CbxProveedorCodigo.TabIndex = 16;
             this.CbxProveedorCodigo.ThemeName = "TelerikMetroBlue";
             this.CbxProveedorCodigo.Visible = false;
@@ -209,7 +212,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel3.Location = new System.Drawing.Point(24, 18);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(49, 24);
+            this.metroLabel3.Size = new System.Drawing.Size(61, 29);
             this.metroLabel3.TabIndex = 68;
             this.metroLabel3.Text = "Título:";
             this.metroLabel3.ThemeName = "TelerikMetroBlue";
@@ -224,7 +227,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxSubTema.MaxDropDownItems = 15;
             this.CbxSubTema.Name = "CbxSubTema";
             this.CbxSubTema.ShowImageInEditorArea = true;
-            this.CbxSubTema.Size = new System.Drawing.Size(205, 27);
+            this.CbxSubTema.Size = new System.Drawing.Size(205, 32);
             this.CbxSubTema.TabIndex = 14;
             this.CbxSubTema.ThemeName = "TelerikMetroBlue";
             this.CbxSubTema.Enter += new System.EventHandler(this.CbxSubTema_Enter_1);
@@ -234,7 +237,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel1.Location = new System.Drawing.Point(412, 60);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(60, 24);
+            this.metroLabel1.Size = new System.Drawing.Size(75, 29);
             this.metroLabel1.TabIndex = 61;
             this.metroLabel1.Text = "Código:";
             this.metroLabel1.ThemeName = "TelerikMetroBlue";
@@ -245,7 +248,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtCodigo.Location = new System.Drawing.Point(527, 59);
             this.TxtCodigo.MaxLength = 17;
             this.TxtCodigo.Name = "TxtCodigo";
-            this.TxtCodigo.Size = new System.Drawing.Size(205, 26);
+            this.TxtCodigo.Size = new System.Drawing.Size(205, 31);
             this.TxtCodigo.TabIndex = 9;
             this.TxtCodigo.TabStop = false;
             this.TxtCodigo.ThemeName = "TelerikMetroBlue";
@@ -260,7 +263,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxTema.MaxDropDownItems = 15;
             this.CbxTema.Name = "CbxTema";
             this.CbxTema.ShowImageInEditorArea = true;
-            this.CbxTema.Size = new System.Drawing.Size(205, 27);
+            this.CbxTema.Size = new System.Drawing.Size(205, 32);
             this.CbxTema.TabIndex = 12;
             this.CbxTema.ThemeName = "TelerikMetroBlue";
             // 
@@ -269,7 +272,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel2.Location = new System.Drawing.Point(24, 102);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(44, 24);
+            this.metroLabel2.Size = new System.Drawing.Size(54, 29);
             this.metroLabel2.TabIndex = 64;
             this.metroLabel2.Text = "ISBN:";
             this.metroLabel2.ThemeName = "TelerikMetroBlue";
@@ -279,7 +282,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel12.Location = new System.Drawing.Point(412, 272);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(60, 24);
+            this.metroLabel12.Size = new System.Drawing.Size(75, 29);
             this.metroLabel12.TabIndex = 85;
             this.metroLabel12.Text = "Código:";
             this.metroLabel12.ThemeName = "TelerikMetroBlue";
@@ -292,7 +295,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtIsbn.Location = new System.Drawing.Point(142, 102);
             this.TxtIsbn.MaxLength = 15;
             this.TxtIsbn.Name = "TxtIsbn";
-            this.TxtIsbn.Size = new System.Drawing.Size(205, 26);
+            this.TxtIsbn.Size = new System.Drawing.Size(205, 31);
             this.TxtIsbn.TabIndex = 2;
             this.TxtIsbn.TabStop = false;
             this.TxtIsbn.ThemeName = "TelerikMetroBlue";
@@ -321,7 +324,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtTitulo.Location = new System.Drawing.Point(142, 17);
             this.TxtTitulo.MaxLength = 50;
             this.TxtTitulo.Name = "TxtTitulo";
-            this.TxtTitulo.Size = new System.Drawing.Size(590, 26);
+            this.TxtTitulo.Size = new System.Drawing.Size(590, 31);
             this.TxtTitulo.TabIndex = 0;
             this.TxtTitulo.TabStop = false;
             this.TxtTitulo.ThemeName = "TelerikMetroBlue";
@@ -331,7 +334,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel19.Location = new System.Drawing.Point(24, 315);
             this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(91, 24);
+            this.metroLabel19.Size = new System.Drawing.Size(113, 29);
             this.metroLabel19.TabIndex = 84;
             this.metroLabel19.Text = "Comentario:";
             this.metroLabel19.ThemeName = "TelerikMetroBlue";
@@ -341,7 +344,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel11.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel11.Location = new System.Drawing.Point(24, 145);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(81, 24);
+            this.metroLabel11.Size = new System.Drawing.Size(101, 29);
             this.metroLabel11.TabIndex = 76;
             this.metroLabel11.Text = "Proveedor:";
             this.metroLabel11.ThemeName = "TelerikMetroBlue";
@@ -352,7 +355,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtCodigoBarra.Location = new System.Drawing.Point(142, 60);
             this.TxtCodigoBarra.MaxLength = 13;
             this.TxtCodigoBarra.Name = "TxtCodigoBarra";
-            this.TxtCodigoBarra.Size = new System.Drawing.Size(205, 26);
+            this.TxtCodigoBarra.Size = new System.Drawing.Size(205, 31);
             this.TxtCodigoBarra.TabIndex = 1;
             this.TxtCodigoBarra.TabStop = false;
             this.TxtCodigoBarra.ThemeName = "TelerikMetroBlue";
@@ -363,7 +366,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel4.Location = new System.Drawing.Point(412, 102);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(49, 24);
+            this.metroLabel4.Size = new System.Drawing.Size(61, 29);
             this.metroLabel4.TabIndex = 77;
             this.metroLabel4.Text = "Autor:";
             this.metroLabel4.ThemeName = "TelerikMetroBlue";
@@ -373,7 +376,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel10.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel10.Location = new System.Drawing.Point(24, 61);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(122, 24);
+            this.metroLabel10.Size = new System.Drawing.Size(151, 29);
             this.metroLabel10.TabIndex = 83;
             this.metroLabel10.Text = "Código de barra:";
             this.metroLabel10.ThemeName = "TelerikMetroBlue";
@@ -383,7 +386,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel5.Location = new System.Drawing.Point(24, 186);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(67, 24);
+            this.metroLabel5.Size = new System.Drawing.Size(83, 29);
             this.metroLabel5.TabIndex = 78;
             this.metroLabel5.Text = "Editorial:";
             this.metroLabel5.ThemeName = "TelerikMetroBlue";
@@ -394,7 +397,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtPrecioCompra.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPrecioCompra.Location = new System.Drawing.Point(142, 230);
             this.TxtPrecioCompra.Name = "TxtPrecioCompra";
-            this.TxtPrecioCompra.Size = new System.Drawing.Size(205, 26);
+            this.TxtPrecioCompra.Size = new System.Drawing.Size(205, 31);
             this.TxtPrecioCompra.TabIndex = 7;
             this.TxtPrecioCompra.TabStop = false;
             this.TxtPrecioCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -405,7 +408,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel6.Location = new System.Drawing.Point(412, 144);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(48, 24);
+            this.metroLabel6.Size = new System.Drawing.Size(60, 29);
             this.metroLabel6.TabIndex = 79;
             this.metroLabel6.Text = "Tema:";
             this.metroLabel6.ThemeName = "TelerikMetroBlue";
@@ -415,7 +418,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel9.Location = new System.Drawing.Point(24, 230);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(111, 24);
+            this.metroLabel9.Size = new System.Drawing.Size(139, 29);
             this.metroLabel9.TabIndex = 82;
             this.metroLabel9.Text = "Precio Compra:";
             this.metroLabel9.ThemeName = "TelerikMetroBlue";
@@ -425,7 +428,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel7.Location = new System.Drawing.Point(412, 188);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(71, 24);
+            this.metroLabel7.Size = new System.Drawing.Size(89, 29);
             this.metroLabel7.TabIndex = 80;
             this.metroLabel7.Text = "Subtema:";
             this.metroLabel7.ThemeName = "TelerikMetroBlue";
@@ -436,7 +439,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtPrecioVenta.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtPrecioVenta.Location = new System.Drawing.Point(142, 272);
             this.TxtPrecioVenta.Name = "TxtPrecioVenta";
-            this.TxtPrecioVenta.Size = new System.Drawing.Size(205, 26);
+            this.TxtPrecioVenta.Size = new System.Drawing.Size(205, 31);
             this.TxtPrecioVenta.TabIndex = 8;
             this.TxtPrecioVenta.TabStop = false;
             this.TxtPrecioVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -447,7 +450,7 @@ namespace LaPaz.Win.Forms.Libros
             this.metroLabel8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel8.Location = new System.Drawing.Point(24, 273);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(97, 24);
+            this.metroLabel8.Size = new System.Drawing.Size(120, 29);
             this.metroLabel8.TabIndex = 81;
             this.metroLabel8.Text = "Precio Venta:";
             this.metroLabel8.ThemeName = "TelerikMetroBlue";
@@ -456,6 +459,7 @@ namespace LaPaz.Win.Forms.Libros
             // 
             this.CbxAutor.AutorId = null;
             this.CbxAutor.Location = new System.Drawing.Point(529, 99);
+            this.CbxAutor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxAutor.Name = "CbxAutor";
             this.CbxAutor.Size = new System.Drawing.Size(205, 27);
             this.CbxAutor.TabIndex = 10;
@@ -464,16 +468,17 @@ namespace LaPaz.Win.Forms.Libros
             // 
             this.CbxEditorial.EditorialId = null;
             this.CbxEditorial.Location = new System.Drawing.Point(142, 185);
+            this.CbxEditorial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxEditorial.Name = "CbxEditorial";
             this.CbxEditorial.Size = new System.Drawing.Size(205, 27);
             this.CbxEditorial.TabIndex = 5;
             // 
             // FrmCrearEditarLibro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancelar;
-            this.ClientSize = new System.Drawing.Size(780, 457);
+            this.ClientSize = new System.Drawing.Size(1037, 568);
             this.Controls.Add(this.CbxEditorial);
             this.Controls.Add(this.CbxAutor);
             this.Controls.Add(this.CbxProveedor);
@@ -507,6 +512,7 @@ namespace LaPaz.Win.Forms.Libros
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.TxtPrecioVenta);
             this.Controls.Add(this.metroLabel8);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmCrearEditarLibro";
             // 
             // 

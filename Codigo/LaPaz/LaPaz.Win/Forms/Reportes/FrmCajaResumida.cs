@@ -65,7 +65,8 @@ namespace LaPaz.Win.Forms.Reportes
             var totales = new EgresosTotalesRow()
             {
                 Cantidad = (int)egresos.Where(eg => eg.Nombre != "Depósitos con Caja Anterior").Sum(eg => eg.Cantidad),
-                Total = (int)egresos.Where(eg => eg.Nombre != "Depósitos con Caja Anterior").Sum(eg => eg.Total)
+                //Total = (int)egresos.Where(eg => eg.Nombre != "Depósitos con Caja Anterior").Sum(eg => eg.Total)
+                Total = (decimal)egresos.Where(eg => eg.Nombre != "Depósitos con Caja Anterior").Sum(eg => eg.Total)
             };
 
             reportViewer1.LocalReport.DataSources.Add(new ReportDataSource("Ventas", ventas));
@@ -105,6 +106,7 @@ namespace LaPaz.Win.Forms.Reportes
     public class EgresosTotalesRow
     {
         public int Cantidad { get; set; }
-        public int Total { get; set; }
+        //public int Total { get; set; }
+        public decimal Total { get; set; }
     }
 }
