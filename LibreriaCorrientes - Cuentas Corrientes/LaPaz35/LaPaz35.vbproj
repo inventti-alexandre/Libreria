@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ManifestCertificateThumbprint>E4F1518AACDDB9E03118DD3405D5C36EE36C6C07</ManifestCertificateThumbprint>
-    <PublishUrl>ftp://190.228.29.71/htdocs/trabajos/libreriaCorrientesCtaCte/</PublishUrl>
+    <PublishUrl>ftp://190.228.29.71/htdocs/trabajos/ElVecinitoCtaCte/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -12,11 +12,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.sistemas-aa.com.ar/trabajos/libreriaCorrientesCtaCte/</InstallUrl>
-    <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/libreriaCorrientesCtaCte/</UpdateUrl>
+    <InstallUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinitoCtaCte/</InstallUrl>
+    <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinitoCtaCte/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>36</ApplicationRevision>
+    <ApplicationRevision>44</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -32,7 +32,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <ApplicationIcon>logovecinito.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>

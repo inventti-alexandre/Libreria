@@ -210,7 +210,7 @@ Partial Class frmPrincipal
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.msMenu
         Me.Name = "frmPrincipal"
-        Me.Text = "Gestión Cuentas Corrientes - Librería de Corrientes"
+        Me.Text = "Gestión Cuentas Corrientes - Librería El Vecinito"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.msMenu.ResumeLayout(False)
         Me.msMenu.PerformLayout()

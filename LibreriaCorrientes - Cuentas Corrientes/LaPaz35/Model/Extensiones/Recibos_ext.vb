@@ -61,7 +61,7 @@ Partial Public Class Recibos
         Using exe As New SqlCommand
             Dim Lista As New List(Of Recibos)
             With exe
-                .CommandText = "SELECT Top 1 * from Recibos where sucursalCompId=2 order by Numero DESC"
+                .CommandText = "SELECT Top 1 * from Recibos where sucursalCompId=27 order by Numero DESC"
                 .Connection = _Conexion
 
                 Dim ta As New SqlDataAdapter(exe), dt As New DataTable

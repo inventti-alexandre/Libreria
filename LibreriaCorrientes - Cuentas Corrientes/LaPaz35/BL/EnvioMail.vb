@@ -110,6 +110,6 @@ Public Class EnvioMail
         's.Port = 465
         's.EnableSsl = True
         's.Credentials = New System.Net.NetworkCredential("administracion@libreriactes.com.ar", "mendoza597")
-        s.Send(Mail)
+        's.Send(Mail)
     End Sub
 End Class

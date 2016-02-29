@@ -19,7 +19,8 @@ Public Class FrmInformeDeudasPorFechaMonto
 
 
         'Liberia
-        Dim conne As New SqlConnection("Data Source=10.1.4.11;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
+        'Dim conne As New SqlConnection("Data Source=10.1.4.11;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
+        Dim conne As New SqlConnection("Data Source=.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
 
         Dim da As New SqlDataAdapter("ClientesCuentaCorrienteVencidaFechaMonto", conne)
         da.SelectCommand.CommandType = CommandType.StoredProcedure

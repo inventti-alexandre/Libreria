@@ -13,7 +13,8 @@ Public Class FrmMailsEnviados
 
         'Dim conne As New SqlConnection("data source=EQUIPO-SIL;initial catalog=lapaz;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework")
         'Dim conne As New SqlConnection("Data Source=10.1.4.10\SERVERCTES\Administrador,1433;Initial Catalog=lapaz;user id=userctacte;password=ap_sys")
-        Dim conne As New SqlConnection("Data Source=10.1.4.11;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
+        'Dim conne As New SqlConnection("Data Source=10.1.4.11;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
+        Dim conne As New SqlConnection("Data Source=ELVECINITO;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys")
 
         If (dtpFecha.Value.ToShortDateString() <> "01/01/2014") Then
             da = New SqlDataAdapter("lpu_sp_EnvioMailsFecha", conne)

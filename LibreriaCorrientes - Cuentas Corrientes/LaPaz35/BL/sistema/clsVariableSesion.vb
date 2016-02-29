@@ -24,10 +24,13 @@ Public Class clsVariableSesion
 
 
             'Liberria
-            _conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
+            '_conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
 
             'ElVecinito
-            '_conn.ConnectionString = "Data Source=.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
+            _conn.ConnectionString = "Data Source=.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
+
+            'ElVecinitoNnuevo
+            '_conn.ConnectionString = "Data Source=ELVECINITO\.,1433;Initial Catalog=lapazUsers;user id=userctacte;password=ap_sys"
 
         Catch ex As Exception
             MsgBox(ex.Message)

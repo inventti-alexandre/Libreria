@@ -29,7 +29,7 @@ Partial Public Class TarjetasMovimientos
         Using exe As New SqlCommand
             Dim Lista As New List(Of TarjetasMovimientos)
             With exe
-                .CommandText = "SELECT Top 1 id, nroint, SucursalAltaId from TarjetasMovimientos where SucursalAltaId=2 order by NroInt DESC"
+                .CommandText = "SELECT Top 1 id, nroint, SucursalAltaId from TarjetasMovimientos where SucursalAltaId=27 order by NroInt DESC"
                 .Connection = _Conexion
 
                 Dim ta As New SqlDataAdapter(exe), dt As New DataTable

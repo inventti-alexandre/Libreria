@@ -163,6 +163,7 @@ namespace LaPaz.Win.Forms.Libros
             {
                 case ActionFormMode.Create:
                     this.Text = Resources.LabelCrearLibro;
+                    CbxProveedor.Enabled = true;
                     break;
                 case ActionFormMode.Edit:
                     this.Text = Resources.LabelEditarLibro;
