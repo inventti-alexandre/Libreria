@@ -475,8 +475,7 @@ namespace LaPaz.Win.Forms.Libros
             // 
             // FrmCrearEditarLibro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.BtnCancelar;
             this.ClientSize = new System.Drawing.Size(1037, 568);
             this.Controls.Add(this.CbxEditorial);
@@ -512,7 +511,7 @@ namespace LaPaz.Win.Forms.Libros
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.TxtPrecioVenta);
             this.Controls.Add(this.metroLabel8);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCrearEditarLibro";
             // 
             // 
