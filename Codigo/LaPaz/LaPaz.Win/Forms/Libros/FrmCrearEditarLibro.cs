@@ -97,6 +97,8 @@ namespace LaPaz.Win.Forms.Libros
             {
                 int cuenta;
                 return int.TryParse(CbxProveedorCodigo.SelectedText, out cuenta) ? cuenta : 0;
+               
+
             }
             set { CbxProveedorCodigo.SelectedText = value.ToString(); }
         }
@@ -472,8 +474,14 @@ namespace LaPaz.Win.Forms.Libros
 
         private void TxtCodigoBarra_KeyUp(object sender, KeyEventArgs e)
         {
-            var cuenta = ProveedorCuenta.ToString().PadLeft(4, '0');
-            Codigo = cuenta + CodigoBarra.PadLeft(13, '0');
+            var cuenta = "0";
+            if (CbxProveedor.Proveedor != null)
+            {
+                cuenta = CbxProveedor.Proveedor.Cuenta.ToString();
+                
+            }
+            Codigo = cuenta.PadLeft(4,'0') + CodigoBarra.PadLeft(13, '0');
+           
         }
 
         private void CbxProveedor_SeleccionarFinished(object sender, Proveedor e)

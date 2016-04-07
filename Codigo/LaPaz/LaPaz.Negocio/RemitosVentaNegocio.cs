@@ -58,7 +58,7 @@ namespace LaPaz.Negocio
             var criteros = new PagingCriteria();
 
             criteros.PageNumber = 1;
-            criteros.PageSize = 50;
+            criteros.PageSize = 500;
             criteros.SortBy = "FechaAlta";
             criteros.SortDirection = "DESC";
 

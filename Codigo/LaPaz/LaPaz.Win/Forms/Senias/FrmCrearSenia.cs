@@ -553,8 +553,8 @@ namespace LaPaz.Win.Forms.Senias
         private void Anular(ClienteMontoFavor senia)
         {
             //Utiliar toda la seña
-            if (senia.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente)
-            {
+            //if (senia.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente)
+            //{
                 var operador = this.ObtenerOperadorAdministrador();
 
                 if (operador == null)
@@ -594,30 +594,58 @@ namespace LaPaz.Win.Forms.Senias
 
                 Uow.Cajas.Modificar(caja);
 
-                var cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == senia.Id);
+                if (senia.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente)
+                {
+                    var cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == senia.Id);
 
-                CajaMovimiento cajaMovimiento = new CajaMovimiento();
-                cajaMovimiento.Id = Guid.NewGuid();
-                cajaMovimiento.CajaId = caja.Id;
-                cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.AnulaciónSeña;
-                cajaMovimiento.TipoComprobante = TipoComprobanteEnum.SeñaCliente;
-                cajaMovimiento.ComprobanteId = senia.Id;
-                cajaMovimiento.Senia = 0;
-                cajaMovimiento.Importe = diferencia;
-                cajaMovimiento.Efectivo = cajaMovimientoAnterior.Efectivo;
-                cajaMovimiento.Tarjeta = cajaMovimientoAnterior.Tarjeta;
-                cajaMovimiento.Cheque = cajaMovimientoAnterior.Cheque;
-                cajaMovimiento.Deposito = cajaMovimientoAnterior.Deposito;
-                cajaMovimiento.ImpFac = 0;
-                cajaMovimiento.PcAlta = Environment.MachineName;
-                cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id; //cajaMovimientoAnterior.SucursalAltaId;
-                cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id; //cajaMovimientoAnterior.OperadorAltaId;
-                cajaMovimiento.FechaAlta = _clock.Now;
-                cajaMovimiento.SucursalModificacionId = Context.SucursalActual.Id;
-                cajaMovimiento.OperadorModificacionId = (Context.OperadorActual.Id);
-                cajaMovimiento.FechaModificacion = _clock.Now;
-                Uow.CajaMovimientos.Agregar(cajaMovimiento);
-
+                    CajaMovimiento cajaMovimiento = new CajaMovimiento();
+                    cajaMovimiento.Id = Guid.NewGuid();
+                    cajaMovimiento.CajaId = caja.Id;
+                    cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.AnulaciónSeña;
+                    cajaMovimiento.TipoComprobante = TipoComprobanteEnum.SeñaCliente;
+                    cajaMovimiento.ComprobanteId = senia.Id;
+                    cajaMovimiento.Senia = 0;
+                    cajaMovimiento.Importe = diferencia;
+                    
+                   // cajaMovimiento.Efectivo = cajaMovimientoAnterior.Efectivo;
+                    cajaMovimiento.Efectivo = diferencia;
+                    //cajaMovimiento.Tarjeta = cajaMovimientoAnterior.Tarjeta;
+                    //cajaMovimiento.Cheque = cajaMovimientoAnterior.Cheque;
+                    //cajaMovimiento.Deposito = cajaMovimientoAnterior.Deposito;
+                    cajaMovimiento.ImpFac = 0;
+                    cajaMovimiento.PcAlta = Environment.MachineName;
+                    cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id; //cajaMovimientoAnterior.SucursalAltaId;
+                    cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id; //cajaMovimientoAnterior.OperadorAltaId;
+                    cajaMovimiento.FechaAlta = _clock.Now;
+                    cajaMovimiento.SucursalModificacionId = Context.SucursalActual.Id;
+                    cajaMovimiento.OperadorModificacionId = (Context.OperadorActual.Id);
+                    cajaMovimiento.FechaModificacion = _clock.Now;
+                    Uow.CajaMovimientos.Agregar(cajaMovimiento);
+                }
+                else if (senia.TipoComprobanteId == TipoComprobanteEnum.NotaCrédito)
+                {
+                    CajaMovimiento cajaMovimiento = new CajaMovimiento();
+                    cajaMovimiento.Id = Guid.NewGuid();
+                    cajaMovimiento.CajaId = caja.Id;
+                    cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.AnulaciónSeña;
+                    cajaMovimiento.TipoComprobante = TipoComprobanteEnum.NotaCrédito;
+                    cajaMovimiento.ComprobanteId = senia.Id;
+                    cajaMovimiento.Senia = 0;
+                    cajaMovimiento.Importe = diferencia;
+                    cajaMovimiento.Efectivo = diferencia;
+                    //cajaMovimiento.Tarjeta = cajaMovimientoAnterior.Tarjeta;
+                    //cajaMovimiento.Cheque = cajaMovimientoAnterior.Cheque;
+                    //cajaMovimiento.Deposito = cajaMovimientoAnterior.Deposito;
+                    cajaMovimiento.ImpFac = 0;
+                    cajaMovimiento.PcAlta = Environment.MachineName;
+                    cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id; //cajaMovimientoAnterior.SucursalAltaId;
+                    cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id; //cajaMovimientoAnterior.OperadorAltaId;
+                    cajaMovimiento.FechaAlta = _clock.Now;
+                    cajaMovimiento.SucursalModificacionId = Context.SucursalActual.Id;
+                    cajaMovimiento.OperadorModificacionId = (Context.OperadorActual.Id);
+                    cajaMovimiento.FechaModificacion = _clock.Now;
+                    Uow.CajaMovimientos.Agregar(cajaMovimiento);
+                }
                 //Generaregreso??
                 Uow.Commit();
 
@@ -626,11 +654,11 @@ namespace LaPaz.Win.Forms.Senias
                 RefrescarUow();
 
                 RefrescarHistorial();
-            }
-            else
-            {
-                _messageBoxDisplayService.ShowError("No puede anular una nota de crédito");
-            }
+            //}
+            //else
+            //{
+            //    _messageBoxDisplayService.ShowError("No puede anular una nota de crédito");
+            //}
         }
 
         private void EditarCliente(Cliente cliente)

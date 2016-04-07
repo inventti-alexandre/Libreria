@@ -153,11 +153,13 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
                 var crearComprobante = FormFactory.Create<FrmComprobante>();
                 crearComprobante._concepto = "Crédito por devolución";
                 crearComprobante._LCN = _lcn;
+                crearComprobante._formaPago = FormaPagoDescripcion();
 
                 var conv = new Conversion();
                 crearComprobante._montoTexto = conv.enletras(Total.ToString());
                 crearComprobante.Show();
             }
+
             if (RbtnEgreso.IsChecked)
             {
                 //Guardar Gasto??
@@ -169,6 +171,23 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
 
                 _messageBoxDisplayService.ShowSuccess("Devolución generada con éxito");
             }
+        }
+
+        public string FormaPagoDescripcion()
+        {
+            string formaDePago = string.Empty;
+            var cajaMovimiento = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == _venta.Id);
+            if (cajaMovimiento.Efectivo != null)
+                formaDePago += "Efectivo $" + cajaMovimiento.Efectivo.Value.ToString("n2") + ". ";
+            if (cajaMovimiento.Tarjeta != null)
+                formaDePago += "Tarjeta $" + cajaMovimiento.Tarjeta.Value.ToString("N2") + ". ";
+            if (cajaMovimiento.Deposito != null)
+                formaDePago += "Deposito $" + cajaMovimiento.Deposito.Value.ToString("n2") + ". ";
+            if (cajaMovimiento.Cheque != null)
+                formaDePago += "Cheque $" + cajaMovimiento.Cheque.Value.ToString("n2") + ". ";
+
+
+            return formaDePago;
         }
 
         private void ActualizarCaja()
@@ -234,7 +253,7 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
         private void GenerarClienteMontoFavor()
         {
             //TODO:Agregar el numero de sucursal a la tabla el mismo no coincide con el id.
-            int numeroDeSucursal = 1;
+            int numeroDeSucursal = Context.SucursalActual.SucursalNumero ?? 1;// 1;
             
             ClienteMontoFavor clienteMontoFavor = new ClienteMontoFavor();
 

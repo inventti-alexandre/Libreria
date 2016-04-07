@@ -533,7 +533,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 1013);
+            this.ClientSize = new System.Drawing.Size(1359, 1054);
             this.Controls.Add(this.PanelPagos);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.pnlBuscador);
