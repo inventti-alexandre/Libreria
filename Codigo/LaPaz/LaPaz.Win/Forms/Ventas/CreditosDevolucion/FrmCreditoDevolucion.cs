@@ -228,8 +228,8 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
                 var ventaDetalle = Uow.VentasDetalle.Obtener(vd => vd.Id == ventaDetalleId);
 
                 ventaDetalle.CantidadAuditada -= devuleto.CantidadTotal;
-                ventaDetalle.CantidadPropia -= devuleto.CantidadPropia;
-                ventaDetalle.CantidadConsig -= devuleto.CantidadConsignada;
+                //ventaDetalle.CantidadPropia -= devuleto.CantidadPropia;
+                //ventaDetalle.CantidadConsig -= devuleto.CantidadConsignada;
 
                 if (notacreditoId != null)
                     ventaDetalle.IdNotaDeVenta = notacreditoId;

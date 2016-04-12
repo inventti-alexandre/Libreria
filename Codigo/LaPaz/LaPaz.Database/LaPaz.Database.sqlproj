@@ -339,6 +339,7 @@
     <Build Include="dbo\Stored Procedures\Reporte_Proveedor_General_AFavor.sql" />
     <Build Include="dbo\Stored Procedures\HistorialPagos.sql" />
     <Build Include="dbo\Stored Procedures\Sp_DevolucionLibros.sql" />
+    <Build Include="dbo\Stored Procedures\Reporte_InformeCajaOriginal.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LaPaz.Database.refactorlog" />
