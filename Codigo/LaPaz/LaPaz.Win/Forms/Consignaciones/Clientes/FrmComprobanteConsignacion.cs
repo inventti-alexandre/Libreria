@@ -44,7 +44,9 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             var DNI = "Cuit/DNI: " + cliente.Cuit;
             var dom = cliente.Domicilio.TrimEnd(' ');
             var domicilio = "Domicilio: " + dom;
-            var localidad = " Localidad: " + cliente.Localidad.Nombre.TrimEnd(' ');
+             var localidad = " Localidad: ---" ;
+            if (cliente.Localidad != null)
+                localidad = " Localidad: " + cliente.Localidad.Nombre.TrimEnd(' ');
             var condicionRemito = "CONSIGNACIÓN";
 
             this.Cursor = Cursors.WaitCursor;

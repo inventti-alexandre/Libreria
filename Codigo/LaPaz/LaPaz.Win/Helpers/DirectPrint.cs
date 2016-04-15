@@ -66,7 +66,10 @@ namespace LaPaz.Win.Helpers
             var DNI = "Cuit/DNI: " + cliente.Cuit;
             var dom = cliente.Domicilio.TrimEnd(' ');
             var domicilio = "Domicilio: " + dom;
-            var localidad = " Localidad: " + cliente.Localidad.Nombre.TrimEnd(' ');
+            var localidad = "Localidad: ---";
+            if (cliente.Localidad !=null)
+                 localidad = " Localidad: " + cliente.Localidad.Nombre.TrimEnd(' ');
+
             var condicionVenta = venta.CondicionesVenta.Nombre;
 
             //this.Cursor = Cursors.WaitCursor;
