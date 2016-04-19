@@ -177,6 +177,8 @@ namespace LaPaz.Win.Forms.Compras
         {
             TotalPagar = SubTotal.GetValueOrDefault() - Senas.GetValueOrDefault() - Creditos.GetValueOrDefault() - Egresos.GetValueOrDefault();
             FaltaPagar = TotalPagar - TotalPagos();
+           // MessageBox.Show("total pagos: " + TotalPagos().ToString() + "total senas " + Senas.GetValueOrDefault());
+
         }
 
         private void UcTotalesVenta_Load(object sender, EventArgs e)
@@ -500,6 +502,12 @@ namespace LaPaz.Win.Forms.Compras
             OnSeñaChanged();
         }
 
+        public void LimpiarPagos()
+        {
+            Pagos.Clear();
+            GrillaPagos.DataSource = Pagos;
+            ActualizarTotal();
+        }
         
     }
 }

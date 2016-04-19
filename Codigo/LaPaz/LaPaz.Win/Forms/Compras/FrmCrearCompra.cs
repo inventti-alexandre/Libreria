@@ -136,7 +136,8 @@ namespace LaPaz.Win.Forms.Compras
 
         private void UcCuentaCorrienteInfoOnAnticipoChanged(object sender, decimal? e)
         {
-            ucTotalesCompraSeña1.GenerarPagoAutoNuevo(ucCuentaCorrienteCompra.Adeuda, FormaPago.CuentaCorriente);
+            //ucTotalesCompraSeña1.GenerarPagoAutoNuevo(ucCuentaCorrienteCompra.Adeuda, FormaPago.CuentaCorriente);
+            ucTotalesCompraSeña1.GenerarPagoAutoNuevo(e, FormaPago.CuentaCorriente);
         }
 
         private void UcTotalesCompraSeñaOnFaltaPagarChanged(object sender, decimal? e)
@@ -312,9 +313,10 @@ namespace LaPaz.Win.Forms.Compras
 
         private void ActualizarMontos()
         {
-            ucCuentaCorrienteCompra.Total = this.ucTitulosCompra.CalcularSubTotal();
-            ucCuentaCorrienteCompra.Adeuda = this.ucTitulosCompra.CalcularSubTotal() - ucTotalesCompraSeña1.Senas - ucTotalesCompraSeña1.Creditos - ucTotalesCompraSeña1.Egresos;
-            ucTotalesCompraSeña1.SubTotal = this.ucTitulosCompra.CalcularSubTotal();
+            var subtot = this.ucTitulosCompra.CalcularSubTotal();
+            ucCuentaCorrienteCompra.Total = subtot;
+            ucCuentaCorrienteCompra.Adeuda = subtot - ucTotalesCompraSeña1.Senas - ucTotalesCompraSeña1.Creditos - ucTotalesCompraSeña1.Egresos;
+            ucTotalesCompraSeña1.SubTotal = subtot;
 
             if (ucTotalesCompraSeña1.TotalPagar > 0)
             {
@@ -329,7 +331,8 @@ namespace LaPaz.Win.Forms.Compras
             }
             else
             {
-                ucTotalesCompraSeña1.Pagos.Clear();
+                //ucTotalesCompraSeña1.Pagos.Clear();
+                ucTotalesCompraSeña1.LimpiarPagos();
             }
 
         }
