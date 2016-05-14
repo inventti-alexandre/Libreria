@@ -359,6 +359,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtCodigoBarra.TabIndex = 1;
             this.TxtCodigoBarra.TabStop = false;
             this.TxtCodigoBarra.ThemeName = "TelerikMetroBlue";
+            this.TxtCodigoBarra.TextChanged += new System.EventHandler(this.TxtCodigoBarra_TextChanged);
             this.TxtCodigoBarra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCodigoBarra_KeyUp);
             // 
             // metroLabel4

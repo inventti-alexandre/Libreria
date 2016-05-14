@@ -424,6 +424,9 @@
     <Compile Include="ProveedoresMontosFavorDetalle.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProveedoresMovimientos_Result.cs">
+      <DependentUpon>LaPazModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ProveedoresPago.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>

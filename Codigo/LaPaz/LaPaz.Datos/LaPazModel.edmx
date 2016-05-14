@@ -7048,6 +7048,10 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Parameter Name="compraId" Type="uniqueidentifier" Mode="In" />
           <Parameter Name="proveedorId" Type="uniqueidentifier" Mode="In" />
         </Function>
+        <Function Name="ProveedoresMovimientos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Proveedor" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="SucursalId" Type="int" Mode="In" />
+        </Function>
         <Function Name="ReciboConsignacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ConsignacionId" Type="uniqueidentifier" Mode="In" />
         </Function>
@@ -10527,7 +10531,11 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <Parameter Name="proveedorId" Mode="In" Type="Guid" />
           </FunctionImport>
           <FunctionImport Name="Sp_DevolucionLibros" ReturnType="Collection(LaPaz.Datos.Sp_DevolucionLibros_Result)">
-            <Parameter Name="devolucionId" Mode="In" Type="Guid" />
+          <Parameter Name="devolucionId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="ProveedoresMovimientos" ReturnType="Collection(LaPaz.Datos.ProveedoresMovimientos_Result)" >
+            <Parameter Name="Proveedor" Mode="In" Type="Guid" />
+            <Parameter Name="SucursalId" Mode="In" Type="Int32" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="Provincia">
@@ -18378,6 +18386,12 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="String" Name="Denominacion" Nullable="true" MaxLength="80" />
           <Property Type="DateTime" Name="FechaAlta" Nullable="false" Precision="23" />
         </ComplexType>
+        <ComplexType Name="ProveedoresMovimientos_Result">
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Concepto" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="Importe" Nullable="true" Precision="19" />
+          <Property Type="Decimal" Name="Pagos" Nullable="true" Precision="19" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -21927,6 +21941,16 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ProveedoresMovimientos" FunctionName="LaPaz.Datos.Store.ProveedoresMovimientos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaPaz.Datos.ProveedoresMovimientos_Result">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Pagos" ColumnName="Pagos" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -21941,7 +21965,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

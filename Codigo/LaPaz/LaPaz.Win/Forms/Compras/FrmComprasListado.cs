@@ -101,7 +101,8 @@ namespace LaPaz.Win.Forms.Compras
             decimal total = _compraNegocio.CompraTotal(codigoProveedor, Context.SucursalActual.Id, desde, hasta) ?? 0;
             TxtCompras.Text = total.ToString("n2"); // compras.Select(c => c.ImporteNeto).Sum().ToString();
 
-
+            var movimientosProveedores = Uow.Reportes.ProveedoresMovimientos(codigoProveedor, Context.SucursalActual.Id).ToList();
+            this.MovimientosProveedores.DataSource = movimientosProveedores;
 
             return pageTotal;
         }
@@ -139,6 +140,19 @@ namespace LaPaz.Win.Forms.Compras
                     formDetalle.Close();
                 }
             }
+        }
+
+        private void GridCompras_DoubleClick(object sender, EventArgs e)
+        {
+            //var commandCell = (GridCommandCellElement)sender;
+
+            var selectedRow = this.GridCompras.SelectedRows.FirstOrDefault();
+
+            if (selectedRow == null)
+                return;
+
+            var compra = selectedRow.DataBoundItem as ComprasDto;
+
         }
     }
 }

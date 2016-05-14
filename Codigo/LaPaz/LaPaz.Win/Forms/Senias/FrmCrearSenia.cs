@@ -425,7 +425,7 @@ namespace LaPaz.Win.Forms.Senias
                         () => Anular(senia));
                     break;
                 case "Imprimir":
-                    var formaPago = _comprobanteNegocio.FormaDePago(senia.Id);
+                    var formaPago = _comprobanteNegocio.FormaDePagoReimpresion(senia.Id);
                     ImprimirComprobante(senia, formaPago);
                     break;
             }
@@ -555,30 +555,86 @@ namespace LaPaz.Win.Forms.Senias
             //Utiliar toda la seña
             //if (senia.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente)
             //{
-                var operador = this.ObtenerOperadorAdministrador();
+            var operador = this.ObtenerOperadorAdministrador();
 
-                if (operador == null)
+            if (operador == null)
+            {
+                return;
+            }
+
+            if (!this.EsOperadorAdmin)
+            {
+                //Guardamos el operador que autorizo la operacion.
+                senia.OperadorAutoriza = operador.Id;
+            }
+
+            var diferencia = senia.Importe - senia.ImpOcupado;
+            if (diferencia == 0)
+                return;
+                
+               
+            Uow.ClientesMontosFavor.Modificar(senia);
+
+            var cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == senia.Id);
+            
+            if (cajaMovimientoAnterior == null)
+            {
+                //notas de credito no generan caja movimiento?
+
+            }
+                if ((cajaMovimientoAnterior.Tarjeta != null || cajaMovimientoAnterior.Tarjeta == 0 ) ||
+                    (cajaMovimientoAnterior.Cheque != null || cajaMovimientoAnterior.Cheque == 0) ||
+                    (cajaMovimientoAnterior.Deposito != null || cajaMovimientoAnterior.Deposito == 0))
                 {
-                    return;
+
+                    decimal? devolucion = 0;
+                    if (diferencia > ((cajaMovimientoAnterior.Tarjeta ?? 0) + (cajaMovimientoAnterior.Cheque ?? 0) + (cajaMovimientoAnterior.Deposito ?? 0) + (cajaMovimientoAnterior.Transferencia ?? 0))) 
+                    {
+                        devolucion = diferencia - ((cajaMovimientoAnterior.Tarjeta ?? 0) + (cajaMovimientoAnterior.Cheque ?? 0) + (cajaMovimientoAnterior.Deposito ?? 0) + (cajaMovimientoAnterior.Transferencia ?? 0));
+                        
+                        //Actualizacion seña
+                        using (var crearComprobante = FormFactory.Create<FrmComprobante>())
+                        {
+                            _messageBoxDisplayService.ShowWarning("Solo se puede devolver un monto en efectivo de: $" + devolucion.Value.ToString("N2"));
+                            
+                            crearComprobante._concepto = "Actualizacion de seña";
+                            crearComprobante._LCN = senia.LCN;
+                            var conv = new Conversion();
+                            crearComprobante._montoTexto = conv.enletras((diferencia - devolucion).ToString());
+                            crearComprobante._montoActualizado = (diferencia - devolucion);
+                           
+                            var formapago = "";
+                            if (cajaMovimientoAnterior.Tarjeta > 0)
+                                formapago += "Tarjeta ";
+                           if (cajaMovimientoAnterior.Cheque > 0)
+                                formapago += "Cheque ";
+                           if (cajaMovimientoAnterior.Deposito > 0)
+                                formapago += "Deposito ";
+                           if (cajaMovimientoAnterior.Transferencia > 0)
+                               formapago += "Transferencia ";
+                           
+                            crearComprobante._formaPago = formapago + (diferencia - devolucion).ToString() ;
+
+                            crearComprobante.ShowDialog();
+                        }
+                        diferencia = devolucion;
+                    }
+                    else 
+                    {
+                        _messageBoxDisplayService.ShowError("No se puede anular una seña que no fue generada en efectivo");
+                        return;
+                        //devolucion = diferencia;
+                        //anular seña
+                    }
                 }
 
-                if (!this.EsOperadorAdmin)
-                {
-                    //Guardamos el operador que autorizo la operacion.
-                    senia.OperadorAutoriza = operador.Id;
-                }
-
-                var diferencia = senia.Importe - senia.ImpOcupado;
-                if (diferencia == 0)
-                    return;
-
-                senia.ImpOcupado = senia.Importe;
+            senia.ImpOcupado += diferencia; //senia.Importe;
+            if (senia.ImpOcupado == senia.Importe)
                 senia.FechaAnulacion = _clock.Now;
-                senia.FechaModificacion = _clock.Now;
-                senia.OperadorModificacionId = Context.OperadorActual.Id;
-                senia.SucursalModificacionId = Context.SucursalActual.Id;
+            senia.FechaModificacion = _clock.Now;
+            senia.OperadorModificacionId = Context.OperadorActual.Id;
+            senia.SucursalModificacionId = Context.SucursalActual.Id;
 
-                Uow.ClientesMontosFavor.Modificar(senia);
 
                 //generar cajamovimientno
                 Caja caja = this.Context.CajaActual;
@@ -596,7 +652,8 @@ namespace LaPaz.Win.Forms.Senias
 
                 if (senia.TipoComprobanteId == TipoComprobanteEnum.SeñaCliente)
                 {
-                    var cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == senia.Id);
+                    //var cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == senia.Id);
+                    //cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == senia.Id);
 
                     CajaMovimiento cajaMovimiento = new CajaMovimiento();
                     cajaMovimiento.Id = Guid.NewGuid();
@@ -653,12 +710,8 @@ namespace LaPaz.Win.Forms.Senias
 
                 RefrescarUow();
 
-                RefrescarHistorial();
-            //}
-            //else
-            //{
-            //    _messageBoxDisplayService.ShowError("No puede anular una nota de crédito");
-            //}
+                RefrescarHistorial();                
+           
         }
 
         private void EditarCliente(Cliente cliente)

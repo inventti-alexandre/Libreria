@@ -54,6 +54,7 @@ namespace LaPaz.Datos.Interfaces
         List<ReciboConsignacion> ReciboConsignacion(Guid consignacionId);
 
         List<HistorialPagos_Result> HistorialPagos(Guid? CompraId, Guid? ProveedorId);
+        List<ProveedoresMovimientos_Result> ProveedoresMovimientos(Guid? ProveedorId, int SucursalId);
     }
 
 }

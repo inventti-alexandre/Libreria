@@ -821,5 +821,18 @@ namespace LaPaz.Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Sp_DevolucionLibros_Result>("Sp_DevolucionLibros", devolucionIdParameter);
         }
+    
+        public virtual ObjectResult<ProveedoresMovimientos_Result> ProveedoresMovimientos(Nullable<System.Guid> proveedor, Nullable<int> sucursalId)
+        {
+            var proveedorParameter = proveedor.HasValue ?
+                new ObjectParameter("Proveedor", proveedor) :
+                new ObjectParameter("Proveedor", typeof(System.Guid));
+    
+            var sucursalIdParameter = sucursalId.HasValue ?
+                new ObjectParameter("SucursalId", sucursalId) :
+                new ObjectParameter("SucursalId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ProveedoresMovimientos_Result>("ProveedoresMovimientos", proveedorParameter, sucursalIdParameter);
+        }
     }
 }

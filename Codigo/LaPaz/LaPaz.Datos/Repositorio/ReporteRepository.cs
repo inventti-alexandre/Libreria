@@ -143,5 +143,9 @@ namespace LaPaz.Datos.Repositorio
         {
             return LaPazEntities.HistorialPagos(CompraId, ProveedorId).ToList();
         }
+        public List<ProveedoresMovimientos_Result> ProveedoresMovimientos(Guid? ProveedorId, int SucursalId)
+        {
+            return LaPazEntities.ProveedoresMovimientos(ProveedorId, SucursalId).ToList();
+        }
     }
 }

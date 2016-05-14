@@ -566,5 +566,10 @@ namespace LaPaz.Win.Forms.Libros
         }
 
         #endregion
+
+        private void TxtCodigoBarra_TextChanged(object sender, EventArgs e)
+        {
+            TxtCodigoBarra_KeyUp(null, null);
+        }
     }
 }

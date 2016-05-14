@@ -13,5 +13,7 @@ namespace LaPaz.Negocio.Interfaces
     public interface IComprobanteNegocio : IDisposable
     {
         string FormaDePago(Guid comprobanteId);
+        string FormaDePagoReimpresion(Guid comprobanteId);
+        
     }
 }

@@ -340,6 +340,7 @@
     <Build Include="dbo\Stored Procedures\HistorialPagos.sql" />
     <Build Include="dbo\Stored Procedures\Sp_DevolucionLibros.sql" />
     <Build Include="dbo\Stored Procedures\Reporte_InformeCajaOriginal.sql" />
+    <Build Include="dbo\Stored Procedures\ProveedoresMovimientos.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="LaPaz.Database.refactorlog" />

@@ -113,7 +113,7 @@
             this.PanelPagos.Controls.Add(this.TabSeñas);
             this.PanelPagos.Location = new System.Drawing.Point(12, 209);
             this.PanelPagos.Name = "PanelPagos";
-            this.PanelPagos.Size = new System.Drawing.Size(1013, 559);
+            this.PanelPagos.Size = new System.Drawing.Size(1256, 559);
             this.PanelPagos.TabIndex = 5;
             // 
             // pnlMontoSenia
@@ -166,7 +166,7 @@
             this.TabSeñas.Location = new System.Drawing.Point(14, 60);
             this.TabSeñas.Name = "TabSeñas";
             this.TabSeñas.SelectedPage = this.TabSeñasHistorial;
-            this.TabSeñas.Size = new System.Drawing.Size(984, 462);
+            this.TabSeñas.Size = new System.Drawing.Size(1221, 462);
             this.TabSeñas.TabIndex = 0;
             this.TabSeñas.Text = "radPageView1";
             this.TabSeñas.ThemeName = "TelerikMetroBlue";
@@ -179,7 +179,7 @@
             this.TabSeñasNueva.Controls.Add(this.UcTotalesSenia);
             this.TabSeñasNueva.Location = new System.Drawing.Point(5, 36);
             this.TabSeñasNueva.Name = "TabSeñasNueva";
-            this.TabSeñasNueva.Size = new System.Drawing.Size(974, 421);
+            this.TabSeñasNueva.Size = new System.Drawing.Size(1211, 421);
             this.TabSeñasNueva.Text = "Nueva Seña";
             // 
             // BtnGuardar
@@ -213,7 +213,7 @@
             this.TabSeñasHistorial.Controls.Add(this.GridSeñas);
             this.TabSeñasHistorial.Location = new System.Drawing.Point(5, 36);
             this.TabSeñasHistorial.Name = "TabSeñasHistorial";
-            this.TabSeñasHistorial.Size = new System.Drawing.Size(974, 421);
+            this.TabSeñasHistorial.Size = new System.Drawing.Size(1211, 421);
             this.TabSeñasHistorial.Text = "Historial";
             // 
             // BtnRefrescar
@@ -239,7 +239,7 @@
             // 
             this.ClientesSeniasPager.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ClientesSeniasPager.CurrentPage = 1;
-            this.ClientesSeniasPager.Location = new System.Drawing.Point(432, -3);
+            this.ClientesSeniasPager.Location = new System.Drawing.Point(669, -3);
             this.ClientesSeniasPager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ClientesSeniasPager.Name = "ClientesSeniasPager";
             this.ClientesSeniasPager.PageSize = 50;
@@ -262,19 +262,17 @@
             gridViewTextBoxColumn1.FormatString = "";
             gridViewTextBoxColumn1.HeaderText = "Fecha";
             gridViewTextBoxColumn1.MaxWidth = 100;
-            gridViewTextBoxColumn1.MinWidth = 100;
             gridViewTextBoxColumn1.Name = "Fecha";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn1.Width = 100;
             gridViewTextBoxColumn2.FieldName = "Concepto";
             gridViewTextBoxColumn2.HeaderText = "Concepto";
             gridViewTextBoxColumn2.Name = "Concepto";
-            gridViewTextBoxColumn2.Width = 221;
+            gridViewTextBoxColumn2.Width = 309;
             gridViewTextBoxColumn3.FieldName = "Importe";
             gridViewTextBoxColumn3.FormatString = "";
             gridViewTextBoxColumn3.HeaderText = "Importe";
             gridViewTextBoxColumn3.MaxWidth = 100;
-            gridViewTextBoxColumn3.MinWidth = 100;
             gridViewTextBoxColumn3.Name = "Importe";
             gridViewTextBoxColumn3.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn3.Width = 100;
@@ -282,7 +280,6 @@
             gridViewTextBoxColumn4.FormatString = "";
             gridViewTextBoxColumn4.HeaderText = "Utilizado";
             gridViewTextBoxColumn4.MaxWidth = 100;
-            gridViewTextBoxColumn4.MinWidth = 100;
             gridViewTextBoxColumn4.Name = "Utilizado";
             gridViewTextBoxColumn4.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
             gridViewTextBoxColumn4.Width = 100;
@@ -290,18 +287,17 @@
             gridViewTextBoxColumn5.HeaderText = "Disponible";
             gridViewTextBoxColumn5.Name = "Disponible";
             gridViewTextBoxColumn5.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn5.Width = 124;
+            gridViewTextBoxColumn5.Width = 173;
             gridViewTextBoxColumn6.FieldName = "FechaAnulacion";
             gridViewTextBoxColumn6.HeaderText = "Fecha Anulacion";
             gridViewTextBoxColumn6.MaxWidth = 120;
-            gridViewTextBoxColumn6.MinWidth = 120;
             gridViewTextBoxColumn6.Name = "FechaAnulacion";
             gridViewTextBoxColumn6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             gridViewTextBoxColumn6.Width = 120;
             gridViewTextBoxColumn7.FieldName = "FechaModificacion";
             gridViewTextBoxColumn7.HeaderText = "Fecha uso";
             gridViewTextBoxColumn7.Name = "FechaModificacion";
-            gridViewTextBoxColumn7.Width = 127;
+            gridViewTextBoxColumn7.Width = 196;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Garbage_Closed;
             gridViewCommandColumn1.MaxWidth = 30;
@@ -329,7 +325,7 @@
             this.GridSeñas.MasterTemplate.EnableGrouping = false;
             this.GridSeñas.Name = "GridSeñas";
             this.GridSeñas.ReadOnly = true;
-            this.GridSeñas.Size = new System.Drawing.Size(966, 330);
+            this.GridSeñas.Size = new System.Drawing.Size(1172, 330);
             this.GridSeñas.TabIndex = 0;
             this.GridSeñas.ThemeName = "TelerikMetroBlue";
             this.GridSeñas.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridSeñas_CommandCellClick);
@@ -349,7 +345,7 @@
             this.radPanel3.Controls.Add(this.radLabel1);
             this.radPanel3.Location = new System.Drawing.Point(12, 73);
             this.radPanel3.Name = "radPanel3";
-            this.radPanel3.Size = new System.Drawing.Size(1013, 135);
+            this.radPanel3.Size = new System.Drawing.Size(1256, 135);
             this.radPanel3.TabIndex = 4;
             // 
             // TxtCreditos
@@ -509,7 +505,7 @@
             this.pnlBuscador.Controls.Add(this.ucBuscadorClienteSimple);
             this.pnlBuscador.Location = new System.Drawing.Point(12, 12);
             this.pnlBuscador.Name = "pnlBuscador";
-            this.pnlBuscador.Size = new System.Drawing.Size(1013, 60);
+            this.pnlBuscador.Size = new System.Drawing.Size(1256, 60);
             this.pnlBuscador.TabIndex = 3;
             // 
             // radPanel2
@@ -533,7 +529,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1359, 1054);
+            this.ClientSize = new System.Drawing.Size(1375, 1092);
             this.Controls.Add(this.PanelPagos);
             this.Controls.Add(this.radPanel3);
             this.Controls.Add(this.pnlBuscador);

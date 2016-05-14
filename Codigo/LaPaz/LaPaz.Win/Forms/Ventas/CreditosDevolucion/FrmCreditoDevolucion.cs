@@ -144,6 +144,8 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
             {
                 GenerarClienteMontoFavor();
 
+              
+
                 ActualizarVentasDetalle(_notaCreditoId);
 
                 Uow.Commit();
@@ -157,6 +159,7 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
 
                 var conv = new Conversion();
                 crearComprobante._montoTexto = conv.enletras(Total.ToString());
+                
                 crearComprobante.Show();
             }
 
@@ -176,7 +179,8 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
         public string FormaPagoDescripcion()
         {
             string formaDePago = string.Empty;
-            var cajaMovimiento = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == _venta.Id);
+            //var cajaMovimiento = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == _venta.Id);
+            var cajaMovimiento = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == _notaCreditoId);
             if (cajaMovimiento.Efectivo != null)
                 formaDePago += "Efectivo $" + cajaMovimiento.Efectivo.Value.ToString("n2") + ". ";
             if (cajaMovimiento.Tarjeta != null)
@@ -289,6 +293,45 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
 
                 Uow.ClientesMontosFavorDetalles.Agregar(clientesMontosAfavorDetalle);
             }
+
+            var cajaMovimientoAnterior = Uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == _venta.Id);
+            var montoDevolucion = Total;
+
+            CajaMovimiento cajaMovimiento = new CajaMovimiento();
+            cajaMovimiento.Id = Guid.NewGuid();
+            cajaMovimiento.CajaId = this.Context.CajaActual.Id;
+            cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.CreditoFavorPorNc;
+            cajaMovimiento.TipoComprobante = TipoComprobanteEnum.NotaCrédito;
+            cajaMovimiento.ComprobanteId = clienteMontoFavor.Id;
+            cajaMovimiento.Importe = Total;
+            cajaMovimiento.ImpFac = Total;
+            cajaMovimiento.Efectivo = cajaMovimientoAnterior.Efectivo >= montoDevolucion ? montoDevolucion : cajaMovimientoAnterior.Efectivo;
+            montoDevolucion -= cajaMovimiento.Efectivo;
+            if (montoDevolucion > 0)
+            {
+                cajaMovimiento.Tarjeta = (cajaMovimientoAnterior.Tarjeta >= montoDevolucion) ? montoDevolucion : cajaMovimientoAnterior.Tarjeta;
+                montoDevolucion -= cajaMovimiento.Tarjeta;
+            }
+            if (montoDevolucion > 0)
+            {
+                cajaMovimiento.Cheque = (cajaMovimientoAnterior.Cheque >= montoDevolucion ? montoDevolucion : cajaMovimientoAnterior.Cheque);
+                montoDevolucion -= cajaMovimiento.Cheque;
+            }
+            if (montoDevolucion > 0)
+            {
+                cajaMovimiento.Deposito = (cajaMovimientoAnterior.Deposito >= montoDevolucion ? montoDevolucion : cajaMovimientoAnterior.Deposito);
+                montoDevolucion -= cajaMovimiento.Deposito;
+            }
+            if (montoDevolucion > 0)
+            {
+                cajaMovimiento.Transferencia = (cajaMovimientoAnterior.Transferencia >= montoDevolucion ? montoDevolucion : cajaMovimientoAnterior.Transferencia);
+                montoDevolucion -= cajaMovimiento.Transferencia;
+            }
+            cajaMovimiento.FechaAlta = _clock.Now;
+            cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id;
+            cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id;
+
+            Uow.CajaMovimientos.Agregar(cajaMovimiento);
         }
 
         private string CalcularLCN()
