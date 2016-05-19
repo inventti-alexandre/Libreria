@@ -53,8 +53,8 @@ namespace LaPaz.Win.Forms.Libros
         {
             ProveedorId = proveedor;
             CbxProveedor.SelectedValue = proveedor;
-            //CbxOchoDeMarzo.Value = SiNoEnum.Si;
-            CbxProveedor.Enabled = false;
+
+            //CbxProveedor.Enabled = false;
             CbxOchoDeMarzo.Enabled = false;
             UcConStock.Enabled = false; 
         }

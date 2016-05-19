@@ -51,6 +51,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.radPanel3 = new Telerik.WinControls.UI.RadPanel();
             this.RPCtaccte = new Telerik.WinControls.UI.RadPanel();
             this.radPanel5 = new Telerik.WinControls.UI.RadPanel();
+            this.LblFechaConsignacion = new System.Windows.Forms.Label();
             this.UcTitulosConsignacionVenta = new LaPaz.Win.Forms.Consignaciones.Clientes.UcTitulosConsignacionVenta();
             this.ucTitulosConsignacionVenta1 = new LaPaz.Win.Forms.Consignaciones.Clientes.UcTitulosConsignacionVenta();
             ((System.ComponentModel.ISupportInitialize)(this.metroPanel2)).BeginInit();
@@ -98,7 +99,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.BtnRecargarNroFactura.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRecargarNroFactura.Image = global::LaPaz.Win.Properties.Resources.Reload_16x16;
             this.BtnRecargarNroFactura.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.BtnRecargarNroFactura.Location = new System.Drawing.Point(650, 50);
+            this.BtnRecargarNroFactura.Location = new System.Drawing.Point(680, 51);
             this.BtnRecargarNroFactura.Name = "BtnRecargarNroFactura";
             this.BtnRecargarNroFactura.Size = new System.Drawing.Size(32, 26);
             this.BtnRecargarNroFactura.TabIndex = 3;
@@ -108,9 +109,9 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             // TxtNroFactura
             // 
             this.TxtNroFactura.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtNroFactura.Location = new System.Drawing.Point(440, 50);
+            this.TxtNroFactura.Location = new System.Drawing.Point(470, 51);
             this.TxtNroFactura.Name = "TxtNroFactura";
-            this.TxtNroFactura.Size = new System.Drawing.Size(206, 26);
+            this.TxtNroFactura.Size = new System.Drawing.Size(206, 31);
             this.TxtNroFactura.TabIndex = 6;
             this.TxtNroFactura.TabStop = false;
             this.TxtNroFactura.ThemeName = "TelerikMetroBlue";
@@ -119,9 +120,9 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             // 
             this.TxtFecha.Enabled = false;
             this.TxtFecha.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtFecha.Location = new System.Drawing.Point(440, 18);
+            this.TxtFecha.Location = new System.Drawing.Point(470, 19);
             this.TxtFecha.Name = "TxtFecha";
-            this.TxtFecha.Size = new System.Drawing.Size(206, 26);
+            this.TxtFecha.Size = new System.Drawing.Size(206, 31);
             this.TxtFecha.TabIndex = 5;
             this.TxtFecha.TabStop = false;
             this.TxtFecha.ThemeName = "TelerikMetroBlue";
@@ -131,7 +132,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.metroLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel2.Location = new System.Drawing.Point(351, 51);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(91, 24);
+            this.metroLabel2.Size = new System.Drawing.Size(113, 29);
             this.metroLabel2.TabIndex = 4;
             this.metroLabel2.Text = "Nro Factura:";
             this.metroLabel2.ThemeName = "TelerikMetroBlue";
@@ -139,9 +140,9 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             // metroLabel1
             // 
             this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroLabel1.Location = new System.Drawing.Point(387, 19);
+            this.metroLabel1.Location = new System.Drawing.Point(402, 19);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(50, 24);
+            this.metroLabel1.Size = new System.Drawing.Size(62, 29);
             this.metroLabel1.TabIndex = 3;
             this.metroLabel1.Text = "Fecha:";
             this.metroLabel1.ThemeName = "TelerikMetroBlue";
@@ -165,13 +166,14 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             0});
             this.UcCuentaCorrienteInfo.Cuotas = 1;
             this.UcCuentaCorrienteInfo.Location = new System.Drawing.Point(2, 3);
+            this.UcCuentaCorrienteInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UcCuentaCorrienteInfo.Montocuota = null;
             this.UcCuentaCorrienteInfo.Name = "UcCuentaCorrienteInfo";
             this.UcCuentaCorrienteInfo.Size = new System.Drawing.Size(121, 406);
             this.UcCuentaCorrienteInfo.SubTotal = null;
             this.UcCuentaCorrienteInfo.TabIndex = 4;
             this.UcCuentaCorrienteInfo.Total = null;
-            this.UcCuentaCorrienteInfo.Vencimiento = new System.DateTime(2015, 10, 19, 0, 0, 0, 0);
+            this.UcCuentaCorrienteInfo.Vencimiento = new System.DateTime(2016, 6, 19, 0, 0, 0, 0);
             // 
             // metroPanel1
             // 
@@ -189,7 +191,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.ChkVuelto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkVuelto.Location = new System.Drawing.Point(25, 27);
             this.ChkVuelto.Name = "ChkVuelto";
-            this.ChkVuelto.Size = new System.Drawing.Size(69, 24);
+            this.ChkVuelto.Size = new System.Drawing.Size(81, 29);
             this.ChkVuelto.TabIndex = 5;
             this.ChkVuelto.Text = "Vuelto";
             this.ChkVuelto.ThemeName = "TelerikMetroBlue";
@@ -200,7 +202,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.ChkImprimir.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkImprimir.Location = new System.Drawing.Point(25, 3);
             this.ChkImprimir.Name = "ChkImprimir";
-            this.ChkImprimir.Size = new System.Drawing.Size(83, 24);
+            this.ChkImprimir.Size = new System.Drawing.Size(98, 29);
             this.ChkImprimir.TabIndex = 4;
             this.ChkImprimir.Text = "Imprimir";
             this.ChkImprimir.ThemeName = "TelerikMetroBlue";
@@ -234,6 +236,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.UcTotalesVenta.Descuento = null;
             this.UcTotalesVenta.FaltaPagar = null;
             this.UcTotalesVenta.Location = new System.Drawing.Point(3, 3);
+            this.UcTotalesVenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UcTotalesVenta.Name = "UcTotalesVenta";
             this.UcTotalesVenta.Recargo = null;
             this.UcTotalesVenta.Senas = null;
@@ -256,6 +259,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.UcClienteDetalle.FormaPago = "";
             this.UcClienteDetalle.Localidad = "";
             this.UcClienteDetalle.Location = new System.Drawing.Point(4, 2);
+            this.UcClienteDetalle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UcClienteDetalle.Name = "UcClienteDetalle";
             this.UcClienteDetalle.Provincia = "";
             this.UcClienteDetalle.Size = new System.Drawing.Size(746, 181);
@@ -305,11 +309,22 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             // 
             // radPanel5
             // 
+            this.radPanel5.Controls.Add(this.LblFechaConsignacion);
             this.radPanel5.Controls.Add(this.UcTitulosConsignacionVenta);
             this.radPanel5.Location = new System.Drawing.Point(4, 329);
             this.radPanel5.Name = "radPanel5";
             this.radPanel5.Size = new System.Drawing.Size(791, 306);
             this.radPanel5.TabIndex = 11;
+            // 
+            // LblFechaConsignacion
+            // 
+            this.LblFechaConsignacion.AutoSize = true;
+            this.LblFechaConsignacion.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblFechaConsignacion.Location = new System.Drawing.Point(15, 272);
+            this.LblFechaConsignacion.Name = "LblFechaConsignacion";
+            this.LblFechaConsignacion.Size = new System.Drawing.Size(211, 25);
+            this.LblFechaConsignacion.TabIndex = 2;
+            this.LblFechaConsignacion.Text = "Fecha de Consignación:";
             // 
             // UcTitulosConsignacionVenta
             // 
@@ -331,10 +346,9 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             // 
             // FrmRendirConsignacionCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1300, 820);
+            this.ClientSize = new System.Drawing.Size(1752, 1084);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radPanel5);
             this.Controls.Add(this.RPCtaccte);
@@ -344,6 +358,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.Controls.Add(this.metroPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmRendirConsignacionCliente";
             // 
             // 
@@ -378,6 +393,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             this.RPCtaccte.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel5)).EndInit();
             this.radPanel5.ResumeLayout(false);
+            this.radPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -408,6 +424,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
         private UcBuscadorConsignacion UcBuscadorConsignacion;
         private UcTitulosConsignacionVenta ucTitulosConsignacionVenta1;
         private UcTitulosConsignacionVenta UcTitulosConsignacionVenta;
+        private System.Windows.Forms.Label LblFechaConsignacion;
 
     }
 }

@@ -228,6 +228,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                 if (remitos.Count == 1)
                 {
                     ActualizarCliente(remitos[0].ClienteConsignado);
+                    LblFechaConsignacion.Text = "Fecha de Consignación: " + remitos[0].FechaAlta.ToString();
 
                 }
 
@@ -290,6 +291,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                             UcTitulosConsignacionVenta.Titulos = _remitoDetalleNegocio.ListadoByRemitoVentaId(consignacion.Id.ToString());
                             UcTitulosConsignacionVenta.RefrescarTitulos();
                             seleccionarConsignacion.Close();
+                            LblFechaConsignacion.Text = "Fecha de Consignación: " + consignacion.FechaAlta.ToString();
                         };
 
                         seleccionarConsignacion.ShowDialog();
@@ -299,7 +301,9 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
                 {
                     UcTitulosConsignacionVenta.Titulos = _remitoDetalleNegocio.ListadoByRemitoVentaId(remitosList[0].Id.ToString());
                     UcTitulosConsignacionVenta.RefrescarTitulos();
+                    LblFechaConsignacion.Text = "Fecha de Consignación: " + _remitoDetalleNegocio.ListadoByRemitoVentaId(remitosList[0].FechaAlta.ToString());
                 }
+                
             }
         }
 

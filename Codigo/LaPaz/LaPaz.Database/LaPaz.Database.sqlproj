@@ -354,6 +354,7 @@
     <None Include="LCorrientes.Database.publish.xml" />
     <None Include="Scripts\Post-Deploy\TipoMovimientoCaja-PagoCtaProveedorCajaAnterior.sql" />
     <None Include="LaPaz.Database.publish.xml" />
+    <None Include="LCorrientesProduccion.Database.publish.xml" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deploy\Script.PostDeployment.sql" />

@@ -191,6 +191,7 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             _consignacion.ImporteNeto = ucTitulosVenta.Titulos.Sum(x => x.PrecioVenta);
             _consignacion.ImporteIVA = IvaHelper.CalcularIva(_consignacion.ImporteNeto.Value);
             _consignacion.FechaEmision = _clock.Now;
+            BtnRecargarNroFactura_Click(null, null);
             _consignacion.NumeroComprobante = TxtNroConsignacion.Text;
             _consignacion.LCN = LcnHelper.ObtenerLcn(_consignacion.NumeroComprobante,Context.SucursalActual.SucursalNumero ?? 1, "X");
             _consignacion.Concepto = "CONSIGNACION PARA CLIENTES";

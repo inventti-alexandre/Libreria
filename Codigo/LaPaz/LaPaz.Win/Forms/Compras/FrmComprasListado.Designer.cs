@@ -102,7 +102,7 @@
             this.pnlCompras.Controls.Add(this.GridCompras);
             this.pnlCompras.Location = new System.Drawing.Point(12, 118);
             this.pnlCompras.Name = "pnlCompras";
-            this.pnlCompras.Size = new System.Drawing.Size(1071, 426);
+            this.pnlCompras.Size = new System.Drawing.Size(1071, 334);
             this.pnlCompras.TabIndex = 2;
             // 
             // TxtCompras
@@ -240,7 +240,7 @@
             gridViewCommandColumn1});
             this.GridCompras.Name = "GridCompras";
             this.GridCompras.ReadOnly = true;
-            this.GridCompras.Size = new System.Drawing.Size(1044, 298);
+            this.GridCompras.Size = new System.Drawing.Size(1044, 206);
             this.GridCompras.TabIndex = 0;
             this.GridCompras.ThemeName = "TelerikMetroBlue";
             this.GridCompras.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridCompras_CommandCellClick);
@@ -291,7 +291,7 @@
             // radPanel2
             // 
             this.radPanel2.Controls.Add(this.MovimientosProveedores);
-            this.radPanel2.Location = new System.Drawing.Point(12, 550);
+            this.radPanel2.Location = new System.Drawing.Point(12, 458);
             this.radPanel2.Name = "radPanel2";
             this.radPanel2.Size = new System.Drawing.Size(1071, 307);
             this.radPanel2.TabIndex = 49;
@@ -300,7 +300,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1563, 1065);
+            this.ClientSize = new System.Drawing.Size(1571, 1092);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.pnlCompras);
             this.Controls.Add(this.radPanel1);
