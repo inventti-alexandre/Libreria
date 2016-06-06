@@ -17,5 +17,10 @@ namespace LaPaz.Entidades
         public string Concepto { get; set; }
         public Nullable<decimal> Importe { get; set; }
         public Nullable<decimal> Pagos { get; set; }
+        public Nullable<decimal> Efectivo { get; set; }
+        public Nullable<decimal> Tarjeta { get; set; }
+        public Nullable<decimal> Cheque { get; set; }
+        public Nullable<decimal> Deposito { get; set; }
+        public Nullable<decimal> Transferencia { get; set; }
     }
 }

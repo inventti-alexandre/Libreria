@@ -64,7 +64,7 @@ namespace LaPaz.Win.Forms.Util
                 operadoresId = Uow.OperadorSucursales.Listado().Select(os => os.OperadorId).ToList();
             }
             
-            var operador = Uow.Operadores.Listado().Where(o => operadoresId.Contains(o.Id) && o.Habilitado).ToList();
+            var operador = Uow.Operadores.Listado().Where(o => operadoresId.Contains(o.Id) && o.Habilitado).OrderBy(o=>o.Usuario).ToList();
             operador.Insert(0, new Operador() { Usuario = "SELECCIONE USUARIO", Id = Guid.Empty });
             Combo.DataSource = operador;
             DefinirCombo();

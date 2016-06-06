@@ -41,6 +41,11 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn9 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn10 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn11 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn12 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn13 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn14 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn15 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn16 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.ucFiltrosCompras = new LaPaz.Win.Forms.Compras.UcFiltrosCompras();
             this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
             this.pnlCompras = new Telerik.WinControls.UI.RadPanel();
@@ -260,27 +265,52 @@
             gridViewTextBoxColumn8.FormatString = "";
             gridViewTextBoxColumn8.HeaderText = "Fecha";
             gridViewTextBoxColumn8.Name = "Fecha";
-            gridViewTextBoxColumn8.Width = 368;
+            gridViewTextBoxColumn8.Width = 123;
             gridViewTextBoxColumn9.FieldName = "Concepto";
             gridViewTextBoxColumn9.FormatString = "";
             gridViewTextBoxColumn9.HeaderText = "Concepto";
             gridViewTextBoxColumn9.Name = "Concepto";
-            gridViewTextBoxColumn9.Width = 368;
+            gridViewTextBoxColumn9.Width = 191;
             gridViewTextBoxColumn10.FieldName = "Importe";
             gridViewTextBoxColumn10.FormatString = "";
-            gridViewTextBoxColumn10.HeaderText = "Importe";
+            gridViewTextBoxColumn10.HeaderText = "Compras";
             gridViewTextBoxColumn10.Name = "Importe";
-            gridViewTextBoxColumn10.Width = 147;
+            gridViewTextBoxColumn10.Width = 102;
             gridViewTextBoxColumn11.FieldName = "Pagos";
             gridViewTextBoxColumn11.FormatString = "";
             gridViewTextBoxColumn11.HeaderText = "Pagos";
             gridViewTextBoxColumn11.Name = "Pagos";
-            gridViewTextBoxColumn11.Width = 143;
+            gridViewTextBoxColumn11.Width = 101;
+            gridViewTextBoxColumn12.FieldName = "Efectivo";
+            gridViewTextBoxColumn12.HeaderText = "Efectivo";
+            gridViewTextBoxColumn12.Name = "Efectivo";
+            gridViewTextBoxColumn12.Width = 95;
+            gridViewTextBoxColumn13.FieldName = "Tarjeta";
+            gridViewTextBoxColumn13.HeaderText = "Tarjeta";
+            gridViewTextBoxColumn13.Name = "Tarjeta";
+            gridViewTextBoxColumn13.Width = 95;
+            gridViewTextBoxColumn14.FieldName = "Cheque";
+            gridViewTextBoxColumn14.HeaderText = "Cheque";
+            gridViewTextBoxColumn14.Name = "Cheque";
+            gridViewTextBoxColumn14.Width = 95;
+            gridViewTextBoxColumn15.FieldName = "Deposito";
+            gridViewTextBoxColumn15.HeaderText = "Deposito";
+            gridViewTextBoxColumn15.Name = "Deposito";
+            gridViewTextBoxColumn15.Width = 95;
+            gridViewTextBoxColumn16.FieldName = "Transferencia";
+            gridViewTextBoxColumn16.HeaderText = "Transferencia";
+            gridViewTextBoxColumn16.Name = "Transferencia";
+            gridViewTextBoxColumn16.Width = 134;
             this.MovimientosProveedores.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn8,
             gridViewTextBoxColumn9,
             gridViewTextBoxColumn10,
-            gridViewTextBoxColumn11});
+            gridViewTextBoxColumn11,
+            gridViewTextBoxColumn12,
+            gridViewTextBoxColumn13,
+            gridViewTextBoxColumn14,
+            gridViewTextBoxColumn15,
+            gridViewTextBoxColumn16});
             this.MovimientosProveedores.Name = "MovimientosProveedores";
             this.MovimientosProveedores.ReadOnly = true;
             this.MovimientosProveedores.Size = new System.Drawing.Size(1045, 284);
@@ -300,7 +330,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1571, 1092);
+            this.ClientSize = new System.Drawing.Size(1595, 1092);
             this.Controls.Add(this.radPanel2);
             this.Controls.Add(this.pnlCompras);
             this.Controls.Add(this.radPanel1);

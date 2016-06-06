@@ -571,10 +571,15 @@ namespace LaPaz.Win.Forms.Compras
 
                     if (_tituloCompraProveedor != null)
                     {
-                        _messageBoxDisplayService.Show(
-                            "Seleccionaste el titulo de otro proveedor, se desplegaran los datos del titulo del proveedor", Resources.LabelCompras);
-                        _tituloCompra = _tituloCompraProveedor;
-                        RefrescarListado(_tituloCompra.Cod, _proveedorId);
+                        //_messageBoxDisplayService.Show(
+                        //    "Seleccionaste el titulo de otro proveedor, se desplegaran los datos del titulo del proveedor", Resources.LabelCompras);
+                        //_tituloCompra = _tituloCompraProveedor;
+                        //RefrescarListado(_tituloCompra.Cod, _proveedorId);
+                        if (MessageBox.Show("Seleccionaste el titulo de otro proveedor, ¿Desea que se desplieguen los datos del titulo del proveedor?", "Compra", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        {
+                            _tituloCompra = _tituloCompraProveedor;
+                            RefrescarListado(_tituloCompra.Cod, _proveedorId);
+                        }
                     }
                 }
 

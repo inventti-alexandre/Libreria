@@ -1063,7 +1063,7 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 cajaMovimientoAnterior.ComprobanteId = _pagoIdConsignacion;
                 cajaMovimientoAnterior.Importe = tarjeta + deposito + cheque + efectivoCajaAnterior + transferencia;
                 cajaMovimientoAnterior.ImpFac = (decimal?)ucTotalesCompraSeña1.SubTotal;
-                cajaMovimientoAnterior.FechaAlta = _clock.Now;
+               
                 cajaMovimientoAnterior.FechaModificacion = _clock.Now;
                 cajaMovimientoAnterior.PcAlta = System.Environment.MachineName;
                 cajaMovimientoAnterior.OperadorAltaId = Context.OperadorActual.Id;
@@ -1074,8 +1074,15 @@ namespace LaPaz.Win.Forms.ProveedoresCtaCte
                 cajaMovimientoAnterior.Efectivo = efectivoCajaAnterior;
                 cajaMovimientoAnterior.Tarjeta = tarjeta;
                 cajaMovimientoAnterior.Deposito = deposito;
+                
                 cajaMovimientoAnterior.Cheque = cheque;
                 cajaMovimientoAnterior.Transferencia = transferencia;
+
+                //if (cheque > 0)
+                //    cajaMovimientoAnterior.FechaAlta = tipo;
+                //else
+                    cajaMovimientoAnterior.FechaAlta = _clock.Now;
+
 
                 cajaMovimientoAnterior.Senia = _seña + _credito + _egreso;
               

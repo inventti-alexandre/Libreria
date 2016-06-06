@@ -104,7 +104,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnCancelar.Location = new System.Drawing.Point(635, 412);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(100, 30);
-            this.BtnCancelar.TabIndex = 19;
+            this.BtnCancelar.TabIndex = 14;
             this.BtnCancelar.Text = "Cancelar";
             this.BtnCancelar.ThemeName = "TelerikMetroBlue";
             // 
@@ -128,7 +128,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnAddSubtema.Location = new System.Drawing.Point(740, 186);
             this.BtnAddSubtema.Name = "BtnAddSubtema";
             this.BtnAddSubtema.Size = new System.Drawing.Size(26, 25);
-            this.BtnAddSubtema.TabIndex = 15;
+            this.BtnAddSubtema.TabIndex = 19;
             this.BtnAddSubtema.ThemeName = "TelerikMetroBlue";
             this.BtnAddSubtema.Click += new System.EventHandler(this.BtnAddSubtema_Click);
             // 
@@ -140,7 +140,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnAddTema.Location = new System.Drawing.Point(740, 143);
             this.BtnAddTema.Name = "BtnAddTema";
             this.BtnAddTema.Size = new System.Drawing.Size(26, 25);
-            this.BtnAddTema.TabIndex = 13;
+            this.BtnAddTema.TabIndex = 18;
             this.BtnAddTema.ThemeName = "TelerikMetroBlue";
             this.BtnAddTema.Click += new System.EventHandler(this.BtnAddTema_Click);
             // 
@@ -152,7 +152,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnAddAutor.Location = new System.Drawing.Point(740, 100);
             this.BtnAddAutor.Name = "BtnAddAutor";
             this.BtnAddAutor.Size = new System.Drawing.Size(26, 25);
-            this.BtnAddAutor.TabIndex = 11;
+            this.BtnAddAutor.TabIndex = 17;
             this.BtnAddAutor.ThemeName = "TelerikMetroBlue";
             this.BtnAddAutor.Click += new System.EventHandler(this.BtnAddAutor_Click);
             // 
@@ -164,7 +164,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnAddProveedor.Location = new System.Drawing.Point(353, 145);
             this.BtnAddProveedor.Name = "BtnAddProveedor";
             this.BtnAddProveedor.Size = new System.Drawing.Size(26, 25);
-            this.BtnAddProveedor.TabIndex = 4;
+            this.BtnAddProveedor.TabIndex = 15;
             this.BtnAddProveedor.ThemeName = "TelerikMetroBlue";
             this.BtnAddProveedor.Click += new System.EventHandler(this.BtnAddProveedor_Click);
             // 
@@ -176,7 +176,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnAddEditoria.Location = new System.Drawing.Point(353, 186);
             this.BtnAddEditoria.Name = "BtnAddEditoria";
             this.BtnAddEditoria.Size = new System.Drawing.Size(26, 25);
-            this.BtnAddEditoria.TabIndex = 6;
+            this.BtnAddEditoria.TabIndex = 16;
             this.BtnAddEditoria.ThemeName = "TelerikMetroBlue";
             this.BtnAddEditoria.Click += new System.EventHandler(this.BtnAddEditoria_Click);
             // 
@@ -187,7 +187,7 @@ namespace LaPaz.Win.Forms.Libros
             this.BtnGuardar.Location = new System.Drawing.Point(529, 412);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Size = new System.Drawing.Size(100, 30);
-            this.BtnGuardar.TabIndex = 18;
+            this.BtnGuardar.TabIndex = 13;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.ThemeName = "TelerikMetroBlue";
             this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -203,7 +203,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxProveedorCodigo.Name = "CbxProveedorCodigo";
             this.CbxProveedorCodigo.ShowImageInEditorArea = true;
             this.CbxProveedorCodigo.Size = new System.Drawing.Size(205, 32);
-            this.CbxProveedorCodigo.TabIndex = 16;
+            this.CbxProveedorCodigo.TabIndex = 11;
             this.CbxProveedorCodigo.ThemeName = "TelerikMetroBlue";
             this.CbxProveedorCodigo.Visible = false;
             // 
@@ -228,7 +228,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxSubTema.Name = "CbxSubTema";
             this.CbxSubTema.ShowImageInEditorArea = true;
             this.CbxSubTema.Size = new System.Drawing.Size(205, 32);
-            this.CbxSubTema.TabIndex = 14;
+            this.CbxSubTema.TabIndex = 10;
             this.CbxSubTema.ThemeName = "TelerikMetroBlue";
             this.CbxSubTema.Enter += new System.EventHandler(this.CbxSubTema_Enter_1);
             // 
@@ -249,7 +249,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtCodigo.MaxLength = 17;
             this.TxtCodigo.Name = "TxtCodigo";
             this.TxtCodigo.Size = new System.Drawing.Size(205, 31);
-            this.TxtCodigo.TabIndex = 9;
+            this.TxtCodigo.TabIndex = 7;
             this.TxtCodigo.TabStop = false;
             this.TxtCodigo.ThemeName = "TelerikMetroBlue";
             // 
@@ -264,7 +264,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxTema.Name = "CbxTema";
             this.CbxTema.ShowImageInEditorArea = true;
             this.CbxTema.Size = new System.Drawing.Size(205, 32);
-            this.CbxTema.TabIndex = 12;
+            this.CbxTema.TabIndex = 9;
             this.CbxTema.ThemeName = "TelerikMetroBlue";
             // 
             // metroLabel2
@@ -313,7 +313,7 @@ namespace LaPaz.Win.Forms.Libros
             // 
             this.TxtComentario.RootElement.StretchVertically = true;
             this.TxtComentario.Size = new System.Drawing.Size(596, 84);
-            this.TxtComentario.TabIndex = 17;
+            this.TxtComentario.TabIndex = 12;
             this.TxtComentario.TabStop = false;
             this.TxtComentario.ThemeName = "TelerikMetroBlue";
             // 
@@ -399,7 +399,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtPrecioCompra.Location = new System.Drawing.Point(142, 230);
             this.TxtPrecioCompra.Name = "TxtPrecioCompra";
             this.TxtPrecioCompra.Size = new System.Drawing.Size(205, 31);
-            this.TxtPrecioCompra.TabIndex = 7;
+            this.TxtPrecioCompra.TabIndex = 5;
             this.TxtPrecioCompra.TabStop = false;
             this.TxtPrecioCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPrecioCompra.ThemeName = "TelerikMetroBlue";
@@ -441,7 +441,7 @@ namespace LaPaz.Win.Forms.Libros
             this.TxtPrecioVenta.Location = new System.Drawing.Point(142, 272);
             this.TxtPrecioVenta.Name = "TxtPrecioVenta";
             this.TxtPrecioVenta.Size = new System.Drawing.Size(205, 31);
-            this.TxtPrecioVenta.TabIndex = 8;
+            this.TxtPrecioVenta.TabIndex = 6;
             this.TxtPrecioVenta.TabStop = false;
             this.TxtPrecioVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtPrecioVenta.ThemeName = "TelerikMetroBlue";
@@ -463,7 +463,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxAutor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxAutor.Name = "CbxAutor";
             this.CbxAutor.Size = new System.Drawing.Size(205, 27);
-            this.CbxAutor.TabIndex = 10;
+            this.CbxAutor.TabIndex = 8;
             // 
             // CbxEditorial
             // 
@@ -472,7 +472,7 @@ namespace LaPaz.Win.Forms.Libros
             this.CbxEditorial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxEditorial.Name = "CbxEditorial";
             this.CbxEditorial.Size = new System.Drawing.Size(205, 27);
-            this.CbxEditorial.TabIndex = 5;
+            this.CbxEditorial.TabIndex = 4;
             // 
             // FrmCrearEditarLibro
             // 

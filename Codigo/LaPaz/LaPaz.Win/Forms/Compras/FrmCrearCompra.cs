@@ -339,8 +339,16 @@ namespace LaPaz.Win.Forms.Compras
 
         private void ucBuscadorProveedorOnSeleccionarFinished(object sender, Proveedor proveedor)
         {
-            ActualizarProveedor(proveedor);
-            ActualizarMontos();
+            if (proveedor.Cuenta == 164 || proveedor.Cuenta == 104 || proveedor.Cuenta == 15)
+            {
+                _messageBoxDisplayService.ShowError("No se puede seleccionar este proveedor para realizar compras.");
+            }
+            else
+            {
+                ActualizarProveedor(proveedor);
+                ActualizarMontos();
+            }
+           
         }
 
         public decimal SeñaAFavorProveedor(Guid proveedorId)
