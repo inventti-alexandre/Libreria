@@ -470,6 +470,22 @@ namespace LaPaz.Win.Forms.Compras
 
                     case FormaPago.Cheque:
                         cheque += pago.Importe;
+                        //Guardar una cajaMovimiento por cada cheque con la fecha de cobro como fecha de alta
+                        //var cajaMovimiento = new CajaMovimiento();
+                        //cajaMovimiento.Id = Guid.NewGuid();
+                        //cajaMovimiento.CajaId = Context.CajaActual.Id;
+                        //cajaMovimiento.TipoMovimientoCajaId = TipoMovimientoCajaEnum.PagoProveedorCajaAnterior;
+                        //cajaMovimiento.TipoComprobante = ucTipoCompra.TipoComprobanteSeleccionado;
+                        //cajaMovimiento.ComprobanteId = _idCompra;
+                        //cajaMovimiento.Importe = pago.Importe;
+                        //cajaMovimiento.ImpFac = pago.Importe;
+                        //cajaMovimiento.Cheque = pago.Importe;
+                        //VentaPagoCheque vcheque = (VentaPagoCheque)pago;
+                        //cajaMovimiento.FechaAlta = vcheque.FechaCobro;
+                        //cajaMovimiento.OperadorAltaId = Context.OperadorActual.Id;
+                        //cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id;
+
+                        //Uow.CajaMovimientos.Agregar(cajaMovimiento);
                         break;
 
                     case FormaPago.Deposito:

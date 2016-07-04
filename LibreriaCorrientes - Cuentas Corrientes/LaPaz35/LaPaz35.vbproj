@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ManifestCertificateThumbprint>E4F1518AACDDB9E03118DD3405D5C36EE36C6C07</ManifestCertificateThumbprint>
-    <PublishUrl>ftp://190.228.29.71/htdocs/trabajos/ElVecinitoCtaCte/</PublishUrl>
+    <PublishUrl>ftp://107.180.2.160/public_html/librerias/elvecinitoctacte/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -12,11 +12,11 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinitoCtaCte/</InstallUrl>
-    <UpdateUrl>http://www.sistemas-aa.com.ar/trabajos/ElVecinitoCtaCte/</UpdateUrl>
+    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/elvecinitoctacte/</InstallUrl>
+    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/elvecinitoctacte/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>44</ApplicationRevision>
+    <ApplicationRevision>45</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -42,7 +42,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>CorrientesCtaCte.My.MyApplication</StartupObject>
     <RootNamespace>CorrientesCtaCte</RootNamespace>
-    <AssemblyName>CorrientesCtaCte</AssemblyName>
+    <AssemblyName>ElVecinitoCtaCte</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
@@ -56,7 +56,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>CorrientesCtaCte.xml</DocumentationFile>
+    <DocumentationFile>ElVecinitoCtaCte.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -66,7 +66,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>CorrientesCtaCte.xml</DocumentationFile>
+    <DocumentationFile>ElVecinitoCtaCte.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

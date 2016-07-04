@@ -1,5 +1,5 @@
 ﻿Public Class FrmCuota
-   
+
     Dim cls As New clsCtaCte
     Dim clsUser As New clsUsuariosUsers
     Dim bgsCuotasAPagar As New BindingSource
@@ -140,7 +140,7 @@
                                 nuevo = True
                             End If
                         End If
-                        
+
                     Next
                 Else
                     dgvPagos.Rows.Add("Efectivo", txtEfectivo.Text)
@@ -228,7 +228,7 @@
 #End Region
 
 
-    
+
 #End Region
 
 #Region "Guardar"
@@ -764,7 +764,7 @@
         'DialogResult = Windows.Forms.DialogResult.OK
     End Sub
 
-   
+
 #Region "Cambiar Punto por coma"
 
     Private Sub RestringirCaracteres(ByRef e As KeyPressEventArgs)
