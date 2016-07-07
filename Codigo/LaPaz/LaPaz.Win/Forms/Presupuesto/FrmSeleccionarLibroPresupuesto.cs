@@ -413,12 +413,13 @@ namespace LaPaz.Win.Forms.Presupuesto
         {
             if (_precioVentaActual == null)
                 return;
-            if (PrecioVenta < _precioVentaActual)
-            {
-                var descuentoDec = 100 - (PrecioVenta * 100 / _precioVentaActual);
-                Descuento = (int?)descuentoDec ?? 0;
-            }
-            else if (PrecioVenta > _precioVentaActual)
+            //if (PrecioVenta < _precioVentaActual)
+            //{
+            //    var descuentoDec = 100 - (PrecioVenta * 100 / _precioVentaActual);
+            //    Descuento = (int?)descuentoDec ?? 0;
+            //}
+            //else 
+                if (PrecioVenta > _precioVentaActual)
             {
                 Descuento = null;
             }
