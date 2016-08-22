@@ -103,6 +103,7 @@ namespace LaPaz.Entidades
             this.OrdenesPagoTransferencias = new HashSet<OrdenesPagoTransferencia>();
             this.OrdenesPagoTransferencias1 = new HashSet<OrdenesPagoTransferencia>();
             this.TitulosConsignacionesDevueltas = new HashSet<TitulosConsignacionesDevuelta>();
+            this.PresupuestosDetalle = new HashSet<PresupuestosDetalle>();
         }
     
         public int Id { get; set; }
@@ -215,5 +216,6 @@ namespace LaPaz.Entidades
         public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
         public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias1 { get; set; }
         public virtual ICollection<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
+        public virtual ICollection<PresupuestosDetalle> PresupuestosDetalle { get; set; }
     }
 }

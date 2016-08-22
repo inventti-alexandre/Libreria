@@ -605,6 +605,12 @@
     <Compile Include="Forms\Presupuesto\FrmComprobantePresupuesto.Designer.cs">
       <DependentUpon>FrmComprobantePresupuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Presupuesto\FrmFacturarPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Presupuesto\FrmFacturarPresupuesto.Designer.cs">
+      <DependentUpon>FrmFacturarPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Presupuesto\FrmPresupuestoListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -617,11 +623,23 @@
     <Compile Include="Forms\Presupuesto\FrmSeleccionarLibroPresupuesto.Designer.cs">
       <DependentUpon>FrmSeleccionarLibroPresupuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Presupuesto\ucBuscadorPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Presupuesto\ucBuscadorPresupuesto.Designer.cs">
+      <DependentUpon>ucBuscadorPresupuesto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Presupuesto\UcFiltrosPresupuestos.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\Presupuesto\UcFiltrosPresupuestos.Designer.cs">
       <DependentUpon>UcFiltrosPresupuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Presupuesto\UcTitulosPresupuesto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Presupuesto\UcTitulosPresupuesto.Designer.cs">
+      <DependentUpon>UcTitulosPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Presupuesto\UcTotalesPresupuesto.cs">
       <SubType>UserControl</SubType>
@@ -1496,14 +1514,24 @@
     <EmbeddedResource Include="Forms\Presupuesto\FrmComprobantePresupuesto.resx">
       <DependentUpon>FrmComprobantePresupuesto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Presupuesto\FrmFacturarPresupuesto.resx">
+      <DependentUpon>FrmFacturarPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Presupuesto\FrmPresupuestoListado.resx">
       <DependentUpon>FrmPresupuestoListado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Presupuesto\FrmSeleccionarLibroPresupuesto.resx">
       <DependentUpon>FrmSeleccionarLibroPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Presupuesto\ucBuscadorPresupuesto.resx">
+      <DependentUpon>ucBuscadorPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Presupuesto\UcFiltrosPresupuestos.resx">
       <DependentUpon>UcFiltrosPresupuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Presupuesto\UcTitulosPresupuesto.resx">
+      <DependentUpon>UcTitulosPresupuesto.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Presupuesto\UcTotalesPresupuesto.resx">
       <DependentUpon>UcTotalesPresupuesto.cs</DependentUpon>

@@ -856,7 +856,7 @@ namespace LaPaz.Negocio
             //Busco las consignaciones de titulos y actualizo la columna CnVn
             var titulosConsignaciones =
                 Uow.TitulosConsignaciones.Listado().Where(
-                    tc => tc.TituloId == tituloId && tc.ProveedorId == proveedorId && (tc.CntVn + tc.CntDev) < tc.CntCn).
+                    tc => tc.TituloId == tituloId && tc.ProveedorId == proveedorId && (tc.CntVn + tc.CntDev) < tc.CntCn && tc.SucursalAltaId == ventaData.SucursalId).
                     OrderBy(tc => tc.FechaAlta);
 
             foreach (TitulosConsignacion tituloConsignacion in titulosConsignaciones)

@@ -4794,6 +4794,30 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PresupuestosDetalle_Sucursales">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="PresupuestosDetalle" Type="Self.PresupuestosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PresupuestosDetalle">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PresupuestosDetalle_Titulos">
+          <End Role="Titulos" Type="Self.Titulos" Multiplicity="1" />
+          <End Role="PresupuestosDetalle" Type="Self.PresupuestosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Titulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PresupuestosDetalle">
+              <PropertyRef Name="TituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Proveedores_CondicionCompra">
           <End Role="CondicionesCompra" Type="Self.CondicionesCompra" Multiplicity="0..1" />
           <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
@@ -8011,6 +8035,14 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <End Role="Clientes" EntitySet="Clientes" />
             <End Role="Presupuestos" EntitySet="Presupuestos" />
           </AssociationSet>
+          <AssociationSet Name="FK_PresupuestosDetalle_Sucursales" Association="Self.FK_PresupuestosDetalle_Sucursales">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="PresupuestosDetalle" EntitySet="PresupuestosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PresupuestosDetalle_Titulos" Association="Self.FK_PresupuestosDetalle_Titulos">
+            <End Role="Titulos" EntitySet="Titulos" />
+            <End Role="PresupuestosDetalle" EntitySet="PresupuestosDetalle" />
+          </AssociationSet>
           <AssociationSet Name="FK_Proveedores_CondicionCompra" Association="Self.FK_Proveedores_CondicionCompra">
             <End Role="CondicionesCompra" EntitySet="CondicionesCompra" />
             <End Role="Proveedores" EntitySet="Proveedores" />
@@ -10537,6 +10569,14 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <Parameter Name="Proveedor" Mode="In" Type="Guid" />
             <Parameter Name="SucursalId" Mode="In" Type="Int32" />
           </FunctionImport>
+          <AssociationSet Name="FK_PresupuestosDetalle_Sucursales" Association="LaPaz.Datos.FK_PresupuestosDetalle_Sucursales">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="PresupuestosDetalle" EntitySet="PresupuestosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PresupuestosDetalle_Titulos" Association="LaPaz.Datos.FK_PresupuestosDetalle_Titulos">
+            <End Role="Titulo" EntitySet="Titulos" />
+            <End Role="PresupuestosDetalle" EntitySet="PresupuestosDetalle" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="Provincia">
           <Key>
@@ -11070,6 +11110,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="OrdenesPagoTransferencias1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion" FromRole="Sucursal" ToRole="OrdenesPagoTransferencia" />
           <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" FromRole="Sucursal" ToRole="TitulosConsignacionesDevuelta" />
           <Property Name="SucursalNumero" Type="Int32" />
+          <NavigationProperty Name="PresupuestosDetalle" Relationship="LaPaz.Datos.FK_PresupuestosDetalle_Sucursales" FromRole="Sucursal" ToRole="PresupuestosDetalle" />
           </EntityType>
         <Association Name="FK_Clientes_OperadorAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operadore" Multiplicity="0..1" />
@@ -11286,6 +11327,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="NotasDeVentaDetalles" Relationship="LaPaz.Datos.FK_NotasDeVentaDetalle_Titulos" FromRole="Titulo" ToRole="NotasDeVentaDetalle" />
           <NavigationProperty Name="ProveedoresMontosFavorDetalles" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_Titulos" FromRole="Titulo" ToRole="ProveedoresMontosFavorDetalle" />
           <NavigationProperty Name="TitulosConsignacionesDevueltasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="Titulo" ToRole="TitulosConsignacionesDevueltasDetalle" />
+          <NavigationProperty Name="PresupuestosDetalle" Relationship="LaPaz.Datos.FK_PresupuestosDetalle_Titulos" FromRole="Titulo" ToRole="PresupuestosDetalle" />
         </EntityType>
         <Association Name="FK_Titulos_OperadorAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operadore" Multiplicity="0..1" />
@@ -15308,6 +15350,8 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
           <Property Name="OperadorModificacionId" Type="Guid" />
           <Property Name="SucursalModificacionId" Type="Int32" />
+          <NavigationProperty Name="Sucursales" Relationship="LaPaz.Datos.FK_PresupuestosDetalle_Sucursales" FromRole="PresupuestosDetalle" ToRole="Sucursal" />
+          <NavigationProperty Name="Titulos" Relationship="LaPaz.Datos.FK_PresupuestosDetalle_Titulos" FromRole="PresupuestosDetalle" ToRole="Titulo" />
         </EntityType>
         <ComplexType Name="SP_PresupuestoById_Result">
           <Property Type="String" Name="Codigo" Nullable="true" MaxLength="17" />
@@ -18397,6 +18441,30 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="Decimal" Name="Deposito" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="Transferencia" Nullable="true" Precision="19" />
         </ComplexType>
+        <Association Name="FK_PresupuestosDetalle_Sucursales">
+          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.PresupuestosDetalle" Role="PresupuestosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PresupuestosDetalle">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PresupuestosDetalle_Titulos">
+          <End Type="LaPaz.Datos.Titulo" Role="Titulo" Multiplicity="1" />
+          <End Type="LaPaz.Datos.PresupuestosDetalle" Role="PresupuestosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Titulo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PresupuestosDetalle">
+              <PropertyRef Name="TituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

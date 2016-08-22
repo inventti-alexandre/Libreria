@@ -29,6 +29,7 @@ namespace LaPaz.Entidades
             this.NotasDeVentaDetalles = new HashSet<NotasDeVentaDetalle>();
             this.ProveedoresMontosFavorDetalles = new HashSet<ProveedoresMontosFavorDetalle>();
             this.TitulosConsignacionesDevueltasDetalles = new HashSet<TitulosConsignacionesDevueltasDetalle>();
+            this.PresupuestosDetalle = new HashSet<PresupuestosDetalle>();
         }
     
         public System.Guid Id { get; set; }
@@ -111,5 +112,6 @@ namespace LaPaz.Entidades
         public virtual ICollection<NotasDeVentaDetalle> NotasDeVentaDetalles { get; set; }
         public virtual ICollection<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalles { get; set; }
         public virtual ICollection<TitulosConsignacionesDevueltasDetalle> TitulosConsignacionesDevueltasDetalles { get; set; }
+        public virtual ICollection<PresupuestosDetalle> PresupuestosDetalle { get; set; }
     }
 }

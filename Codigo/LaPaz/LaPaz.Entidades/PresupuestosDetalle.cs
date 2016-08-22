@@ -25,5 +25,8 @@ namespace LaPaz.Entidades
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
+    
+        public virtual Sucursal Sucursales { get; set; }
+        public virtual Titulo Titulos { get; set; }
     }
 }

@@ -716,6 +716,14 @@ namespace LaPaz.Win.Forms
             AbrirTab(crearDevolucion);
         }
 
+        private void radMenuFacturarPresupuesto_Click(object sender, EventArgs e)
+        {
+            var facturarPresupuesto = FormFactory.Create<FrmFacturarPresupuesto>();
+            AbrirTab(facturarPresupuesto);
+        }
+
+    
+
         
     }
 }

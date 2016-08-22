@@ -490,6 +490,8 @@
         <EntityTypeShape EntityType="LaPaz.Datos.TitulosConsignacionesDevueltasDetalle" Width="1.5" PointX="35.75" PointY="61.25" />
         <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" />
         <AssociationConnector Association="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Id" />
+        <AssociationConnector Association="LaPaz.Datos.FK_PresupuestosDetalle_Sucursales" />
+        <AssociationConnector Association="LaPaz.Datos.FK_PresupuestosDetalle_Titulos" />
         </Diagram>
       <Diagram DiagramId="740c15349039479da9e94b414197531b" Name="Ventas" ZoomLevel="60" >
         <EntityTypeShape EntityType="LaPaz.Datos.VentaDetalle" Width="1.5" PointX="0.75" PointY="0.75" />

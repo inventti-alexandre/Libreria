@@ -71,7 +71,9 @@
     <Compile Include="Helpers\LcnHelper.cs" />
     <Compile Include="Interfaces\IComprobanteNegocio.cs" />
     <Compile Include="Interfaces\IProveedoresMontoFavorNegocio.cs" />
+    <Compile Include="Interfaces\IPresupuestoDetalleNegocio.cs" />
     <Compile Include="ProveedoresMontoFavorNegocio.cs" />
+    <Compile Include="PresupuestoDetalleNegocio.cs" />
     <Compile Include="RemitosVentaDetalleNegocio.cs" />
     <Compile Include="RemitosVentaNegocio.cs" />
     <Compile Include="Interfaces\IRemitosVentaDetalleNegocio.cs" />

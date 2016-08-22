@@ -10,6 +10,8 @@
     [FechaModificacion]      DATETIME         NULL,
     [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
     [SucursalModificacionId] INT              NULL,
-    CONSTRAINT [PK_PresupuestosDetalle] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_PresupuestosDetalle] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_PresupuestosDetalle_Titulos] FOREIGN KEY (TituloId) REFERENCES Titulos(Id), 
+    CONSTRAINT [FK_PresupuestosDetalle_Sucursales] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id)
 );
 

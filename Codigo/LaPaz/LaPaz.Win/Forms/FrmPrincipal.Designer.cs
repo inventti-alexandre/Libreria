@@ -44,6 +44,7 @@
             this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.rMnPresupuesto = new Telerik.WinControls.UI.RadMenuItem();
             this.MiPresupuestoListado = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuFacturarPresupuesto = new Telerik.WinControls.UI.RadMenuItem();
             this.MiDevolverConsignaciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiRendirConsignacionCliente = new Telerik.WinControls.UI.RadMenuItem();
             this.MiConsignacionesProveedor = new Telerik.WinControls.UI.RadMenuItem();
@@ -145,7 +146,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1105, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1471, 40);
             this.tableLayoutPanel1.TabIndex = 19;
             // 
             // LnkAbrirCerraCaja
@@ -153,7 +154,7 @@
             this.LnkAbrirCerraCaja.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkAbrirCerraCaja.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LnkAbrirCerraCaja.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkAbrirCerraCaja.Location = new System.Drawing.Point(991, 7);
+            this.LnkAbrirCerraCaja.Location = new System.Drawing.Point(1357, 7);
             this.LnkAbrirCerraCaja.Name = "LnkAbrirCerraCaja";
             this.LnkAbrirCerraCaja.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.LnkAbrirCerraCaja.Size = new System.Drawing.Size(111, 25);
@@ -183,7 +184,7 @@
             // 
             // 
             this.MainMenu.RootElement.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.MainMenu.Size = new System.Drawing.Size(817, 29);
+            this.MainMenu.Size = new System.Drawing.Size(1146, 34);
             this.MainMenu.TabIndex = 19;
             this.MainMenu.Text = "MainMenu";
             this.MainMenu.ThemeName = "TelerikMetroBlue";
@@ -298,7 +299,8 @@
             this.rMnPresupuesto.AccessibleDescription = "Presupuestos";
             this.rMnPresupuesto.AccessibleName = "Presupuestos";
             this.rMnPresupuesto.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MiPresupuestoListado});
+            this.MiPresupuestoListado,
+            this.radMenuFacturarPresupuesto});
             this.rMnPresupuesto.Name = "rMnPresupuesto";
             this.rMnPresupuesto.Text = "Presupuestos";
             this.rMnPresupuesto.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -312,6 +314,15 @@
             this.MiPresupuestoListado.Text = "Historial";
             this.MiPresupuestoListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiPresupuestoListado.Click += new System.EventHandler(this.MiPresupuestoListado_Click);
+            // 
+            // radMenuFacturarPresupuesto
+            // 
+            this.radMenuFacturarPresupuesto.AccessibleDescription = "Facturar";
+            this.radMenuFacturarPresupuesto.AccessibleName = "Facturar";
+            this.radMenuFacturarPresupuesto.Name = "radMenuFacturarPresupuesto";
+            this.radMenuFacturarPresupuesto.Text = "Facturar";
+            this.radMenuFacturarPresupuesto.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuFacturarPresupuesto.Click += new System.EventHandler(this.radMenuFacturarPresupuesto_Click);
             // 
             // MiDevolverConsignaciones
             // 
@@ -691,10 +702,10 @@
             this.LnkUsuarioActual.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LnkUsuarioActual.AutoSize = true;
             this.LnkUsuarioActual.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkUsuarioActual.Location = new System.Drawing.Point(826, 7);
+            this.LnkUsuarioActual.Location = new System.Drawing.Point(1155, 4);
             this.LnkUsuarioActual.Name = "LnkUsuarioActual";
             this.LnkUsuarioActual.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.LnkUsuarioActual.Size = new System.Drawing.Size(159, 25);
+            this.LnkUsuarioActual.Size = new System.Drawing.Size(196, 32);
             this.LnkUsuarioActual.TabIndex = 18;
             this.LnkUsuarioActual.TabStop = true;
             this.LnkUsuarioActual.Text = "{{Usuario Actual}}";
@@ -741,9 +752,9 @@
             this.PageAccesos.Controls.Add(this.BtnClienteListado);
             this.PageAccesos.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PageAccesos.ForeColor = System.Drawing.Color.White;
-            this.PageAccesos.Location = new System.Drawing.Point(5, 41);
+            this.PageAccesos.Location = new System.Drawing.Point(5, 48);
             this.PageAccesos.Name = "PageAccesos";
-            this.PageAccesos.Size = new System.Drawing.Size(1075, 706);
+            this.PageAccesos.Size = new System.Drawing.Size(1075, 699);
             this.PageAccesos.Text = "Accesos";
             // 
             // BtnProveedoresdevConsig
@@ -1187,12 +1198,13 @@
             // 
             // FrmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 784);
+            this.ClientSize = new System.Drawing.Size(1471, 971);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.TabsPrincipal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmPrincipal";
             // 
             // 
@@ -1309,6 +1321,7 @@
         private Telerik.WinControls.UI.RadButton BtnProveedoresDevolucion;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
         private Telerik.WinControls.UI.RadButton BtnProveedoresdevConsig;
+        private Telerik.WinControls.UI.RadMenuItem radMenuFacturarPresupuesto;
 
     }
 }
