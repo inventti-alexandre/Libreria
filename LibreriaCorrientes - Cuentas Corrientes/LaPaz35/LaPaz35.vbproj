@@ -32,7 +32,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logovecinito.ico</ApplicationIcon>
+    <ApplicationIcon>nuevologo.ico</ApplicationIcon>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -607,6 +607,7 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="logovecinito.ico" />
+    <Content Include="nuevologo.ico" />
     <Content Include="Resources\Agregar.png" />
     <Content Include="Resources\Agregar1.png" />
     <Content Include="Resources\boton.png" />

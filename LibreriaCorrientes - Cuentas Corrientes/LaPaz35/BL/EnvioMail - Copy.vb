@@ -51,7 +51,6 @@ Public Class EnvioMail
         Mail.From = New MailAddress("administracion@libreriactes.com.ar", "LIBRERIA DE CORRIENTES")
         'Mail.To.Add("delapazangelina@hotmail.com")
         'Mail.To.Add("silviaeaguilar@gmail.com")
-        'Mail.To.Add("santiacevedo@gmail.com")
         Mail.To.Add(para)
         Mail.Subject = ("Librería de Corrientes")
 
@@ -60,26 +59,24 @@ Public Class EnvioMail
         Dim text As String = "Estimado Cliente nos contactamos para recordarle que su cuota de $" & saldoint.ToString()
         text = text & " en efectivo esta próxima a vencer el día: " & fecha & " , por lo que solicitamos tenga a bien abonar a la brevedad."
         text = text & "Ante cualquier duda o sugerencia, apreciaremos se comunique con nuestro Departamento de Cobranzas a los teléfonos "
-        text = text & "0379 -4437234 / 0379 - 4438732. "
+        text = text & "0379 -4437234 / 0379 - 155043705. "
         text = text & "Sin otro particular, saludamos a Ud. muy atentamente."
         text = text & "Departamento de Cobranzas - Librería de Corrientes ."
         Dim plainView As AlternateView = AlternateView.CreateAlternateViewFromString(text, Encoding.UTF8, MediaTypeNames.Text.Plain)
 
         ' Ahora creamos la vista para clientes que  pueden mostrar contenido HTML...
         Dim html As String = ""
-        'html = "<table  style='width: 650px;'><tr><td><div><img src='cid:superior' /></div>"
-        html = "<table  style='width: 650px;'><tr><td><div><img src='cid:imagen' /></div>"
+        html = "<table  style='width: 650px;'><tr><td><div><img src='cid:superior' /></div>"
         html = html & "<blockquote>Estimado Cliente " & denominacion & ": </br></br>"
         html = html & "Nos contactamos para recordarle que su cuota de $" & saldoint.ToString()
         html = html & " en efectivo está próxima a vencer el día: " & fecha & ", por lo que solicitamos tenga a bien abonar a la brevedad. </br>"
         html = html & "Ante cualquier duda o sugerencia, apreciaremos se comunique con nuestro Departamento de Cobranzas a los teléfonos "
-        html = html & "0379 -4437234 / 0379 - 4438732. </br> " & "</blockquote>"
+        html = html & "0379 -4437234 / 0379 - 155043705. </br> " & "</blockquote>"
         html = html & "<blockquote>Sin otro particular, saludamos a Ud. muy atentamente. </br></blockquote>"
         html = html & "<h4><p align='right'>Departamento de Cobranzas - Librería de Corrientes .</p> </h4></br>"
-        'html = html & "<div align='right'><img src='cid:imagen' /></div>"
-        html = html & "<blockquote></br><p><strong><font size=2>Si a la recepción de este e-mail, esta situación se hubiese regularizado, le pedimos disculpas y solicitamos no tener en cuenta el mismo</font></strong></p></br></blockquote>"
-        'html = html & "<div align='right'><img src='cid:inferior' /></div></td></tr></table>"
-        html = html & "</td></tr></table>"
+        html = html & "<div align='right'><img src='cid:imagen' /></div>"
+       html = html & "<blockquote></br><p><strong><font size=2>Si a la recepción de este e-mail, esta situación se hubiese regularizado, le pedimos disculpas y solicitamos no tener en cuenta el mismo</font></strong></p></br></blockquote>"
+        html = html & "<div align='right'><img src='cid:inferior' /></div></td></tr></table>"
         Dim htmlView As AlternateView = AlternateView.CreateAlternateViewFromString(html, Encoding.UTF8, MediaTypeNames.Text.Html)
 
         'Creamos el recurso a incrustar. Observad que el ID que le asignamos (arbitrario) está referenciado desde el código HTML como origen
@@ -98,7 +95,7 @@ Public Class EnvioMail
 
         htmlView.LinkedResources.Add(superior)
         htmlView.LinkedResources.Add(img)
-        'htmlView.LinkedResources.Add(inferior)
+        htmlView.LinkedResources.Add(inferior)
         'Por último, vinculamos ambas vistas al mensaje...
 
         Mail.AlternateViews.Add(plainView)
@@ -113,6 +110,6 @@ Public Class EnvioMail
         's.Port = 465
         's.EnableSsl = True
         's.Credentials = New System.Net.NetworkCredential("administracion@libreriactes.com.ar", "mendoza597")
-        s.Send(Mail)
+        's.Send(Mail)
     End Sub
 End Class
