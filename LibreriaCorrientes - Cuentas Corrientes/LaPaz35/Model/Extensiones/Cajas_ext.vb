@@ -6,7 +6,7 @@ Partial Public Class Cajas
         Using exe As New SqlCommand
             Dim Lista As New List(Of Cajas)
             With exe
-                .CommandText = "SELECT TOP 1 * from Cajas where SucursalId=27 and FCierre is null order by Fecha desc"
+                .CommandText = "SELECT TOP 1 * from Cajas where SucursalId=2 and FCierre is null order by Fecha desc"
                 '.Parameters.AddWithValue("@venta", venta)
                 .Connection = _Conexion
                 Dim Ta As New SqlDataAdapter(exe), Dt As New DataTable
@@ -23,7 +23,7 @@ Partial Public Class Cajas
         Using exe As New SqlCommand
             Dim Lista As New List(Of Cajas)
             With exe
-                .CommandText = "SELECT TOP 1 * from Cajas where SucursalId=27 and FCierre is null and operadorId = @operadorId"
+                .CommandText = "SELECT TOP 1 * from Cajas where SucursalId=2 and FCierre is null and operadorId = @operadorId"
                 '.Parameters.AddWithValue("@venta", venta)
                 .Parameters.AddWithValue("@operadorId", operadorId)
 

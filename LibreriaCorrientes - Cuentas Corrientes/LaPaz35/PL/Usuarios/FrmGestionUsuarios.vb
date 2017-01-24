@@ -8,7 +8,7 @@
 
     Private Sub CargarCombos()
         ' Cargar Operadores
-        clsOperadores.FillListOperadorSucursalBySuc(27)
+        clsOperadores.FillListOperadorSucursalBySuc(2)
         With cbxUsuariosLaPaz
             .DisplayMember = "vOperador"
             .ValueMember = "OperadorId"
