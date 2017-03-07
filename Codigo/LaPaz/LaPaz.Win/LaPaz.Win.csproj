@@ -8,13 +8,13 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LaPaz.Win</RootNamespace>
-    <AssemblyName>LibreriaCorientes.Win</AssemblyName>
+    <AssemblyName>GestionLibreria.Win</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriacorrienteslogos/</PublishUrl>
+    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriacorrientesserver/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,12 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrienteslogos/</InstallUrl>
-    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrienteslogos/</UpdateUrl>
+    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrientesserver/</InstallUrl>
+    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrientesserver/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.189</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>190</ApplicationRevision>
+    <ApplicationRevision>191</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -76,6 +76,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nuevologo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=3.3.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -1846,6 +1849,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Content Include="nuevologo.ico" />
     <Content Include="RDLS\CajaResumida.rdl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
