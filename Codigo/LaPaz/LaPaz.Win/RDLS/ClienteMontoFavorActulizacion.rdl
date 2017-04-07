@@ -1068,7 +1068,7 @@
               <Image Name="Image6">
                 <Source>Embedded</Source>
                 <Value>logonuevosmall</Value>
-                <Sizing>Fit</Sizing>
+                <Sizing>FitProportional</Sizing>
                 <Top>0mm</Top>
                 <Left>0.635mm</Left>
                 <Height>2.09021cm</Height>
@@ -2115,7 +2115,7 @@
               <Image Name="Image7">
                 <Source>Embedded</Source>
                 <Value>logonuevosmall1</Value>
-                <Sizing>Fit</Sizing>
+                <Sizing>FitProportional</Sizing>
                 <Top>0.44097mm</Top>
                 <Left>0.30518mm</Left>
                 <Height>2.09021cm</Height>

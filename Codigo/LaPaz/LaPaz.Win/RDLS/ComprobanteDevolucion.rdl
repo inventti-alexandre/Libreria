@@ -90,31 +90,16 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox6">
-                          <CanGrow>true</CanGrow>
-                          <KeepTogether>true</KeepTogether>
-                          <Paragraphs>
-                            <Paragraph>
-                              <TextRuns>
-                                <TextRun>
-                                  <Value />
-                                  <Style />
-                                </TextRun>
-                              </TextRuns>
-                              <Style />
-                            </Paragraph>
-                          </Paragraphs>
-                          <rd:DefaultName>Textbox6</rd:DefaultName>
+                        <Image Name="Image1">
+                          <Source>Embedded</Source>
+                          <Value>logonuevosmall</Value>
+                          <Sizing>FitProportional</Sizing>
                           <Style>
                             <Border>
                               <Style>None</Style>
                             </Border>
-                            <PaddingLeft>2pt</PaddingLeft>
-                            <PaddingRight>2pt</PaddingRight>
-                            <PaddingTop>2pt</PaddingTop>
-                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
-                        </Textbox>
+                        </Image>
                         <ColSpan>2</ColSpan>
                         <rd:Selected>true</rd:Selected>
                       </CellContents>
@@ -1686,23 +1671,6 @@
               </Border>
             </Style>
           </Tablix>
-          <Rectangle Name="Rectangle2">
-            <KeepTogether>true</KeepTogether>
-            <Top>0.25083cm</Top>
-            <Left>0.36724cm</Left>
-            <Height>2.667cm</Height>
-            <Width>5.97429cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <BackgroundImage>
-                <Source>Embedded</Source>
-                <Value>logonuevosmall</Value>
-              </BackgroundImage>
-            </Style>
-          </Rectangle>
         </ReportItems>
         <Height>266.92917mm</Height>
         <Style>

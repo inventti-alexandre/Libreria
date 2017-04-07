@@ -85,17 +85,27 @@
                         <Rectangle Name="Rectangle1">
                           <ReportItems>
                             <Rectangle Name="Rectangle5">
+                              <ReportItems>
+                                <Image Name="Image1">
+                                  <Source>Embedded</Source>
+                                  <Value>logonuevosmall2</Value>
+                                  <Sizing>FitProportional</Sizing>
+                                  <Height>2.5cm</Height>
+                                  <Width>5.45817cm</Width>
+                                  <Style>
+                                    <Border>
+                                      <Style>None</Style>
+                                    </Border>
+                                  </Style>
+                                </Image>
+                              </ReportItems>
                               <KeepTogether>true</KeepTogether>
                               <Height>2.5cm</Height>
-                              <Width>5.86021cm</Width>
+                              <Width>9.46383cm</Width>
                               <Style>
                                 <Border>
                                   <Style>None</Style>
                                 </Border>
-                                <BackgroundImage>
-                                  <Source>Embedded</Source>
-                                  <Value>logonuevosmall2</Value>
-                                </BackgroundImage>
                               </Style>
                             </Rectangle>
                           </ReportItems>

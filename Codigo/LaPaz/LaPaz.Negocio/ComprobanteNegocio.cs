@@ -88,6 +88,8 @@ namespace LaPaz.Negocio
 
                 var cajaMovimiento = uow.CajaMovimientos.Obtener(cm => cm.ComprobanteId == comprobanteId);
 
+                var clientemontofavor = uow.ClientesMontosFavor.Obtener(cmf => cmf.Id == comprobanteId);
+
                 if (cajaMovimiento != null)
                 {
                     if (cajaMovimiento.Efectivo.HasValue)
@@ -97,37 +99,16 @@ namespace LaPaz.Negocio
 
                     if (cajaMovimiento.Tarjeta.HasValue)
                     {
-                        //var tarjetasMovimientos =
-                        //    uow.TarjetasMovimientos.Listado(tm => tm.Tarjeta).Where(tm => tm.CajaMovimientoId == cajaMovimiento.Id).ToList();
-                       
-                        //foreach (var tarjetasMovimiento in tarjetasMovimientos)
-                        //{
-                        //    formaPago.AppendFormat("Tarjeta  {0} {1:c2}. ", tarjetasMovimiento.Tarjeta.Nombre, tarjetasMovimiento.Importe);
-                        //}
-                        formaPago.AppendFormat("Tarjeta  {0} . ",  cajaMovimiento.Tarjeta);
+                        formaPago.AppendFormat("Tarjeta  {0} . ",  (cajaMovimiento.Tarjeta - clientemontofavor.ImpOcupado));
                     }
 
                     if (cajaMovimiento.Cheque.HasValue)
                     {
-                        //var chequesTerceros =
-                        //    uow.ChequesTercero.Listado(ch => ch.Banco).Where(ch => ch.CajaMovimientoId == cajaMovimiento.Id);
-
-                        //foreach (var chequeTercero in chequesTerceros)
-                        //{
-                        //    formaPago.AppendFormat("Cheque  {0} {1:c2}. ", chequeTercero.Banco.Nombre, chequeTercero.Importe);
-                        //}
                         formaPago.AppendFormat("Cheque  {0} . ", cajaMovimiento.Cheque);
                     }
 
                     if (cajaMovimiento.Deposito.HasValue)
                     {
-                        //var cuentasMovimientos =
-                        //    uow.CuentasMovimientos.Listado(ch => ch.Cuenta).Where(ch => ch.ComprobanteId == comprobanteId);
-
-                        //foreach (var cuentasMovimiento in cuentasMovimientos)
-                        //{
-                        //    formaPago.AppendFormat("Deposito  {0} {1:c2}. ", cuentasMovimiento.Cuenta.Nombre, cuentasMovimiento.Credito);
-                        //}
                         formaPago.AppendFormat("Deposito  {0} . ", cajaMovimiento.Deposito);
                     }
                 }
