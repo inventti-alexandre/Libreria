@@ -222,7 +222,7 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
         private void DescontarLibrosConsignados(int? propio, Guid TituloId)
         {
-            var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalAltaId == Context.SucursalActual.Id);
+            var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalId == Context.SucursalActual.Id);
             if (tituloStock != null)
             {
                 tituloStock.StkCn -= propio;
@@ -260,7 +260,7 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
             //Busco las consignaciones de titulos y actualizo la columna CnVn
             var titulosConsignaciones =
                 Uow.TitulosConsignaciones.Listado().Where(
-                    tc => tc.TituloId == titulo && tc.ProveedorId == proveedor && (tc.CntVn + tc.CntDev) < tc.CntCn).
+                    tc => tc.TituloId == titulo && tc.SucursalAltaId == Context.SucursalActual.Id && tc.ProveedorId == proveedor && (tc.CntVn + tc.CntDev) < tc.CntCn).
                     OrderBy(tc => tc.FechaAlta);
 
             foreach (TitulosConsignacion tituloConsignacion in titulosConsignaciones)
