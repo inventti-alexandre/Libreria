@@ -15253,6 +15253,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="String" Name="Proveedor" Nullable="true" MaxLength="80" />
           <Property Type="Decimal" Name="PrecioCompraUnitario" Nullable="true" Precision="19" />
           <Property Type="Decimal" Name="PrecioCompraSubtotal" Nullable="true" Precision="19" />
+          <Property Type="String" Name="ISBN" Nullable="true" MaxLength="15" />
         </ComplexType>
         <EntityType Name="BancoPropio">
           <Key>
@@ -20228,6 +20229,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
                 <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
                 <ScalarProperty Name="PrecioCompraUnitario" ColumnName="PrecioCompraUnitario" />
                 <ScalarProperty Name="PrecioCompraSubtotal" ColumnName="PrecioCompraSubtotal" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

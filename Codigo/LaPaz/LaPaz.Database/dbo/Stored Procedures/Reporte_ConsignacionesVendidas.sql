@@ -8,12 +8,13 @@ CREATE PROCEDURE [dbo].[Reporte_ConsignacionesVendidas]
 	@CodProveedor int = NULL
 AS
 BEGIN
-	WITH ConsignacionCTE (Cantidad, Codigo, NombreTitulo, PrecioCompraUnitario, PrecioCompraSubtotal, Proveedor)
+	WITH ConsignacionCTE (Cantidad, Codigo, ISBN, NombreTitulo, PrecioCompraUnitario, PrecioCompraSubtotal, Proveedor)
 	AS
 	(
 		--SELECT SUM(TCV.CntCn) Cantidad,
 		SELECT SUM(TCV.CntCn - CAST(TCV.CntPag as int) )Cantidad,
 			T.Cod Codigo,
+			T.ISBN,
 			T.NombreTitulo,
 			--TCV.Fecha,
 			T.PrecioCompraTitulo PrecioCompraUnitario,
@@ -33,7 +34,7 @@ BEGIN
 			AND (@OperadorId IS NULL OR @OperadorId = TCV.OperadorAltaId)
 			AND (@CodProveedor IS NULL OR @CodProveedor = P.Cuenta)
 		GROUP BY TCV.ProveedorId, TCV.TituloId, T.Cod, T.NombreTitulo, 
-				T.PrecioCompraTitulo, TCV.CntCn, P.Denominacion
+				T.PrecioCompraTitulo, TCV.CntCn, P.Denominacion, T.ISBN
 	)
 
 	SELECT *

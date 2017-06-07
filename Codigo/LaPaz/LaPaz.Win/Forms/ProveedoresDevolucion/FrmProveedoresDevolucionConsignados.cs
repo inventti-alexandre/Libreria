@@ -212,7 +212,7 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
         private void DescontarLibrosPropios(int? propio, Guid TituloId)
         {
-            var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalAltaId == Context.SucursalActual.Id);
+            var tituloStock = Uow.TitulosStock.Obtener(t => t.TituloId == TituloId && t.SucursalId == Context.SucursalActual.Id);
             if (tituloStock != null)
             {
                 tituloStock.StkPr -= propio;

@@ -19,5 +19,6 @@ namespace LaPaz.Entidades
         public string Proveedor { get; set; }
         public Nullable<decimal> PrecioCompraUnitario { get; set; }
         public Nullable<decimal> PrecioCompraSubtotal { get; set; }
+        public string ISBN { get; set; }
     }
 }

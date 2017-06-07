@@ -17,8 +17,6 @@ using LaPaz.Win.Forms.Util;
 using LaPaz.Win.Forms.Proveedores;
 using LaPaz.Win.Infrastructure.Task;
 using Ninject;
-using Ninject.Extensions.Conventions;
-using Ninject.Extensions.NamedScope;
 using Telerik.WinControls;
 using log4net;
 
