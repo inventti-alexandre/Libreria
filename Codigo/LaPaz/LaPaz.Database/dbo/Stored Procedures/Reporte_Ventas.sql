@@ -17,6 +17,7 @@ BEGIN
 			SELECT TituloId = T.Id,
 				T.NombreTitulo,
 				Tema = TE.Nombre,
+				ISBN = T.ISBN,
 				Editorial = E.Nombre,
 				Proveedor = P.Denominacion,
 				Operador = O.Usuario,
@@ -44,13 +45,14 @@ BEGIN
 				AND (@EditorialId IS NULL OR T.EditorialId = @EditorialId)
 			
 				and V.EstadoVentaId=0
-			GROUP BY T.Id, T.NombreTitulo, TE.Nombre, E.Nombre, P.Denominacion, O.Usuario
+			GROUP BY T.Id, T.NombreTitulo, TE.Nombre, E.Nombre, P.Denominacion, O.Usuario, T.ISBN
 			
 		)	
 
 		SELECT  TituloId,
 				NombreTitulo,
 				Tema,
+				ISBN,
 				Editorial,
 				Proveedor,
 				Operador,

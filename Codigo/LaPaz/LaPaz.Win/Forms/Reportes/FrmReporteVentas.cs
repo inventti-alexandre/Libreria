@@ -98,11 +98,11 @@ namespace LaPaz.Win.Forms.Reportes
             var sucursalId = Context.SucursalActual.Id;
                 
             var parametros = new List<ReportParameter>
-                                {
-                                    new ReportParameter("Sucursal", sucursal),
-                                    new ReportParameter("SucursalId", sucursalId.ToString()),
+                                {                                   
                                     new ReportParameter("Fecha", fecha),
                                     new ReportParameter("Hora", hora),
+                                    new ReportParameter("Sucursal", sucursal),
+                                    new ReportParameter("SucursalId", sucursalId.ToString()),
                                     new ReportParameter("Desde", DtpFechaInicio.Value.ToShortDateString()),
                                     new ReportParameter("Hasta", DtpFechaFin.Value.ToShortDateString()),
                                     new ReportParameter("ProveedorId", proveedorId == null ? string.Empty : proveedorId.ToString()),

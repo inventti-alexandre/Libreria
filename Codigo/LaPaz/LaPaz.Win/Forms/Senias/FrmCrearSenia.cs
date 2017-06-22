@@ -588,14 +588,14 @@ namespace LaPaz.Win.Forms.Senias
                 {
 
                     decimal? devolucion = 0;
-                    if (diferencia > ((cajaMovimientoAnterior.Tarjeta ?? 0) + (cajaMovimientoAnterior.Cheque ?? 0) + (cajaMovimientoAnterior.Deposito ?? 0) + (cajaMovimientoAnterior.Transferencia ?? 0))) 
-                    {
-                        devolucion = diferencia - ((cajaMovimientoAnterior.Tarjeta ?? 0) + (cajaMovimientoAnterior.Cheque ?? 0) + (cajaMovimientoAnterior.Deposito ?? 0) + (cajaMovimientoAnterior.Transferencia ?? 0));
+                    //if (diferencia > ((cajaMovimientoAnterior.Tarjeta ?? 0) + (cajaMovimientoAnterior.Cheque ?? 0) + (cajaMovimientoAnterior.Deposito ?? 0) + (cajaMovimientoAnterior.Transferencia ?? 0))) 
+                    //{
+                    devolucion = diferencia;// -((cajaMovimientoAnterior.Tarjeta ?? 0) + (cajaMovimientoAnterior.Cheque ?? 0) + (cajaMovimientoAnterior.Deposito ?? 0) + (cajaMovimientoAnterior.Transferencia ?? 0));
                         
                         //Actualizacion seña
                         using (var crearComprobante = FormFactory.Create<FrmComprobante>())
                         {
-                            _messageBoxDisplayService.ShowWarning("Solo se puede devolver un monto en efectivo de: $" + devolucion.Value.ToString("N2"));
+                            //_messageBoxDisplayService.ShowWarning("Solo se puede devolver un monto en efectivo de: $" + devolucion.Value.ToString("N2"));
                             
                             crearComprobante._concepto = "Actualizacion de seña";
                             crearComprobante._LCN = senia.LCN;
@@ -618,14 +618,12 @@ namespace LaPaz.Win.Forms.Senias
                             crearComprobante.ShowDialog();
                         }
                         diferencia = devolucion;
-                    }
-                    else 
-                    {
-                        _messageBoxDisplayService.ShowError("No se puede anular una seña que no fue generada en efectivo");
-                        return;
-                        //devolucion = diferencia;
-                        //anular seña
-                    }
+                   // }
+                   // else 
+                   // {
+                   //     _messageBoxDisplayService.ShowError("No se puede anular una seña que no fue generada en efectivo");
+                  //      return;
+                   // }
                 }
 
             senia.ImpOcupado += diferencia; //senia.Importe;
@@ -664,11 +662,11 @@ namespace LaPaz.Win.Forms.Senias
                     cajaMovimiento.Senia = 0;
                     cajaMovimiento.Importe = diferencia;
                     
-                   // cajaMovimiento.Efectivo = cajaMovimientoAnterior.Efectivo;
-                    cajaMovimiento.Efectivo = diferencia;
-                    //cajaMovimiento.Tarjeta = cajaMovimientoAnterior.Tarjeta;
-                    //cajaMovimiento.Cheque = cajaMovimientoAnterior.Cheque;
-                    //cajaMovimiento.Deposito = cajaMovimientoAnterior.Deposito;
+                    cajaMovimiento.Efectivo = cajaMovimientoAnterior.Efectivo;
+                    //cajaMovimiento.Efectivo = diferencia;
+                    cajaMovimiento.Tarjeta = cajaMovimientoAnterior.Tarjeta;
+                    cajaMovimiento.Cheque = cajaMovimientoAnterior.Cheque;
+                    cajaMovimiento.Deposito = cajaMovimientoAnterior.Deposito;
                     cajaMovimiento.ImpFac = 0;
                     cajaMovimiento.PcAlta = Environment.MachineName;
                     cajaMovimiento.SucursalAltaId = Context.SucursalActual.Id; //cajaMovimientoAnterior.SucursalAltaId;

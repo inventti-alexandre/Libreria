@@ -53,6 +53,12 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
 
         public string Cuit
         {
+            get { return TxtBuscarCliente.Text; }
+            set { TxtBuscarCliente.Text = value; }
+        }
+
+        public string Consignacion
+        {
             get { return TxtTextoBuscar.Text; }
             set { TxtTextoBuscar.Text = value; }
         }

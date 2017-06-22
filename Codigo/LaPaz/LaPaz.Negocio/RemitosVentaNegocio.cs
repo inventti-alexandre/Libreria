@@ -80,6 +80,35 @@ namespace LaPaz.Negocio
             return resultados.Entities.Project().To<RemitosVentaDto>().ToList();
         }
 
+        public List<RemitosVentaDto> GetById(Guid consignacionId, int sucursalId)
+        {
+
+            var criteros = new PagingCriteria();
+
+            criteros.PageNumber = 1;
+            criteros.PageSize = 500;
+            criteros.SortBy = "FechaAlta";
+            criteros.SortDirection = "DESC";
+
+            Expression<Func<RemitosVenta, bool>> where = x => x.Id == consignacionId &&
+                                                                x.SucursalAltaId == sucursalId &&
+                                                              x.TipoComprobante ==
+                                                              (int)TipoComprobanteEnum.RemitosConsignacCliente
+                                                          &&
+                                                            ((x.RemitosVentaDetalles.Sum(r => r.CntPr) + x.RemitosVentaDetalles.Sum(r => r.CntCn))
+                                                                >
+                                                                (x.RemitosVentaDetalles.Where(r => r.CntCn.HasValue).Sum(r => r.CntDevuelta ?? 0) + x.RemitosVentaDetalles.Where(r => r.CntCn.HasValue).Sum(r => r.CntVendida ?? 0)));
+
+
+            var resultados = Uow.RemitosVentas.Listado(criteros,
+                                                            where,
+                                                            x => x.RemitosVentaDetalles,
+                                                            x => x.ClienteConsignado,
+                                                            x => x.SucursalAlta);
+
+            return resultados.Entities.Project().To<RemitosVentaDto>().ToList();
+        }
+
         public int SiguienteNroConsignacion(int sucursalId)
         {
             var ultConsignacion = Uow.RemitosVentas.Listado().Where(r => r.TipoComprobante == (int)TipoComprobanteEnum.RemitosConsignacCliente && r.SucursalAltaId== sucursalId).OrderByDescending(r => r.FechaAlta).FirstOrDefault() ;

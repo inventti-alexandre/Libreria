@@ -5,7 +5,7 @@
     <DataSource Name="ReporteDataSource">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=.;Initial Catalog=lapaz</ConnectString>
+        <ConnectString>Data Source=.;Initial Catalog=LCorrientes</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
@@ -22,6 +22,27 @@
           </QueryParameter>
           <QueryParameter Name="@ProveedorId">
             <Value>=Parameters!ProveedorId.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FechaInicio">
+            <Value>=Parameters!Desde.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@FechaFin">
+            <Value>=Parameters!Hasta.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@OperadorId">
+            <Value>=Parameters!Operador.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@TemaId">
+            <Value>=Parameters!Tema.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@EditorialId">
+            <Value>=Parameters!Editorial.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ConStockConsignado">
+            <Value>=Parameters!ConStock.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@ConStockPropio">
+            <Value>=Parameters!ConStock.Value</Value>
           </QueryParameter>
         </QueryParameters>
         <CommandType>StoredProcedure</CommandType>
@@ -42,6 +63,10 @@
         </Field>
         <Field Name="Editorial">
           <DataField>Editorial</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ISBN">
+          <DataField>ISBN</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Operador">
@@ -607,7 +632,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Tema</Value>
+                                  <Value>ISBN</Value>
                                   <Style>
                                     <FontSize>5pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
@@ -880,14 +905,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Tema">
+                        <Textbox Name="ISBN">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Tema.Value</Value>
+                                  <Value>=Fields!ISBN.Value</Value>
                                   <Style>
                                     <FontSize>5pt</FontSize>
                                     <Format>d</Format>
@@ -897,7 +922,7 @@
                               <Style />
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Tema</rd:DefaultName>
+                          <rd:DefaultName>ISBN</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>White</Color>

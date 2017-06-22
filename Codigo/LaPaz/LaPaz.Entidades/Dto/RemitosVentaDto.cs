@@ -17,5 +17,7 @@ namespace LaPaz.Entidades.Dto
         public decimal? ImporteIVA { get; set; }
         public string Observaciones { get; set; }
         public DateTime? FechaAlta { get; set; }
+
+        public string ClienteConsignadoDenominacion { get; set; }
     }
 }

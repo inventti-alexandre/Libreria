@@ -47,6 +47,7 @@
             this.radMenuFacturarPresupuesto = new Telerik.WinControls.UI.RadMenuItem();
             this.MiDevolverConsignaciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiRendirConsignacionCliente = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
             this.MiConsignacionesProveedor = new Telerik.WinControls.UI.RadMenuItem();
             this.MiConsignacionesProveedorHistorial = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
@@ -338,10 +339,21 @@
             // 
             this.MiRendirConsignacionCliente.AccessibleDescription = "Rendir Consignación Cliente";
             this.MiRendirConsignacionCliente.AccessibleName = "Rendir Consignación Cliente";
+            this.MiRendirConsignacionCliente.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem6});
             this.MiRendirConsignacionCliente.Name = "MiRendirConsignacionCliente";
             this.MiRendirConsignacionCliente.Text = "Rendir Consignación Cliente";
             this.MiRendirConsignacionCliente.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiRendirConsignacionCliente.Click += new System.EventHandler(this.MiRendirConsignacionCliente_Click);
+            // 
+            // radMenuItem6
+            // 
+            this.radMenuItem6.AccessibleDescription = "ConsignacionClienteHistorial";
+            this.radMenuItem6.AccessibleName = "ConsignacionClienteHistorial";
+            this.radMenuItem6.Name = "radMenuItem6";
+            this.radMenuItem6.Text = "Historial";
+            this.radMenuItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
             // 
             // MiConsignacionesProveedor
             // 
@@ -1324,6 +1336,7 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
         private Telerik.WinControls.UI.RadButton BtnProveedoresdevConsig;
         private Telerik.WinControls.UI.RadMenuItem radMenuFacturarPresupuesto;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
 
     }
 }

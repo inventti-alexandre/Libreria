@@ -40,13 +40,20 @@ namespace LaPaz.Win.Forms.Consignaciones.Clientes
             var consignacion = remito.NumeroComprobante.ToString();
             var fecha = remito.FechaComprobante.ToString();
             var cliente = Uow.Clientes.Obtener(c => c.Id == remito.ClienteId, c => c.Provincia, c => c.Localidad);
-            var clienteNombre = "Cliente: " + cliente.Denominacion;
-            var DNI = "Cuit/DNI: " + cliente.Cuit;
+            //var clienteNombre = "Cliente: " + cliente.Denominacion;
+            //var DNI = "Cuit/DNI: " + cliente.Cuit;
+            //var dom = cliente.Domicilio.TrimEnd(' ');
+            //var domicilio = "Domicilio: " + dom;
+            // var localidad = " Localidad: ---" ;
+            //if (cliente.Localidad != null)
+            //    localidad = " Localidad: " + cliente.Localidad.Nombre.TrimEnd(' ');
+            var clienteNombre = cliente.Denominacion;
+            var DNI = cliente.Cuit;
             var dom = cliente.Domicilio.TrimEnd(' ');
-            var domicilio = "Domicilio: " + dom;
-             var localidad = " Localidad: ---" ;
+            var domicilio =  dom;
+            var localidad = "";
             if (cliente.Localidad != null)
-                localidad = " Localidad: " + cliente.Localidad.Nombre.TrimEnd(' ');
+                localidad =  cliente.Localidad.Nombre.TrimEnd(' ');
             var condicionRemito = "CONSIGNACIÓN";
 
             this.Cursor = Cursors.WaitCursor;

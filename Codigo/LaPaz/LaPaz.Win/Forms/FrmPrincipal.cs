@@ -722,9 +722,13 @@ namespace LaPaz.Win.Forms
             AbrirTab(facturarPresupuesto);
         }
 
-    
+        private void radMenuItem6_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmConsignacionListado>();
+            AbrirTab(pantalla);
+        }
 
-        
+       
     }
 }
 

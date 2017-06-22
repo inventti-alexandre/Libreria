@@ -15372,6 +15372,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Type="Int32" Name="CantidadPropia" Nullable="true" />
           <Property Type="Int32" Name="CantidadConsig" Nullable="true" />
           <Property Type="Decimal" Name="Precio" Nullable="true" Precision="19" />
+          <Property Type="String" Name="ISBN" Nullable="true" MaxLength="15" />
         </ComplexType>
         <ComplexType Name="SP_PresupuestoById1_Result">
           <Property Type="String" Name="Codigo" Nullable="true" MaxLength="17" />
@@ -20334,6 +20335,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
                 <ScalarProperty Name="CantidadPropia" ColumnName="CantidadPropia" />
                 <ScalarProperty Name="CantidadConsig" ColumnName="CantidadConsig" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
