@@ -728,6 +728,12 @@ namespace LaPaz.Win.Forms
             AbrirTab(pantalla);
         }
 
+        private void radMenuHistorialDevoluciones_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmHistorialDevolucion>();
+            AbrirTab(pantalla);
+        }
+
        
     }
 }

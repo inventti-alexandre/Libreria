@@ -674,6 +674,12 @@
     <Compile Include="Forms\ProveedoresDevolucion\FrmComprobanteDevolucion.Designer.cs">
       <DependentUpon>FrmComprobanteDevolucion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmHistorialDevolucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ProveedoresDevolucion\FrmHistorialDevolucion.Designer.cs">
+      <DependentUpon>FrmHistorialDevolucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1556,6 +1562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmComprobanteDevolucion.resx">
       <DependentUpon>FrmComprobanteDevolucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmHistorialDevolucion.resx">
+      <DependentUpon>FrmHistorialDevolucion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ProveedoresDevolucion\FrmProveedoresDevolucionConsignados.resx">
       <DependentUpon>FrmProveedoresDevolucionConsignados.cs</DependentUpon>

@@ -106,7 +106,6 @@ namespace LaPaz.Win.Forms.Compras
             CbxProveedor.DataSource = proveedores;
 
             var tipo = Uow.TiposComprobantes.Listado().OrderBy(t => t.Nombre).ToList();
-            //tipo.Insert(0, new TipoComprobante()); { Nombre = "SELECCIONE TIPO" });
             cbxTipo.DataSource = tipo;
             cbxTipo.DisplayMember = "Nombre";
             cbxTipo.ValueMember = "Id";

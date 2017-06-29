@@ -69,7 +69,7 @@ namespace LaPaz.Win.Forms.Ventas
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.GridVentas);
-            this.splitContainer1.Size = new System.Drawing.Size(1720, 972);
+            this.splitContainer1.Size = new System.Drawing.Size(1728, 1013);
             this.splitContainer1.SplitterDistance = 220;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -81,20 +81,20 @@ namespace LaPaz.Win.Forms.Ventas
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1720, 220);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1728, 220);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // ProveedoresPager
             // 
             this.ProveedoresPager.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ProveedoresPager.CurrentPage = 1;
-            this.ProveedoresPager.Location = new System.Drawing.Point(1211, 185);
-            this.ProveedoresPager.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ProveedoresPager.Location = new System.Drawing.Point(1219, 185);
+            this.ProveedoresPager.Margin = new System.Windows.Forms.Padding(5);
             this.ProveedoresPager.Name = "ProveedoresPager";
             this.ProveedoresPager.PageSize = 50;
             this.ProveedoresPager.PageTotal = 1;
@@ -112,29 +112,29 @@ namespace LaPaz.Win.Forms.Ventas
             this.tableLayoutPanel2.Controls.Add(this.UcProgressSpinner, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1712, 172);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1720, 172);
             this.tableLayoutPanel2.TabIndex = 12;
             // 
             // UcFiltrosVentas
             // 
             this.UcFiltrosVentas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UcFiltrosVentas.Location = new System.Drawing.Point(5, 5);
-            this.UcFiltrosVentas.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UcFiltrosVentas.Margin = new System.Windows.Forms.Padding(5);
             this.UcFiltrosVentas.Name = "UcFiltrosVentas";
             this.UcFiltrosVentas.NumeroComprobante = null;
-            this.UcFiltrosVentas.Size = new System.Drawing.Size(1359, 165);
+            this.UcFiltrosVentas.Size = new System.Drawing.Size(1366, 165);
             this.UcFiltrosVentas.TabIndex = 13;
             this.UcFiltrosVentas.TextoABuscar = "";
             // 
             // UcProgressSpinner
             // 
             this.UcProgressSpinner.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.UcProgressSpinner.Location = new System.Drawing.Point(1491, 5);
-            this.UcProgressSpinner.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.UcProgressSpinner.Location = new System.Drawing.Point(1499, 5);
+            this.UcProgressSpinner.Margin = new System.Windows.Forms.Padding(5);
             this.UcProgressSpinner.Name = "UcProgressSpinner";
             this.UcProgressSpinner.Size = new System.Drawing.Size(216, 33);
             this.UcProgressSpinner.TabIndex = 11;
@@ -162,11 +162,11 @@ namespace LaPaz.Win.Forms.Ventas
             gridViewTextBoxColumn1.MinWidth = 100;
             gridViewTextBoxColumn1.Name = "FechaAlta";
             gridViewTextBoxColumn1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            gridViewTextBoxColumn1.Width = 260;
+            gridViewTextBoxColumn1.Width = 262;
             gridViewTextBoxColumn2.FieldName = "LCN";
             gridViewTextBoxColumn2.HeaderText = "LCN";
             gridViewTextBoxColumn2.Name = "LCN";
-            gridViewTextBoxColumn2.Width = 256;
+            gridViewTextBoxColumn2.Width = 257;
             gridViewTextBoxColumn3.FieldName = "EstadosVentaAbreviatura";
             gridViewTextBoxColumn3.HeaderText = "Estado";
             gridViewTextBoxColumn3.IsVisible = false;
@@ -183,7 +183,7 @@ namespace LaPaz.Win.Forms.Ventas
             gridViewTextBoxColumn5.HeaderText = "Cliente";
             gridViewTextBoxColumn5.MinWidth = 200;
             gridViewTextBoxColumn5.Name = "ClienteDenominacion";
-            gridViewTextBoxColumn5.Width = 426;
+            gridViewTextBoxColumn5.Width = 428;
             gridViewTextBoxColumn6.FieldName = "LetraComprobante";
             gridViewTextBoxColumn6.HeaderText = "Lta. Comp.";
             gridViewTextBoxColumn6.IsVisible = false;
@@ -195,7 +195,7 @@ namespace LaPaz.Win.Forms.Ventas
             gridViewTextBoxColumn7.HeaderText = "Nro Comp.";
             gridViewTextBoxColumn7.MinWidth = 80;
             gridViewTextBoxColumn7.Name = "NumeroComprobante";
-            gridViewTextBoxColumn7.Width = 210;
+            gridViewTextBoxColumn7.Width = 211;
             gridViewTextBoxColumn8.FieldName = "CondicionesVentaDescripcion";
             gridViewTextBoxColumn8.HeaderText = "Cond. Vta.";
             gridViewTextBoxColumn8.IsVisible = false;
@@ -206,11 +206,10 @@ namespace LaPaz.Win.Forms.Ventas
             gridViewTextBoxColumn9.HeaderText = "Concepto";
             gridViewTextBoxColumn9.MinWidth = 130;
             gridViewTextBoxColumn9.Name = "Concepto";
-            gridViewTextBoxColumn9.Width = 338;
+            gridViewTextBoxColumn9.Width = 340;
             gridViewTextBoxColumn10.FieldName = "ImporteNeto";
             gridViewTextBoxColumn10.FormatString = "{0:N2}";
             gridViewTextBoxColumn10.HeaderText = "Importe Neto";
-            gridViewTextBoxColumn10.IsVisible = false;
             gridViewTextBoxColumn10.MinWidth = 100;
             gridViewTextBoxColumn10.Name = "ImporteNeto";
             gridViewTextBoxColumn10.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
@@ -234,10 +233,11 @@ namespace LaPaz.Win.Forms.Ventas
             gridViewTextBoxColumn13.FieldName = "TotalPagado";
             gridViewTextBoxColumn13.FormatString = "{0:N2}";
             gridViewTextBoxColumn13.HeaderText = "Total Pagado";
+            gridViewTextBoxColumn13.IsVisible = false;
             gridViewTextBoxColumn13.MinWidth = 100;
             gridViewTextBoxColumn13.Name = "TotalPagado";
             gridViewTextBoxColumn13.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            gridViewTextBoxColumn13.Width = 136;
+            gridViewTextBoxColumn13.Width = 127;
             gridViewTextBoxColumn14.FieldName = "FechaUltimoPago";
             gridViewTextBoxColumn14.FormatString = "{0: dd/M/yyyy}";
             gridViewTextBoxColumn14.HeaderText = "F. Ultimo Pago";
@@ -275,7 +275,7 @@ namespace LaPaz.Win.Forms.Ventas
             this.GridVentas.MasterTemplate.EnableGrouping = false;
             this.GridVentas.Name = "GridVentas";
             this.GridVentas.ReadOnly = true;
-            this.GridVentas.Size = new System.Drawing.Size(1720, 748);
+            this.GridVentas.Size = new System.Drawing.Size(1728, 789);
             this.GridVentas.TabIndex = 8;
             this.GridVentas.ThemeName = "TelerikMetroBlue";
             this.GridVentas.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.GridProveedores_CommandCellClick);
@@ -286,10 +286,10 @@ namespace LaPaz.Win.Forms.Ventas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1720, 972);
+            this.ClientSize = new System.Drawing.Size(1728, 1013);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmVentasListado";
