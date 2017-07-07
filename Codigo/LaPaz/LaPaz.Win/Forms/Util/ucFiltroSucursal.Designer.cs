@@ -39,7 +39,7 @@
             this.Combo.DropDownAnimationEnabled = true;
             this.Combo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combo.Location = new System.Drawing.Point(0, 0);
-            this.Combo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Combo.Margin = new System.Windows.Forms.Padding(4);
             this.Combo.MaxDropDownItems = 0;
             this.Combo.Name = "Combo";
             this.Combo.ShowImageInEditorArea = true;
@@ -53,7 +53,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Combo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UcFiltroSucursal";
             this.Size = new System.Drawing.Size(369, 33);
             this.Load += new System.EventHandler(this.ucFiltrSucursal_Load);

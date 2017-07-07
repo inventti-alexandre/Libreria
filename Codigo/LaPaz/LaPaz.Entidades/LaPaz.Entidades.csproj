@@ -170,6 +170,7 @@
     <Compile Include="C__RefactorLog.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Dto\TitulosMovimientoDto.cs" />
     <Compile Include="Dto\TitulosConsignacionesDevueltasDto.cs" />
     <Compile Include="Dto\PresupuestoDetalleDto.cs" />
     <Compile Include="Dto\TituloConsignacionRendidasDetalleDto.cs" />

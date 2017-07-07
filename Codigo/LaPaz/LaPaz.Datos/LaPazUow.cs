@@ -90,6 +90,7 @@ namespace LaPaz.Datos
         public IRepository<TitulosConsignacionesDevueltasDetalle> TitulosConsignacionesDevueltasDetalles { get { return GetStandardRepo<TitulosConsignacionesDevueltasDetalle>(); } }
         public IRepository<ProveedoresMontosFavor> ProveedoresMontosFavor { get { return GetStandardRepo<ProveedoresMontosFavor>(); } }
         public IRepository<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalle { get { return GetStandardRepo<ProveedoresMontosFavorDetalle>(); } }
+        public IRepository<TitulosMovimiento> TitulosMovimiento { get { return GetStandardRepo<TitulosMovimiento>(); } }
 
         public bool IsDisposed { get; private set; }
 

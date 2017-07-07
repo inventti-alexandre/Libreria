@@ -41,7 +41,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;MOCK_SECURITY</DefineConstants>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
@@ -402,6 +402,12 @@
     </Compile>
     <Compile Include="Forms\Consignaciones\Clientes\UcTitulosConsignacionVenta.Designer.cs">
       <DependentUpon>UcTitulosConsignacionVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\FrmActualizarConsignaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Consignaciones\FrmActualizarConsignaciones.Designer.cs">
+      <DependentUpon>FrmActualizarConsignaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Consignaciones\FrmEditarDetalleConsignacionProveedor.cs">
       <SubType>Form</SubType>
@@ -1420,6 +1426,9 @@
     <EmbeddedResource Include="Forms\Consignaciones\Clientes\UcTitulosConsignacionVenta.resx">
       <DependentUpon>UcTitulosConsignacionVenta.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Consignaciones\FrmActualizarConsignaciones.resx">
+      <DependentUpon>FrmActualizarConsignaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Consignaciones\FrmEditarDetalleConsignacionProveedor.resx">
       <DependentUpon>FrmEditarDetalleConsignacionProveedor.cs</DependentUpon>

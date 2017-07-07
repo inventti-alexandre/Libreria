@@ -734,6 +734,12 @@ namespace LaPaz.Win.Forms
             AbrirTab(pantalla);
         }
 
+        private void radMenuItem9_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmActualizarConsignaciones>();
+            AbrirTab(pantalla);
+        }
+
        
     }
 }

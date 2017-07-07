@@ -82,6 +82,8 @@ namespace LaPaz.Datos.Interfaces
         IRepository<ProveedoresMontosFavor> ProveedoresMontosFavor { get; }
         IRepository<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalle { get; }
 
+        IRepository<TitulosMovimiento> TitulosMovimiento { get; }
+
         bool IsDisposed { get; }
 
         void Commit();

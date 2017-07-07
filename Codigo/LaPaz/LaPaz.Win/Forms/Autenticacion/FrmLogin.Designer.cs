@@ -40,6 +40,7 @@
             this.UcSucursales = new LaPaz.Win.Forms.Util.UcFiltroSucursal();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.CbxUsuario = new LaPaz.Win.Forms.Util.UcUsuariosLogin();
+            this.ucFiltrosAutores1 = new LaPaz.Win.Forms.Autores.UcFiltrosAutores();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPassword)).BeginInit();
@@ -64,7 +65,7 @@
             this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel1.Location = new System.Drawing.Point(139, 15);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(63, 24);
+            this.metroLabel1.Size = new System.Drawing.Size(78, 29);
             this.metroLabel1.TabIndex = 82;
             this.metroLabel1.Text = "Usuario:";
             this.metroLabel1.ThemeName = "TelerikMetroBlue";
@@ -72,10 +73,10 @@
             // TxtPassword
             // 
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(207, 50);
+            this.TxtPassword.Location = new System.Drawing.Point(229, 50);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
-            this.TxtPassword.Size = new System.Drawing.Size(220, 26);
+            this.TxtPassword.Size = new System.Drawing.Size(220, 31);
             this.TxtPassword.TabIndex = 2;
             this.TxtPassword.TabStop = false;
             this.TxtPassword.ThemeName = "TelerikMetroBlue";
@@ -85,7 +86,7 @@
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.Location = new System.Drawing.Point(139, 52);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(47, 24);
+            this.radLabel1.Size = new System.Drawing.Size(59, 29);
             this.radLabel1.TabIndex = 84;
             this.radLabel1.Text = "Clave:";
             this.radLabel1.ThemeName = "TelerikMetroBlue";
@@ -116,7 +117,8 @@
             // 
             // UcSucursales
             // 
-            this.UcSucursales.Location = new System.Drawing.Point(207, 86);
+            this.UcSucursales.Location = new System.Drawing.Point(229, 86);
+            this.UcSucursales.Margin = new System.Windows.Forms.Padding(4);
             this.UcSucursales.Name = "UcSucursales";
             this.UcSucursales.Size = new System.Drawing.Size(220, 27);
             this.UcSucursales.SucursalId = null;
@@ -127,26 +129,37 @@
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(139, 89);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(67, 24);
+            this.radLabel2.Size = new System.Drawing.Size(83, 29);
             this.radLabel2.TabIndex = 85;
             this.radLabel2.Text = "Sucursal:";
             this.radLabel2.ThemeName = "TelerikMetroBlue";
             // 
             // CbxUsuario
             // 
-            this.CbxUsuario.Location = new System.Drawing.Point(207, 14);
+            this.CbxUsuario.Location = new System.Drawing.Point(229, 14);
+            this.CbxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxUsuario.Name = "CbxUsuario";
             this.CbxUsuario.OperadorId = null;
             this.CbxUsuario.Size = new System.Drawing.Size(220, 27);
             this.CbxUsuario.TabIndex = 1;
             // 
+            // ucFiltrosAutores1
+            // 
+            this.ucFiltrosAutores1.Location = new System.Drawing.Point(593, 154);
+            this.ucFiltrosAutores1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ucFiltrosAutores1.Name = "ucFiltrosAutores1";
+            this.ucFiltrosAutores1.Nombre = "";
+            this.ucFiltrosAutores1.Size = new System.Drawing.Size(1136, 121);
+            this.ucFiltrosAutores1.TabIndex = 86;
+            // 
             // FrmLogin
             // 
             this.AcceptButton = this.BtnIngresar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.BtnCancelar;
-            this.ClientSize = new System.Drawing.Size(457, 171);
+            this.ClientSize = new System.Drawing.Size(607, 216);
+            this.Controls.Add(this.ucFiltrosAutores1);
             this.Controls.Add(this.CbxUsuario);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.UcSucursales);
@@ -157,6 +170,7 @@
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             // 
@@ -189,5 +203,6 @@
         private Util.UcFiltroSucursal UcSucursales;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Util.UcUsuariosLogin CbxUsuario;
+        private Autores.UcFiltrosAutores ucFiltrosAutores1;
     }
 }

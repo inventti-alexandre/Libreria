@@ -51,6 +51,9 @@
             this.MiConsignacionesProveedor = new Telerik.WinControls.UI.RadMenuItem();
             this.MiConsignacionesProveedorHistorial = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuHistorialDevoluciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiGastos = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.MiProveedoresGastos = new Telerik.WinControls.UI.RadMenuItem();
@@ -106,9 +109,7 @@
             this.BtnProveedoresListado = new Telerik.WinControls.UI.RadButton();
             this.BtnLibrosListado = new Telerik.WinControls.UI.RadButton();
             this.BtnClienteListado = new Telerik.WinControls.UI.RadButton();
-            this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHistorialDevoluciones = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).BeginInit();
@@ -387,6 +388,35 @@
             this.radMenuItem4.Text = "Rendir Consignaciones";
             this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem4.Click += new System.EventHandler(this.MiConsignacionesSinRendir_Click);
+            // 
+            // radMenuItem7
+            // 
+            this.radMenuItem7.AccessibleDescription = "Proveedores";
+            this.radMenuItem7.AccessibleName = "Proveedores";
+            this.radMenuItem7.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuItem8});
+            this.radMenuItem7.Name = "radMenuItem7";
+            this.radMenuItem7.Text = "Proveedores";
+            this.radMenuItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuItem8
+            // 
+            this.radMenuItem8.AccessibleDescription = "Devoluciones";
+            this.radMenuItem8.AccessibleName = "Devoluciones";
+            this.radMenuItem8.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.radMenuHistorialDevoluciones});
+            this.radMenuItem8.Name = "radMenuItem8";
+            this.radMenuItem8.Text = "Devoluciones";
+            this.radMenuItem8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // radMenuHistorialDevoluciones
+            // 
+            this.radMenuHistorialDevoluciones.AccessibleDescription = "Historial";
+            this.radMenuHistorialDevoluciones.AccessibleName = "Historial";
+            this.radMenuHistorialDevoluciones.Name = "radMenuHistorialDevoluciones";
+            this.radMenuHistorialDevoluciones.Text = "Historial";
+            this.radMenuHistorialDevoluciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuHistorialDevoluciones.Click += new System.EventHandler(this.radMenuHistorialDevoluciones_Click);
             // 
             // MiGastos
             // 
@@ -670,7 +700,8 @@
             this.MiSeguridad.AccessibleName = "Seguridad";
             this.MiSeguridad.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.MiAsignarFuncionesARoles,
-            this.MiUsuariosListado});
+            this.MiUsuariosListado,
+            this.radMenuItem9});
             this.MiSeguridad.Name = "MiSeguridad";
             this.MiSeguridad.Tag = "SuperAdmin,Admin";
             this.MiSeguridad.Text = "Seguridad";
@@ -1214,34 +1245,14 @@
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Margin = new System.Windows.Forms.Padding(0, -2, 0, 0);
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // radMenuItem7
+            // radMenuItem9
             // 
-            this.radMenuItem7.AccessibleDescription = "Proveedores";
-            this.radMenuItem7.AccessibleName = "Proveedores";
-            this.radMenuItem7.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem8});
-            this.radMenuItem7.Name = "radMenuItem7";
-            this.radMenuItem7.Text = "Proveedores";
-            this.radMenuItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuItem8
-            // 
-            this.radMenuItem8.AccessibleDescription = "Devoluciones";
-            this.radMenuItem8.AccessibleName = "Devoluciones";
-            this.radMenuItem8.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuHistorialDevoluciones});
-            this.radMenuItem8.Name = "radMenuItem8";
-            this.radMenuItem8.Text = "Devoluciones";
-            this.radMenuItem8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // radMenuHistorialDevoluciones
-            // 
-            this.radMenuHistorialDevoluciones.AccessibleDescription = "Historial";
-            this.radMenuHistorialDevoluciones.AccessibleName = "Historial";
-            this.radMenuHistorialDevoluciones.Name = "radMenuHistorialDevoluciones";
-            this.radMenuHistorialDevoluciones.Text = "Historial";
-            this.radMenuHistorialDevoluciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuHistorialDevoluciones.Click += new System.EventHandler(this.radMenuHistorialDevoluciones_Click);
+            this.radMenuItem9.AccessibleDescription = "radMenuIFeria";
+            this.radMenuItem9.AccessibleName = "radMenuFeria";
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Feria";
+            this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
             // FrmPrincipal
             // 
@@ -1373,6 +1384,7 @@
         private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
         private Telerik.WinControls.UI.RadMenuItem radMenuHistorialDevoluciones;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem9;
 
     }
 }

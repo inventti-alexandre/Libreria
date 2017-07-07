@@ -78,6 +78,8 @@ namespace LaPaz.Negocio
                 var cantidadAVender = titulo.Cantidad;
                 int? cantpropia = 0;
                 int? cantconsiganda = 0;
+                int actualPr = tituloStock.StkPr ?? 0;
+                int actualCn = tituloStock.StkCn ?? 0;
 
                 if (tituloStock.StkPr > 0)
                 {
@@ -108,8 +110,13 @@ namespace LaPaz.Negocio
                         throw new ApplicationException("No hay suficiente stock para completar la venta");
                     }
                 }
+                titulo.CantidadPropia = cantpropia;
+                titulo.CantidadConsignada = cantconsiganda;
+
+                AgregarTitulosMovimientos(ventaData, titulo, venta.Id, actualPr, actualCn);
 
                 Uow.TitulosStock.Modificar(tituloStock);
+
 
                 AgregarVentaDetalle(venta, ventaData.SucursalId, ventaData.OperadorId,
                                     titulo.TituloId, titulo.Cantidad, titulo.SubTotal,
@@ -173,6 +180,35 @@ namespace LaPaz.Negocio
             Uow.Commit();
 
             return reponse;
+        }
+
+        private void AgregarTitulosMovimientos(CrearVentaData ventaData, VentaTitulo titulo, Guid ventaId, int? actualPr, int? actualCn)
+        {
+            //foreach (var titulo in ventaData.Titulos)
+	       // {
+                TitulosMovimiento tituloMovimiento = new TitulosMovimiento();
+                tituloMovimiento.TituloId = titulo.TituloId;
+                //tituloMovimiento.TipoComprobanteId = ventaData.TipoComprobanteSeleccionado;
+                tituloMovimiento.ComprobanteId = ventaId;
+                tituloMovimiento.SucursalComprobante = ventaData.SucursalId;
+                tituloMovimiento.Fecha = _clock.Now;
+                TituloStock stock = new TituloStock();
+                stock = Uow.TitulosStock.Obtener(t=>t.TituloId == titulo.TituloId && t.SucursalId == ventaData.SucursalId);
+                if (stock != null)
+                {
+                    tituloMovimiento.CntAntPr = actualPr;
+                    tituloMovimiento.CntAntCn = actualCn;
+                    tituloMovimiento.CntMinPr = titulo.CantidadPropia ?? 0;
+                    tituloMovimiento.CntMinCn = titulo.CantidadConsignada ??0;  
+                    tituloMovimiento.FechaAlta = _clock.Now;
+                    tituloMovimiento.OperadorAltaId = ventaData.OperadorId;
+                    tituloMovimiento.SucursalAltaId = ventaData.SucursalId;
+                }
+
+                Uow.TitulosMovimiento.Agregar(tituloMovimiento);
+                Uow.Commit();
+		  ///}
+           
         }
 
         public CrearVentaResponse CrearVentaRendicionConsignacionCliente(RendirConsignacionClienteData ventaData)
@@ -882,6 +918,40 @@ namespace LaPaz.Negocio
                     Uow.TitulosConsignaciones.Modificar(tituloConsignacion);
                 }
             }
+        }
+
+        public void ActualizarTitulosConsignaciones(Guid tituloId, Guid? proveedorId, int? cantconsiganda, int sucursalId)
+        {
+            //Busco las consignaciones de titulos y actualizo la columna CnVn
+            var titulosConsignaciones =
+                Uow.TitulosConsignaciones.Listado().Where(
+                    tc => tc.TituloId == tituloId && tc.ProveedorId == proveedorId && (tc.CntVn + tc.CntDev) < tc.CntCn && tc.SucursalAltaId == sucursalId).
+                    OrderBy(tc => tc.FechaAlta);
+
+            foreach (TitulosConsignacion tituloConsignacion in titulosConsignaciones)
+            {
+                if (cantconsiganda > 0)
+                {
+                    if (tituloConsignacion.CntCn - tituloConsignacion.CntVn - tituloConsignacion.CntDev >= cantconsiganda)
+                    {
+                        tituloConsignacion.CntVn += cantconsiganda ?? 0;
+                        cantconsiganda = 0;
+                    }
+                    else
+                    {
+                        var disponible = tituloConsignacion.CntCn - tituloConsignacion.CntVn - tituloConsignacion.CntDev;
+                        cantconsiganda -= disponible;
+                        tituloConsignacion.CntVn = tituloConsignacion.CntCn;
+                    }
+
+                    tituloConsignacion.FechaModificacion = _clock.Now;
+                    //tituloConsignacion.OperadorModificacionId = ventaData.OperadorId;
+                    tituloConsignacion.SucursalModificacionId = sucursalId;
+
+                    Uow.TitulosConsignaciones.Modificar(tituloConsignacion);
+                }
+            }
+            Uow.Commit();
         }
 
         private void AgregarTitulosConsignacionVendida(VentaDataBase ventaData, Guid tituloId, Guid? proveedorId, Venta venta, int? cantconsiganda)

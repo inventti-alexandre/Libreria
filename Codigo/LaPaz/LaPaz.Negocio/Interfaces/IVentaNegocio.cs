@@ -24,5 +24,6 @@ namespace LaPaz.Negocio.Interfaces
         int SiguienteNumeroFactura(Guid opertadorId, int sucursalId);
         decimal SenaAFavorCliente(Guid clienteId, int sucursalId);
         decimal CreditosPorDevolucion(Guid clienteId, int sucursalId);
+        void ActualizarTitulosConsignaciones(Guid tituloId, Guid? proveedorId, int? cantconsiganda, int sucursalId);
     }
 }
