@@ -100,10 +100,11 @@ namespace LaPaz.Entidades
             this.ProveedoresMontosFavorDetalles1 = new HashSet<ProveedoresMontosFavorDetalle>();
             this.ProveedoresMontosFavors = new HashSet<ProveedoresMontosFavor>();
             this.ProveedoresMontosFavors1 = new HashSet<ProveedoresMontosFavor>();
-            this.OrdenesPagoTransferencias = new HashSet<OrdenesPagoTransferencia>();
-            this.OrdenesPagoTransferencias1 = new HashSet<OrdenesPagoTransferencia>();
             this.TitulosConsignacionesDevueltas = new HashSet<TitulosConsignacionesDevuelta>();
             this.PresupuestosDetalle = new HashSet<PresupuestosDetalle>();
+            this.TitulosMovimiento = new HashSet<TitulosMovimiento>();
+            this.TitulosMovimiento1 = new HashSet<TitulosMovimiento>();
+            this.TitulosMovimiento2 = new HashSet<TitulosMovimiento>();
         }
     
         public int Id { get; set; }
@@ -213,9 +214,10 @@ namespace LaPaz.Entidades
         public virtual ICollection<ProveedoresMontosFavorDetalle> ProveedoresMontosFavorDetalles1 { get; set; }
         public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
         public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors1 { get; set; }
-        public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
-        public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias1 { get; set; }
         public virtual ICollection<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }
         public virtual ICollection<PresupuestosDetalle> PresupuestosDetalle { get; set; }
+        public virtual ICollection<TitulosMovimiento> TitulosMovimiento { get; set; }
+        public virtual ICollection<TitulosMovimiento> TitulosMovimiento1 { get; set; }
+        public virtual ICollection<TitulosMovimiento> TitulosMovimiento2 { get; set; }
     }
 }

@@ -33,7 +33,7 @@ SELECT [Id]
       ,[PrecioBase]
       ,[Descuento]
   FROM LCorrientesFeria.dbo.VentasDetalle
-   where FechaAlta > '2017-07-06 00:14'
+   where FechaAlta > '2017-07-20 14:30'
  )
 
 

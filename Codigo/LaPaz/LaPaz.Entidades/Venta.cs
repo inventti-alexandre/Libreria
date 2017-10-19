@@ -18,6 +18,7 @@ namespace LaPaz.Entidades
         {
             this.VentasDetalles = new HashSet<VentaDetalle>();
             this.NotasDeVentas = new HashSet<NotasDeVenta>();
+            this.TitulosMovimiento = new HashSet<TitulosMovimiento>();
         }
     
         public System.Guid Id { get; set; }
@@ -57,5 +58,6 @@ namespace LaPaz.Entidades
         public virtual EstadoVenta EstadosVenta { get; set; }
         public virtual ICollection<VentaDetalle> VentasDetalles { get; set; }
         public virtual ICollection<NotasDeVenta> NotasDeVentas { get; set; }
+        public virtual ICollection<TitulosMovimiento> TitulosMovimiento { get; set; }
     }
 }

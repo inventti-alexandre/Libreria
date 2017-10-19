@@ -20,7 +20,7 @@ Public Class clsVariableSesionUsers
             '& "Pooling=false;Connection Lifetime=1; Max Pool Size=1;Allow User Variables=True;allow zero datetime=yes"
 
 
-            _conn.ConnectionString = "data source=.;initial catalog=LCorrientes;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
+            ' _conn.ConnectionString = "data source=.;initial catalog=LCorrientes;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
             '_conn.ConnectionString = "data source=.;initial catalog=lapaz;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework"
 
 
@@ -29,7 +29,7 @@ Public Class clsVariableSesionUsers
             '_conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
             
             'Liberria
-            '_conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
+            _conn.ConnectionString = "Data Source=SERVERLCORRIENT;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"
 
             'ElVecinito
             '_conn.ConnectionString = "Data Source=.;Initial Catalog=LCorrientes;user id=pragma;password=ap_sys"

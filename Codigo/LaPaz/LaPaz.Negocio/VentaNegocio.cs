@@ -188,7 +188,7 @@ namespace LaPaz.Negocio
 	       // {
                 TitulosMovimiento tituloMovimiento = new TitulosMovimiento();
                 tituloMovimiento.TituloId = titulo.TituloId;
-                //tituloMovimiento.TipoComprobanteId = ventaData.TipoComprobanteSeleccionado;
+                tituloMovimiento.TipoComprobanteId = ventaData.TipoComprobanteSeleccionado;
                 tituloMovimiento.ComprobanteId = ventaId;
                 tituloMovimiento.SucursalComprobante = ventaData.SucursalId;
                 tituloMovimiento.Fecha = _clock.Now;

@@ -20,5 +20,7 @@ namespace LaPaz.Entidades
         public int rol { get; set; }
         public System.Guid lapazUser { get; set; }
         public Nullable<int> Sucursal { get; set; }
+    
+        public virtual rolesCtaCte rolesCtaCte { get; set; }
     }
 }

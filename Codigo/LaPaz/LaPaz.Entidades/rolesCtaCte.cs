@@ -14,7 +14,14 @@ namespace LaPaz.Entidades
     
     public partial class rolesCtaCte
     {
+        public rolesCtaCte()
+        {
+            this.users = new HashSet<user>();
+        }
+    
         public int id { get; set; }
         public string rol { get; set; }
+    
+        public virtual ICollection<user> users { get; set; }
     }
 }

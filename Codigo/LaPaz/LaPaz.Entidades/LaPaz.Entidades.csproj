@@ -363,9 +363,6 @@
     <Compile Include="OrdenesPagoDetalle.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrdenesPagoTransferencia.cs">
-      <DependentUpon>LaPazModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="OrdenPagoCheque.cs">
       <DependentUpon>LaPazModel.tt</DependentUpon>
     </Compile>

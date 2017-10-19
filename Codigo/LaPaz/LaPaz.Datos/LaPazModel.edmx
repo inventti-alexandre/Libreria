@@ -661,7 +661,7 @@
           <Property Name="SucursalModificacionId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'lapaz.dbo.DuplicadosTitulosStock' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'LCorrientes.dbo.DuplicadosTitulosStock' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DuplicadosTitulosStock">
           <Key>
             <PropertyRef Name="TituloId" />
@@ -672,7 +672,7 @@ warning 6002: The table/view 'lapaz.dbo.DuplicadosTitulosStock' does not have a 
           <Property Name="cant" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'lapaz.dbo.DuplicadosTitulosStockAuditado' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'LCorrientes.dbo.DuplicadosTitulosStockAuditado' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DuplicadosTitulosStockAuditado">
           <Key>
             <PropertyRef Name="TituloId" />
@@ -1057,7 +1057,7 @@ warning 6002: The table/view 'lapaz.dbo.DuplicadosTitulosStockAuditado' does not
           <Property Name="SucursalModificacionId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'lapaz.dbo.MovimientosFondoDetalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'LCorrientes.dbo.MovimientosFondoDetalle' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="MovimientosFondoDetalle">
           <Key>
             <PropertyRef Name="Id" />
@@ -1343,25 +1343,6 @@ warning 6002: The table/view 'lapaz.dbo.MovimientosFondoDetalle' does not have a
           <Property Name="CajaId" Type="uniqueidentifier" />
           <Property Name="OperadorAutorizaId" Type="uniqueidentifier" />
         </EntityType>
-        <EntityType Name="OrdenesPagoTransferencia">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="OrdenPagoId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="CuentaId" Type="int" Nullable="false" />
-          <Property Name="Numero" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Fecha" Type="datetime" Nullable="false" />
-          <Property Name="Importe" Type="money" Nullable="false" />
-          <Property Name="BancoDestino" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
-          <Property Name="SucursalAltaId" Type="int" Nullable="false" />
-          <Property Name="OperadorAltaId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="FechaModificacion" Type="datetime" />
-          <Property Name="SucursalModificacionId" Type="int" />
-          <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
-          <Property Name="FechaAnulacion" Type="datetime" />
-        </EntityType>
         <EntityType Name="OrdenPagoCheques">
           <Key>
             <PropertyRef Name="Id" />
@@ -1511,7 +1492,7 @@ warning 6002: The table/view 'lapaz.dbo.MovimientosFondoDetalle' does not have a
           <Property Name="OperadorModificacionId" Type="uniqueidentifier" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'lapaz.dbo.PRECIOSACT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRECIOSACT">
           <Key>
             <PropertyRef Name="Id" />
@@ -1525,7 +1506,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT' does not have a primary key 
           <Property Name="Cod" Type="nvarchar" MaxLength="17" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="PRECIOSACT2">
           <Key>
             <PropertyRef Name="id" />
@@ -4542,78 +4523,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_Cuentas">
-          <End Role="Cuentas" Type="Self.Cuentas" Multiplicity="1" />
-          <End Role="OrdenesPagoTransferencia" Type="Self.OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cuentas">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="CuentaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_OperadoresAlta">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="1" />
-          <End Role="OrdenesPagoTransferencia" Type="Self.OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operadores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="OperadorAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_OperadoresModificacion">
-          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
-          <End Role="OrdenesPagoTransferencia" Type="Self.OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operadores">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="OperadorModificacionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_OrdenesPago">
-          <End Role="OrdenesPago" Type="Self.OrdenesPago" Multiplicity="1" />
-          <End Role="OrdenesPagoTransferencia" Type="Self.OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OrdenesPago">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="OrdenPagoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_SucursalesAlta">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="1" />
-          <End Role="OrdenesPagoTransferencia" Type="Self.OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursales">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="SucursalAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_SucursalesModificacion">
-          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
-          <End Role="OrdenesPagoTransferencia" Type="Self.OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursales">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="SucursalModificacionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_OrdenPagoCheques_ChequesTerceros1">
           <End Role="ChequesTerceros" Type="Self.ChequesTerceros" Multiplicity="1" />
           <End Role="OrdenPagoCheques" Type="Self.OrdenPagoCheques" Multiplicity="*" />
@@ -6678,6 +6587,102 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TitulosMovimiento_OperadorAlta">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_OperadorModificacion">
+          <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operadores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_Sucursal">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="SucursalComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_SucursalAlta">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_SucursalModificacion">
+          <End Role="Sucursales" Type="Self.Sucursales" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursales">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_TipoComprobante">
+          <End Role="TiposComprobantes" Type="Self.TiposComprobantes" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposComprobantes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_Titulo">
+          <End Role="Titulos" Type="Self.Titulos" Multiplicity="1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Titulos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="TituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_Venta">
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="0..1" />
+          <End Role="TitulosMovimiento" Type="Self.TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ventas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="ComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TitulosStock_OperadorAlta">
           <End Role="Operadores" Type="Self.Operadores" Multiplicity="0..1" />
           <End Role="TitulosStock" Type="Self.TitulosStock" Multiplicity="*" />
@@ -6771,6 +6776,18 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Principal>
             <Dependent Role="TitulosUbicacion">
               <PropertyRef Name="EspecialidadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_users_roles">
+          <End Role="rolesCtaCte" Type="Self.rolesCtaCte" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rolesCtaCte">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="users">
+              <PropertyRef Name="rol" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -7308,7 +7325,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <EntitySet Name="OrdenesPago" EntityType="Self.OrdenesPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdenesPagoComprobantes" EntityType="Self.OrdenesPagoComprobantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdenesPagoDetalle" EntityType="Self.OrdenesPagoDetalle" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrdenesPagoTransferencia" EntityType="Self.OrdenesPagoTransferencia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrdenPagoCheques" EntityType="Self.OrdenPagoCheques" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paises" EntityType="Self.Paises" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Parametros" EntityType="Self.Parametros" Schema="dbo" store:Type="Tables" />
@@ -7950,30 +7966,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <AssociationSet Name="FK_OrdenesPagoDetalle_SucursalesModificacion" Association="Self.FK_OrdenesPagoDetalle_SucursalesModificacion">
             <End Role="Sucursales" EntitySet="Sucursales" />
             <End Role="OrdenesPagoDetalle" EntitySet="OrdenesPagoDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_Cuentas" Association="Self.FK_OrdenesPagoTransferencia_Cuentas">
-            <End Role="Cuentas" EntitySet="Cuentas" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencia" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_OperadoresAlta" Association="Self.FK_OrdenesPagoTransferencia_OperadoresAlta">
-            <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencia" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_OperadoresModificacion" Association="Self.FK_OrdenesPagoTransferencia_OperadoresModificacion">
-            <End Role="Operadores" EntitySet="Operadores" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencia" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_OrdenesPago" Association="Self.FK_OrdenesPagoTransferencia_OrdenesPago">
-            <End Role="OrdenesPago" EntitySet="OrdenesPago" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencia" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_SucursalesAlta" Association="Self.FK_OrdenesPagoTransferencia_SucursalesAlta">
-            <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencia" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_SucursalesModificacion" Association="Self.FK_OrdenesPagoTransferencia_SucursalesModificacion">
-            <End Role="Sucursales" EntitySet="Sucursales" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencia" />
           </AssociationSet>
           <AssociationSet Name="FK_OrdenPagoCheques_ChequesTerceros1" Association="Self.FK_OrdenPagoCheques_ChequesTerceros1">
             <End Role="ChequesTerceros" EntitySet="ChequesTerceros" />
@@ -8663,6 +8655,38 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             <End Role="Titulos" EntitySet="Titulos" />
             <End Role="TitulosConsignacionesVendidas" EntitySet="TitulosConsignacionesVendidas" />
           </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_OperadorAlta" Association="Self.FK_TitulosMovimiento_OperadorAlta">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_OperadorModificacion" Association="Self.FK_TitulosMovimiento_OperadorModificacion">
+            <End Role="Operadores" EntitySet="Operadores" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_Sucursal" Association="Self.FK_TitulosMovimiento_Sucursal">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_SucursalAlta" Association="Self.FK_TitulosMovimiento_SucursalAlta">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_SucursalModificacion" Association="Self.FK_TitulosMovimiento_SucursalModificacion">
+            <End Role="Sucursales" EntitySet="Sucursales" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_TipoComprobante" Association="Self.FK_TitulosMovimiento_TipoComprobante">
+            <End Role="TiposComprobantes" EntitySet="TiposComprobantes" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_Titulo" Association="Self.FK_TitulosMovimiento_Titulo">
+            <End Role="Titulos" EntitySet="Titulos" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_Venta" Association="Self.FK_TitulosMovimiento_Venta">
+            <End Role="Ventas" EntitySet="Ventas" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimiento" />
+          </AssociationSet>
           <AssociationSet Name="FK_TitulosStock_OperadorAlta" Association="Self.FK_TitulosStock_OperadorAlta">
             <End Role="Operadores" EntitySet="Operadores" />
             <End Role="TitulosStock" EntitySet="TitulosStock" />
@@ -8694,6 +8718,10 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <AssociationSet Name="FK_TitulosUbicacion_Especialidades" Association="Self.FK_TitulosUbicacion_Especialidades">
             <End Role="Especialidades" EntitySet="Especialidades" />
             <End Role="TitulosUbicacion" EntitySet="TitulosUbicacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_roles" Association="Self.FK_users_roles">
+            <End Role="rolesCtaCte" EntitySet="rolesCtaCte" />
+            <End Role="users" EntitySet="users" />
           </AssociationSet>
           <AssociationSet Name="FK_Vales_Mutuales" Association="Self.FK_Vales_Mutuales">
             <End Role="Mutuales" EntitySet="Mutuales" />
@@ -10484,33 +10512,8 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           </AssociationSet>
           <EntitySet Name="Comentarios" EntityType="LaPaz.Datos.Comentario" />
           <EntitySet Name="Emails" EntityType="LaPaz.Datos.Email" />
-          <EntitySet Name="OrdenesPagoTransferencias" EntityType="LaPaz.Datos.OrdenesPagoTransferencia" />
           <EntitySet Name="rolesCtaCtes" EntityType="LaPaz.Datos.rolesCtaCte" />
           <EntitySet Name="users" EntityType="LaPaz.Datos.user" />
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_Cuentas" Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_Cuentas">
-            <End Role="Cuenta" EntitySet="Cuentas" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_OperadoresAlta" Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresAlta">
-            <End Role="Operador" EntitySet="Operadores" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_OperadoresModificacion" Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresModificacion">
-            <End Role="Operador" EntitySet="Operadores" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_OrdenesPago" Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_OrdenesPago">
-            <End Role="OrdenesPago" EntitySet="OrdenesPagos" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_SucursalesAlta" Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesAlta">
-            <End Role="Sucursal" EntitySet="Sucursales" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencias" />
-          </AssociationSet>
-          <AssociationSet Name="FK_OrdenesPagoTransferencia_SucursalesModificacion" Association="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion">
-            <End Role="Sucursal" EntitySet="Sucursales" />
-            <End Role="OrdenesPagoTransferencia" EntitySet="OrdenesPagoTransferencias" />
-          </AssociationSet>
           <AssociationSet Name="FK_ProveedoresSenias_TiposComprobantes" Association="LaPaz.Datos.FK_ProveedoresSenias_TiposComprobantes">
             <End Role="TipoComprobante" EntitySet="TipoComprobantes" />
             <End Role="ProveedorSenia" EntitySet="ProveedorSenias" />
@@ -10576,6 +10579,42 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <AssociationSet Name="FK_PresupuestosDetalle_Titulos" Association="LaPaz.Datos.FK_PresupuestosDetalle_Titulos">
             <End Role="Titulo" EntitySet="Titulos" />
             <End Role="PresupuestosDetalle" EntitySet="PresupuestosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_OperadorAlta" Association="LaPaz.Datos.FK_TitulosMovimiento_OperadorAlta">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_OperadorModificacion" Association="LaPaz.Datos.FK_TitulosMovimiento_OperadorModificacion">
+            <End Role="Operador" EntitySet="Operadores" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_roles" Association="LaPaz.Datos.FK_users_roles">
+            <End Role="rolesCtaCte" EntitySet="rolesCtaCtes" />
+            <End Role="user" EntitySet="users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_Sucursal" Association="LaPaz.Datos.FK_TitulosMovimiento_Sucursal">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_SucursalAlta" Association="LaPaz.Datos.FK_TitulosMovimiento_SucursalAlta">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_SucursalModificacion" Association="LaPaz.Datos.FK_TitulosMovimiento_SucursalModificacion">
+            <End Role="Sucursal" EntitySet="Sucursales" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_TipoComprobante" Association="LaPaz.Datos.FK_TitulosMovimiento_TipoComprobante">
+            <End Role="TipoComprobante" EntitySet="TipoComprobantes" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_Titulo" Association="LaPaz.Datos.FK_TitulosMovimiento_Titulo">
+            <End Role="Titulo" EntitySet="Titulos" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TitulosMovimiento_Venta" Association="LaPaz.Datos.FK_TitulosMovimiento_Venta">
+            <End Role="Venta" EntitySet="Ventas" />
+            <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="Provincia">
@@ -10976,9 +11015,9 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="ProveedoresMontosFavors" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorAlta" FromRole="Operador" ToRole="ProveedoresMontosFavor" />
           <NavigationProperty Name="ProveedoresMontosFavors1" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorAutoriza" FromRole="Operador" ToRole="ProveedoresMontosFavor" />
           <NavigationProperty Name="ProveedoresMontosFavors2" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_OperadorModificacion" FromRole="Operador" ToRole="ProveedoresMontosFavor" />
-          <NavigationProperty Name="OrdenesPagoTransferencias" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresAlta" FromRole="Operador" ToRole="OrdenesPagoTransferencia" />
-          <NavigationProperty Name="OrdenesPagoTransferencias1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresModificacion" FromRole="Operador" ToRole="OrdenesPagoTransferencia" />
           <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Operadores" FromRole="Operador" ToRole="TitulosConsignacionesDevuelta" />
+          <NavigationProperty Name="TitulosMovimiento" Relationship="LaPaz.Datos.FK_TitulosMovimiento_OperadorAlta" FromRole="Operador" ToRole="TitulosMovimiento" />
+          <NavigationProperty Name="TitulosMovimiento1" Relationship="LaPaz.Datos.FK_TitulosMovimiento_OperadorModificacion" FromRole="Operador" ToRole="TitulosMovimiento" />
           </EntityType>
         <EntityType Name="OperadorSucursal">
           <Key>
@@ -11106,11 +11145,12 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="ProveedoresMontosFavorDetalles1" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_SucursalModificacion" FromRole="Sucursal" ToRole="ProveedoresMontosFavorDetalle" />
           <NavigationProperty Name="ProveedoresMontosFavors" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_SucursalAlta" FromRole="Sucursal" ToRole="ProveedoresMontosFavor" />
           <NavigationProperty Name="ProveedoresMontosFavors1" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_SucursalModificacion" FromRole="Sucursal" ToRole="ProveedoresMontosFavor" />
-          <NavigationProperty Name="OrdenesPagoTransferencias" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesAlta" FromRole="Sucursal" ToRole="OrdenesPagoTransferencia" />
-          <NavigationProperty Name="OrdenesPagoTransferencias1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion" FromRole="Sucursal" ToRole="OrdenesPagoTransferencia" />
           <NavigationProperty Name="TitulosConsignacionesDevueltas" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltas_Sucursales" FromRole="Sucursal" ToRole="TitulosConsignacionesDevuelta" />
           <Property Name="SucursalNumero" Type="Int32" />
           <NavigationProperty Name="PresupuestosDetalle" Relationship="LaPaz.Datos.FK_PresupuestosDetalle_Sucursales" FromRole="Sucursal" ToRole="PresupuestosDetalle" />
+          <NavigationProperty Name="TitulosMovimiento" Relationship="LaPaz.Datos.FK_TitulosMovimiento_Sucursal" FromRole="Sucursal" ToRole="TitulosMovimiento" />
+          <NavigationProperty Name="TitulosMovimiento1" Relationship="LaPaz.Datos.FK_TitulosMovimiento_SucursalAlta" FromRole="Sucursal" ToRole="TitulosMovimiento" />
+          <NavigationProperty Name="TitulosMovimiento2" Relationship="LaPaz.Datos.FK_TitulosMovimiento_SucursalModificacion" FromRole="Sucursal" ToRole="TitulosMovimiento" />
           </EntityType>
         <Association Name="FK_Clientes_OperadorAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operadore" Multiplicity="0..1" />
@@ -11328,6 +11368,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="ProveedoresMontosFavorDetalles" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavorDetalle_Titulos" FromRole="Titulo" ToRole="ProveedoresMontosFavorDetalle" />
           <NavigationProperty Name="TitulosConsignacionesDevueltasDetalles" Relationship="LaPaz.Datos.FK_TitulosConsignacionesDevueltasDetalle_Titulos" FromRole="Titulo" ToRole="TitulosConsignacionesDevueltasDetalle" />
           <NavigationProperty Name="PresupuestosDetalle" Relationship="LaPaz.Datos.FK_PresupuestosDetalle_Titulos" FromRole="Titulo" ToRole="PresupuestosDetalle" />
+          <NavigationProperty Name="TitulosMovimiento" Relationship="LaPaz.Datos.FK_TitulosMovimiento_Titulo" FromRole="Titulo" ToRole="TitulosMovimiento" />
         </EntityType>
         <Association Name="FK_Titulos_OperadorAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operadore" Multiplicity="0..1" />
@@ -12054,6 +12095,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="EstadosVenta" Relationship="LaPaz.Datos.FK_Ventas_EstadoVenta" FromRole="Venta" ToRole="EstadosVenta" />
           <NavigationProperty Name="VentasDetalles" Relationship="LaPaz.Datos.FK_VentasDetalle_Venta" FromRole="Venta" ToRole="VentaDetalle" />
           <NavigationProperty Name="NotasDeVentas" Relationship="LaPaz.Datos.FK_NotasDeVenta_Ventas" FromRole="Venta" ToRole="NotasDeVenta" />
+          <NavigationProperty Name="TitulosMovimiento" Relationship="LaPaz.Datos.FK_TitulosMovimiento_Venta" FromRole="Venta" ToRole="TitulosMovimiento" />
         </EntityType>
         <EntityType Name="VentaDetalle">
           <Key>
@@ -12402,6 +12444,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="ProveedoresPagos" Relationship="LaPaz.Datos.FK_ProveedoresPagos_TipoComprobanteId" FromRole="TipoComprobante" ToRole="ProveedoresPago" />
           <NavigationProperty Name="ProveedoresMontosFavors" Relationship="LaPaz.Datos.FK_ProveedoresMontosFavor_TipoComprobante" FromRole="TipoComprobante" ToRole="ProveedoresMontosFavor" />
           <NavigationProperty Name="ProveedoresSenias" Relationship="LaPaz.Datos.FK_ProveedoresSenias_TiposComprobantes" FromRole="TipoComprobante" ToRole="ProveedorSenia" />
+          <NavigationProperty Name="TitulosMovimiento" Relationship="LaPaz.Datos.FK_TitulosMovimiento_TipoComprobante" FromRole="TipoComprobante" ToRole="TitulosMovimiento" />
         </EntityType>
         <Association Name="FK_Ventas_Cliente">
           <End Type="LaPaz.Datos.Cliente" Role="Cliente" Multiplicity="1" />
@@ -13775,7 +13818,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="OrdenesPagoDetalles" Relationship="LaPaz.Datos.FK_OrdenesPagoDetalle_OrdenesPago" FromRole="OrdenesPago" ToRole="OrdenesPagoDetalle" />
           <NavigationProperty Name="CentrosCosto" Relationship="LaPaz.Datos.FK_OrdenesPago_CentrosCostos" FromRole="OrdenesPago" ToRole="CentrosCosto" />
           <NavigationProperty Name="TiposGasto" Relationship="LaPaz.Datos.FK_OrdenesPago_TiposGastos1" FromRole="OrdenesPago" ToRole="TiposGasto" />
-          <NavigationProperty Name="OrdenesPagoTransferencias" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OrdenesPago" FromRole="OrdenesPago" ToRole="OrdenesPagoTransferencia" />
         </EntityType>
         <Association Name="FK_OrdenesPago_OperadoresAlta">
           <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="0..1" />
@@ -15436,7 +15478,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <NavigationProperty Name="Sucursale1" Relationship="LaPaz.Datos.FK_Cuentas_SucursalModificacion" FromRole="Cuenta" ToRole="Sucursal" />
           <NavigationProperty Name="TiposCuenta" Relationship="LaPaz.Datos.FK_Cuentas_TiposCuenta" FromRole="Cuenta" ToRole="TiposCuenta" />
           <NavigationProperty Name="CuentasMovimientos" Relationship="LaPaz.Datos.FK_CuentasMovimientos_Cuentas" FromRole="Cuenta" ToRole="CuentasMovimiento" />
-          <NavigationProperty Name="OrdenesPagoTransferencias" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_Cuentas" FromRole="Cuenta" ToRole="OrdenesPagoTransferencia" />
         </EntityType>
         <Association Name="FK_Cuentas_BancosPropios">
           <End Type="LaPaz.Datos.BancoPropio" Role="BancoPropio" Multiplicity="0..1" />
@@ -17304,7 +17345,7 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TituloId" Type="Guid" Nullable="false" />
-          <Property Name="TipoComprobanteId" Type="Int32" />
+          <Property Name="TipoComprobanteId" Type="LaPaz.Datos.TipoComprobanteEnum" />
           <Property Name="ComprobanteId" Type="Guid" />
           <Property Name="SucursalComprobante" Type="Int32" />
           <Property Name="Fecha" Type="DateTime" Precision="3" />
@@ -17321,6 +17362,14 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
           <Property Name="SucursalModificacionId" Type="Int32" />
           <Property Name="OperadorModificacionId" Type="Guid" />
+          <NavigationProperty Name="Operadores" Relationship="LaPaz.Datos.FK_TitulosMovimiento_OperadorAlta" FromRole="TitulosMovimiento" ToRole="Operador" />
+          <NavigationProperty Name="Operadores1" Relationship="LaPaz.Datos.FK_TitulosMovimiento_OperadorModificacion" FromRole="TitulosMovimiento" ToRole="Operador" />
+          <NavigationProperty Name="Sucursales" Relationship="LaPaz.Datos.FK_TitulosMovimiento_Sucursal" FromRole="TitulosMovimiento" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursales1" Relationship="LaPaz.Datos.FK_TitulosMovimiento_SucursalAlta" FromRole="TitulosMovimiento" ToRole="Sucursal" />
+          <NavigationProperty Name="Sucursales2" Relationship="LaPaz.Datos.FK_TitulosMovimiento_SucursalModificacion" FromRole="TitulosMovimiento" ToRole="Sucursal" />
+          <NavigationProperty Name="TiposComprobantes" Relationship="LaPaz.Datos.FK_TitulosMovimiento_TipoComprobante" FromRole="TitulosMovimiento" ToRole="TipoComprobante" />
+          <NavigationProperty Name="Titulos" Relationship="LaPaz.Datos.FK_TitulosMovimiento_Titulo" FromRole="TitulosMovimiento" ToRole="Titulo" />
+          <NavigationProperty Name="Ventas" Relationship="LaPaz.Datos.FK_TitulosMovimiento_Venta" FromRole="TitulosMovimiento" ToRole="Venta" />
         </EntityType>
         <EntityType Name="TitulosStockAuditado">
           <Key>
@@ -18161,37 +18210,13 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="Saldo" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="FechaVencimiento" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityType Name="OrdenesPagoTransferencia">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OrdenPagoId" Type="Guid" Nullable="false" />
-          <Property Name="CuentaId" Type="Int32" Nullable="false" />
-          <Property Name="Numero" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Importe" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="BancoDestino" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="SucursalAltaId" Type="Int32" Nullable="false" />
-          <Property Name="OperadorAltaId" Type="Guid" Nullable="false" />
-          <Property Name="FechaModificacion" Type="DateTime" Precision="3" />
-          <Property Name="SucursalModificacionId" Type="Int32" />
-          <Property Name="OperadorModificacionId" Type="Guid" />
-          <Property Name="FechaAnulacion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Cuenta" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_Cuentas" FromRole="OrdenesPagoTransferencia" ToRole="Cuenta" />
-          <NavigationProperty Name="Operadore" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresAlta" FromRole="OrdenesPagoTransferencia" ToRole="Operador" />
-          <NavigationProperty Name="Operadore1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OperadoresModificacion" FromRole="OrdenesPagoTransferencia" ToRole="Operador" />
-          <NavigationProperty Name="OrdenesPago" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_OrdenesPago" FromRole="OrdenesPagoTransferencia" ToRole="OrdenesPago" />
-          <NavigationProperty Name="Sucursale" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesAlta" FromRole="OrdenesPagoTransferencia" ToRole="Sucursal" />
-          <NavigationProperty Name="Sucursale1" Relationship="LaPaz.Datos.FK_OrdenesPagoTransferencia_SucursalesModificacion" FromRole="OrdenesPagoTransferencia" ToRole="Sucursal" />
-        </EntityType>
         <EntityType Name="rolesCtaCte">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rol" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="users" Relationship="LaPaz.Datos.FK_users_roles" FromRole="rolesCtaCte" ToRole="user" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -18203,79 +18228,8 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
           <Property Name="rol" Type="Int32" Nullable="false" />
           <Property Name="lapazUser" Type="Guid" Nullable="false" />
           <Property Name="Sucursal" Type="Int32" />
+          <NavigationProperty Name="rolesCtaCte" Relationship="LaPaz.Datos.FK_users_roles" FromRole="user" ToRole="rolesCtaCte" />
         </EntityType>
-        <Association Name="FK_OrdenesPagoTransferencia_Cuentas">
-          <End Type="LaPaz.Datos.Cuenta" Role="Cuenta" Multiplicity="1" />
-          <End Type="LaPaz.Datos.OrdenesPagoTransferencia" Role="OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cuenta">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="CuentaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_OperadoresAlta">
-          <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="1" />
-          <End Type="LaPaz.Datos.OrdenesPagoTransferencia" Role="OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operador">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="OperadorAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_OperadoresModificacion">
-          <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="0..1" />
-          <End Type="LaPaz.Datos.OrdenesPagoTransferencia" Role="OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Operador">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="OperadorModificacionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_OrdenesPago">
-          <End Type="LaPaz.Datos.OrdenesPago" Role="OrdenesPago" Multiplicity="1" />
-          <End Type="LaPaz.Datos.OrdenesPagoTransferencia" Role="OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OrdenesPago">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="OrdenPagoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_SucursalesAlta">
-          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="1" />
-          <End Type="LaPaz.Datos.OrdenesPagoTransferencia" Role="OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="SucursalAltaId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_OrdenesPagoTransferencia_SucursalesModificacion">
-          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="0..1" />
-          <End Type="LaPaz.Datos.OrdenesPagoTransferencia" Role="OrdenesPagoTransferencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Sucursal">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrdenesPagoTransferencia">
-              <PropertyRef Name="SucursalModificacionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ProveedoresSenias_TiposComprobantes">
           <End Type="LaPaz.Datos.TipoComprobante" Role="TipoComprobante" Multiplicity="0..1" />
           <End Type="LaPaz.Datos.ProveedorSenia" Role="ProveedorSenia" Multiplicity="*" />
@@ -18464,6 +18418,114 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
             </Principal>
             <Dependent Role="PresupuestosDetalle">
               <PropertyRef Name="TituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_OperadorAlta">
+          <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="OperadorAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_OperadorModificacion">
+          <End Type="LaPaz.Datos.Operador" Role="Operador" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operador">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="OperadorModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_users_roles">
+          <End Type="LaPaz.Datos.rolesCtaCte" Role="rolesCtaCte" Multiplicity="1" />
+          <End Type="LaPaz.Datos.user" Role="user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="rolesCtaCte">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="rol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_Sucursal">
+          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="SucursalComprobante" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_SucursalAlta">
+          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="SucursalAltaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_SucursalModificacion">
+          <End Type="LaPaz.Datos.Sucursal" Role="Sucursal" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sucursal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="SucursalModificacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_TipoComprobante">
+          <End Type="LaPaz.Datos.TipoComprobante" Role="TipoComprobante" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoComprobante">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="TipoComprobanteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_Titulo">
+          <End Type="LaPaz.Datos.Titulo" Role="Titulo" Multiplicity="1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Titulo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="TituloId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TitulosMovimiento_Venta">
+          <End Type="LaPaz.Datos.Venta" Role="Venta" Multiplicity="0..1" />
+          <End Type="LaPaz.Datos.TitulosMovimiento" Role="TitulosMovimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venta">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TitulosMovimiento">
+              <PropertyRef Name="ComprobanteId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -21874,26 +21936,6 @@ warning 6002: The table/view 'lapaz.dbo.PRECIOSACT2' does not have a primary key
                 <ScalarProperty Name="Email1" ColumnName="Email" />
                 <ScalarProperty Name="FechaEmail" ColumnName="FechaEmail" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrdenesPagoTransferencias">
-            <EntityTypeMapping TypeName="LaPaz.Datos.OrdenesPagoTransferencia">
-              <MappingFragment StoreEntitySet="OrdenesPagoTransferencia">
-                <ScalarProperty Name="FechaAnulacion" ColumnName="FechaAnulacion" />
-                <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
-                <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
-                <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
-                <ScalarProperty Name="OperadorAltaId" ColumnName="OperadorAltaId" />
-                <ScalarProperty Name="SucursalAltaId" ColumnName="SucursalAltaId" />
-                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
-                <ScalarProperty Name="BancoDestino" ColumnName="BancoDestino" />
-                <ScalarProperty Name="Importe" ColumnName="Importe" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="Numero" ColumnName="Numero" />
-                <ScalarProperty Name="CuentaId" ColumnName="CuentaId" />
-                <ScalarProperty Name="OrdenPagoId" ColumnName="OrdenPagoId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -30,6 +30,7 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
         private Guid _notaCreditoId;
         private string _lcn;
         private Guid? _operadorIdAutoriza;
+        private CondicionVentaEnum? _tipoVenta;
 
         public FrmCreditoDevolucion(IClock clock,
                              IFormFactory formFactory,
@@ -119,6 +120,7 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
             TxtConcepto.Text = _venta.Concepto;
             TxtFecha.Text = String.Format("{0:dd MMMM yyyy}", _venta.FechaComprobante);
             TxtImporte.Text = _venta.ImporteNeto.ToString("N2");
+            _tipoVenta = _venta.CondicionVentaId;
         }
 
         private void ActualizarDetalleFactura(List<VentaDetalleDto> ventaDetalles)

@@ -18,6 +18,14 @@
     [FechaModificacion]      DATETIME         NULL,
     [SucursalModificacionId] INT              NULL,
     [OperadorModificacionId] UNIQUEIDENTIFIER NULL,
-    CONSTRAINT [PK_TitulosMovimiento_1] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_TitulosMovimiento_1] PRIMARY KEY CLUSTERED ([Id] ASC), 
+    CONSTRAINT [FK_TitulosMovimiento_Titulo] FOREIGN KEY (Tituloid) REFERENCES Titulos(id), 
+    CONSTRAINT [FK_TitulosMovimiento_Venta] FOREIGN KEY (ComprobanteId) REFERENCES Ventas(Id), 
+    CONSTRAINT [FK_TitulosMovimiento_Sucursal] FOREIGN KEY (SucursalComprobante) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_TitulosMovimiento_SucursalAlta] FOREIGN KEY (SucursalAltaId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_TitulosMovimiento_OperadorAlta] FOREIGN KEY (OperadorAltaId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_TitulosMovimiento_SucursalModificacion] FOREIGN KEY (SucursalModificacionId) REFERENCES Sucursales(Id), 
+    CONSTRAINT [FK_TitulosMovimiento_OperadorModificacion] FOREIGN KEY (OperadorModificacionId) REFERENCES Operadores(Id), 
+    CONSTRAINT [FK_TitulosMovimiento_TipoComprobante] FOREIGN KEY (TipoComprobanteId) REFERENCES TiposComprobantes(Id)
 );
 

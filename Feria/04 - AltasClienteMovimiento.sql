@@ -29,7 +29,7 @@ SELECT [IdCliente]
       ,[SucursalModificacionId]
       ,[OperadorModificacionId]
   FROM LCorrientesFeria.dbo.ClientesMovimiento
-  where FechaAlta > '2017-07-04 00:14'
+  where FechaAlta > '2017-07-20 14:30'
 	)
 
 

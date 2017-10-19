@@ -25,6 +25,7 @@ namespace LaPaz.Entidades
             this.ProveedoresPagos = new HashSet<ProveedoresPago>();
             this.ProveedoresMontosFavors = new HashSet<ProveedoresMontosFavor>();
             this.ProveedoresSenias = new HashSet<ProveedorSenia>();
+            this.TitulosMovimiento = new HashSet<TitulosMovimiento>();
         }
     
         public LaPaz.Entidades.Enums.TipoComprobanteEnum Id { get; set; }
@@ -50,5 +51,6 @@ namespace LaPaz.Entidades
         public virtual ICollection<ProveedoresPago> ProveedoresPagos { get; set; }
         public virtual ICollection<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
         public virtual ICollection<ProveedorSenia> ProveedoresSenias { get; set; }
+        public virtual ICollection<TitulosMovimiento> TitulosMovimiento { get; set; }
     }
 }

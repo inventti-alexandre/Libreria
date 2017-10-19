@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnActualizar = new Telerik.WinControls.UI.RadButton();
             this.BtnListado = new Telerik.WinControls.UI.RadButton();
@@ -60,7 +65,7 @@
             // 
             this.BtnActualizar.Location = new System.Drawing.Point(3, 73);
             this.BtnActualizar.Name = "BtnActualizar";
-            this.BtnActualizar.Size = new System.Drawing.Size(130, 49);
+            this.BtnActualizar.Size = new System.Drawing.Size(300, 49);
             this.BtnActualizar.TabIndex = 0;
             this.BtnActualizar.Text = "Actualizar";
             this.BtnActualizar.ThemeName = "TelerikMetroBlue";
@@ -70,7 +75,7 @@
             // 
             this.BtnListado.Location = new System.Drawing.Point(3, 3);
             this.BtnListado.Name = "BtnListado";
-            this.BtnListado.Size = new System.Drawing.Size(130, 50);
+            this.BtnListado.Size = new System.Drawing.Size(300, 50);
             this.BtnListado.TabIndex = 1;
             this.BtnListado.Text = "Ver Movimientos";
             this.BtnListado.ThemeName = "TelerikMetroBlue";
@@ -86,6 +91,33 @@
             this.GridMovimientos.MasterTemplate.AllowAddNewRow = false;
             this.GridMovimientos.MasterTemplate.AllowColumnReorder = false;
             this.GridMovimientos.MasterTemplate.AllowDragToGroup = false;
+            this.GridMovimientos.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
+            gridViewTextBoxColumn1.FieldName = "Fecha";
+            gridViewTextBoxColumn1.HeaderText = "Fecha";
+            gridViewTextBoxColumn1.Name = "Fecha";
+            gridViewTextBoxColumn1.Width = 224;
+            gridViewTextBoxColumn2.FieldName = "VentasLCN";
+            gridViewTextBoxColumn2.HeaderText = "Nro Venta";
+            gridViewTextBoxColumn2.Name = "LCN";
+            gridViewTextBoxColumn2.Width = 224;
+            gridViewTextBoxColumn3.FieldName = "TitulosNombreTitulo";
+            gridViewTextBoxColumn3.HeaderText = "Titulo";
+            gridViewTextBoxColumn3.Name = "Titulo";
+            gridViewTextBoxColumn3.Width = 224;
+            gridViewTextBoxColumn4.FieldName = "CntMinCn";
+            gridViewTextBoxColumn4.HeaderText = "Consigando";
+            gridViewTextBoxColumn4.Name = "CntMinCn";
+            gridViewTextBoxColumn4.Width = 224;
+            gridViewTextBoxColumn5.FieldName = "CntMinPr";
+            gridViewTextBoxColumn5.HeaderText = "Propio";
+            gridViewTextBoxColumn5.Name = "CntMinPr";
+            gridViewTextBoxColumn5.Width = 224;
+            this.GridMovimientos.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5});
             this.GridMovimientos.Name = "GridMovimientos";
             this.GridMovimientos.ReadOnly = true;
             this.GridMovimientos.Size = new System.Drawing.Size(1138, 326);

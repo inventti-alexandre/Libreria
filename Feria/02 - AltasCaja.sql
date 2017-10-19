@@ -36,7 +36,7 @@ SELECT [Id]
       ,[OperadorModificacionId]
       ,[SucursalModificacionId]
   FROM LCorrientesFeria.dbo.Cajas
-  where FechaAlta > '2017-07-04 00:14'
+  where FechaAlta > '2017-07-20 14:30'
 
 
 

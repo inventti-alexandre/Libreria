@@ -148,6 +148,7 @@ namespace LaPaz.Win.Forms.Seguridad
             // UcSucursales
             // 
             this.UcSucursales.Location = new System.Drawing.Point(3, 25);
+            this.UcSucursales.Margin = new System.Windows.Forms.Padding(4);
             this.UcSucursales.Name = "UcSucursales";
             this.UcSucursales.Size = new System.Drawing.Size(277, 27);
             this.UcSucursales.SucursalId = null;
@@ -274,14 +275,15 @@ namespace LaPaz.Win.Forms.Seguridad
             this.PvGeneral.Controls.Add(this.UcProvincia);
             this.PvGeneral.Controls.Add(this.metroLabel8);
             this.PvGeneral.Controls.Add(this.metroLabel12);
-            this.PvGeneral.Location = new System.Drawing.Point(5, 31);
+            this.PvGeneral.Location = new System.Drawing.Point(5, 36);
             this.PvGeneral.Name = "PvGeneral";
-            this.PvGeneral.Size = new System.Drawing.Size(898, 368);
+            this.PvGeneral.Size = new System.Drawing.Size(898, 363);
             this.PvGeneral.Text = "General";
             // 
             // UcMensajeAdvertenciaCambioClave
             // 
             this.UcMensajeAdvertenciaCambioClave.Location = new System.Drawing.Point(605, 105);
+            this.UcMensajeAdvertenciaCambioClave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UcMensajeAdvertenciaCambioClave.Message = "La clave actual se perderá.";
             this.UcMensajeAdvertenciaCambioClave.Name = "UcMensajeAdvertenciaCambioClave";
             this.UcMensajeAdvertenciaCambioClave.Size = new System.Drawing.Size(277, 41);
@@ -294,7 +296,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.radLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel2.Location = new System.Drawing.Point(17, 30);
             this.radLabel2.Name = "radLabel2";
-            this.radLabel2.Size = new System.Drawing.Size(123, 24);
+            this.radLabel2.Size = new System.Drawing.Size(154, 29);
             this.radLabel2.TabIndex = 131;
             this.radLabel2.Text = "Nombre Usuario:";
             this.radLabel2.ThemeName = "TelerikMetroBlue";
@@ -304,7 +306,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.CbxCambiarClave.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbxCambiarClave.Location = new System.Drawing.Point(455, 112);
             this.CbxCambiarClave.Name = "CbxCambiarClave";
-            this.CbxCambiarClave.Size = new System.Drawing.Size(122, 24);
+            this.CbxCambiarClave.Size = new System.Drawing.Size(148, 29);
             this.CbxCambiarClave.TabIndex = 126;
             this.CbxCambiarClave.Text = "Cambiar Clave";
             this.CbxCambiarClave.ThemeName = "TelerikMetroBlue";
@@ -315,7 +317,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel1.Location = new System.Drawing.Point(17, 70);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(131, 24);
+            this.metroLabel1.Size = new System.Drawing.Size(164, 29);
             this.metroLabel1.TabIndex = 129;
             this.metroLabel1.Text = "Apellido, Nombre:";
             this.metroLabel1.ThemeName = "TelerikMetroBlue";
@@ -327,7 +329,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.TxtConfirmarPassword.Location = new System.Drawing.Point(603, 192);
             this.TxtConfirmarPassword.Name = "TxtConfirmarPassword";
             this.TxtConfirmarPassword.PasswordChar = '*';
-            this.TxtConfirmarPassword.Size = new System.Drawing.Size(278, 26);
+            this.TxtConfirmarPassword.Size = new System.Drawing.Size(278, 31);
             this.TxtConfirmarPassword.TabIndex = 9;
             this.TxtConfirmarPassword.TabStop = false;
             this.TxtConfirmarPassword.ThemeName = "TelerikMetroBlue";
@@ -338,7 +340,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.txtApellidoNombre.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidoNombre.Location = new System.Drawing.Point(154, 69);
             this.txtApellidoNombre.Name = "txtApellidoNombre";
-            this.txtApellidoNombre.Size = new System.Drawing.Size(277, 26);
+            this.txtApellidoNombre.Size = new System.Drawing.Size(277, 31);
             this.txtApellidoNombre.TabIndex = 1;
             this.txtApellidoNombre.TabStop = false;
             this.txtApellidoNombre.ThemeName = "TelerikMetroBlue";
@@ -350,7 +352,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.TxtPassword.Location = new System.Drawing.Point(603, 152);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
-            this.TxtPassword.Size = new System.Drawing.Size(278, 26);
+            this.TxtPassword.Size = new System.Drawing.Size(278, 31);
             this.TxtPassword.TabIndex = 8;
             this.TxtPassword.TabStop = false;
             this.TxtPassword.ThemeName = "TelerikMetroBlue";
@@ -360,7 +362,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel4.Location = new System.Drawing.Point(17, 154);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(75, 24);
+            this.metroLabel4.Size = new System.Drawing.Size(93, 29);
             this.metroLabel4.TabIndex = 132;
             this.metroLabel4.Text = "Domicilio:";
             this.metroLabel4.ThemeName = "TelerikMetroBlue";
@@ -370,7 +372,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.radLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel4.Location = new System.Drawing.Point(455, 194);
             this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(120, 24);
+            this.radLabel4.Size = new System.Drawing.Size(149, 29);
             this.radLabel4.TabIndex = 143;
             this.radLabel4.Text = "Confirmar Clave:";
             this.radLabel4.ThemeName = "TelerikMetroBlue";
@@ -380,7 +382,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel5.Location = new System.Drawing.Point(17, 196);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(71, 24);
+            this.metroLabel5.Size = new System.Drawing.Size(88, 29);
             this.metroLabel5.TabIndex = 133;
             this.metroLabel5.Text = "Teléfono:";
             this.metroLabel5.ThemeName = "TelerikMetroBlue";
@@ -390,7 +392,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.radLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel3.Location = new System.Drawing.Point(455, 154);
             this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(47, 24);
+            this.radLabel3.Size = new System.Drawing.Size(59, 29);
             this.radLabel3.TabIndex = 141;
             this.radLabel3.Text = "Clave:";
             this.radLabel3.ThemeName = "TelerikMetroBlue";
@@ -400,7 +402,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel6.Location = new System.Drawing.Point(17, 238);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(58, 24);
+            this.metroLabel6.Size = new System.Drawing.Size(72, 29);
             this.metroLabel6.TabIndex = 134;
             this.metroLabel6.Text = "Celular:";
             this.metroLabel6.ThemeName = "TelerikMetroBlue";
@@ -411,7 +413,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.TxtNombreUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtNombreUsuario.Location = new System.Drawing.Point(154, 29);
             this.TxtNombreUsuario.Name = "TxtNombreUsuario";
-            this.TxtNombreUsuario.Size = new System.Drawing.Size(277, 26);
+            this.TxtNombreUsuario.Size = new System.Drawing.Size(277, 31);
             this.TxtNombreUsuario.TabIndex = 0;
             this.TxtNombreUsuario.TabStop = false;
             this.TxtNombreUsuario.ThemeName = "TelerikMetroBlue";
@@ -421,7 +423,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel7.Location = new System.Drawing.Point(454, 29);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(73, 24);
+            this.metroLabel7.Size = new System.Drawing.Size(90, 29);
             this.metroLabel7.TabIndex = 135;
             this.metroLabel7.Text = "Provincia:";
             this.metroLabel7.ThemeName = "TelerikMetroBlue";
@@ -431,7 +433,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.txtDni.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDni.Location = new System.Drawing.Point(154, 110);
             this.txtDni.Name = "txtDni";
-            this.txtDni.Size = new System.Drawing.Size(277, 26);
+            this.txtDni.Size = new System.Drawing.Size(277, 31);
             this.txtDni.TabIndex = 2;
             this.txtDni.TabStop = false;
             this.txtDni.ThemeName = "TelerikMetroBlue";
@@ -441,7 +443,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.radLabel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radLabel1.Location = new System.Drawing.Point(454, 235);
             this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(48, 24);
+            this.radLabel1.Size = new System.Drawing.Size(59, 29);
             this.radLabel1.TabIndex = 137;
             this.radLabel1.Text = "Roles:";
             this.radLabel1.ThemeName = "TelerikMetroBlue";
@@ -452,7 +454,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.txtDomicilio.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDomicilio.Location = new System.Drawing.Point(154, 152);
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(277, 26);
+            this.txtDomicilio.Size = new System.Drawing.Size(277, 31);
             this.txtDomicilio.TabIndex = 3;
             this.txtDomicilio.TabStop = false;
             this.txtDomicilio.ThemeName = "TelerikMetroBlue";
@@ -474,7 +476,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.txtTelefono.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(154, 193);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(277, 26);
+            this.txtTelefono.Size = new System.Drawing.Size(277, 31);
             this.txtTelefono.TabIndex = 4;
             this.txtTelefono.TabStop = false;
             this.txtTelefono.ThemeName = "TelerikMetroBlue";
@@ -495,7 +497,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.txtCelular.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.Location = new System.Drawing.Point(154, 234);
             this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(277, 26);
+            this.txtCelular.Size = new System.Drawing.Size(277, 31);
             this.txtCelular.TabIndex = 5;
             this.txtCelular.TabStop = false;
             this.txtCelular.ThemeName = "TelerikMetroBlue";
@@ -516,7 +518,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel8.Location = new System.Drawing.Point(454, 71);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(76, 24);
+            this.metroLabel8.Size = new System.Drawing.Size(94, 29);
             this.metroLabel8.TabIndex = 136;
             this.metroLabel8.Text = "Localidad:";
             this.metroLabel8.ThemeName = "TelerikMetroBlue";
@@ -526,7 +528,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.metroLabel12.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroLabel12.Location = new System.Drawing.Point(17, 112);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(38, 24);
+            this.metroLabel12.Size = new System.Drawing.Size(47, 29);
             this.metroLabel12.TabIndex = 138;
             this.metroLabel12.Text = "Cuit:";
             this.metroLabel12.ThemeName = "TelerikMetroBlue";
@@ -549,7 +551,7 @@ namespace LaPaz.Win.Forms.Seguridad
             this.LnkHabilitarUsuario.ActiveLinkColor = System.Drawing.Color.DodgerBlue;
             this.LnkHabilitarUsuario.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.LnkHabilitarUsuario.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.LnkHabilitarUsuario.Location = new System.Drawing.Point(399, 441);
+            this.LnkHabilitarUsuario.Location = new System.Drawing.Point(399, 445);
             this.LnkHabilitarUsuario.Name = "LnkHabilitarUsuario";
             this.LnkHabilitarUsuario.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.LnkHabilitarUsuario.Size = new System.Drawing.Size(111, 25);
@@ -564,6 +566,7 @@ namespace LaPaz.Win.Forms.Seguridad
             // UcMensajeDeshabilitado
             // 
             this.UcMensajeDeshabilitado.Location = new System.Drawing.Point(12, 430);
+            this.UcMensajeDeshabilitado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UcMensajeDeshabilitado.Message = "Este usuario se encuentra deshabilitado";
             this.UcMensajeDeshabilitado.Name = "UcMensajeDeshabilitado";
             this.UcMensajeDeshabilitado.Size = new System.Drawing.Size(381, 43);
@@ -573,14 +576,15 @@ namespace LaPaz.Win.Forms.Seguridad
             // 
             // FrmCrearEditarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 485);
+            this.ClientSize = new System.Drawing.Size(1259, 610);
             this.Controls.Add(this.LnkHabilitarUsuario);
             this.Controls.Add(this.UcMensajeDeshabilitado);
             this.Controls.Add(this.radPageView1);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.BtnCancelar);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FrmCrearEditarUsuario";
             // 

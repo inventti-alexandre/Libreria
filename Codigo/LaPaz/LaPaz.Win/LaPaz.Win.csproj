@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>F:\-Sil\Desktop\libreria\</PublishUrl>
+    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriavecinitologos/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,12 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/elvecinitoNuevo/</InstallUrl>
-    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/elvecinitoNuevo/</UpdateUrl>
+    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriavecinitologos/</InstallUrl>
+    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriavecinitologos/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.189</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>197</ApplicationRevision>
+    <ApplicationRevision>203</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

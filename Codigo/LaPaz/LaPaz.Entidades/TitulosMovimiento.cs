@@ -16,7 +16,7 @@ namespace LaPaz.Entidades
     {
         public int Id { get; set; }
         public System.Guid TituloId { get; set; }
-        public Nullable<int> TipoComprobanteId { get; set; }
+        public Nullable<LaPaz.Entidades.Enums.TipoComprobanteEnum> TipoComprobanteId { get; set; }
         public Nullable<System.Guid> ComprobanteId { get; set; }
         public Nullable<int> SucursalComprobante { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
@@ -33,5 +33,14 @@ namespace LaPaz.Entidades
         public Nullable<System.DateTime> FechaModificacion { get; set; }
         public Nullable<int> SucursalModificacionId { get; set; }
         public Nullable<System.Guid> OperadorModificacionId { get; set; }
+    
+        public virtual Operador Operadores { get; set; }
+        public virtual Operador Operadores1 { get; set; }
+        public virtual Sucursal Sucursales { get; set; }
+        public virtual Sucursal Sucursales1 { get; set; }
+        public virtual Sucursal Sucursales2 { get; set; }
+        public virtual TipoComprobante TiposComprobantes { get; set; }
+        public virtual Titulo Titulos { get; set; }
+        public virtual Venta Ventas { get; set; }
     }
 }

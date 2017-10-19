@@ -40,7 +40,6 @@
             this.UcSucursales = new LaPaz.Win.Forms.Util.UcFiltroSucursal();
             this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
             this.CbxUsuario = new LaPaz.Win.Forms.Util.UcUsuariosLogin();
-            this.ucFiltrosAutores1 = new LaPaz.Win.Forms.Autores.UcFiltrosAutores();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtPassword)).BeginInit();
@@ -73,7 +72,7 @@
             // TxtPassword
             // 
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtPassword.Location = new System.Drawing.Point(229, 50);
+            this.TxtPassword.Location = new System.Drawing.Point(235, 52);
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.Size = new System.Drawing.Size(220, 31);
@@ -117,10 +116,10 @@
             // 
             // UcSucursales
             // 
-            this.UcSucursales.Location = new System.Drawing.Point(229, 86);
+            this.UcSucursales.Location = new System.Drawing.Point(235, 90);
             this.UcSucursales.Margin = new System.Windows.Forms.Padding(4);
             this.UcSucursales.Name = "UcSucursales";
-            this.UcSucursales.Size = new System.Drawing.Size(220, 27);
+            this.UcSucursales.Size = new System.Drawing.Size(220, 30);
             this.UcSucursales.SucursalId = null;
             this.UcSucursales.TabIndex = 3;
             // 
@@ -136,30 +135,19 @@
             // 
             // CbxUsuario
             // 
-            this.CbxUsuario.Location = new System.Drawing.Point(229, 14);
+            this.CbxUsuario.Location = new System.Drawing.Point(235, 18);
             this.CbxUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbxUsuario.Name = "CbxUsuario";
             this.CbxUsuario.OperadorId = null;
-            this.CbxUsuario.Size = new System.Drawing.Size(220, 27);
+            this.CbxUsuario.Size = new System.Drawing.Size(220, 30);
             this.CbxUsuario.TabIndex = 1;
-            // 
-            // ucFiltrosAutores1
-            // 
-            this.ucFiltrosAutores1.Location = new System.Drawing.Point(593, 154);
-            this.ucFiltrosAutores1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ucFiltrosAutores1.Name = "ucFiltrosAutores1";
-            this.ucFiltrosAutores1.Nombre = "";
-            this.ucFiltrosAutores1.Size = new System.Drawing.Size(1136, 121);
-            this.ucFiltrosAutores1.TabIndex = 86;
             // 
             // FrmLogin
             // 
             this.AcceptButton = this.BtnIngresar;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.CancelButton = this.BtnCancelar;
-            this.ClientSize = new System.Drawing.Size(607, 216);
-            this.Controls.Add(this.ucFiltrosAutores1);
+            this.ClientSize = new System.Drawing.Size(509, 202);
             this.Controls.Add(this.CbxUsuario);
             this.Controls.Add(this.radLabel2);
             this.Controls.Add(this.UcSucursales);
@@ -203,6 +191,5 @@
         private Util.UcFiltroSucursal UcSucursales;
         private Telerik.WinControls.UI.RadLabel radLabel2;
         private Util.UcUsuariosLogin CbxUsuario;
-        private Autores.UcFiltrosAutores ucFiltrosAutores1;
     }
 }

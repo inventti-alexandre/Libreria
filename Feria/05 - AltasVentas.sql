@@ -51,5 +51,5 @@ SELECT [Id]
       ,[OperadorAutoriza]
       ,[ValidacionUsuario]
   FROM LCorrientesFeria.dbo.Ventas
-    where FechaAlta > '2017-07-06 00:14'
+    where FechaAlta > '2017-07-20 14:30'
 )

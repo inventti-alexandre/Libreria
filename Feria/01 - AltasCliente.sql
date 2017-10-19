@@ -78,5 +78,5 @@ INSERT INTO LCorrientes.dbo.Clientes
       ,[MandarMail]
       ,[Llamar]
   FROM LCorrientesFeria.dbo.Clientes
-where FechaAlta > '2017-07-04 00:14'
+where FechaAlta > '2017-07-20 15:58'
 )

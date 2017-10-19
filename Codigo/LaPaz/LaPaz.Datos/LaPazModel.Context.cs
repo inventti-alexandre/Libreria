@@ -193,7 +193,6 @@ namespace LaPaz.Entidades
         public virtual DbSet<ProveedoresMontosFavor> ProveedoresMontosFavors { get; set; }
         public virtual DbSet<Comentario> Comentarios { get; set; }
         public virtual DbSet<Email> Emails { get; set; }
-        public virtual DbSet<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
         public virtual DbSet<rolesCtaCte> rolesCtaCtes { get; set; }
         public virtual DbSet<user> users { get; set; }
         public virtual DbSet<TitulosConsignacionesDevuelta> TitulosConsignacionesDevueltas { get; set; }

@@ -18,7 +18,6 @@ namespace LaPaz.Entidades
         {
             this.OrdenesPagoComprobantes = new HashSet<OrdenesPagoComprobante>();
             this.OrdenesPagoDetalles = new HashSet<OrdenesPagoDetalle>();
-            this.OrdenesPagoTransferencias = new HashSet<OrdenesPagoTransferencia>();
         }
     
         public System.Guid Id { get; set; }
@@ -60,6 +59,5 @@ namespace LaPaz.Entidades
         public virtual ICollection<OrdenesPagoDetalle> OrdenesPagoDetalles { get; set; }
         public virtual CentrosCosto CentrosCosto { get; set; }
         public virtual TiposGasto TiposGasto { get; set; }
-        public virtual ICollection<OrdenesPagoTransferencia> OrdenesPagoTransferencias { get; set; }
     }
 }

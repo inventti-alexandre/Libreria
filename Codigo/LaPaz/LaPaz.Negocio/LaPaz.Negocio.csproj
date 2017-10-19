@@ -55,7 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteNegocio.cs" />
+    <Compile Include="Interfaces\ITitulosMovimientoNegocio.cs" />
     <Compile Include="Interfaces\ITitulosConsignacionesDevueltasNegocio.cs" />
+    <Compile Include="TitulosMovimientoNegocio.cs" />
     <Compile Include="TitulosConsignacionesDevueltasNegocio.cs" />
     <Compile Include="CompraNegocio.cs" />
     <Compile Include="CompraDetalleNegocio.cs" />

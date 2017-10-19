@@ -8,7 +8,7 @@ FROM
 			(
 				select TituloId, SUM(CntMinCn) as CntMinCn , SUM(CntMinPr) as CntMinPr
 				from LCorrientesFeria.dbo.TitulosMovimiento tm
-				where tm.Id >  1497474
+				where tm.Id >  1497460
 				GROUP BY tm.TituloId	
 			) 
 		tmFeria 
@@ -17,7 +17,7 @@ FROM
 
 
 		
-  select TituloId, SUM(CntMinCn) as CntMinCn , SUM(CntMinPr) as CntMinPr
-  from LCorrientesFeria.dbo.TitulosMovimiento tm
-  where tm.Id >  1497474
-  GROUP BY tm.TituloId
+ -- select TituloId, SUM(CntMinCn) as CntMinCn , SUM(CntMinPr) as CntMinPr
+ -- from LCorrientesFeria.dbo.TitulosMovimiento tm
+ -- where tm.Id >  1497460
+ -- GROUP BY tm.TituloId

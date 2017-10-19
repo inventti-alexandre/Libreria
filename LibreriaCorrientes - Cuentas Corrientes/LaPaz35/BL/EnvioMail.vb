@@ -48,7 +48,8 @@ Public Class EnvioMail
         Dim smtp As New SmtpClient
         Dim saldoint As Decimal = saldo
         saldoint = Decimal.Round(saldoint, 2)
-        Mail.From = New MailAddress("administracion@libreriactes.com.ar", "LIBRERIA DE CORRIENTES")
+        ' Mail.From = New MailAddress("administracion@libreriactes.com.ar", "LIBRERIA DE CORRIENTES")
+        Mail.From = New MailAddress("libreriadecorrientes@outlook.com", "LIBRERIA DE CORRIENTES")
         'Mail.To.Add("delapazangelina@hotmail.com")
         'Mail.To.Add("silviaeaguilar@gmail.com")
         'Mail.To.Add("santiacevedo@gmail.com")
