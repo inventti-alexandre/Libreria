@@ -1167,6 +1167,12 @@
     <Compile Include="Forms\Ventas\UcTotalesVenta.Designer.cs">
       <DependentUpon>UcTotalesVenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ventas\VentasReservadas\FrmComentario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventas\VentasReservadas\FrmComentario.Designer.cs">
+      <DependentUpon>FrmComentario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ventas\VentasReservadas\FrmVentasReservadasListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1844,6 +1850,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventas\UcTotalesVenta.resx">
       <DependentUpon>UcTotalesVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventas\VentasReservadas\FrmComentario.resx">
+      <DependentUpon>FrmComentario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ventas\VentasReservadas\FrmVentasReservadasListado.resx">
       <DependentUpon>FrmVentasReservadasListado.cs</DependentUpon>

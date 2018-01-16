@@ -22,10 +22,11 @@ namespace LaPaz.Win.Forms.Libros
 {
     public partial class FrmCrearEditarLibro : EditFormBase
     {
-        private readonly Guid _tituloId;
+        private Guid _tituloId;
         private readonly IClock _clock;
         private readonly ActionFormMode _formMode;
         private Titulo _titulo;
+        private Guid _proveedorId;
         private decimal? _precioVentaOriginal;
         private Guid? _operadorUltimoPrecioIdOriginal;
         private readonly IMessageBoxDisplayService _messageBoxDisplayService;
@@ -43,6 +44,7 @@ namespace LaPaz.Win.Forms.Libros
             UowFactory = uowFactory;
 
             _tituloId = id;
+            _proveedorId = id;
             _clock = clock;
             _formMode = mode;
             _messageBoxDisplayService = messageBoxDisplayService;
@@ -166,6 +168,12 @@ namespace LaPaz.Win.Forms.Libros
                 case ActionFormMode.Create:
                     this.Text = Resources.LabelCrearLibro;
                     CbxProveedor.Enabled = true;
+                    if (_proveedorId != null)
+                    {
+                        Proveedor = _proveedorId;
+                        _tituloId = Guid.Empty;
+                    }
+
                     break;
                 case ActionFormMode.Edit:
                     this.Text = Resources.LabelEditarLibro;
@@ -179,6 +187,12 @@ namespace LaPaz.Win.Forms.Libros
             CbxEditorial.CargarEditorial();
             CbxEditorial.CargarEditorial();
             CargarTitulo(_tituloId);
+            if (_proveedorId != Guid.Empty && _tituloId == Guid.Empty)
+            {
+                Proveedor = _proveedorId;
+                CbxProveedor.Enabled = false;
+            }
+               
         }
 
         private void DefinirCombos()

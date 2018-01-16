@@ -192,7 +192,7 @@ Partial Class frmPrincipal
         'TimerMail
         '
         Me.TimerMail.Enabled = True
-        Me.TimerMail.Interval = 300000
+        Me.TimerMail.Interval = 600000
         '
         'bgwMail
         '

@@ -32,6 +32,7 @@
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn1 = new Telerik.WinControls.UI.GridViewCommandColumn();
             Telerik.WinControls.UI.GridViewCommandColumn gridViewCommandColumn2 = new Telerik.WinControls.UI.GridViewCommandColumn();
             this.GrillaFacturasReservadas = new Telerik.WinControls.UI.RadGridView();
@@ -60,17 +61,21 @@
             gridViewTextBoxColumn1.HeaderText = "NroReserva";
             gridViewTextBoxColumn1.IsVisible = false;
             gridViewTextBoxColumn1.Name = "NroReserva";
-            gridViewTextBoxColumn1.Width = 276;
+            gridViewTextBoxColumn1.Width = 300;
             gridViewTextBoxColumn2.FieldName = "LCN";
             gridViewTextBoxColumn2.FormatString = "";
             gridViewTextBoxColumn2.HeaderText = "Nro Factura";
             gridViewTextBoxColumn2.Name = "LCN";
-            gridViewTextBoxColumn2.Width = 349;
+            gridViewTextBoxColumn2.Width = 209;
             gridViewTextBoxColumn3.FieldName = "FechaAlta";
             gridViewTextBoxColumn3.FormatString = "";
             gridViewTextBoxColumn3.HeaderText = "Fecha";
             gridViewTextBoxColumn3.Name = "FechaAlta";
-            gridViewTextBoxColumn3.Width = 316;
+            gridViewTextBoxColumn3.Width = 138;
+            gridViewTextBoxColumn4.FieldName = "Comentario";
+            gridViewTextBoxColumn4.HeaderText = "Comentario";
+            gridViewTextBoxColumn4.Name = "Comentario";
+            gridViewTextBoxColumn4.Width = 319;
             gridViewCommandColumn1.HeaderText = "";
             gridViewCommandColumn1.Image = global::LaPaz.Win.Properties.Resources.Data_Edit;
             gridViewCommandColumn1.MaxWidth = 30;
@@ -87,6 +92,7 @@
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2,
             gridViewTextBoxColumn3,
+            gridViewTextBoxColumn4,
             gridViewCommandColumn1,
             gridViewCommandColumn2});
             this.GrillaFacturasReservadas.MasterTemplate.EnableGrouping = false;
@@ -101,6 +107,7 @@
             // ucProgressSpinner1
             // 
             this.ucProgressSpinner1.Location = new System.Drawing.Point(751, 12);
+            this.ucProgressSpinner1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ucProgressSpinner1.Name = "ucProgressSpinner1";
             this.ucProgressSpinner1.Size = new System.Drawing.Size(154, 27);
             this.ucProgressSpinner1.TabIndex = 1;
@@ -109,6 +116,7 @@
             // 
             this.FacturaPager.CurrentPage = 1;
             this.FacturaPager.Location = new System.Drawing.Point(370, 88);
+            this.FacturaPager.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.FacturaPager.Name = "FacturaPager";
             this.FacturaPager.PageSize = 50;
             this.FacturaPager.PageTotal = 1;
@@ -119,13 +127,14 @@
             // 
             // FrmVentasReservadasListado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 723);
+            this.ClientSize = new System.Drawing.Size(1131, 981);
             this.Controls.Add(this.FacturaPager);
             this.Controls.Add(this.ucProgressSpinner1);
             this.Controls.Add(this.GrillaFacturasReservadas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmVentasReservadasListado";
             // 
             // 

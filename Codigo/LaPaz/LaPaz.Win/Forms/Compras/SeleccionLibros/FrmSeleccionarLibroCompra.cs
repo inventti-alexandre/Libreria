@@ -665,7 +665,9 @@ namespace LaPaz.Win.Forms.Compras
 
         private void CrearLibro()
         {
-            using (var formCrear = FormFactory.Create<FrmCrearEditarLibro>(default(Guid), ActionFormMode.Create))
+            Guid provid = _proveedorId ?? default(Guid);
+            //using (var formCrear = FormFactory.Create<FrmCrearEditarLibro>(default(Guid), ActionFormMode.Create))
+            using (var formCrear = FormFactory.Create<FrmCrearEditarLibro>(provid, ActionFormMode.Create))
             {
                 formCrear.TituloAgregado += (sender, titulo) =>
                 {

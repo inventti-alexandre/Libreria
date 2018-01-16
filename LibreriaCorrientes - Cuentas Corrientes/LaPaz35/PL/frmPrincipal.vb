@@ -16,8 +16,10 @@ Public Class frmPrincipal
         Catch ex As Exception
             Dim frm As New frmMensajes("No se pudo conectar a la base de datos")
             frm.ShowDialog()
+
             'MsgBox(ex.Message)
         End Try
+        'EnviodeMail()
     End Sub
 
     Private Sub HabilitarMenu()
@@ -163,7 +165,8 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub TimerMail_Tick(sender As Object, e As EventArgs) Handles TimerMail.Tick
-        If Now().ToShortTimeString() > "10:00:00" And Now().ToShortTimeString() < "11:00:00" Then
+        If Now().ToShortTimeString() > "10:00:00" And Now().ToShortTimeString() < "12:59:00" Then
+            EnviodeMailPrueba()
             bgwMail.RunWorkerAsync()
         End If
 
@@ -178,6 +181,12 @@ Public Class frmPrincipal
         'frm.Show()
         Dim cls As New EnvioMail
         cls.Enviar()
+    End Sub
+    Private Sub EnviodeMailPrueba()
+        'Dim frm As New frmEnvioMail
+        'frm.Show()
+        Dim cls As New EnvioMail
+        cls.EnviarPrueba()
     End Sub
 #End Region
 

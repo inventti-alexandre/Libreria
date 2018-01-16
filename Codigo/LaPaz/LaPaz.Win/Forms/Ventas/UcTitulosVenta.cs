@@ -67,7 +67,7 @@ namespace LaPaz.Win.Forms.Ventas
             lblCantidad.Text = string.Format("Cantidad de libros: {0}", CalcularCantidad());
 
             //Si es presupuestos ordenamos alfabeticamente
-            if (btnAgregarPresupuesto.Visible)
+            if (btnAgregarPresupuesto.Visible || (this.Parent.Parent.Name == "FrmConsignacionCliente"))
             {
                 GrillaTitulos.DataSource = Titulos.OrderBy(t => t.TituloNombre).ToList();
             }
@@ -75,6 +75,7 @@ namespace LaPaz.Win.Forms.Ventas
             {
                 GrillaTitulos.DataSource = Titulos.ToList();
             }
+
         }
 
         public void ActualizarDescuento(int? descuento)

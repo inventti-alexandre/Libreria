@@ -22,6 +22,7 @@ using LaPaz.Win.Forms.Autenticacion;
 using Telerik.WinControls.UI;
 using LaPaz.Negocio.Data;
 using LaPaz.Negocio.Response;
+using LaPaz.Win.Forms.Ventas.VentasReservadas;
 
 namespace LaPaz.Win.Forms.Ventas
 {
@@ -472,10 +473,24 @@ namespace LaPaz.Win.Forms.Ventas
 
         private void BtnReservarFactura_Click(object sender, EventArgs e)
         {
-            ReservarFacturaData reservarFacturaData = new ReservarFacturaData();
+             ReservarFacturaData reservarFacturaData = new ReservarFacturaData();
             reservarFacturaData.OperadorActualId = Context.OperadorActual.Id;
             reservarFacturaData.SucursalActualId = Context.SucursalActual.Id;
-            reservarFacturaData.PuntoVenta = Context.SucursalActual.SucursalNumero ??1;
+            reservarFacturaData.PuntoVenta = Context.SucursalActual.SucursalNumero ?? 1;
+
+
+            string comentarioVenta;
+            using (var formComentario = FormFactory.Create<FrmComentario>())
+            {
+                formComentario.ComentarioAgregado += (o, comentario) =>
+                {
+                    reservarFacturaData.Comentario = comentario;
+                    formComentario.Close();
+                };
+                 formComentario.ShowDialog();
+            }
+            
+           
             _ventaNegocio.ReservarFactura(reservarFacturaData);
 
             _messageBoxDisplayService.ShowSuccess("Factura reservada");

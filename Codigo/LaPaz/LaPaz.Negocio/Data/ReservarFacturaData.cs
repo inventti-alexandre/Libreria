@@ -14,5 +14,7 @@ namespace LaPaz.Negocio.Data
         public int SucursalActualId { get; set; }
 
         public int PuntoVenta { get; set; }
+
+        public string Comentario { get;  set; }
     }
 }

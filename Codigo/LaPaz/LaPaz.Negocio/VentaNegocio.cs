@@ -397,6 +397,7 @@ namespace LaPaz.Negocio
             VentaReservada ventaReservada = new VentaReservada();
             ventaReservada.SucReserva = reservarFacturaData.SucursalActualId;
             ventaReservada.NroLote = loteFactura.NroLote;
+            ventaReservada.Comentario = reservarFacturaData.Comentario;
 
             ventaReservada.LCN = LcnHelper.ObtenerLcn(this.SiguienteNumeroFactura(reservarFacturaData.OperadorActualId, reservarFacturaData.SucursalActualId), reservarFacturaData.PuntoVenta);
             ventaReservada.FechaAlta = _clock.Now;

@@ -3014,6 +3014,7 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
           <Property Name="SucReserva" Type="int" Nullable="false" />
           <Property Name="NroLote" Type="int" Nullable="false" />
           <Property Name="LCN" Type="char" MaxLength="13" Nullable="false" />
+          <Property Name="Comentario" Type="nvarchar(max)" />
           <Property Name="FechaAlta" Type="datetime" />
           <Property Name="SucursalAltaId" Type="int" />
           <Property Name="OperadorAltaId" Type="uniqueidentifier" />
@@ -12165,6 +12166,7 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
           <NavigationProperty Name="OperadorModificacion" Relationship="LaPaz.Datos.FK_VentasReservadas_OperadorModificacion" FromRole="VentaReservada" ToRole="Operador" />
           <NavigationProperty Name="SucursalAlta" Relationship="LaPaz.Datos.FK_VentasReservadas_SucursalAlta" FromRole="VentaReservada" ToRole="Sucursal" />
           <NavigationProperty Name="SucursalModificacion" Relationship="LaPaz.Datos.FK_VentasReservadas_SucursalModificacion" FromRole="VentaReservada" ToRole="Sucursal" />
+          <Property Name="Comentario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Caja">
           <Key>
@@ -19290,6 +19292,7 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
           <EntitySetMapping Name="VentasReservadas">
             <EntityTypeMapping TypeName="LaPaz.Datos.VentaReservada">
               <MappingFragment StoreEntitySet="VentasReservadas">
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
                 <ScalarProperty Name="OperadorModificacionId" ColumnName="OperadorModificacionId" />
                 <ScalarProperty Name="SucursalModificacionId" ColumnName="SucursalModificacionId" />
                 <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
