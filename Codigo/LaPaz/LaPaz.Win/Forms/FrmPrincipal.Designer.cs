@@ -35,25 +35,35 @@
             this.MiOperaciones = new Telerik.WinControls.UI.RadMenuItem();
             this.MiVentas = new Telerik.WinControls.UI.RadMenuItem();
             this.MiVentasListado = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuVentaLote = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuVentasReservadas = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuVentasAnulacion = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuVentasDev = new Telerik.WinControls.UI.RadMenuItem();
             this.MiSenias = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuSenaNueva = new Telerik.WinControls.UI.RadMenuItem();
             this.MiSeñaConMovimiento = new Telerik.WinControls.UI.RadMenuItem();
             this.MiSeñaSinMovimiento = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiDevoluciones = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiFacturasReservadas = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem1 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem2 = new Telerik.WinControls.UI.RadMenuItem();
             this.rMnPresupuesto = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiPresupuestoListado = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuPresupNuevo = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuFacturarPresupuesto = new Telerik.WinControls.UI.RadMenuItem();
+            this.MiPresupuestoListado = new Telerik.WinControls.UI.RadMenuItem();
             this.MiDevolverConsignaciones = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiRendirConsignacionCliente = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiConsignacionesProveedor = new Telerik.WinControls.UI.RadMenuItem();
-            this.MiConsignacionesProveedorHistorial = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem8 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuHistorialDevoluciones = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvDevPropios = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvDevConsig = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvDevHistorial = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvConsignaciones = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvConsRendir = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvConsigHistorial = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvSena = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuConsignaciones = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuConsignacionCteNueva = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuConsignacionCteRendir = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuConsignacionCteHistorial = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuCompras = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuCompraNueva = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuComprasListado = new Telerik.WinControls.UI.RadMenuItem();
             this.MiGastos = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem3 = new Telerik.WinControls.UI.RadMenuItem();
             this.MiProveedoresGastos = new Telerik.WinControls.UI.RadMenuItem();
@@ -61,6 +71,7 @@
             this.MiPagosProgramados = new Telerik.WinControls.UI.RadMenuItem();
             this.MiCompraLibros = new Telerik.WinControls.UI.RadMenuItem();
             this.MiSeniasProveedores = new Telerik.WinControls.UI.RadMenuItem();
+            this.MenuProvCtaCe = new Telerik.WinControls.UI.RadMenuItem();
             this.MiTitulos = new Telerik.WinControls.UI.RadMenuItem();
             this.MiLibros = new Telerik.WinControls.UI.RadMenuItem();
             this.MiAutores = new Telerik.WinControls.UI.RadMenuItem();
@@ -85,6 +96,7 @@
             this.MiSeguridad = new Telerik.WinControls.UI.RadMenuItem();
             this.MiAsignarFuncionesARoles = new Telerik.WinControls.UI.RadMenuItem();
             this.MiUsuariosListado = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.MiAyuda = new Telerik.WinControls.UI.RadMenuItem();
             this.MiTicketConsulta = new Telerik.WinControls.UI.RadMenuItem();
             this.LnkUsuarioActual = new System.Windows.Forms.LinkLabel();
@@ -109,7 +121,6 @@
             this.BtnProveedoresListado = new Telerik.WinControls.UI.RadButton();
             this.BtnLibrosListado = new Telerik.WinControls.UI.RadButton();
             this.BtnClienteListado = new Telerik.WinControls.UI.RadButton();
-            this.radMenuItem9 = new Telerik.WinControls.UI.RadMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).BeginInit();
@@ -202,15 +213,11 @@
             this.MiOperaciones.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.MiVentas,
             this.MiSenias,
-            this.MiDevoluciones,
-            this.MiFacturasReservadas,
-            this.radMenuItem1,
-            this.radMenuItem2,
             this.rMnPresupuesto,
             this.MiDevolverConsignaciones,
-            this.MiRendirConsignacionCliente,
-            this.MiConsignacionesProveedor,
-            this.radMenuItem7});
+            this.radMenuItem7,
+            this.MenuConsignaciones,
+            this.MenuCompras});
             this.MiOperaciones.Name = "MiOperaciones";
             this.MiOperaciones.Text = "Operaciones";
             this.MiOperaciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -220,8 +227,13 @@
             this.MiVentas.AccessibleDescription = "Ventas";
             this.MiVentas.AccessibleName = "Ventas";
             this.MiVentas.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MiVentasListado});
+            this.MiVentasListado,
+            this.MenuVentaLote,
+            this.MenuVentasReservadas,
+            this.MenuVentasAnulacion,
+            this.MenuVentasDev});
             this.MiVentas.Name = "MiVentas";
+            this.MiVentas.Tag = "Cajero,SuperAdmin,Administrativo";
             this.MiVentas.Text = "Ventas";
             this.MiVentas.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiVentas.Click += new System.EventHandler(this.MiVentas_Click);
@@ -235,17 +247,67 @@
             this.MiVentasListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiVentasListado.Click += new System.EventHandler(this.MiVentasListado_Click);
             // 
+            // MenuVentaLote
+            // 
+            this.MenuVentaLote.AccessibleDescription = "Lote de factura";
+            this.MenuVentaLote.AccessibleName = "Lote de factura";
+            this.MenuVentaLote.Name = "MenuVentaLote";
+            this.MenuVentaLote.Tag = "SuperAdmin,Administrativo,Cajero";
+            this.MenuVentaLote.Text = "Lote de factura";
+            this.MenuVentaLote.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuVentaLote.Click += new System.EventHandler(this.MenuVentaLote_Click);
+            // 
+            // MenuVentasReservadas
+            // 
+            this.MenuVentasReservadas.AccessibleDescription = "radMenuItem10";
+            this.MenuVentasReservadas.AccessibleName = "radMenuItem10";
+            this.MenuVentasReservadas.Name = "MenuVentasReservadas";
+            this.MenuVentasReservadas.Tag = "Cajero,SuperAdmin,Administrativo";
+            this.MenuVentasReservadas.Text = "Facturas reservadas";
+            this.MenuVentasReservadas.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuVentasReservadas.Click += new System.EventHandler(this.MenuVentasReservadas_Click);
+            // 
+            // MenuVentasAnulacion
+            // 
+            this.MenuVentasAnulacion.AccessibleDescription = "radMenuItem11";
+            this.MenuVentasAnulacion.AccessibleName = "radMenuItem11";
+            this.MenuVentasAnulacion.Name = "MenuVentasAnulacion";
+            this.MenuVentasAnulacion.Tag = "SuperAdmin,Administrativo";
+            this.MenuVentasAnulacion.Text = "Anulacion facturas";
+            this.MenuVentasAnulacion.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuVentasAnulacion.Click += new System.EventHandler(this.MenuVentasAnulacion_Click);
+            // 
+            // MenuVentasDev
+            // 
+            this.MenuVentasDev.AccessibleDescription = "radMenuItem12";
+            this.MenuVentasDev.AccessibleName = "radMenuItem12";
+            this.MenuVentasDev.Name = "MenuVentasDev";
+            this.MenuVentasDev.Tag = "SuperAdmin,Cajero";
+            this.MenuVentasDev.Text = "Devoluciones";
+            this.MenuVentasDev.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuVentasDev.Click += new System.EventHandler(this.MenuVentasDev_Click);
+            // 
             // MiSenias
             // 
             this.MiSenias.AccessibleDescription = "Señas";
             this.MiSenias.AccessibleName = "Señas";
             this.MiSenias.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.MenuSenaNueva,
             this.MiSeñaConMovimiento,
             this.MiSeñaSinMovimiento});
             this.MiSenias.Name = "MiSenias";
             this.MiSenias.Text = "Señas";
             this.MiSenias.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiSenias.Click += new System.EventHandler(this.MiSenias_Click);
+            // 
+            // MenuSenaNueva
+            // 
+            this.MenuSenaNueva.AccessibleDescription = "Nueva";
+            this.MenuSenaNueva.AccessibleName = "Nueva";
+            this.MenuSenaNueva.Name = "MenuSenaNueva";
+            this.MenuSenaNueva.Text = "Nueva";
+            this.MenuSenaNueva.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuSenaNueva.Click += new System.EventHandler(this.MenuSenaNueva_Click);
             // 
             // MiSeñaConMovimiento
             // 
@@ -265,62 +327,26 @@
             this.MiSeñaSinMovimiento.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiSeñaSinMovimiento.Click += new System.EventHandler(this.MiSeñaSinMovimiento_Click);
             // 
-            // MiDevoluciones
-            // 
-            this.MiDevoluciones.AccessibleDescription = "Devoluciones";
-            this.MiDevoluciones.AccessibleName = "Devoluciones";
-            this.MiDevoluciones.Name = "MiDevoluciones";
-            this.MiDevoluciones.Text = "Devoluciones";
-            this.MiDevoluciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiDevoluciones.Click += new System.EventHandler(this.MiDevoluciones_Click);
-            // 
-            // MiFacturasReservadas
-            // 
-            this.MiFacturasReservadas.AccessibleDescription = "Facturas Reservadas";
-            this.MiFacturasReservadas.AccessibleName = "Facturas Reservadas";
-            this.MiFacturasReservadas.Name = "MiFacturasReservadas";
-            this.MiFacturasReservadas.Text = "Facturas Reservadas";
-            this.MiFacturasReservadas.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiFacturasReservadas.Click += new System.EventHandler(this.MiFacturasReservadas_Click);
-            // 
-            // radMenuItem1
-            // 
-            this.radMenuItem1.AccessibleDescription = "Lotes de Factura";
-            this.radMenuItem1.AccessibleName = "Lotes de Factura";
-            this.radMenuItem1.Name = "radMenuItem1";
-            this.radMenuItem1.Text = "Lotes de Factura";
-            this.radMenuItem1.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuItem1.Click += new System.EventHandler(this.radMenuItem1_Click);
-            // 
-            // radMenuItem2
-            // 
-            this.radMenuItem2.AccessibleDescription = "radMenuItem2";
-            this.radMenuItem2.AccessibleName = "radMenuItem2";
-            this.radMenuItem2.Name = "radMenuItem2";
-            this.radMenuItem2.Text = "Anulación de Facturas";
-            this.radMenuItem2.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuItem2.Click += new System.EventHandler(this.radMenuItem2_Click);
-            // 
             // rMnPresupuesto
             // 
             this.rMnPresupuesto.AccessibleDescription = "Presupuestos";
             this.rMnPresupuesto.AccessibleName = "Presupuestos";
             this.rMnPresupuesto.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MiPresupuestoListado,
-            this.radMenuFacturarPresupuesto});
+            this.MenuPresupNuevo,
+            this.radMenuFacturarPresupuesto,
+            this.MiPresupuestoListado});
             this.rMnPresupuesto.Name = "rMnPresupuesto";
             this.rMnPresupuesto.Text = "Presupuestos";
             this.rMnPresupuesto.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.rMnPresupuesto.Click += new System.EventHandler(this.rMnPresupuesto_Click);
             // 
-            // MiPresupuestoListado
+            // MenuPresupNuevo
             // 
-            this.MiPresupuestoListado.AccessibleDescription = "Historial";
-            this.MiPresupuestoListado.AccessibleName = "Historial";
-            this.MiPresupuestoListado.Name = "MiPresupuestoListado";
-            this.MiPresupuestoListado.Text = "Historial";
-            this.MiPresupuestoListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiPresupuestoListado.Click += new System.EventHandler(this.MiPresupuestoListado_Click);
+            this.MenuPresupNuevo.AccessibleDescription = "Nuevo";
+            this.MenuPresupNuevo.AccessibleName = "Nuevo";
+            this.MenuPresupNuevo.Name = "MenuPresupNuevo";
+            this.MenuPresupNuevo.Text = "Nuevo";
+            this.MenuPresupNuevo.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuPresupNuevo.Click += new System.EventHandler(this.MenuPresupNuevo_Click);
             // 
             // radMenuFacturarPresupuesto
             // 
@@ -331,6 +357,15 @@
             this.radMenuFacturarPresupuesto.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuFacturarPresupuesto.Click += new System.EventHandler(this.radMenuFacturarPresupuesto_Click);
             // 
+            // MiPresupuestoListado
+            // 
+            this.MiPresupuestoListado.AccessibleDescription = "Historial";
+            this.MiPresupuestoListado.AccessibleName = "Historial";
+            this.MiPresupuestoListado.Name = "MiPresupuestoListado";
+            this.MiPresupuestoListado.Text = "Historial";
+            this.MiPresupuestoListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MiPresupuestoListado.Click += new System.EventHandler(this.MiPresupuestoListado_Click);
+            // 
             // MiDevolverConsignaciones
             // 
             this.MiDevolverConsignaciones.AccessibleDescription = "Devolver Consignaciones";
@@ -340,61 +375,14 @@
             this.MiDevolverConsignaciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiDevolverConsignaciones.Click += new System.EventHandler(this.MiDevolverConsignaciones_Click);
             // 
-            // MiRendirConsignacionCliente
-            // 
-            this.MiRendirConsignacionCliente.AccessibleDescription = "Rendir Consignación Cliente";
-            this.MiRendirConsignacionCliente.AccessibleName = "Rendir Consignación Cliente";
-            this.MiRendirConsignacionCliente.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem6});
-            this.MiRendirConsignacionCliente.Name = "MiRendirConsignacionCliente";
-            this.MiRendirConsignacionCliente.Text = "Rendir Consignación Cliente";
-            this.MiRendirConsignacionCliente.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiRendirConsignacionCliente.Click += new System.EventHandler(this.MiRendirConsignacionCliente_Click);
-            // 
-            // radMenuItem6
-            // 
-            this.radMenuItem6.AccessibleDescription = "ConsignacionClienteHistorial";
-            this.radMenuItem6.AccessibleName = "ConsignacionClienteHistorial";
-            this.radMenuItem6.Name = "radMenuItem6";
-            this.radMenuItem6.Text = "Historial";
-            this.radMenuItem6.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuItem6.Click += new System.EventHandler(this.radMenuItem6_Click);
-            // 
-            // MiConsignacionesProveedor
-            // 
-            this.MiConsignacionesProveedor.AccessibleDescription = "Consignaciones Proveedor";
-            this.MiConsignacionesProveedor.AccessibleName = "Consignaciones Proveedor";
-            this.MiConsignacionesProveedor.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.MiConsignacionesProveedorHistorial,
-            this.radMenuItem4});
-            this.MiConsignacionesProveedor.Name = "MiConsignacionesProveedor";
-            this.MiConsignacionesProveedor.Text = "Consignaciones Proveedor";
-            this.MiConsignacionesProveedor.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            // 
-            // MiConsignacionesProveedorHistorial
-            // 
-            this.MiConsignacionesProveedorHistorial.AccessibleDescription = "Historial";
-            this.MiConsignacionesProveedorHistorial.AccessibleName = "Historial";
-            this.MiConsignacionesProveedorHistorial.Name = "MiConsignacionesProveedorHistorial";
-            this.MiConsignacionesProveedorHistorial.Text = "Historial";
-            this.MiConsignacionesProveedorHistorial.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.MiConsignacionesProveedorHistorial.Click += new System.EventHandler(this.MiConsignacionesProveedorHistorial_Click);
-            // 
-            // radMenuItem4
-            // 
-            this.radMenuItem4.AccessibleDescription = "Rendir Consignaciones";
-            this.radMenuItem4.AccessibleName = "Rendir Consignaciones";
-            this.radMenuItem4.Name = "radMenuItem4";
-            this.radMenuItem4.Text = "Rendir Consignaciones";
-            this.radMenuItem4.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuItem4.Click += new System.EventHandler(this.MiConsignacionesSinRendir_Click);
-            // 
             // radMenuItem7
             // 
             this.radMenuItem7.AccessibleDescription = "Proveedores";
             this.radMenuItem7.AccessibleName = "Proveedores";
             this.radMenuItem7.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuItem8});
+            this.radMenuItem8,
+            this.MenuProvConsignaciones,
+            this.MenuProvSena});
             this.radMenuItem7.Name = "radMenuItem7";
             this.radMenuItem7.Text = "Proveedores";
             this.radMenuItem7.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -404,19 +392,152 @@
             this.radMenuItem8.AccessibleDescription = "Devoluciones";
             this.radMenuItem8.AccessibleName = "Devoluciones";
             this.radMenuItem8.Items.AddRange(new Telerik.WinControls.RadItem[] {
-            this.radMenuHistorialDevoluciones});
+            this.MenuProvDevPropios,
+            this.MenuProvDevConsig,
+            this.MenuProvDevHistorial});
             this.radMenuItem8.Name = "radMenuItem8";
+            this.radMenuItem8.Tag = "SuperAdmin,Administrativo,Cajero";
             this.radMenuItem8.Text = "Devoluciones";
             this.radMenuItem8.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             // 
-            // radMenuHistorialDevoluciones
+            // MenuProvDevPropios
             // 
-            this.radMenuHistorialDevoluciones.AccessibleDescription = "Historial";
-            this.radMenuHistorialDevoluciones.AccessibleName = "Historial";
-            this.radMenuHistorialDevoluciones.Name = "radMenuHistorialDevoluciones";
-            this.radMenuHistorialDevoluciones.Text = "Historial";
-            this.radMenuHistorialDevoluciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuHistorialDevoluciones.Click += new System.EventHandler(this.radMenuHistorialDevoluciones_Click);
+            this.MenuProvDevPropios.AccessibleDescription = "Devolucion Propios";
+            this.MenuProvDevPropios.AccessibleName = "Devolucion Propios";
+            this.MenuProvDevPropios.Name = "MenuProvDevPropios";
+            this.MenuProvDevPropios.Text = "Devolucion Propios";
+            this.MenuProvDevPropios.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvDevPropios.Click += new System.EventHandler(this.MenuProvDevPropios_Click);
+            // 
+            // MenuProvDevConsig
+            // 
+            this.MenuProvDevConsig.AccessibleDescription = "Devolucion Consignados";
+            this.MenuProvDevConsig.AccessibleName = "Devolucion Consignados";
+            this.MenuProvDevConsig.Name = "MenuProvDevConsig";
+            this.MenuProvDevConsig.Text = "Devolucion Consignados";
+            this.MenuProvDevConsig.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvDevConsig.Click += new System.EventHandler(this.MenuProvDevConsig_Click);
+            // 
+            // MenuProvDevHistorial
+            // 
+            this.MenuProvDevHistorial.AccessibleDescription = "Historial";
+            this.MenuProvDevHistorial.AccessibleName = "Historial";
+            this.MenuProvDevHistorial.Name = "MenuProvDevHistorial";
+            this.MenuProvDevHistorial.Text = "Historial";
+            this.MenuProvDevHistorial.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvDevHistorial.Click += new System.EventHandler(this.MenuProvDevHistorial_Click);
+            // 
+            // MenuProvConsignaciones
+            // 
+            this.MenuProvConsignaciones.AccessibleDescription = "Consignaciones";
+            this.MenuProvConsignaciones.AccessibleName = "Consignaciones";
+            this.MenuProvConsignaciones.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.MenuProvConsRendir,
+            this.MenuProvConsigHistorial});
+            this.MenuProvConsignaciones.Name = "MenuProvConsignaciones";
+            this.MenuProvConsignaciones.Tag = "SuperAdmin,Administrativo,Cajero";
+            this.MenuProvConsignaciones.Text = "Consignaciones";
+            this.MenuProvConsignaciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // MenuProvConsRendir
+            // 
+            this.MenuProvConsRendir.AccessibleDescription = "Rendir";
+            this.MenuProvConsRendir.AccessibleName = "Rendir";
+            this.MenuProvConsRendir.Name = "MenuProvConsRendir";
+            this.MenuProvConsRendir.Text = "Rendir";
+            this.MenuProvConsRendir.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvConsRendir.Click += new System.EventHandler(this.MenuProvConsRendir_Click);
+            // 
+            // MenuProvConsigHistorial
+            // 
+            this.MenuProvConsigHistorial.AccessibleDescription = "Historial";
+            this.MenuProvConsigHistorial.AccessibleName = "Historial";
+            this.MenuProvConsigHistorial.Name = "MenuProvConsigHistorial";
+            this.MenuProvConsigHistorial.Text = "Historial";
+            this.MenuProvConsigHistorial.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvConsigHistorial.Click += new System.EventHandler(this.MenuProvConsigHistorial_Click);
+            // 
+            // MenuProvSena
+            // 
+            this.MenuProvSena.AccessibleDescription = "Señas";
+            this.MenuProvSena.AccessibleName = "Señas";
+            this.MenuProvSena.Name = "MenuProvSena";
+            this.MenuProvSena.Tag = "SuperAdmin,Administrativo,Cajero";
+            this.MenuProvSena.Text = "Señas";
+            this.MenuProvSena.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvSena.Click += new System.EventHandler(this.MenuProvSena_Click);
+            // 
+            // MenuConsignaciones
+            // 
+            this.MenuConsignaciones.AccessibleDescription = "Consignaciones";
+            this.MenuConsignaciones.AccessibleName = "Consignaciones Clientes";
+            this.MenuConsignaciones.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.MenuConsignacionCteNueva,
+            this.MenuConsignacionCteRendir,
+            this.MenuConsignacionCteHistorial});
+            this.MenuConsignaciones.Name = "MenuConsignaciones";
+            this.MenuConsignaciones.Tag = "SuperAdmin,Administrativo,Vendedor";
+            this.MenuConsignaciones.Text = "Consignaciones Clientes";
+            this.MenuConsignaciones.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // MenuConsignacionCteNueva
+            // 
+            this.MenuConsignacionCteNueva.AccessibleDescription = "Nueva";
+            this.MenuConsignacionCteNueva.AccessibleName = "Nueva";
+            this.MenuConsignacionCteNueva.Name = "MenuConsignacionCteNueva";
+            this.MenuConsignacionCteNueva.Tag = "SuperAdmin,Administrativo,Vendedor";
+            this.MenuConsignacionCteNueva.Text = "Nueva";
+            this.MenuConsignacionCteNueva.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuConsignacionCteNueva.Click += new System.EventHandler(this.MenuConsignacionCteNueva_Click);
+            // 
+            // MenuConsignacionCteRendir
+            // 
+            this.MenuConsignacionCteRendir.AccessibleDescription = "Rendir";
+            this.MenuConsignacionCteRendir.AccessibleName = "Rendir";
+            this.MenuConsignacionCteRendir.Name = "MenuConsignacionCteRendir";
+            this.MenuConsignacionCteRendir.Tag = "SuperAdmin,Administrativo";
+            this.MenuConsignacionCteRendir.Text = "Rendir";
+            this.MenuConsignacionCteRendir.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuConsignacionCteRendir.Click += new System.EventHandler(this.MenuConsignacionCteRendir_Click);
+            // 
+            // MenuConsignacionCteHistorial
+            // 
+            this.MenuConsignacionCteHistorial.AccessibleDescription = "Historial";
+            this.MenuConsignacionCteHistorial.AccessibleName = "Historial";
+            this.MenuConsignacionCteHistorial.Name = "MenuConsignacionCteHistorial";
+            this.MenuConsignacionCteHistorial.Text = "Historial";
+            this.MenuConsignacionCteHistorial.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuConsignacionCteHistorial.Click += new System.EventHandler(this.MenuConsignacionCteHistorial_Click);
+            // 
+            // MenuCompras
+            // 
+            this.MenuCompras.AccessibleDescription = "Compras";
+            this.MenuCompras.AccessibleName = "Compras";
+            this.MenuCompras.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.MenuCompraNueva,
+            this.MenuComprasListado});
+            this.MenuCompras.Name = "MenuCompras";
+            this.MenuCompras.Text = "Compras";
+            this.MenuCompras.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            // 
+            // MenuCompraNueva
+            // 
+            this.MenuCompraNueva.AccessibleDescription = "Nueva";
+            this.MenuCompraNueva.AccessibleName = "Nueva";
+            this.MenuCompraNueva.Name = "MenuCompraNueva";
+            this.MenuCompraNueva.Tag = "SuperAdmin,Administrativo";
+            this.MenuCompraNueva.Text = "Nueva";
+            this.MenuCompraNueva.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuCompraNueva.Click += new System.EventHandler(this.MenuCompraNueva_Click);
+            // 
+            // MenuComprasListado
+            // 
+            this.MenuComprasListado.AccessibleDescription = "radMenuItem2";
+            this.MenuComprasListado.AccessibleName = "radMenuItem2";
+            this.MenuComprasListado.Name = "MenuComprasListado";
+            this.MenuComprasListado.Text = "Listado";
+            this.MenuComprasListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuComprasListado.Click += new System.EventHandler(this.MenuComprasListado_Click);
             // 
             // MiGastos
             // 
@@ -428,7 +549,8 @@
             this.MiOrdenesPago,
             this.MiPagosProgramados,
             this.MiCompraLibros,
-            this.MiSeniasProveedores});
+            this.MiSeniasProveedores,
+            this.MenuProvCtaCe});
             this.MiGastos.Name = "MiGastos";
             this.MiGastos.Text = "Gastos";
             this.MiGastos.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -456,6 +578,7 @@
             this.MiOrdenesPago.AccessibleDescription = "Ordenes de Pago";
             this.MiOrdenesPago.AccessibleName = "Ordenes de Pago";
             this.MiOrdenesPago.Name = "MiOrdenesPago";
+            this.MiOrdenesPago.Tag = "Cajero,SuperAdmin,Administrativo";
             this.MiOrdenesPago.Text = "Ordenes de Pago";
             this.MiOrdenesPago.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiOrdenesPago.Click += new System.EventHandler(this.MiOrdenesPago_Click);
@@ -465,6 +588,7 @@
             this.MiPagosProgramados.AccessibleDescription = "Pagos Programados";
             this.MiPagosProgramados.AccessibleName = "Pagos Programados";
             this.MiPagosProgramados.Name = "MiPagosProgramados";
+            this.MiPagosProgramados.Tag = "SuperAdmin,Administrativo";
             this.MiPagosProgramados.Text = "Pagos Programados";
             this.MiPagosProgramados.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiPagosProgramados.Click += new System.EventHandler(this.MiPagosProgramados_Click);
@@ -474,6 +598,7 @@
             this.MiCompraLibros.AccessibleDescription = "Compra de Libros";
             this.MiCompraLibros.AccessibleName = "Compra de Libros";
             this.MiCompraLibros.Name = "MiCompraLibros";
+            this.MiCompraLibros.Tag = "Cajero,SuperAdmin,Administrativo";
             this.MiCompraLibros.Text = "Compra de Libros";
             this.MiCompraLibros.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiCompraLibros.Click += new System.EventHandler(this.MiCompraLibros_Click);
@@ -483,9 +608,20 @@
             this.MiSeniasProveedores.AccessibleDescription = "Señas a Proveedores";
             this.MiSeniasProveedores.AccessibleName = "Señas a Proveedores";
             this.MiSeniasProveedores.Name = "MiSeniasProveedores";
+            this.MiSeniasProveedores.Tag = "Cajero,SuperAdmin,Administrativo";
             this.MiSeniasProveedores.Text = "Señas a Proveedores";
             this.MiSeniasProveedores.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiSeniasProveedores.Click += new System.EventHandler(this.MiSeniasProveedores_Click);
+            // 
+            // MenuProvCtaCe
+            // 
+            this.MenuProvCtaCe.AccessibleDescription = "Cuenta Corriente";
+            this.MenuProvCtaCe.AccessibleName = "Cuenta Corriente";
+            this.MenuProvCtaCe.Name = "MenuProvCtaCe";
+            this.MenuProvCtaCe.Tag = "Cajero,SuperAdmin,Administrativo";
+            this.MenuProvCtaCe.Text = "Cuenta Corriente";
+            this.MenuProvCtaCe.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MenuProvCtaCe.Click += new System.EventHandler(this.MenuProvCtaCe_Click);
             // 
             // MiTitulos
             // 
@@ -608,6 +744,7 @@
             this.MiCajaResumida.AccessibleDescription = "Caja Resumida";
             this.MiCajaResumida.AccessibleName = "Caja Resumida";
             this.MiCajaResumida.Name = "MiCajaResumida";
+            this.MiCajaResumida.Tag = "Cajero,SuperAdmin,Administrativo";
             this.MiCajaResumida.Text = "Caja Resumida";
             this.MiCajaResumida.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiCajaResumida.Click += new System.EventHandler(this.MiCajaResumida_Click);
@@ -617,6 +754,7 @@
             this.MiInformeCaja.AccessibleDescription = "Informe de Caja";
             this.MiInformeCaja.AccessibleName = "Informe de Caja";
             this.MiInformeCaja.Name = "MiInformeCaja";
+            this.MiInformeCaja.Tag = "Cajero,SuperAdmin,Administrativo";
             this.MiInformeCaja.Text = "Informe de Caja";
             this.MiInformeCaja.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiInformeCaja.Click += new System.EventHandler(this.MiInformeCaja_Click);
@@ -626,6 +764,7 @@
             this.MiReporteTarjetasCheques.AccessibleDescription = "Tarjetas, Cheques y Depósitos";
             this.MiReporteTarjetasCheques.AccessibleName = "Tarjetas, Cheques y Depósitos";
             this.MiReporteTarjetasCheques.Name = "MiReporteTarjetasCheques";
+            this.MiReporteTarjetasCheques.Tag = "SuperAdmin,Administrativo";
             this.MiReporteTarjetasCheques.Text = "Tarjetas, Cheques y Depósitos";
             this.MiReporteTarjetasCheques.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiReporteTarjetasCheques.Click += new System.EventHandler(this.MiReporteTarjetasCheques_Click);
@@ -635,6 +774,7 @@
             this.MiReporteConsignacionesVendidas.AccessibleDescription = "Consignaciones Vendidas";
             this.MiReporteConsignacionesVendidas.AccessibleName = "Consignaciones Vendidas";
             this.MiReporteConsignacionesVendidas.Name = "MiReporteConsignacionesVendidas";
+            this.MiReporteConsignacionesVendidas.Tag = "SuperAdmin,Administrativo";
             this.MiReporteConsignacionesVendidas.Text = "Consignaciones Vendidas";
             this.MiReporteConsignacionesVendidas.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiReporteConsignacionesVendidas.Click += new System.EventHandler(this.MiReporteConsignacionesVendidas_Click);
@@ -644,6 +784,7 @@
             this.MiMovimientosCajaAnterior.AccessibleDescription = "Movimientos de Caja Anterior";
             this.MiMovimientosCajaAnterior.AccessibleName = "Movimientos de Caja Anterior";
             this.MiMovimientosCajaAnterior.Name = "MiMovimientosCajaAnterior";
+            this.MiMovimientosCajaAnterior.Tag = "SuperAdmin,Administrativo";
             this.MiMovimientosCajaAnterior.Text = "Movimientos de Caja Anterior";
             this.MiMovimientosCajaAnterior.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiMovimientosCajaAnterior.Click += new System.EventHandler(this.MiMovimientosCajaAnterior_Click);
@@ -653,6 +794,7 @@
             this.MiReporteVentas.AccessibleDescription = "Ventas";
             this.MiReporteVentas.AccessibleName = "Ventas";
             this.MiReporteVentas.Name = "MiReporteVentas";
+            this.MiReporteVentas.Tag = "SuperAdmin,Administrativo,Vendedor";
             this.MiReporteVentas.Text = "Ventas";
             this.MiReporteVentas.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiReporteVentas.Click += new System.EventHandler(this.MiReporteVentas_Click);
@@ -662,6 +804,7 @@
             this.MiReporteLibros.AccessibleDescription = "Libros";
             this.MiReporteLibros.AccessibleName = "Libros";
             this.MiReporteLibros.Name = "MiReporteLibros";
+            this.MiReporteLibros.Tag = "SuperAdmin,Administrativo,Vendedor";
             this.MiReporteLibros.Text = "Listado de Libros";
             this.MiReporteLibros.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiReporteLibros.Click += new System.EventHandler(this.MiReporteLibros_Click);
@@ -671,6 +814,7 @@
             this.MiReporteRanking.AccessibleDescription = "Ranking";
             this.MiReporteRanking.AccessibleName = "Ranking";
             this.MiReporteRanking.Name = "MiReporteRanking";
+            this.MiReporteRanking.Tag = "SuperAdmin,Administrativo,Vendedor";
             this.MiReporteRanking.Text = "Ranking";
             this.MiReporteRanking.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiReporteRanking.Click += new System.EventHandler(this.MiReporteRanking_Click);
@@ -680,6 +824,7 @@
             this.radMenuItem5.AccessibleDescription = "Proveedor";
             this.radMenuItem5.AccessibleName = "Proveedor";
             this.radMenuItem5.Name = "radMenuItem5";
+            this.radMenuItem5.Tag = "SuperAdmin,Administrativo";
             this.radMenuItem5.Text = "Proveedor";
             this.radMenuItem5.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.radMenuItem5.Click += new System.EventHandler(this.radMenuItem5_Click);
@@ -724,6 +869,15 @@
             this.MiUsuariosListado.Text = "Usuarios";
             this.MiUsuariosListado.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiUsuariosListado.Click += new System.EventHandler(this.MiUsuariosListado_Click);
+            // 
+            // radMenuItem9
+            // 
+            this.radMenuItem9.AccessibleDescription = "radMenuIFeria";
+            this.radMenuItem9.AccessibleName = "radMenuFeria";
+            this.radMenuItem9.Name = "radMenuItem9";
+            this.radMenuItem9.Text = "Feria";
+            this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
             // 
             // MiAyuda
             // 
@@ -1137,6 +1291,7 @@
             this.BtnCrearVenta.Name = "BtnCrearVenta";
             this.BtnCrearVenta.Size = new System.Drawing.Size(198, 167);
             this.BtnCrearVenta.TabIndex = 21;
+            this.BtnCrearVenta.Tag = "Cajero";
             this.BtnCrearVenta.Text = "Venta";
             this.BtnCrearVenta.TextAlignment = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCrearVenta.ThemeName = "TelerikMetroBlue";
@@ -1245,15 +1400,6 @@
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Margin = new System.Windows.Forms.Padding(0, -2, 0, 0);
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // radMenuItem9
-            // 
-            this.radMenuItem9.AccessibleDescription = "radMenuIFeria";
-            this.radMenuItem9.AccessibleName = "radMenuFeria";
-            this.radMenuItem9.Name = "radMenuItem9";
-            this.radMenuItem9.Text = "Feria";
-            this.radMenuItem9.Visibility = Telerik.WinControls.ElementVisibility.Visible;
-            this.radMenuItem9.Click += new System.EventHandler(this.radMenuItem9_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1346,14 +1492,10 @@
         private Telerik.WinControls.UI.RadMenuItem MiOperaciones;
         private Telerik.WinControls.UI.RadMenuItem MiVentas;
         private Telerik.WinControls.UI.RadMenuItem MiSenias;
-        private Telerik.WinControls.UI.RadMenuItem MiDevoluciones;
-        private Telerik.WinControls.UI.RadMenuItem MiFacturasReservadas;
         private Telerik.WinControls.UI.RadMenuItem MiClientes;
         private Telerik.WinControls.UI.RadMenuItem MiBancos;
         private Telerik.WinControls.UI.RadMenuItem MiCajaResumida;
         private Telerik.WinControls.UI.RadMenuItem MiReporteTarjetasCheques;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem1;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem2;
         private Telerik.WinControls.UI.RadMenuItem MiReporteConsignacionesVendidas;
         private Telerik.WinControls.UI.RadMenuItem MiSeñaConMovimiento;
         private Telerik.WinControls.UI.RadMenuItem MiSeñaSinMovimiento;
@@ -1371,20 +1513,35 @@
         private Telerik.WinControls.UI.RadButton BtnConsignaciones;
         private Telerik.WinControls.UI.RadMenuItem MiDevolverConsignaciones;
         private Telerik.WinControls.UI.RadButton BtnRendirConsignacion;
-        private Telerik.WinControls.UI.RadMenuItem MiRendirConsignacionCliente;
-        private Telerik.WinControls.UI.RadMenuItem MiConsignacionesProveedor;
-        private Telerik.WinControls.UI.RadMenuItem MiConsignacionesProveedorHistorial;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem4;
-        private Telerik.WinControls.UI.RadMenu MainMenu;
         private Telerik.WinControls.UI.RadButton BtnProveedoresDevolucion;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem5;
         private Telerik.WinControls.UI.RadButton BtnProveedoresdevConsig;
         private Telerik.WinControls.UI.RadMenuItem radMenuFacturarPresupuesto;
-        private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem8;
-        private Telerik.WinControls.UI.RadMenuItem radMenuHistorialDevoluciones;
         private Telerik.WinControls.UI.RadMenuItem radMenuItem9;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvCtaCe;
+        private Telerik.WinControls.UI.RadMenuItem MenuConsignaciones;
+        private Telerik.WinControls.UI.RadMenuItem MenuConsignacionCteNueva;
+        private Telerik.WinControls.UI.RadMenuItem MenuConsignacionCteRendir;
+        private Telerik.WinControls.UI.RadMenuItem MenuConsignacionCteHistorial;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvDevPropios;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvDevConsig;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvDevHistorial;
+        private Telerik.WinControls.UI.RadMenuItem MenuVentaLote;
+        private Telerik.WinControls.UI.RadMenuItem MenuVentasReservadas;
+        private Telerik.WinControls.UI.RadMenuItem MenuVentasAnulacion;
+        private Telerik.WinControls.UI.RadMenuItem MenuVentasDev;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvConsignaciones;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvConsRendir;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvConsigHistorial;
+        private Telerik.WinControls.UI.RadMenu MainMenu;
+        private Telerik.WinControls.UI.RadMenuItem MenuSenaNueva;
+        private Telerik.WinControls.UI.RadMenuItem MenuPresupNuevo;
+        private Telerik.WinControls.UI.RadMenuItem MenuCompras;
+        private Telerik.WinControls.UI.RadMenuItem MenuComprasListado;
+        private Telerik.WinControls.UI.RadMenuItem MenuCompraNueva;
+        private Telerik.WinControls.UI.RadMenuItem MenuProvSena;
 
     }
 }

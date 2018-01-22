@@ -299,6 +299,50 @@ namespace LaPaz.Win.Forms
                 this.Text = "Sistema de Gestion El Vecinito";
                // this.Icon = "\Resources\logovecinito.ico";
             }
+            PermisosBotones();
+        }
+
+        private void PermisosBotones()
+        {
+            if (MiVentas.Enabled == false)
+                BtnCrearVenta.ToggleEnableDisabled(false);
+            if (MiOrdenesPago.Enabled == false)
+                BtnOrdenesPago.ToggleEnableDisabled(false);
+            if (MiInformeCaja.Enabled == false)
+                BtnInformeCaja.ToggleEnableDisabled(false);
+            if (MenuSenaNueva.Enabled == false)
+                BtnCrearSeña.ToggleEnableDisabled(false);
+            if (MiPagosProgramados.Enabled == false)
+                BtnPagosProgramdos.ToggleEnableDisabled(false);
+            //if (MiVentas.Enabled == false)
+            //    BtnTicketsConsulta.Enabled = false;
+            if (MiTitulos.Enabled == false)
+                BtnLibrosListado.ToggleEnableDisabled(false);
+            if (MiClientes.Enabled == false)
+                BtnClienteListado.ToggleEnableDisabled(false);
+            if (MenuVentasDev.Enabled == false)
+                BtnCrearDevolucion.ToggleEnableDisabled(false);
+            if (MiProveedoresGastos.Enabled == false)
+                BtnProveedoresListado.ToggleEnableDisabled(false);
+            if (MenuProvSena.Enabled == false)
+                BtnSeñaProveedor.ToggleEnableDisabled(false);
+            if (MenuVentasReservadas.Enabled == false)
+                btnFacturasReservadas.ToggleEnableDisabled(false);
+            if (MenuCompraNueva.Enabled == false)
+                BtnCrearCompra.ToggleEnableDisabled(false);
+            if (MenuComprasListado.Enabled == false)
+                btnListadoCompras.ToggleEnableDisabled(false);
+            if (MenuProvCtaCe.Enabled == false)
+                BtnProveedoresCtaCte.ToggleEnableDisabled(false);
+            if (MenuConsignacionCteNueva.Enabled == false)
+                BtnConsignaciones.ToggleEnableDisabled(false);
+            if (MenuConsignacionCteRendir.Enabled == false)
+                BtnRendirConsignacion.ToggleEnableDisabled(false);
+            if (MenuProvDevPropios.Enabled == false)
+                BtnProveedoresDevolucion.ToggleEnableDisabled(false);
+            if (MenuProvDevConsig.Enabled == false)
+                BtnProveedoresdevConsig.ToggleEnableDisabled(false);
+
         }
 
         private void BtnOrdenesPago_Click(object sender, EventArgs e)
@@ -598,13 +642,6 @@ namespace LaPaz.Win.Forms
             AbrirTab(pantalla);
         }
 
-        private void rMnPresupuesto_Click(object sender, EventArgs e)
-        {
-            var crearPresupuesto = FormFactory.Create<FrmCrearPresupuesto>();
-            crearPresupuesto.PresupuestoRealizado += CrearVentaOnVentaRealizada;
-            AbrirTab(crearPresupuesto);
-        }
-
         private void btnListadoCompras_Click(object sender, EventArgs e)
         {
             var pantalla = FormFactory.Create<FrmComprasListado>();
@@ -738,6 +775,120 @@ namespace LaPaz.Win.Forms
         {
             var pantalla = FormFactory.Create<FrmActualizarConsignaciones>();
             AbrirTab(pantalla);
+        }
+
+        private void MenuProvCtaCe_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmProveedoresCtaCte>(Guid.Empty, ActionFormMode.Create);
+            pantalla.ProveedoresCuentaCorriente += CrearVentaOnVentaRealizada;
+            AbrirTab(pantalla);
+        }
+
+        private void MenuConsignacionCteNueva_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmConsignacionCliente>(Guid.Empty, ActionFormMode.Create);
+            AbrirTab(pantalla);
+        }
+
+        private void MenuConsignacionCteRendir_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmRendirConsignacionCliente>(0, ActionFormMode.Create);
+            AbrirTab(pantalla);
+        }
+
+        private void MenuConsignacionCteHistorial_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmConsignacionListado>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuProvDevPropios_Click(object sender, EventArgs e)
+        {
+            var crearDevolucion = FormFactory.Create<FrmProveedoresDevolucion.FrmProveedoresDevolucion>();
+            crearDevolucion.DevolucionRealizada += CrearDevolucionOnDevolucionRealizada;
+            AbrirTab(crearDevolucion);
+        }
+
+        private void MenuProvDevConsig_Click(object sender, EventArgs e)
+        {
+            var crearDevolucion = FormFactory.Create<FrmProveedoresDevolucionConsignados>();
+            crearDevolucion.DevolucionRealizada += CrearDevolucionOnDevolucionRealizada;
+            AbrirTab(crearDevolucion);
+        }
+
+        private void MenuProvDevHistorial_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmHistorialDevolucion>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuVentaLote_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmLoteFacturaListado>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuVentasReservadas_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmVentasReservadasListado>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuVentasAnulacion_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmAnulacionFactura>();
+            pantalla.AccionRealizada += CrearVentaOnVentaRealizada;
+            AbrirTab(pantalla);
+        }
+
+        private void MenuVentasDev_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmCreditoDevolucion>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuProvConsRendir_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmRendicionConsignaciones>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuProvConsigHistorial_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmHistorialConsignaciones>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuSenaNueva_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmCrearSenia>(Guid.Empty, ActionFormMode.Create);
+            AbrirTab(pantalla);
+        }
+
+        private void MenuPresupNuevo_Click(object sender, EventArgs e)
+        {
+            var crearPresupuesto = FormFactory.Create<FrmCrearPresupuesto>();
+            crearPresupuesto.PresupuestoRealizado += CrearVentaOnVentaRealizada;
+            AbrirTab(crearPresupuesto);
+        }
+
+        private void MenuComprasListado_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmComprasListado>();
+            AbrirTab(pantalla);
+        }
+
+        private void MenuCompraNueva_Click(object sender, EventArgs e)
+        {
+            var crearCompra = FormFactory.Create<FrmCrearCompra>();
+            crearCompra.CompraRealizada += CrearCompraOnCompraRealizada;
+            AbrirTab(crearCompra);
+        }
+
+        private void MenuProvSena_Click(object sender, EventArgs e)
+        {
+            var crearSeñaProveedor = FormFactory.Create<FrmCrearSeniaProveedor>();
+            AbrirTab(crearSeñaProveedor);
         }
 
        
