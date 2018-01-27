@@ -165,7 +165,7 @@ Public Class frmPrincipal
     End Sub
 
     Private Sub TimerMail_Tick(sender As Object, e As EventArgs) Handles TimerMail.Tick
-        If Now().ToShortTimeString() > "10:00:00" And Now().ToShortTimeString() < "12:59:00" Then
+        If Now().ToShortTimeString() > "10:00:00" And Now().ToShortTimeString() < "10:59:00" Then
             EnviodeMailPrueba()
             bgwMail.RunWorkerAsync()
         End If

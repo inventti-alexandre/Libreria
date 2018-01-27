@@ -1,4 +1,5 @@
-﻿using LaPaz.Win.Enums;
+﻿using LaPaz.Datos.Interfaces;
+using LaPaz.Win.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,11 @@ namespace LaPaz.Win.Forms.Ventas.VentasReservadas
 {
     public partial class FrmComentario : FormBase
     {
-        public FrmComentario()
+        private int _reservaId;
+        public FrmComentario(int id, ILaPazUow uow)
         {
+            Uow = uow;
+            _reservaId = id;
             InitializeComponent();
         }
 
@@ -39,6 +43,14 @@ namespace LaPaz.Win.Forms.Ventas.VentasReservadas
             if (ComentarioAgregado != null)
             {
                 ComentarioAgregado(this, comentario);
+            }
+        }
+
+        private void FrmComentario_Load(object sender, EventArgs e)
+        {
+            if (_reservaId != 0)
+            {
+                Comentario = Uow.VentasReservadas.Listado().Where(r => r.NroReserva == _reservaId && r.SucReserva == Context.SucursalActual.Id).FirstOrDefault().Comentario;
             }
         }
     }

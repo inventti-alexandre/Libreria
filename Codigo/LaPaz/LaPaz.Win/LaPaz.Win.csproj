@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriavecinitologos/</PublishUrl>
+    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriacorrienteslogos/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,12 +24,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriavecinitologos/</InstallUrl>
-    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriavecinitologos/</UpdateUrl>
+    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrienteslogos/</InstallUrl>
+    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrienteslogos/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.189</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>203</ApplicationRevision>
+    <ApplicationRevision>209</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -2086,6 +2086,7 @@
     <None Include="Resources\ConsignacionCliente.png" />
     <None Include="Resources\Data-Edit-Con.png" />
     <None Include="Resources\Data-Edit-Con1.png" />
+    <None Include="Resources\comentario.png" />
     <Content Include="Resources\devoluviones.png" />
     <None Include="Resources\reservada.png" />
     <None Include="Resources\Login-01_16x16.png" />

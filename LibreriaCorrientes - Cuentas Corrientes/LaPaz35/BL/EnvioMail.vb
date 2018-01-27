@@ -135,7 +135,7 @@ Public Class EnvioMail
 
 
         ' Creamos la vista para clientes que sólo pueden acceder a texto plano...
-        Dim text As String = "Estimado Cliente nos contactamos para recordarle que su cuota de $" & saldoint.ToString()
+        Dim text As String = "Estimado Cliente nos contactamos para recordarle que su cuota de $" & Environment.UserName
         text = text & " en efectivo esta próxima a vencer el día:  , por lo que solicitamos tenga a bien abonar a la brevedad."
         text = text & "Ante cualquier duda o sugerencia, apreciaremos se comunique con nuestro Departamento de Cobranzas a los teléfonos "
         text = text & "0379 -4437234 / 0379 - 4438732. "

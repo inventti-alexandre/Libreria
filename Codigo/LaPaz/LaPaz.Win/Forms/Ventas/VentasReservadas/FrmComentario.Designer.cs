@@ -84,6 +84,7 @@
             // 
             this.RootElement.ApplyShapeToControl = true;
             this.Text = "Comentario Venta Reservada";
+            this.Load += new System.EventHandler(this.FrmComentario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TxtComentario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnGuardar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();

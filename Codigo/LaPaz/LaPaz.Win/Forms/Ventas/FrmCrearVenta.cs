@@ -473,14 +473,14 @@ namespace LaPaz.Win.Forms.Ventas
 
         private void BtnReservarFactura_Click(object sender, EventArgs e)
         {
-             ReservarFacturaData reservarFacturaData = new ReservarFacturaData();
+            ReservarFacturaData reservarFacturaData = new ReservarFacturaData();
             reservarFacturaData.OperadorActualId = Context.OperadorActual.Id;
             reservarFacturaData.SucursalActualId = Context.SucursalActual.Id;
             reservarFacturaData.PuntoVenta = Context.SucursalActual.SucursalNumero ?? 1;
 
 
             string comentarioVenta;
-            using (var formComentario = FormFactory.Create<FrmComentario>())
+            using (var formComentario = FormFactory.Create<FrmComentario>(0))
             {
                 formComentario.ComentarioAgregado += (o, comentario) =>
                 {

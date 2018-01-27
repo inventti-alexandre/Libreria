@@ -794,7 +794,7 @@
             this.MiReporteVentas.AccessibleDescription = "Ventas";
             this.MiReporteVentas.AccessibleName = "Ventas";
             this.MiReporteVentas.Name = "MiReporteVentas";
-            this.MiReporteVentas.Tag = "SuperAdmin,Administrativo,Vendedor";
+            this.MiReporteVentas.Tag = "SuperAdmin,Administrativo,Vendedor,Cajero";
             this.MiReporteVentas.Text = "Ventas";
             this.MiReporteVentas.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MiReporteVentas.Click += new System.EventHandler(this.MiReporteVentas_Click);

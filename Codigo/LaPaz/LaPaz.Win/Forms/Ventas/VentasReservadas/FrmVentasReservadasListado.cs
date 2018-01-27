@@ -16,6 +16,7 @@ using LaPaz.Win.Enums;
 using LaPaz.Win.Forms.Consignaciones.Clientes;
 using LaPaz.Win.Helpers;
 using Telerik.WinControls.UI;
+using LaPaz.Entidades;
 
 namespace LaPaz.Win.Forms.Ventas.VentasReservadas
 {
@@ -116,7 +117,30 @@ namespace LaPaz.Win.Forms.Ventas.VentasReservadas
                case "ColumnaEditarConsignacion":
                     EditarConsigna(ventaReservada.LCN);
                     break;
+               case "ColumnaEditarComentario":
+                    EditarComentario(ventaReservada.NroReserva);
+                    
+                    break;
              }
+            RefrescarListado();
+        }
+
+        private void EditarComentario(int Nroreserva)
+        {
+            //int nroComprobante;
+            //int.TryParse(lcn.Substring(5), out nroComprobante);
+            using (var formComentario = FormFactory.Create<FrmComentario>(Nroreserva))
+            {
+                formComentario.ComentarioAgregado += (o, comentario) =>
+                {
+                    VentaReservada reserva = Uow.VentasReservadas.Listado().Where(r => r.NroReserva == Nroreserva && r.SucReserva == Context.SucursalActual.Id).FirstOrDefault();
+                    reserva.Comentario = comentario;
+                    Uow.VentasReservadas.Modificar(reserva);
+                    Uow.Commit();
+                    formComentario.Close();
+                };
+                formComentario.ShowDialog();
+            }
         }
 
         private void EditarConsigna(string lcn)
