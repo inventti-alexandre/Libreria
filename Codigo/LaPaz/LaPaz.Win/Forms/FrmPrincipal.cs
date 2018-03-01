@@ -891,6 +891,12 @@ namespace LaPaz.Win.Forms
             AbrirTab(crearSeñaProveedor);
         }
 
+        private void MIReportesHistorialTitulo_Click(object sender, EventArgs e)
+        {
+            var pantalla = FormFactory.Create<FrmHistorialLibro>();
+            AbrirTab(pantalla);
+        }
+
        
     }
 }

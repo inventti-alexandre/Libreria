@@ -1,4 +1,4 @@
-﻿
+﻿	
 CREATE PROCEDURE [dbo].[Reporte_Ventas]
 	@SucursalId int,
 	@FechaInicio datetime,
@@ -23,7 +23,16 @@ BEGIN
 				Operador = O.Usuario,
 				CantidadPropia = SUM(ISNULL(CantidadPropia, 0)),
 				CantidadConsig = SUM(ISNULL(CantidadConsig, 0)),	
-				Precio = SUM(ISNULL(Precio, 0))
+				Precio = SUM(ISNULL(Precio, 0)),
+				STUFF(
+					(SELECT TOP 3 ', ' + C.LCN
+					FROM Compras C
+					INNER JOIN ComprasDetalle CD ON CD.CompraId = C.Id
+					WHERE CD.TituloId = T.Id
+					--INNER JOIN Titulos T1 ON T1.Id = CD.TituloId
+					ORDER BY C.FechaAlta DESC
+					FOR XML PATH ('')),
+				1,2, '') AS Compras
 			FROM VentasDetalle VD
 				INNER JOIN Ventas V
 					ON VD.VentaId = V.Id
@@ -58,7 +67,10 @@ BEGIN
 				Operador,
 				CantidadPropia,
 				CantidadConsig,	
-				Precio FROM VentasCTE
+				Precio,
+				Compras
+				FROM VentasCTE
+				
 		WHERE  (@ConStockConsignado IS NULL OR @ConStockConsignado = 0 OR (@ConStockConsignado = 1 AND CantidadConsig > 0))
 		   AND (@ConStockPropio IS NULL OR @ConStockPropio = 0 OR (@ConStockPropio = 1 AND CantidadPropia > 0))
 		ORDER BY NombreTitulo

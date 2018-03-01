@@ -23,6 +23,7 @@ using Framework.WinForm.Comun.Notification;
 using LaPaz.Negocio.Data;
 using LaPaz.Win.Properties;
 using LaPaz.Win.ProveedoresDevolucion;
+using LaPaz.Negocio.Helpers;
 
 namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 {
@@ -398,7 +399,9 @@ namespace LaPaz.Win.Forms.FrmProveedoresDevolucion
 
             lcnNuevo += 1;
             string sucursal = Context.SucursalActual.SucursalNumero.ToString();
-            return "X" + "000" + sucursal + lcnNuevo.ToString().PadLeft(8, '0');
+            return LcnHelper.ObtenerLcn(lcnNuevo, Context.SucursalActual.Id, "X");
+
+            //return "X" + "000" + sucursal + lcnNuevo.ToString().PadLeft(8, '0');
 
         }
 

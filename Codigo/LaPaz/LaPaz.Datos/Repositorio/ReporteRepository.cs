@@ -147,5 +147,10 @@ namespace LaPaz.Datos.Repositorio
         {
             return LaPazEntities.ProveedoresMovimientos(ProveedorId, SucursalId).ToList();
         }
+
+        public List<Reporte_HistorialLibro_Result> HistorialLibro(Guid TituloId)
+        {
+            return LaPazEntities.Reporte_HistorialLibro(TituloId).ToList();
+        }
     }
 }

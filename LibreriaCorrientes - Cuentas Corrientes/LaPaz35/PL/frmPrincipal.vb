@@ -186,7 +186,7 @@ Public Class frmPrincipal
         'Dim frm As New frmEnvioMail
         'frm.Show()
         Dim cls As New EnvioMail
-        cls.EnviarPrueba()
+        'cls.EnviarPrueba()
     End Sub
 #End Region
 

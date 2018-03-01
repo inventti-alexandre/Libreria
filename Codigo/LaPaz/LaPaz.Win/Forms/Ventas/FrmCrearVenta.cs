@@ -399,7 +399,6 @@ namespace LaPaz.Win.Forms.Ventas
 
             ventaData.CajaActualId = Context.CajaActual.Id;
             ventaData.Anticipo = UcCuentaCorrienteInfo.Anticipo;
-            //ventaData.SubTotal = UcCuentaCorrienteInfo.SubTotal;
             ventaData.SubTotal = UcTotalesVenta.SubTotal;
 
             ventaData.Pagos = UcTotalesVenta.Pagos;

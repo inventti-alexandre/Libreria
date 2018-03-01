@@ -55,6 +55,7 @@ namespace LaPaz.Datos.Interfaces
 
         List<HistorialPagos_Result> HistorialPagos(Guid? CompraId, Guid? ProveedorId);
         List<ProveedoresMovimientos_Result> ProveedoresMovimientos(Guid? ProveedorId, int SucursalId);
+        List<Reporte_HistorialLibro_Result> HistorialLibro(Guid tituloId);
     }
 
 }

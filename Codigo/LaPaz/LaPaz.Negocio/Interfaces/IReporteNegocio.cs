@@ -49,5 +49,7 @@ namespace LaPaz.Negocio.Interfaces
                                                       int sucursalId, bool muestraCantidad, int cantidadFilas, string TituloISBN, Guid? proveedorId, int? temaId);
 
         List<ReciboConsignacion> ReciboConsignacion(Guid consignacionId);
+
+        List<Reporte_HistorialLibro_Result> HistorialLibro(Guid tituloId);
     }
 }

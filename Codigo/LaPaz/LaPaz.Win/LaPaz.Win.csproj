@@ -14,7 +14,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriacorrienteslogos/</PublishUrl>
+    <PublishUrl>ftp://107.180.2.160/public_html/librerias/libreriaRemoto/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -24,14 +24,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrienteslogos/</InstallUrl>
-    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriacorrienteslogos/</UpdateUrl>
+    <InstallUrl>http://www.devlightsclientes.com.ar/librerias/libreriaRemoto/</InstallUrl>
+    <UpdateUrl>http://www.devlightsclientes.com.ar/librerias/libreriaRemoto/</UpdateUrl>
     <MinimumRequiredVersion>1.0.0.189</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>209</ApplicationRevision>
+    <ApplicationRevision>218</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -745,6 +746,12 @@
     </Compile>
     <Compile Include="Forms\OrdenesPagos\UcFiltrosOrdenesPago.Designer.cs">
       <DependentUpon>UcFiltrosOrdenesPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reportes\FrmHistorialLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes\FrmHistorialLibro.Designer.cs">
+      <DependentUpon>FrmHistorialLibro.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reportes\FrmProveedorGeneral.cs">
       <SubType>Form</SubType>
@@ -1610,6 +1617,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OrdenesPagos\UcFiltrosOrdenesPago.resx">
       <DependentUpon>UcFiltrosOrdenesPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes\FrmHistorialLibro.resx">
+      <DependentUpon>FrmHistorialLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reportes\FrmProveedorGeneral.resx">
       <DependentUpon>FrmProveedorGeneral.cs</DependentUpon>

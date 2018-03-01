@@ -23,5 +23,6 @@ namespace LaPaz.Entidades
         public Nullable<int> CantidadConsig { get; set; }
         public Nullable<decimal> Precio { get; set; }
         public string ISBN { get; set; }
+        public string Compras { get; set; }
     }
 }

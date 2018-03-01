@@ -96,7 +96,7 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
             else
             {
                 Limpiar();
-                _messageBoxDisplayService.ShowSuccess("No se encontró factura con ese número");
+                _messageBoxDisplayService.ShowError("No se encontró factura con ese número");
             }
 
         }
@@ -175,7 +175,16 @@ namespace LaPaz.Win.Forms.Ventas.CreditosDevolucion
                 Uow.Commit();
 
                 _messageBoxDisplayService.ShowSuccess("Devolución generada con éxito");
+
             }
+
+            //var pageTab = this.Parent as RadPageViewPage;
+            //if (pageTab != null)
+            //{
+            //    pageTab.Dispose();
+            //};
+            Limpiar();
+
         }
 
         public string FormaPagoDescripcion()

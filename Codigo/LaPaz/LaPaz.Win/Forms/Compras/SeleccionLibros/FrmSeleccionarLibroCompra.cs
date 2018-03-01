@@ -469,6 +469,7 @@ namespace LaPaz.Win.Forms.Compras
             tituloModificar.FechaModificacion = _clock.Now;
             tituloModificar.SucursalModificacionId = Context.SucursalActual.Id;
             tituloModificar.UbicacionId = null;
+            tituloModificar.OperadorUltimoPrecioId = Context.OperadorActual.Id;
             Uow.Titulos.Modificar(tituloModificar);
             Uow.Commit();
         }

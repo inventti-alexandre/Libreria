@@ -89,6 +89,10 @@
           <DataField>Precio</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
+        <Field Name="Compras">
+          <DataField>Compras</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
     </DataSet>
   </DataSets>
@@ -471,7 +475,7 @@
             <Top>14.78492mm</Top>
             <Left>66.7129mm</Left>
             <Height>19.15268mm</Height>
-            <Width>87.84559mm</Width>
+            <Width>104.16493mm</Width>
             <ZIndex>6</ZIndex>
             <Style>
               <Border>
@@ -546,7 +550,7 @@
             <Top>73.05184mm</Top>
             <Left>1.5mm</Left>
             <Height>7.5875mm</Height>
-            <Width>153.69117mm</Width>
+            <Width>169.37783mm</Width>
             <ZIndex>7</ZIndex>
             <Style>
               <Border>
@@ -583,7 +587,10 @@
                   <Width>11.18996mm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>17.09698mm</Width>
+                  <Width>14.55466mm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>15.68666mm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -849,6 +856,41 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Compras</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox15</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -1170,6 +1212,43 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Compras">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!Compras.Value</Value>
+                                  <Style>
+                                    <FontSize>5pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Compras</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                            </TopBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
@@ -1481,12 +1560,51 @@
                         </Textbox>
                       </CellContents>
                     </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox17">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value />
+                                  <Style>
+                                    <FontSize>7pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox17</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>White</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <TopBorder>
+                              <Color>Black</Color>
+                            </TopBorder>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                   </TablixCells>
                 </TablixRow>
               </TablixRows>
             </TablixBody>
             <TablixColumnHierarchy>
               <TablixMembers>
+                <TablixMember />
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
@@ -1514,7 +1632,7 @@
             <Top>35.34871mm</Top>
             <Left>1.49372mm</Left>
             <Height>20.02292mm</Height>
-            <Width>156.23977mm</Width>
+            <Width>169.38411mm</Width>
             <ZIndex>8</ZIndex>
             <Style>
               <Border>
@@ -1549,7 +1667,7 @@
             <Top>62.11295mm</Top>
             <Left>1.5mm</Left>
             <Height>7.05833mm</Height>
-            <Width>153.69117mm</Width>
+            <Width>169.37783mm</Width>
             <ZIndex>9</ZIndex>
             <Style>
               <Border>
@@ -1569,7 +1687,7 @@
           </Border>
         </Style>
       </Body>
-      <Width>159.67292mm</Width>
+      <Width>171.72449mm</Width>
       <Page>
         <PageFooter>
           <Height>11.43mm</Height>
@@ -1606,7 +1724,7 @@
               </Paragraphs>
               <rd:DefaultName>ExecutionTime</rd:DefaultName>
               <Top>5.08mm</Top>
-              <Left>28.04583mm</Left>
+              <Left>46.52366mm</Left>
               <Height>6.35mm</Height>
               <Width>124.35417mm</Width>
               <Style>
@@ -1628,10 +1746,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>2cm</LeftMargin>
-        <RightMargin>2cm</RightMargin>
-        <TopMargin>2cm</TopMargin>
-        <BottomMargin>2cm</BottomMargin>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -1707,6 +1825,6 @@
       <Prompt>ConStock</Prompt>
     </ReportParameter>
   </ReportParameters>
-  <rd:ReportUnitType>Mm</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>98ada042-d1c9-4bde-870b-6aa8a49699a5</rd:ReportID>
 </Report>

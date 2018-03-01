@@ -833,5 +833,14 @@ namespace LaPaz.Entidades
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ProveedoresMovimientos_Result>("ProveedoresMovimientos", proveedorParameter, sucursalIdParameter);
         }
+    
+        public virtual ObjectResult<Reporte_HistorialLibro_Result> Reporte_HistorialLibro(Nullable<System.Guid> tituloId)
+        {
+            var tituloIdParameter = tituloId.HasValue ?
+                new ObjectParameter("tituloId", tituloId) :
+                new ObjectParameter("tituloId", typeof(System.Guid));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Reporte_HistorialLibro_Result>("Reporte_HistorialLibro", tituloIdParameter);
+        }
     }
 }

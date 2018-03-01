@@ -121,6 +121,7 @@
             this.BtnProveedoresListado = new Telerik.WinControls.UI.RadButton();
             this.BtnLibrosListado = new Telerik.WinControls.UI.RadButton();
             this.BtnClienteListado = new Telerik.WinControls.UI.RadButton();
+            this.MIReportesHistorialTitulo = new Telerik.WinControls.UI.RadMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MainMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabsPrincipal)).BeginInit();
@@ -485,7 +486,7 @@
             this.MenuConsignacionCteNueva.AccessibleDescription = "Nueva";
             this.MenuConsignacionCteNueva.AccessibleName = "Nueva";
             this.MenuConsignacionCteNueva.Name = "MenuConsignacionCteNueva";
-            this.MenuConsignacionCteNueva.Tag = "SuperAdmin,Administrativo,Vendedor";
+            this.MenuConsignacionCteNueva.Tag = "SuperAdmin,Administrativo,Vendedor,Cajero";
             this.MenuConsignacionCteNueva.Text = "Nueva";
             this.MenuConsignacionCteNueva.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MenuConsignacionCteNueva.Click += new System.EventHandler(this.MenuConsignacionCteNueva_Click);
@@ -495,7 +496,7 @@
             this.MenuConsignacionCteRendir.AccessibleDescription = "Rendir";
             this.MenuConsignacionCteRendir.AccessibleName = "Rendir";
             this.MenuConsignacionCteRendir.Name = "MenuConsignacionCteRendir";
-            this.MenuConsignacionCteRendir.Tag = "SuperAdmin,Administrativo";
+            this.MenuConsignacionCteRendir.Tag = "SuperAdmin,Administrativo,Vendedor,Cajero";
             this.MenuConsignacionCteRendir.Text = "Rendir";
             this.MenuConsignacionCteRendir.Visibility = Telerik.WinControls.ElementVisibility.Visible;
             this.MenuConsignacionCteRendir.Click += new System.EventHandler(this.MenuConsignacionCteRendir_Click);
@@ -734,7 +735,8 @@
             this.MiReporteVentas,
             this.MiReporteLibros,
             this.MiReporteRanking,
-            this.radMenuItem5});
+            this.radMenuItem5,
+            this.MIReportesHistorialTitulo});
             this.MiReportes.Name = "MiReportes";
             this.MiReportes.Text = "Reportes";
             this.MiReportes.Visibility = Telerik.WinControls.ElementVisibility.Visible;
@@ -1400,6 +1402,16 @@
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Margin = new System.Windows.Forms.Padding(0, -2, 0, 0);
             ((Telerik.WinControls.Primitives.TextPrimitive)(this.BtnClienteListado.GetChildAt(0).GetChildAt(1).GetChildAt(1))).Alignment = System.Drawing.ContentAlignment.BottomCenter;
             // 
+            // MIReportesHistorialTitulo
+            // 
+            this.MIReportesHistorialTitulo.AccessibleDescription = "Historial Titulo";
+            this.MIReportesHistorialTitulo.AccessibleName = "Historial Titulo";
+            this.MIReportesHistorialTitulo.Name = "MIReportesHistorialTitulo";
+            this.MIReportesHistorialTitulo.Tag = "SuperAdmin,Administrativo";
+            this.MIReportesHistorialTitulo.Text = "Historial Titulo";
+            this.MIReportesHistorialTitulo.Visibility = Telerik.WinControls.ElementVisibility.Visible;
+            this.MIReportesHistorialTitulo.Click += new System.EventHandler(this.MIReportesHistorialTitulo_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1542,6 +1554,7 @@
         private Telerik.WinControls.UI.RadMenuItem MenuComprasListado;
         private Telerik.WinControls.UI.RadMenuItem MenuCompraNueva;
         private Telerik.WinControls.UI.RadMenuItem MenuProvSena;
+        private Telerik.WinControls.UI.RadMenuItem MIReportesHistorialTitulo;
 
     }
 }

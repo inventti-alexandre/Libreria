@@ -7161,6 +7161,9 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
           <Parameter Name="OperadorId" Type="uniqueidentifier" Mode="In" />
           <Parameter Name="CodProveedor" Type="int" Mode="In" />
         </Function>
+        <Function Name="Reporte_HistorialLibro" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="tituloId" Type="uniqueidentifier" Mode="In" />
+        </Function>
         <Function Name="Reporte_InformeCaja" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="SucursalId" Type="int" Mode="In" />
           <Parameter Name="FechaInicio" Type="datetime" Mode="In" />
@@ -10617,6 +10620,9 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
             <End Role="Venta" EntitySet="Ventas" />
             <End Role="TitulosMovimiento" EntitySet="TitulosMovimientoes" />
           </AssociationSet>
+          <FunctionImport Name="Reporte_HistorialLibro" ReturnType="Collection(LaPaz.Datos.Reporte_HistorialLibro_Result)">
+            <Parameter Name="tituloId" Mode="In" Type="Guid" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="Provincia">
           <Key>
@@ -15417,6 +15423,7 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
           <Property Type="Int32" Name="CantidadConsig" Nullable="true" />
           <Property Type="Decimal" Name="Precio" Nullable="true" Precision="19" />
           <Property Type="String" Name="ISBN" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="Compras" Nullable="true" />
         </ComplexType>
         <ComplexType Name="SP_PresupuestoById1_Result">
           <Property Type="String" Name="Codigo" Nullable="true" MaxLength="17" />
@@ -18531,6 +18538,23 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="Reporte_HistorialLibro_Result">
+          <Property Type="DateTime" Name="Fecha" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Movimiento" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NroComprobante" Nullable="true" />
+          <Property Type="Int32" Name="Propio" Nullable="true" />
+          <Property Type="Int32" Name="Consignado" Nullable="true" />
+          <Property Type="Int32" Name="DevueltoVendo" Nullable="true" />
+          <Property Type="Int32" Name="Vendido" Nullable="true" />
+          <Property Type="String" Name="Cliente" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Proveedor" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Operador" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Cod" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ISBN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NombreTitulo" Nullable="true" />
+          <Property Type="Int32" Name="stkPr" Nullable="true" />
+          <Property Type="Int32" Name="stkCn" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -20401,6 +20425,7 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
                 <ScalarProperty Name="CantidadConsig" ColumnName="CantidadConsig" />
                 <ScalarProperty Name="Precio" ColumnName="Precio" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="Compras" ColumnName="Compras" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
@@ -22075,6 +22100,27 @@ warning 6002: The table/view 'LCorrientes.dbo.PRECIOSACT2' does not have a prima
                 <ScalarProperty Name="Cheque" ColumnName="Cheque" />
                 <ScalarProperty Name="Deposito" ColumnName="Deposito" />
                 <ScalarProperty Name="Transferencia" ColumnName="Transferencia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Reporte_HistorialLibro" FunctionName="LaPaz.Datos.Store.Reporte_HistorialLibro">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="LaPaz.Datos.Reporte_HistorialLibro_Result">
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Movimiento" ColumnName="Movimiento" />
+                <ScalarProperty Name="NroComprobante" ColumnName="NroComprobante" />
+                <ScalarProperty Name="Propio" ColumnName="Propio" />
+                <ScalarProperty Name="Consignado" ColumnName="Consignado" />
+                <ScalarProperty Name="DevueltoVendo" ColumnName="DevueltoVendo" />
+                <ScalarProperty Name="Vendido" ColumnName="Vendido" />
+                <ScalarProperty Name="Cliente" ColumnName="Cliente" />
+                <ScalarProperty Name="Proveedor" ColumnName="Proveedor" />
+                <ScalarProperty Name="Operador" ColumnName="Operador" />
+                <ScalarProperty Name="Cod" ColumnName="Cod" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="NombreTitulo" ColumnName="NombreTitulo" />
+                <ScalarProperty Name="stkPr" ColumnName="stkPr" />
+                <ScalarProperty Name="stkCn" ColumnName="stkCn" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

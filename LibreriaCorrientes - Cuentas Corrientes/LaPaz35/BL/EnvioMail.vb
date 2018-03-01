@@ -88,19 +88,19 @@ Public Class EnvioMail
 
         'Creamos el recurso a incrustar. Observad que el ID que le asignamos (arbitrario) está referenciado desde el código HTML como origen
         'de la imagen (resaltado en amarillo).
-        Dim superior As LinkedResource = New LinkedResource("C:\temp\superior.jpg")
-        superior.ContentId = "superior"
+        'Dim superior As LinkedResource = New LinkedResource("C:\temp\superior.jpg")
+        'superior.ContentId = "superior"
 
         Dim img As LinkedResource = New LinkedResource("C:\temp\nuevologo.jpg", MediaTypeNames.Image.Jpeg)
         img.ContentId = "imagen"
 
-        Dim inferior As LinkedResource = New LinkedResource("C:\temp\inferior.jpg", MediaTypeNames.Image.Jpeg)
-        inferior.ContentId = "inferior"
+        'Dim inferior As LinkedResource = New LinkedResource("C:\temp\inferior.jpg", MediaTypeNames.Image.Jpeg)
+        'inferior.ContentId = "inferior"
 
         ' Lo incrustamos en la vista HTML...
 
 
-        htmlView.LinkedResources.Add(superior)
+        'htmlView.LinkedResources.Add(superior)
         htmlView.LinkedResources.Add(img)
         'htmlView.LinkedResources.Add(inferior)
         'Por último, vinculamos ambas vistas al mensaje...

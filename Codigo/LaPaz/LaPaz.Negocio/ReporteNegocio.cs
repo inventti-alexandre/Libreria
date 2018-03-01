@@ -135,5 +135,10 @@ namespace LaPaz.Negocio
         {
             return Uow.Reportes.ReciboConsignacion(consignacionId).ToList();
         }
+
+        public List<Reporte_HistorialLibro_Result> HistorialLibro(Guid tituloId)
+        {
+            return Uow.Reportes.HistorialLibro(tituloId).ToList();
+        }
     }
 }

@@ -23,6 +23,7 @@ using Framework.WinForm.Comun.Notification;
 using LaPaz.Negocio.Data;
 using LaPaz.Win.Properties;
 using LaPaz.Win.ProveedoresDevolucion;
+using LaPaz.Negocio.Helpers;
 
 namespace LaPaz.Win.Forms.ProveedoresDevolucion
 {
@@ -299,6 +300,7 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
         private string GenerarLcnTitulosDevolucion()
         {
+            
 
             var ultimaDevolucion = Uow.TitulosConsignacionesDevueltas.Listado().Where(p => p.SucursalAltaId == Context.SucursalActual.Id)
                 .OrderByDescending(p => p.FechaAlta).Take(1).FirstOrDefault();
@@ -312,7 +314,8 @@ namespace LaPaz.Win.Forms.ProveedoresDevolucion
 
             lcnNuevo += 1;
             string sucursal = Context.SucursalActual.SucursalNumero.ToString();
-            return "X" + "000" + sucursal + lcnNuevo.ToString().PadLeft(8, '0');
+            return LcnHelper.ObtenerLcn(lcnNuevo, Context.SucursalActual.Id, "X");
+            //return "X" + "000" + sucursal + lcnNuevo.ToString().PadLeft(8, '0');
 
         }
    
